@@ -51206,18 +51206,27 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row justify-content-center"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-8"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header"
-      }, "Example Component"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, "I'm an example component!")))));
+        "class": "dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        "class": "btn btn-secondary dropdown-toggle",
+        type: "button",
+        id: "dropdownMenuButton",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
+      }, "Dropdown button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "dropdown-menu",
+        "aria-labelledby": "dropdownMenuButton"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        "class": "dropdown-item",
+        href: "#"
+      }, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        "class": "dropdown-item",
+        href: "#"
+      }, "Another action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        "class": "dropdown-item",
+        href: "#"
+      }, "Something else here")));
     }
   }]);
 
