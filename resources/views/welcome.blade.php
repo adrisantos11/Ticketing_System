@@ -11,19 +11,16 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet"> -->
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ asset('bootstrap-4.4.1-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap-4.4.1-dist/css/custom-css-bootstrap-magic-2020-02-13.css') }}">
 
     <!-- Styles -->
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
-    </style>
-
-    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
         html,
         body {
             background-color: #fff;
             color: #636b6f;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Karla', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;

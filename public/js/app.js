@@ -51208,7 +51208,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        "class": "btn btn-secondary dropdown-toggle",
+        "class": "btn btn-primary dropdown-toggle",
         type: "button",
         id: "dropdownMenuButton",
         "data-toggle": "dropdown",
