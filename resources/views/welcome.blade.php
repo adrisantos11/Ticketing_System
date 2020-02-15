@@ -11,8 +11,8 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet"> -->
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ asset('bootstrap-4.4.1-dist/css/custom-css-bootstrap-magic-2020-02-13.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('bootstrap-4.4.1-dist/css/custom-css-bootstrap-magic-blue-colours.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Muli|Overpass|Rubik|Source+Sans+Pro|Tomorrow&display=swap" rel="stylesheet">
     <!-- Styles -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
@@ -20,7 +20,12 @@
         body {
             background-color: #fff;
             color: #636b6f;
-            font-family: 'Karla', sans-serif;
+            /* font-family: 'Tomorrow', sans-serif; */
+            /* font-family: 'Source Sans Pro', sans-serif; */
+            /* font-family: 'Muli', sans-serif; */
+            /* font-family: 'Rubik', sans-serif; */
+            /* font-family: 'Overpass', sans-serif; */
+            font-family: 'IBM Plex Sans', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -86,13 +91,14 @@
             @endauth
         </div>
         @endif
-        <p>Esto es una prueba de estilo de letra.</p>
-        <div class="content">
-            <div id="example"></div>
-        </div>
+        <h1>H1 </h1>
+        <h2>H2 </h2>
+        <h3>h3 </h3>
+        <p>Esto es una prueba de estilo de letra. </p><b>Esto es en negrita. </b>
+        <div id="root"></div>
     </div>
 </body>
-<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/App.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 </script>

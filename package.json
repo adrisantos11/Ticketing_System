@@ -20,6 +20,13 @@
         "react-dom": "^16.12.0",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
+        "sass-loader": "^8.0.0",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "@types/react-dom": "^16.9.5",
+        "laravel-mix-react-typescript-extension": "^1.0.0",
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.7.5"
     }
 }
