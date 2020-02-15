@@ -31935,6 +31935,25 @@ __webpack_require__(/*! ./Components/Root */ "./resources/js/Components/Root.tsx
 
 /***/ }),
 
+/***/ "./resources/js/Components/Button/Button.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Components/Button/Button.tsx ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+exports.Button = function (props) {
+    return (React.createElement("div", { className: "buttonContainer" },
+        React.createElement("h1", null, props.buttonInfo.texto)));
+};
+
+
+/***/ }),
+
 /***/ "./resources/js/Components/Root.tsx":
 /*!******************************************!*\
   !*** ./resources/js/Components/Root.tsx ***!
@@ -31947,29 +31966,21 @@ __webpack_require__(/*! ./Components/Root */ "./resources/js/Components/Root.tsx
 Object.defineProperty(exports, "__esModule", { value: true });
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var index_1 = __webpack_require__(/*! ./index */ "./resources/js/Components/index.tsx");
-if (document.getElementById('root')) {
-    ReactDOM.render(React.createElement(index_1.Index, null), document.getElementById('root'));
-}
-
-
-/***/ }),
-
-/***/ "./resources/js/Components/index.tsx":
-/*!*******************************************!*\
-  !*** ./resources/js/Components/index.tsx ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-exports.Index = function () {
+var Button_1 = __webpack_require__(/*! ../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+exports.Root = function () {
+    var _a = React.useState({
+        id: 1,
+        texto: 'Esto es una prueba',
+        colour: 'red',
+        extraClass: ''
+    }), buttonInfo = _a[0], setButtonInfo = _a[1];
     return (React.createElement("div", null,
-        React.createElement("h1", null, "Esto es una prueba.")));
+        React.createElement("h1", null, "Bienvenido al servicio de Ticketing!!"),
+        React.createElement(Button_1.Button, { buttonInfo: buttonInfo })));
 };
+if (document.getElementById('root')) {
+    ReactDOM.render(React.createElement(exports.Root, null), document.getElementById('root'));
+}
 
 
 /***/ }),

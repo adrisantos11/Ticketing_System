@@ -91,10 +91,6 @@
             @endauth
         </div>
         @endif
-        <h1>H1 </h1>
-        <h2>H2 </h2>
-        <h3>h3 </h3>
-        <p>Esto es una prueba de estilo de letra. </p><b>Esto es en negrita. </b>
         <div id="root"></div>
     </div>
 </body>
