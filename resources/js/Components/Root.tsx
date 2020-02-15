@@ -9,6 +9,7 @@ export const Root: React.FunctionComponent = () => {
         id: 1,
         texto: 'Esto es una prueba',
         colour: 'red',
+        type: 'outline',
         extraClass: ''
     });
     return(

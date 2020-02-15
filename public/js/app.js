@@ -31948,7 +31948,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 exports.Button = function (props) {
     return (React.createElement("div", { className: "buttonContainer" },
-        React.createElement("h1", null, props.buttonInfo.texto)));
+        React.createElement("button", { type: "button", className: "btn btn-" + props.buttonInfo.type + "-primary button_css" },
+            React.createElement("b", null, props.buttonInfo.texto))));
 };
 
 
@@ -31972,6 +31973,7 @@ exports.Root = function () {
         id: 1,
         texto: 'Esto es una prueba',
         colour: 'red',
+        type: 'outline',
         extraClass: ''
     }), buttonInfo = _a[0], setButtonInfo = _a[1];
     return (React.createElement("div", null,
