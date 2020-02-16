@@ -1,4 +1,12 @@
 .button_css {
     border-radius: 2.5rem;
-    height: 5rem;
+    padding: 0.5rem 1.5rem;
+    .span_container {
+        padding-right: 0.7rem;
+        font-size: 1.2rem;
+    }
+}
+
+.button_css:hover {
+    cursor: pointer;
 }

@@ -7,9 +7,10 @@ import { Button } from '../Components/Button/Button'
 export const Root: React.FunctionComponent = () => {
     const [buttonInfo, setButtonInfo] = React.useState<ButtonModel>({
         id: 1,
-        texto: 'Esto es una prueba',
+        texto: 'IDENTIFÍCATE',
         colour: 'red',
-        type: 'outline',
+        type: 'outline-primary',
+        icon: 'fas fa-user',
         extraClass: ''
     });
     return(

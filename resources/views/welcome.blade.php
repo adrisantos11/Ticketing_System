@@ -13,6 +13,8 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('bootstrap-4.4.1-dist/css/custom-css-bootstrap-magic-blue-colours.css') }}">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Muli|Overpass|Rubik|Source+Sans+Pro|Tomorrow&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/521c7205fb.js" crossorigin="anonymous"></script>
+
     <!-- Styles -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');

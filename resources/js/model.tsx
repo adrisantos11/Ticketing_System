@@ -3,5 +3,6 @@ export interface ButtonModel {
     texto: string;
     colour: string;
     type: string;
+    icon: string;
     extraClass: string;
 }
