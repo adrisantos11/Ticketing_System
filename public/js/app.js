@@ -117,7 +117,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form-group .text_label {\n  font-size: 1.25rem;\n}\n.form-group .input_class__error {\n  background-color: rgba(220, 53, 69, 0.2);\n}\n.form-group .input_class:focus {\n  background-color: rgba(0, 168, 204, 0.2);\n}", ""]);
+exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label {\n  font-size: 1.5rem;\n}\n.form-group .input_class_secondary:focus {\n  background-color: rgba(39, 73, 109, 0.1);\n  border-color: #27496d;\n}\n.form-group .input_class_secondary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(0, 168, 204, 0.1);\n  border-color: #00a8cc;\n}\n.form-group .input_class_primary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/Login/Login.scss":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/Login/Login.scss ***!
+  \********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  align-items: center;\n}\n.login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0rem 1.5rem;\n}\n.login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 2.5rem;\n  text-align: center;\n}\n.login .centered_container--description {\n  width: 90%;\n}\n.login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 1.25rem;\n}\n.login .centered_container--login {\n  width: 70%;\n}\n.login .description_container {\n  width: 100%;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -32564,7 +32583,7 @@ module.exports = function (css) {
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-__webpack_require__(/*! ./Components/Root */ "./resources/js/Components/Root.tsx");
+__webpack_require__(/*! ./Pages/Login/Login */ "./resources/js/Pages/Login/Login.tsx");
 
 
 /***/ }),
@@ -32666,20 +32685,49 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Input.scss */ "./resources/js/Components/Input/Input.scss");
 exports.Input = function (props) {
     return (React.createElement(React.Fragment, null,
-        React.createElement("div", null,
-            React.createElement("div", { className: 'form-group' },
-                React.createElement("label", { htmlFor: "", className: "text_label" }, props.inputInfo.label),
-                React.createElement("input", { type: "email", className: "form-control input_class    ", id: "exampleInputEmail1", "aria-describedby": "emailHelp", placeholder: "Enter email" }),
-                React.createElement("small", { id: "error_control", className: "form-text text-danger" }, props.inputInfo.error_control_text)))));
+        React.createElement("div", { className: 'form-group' },
+            React.createElement("label", { htmlFor: "", className: "text_label text-" + props.inputInfo.colour }, props.inputInfo.label),
+            React.createElement("input", { type: props.inputInfo.type, className: "form-control input_class_" + props.inputInfo.colour + " text-" + props.inputInfo.colour, id: "exampleInputEmail1", "aria-describedby": "emailHelp", placeholder: "Enter email" }),
+            React.createElement("small", { id: "error_control", className: "form-text text-danger" }, props.inputInfo.error_control_text))));
 };
 
 
 /***/ }),
 
-/***/ "./resources/js/Components/Root.tsx":
-/*!******************************************!*\
-  !*** ./resources/js/Components/Root.tsx ***!
-  \******************************************/
+/***/ "./resources/js/Pages/Login/Login.scss":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Login/Login.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Login.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/Login/Login.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Login/Login.tsx":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Login/Login.tsx ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32688,33 +32736,56 @@ exports.Input = function (props) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var Button_1 = __webpack_require__(/*! ../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
-var Input_1 = __webpack_require__(/*! ../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
-exports.Root = function () {
-    var _a = React.useState({
+var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var Input_1 = __webpack_require__(/*! ../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
+__webpack_require__(/*! ./Login.scss */ "./resources/js/Pages/Login/Login.scss");
+exports.Login = function () {
+    var buttonInfo = React.useState({
         id: 1,
         texto: 'Identifícate',
         colour: 'red',
         type: 'outline-secondary',
         icon: 'fas fa-user',
         extraClass: ''
-    }), buttonInfo = _a[0], setButtonInfo = _a[1];
-    var _b = React.useState({
+    })[0];
+    var inputUser = React.useState({
         id: 1,
         label: 'Usuario',
         placeholder: 'usuario',
-        colour: '',
-        type: '',
+        colour: 'secondary',
+        type: 'email',
         error_control_text: 'No se ha encontrado el usuario introducido.',
         extraClass: ''
-    }), inputInfo = _b[0], setInputInfo = _b[1];
-    return (React.createElement("div", { className: "root" },
-        React.createElement("h1", null, "Bienvenido al servicio de Ticketing!!"),
-        React.createElement(Button_1.Button, { buttonInfo: buttonInfo }),
-        React.createElement(Input_1.Input, { inputInfo: inputInfo })));
+    })[0];
+    var inputPassword = React.useState({
+        id: 1,
+        label: 'Contraseña',
+        placeholder: 'Constraseña',
+        colour: 'secondary',
+        type: 'password',
+        error_control_text: 'La contraseña no coincide',
+        extraClass: ''
+    })[0];
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: "login" },
+            React.createElement("div", { className: "centered_container centered_container--description" },
+                React.createElement("p", { className: "login_title text-secondary" }, "TICKETCLASS :D"),
+                React.createElement("div", { className: "description_text" },
+                    React.createElement("p", null,
+                        "\u00A1Bienvenido a ",
+                        React.createElement("b", null, "\"Ticketclass :D\""),
+                        "!"),
+                    React.createElement("p", null, " Explora y usa esta herramineta para la gesti\u00F3n de las incidencias dentro de tu entorno de trabajo."),
+                    React.createElement("p", null, " Consigue una mayor rapidez de respuesta."))),
+            React.createElement("div", { className: "centered_container centered_container--login" },
+                React.createElement("p", { className: "login_title text-secondary" }, "Iniciar sesion"),
+                React.createElement("div", { className: "inputs_container" },
+                    React.createElement(Input_1.Input, { inputInfo: inputUser }),
+                    React.createElement(Input_1.Input, { inputInfo: inputPassword })),
+                React.createElement(Button_1.Button, { buttonInfo: buttonInfo })))));
 };
-if (document.getElementById('root')) {
-    ReactDOM.render(React.createElement(exports.Root, null), document.getElementById('root'));
+if (document.getElementById('login')) {
+    ReactDOM.render(React.createElement(exports.Login, null), document.getElementById('login'));
 }
 
 
@@ -32738,8 +32809,8 @@ if (document.getElementById('root')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\App.tsx */"./resources/js/App.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\js\App.tsx */"./resources/js/App.tsx");
+module.exports = __webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

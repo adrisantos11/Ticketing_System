@@ -1,15 +1,33 @@
 @import '../../../sass/app.scss';
 
 .form-group {
+    width: 100%;
     .text_label {
-        font-size: $font_size;
+        font-size: $font_size*1.2;
     }
-    .input_class {
-        &__error{
-            background-color: rgba($color: $red_color, $alpha: 0.2);
+    .input_class_secondary {
+        &:focus {
+            background-color: rgba($color: $secondary_color, $alpha: 0.1);
+            border-color: $secondary_color;
         }
+        &--error{
+            background-color: rgba($color: $red_color, $alpha: 0.2);
+            border-color: $red_color;
+        }
+
     }
-    .input_class:focus {
-        background-color: rgba($color: $primary_color, $alpha: 0.2);
+
+    .input_class_primary {
+        &:focus {
+            background-color: rgba($color: $primary_color, $alpha: 0.1);
+            border-color: $primary_color;
+        }
+        &--error{
+            background-color: rgba($color: $red_color, $alpha: 0.2);
+            border-color: $red_color;
+
+        }
+
     }
+
 }
