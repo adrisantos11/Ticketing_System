@@ -25,9 +25,9 @@
             /* font-family: 'Tomorrow', sans-serif; */
             /* font-family: 'Source Sans Pro', sans-serif; */
             /* font-family: 'Muli', sans-serif; */
-            /* font-family: 'Rubik', sans-serif; */
+            font-family: 'Rubik', sans-serif;
             /* font-family: 'Overpass', sans-serif; */
-            font-family: 'IBM Plex Sans', sans-serif;
+            /* font-family: 'IBM Plex Sans', sans-serif; */
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -79,8 +79,8 @@
 </head>
 
 <body>
-    <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
+    {{-- <div class="flex-center position-ref full-height"> --}}
+        {{-- @if (Route::has('login'))
         <div class="top-right links">
             @auth
             <a href="{{ url('/home') }}">Home</a>
@@ -92,9 +92,9 @@
             @endif
             @endauth
         </div>
-        @endif
+        @endif --}}
         <div id="root"></div>
-    </div>
+    {{-- </div> --}}
 </body>
 <script type="text/javascript" src="js/App.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

@@ -98,7 +98,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button_css {\n  border-radius: 2.5rem;\n  padding: 0.5rem 1.5rem;\n}\n.button_css .span_container {\n  padding-right: 0.7rem;\n  font-size: 1.2rem;\n}\n\n.button_css:hover {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".button_css {\n  border-radius: 2.5rem;\n  padding: 0.5rem 1rem;\n}\n.button_css .span_container {\n  padding-right: 0.5rem;\n  font-size: 1.25rem;\n}\n.button_css .button_text {\n  font-size: 1.25rem;\n}\n\n.button_css:hover {\n  cursor: pointer;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Input/Input.scss":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Input/Input.scss ***!
+  \*************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".form-group .text_label {\n  font-size: 1.25rem;\n}\n.form-group .input_class__error {\n  background-color: rgba(220, 53, 69, 0.2);\n}\n.form-group .input_class:focus {\n  background-color: rgba(0, 168, 204, 0.2);\n}", ""]);
 
 // exports
 
@@ -32597,7 +32616,61 @@ exports.Button = function (props) {
         React.createElement("button", { type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css" },
             React.createElement("span", { className: 'span_container' },
                 React.createElement("i", { className: props.buttonInfo.icon })),
-            React.createElement("b", null, props.buttonInfo.texto))));
+            React.createElement("a", { className: "button_text" }, props.buttonInfo.texto))));
+};
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Input/Input.scss":
+/*!**************************************************!*\
+  !*** ./resources/js/Components/Input/Input.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Input.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Input/Input.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Input/Input.tsx":
+/*!*************************************************!*\
+  !*** ./resources/js/Components/Input/Input.tsx ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./Input.scss */ "./resources/js/Components/Input/Input.scss");
+exports.Input = function (props) {
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", null,
+            React.createElement("div", { className: 'form-group' },
+                React.createElement("label", { htmlFor: "", className: "text_label" }, props.inputInfo.label),
+                React.createElement("input", { type: "email", className: "form-control input_class    ", id: "exampleInputEmail1", "aria-describedby": "emailHelp", placeholder: "Enter email" }),
+                React.createElement("small", { id: "error_control", className: "form-text text-danger" }, props.inputInfo.error_control_text)))));
 };
 
 
@@ -32616,18 +32689,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var Button_1 = __webpack_require__(/*! ../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var Input_1 = __webpack_require__(/*! ../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
 exports.Root = function () {
     var _a = React.useState({
         id: 1,
-        texto: 'IDENTIFÍCATE',
+        texto: 'Identifícate',
         colour: 'red',
-        type: 'outline-primary',
+        type: 'outline-secondary',
         icon: 'fas fa-user',
         extraClass: ''
     }), buttonInfo = _a[0], setButtonInfo = _a[1];
-    return (React.createElement("div", null,
+    var _b = React.useState({
+        id: 1,
+        label: 'Usuario',
+        placeholder: 'usuario',
+        colour: '',
+        type: '',
+        error_control_text: 'No se ha encontrado el usuario introducido.',
+        extraClass: ''
+    }), inputInfo = _b[0], setInputInfo = _b[1];
+    return (React.createElement("div", { className: "root" },
         React.createElement("h1", null, "Bienvenido al servicio de Ticketing!!"),
-        React.createElement(Button_1.Button, { buttonInfo: buttonInfo })));
+        React.createElement(Button_1.Button, { buttonInfo: buttonInfo }),
+        React.createElement(Input_1.Input, { inputInfo: inputInfo })));
 };
 if (document.getElementById('root')) {
     ReactDOM.render(React.createElement(exports.Root, null), document.getElementById('root'));

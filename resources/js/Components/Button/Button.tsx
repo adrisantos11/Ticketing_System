@@ -16,7 +16,7 @@ export const Button: React.FunctionComponent<Props> = (props: Props) => {
                 <span className='span_container'>
                     <i className={props.buttonInfo.icon}></i>
                 </span>
-                <b>{props.buttonInfo.texto}</b>
+                <a className="button_text">{props.buttonInfo.texto}</a>
             </button>
         </div>
     );

@@ -6,3 +6,13 @@ export interface ButtonModel {
     icon: string;
     extraClass: string;
 }
+
+export interface InputModel {
+    id: number;
+    label: string;
+    placeholder: string;
+    colour: string;
+    type: string;
+    error_control_text: string;
+    extraClass: string;
+}
