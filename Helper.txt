@@ -1,0 +1,62 @@
+-------------------------------- MIGRACIONES --------------------------------
+
+**  Crear una migración junto a un modelo:
+
+    ~ php artisan make:model nombreModelo -m ~
+    ~ php artisan make:model nombreModelo --migration ~
+
+    Casos de error:
+    -   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'CreateNombreModeloTable' not found.
+
+        SOLUCIÓN: probar a ejecutar los siguientes comandos:
+            *   ~ php artisan clear-compiled ~
+            *   ~ php artisan dump-autoload ~
+            *   ~ php artisan optimize ~
+    
+    -   ...
+
+
+**  Eliminar todas las tablas y ejecutar de nuevo todas las migraciones:
+
+    ~ php artisan migrate:fresh ~
+
+    Casos de error:
+    -   BadMethodCallException  : Method Illuminate\Database\Schema\Blueprint::number does not exist.
+
+        SOLUCIÓN: El problema está en la especificación del tipo de la columna de la tabla. En este caso 'number' no existe.
+
+    -   ErrorException  : Array to string conversion.
+        Está mal creado el array de tipo enum.
+
+        SOLUCIÓN:
+            MAL -> $table->enum('Prioridad', ['Critica', 'Importante', 'Trivial'])->nullable()->default(['Trivial']);
+            BIEN -> $table->enum('Prioridad', ['Critica', 'Importante', 'Trivial'])->nullable()->default('Trivial');
+        
+    -   Illuminate\Database\QueryException  : SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; 
+        check the manual that corresponds to your MariaDB server version for the right syntax to use near 'first,
+
+        SOLUCIÓN: eliminar first();
+
+
+
+-------------------------------- SEEDERS -------------------------------------------
+
+**  Crear un seeder asociado a una tabla:
+
+    ~ php artisan make:seeder NameTableSeeder ~
+
+
+**  Ejecutar DatabaseSeeder para ejecutar todas los seeders creados:
+
+    ~ php artisan db:seed ~
+
+
+**  Es recomendable usar factorias para la inserción de conjuntos masivos de datos (+10).
+
+
+**  Repoblar la Base de Datos completa, eliminando todas las tablas y rellenandolas de nuevo:
+
+     ~ php artisan migrate:refresh --seed ~
+
+
+
