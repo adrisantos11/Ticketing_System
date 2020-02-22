@@ -1,16 +1,8 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// ---- Colores de la apliación ----
-$primary_color: #00a8cc;
-$secondary_color: #27496d;
-$dark_color: #142850;
-$cian_color: #0c7b93;
-$red_color: #dc3545;
+// Variables
+@import 'variables';
 
-// ---- Tamaños ----
-$font_size: 1.25rem; // 20 px
-$default_padding: 0.5rem; // 8px
-
-// ---- Fuentes ----
-$primary_font_family: 'IBM Plex Sans', sans-serif;
-$title_font_family: 'Black Han Sans', sans-serif;
-
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
