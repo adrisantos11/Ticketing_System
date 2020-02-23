@@ -23,21 +23,21 @@ class UserController extends Controller
      * Función que se encarga de realizar el registro del usuario en la Base de Datos.
      * @param request 
      */
-    public function registro(Request $request)
+    public function register(Request $request)
     {
         // Se almacena la respuesta en formato JSON dentro de una variable.
         // $respuestaJSON = $request->json();
 
         //Realizamos las validaciones correspondientes para poder crear una instancia del modelo User correctamente.
         $validator = Validator::make($request->json()->all(), [
-            'Nombre'        => 'required|string|max:255',
-            'Apellido1'     => 'required|string|max:255',
-            'Apellido2'     => 'required|string|max:255',
-            'Expediente'    => 'required|numeric|unique:users',
-            'Email'         => 'required|string|email|max:255|unique:users',
-            'Contraseña'    => 'string|min:4',
-            'Telefono'      => 'required|numeric',
-            'Rol'           => 'required',
+            'name'      => 'required|string|max:255',
+            'surname1'  => 'required|string|max:255',
+            'surname2'  => 'required|string|max:255',
+            'exp'       => 'required|numeric|unique:users',
+            'email'     => 'required|string|email|max:255|unique:users',
+            'password'  => 'string|min:4',
+            'phone'     => 'required|numeric',
+            'role'      => 'required',
         ]);
         /**
          * Método interno de Validation -> fails()
@@ -49,63 +49,53 @@ class UserController extends Controller
         }
 
         //Se crea el usuario con los datos obtenidos del $request, transformandolo en JSON.
-        $usuario = User::create([
-            'Nombre'        => $request->json()->get('Nombre'),
-            'Apellido1'     => $request->json()->get('Apellido1'),
-            'Apellido2'     => $request->json()->get('Apellido2'),
-            'Expediente'    => $request->json()->get('Expediente'),
-            'Email'         => $request->json()->get('Email'),
-            'Contraseña'    => Hash::make($request->json()->get('Contraseña')),
-            'Telefono'      => $request->json()->get('Telefono'),
-            'Rol'           => $request->json()->get('Rol'),
+        $user = User::create([
+            'name'      => $request->json()->get('name'),
+            'surname1'  => $request->json()->get('surname1'),
+            'surname2'  => $request->json()->get('surname2'),
+            'exp'       => $request->json()->get('exp'),
+            'email'     => $request->json()->get('email'),
+            'password'  => Hash::make($request->json()->get('password')),
+            'phone'     => $request->json()->get('phone'),
+            'role'      => $request->json()->get('role'),
         ]);
         
         // Se genera un token específico para el usuario recién registrado.
-        $token = JWTAuth::fromUser($usuario);
+        $token = JWTAuth::fromUser($user);
 
         // Se devuelve la respuesta HTTP en formato JSON con el 
-        return response()->json(compact('usuario', 'token'), 201);
+        return response()->json(compact('user', 'token'), 201);
     }
 
     public function login(Request $request) 
     {
-        $userData = $request->json()->all();
+        $credentials = $request->only('email', 'password');
 
         try {
-            if (!$token == auth()->attempt($userData)) 
+            if (! $token = JWTAuth::attempt($credentials)) 
             {
-                return response()->json([
-                    'error' => 'Los datos del usuario son incorrectos.'
-                ], 400);
+                return response()->json(['error' => 'invalid_credentials'], 400);
             }
         } catch (JWTException $th) {
-            return response()->json([
-                'error' => 'could_not_create_token'
-            ], 500);
+            return response()->json(['error' => 'could_not_create_token'], 500);
         }
-
         return response()->json(compact('token'));
     }
 
 
     public function getAuthenticatedUser()
-    {
+{
         try {
-            if(!$user == JWTAuth::parseToken()->authenticate())
-            {
+            if (! $user = JWTAuth::parseToken()->authenticate()) {
                 return response()->json(['user_not_found'], 404);
             }
-        } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $th) {
-            return response()->json(['token_expired'], $th->getStatusCode());
-
-        } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $th) {
-            return response()->json(['token_invalid'], $th->getStatusCode());
-        
-        } catch (Tymon\JWTAuth\Exceptions\JWTException $th) {
-            return response()->json(['token_absent'], $th->getStatusCode());
-        
+        } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
+            return response()->json(['token_expired'], $e->getStatusCode());
+        } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+            return response()->json(['token_invalid'], $e->getStatusCode());
+        } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
+            return response()->json(['token_absent'], $e->getStatusCode());
         }
         return response()->json(compact('user'));
     }
-
 }

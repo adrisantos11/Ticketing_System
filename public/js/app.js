@@ -32760,7 +32760,7 @@ exports.Login = function () {
     var inputPassword = React.useState({
         id: 1,
         label: 'Contraseña',
-        placeholder: 'Constraseña',
+        placeholder: 'Contraseña',
         colour: 'secondary',
         type: 'password',
         error_control_text: 'La contraseña no coincide',

@@ -14,23 +14,23 @@ class CreateIncidenciasTable extends Migration
     public function up()
     {
         Schema::create('incidencias', function (Blueprint $table) {
-            $table->bigInteger('ID_incidencia')->autoIncrement()->unique();
-            $table->integer('Grupo_ID');
-            $table->integer('ID_reportador');
-            $table->integer('ID_asignado');
-            $table->string('Titulo');
-            $table->string('Descripcion')->nullable()->default('Sin descripción');
-            $table->string('Departamento');
-            $table->string('Edificio');
-            $table->integer('Piso');
-            $table->string('Aula');
-            $table->string('URL_data')->nullable();
-            $table->dateTime('Fecha_creacion');
-            $table->dateTime('Fecha_limite');
-            $table->dateTime('Fecha_asignacion');
-            $table->dateTime('Fecha_resolución');
-            $table->enum('Prioridad', ['Critica', 'Importante', 'Trivial'])->nullable()->default('Trivial');
-            $table->enum('Estado', ['ToDo', 'Doing', 'Blocked', 'Done'])->nullable()->default('ToDo');
+            $table->bigInteger('id')->autoIncrement()->unique();
+            $table->integer('group_id');
+            $table->integer('id_reporter');
+            $table->integer('id_assigned');
+            $table->string('title');
+            $table->string('description')->nullable()->default('Whitout description');
+            $table->string('department');
+            $table->string('biuld');
+            $table->integer('floor');
+            $table->string('class');
+            $table->string('url_data')->nullable();
+            $table->dateTime('creation_date');
+            $table->dateTime('limit_date');
+            $table->dateTime('assigned_date');
+            $table->dateTime('resolution_date');
+            $table->enum('priority', ['critical', 'important', 'trivial'])->nullable()->default('trivial');
+            $table->enum('estate', ['todo', 'doing', 'blocked', 'done'])->nullable()->default('todo');
             
             // $table->timestamps();
             // $table->foreign('Grupo_ID')->refernces('ID')->on('GrupoIncidencias');

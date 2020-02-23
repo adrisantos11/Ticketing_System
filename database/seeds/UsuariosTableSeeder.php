@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 class UsuariosTableSeeder extends Seeder
 {
-    /**
+       /**
      * Run the database seeds.
      *
      * @return void
@@ -12,22 +12,22 @@ class UsuariosTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'Nombre' => 'Adrián',
-            'Apellido1' => 'Santos',
-            'Apellido2' => 'Mena',
-            'Expediente' => '21619919',
-            'Contraseña' => '1234',
-            'Email' => 'santos2menaaa@gmail.com',
-            'Telefono' => '608650958'
+            'name' => 'Adrián',
+            'surname1' => 'Santos',
+            'surname2' => 'Mena',
+            'exp' => '21619919',
+            'password' => '1234',
+            'email' => 'santos2menaaa@gmail.com',
+            'phone' => '608650958'
         ]);
         DB::table('users')->insert([
-            'Nombre' => 'Javier',
-            'Apellido1' => 'Cai',
-            'Apellido2' => 'Lin',
-            'Expediente' => '24323323',
-            'Contraseña' => '4321',
-            'Email' => 'jcl4332@gmail.com',
-            'Telefono' => '654345645'
+            'name' => 'Javier',
+            'surname1' => 'Cai',
+            'surname2' => 'Lin',
+            'exp' => '24323323',
+            'password' => '4321',
+            'email' => 'jcl4332@gmail.com',
+            'phone' => '654345645'
         ]);
     }
 }

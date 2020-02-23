@@ -29,7 +29,7 @@ export const Login: React.FunctionComponent = () => {
     const [inputPassword] = React.useState<InputModel>({
         id: 1,
         label: 'Contraseña',
-        placeholder: 'Constraseña',
+        placeholder: 'Contraseña',
         colour: 'secondary',
         type: 'password',
         error_control_text: 'La contraseña no coincide',
