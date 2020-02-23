@@ -1,13 +1,41 @@
+
+TUTORIALES DE AYUDA:
+    *   https://www.youtube.com/playlist?list=PLIddmSRJEJ0sEY38mRTqiOJ4ivvymm_Ej
+    *   https://www.youtube.com/watch?v=HPobijkTJAI
+
+-------------------------------- LOGIN (Tymon/jwt-auth) --------------------------------
+
+**  PASO 1
+    Instalar tymon/jwt-auth "^1.0.0" -> ~ composer require tymon/jwt-auth:dev-develop --prefer-source ~
+    -   JWT = Json Web Token. Nos permite crear un método de autentificación de login usando servicios API, consiguiendo de esta manera que nuestra conexión
+        entre el front y el back sea segura.
+
+**  PASO 2
+    Añadir en /conf/app.php, en "Providers", la siguiente línea de código:
+        ~ Tymon\JWTAuth\Providers\LaravelServiceProvider::class ~ 
+    
+    En este mismo fichero, en "fecades", añadir las siguiente líneas:
+        ~ 'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class, ~
+        ~ 'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class, ~
+
+**  PASO 3
+    Publicamos el archivo de configuración:
+        ~ php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider" ~
+
+**  PASO 4
+    Comprobamos que la instalación se ha realizado correctamente generando la token de JWT:
+        ~ php artisan jwt:secret ~ 
+    Esta token debería aparecer al final del fichero de configuración .env
+
+
 -------------------------------- MIGRACIONES --------------------------------
 
 **  Crear una migración junto a un modelo:
-
     ~ php artisan make:model nombreModelo -m ~
     ~ php artisan make:model nombreModelo --migration ~
 
     Casos de error:
     -   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'CreateNombreModeloTable' not found.
-
         SOLUCIÓN: probar a ejecutar los siguientes comandos:
             *   ~ php artisan clear-compiled ~
             *   ~ php artisan dump-autoload ~
@@ -17,24 +45,20 @@
 
 
 **  Eliminar todas las tablas y ejecutar de nuevo todas las migraciones:
-
     ~ php artisan migrate:fresh ~
 
     Casos de error:
     -   BadMethodCallException  : Method Illuminate\Database\Schema\Blueprint::number does not exist.
-
         SOLUCIÓN: El problema está en la especificación del tipo de la columna de la tabla. En este caso 'number' no existe.
 
     -   ErrorException  : Array to string conversion.
         Está mal creado el array de tipo enum.
-
         SOLUCIÓN:
             MAL -> $table->enum('Prioridad', ['Critica', 'Importante', 'Trivial'])->nullable()->default(['Trivial']);
             BIEN -> $table->enum('Prioridad', ['Critica', 'Importante', 'Trivial'])->nullable()->default('Trivial');
         
     -   Illuminate\Database\QueryException  : SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; 
         check the manual that corresponds to your MariaDB server version for the right syntax to use near 'first,
-
         SOLUCIÓN: eliminar first();
 
 
@@ -42,12 +66,10 @@
 -------------------------------- SEEDERS -------------------------------------------
 
 **  Crear un seeder asociado a una tabla:
-
     ~ php artisan make:seeder NameTableSeeder ~
 
 
 **  Ejecutar DatabaseSeeder para ejecutar todas los seeders creados:
-
     ~ php artisan db:seed ~
 
 
@@ -61,3 +83,13 @@
 
 
 -------------------------------- CONTROLLERS --------------------------------
+
+
+-------------------------------- TESTING --------------------------------
+
+**  Para realizar el testing, usar el siguiente commando:
+    ~ vendor/bin/phpunit ~
+
+**  Crear tests:
+    ~ php artisan make:test PruebaTest ~
+

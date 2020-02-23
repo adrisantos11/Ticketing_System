@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('Apellido1')->nullable();
             $table->string('Apellido2')->nullable();
             $table->string('Expediente')->nullable();
-            $table->string('Constraseña')->nullable();
+            $table->string('Contraseña')->nullable();
             $table->string('Email')->nullable();
             $table->string('Telefono')->nullable();
             $table->enum('Rol', ['Administrador', 'Supervisor', 'Tecnico'])->default('Tecnico');
