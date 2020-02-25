@@ -66,10 +66,16 @@ class UserController extends Controller
         // Se devuelve la respuesta HTTP en formato JSON con el 
         return response()->json(compact('user', 'token'), 201);
     }
-
+    
+    /**
+     * Función que devuelve el token asociado al usuario que está inicindo sesión.
+     * Se comprueba mediante las credenciales de 'email' y 'password'
+     * 
+     * @param request
+     */
     public function login(Request $request) 
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('exp', 'password');
 
         try {
             if (! $token = JWTAuth::attempt($credentials)) 
