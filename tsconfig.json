@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-      "jsx": "react",
+    "jsx": "react",
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */
     "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */

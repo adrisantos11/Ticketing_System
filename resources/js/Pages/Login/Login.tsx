@@ -35,7 +35,10 @@ export const Login: React.FunctionComponent = () => {
         error_control_text: 'La contraseña no coincide',
         extraClass: ''
     });
-
+    
+    const handleClickButton = () => {
+        console.log("Se ha pulsado el botón");
+    }
 
     return(
         <>
@@ -58,13 +61,13 @@ export const Login: React.FunctionComponent = () => {
                         <Input inputInfo={inputUser}></Input>
                         <Input inputInfo={inputPassword}></Input>
                     </div>
-                    <Button buttonInfo={buttonInfo}></Button>
+                    <Button buttonInfo={buttonInfo} handleClick={handleClickButton}></Button>
                 </div>
             </div>
         </>
     );
 }
 
-if (document.getElementById('login')) {
-    ReactDOM.render(<Login />, document.getElementById('login'));
+if (document.getElementById('root')) {
+    ReactDOM.render(<Login />, document.getElementById('root'));
 }
