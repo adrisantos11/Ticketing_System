@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { ButtonModel } from '../../model'
+import { ButtonModel } from '../../Model/model'
 
 import './Button.scss'
 

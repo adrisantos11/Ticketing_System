@@ -4,7 +4,7 @@ import axios from 'axios';
 import * as ReactRouterDOM from "react-router-dom";
 import history from '../../Utilities/createHistory';
 
-import { ButtonModel, InputModel } from '../../model'
+import { ButtonModel, InputModel } from '../../Model/model'
 import { Button } from '../../Components/Button/Button';
 import { Input } from '../../Components/Input/Input';
 import { login } from '../../Utilities/Authentication'
@@ -44,7 +44,7 @@ export const Login: React.FunctionComponent = () => {
     
     const [userData, setUserData] = React.useState({
         exp: 21619919,
-        password: 1234567
+        password: 123456
     });
 
     const handleClickButton = () => {
@@ -55,7 +55,8 @@ export const Login: React.FunctionComponent = () => {
         login(user).then(result => {
             if (result) {
                 console.log(result);
-                history.push('/home');
+                history.push('/mainPage');
+                location.reload();
             }   
         });
     }

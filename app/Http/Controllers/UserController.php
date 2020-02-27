@@ -90,7 +90,7 @@ class UserController extends Controller
 
 
     public function getAuthenticatedUser()
-{
+    {
         try {
             if (! $user = JWTAuth::parseToken()->authenticate()) {
                 return response()->json(['user_not_found'], 404);

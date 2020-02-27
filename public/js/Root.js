@@ -1986,6 +1986,25 @@ exports.push([module.i, ".login {\n  display: flex;\n  flex-direction: row;\n  j
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/MainPage/MainPage.scss":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/MainPage/MainPage.scss ***!
+  \**************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/lib/css-base.js":
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
@@ -32648,7 +32667,7 @@ exports.Login = function () {
     })[0];
     var _a = React.useState({
         exp: 21619919,
-        password: 1234567
+        password: 123456
     }), userData = _a[0], setUserData = _a[1];
     var handleClickButton = function () {
         var user = {
@@ -32658,7 +32677,8 @@ exports.Login = function () {
         Authentication_1.login(user).then(function (result) {
             if (result) {
                 console.log(result);
-                createHistory_1.default.push('/home');
+                createHistory_1.default.push('/mainPage');
+                location.reload();
             }
         });
     };
@@ -32687,6 +32707,97 @@ if (document.getElementById('root')) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/MainPage/MainPage.scss":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/MainPage/MainPage.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./MainPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/MainPage/MainPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/MainPage/MainPage.tsx":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/MainPage/MainPage.tsx ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./MainPage.scss */ "./resources/js/Pages/MainPage/MainPage.scss");
+var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
+exports.MainPage = function () {
+    var buttonInfo = React.useState({
+        id: 1,
+        texto: 'Identifícate',
+        colour: 'red',
+        type: 'outline-secondary',
+        icon: 'fas fa-user',
+        extraClass: ''
+    })[0];
+    var _a = React.useState({
+        exp: '',
+        password: ''
+    }), userLogged = _a[0], setUserLogged = _a[1];
+    var handleClickButton = function () {
+        console.log('Hola');
+    };
+    var componentDidMount = function () {
+        Authentication_1.getProfile().then(function (res) {
+            setUserLogged(__assign(__assign({}, userLogged), { exp: res.user.exp, password: res.user.password }));
+        });
+    };
+    return (React.createElement(React.Fragment, null,
+        React.createElement("p", null,
+            "N\u00BA expediente: ",
+            userLogged.exp),
+        React.createElement("p", null,
+            "Constras\u00F1a hasheada: ",
+            userLogged.password)));
+};
+if (document.getElementById('main')) {
+    ReactDOM.render(React.createElement(exports.MainPage, null), document.getElementById('main'));
+}
+
+
+/***/ }),
+
 /***/ "./resources/js/Root.tsx":
 /*!*******************************!*\
   !*** ./resources/js/Root.tsx ***!
@@ -32709,6 +32820,7 @@ if (document.getElementById('root')) {
 // import * as React from 'react'
 // import { Login } from './Pages/Login/Login'
 __webpack_require__(/*! ./Pages/Login/Login */ "./resources/js/Pages/Login/Login.tsx");
+__webpack_require__(/*! ./Pages/MainPage/MainPage */ "./resources/js/Pages/MainPage/MainPage.tsx");
 // if (document.getElementById('root')) {
 //     console.log('Login');
 //     ReactDOM.render(<Login />, document.getElementById('root'));
@@ -32774,7 +32886,6 @@ exports.login = function (user) {
         if (err.response) {
             console.log(err.response.data.error);
             console.log(err.response.status);
-            // console.log(err.response.headers);
         }
         else if (err.request) {
             console.log(err.request);

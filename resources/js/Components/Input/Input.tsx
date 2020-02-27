@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { InputModel } from '../../model'
+import { InputModel } from '../../Model/model'
 
 import './Input.scss'
 

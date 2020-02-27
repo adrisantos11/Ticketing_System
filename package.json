@@ -35,5 +35,6 @@
         "react-router-dom": "^5.1.2",
         "ts-loader": "^6.2.1",
         "typescript": "^3.8.2"
-    }
+    },
+    "proxy": "http://localhost:8000"
 }
