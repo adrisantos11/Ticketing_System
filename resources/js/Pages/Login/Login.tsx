@@ -1,10 +1,16 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
+import axios from 'axios';
+import * as ReactRouterDOM from "react-router-dom";
+import history from '../../Utilities/createHistory';
+
 import { ButtonModel, InputModel } from '../../model'
 import { Button } from '../../Components/Button/Button';
 import { Input } from '../../Components/Input/Input';
-
+import { login } from '../../Utilities/Authentication'
 import './Login.scss'
+
+
 
 export const Login: React.FunctionComponent = () => {
     const [buttonInfo] = React.useState<ButtonModel>({
@@ -36,8 +42,22 @@ export const Login: React.FunctionComponent = () => {
         extraClass: ''
     });
     
+    const [userData, setUserData] = React.useState({
+        exp: 21619919,
+        password: 1234567
+    });
+
     const handleClickButton = () => {
-        console.log("Se ha pulsado el botón");
+        const user = {
+            exp: userData.exp,
+            password: userData.password
+        }
+        login(user).then(result => {
+            if (result) {
+                console.log(result);
+                history.push('/home');
+            }   
+        });
     }
 
     return(

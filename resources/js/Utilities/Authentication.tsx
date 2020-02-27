@@ -1,4 +1,7 @@
+import * as ReactDOM from 'react-dom';
+import * as React from 'react'
 import axios from 'axios';
+import * as ReactRouterDOM from "react-router-dom";
 
 /**
  * Función que se encarga de realizar el registro del nuevo usuario.
@@ -28,6 +31,7 @@ export const login = (user: any) => {
      *      * - Exp: expediente del usuario correspondiente.
      *      * - password: constraseña del usuario que solicita la autorización de login.
      */
+
     return axios
     .post('api/login',{
         exp: user.exp,
@@ -42,11 +46,18 @@ export const login = (user: any) => {
          */
 
         localStorage.setItem('usertoken', res.data.token);
-        console.log(res.data.token);
-        console.log(res);
+        return res;
     })
     .catch(err => {
-        console.log(err);
+        if(err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+            // console.log(err.response.headers);
+        } else if (err.request) {
+            console.log(err.request);
+            
+        } else
+            console.log(err);
     })
 }
 

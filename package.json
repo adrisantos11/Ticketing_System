@@ -19,17 +19,21 @@
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.13",
         "popper.js": "^1.12",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.15.2",
+        "sass": "^1.26.1",
         "sass-loader": "^8.0.0",
-        "vue-template-compiler": "^2.6.11"
+        "vue-template-compiler": "^2.6.11",
+        "webpack-bundle-analyzer": "^3.6.0"
     },
     "dependencies": {
         "@types/react-dom": "^16.9.5",
+        "@types/react-router-dom": "^5.1.3",
         "laravel-mix-react-typescript-extension": "^1.0.0",
+        "react-router": "^5.1.2",
+        "react-router-dom": "^5.1.2",
         "ts-loader": "^6.2.1",
-        "typescript": "^3.7.5"
+        "typescript": "^3.8.2"
     }
 }

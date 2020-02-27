@@ -6,7 +6,7 @@ import './Button.scss'
 
 interface Props {
     buttonInfo: ButtonModel
-    handleClick: () => void;
+    handleClick: (e: React.MouseEvent) => void;
 }
 export const Button: React.FunctionComponent<Props> = (props: Props) => {
     return(
