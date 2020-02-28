@@ -32948,8 +32948,8 @@ exports.default = history_1.createBrowserHistory();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\Root.tsx */"./resources/js/Root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\js\Root.tsx */"./resources/js/Root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

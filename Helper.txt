@@ -112,6 +112,11 @@ mix.js("resources/js/Root.tsx", "public/js")
 
      ~ php artisan migrate:refresh --seed ~
 
+    Casos de error:
+    -   Illuminate\Contracts\Container\BindingResolutionException  : Target class [UsuariosTableSeeder] does not exist.
+        SOLUCIÓN:
+            ~ composer dump-autoload ~
+
 
 
 -------------------------------- CONTROLLERS --------------------------------
