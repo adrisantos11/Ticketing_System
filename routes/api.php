@@ -20,3 +20,17 @@ Route::get('home', 'UserController@getAuthenticatedUser');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/*Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', 'UserController@login');
+    Route::post('register', 'UserController@register');
+    Route::post('home', 'UserController@getAuthenticatedUser');
+    // Route::post('me', 'AuthController@me');
+
+});*/

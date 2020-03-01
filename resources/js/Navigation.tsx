@@ -1,15 +1,22 @@
 import * as React from 'react';
-import { HashRouter, Switch, Route, Router } from 'react-router-dom'
-import { Login } from './Pages/Login/Login'
-import { MainPage } from './Pages/MainPage/MainPage'
+import { BrowserRouter, Switch, Route, Router,  HashRouter } from 'react-router-dom'
+import Login  from '../js/Pages/Login/Login'
+import MainPage from '../js/Pages/MainPage/MainPage'
+import * as ReactDOM from 'react-dom';
 
 export const Navigation: React.FunctionComponent = () => {
     return(
         <HashRouter>
             <Switch>
-                <Route exact={true} path='/' component={ Login }></Route>
-                <Route path='/mainPage' component={ MainPage }></Route>
+                <Route exact={true} path='/'><Login /></Route>
+                <Route path='/home'><MainPage /></Route>
             </Switch>
         </HashRouter>
     );
+}
+
+if (document.getElementById('root')) {
+    ReactDOM.render(
+    <Navigation />,
+    document.getElementById('root'));
 }

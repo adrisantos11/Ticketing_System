@@ -62,11 +62,10 @@ export const login = (user: any) => {
 
 export const getProfile = () => {
     return axios
-    .post('api/profile', {
+    .get('api/home', {
         headers: { Authorization : `Bearer ${localStorage.usertoken}`}
     })
     .then(res => {
-        console.log(res);
         return res.data;
     })
     .catch(err => {

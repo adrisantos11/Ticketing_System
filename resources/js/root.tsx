@@ -17,8 +17,9 @@
 
 // import { Login } from './Pages/Login/Login'
 
-require('./Pages/Login/Login');
-require('./Pages/MainPage/MainPage');
+// require('./Pages/Login/Login');
+// require('./Pages/MainPage/MainPage');
+require('./Navigation');
 // if (document.getElementById('root')) {
 //     console.log('Login');
 //     ReactDOM.render(<Login />, document.getElementById('root'));

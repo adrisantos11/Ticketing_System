@@ -1,16 +1,12 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
-import axios from 'axios';
-import * as ReactRouterDOM from "react-router-dom";
-import history from '../../Utilities/createHistory';
 
 import { ButtonModel, InputModel } from '../../Model/model'
-import { Button } from '../../Components/Button/Button';
 import './MainPage.scss'
 
 import { getProfile } from '../../Utilities/Authentication'
 
-export const MainPage: React.FunctionComponent = () => {
+const MainPage = () => {
     const [buttonInfo] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Identifícate',
@@ -21,30 +17,42 @@ export const MainPage: React.FunctionComponent = () => {
     });
 
     const [userLogged, setUserLogged] = React.useState({
+        name: '',
+        surname1: '',
+        surname2: '',
         exp: '',
-        password: ''
+        email: '',
+        phone: '',
+        role: ''
     });
 
-    const handleClickButton = () => {
-        console.log('Hola');
-    }
-     const componentDidMount = () => {
+    React.useEffect(() => {
         getProfile().then(res => {
-            setUserLogged({
-                ...userLogged,
-                exp: res.user.exp,
-                password: res.user.password
-            })
+            try {
+                console.log(res);
+                setUserLogged({
+                    ...userLogged,
+                    name: res.user.name,
+                    surname1: res.user.surname1,
+                    surname2: res.user.surname2,
+                    exp: res.user.exp,
+                    email: res.user.email,
+                    phone: res.user.phone,
+                    role: res.user.role
+                });
+            } catch (error) {
+                console.log(error);
+            }
         })
-     }
+    }, []);
+
     return(
         <>
-            <p>Nº expediente: {userLogged.exp}</p>
-            <p>Constrasña hasheada: {userLogged.password}</p>
+            <p>Nº expediente: <b>{userLogged.exp}</b></p>
+            <br/>
+            <p>Correo: <b>{userLogged.email}</b></p>
         </>
     );
 }
 
-if (document.getElementById('main')) {
-    ReactDOM.render(<MainPage />, document.getElementById('main'));
-}
+export default MainPage;

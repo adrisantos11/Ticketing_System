@@ -1,18 +1,17 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
-import axios from 'axios';
-import * as ReactRouterDOM from "react-router-dom";
-import history from '../../Utilities/createHistory';
+//import history from '../../Utilities/createHistory';
 
 import { ButtonModel, InputModel } from '../../Model/model'
 import { Button } from '../../Components/Button/Button';
 import { Input } from '../../Components/Input/Input';
 import { login } from '../../Utilities/Authentication'
 import './Login.scss'
+import { HashRouter, useHistory } from "react-router-dom";
 
 
-
-export const Login: React.FunctionComponent = () => {
+const Login = () => {
+    const history = useHistory();
     const [buttonInfo] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Identifícate',
@@ -43,7 +42,7 @@ export const Login: React.FunctionComponent = () => {
     });
     
     const [userData, setUserData] = React.useState({
-        exp: 21619919,
+        exp: 21678976,
         password: 123456
     });
 
@@ -52,11 +51,12 @@ export const Login: React.FunctionComponent = () => {
             exp: userData.exp,
             password: userData.password
         }
+        console.log('El expendiente del usuario es: ' + user.exp);
         login(user).then(result => {
             if (result) {
                 console.log(result);
-                history.push('/mainPage');
-                location.reload();
+                console.log(history);
+                history.push('/home');
             }   
         });
     }
@@ -89,6 +89,4 @@ export const Login: React.FunctionComponent = () => {
     );
 }
 
-if (document.getElementById('root')) {
-    ReactDOM.render(<Login />, document.getElementById('root'));
-}
+export default Login;
