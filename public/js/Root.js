@@ -2003,7 +2003,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button_css {\n  border-radius: 2.5rem;\n  padding: 0.5rem 1rem;\n}\n.button_css .span_container, .button_css .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1.25rem;\n}\n.button_css .span_container--show {\n  display: inline;\n}\n.button_css .button_text {\n  font-size: 1.25rem;\n}\n\n.button_css:hover {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".button_css, .button_css--red, .button_css--white {\n  border-radius: 2.5rem;\n  padding: 0.5rem 1rem;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #27496d;\n  color: #27496d;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 0.938rem;\n}\n.button_css .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 0.938rem;\n}\n\n.button_css:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -2022,7 +2022,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label {\n  font-size: 1.5rem;\n}\n.form-group .input_class_secondary:focus {\n  background-color: rgba(39, 73, 109, 0.1);\n  border-color: #27496d;\n}\n.form-group .input_class_secondary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(0, 168, 204, 0.1);\n  border-color: #00a8cc;\n}\n.form-group .input_class_primary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
+exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label {\n  font-size: 1.1256rem;\n}\n.form-group .input_class_secondary:focus {\n  background-color: rgba(39, 73, 109, 0.1);\n  border-color: #27496d;\n}\n.form-group .input_class_secondary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(0, 168, 204, 0.1);\n  border-color: #00a8cc;\n}\n.form-group .input_class_primary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Navbar/Navbar.scss":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Navbar/Navbar.scss ***!
+  \***************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  background-color: rgba(39, 73, 109, 0.9);\n  height: 100%;\n  padding: 0.5rem;\n  width: 17.5rem;\n  align-items: center;\n  align-content: space-between;\n  justify-content: space-between;\n}\n.navbar-container .logo-container {\n  background-color: green;\n  height: 50px;\n  width: 50px;\n}", ""]);
 
 // exports
 
@@ -2041,7 +2060,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  align-items: center;\n}\n.login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0rem 1.5rem;\n}\n.login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 2.5rem;\n  text-align: center;\n}\n.login .centered_container--description {\n  width: 90%;\n}\n.login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 1.25rem;\n}\n.login .centered_container--login {\n  width: 70%;\n}\n.login .description_container {\n  width: 100%;\n  height: 100%;\n}", ""]);
+exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  margin: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 1.876rem;\n  text-align: center;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 0.938rem;\n}\n.login-main .login .centered_container--login {\n  width: 70%;\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -2060,7 +2079,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100vh;\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -35467,19 +35486,28 @@ if(false) {}
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Button.scss */ "./resources/js/Components/Button/Button.scss");
-exports.Button = function (props) {
+var Button = function (props) {
+    var colorProps = props.buttonInfo.color;
     var iconShow = '';
     if (props.buttonInfo.icon != '')
         iconShow = '--show';
     var handleClickButton = function (e) {
         props.handleClick(e, props.buttonInfo.id);
     };
+    var color = '';
+    if (colorProps == 'white') {
+        color = '--white';
+    }
+    else if (colorProps == 'red') {
+        color = '--red';
+    }
     return (React.createElement("div", { className: "buttonContainer" },
-        React.createElement("button", { id: props.buttonInfo.id.toString(), type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css", onClick: handleClickButton },
+        React.createElement("button", { id: props.buttonInfo.id.toString(), type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css" + color, onClick: handleClickButton },
             React.createElement("span", { className: "span_container" + iconShow },
                 React.createElement("i", { className: props.buttonInfo.icon })),
             React.createElement("a", { className: "button_text" }, props.buttonInfo.texto))));
 };
+exports.default = Button;
 
 
 /***/ }),
@@ -35541,6 +35569,78 @@ exports.Input = function (props) {
             React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class_" + props.inputInfo.color + error + " text-" + props.inputInfo.color + error, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange }),
             React.createElement("small", { className: "form-text text-danger aviso" + mostrar }, props.inputInfo.error_control_text))));
 };
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Navbar/Navbar.scss":
+/*!****************************************************!*\
+  !*** ./resources/js/Components/Navbar/Navbar.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Navbar.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Navbar/Navbar.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Navbar/Navbar.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Components/Navbar/Navbar.tsx ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+// import { InputModel } from '../../Model/model'
+__webpack_require__(/*! ./Navbar.scss */ "./resources/js/Components/Navbar/Navbar.scss");
+var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+var Navbar = function (props) {
+    var history = react_router_dom_1.useHistory();
+    var _a = React.useState({
+        id: 1,
+        texto: 'Cerrar Sesión',
+        color: 'red',
+        type: 'outline-secondary',
+        icon: '',
+        extraClass: ''
+    }), logoutButton = _a[0], setLogoutButton = _a[1];
+    var handleClickButton = function (e) {
+        Authentication_1.logout().then(function (result) {
+            if (result)
+                history.push('/');
+        });
+    };
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: 'navbar-container' },
+            React.createElement("div", { className: "logo-container" }),
+            React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickButton }))));
+};
+exports.default = Navbar;
 
 
 /***/ }),
@@ -35637,7 +35737,7 @@ var Login = function () {
     var buttonInfo = React.useState({
         id: 1,
         texto: 'Identifícate',
-        color: 'red',
+        color: '',
         type: 'outline-secondary',
         icon: 'fas fa-user',
         extraClass: ''
@@ -35697,22 +35797,23 @@ var Login = function () {
         }
     };
     return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: "login" },
-            React.createElement("div", { className: "centered_container centered_container--description" },
-                React.createElement("p", { className: "login_title text-secondary" }, "TICKETCLASS :D"),
-                React.createElement("div", { className: "description_text" },
-                    React.createElement("p", null,
-                        "\u00A1Bienvenido a ",
-                        React.createElement("b", null, "\"Ticketclass :D\""),
-                        "!"),
-                    React.createElement("p", null, " Explora y usa esta herramineta para la gesti\u00F3n de las incidencias dentro de tu entorno de trabajo."),
-                    React.createElement("p", null, " Consigue una mayor rapidez de respuesta."))),
-            React.createElement("div", { className: "centered_container centered_container--login" },
-                React.createElement("p", { className: "login_title text-secondary" }, "Iniciar sesion"),
-                React.createElement("div", { className: "inputs_container" },
-                    React.createElement(Input_1.Input, { inputInfo: inputUser, handleChangeInput: handleChangeInput }),
-                    React.createElement(Input_1.Input, { inputInfo: inputPassword, handleChangeInput: handleChangeInput })),
-                React.createElement(Button_1.Button, { buttonInfo: buttonInfo, handleClick: handleClickButton })))));
+        React.createElement("div", { className: "login-main" },
+            React.createElement("div", { className: "login" },
+                React.createElement("div", { className: "centered_container centered_container--description" },
+                    React.createElement("p", { className: "login_title text-secondary" }, "TICKETCLASS :D"),
+                    React.createElement("div", { className: "description_text" },
+                        React.createElement("p", null,
+                            "\u00A1Bienvenido a ",
+                            React.createElement("b", null, "\"Ticketclass :D\""),
+                            "!"),
+                        React.createElement("p", null, " Explora y usa esta herramineta para la gesti\u00F3n de las incidencias dentro de tu entorno de trabajo."),
+                        React.createElement("p", null, " Consigue una mayor rapidez de respuesta."))),
+                React.createElement("div", { className: "centered_container centered_container--login" },
+                    React.createElement("p", { className: "login_title text-secondary" }, "Iniciar sesion"),
+                    React.createElement("div", { className: "inputs_container" },
+                        React.createElement(Input_1.Input, { inputInfo: inputUser, handleChangeInput: handleChangeInput }),
+                        React.createElement(Input_1.Input, { inputInfo: inputPassword, handleChangeInput: handleChangeInput })),
+                    React.createElement(Button_1.default, { buttonInfo: buttonInfo, handleClick: handleClickButton }))))));
 };
 exports.default = Login;
 
@@ -35771,21 +35872,22 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var Navbar_1 = __webpack_require__(/*! ../../Components/Navbar/Navbar */ "./resources/js/Components/Navbar/Navbar.tsx");
 __webpack_require__(/*! ./MainPage.scss */ "./resources/js/Pages/MainPage/MainPage.scss");
 var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var MainPage = function () {
     var history = react_router_dom_1.useHistory();
-    var _a = React.useState({
+    var _a = React.useState(false), isLogged = _a[0], setIsLogged = _a[1];
+    var _b = React.useState({
         id: 1,
         texto: 'Cerrar Sesión',
         color: 'red',
         type: 'outline-secondary',
         icon: '',
         extraClass: ''
-    }), logoutButton = _a[0], setLogoutButton = _a[1];
-    var _b = React.useState({
+    }), logoutButton = _b[0], setLogoutButton = _b[1];
+    var _c = React.useState({
         name: '',
         surname1: '',
         surname2: '',
@@ -35793,37 +35895,38 @@ var MainPage = function () {
         email: '',
         phone: '',
         role: ''
-    }), userLogged = _b[0], setUserLogged = _b[1];
+    }), userLogged = _c[0], setUserLogged = _c[1];
     React.useEffect(function () {
         Authentication_1.getProfile().then(function (res) {
             try {
-                console.log(res);
-                setUserLogged(__assign(__assign({}, userLogged), { name: res.user.name, surname1: res.user.surname1, surname2: res.user.surname2, exp: res.user.exp, email: res.user.email, phone: res.user.phone, role: res.user.role }));
+                if (res) {
+                    setIsLogged(true);
+                    setUserLogged(__assign(__assign({}, userLogged), { name: res.user.name, surname1: res.user.surname1, surname2: res.user.surname2, exp: res.user.exp, email: res.user.email, phone: res.user.phone, role: res.user.role }));
+                }
+                else
+                    setIsLogged(false);
             }
             catch (error) {
                 console.log(error);
             }
         });
     }, []);
-    var handleClickButton = function (e) {
-        console.log(e);
-        Authentication_1.logout().then(function (result) {
-            if (result) {
-                console.log(result);
-                console.log(history);
-                history.push('/');
-            }
-        });
-    };
-    return (React.createElement(React.Fragment, null,
-        React.createElement("p", null,
-            "N\u00BA expediente: ",
-            React.createElement("b", null, userLogged.exp)),
-        React.createElement("br", null),
-        React.createElement("p", null,
-            "Correo: ",
-            React.createElement("b", null, userLogged.email)),
-        React.createElement(Button_1.Button, { buttonInfo: logoutButton, handleClick: handleClickButton })));
+    if (isLogged) {
+        return (React.createElement(React.Fragment, null,
+            React.createElement("div", { className: "mainpage-container" },
+                React.createElement(Navbar_1.default, null),
+                React.createElement("p", null,
+                    "N\u00BA expediente: ",
+                    React.createElement("b", null, userLogged.exp)),
+                React.createElement("br", null),
+                React.createElement("p", null,
+                    "Correo: ",
+                    React.createElement("b", null, userLogged.email)))));
+    }
+    else {
+        return (React.createElement(React.Fragment, null,
+            React.createElement("h1", null, "Tienes que iniciar sesi\u00F3n para poder acceder a esta p\u00E1gina.")));
+    }
 };
 exports.default = MainPage;
 

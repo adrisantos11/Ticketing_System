@@ -3,7 +3,7 @@ import * as React from 'react'
 //import history from '../../Utilities/createHistory';
 
 import { ButtonModel, InputModel } from '../../Model/model'
-import { Button } from '../../Components/Button/Button';
+import Button from '../../Components/Button/Button';
 import { Input } from '../../Components/Input/Input';
 import { login } from '../../Utilities/Authentication'
 import './Login.scss'
@@ -15,7 +15,7 @@ const Login = () => {
     const [buttonInfo] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Identifícate',
-        color: 'red',
+        color: '',
         type: 'outline-secondary',
         icon: 'fas fa-user',
         extraClass: ''
@@ -100,6 +100,7 @@ const Login = () => {
     }
     return(
         <>
+        <div className="login-main">
             <div className="login">
                 <div className="centered_container centered_container--description">
                     <p className="login_title text-secondary">
@@ -122,6 +123,7 @@ const Login = () => {
                     <Button buttonInfo={buttonInfo} handleClick={handleClickButton}></Button>
                 </div>
             </div>
+        </div>
         </>
     );
 }

@@ -33,7 +33,7 @@
 </head>
 
 <body>
-    <div id="root" class="divPrincipal flex-center"></div>
+    <div id="root"></div>
 </body>
 <script type="text/javascript" src="js/root.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

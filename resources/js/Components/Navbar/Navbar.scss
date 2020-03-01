@@ -1,0 +1,19 @@
+@import '../../../sass/app.scss';
+
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba($color: $secondary_color, $alpha: 0.9);
+    height: 100%;
+    padding: $default_padding;
+    width: $default_padding*35;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-between;
+
+    .logo-container {
+        background-color: green;
+        height: 50px;
+        width: 50px;
+    }
+}

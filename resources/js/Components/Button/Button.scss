@@ -3,6 +3,29 @@
 .button_css {
     border-radius: 2.5rem;
     padding: $default_padding $default_padding*2;
+    &--white {
+        @extend .button_css;
+        border-color: $white_color;
+        color: $white_color;
+    }
+    &--white:hover {
+        border-color: $secondary_color;
+        color: $secondary_color;
+        background-color: $white_color;
+    }
+    &--red {
+        @extend .button_css;
+        background-color: $red_color;
+        color: $white_color;
+        border-color: $red_color;
+        
+    }
+    &--red:hover {
+        border-color: $red_color;
+        color: $white_color;
+        background-color: #BE2231;
+    }
+
     .span_container {
         display: none;
         padding-right: $default_padding;
