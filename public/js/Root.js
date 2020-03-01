@@ -2003,7 +2003,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button_css {\n  border-radius: 2.5rem;\n  padding: 0.5rem 1rem;\n}\n.button_css .span_container {\n  padding-right: 0.5rem;\n  font-size: 1.25rem;\n}\n.button_css .button_text {\n  font-size: 1.25rem;\n}\n\n.button_css:hover {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".button_css {\n  border-radius: 2.5rem;\n  padding: 0.5rem 1rem;\n}\n.button_css .span_container, .button_css .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1.25rem;\n}\n.button_css .span_container--show {\n  display: inline;\n}\n.button_css .button_text {\n  font-size: 1.25rem;\n}\n\n.button_css:hover {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -2022,7 +2022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label {\n  font-size: 1.5rem;\n}\n.form-group .input_class_secondary:focus {\n  background-color: rgba(39, 73, 109, 0.1);\n  border-color: #27496d;\n}\n.form-group .input_class_secondary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(0, 168, 204, 0.1);\n  border-color: #00a8cc;\n}\n.form-group .input_class_primary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}", ""]);
+exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label {\n  font-size: 1.5rem;\n}\n.form-group .input_class_secondary:focus {\n  background-color: rgba(39, 73, 109, 0.1);\n  border-color: #27496d;\n}\n.form-group .input_class_secondary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(0, 168, 204, 0.1);\n  border-color: #00a8cc;\n}\n.form-group .input_class_primary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -35468,9 +35468,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Button.scss */ "./resources/js/Components/Button/Button.scss");
 exports.Button = function (props) {
+    var iconShow = '';
+    if (props.buttonInfo.icon != '') {
+        console.log(props.buttonInfo.icon);
+        iconShow = '--show';
+    }
+    var handleClickButton = function (e) {
+        props.handleClick(e, props.buttonInfo.id);
+    };
     return (React.createElement("div", { className: "buttonContainer" },
-        React.createElement("button", { type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css", onClick: props.handleClick },
-            React.createElement("span", { className: 'span_container' },
+        React.createElement("button", { id: props.buttonInfo.id.toString(), type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css", onClick: handleClickButton },
+            React.createElement("span", { className: "span_container" + iconShow },
                 React.createElement("i", { className: props.buttonInfo.icon })),
             React.createElement("a", { className: "button_text" }, props.buttonInfo.texto))));
 };
@@ -35521,11 +35529,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Input.scss */ "./resources/js/Components/Input/Input.scss");
 exports.Input = function (props) {
+    var error, mostrar;
+    if (props.inputInfo.extraClass.includes('error')) {
+        error = '--error';
+        mostrar = '--mostrar';
+    }
+    var handleChange = function (event) {
+        props.handleChangeInput(event.target.value, event.target.id);
+    };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'form-group' },
-            React.createElement("label", { htmlFor: "", className: "text_label text-" + props.inputInfo.colour }, props.inputInfo.label),
-            React.createElement("input", { type: props.inputInfo.type, className: "form-control input_class_" + props.inputInfo.colour + " text-" + props.inputInfo.colour, "aria-describedby": "emailHelp", placeholder: "Enter email" }),
-            React.createElement("small", { className: "form-text text-danger" }, props.inputInfo.error_control_text))));
+            React.createElement("label", { htmlFor: "", className: "text_label text-" + props.inputInfo.color }, props.inputInfo.label),
+            React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class_" + props.inputInfo.color + error + " text-" + props.inputInfo.color + error, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange }),
+            React.createElement("small", { className: "form-text text-danger aviso" + mostrar }, props.inputInfo.error_control_text))));
 };
 
 
@@ -35600,6 +35616,17 @@ if(false) {}
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
@@ -35612,34 +35639,34 @@ var Login = function () {
     var buttonInfo = React.useState({
         id: 1,
         texto: 'Identifícate',
-        colour: 'red',
+        color: 'red',
         type: 'outline-secondary',
         icon: 'fas fa-user',
         extraClass: ''
     })[0];
-    var inputUser = React.useState({
+    var _a = React.useState({
         id: 1,
-        label: 'Usuario',
-        placeholder: 'usuario',
-        colour: 'secondary',
-        type: 'email',
-        error_control_text: 'No se ha encontrado el usuario introducido.',
+        label: 'Expediente',
+        placeholder: 'Ej: 25342783',
+        color: 'secondary',
+        type: 'number',
+        error_control_text: '',
         extraClass: ''
-    })[0];
-    var inputPassword = React.useState({
-        id: 1,
+    }), inputUser = _a[0], setInputUser = _a[1];
+    var _b = React.useState({
+        id: 2,
         label: 'Contraseña',
         placeholder: 'Contraseña',
-        colour: 'secondary',
+        color: 'secondary',
         type: 'password',
-        error_control_text: 'La contraseña no coincide',
+        error_control_text: 'Los datos introducidos no coinciden',
         extraClass: ''
-    })[0];
-    var _a = React.useState({
-        exp: 21678976,
-        password: 123456
-    }), userData = _a[0], setUserData = _a[1];
-    var handleClickButton = function () {
+    }), inputPassword = _b[0], setInputPassword = _b[1];
+    var _c = React.useState({
+        exp: '',
+        password: ''
+    }), userData = _c[0], setUserData = _c[1];
+    var handleClickButton = function (e, id) {
         var user = {
             exp: userData.exp,
             password: userData.password
@@ -35651,7 +35678,19 @@ var Login = function () {
                 console.log(history);
                 history.push('/home');
             }
+            else {
+                setInputUser(__assign(__assign({}, inputUser), { extraClass: 'error' }));
+                setInputPassword(__assign(__assign({}, inputPassword), { extraClass: 'error' }));
+            }
         });
+    };
+    var handleChangeInput = function (value, id) {
+        if (id == 1) {
+            setUserData(__assign(__assign({}, userData), { exp: value }));
+        }
+        else if (id == 2) {
+            setUserData(__assign(__assign({}, userData), { password: value }));
+        }
     };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: "login" },
@@ -35667,8 +35706,8 @@ var Login = function () {
             React.createElement("div", { className: "centered_container centered_container--login" },
                 React.createElement("p", { className: "login_title text-secondary" }, "Iniciar sesion"),
                 React.createElement("div", { className: "inputs_container" },
-                    React.createElement(Input_1.Input, { inputInfo: inputUser }),
-                    React.createElement(Input_1.Input, { inputInfo: inputPassword })),
+                    React.createElement(Input_1.Input, { inputInfo: inputUser, handleChangeInput: handleChangeInput }),
+                    React.createElement(Input_1.Input, { inputInfo: inputPassword, handleChangeInput: handleChangeInput })),
                 React.createElement(Button_1.Button, { buttonInfo: buttonInfo, handleClick: handleClickButton })))));
 };
 exports.default = Login;
@@ -35728,18 +35767,21 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
 __webpack_require__(/*! ./MainPage.scss */ "./resources/js/Pages/MainPage/MainPage.scss");
 var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var MainPage = function () {
-    var buttonInfo = React.useState({
-        id: 1,
-        texto: 'Identifícate',
-        colour: 'red',
-        type: 'outline-secondary',
-        icon: 'fas fa-user',
-        extraClass: ''
-    })[0];
+    var history = react_router_dom_1.useHistory();
     var _a = React.useState({
+        id: 1,
+        texto: 'Cerrar Sesión',
+        color: 'red',
+        type: 'outline-secondary',
+        icon: '',
+        extraClass: ''
+    }), logoutButton = _a[0], setLogoutButton = _a[1];
+    var _b = React.useState({
         name: '',
         surname1: '',
         surname2: '',
@@ -35747,7 +35789,7 @@ var MainPage = function () {
         email: '',
         phone: '',
         role: ''
-    }), userLogged = _a[0], setUserLogged = _a[1];
+    }), userLogged = _b[0], setUserLogged = _b[1];
     React.useEffect(function () {
         Authentication_1.getProfile().then(function (res) {
             try {
@@ -35759,6 +35801,16 @@ var MainPage = function () {
             }
         });
     }, []);
+    var handleClickButton = function (e) {
+        console.log(e);
+        Authentication_1.logout().then(function (result) {
+            if (result) {
+                console.log(result);
+                console.log(history);
+                history.push('/');
+            }
+        });
+    };
     return (React.createElement(React.Fragment, null,
         React.createElement("p", null,
             "N\u00BA expediente: ",
@@ -35766,7 +35818,8 @@ var MainPage = function () {
         React.createElement("br", null),
         React.createElement("p", null,
             "Correo: ",
-            React.createElement("b", null, userLogged.email))));
+            React.createElement("b", null, userLogged.email)),
+        React.createElement(Button_1.Button, { buttonInfo: logoutButton, handleClick: handleClickButton })));
 };
 exports.default = MainPage;
 
@@ -35848,6 +35901,21 @@ exports.getProfile = function () {
     })
         .catch(function (err) {
         console.log(err);
+    });
+};
+exports.logout = function () {
+    return axios_1.default
+        .post('api/logout', {
+        token: localStorage.usertoken
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res;
+    })
+        .catch(function (err) {
+        if (err)
+            console.log(err);
     });
 };
 

@@ -72,3 +72,19 @@ export const getProfile = () => {
         console.log(err);
     })
 }
+
+export const logout = () => {
+    return axios
+    .post('api/logout',{
+        token: localStorage.usertoken
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => {
+        return res;
+    })
+    .catch(err => {
+        if(err)
+            console.log(err);
+    })
+}

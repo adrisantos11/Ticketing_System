@@ -92,7 +92,7 @@ class UserController extends Controller
     public function getAuthenticatedUser()
     {
         try {
-            if (! $user = JWTAuth::parseToken()->authenticate()) {
+            if (! $user = auth()->user()) {
                 return response()->json(['user_not_found'], 404);
             }
         } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
@@ -103,5 +103,15 @@ class UserController extends Controller
             return response()->json(['token_absent'], $e->getStatusCode());
         }
         return response()->json(compact('user'));
+    }
+
+    public function logout() 
+    {
+        try {
+            auth()->logout();
+            return response()->json(['message' => 'Successfully logged out']);
+        } catch (JWTException $th) {
+            return response()->json(['error' => 'no se puede cerrar sesión']);
+        }
     }
 }

@@ -30,4 +30,11 @@
 
     }
 
+    .aviso {
+        display: none;
+        &--mostrar {
+            display: block;
+        }
+    }
+
 }

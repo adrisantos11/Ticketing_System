@@ -2,17 +2,20 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 
 import { ButtonModel, InputModel } from '../../Model/model'
+import { Button } from '../../Components/Button/Button';
 import './MainPage.scss'
 
-import { getProfile } from '../../Utilities/Authentication'
+import { getProfile, logout } from '../../Utilities/Authentication'
+import { HashRouter, useHistory } from "react-router-dom";
 
 const MainPage = () => {
-    const [buttonInfo] = React.useState<ButtonModel>({
+    const history = useHistory();
+    const [logoutButton, setLogoutButton] = React.useState<ButtonModel>({
         id: 1,
-        texto: 'Identifícate',
-        colour: 'red',
+        texto: 'Cerrar Sesión',
+        color: 'red',
         type: 'outline-secondary',
-        icon: 'fas fa-user',
+        icon: '',
         extraClass: ''
     });
 
@@ -46,11 +49,23 @@ const MainPage = () => {
         })
     }, []);
 
+    const handleClickButton = (e: React.MouseEvent) => {
+        console.log(e);
+        logout().then(result => {
+            if (result) {
+                console.log(result);
+                console.log(history);
+                history.push('/');
+            } 
+        });
+
+    }
     return(
         <>
             <p>Nº expediente: <b>{userLogged.exp}</b></p>
             <br/>
             <p>Correo: <b>{userLogged.email}</b></p>
+            <Button buttonInfo={logoutButton} handleClick={handleClickButton}></Button>
         </>
     );
 }

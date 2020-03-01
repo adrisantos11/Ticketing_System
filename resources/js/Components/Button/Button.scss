@@ -4,8 +4,13 @@
     border-radius: 2.5rem;
     padding: $default_padding $default_padding*2;
     .span_container {
+        display: none;
         padding-right: $default_padding;
         font-size: $font_size;
+        &--show {
+            @extend .span_container;
+            display: inline;
+        }
     }
     .button_text {
         font-size: $font_size;

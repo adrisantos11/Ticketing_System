@@ -15,38 +15,38 @@ const Login = () => {
     const [buttonInfo] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Identifícate',
-        colour: 'red',
+        color: 'red',
         type: 'outline-secondary',
         icon: 'fas fa-user',
         extraClass: ''
     });
 
-    const [inputUser] = React.useState<InputModel>({
+    const [inputUser, setInputUser] = React.useState<InputModel>({
         id: 1,
-        label: 'Usuario',
-        placeholder: 'usuario',
-        colour: 'secondary',
-        type: 'email',
-        error_control_text: 'No se ha encontrado el usuario introducido.',
+        label: 'Expediente',
+        placeholder: 'Ej: 25342783',
+        color: 'secondary',
+        type: 'number',
+        error_control_text: '',
         extraClass: ''
     });
 
-    const [inputPassword] = React.useState<InputModel>({
-        id: 1,
+    const [inputPassword, setInputPassword] = React.useState<InputModel>({
+        id: 2,
         label: 'Contraseña',
         placeholder: 'Contraseña',
-        colour: 'secondary',
+        color: 'secondary',
         type: 'password',
-        error_control_text: 'La contraseña no coincide',
+        error_control_text: 'Los datos introducidos no coinciden',
         extraClass: ''
     });
     
     const [userData, setUserData] = React.useState({
-        exp: 21678976,
-        password: 123456
+        exp: '',
+        password: ''
     });
 
-    const handleClickButton = () => {
+    const handleClickButton = (e: React.MouseEvent, id: number) => {
         const user = {
             exp: userData.exp,
             password: userData.password
@@ -57,10 +57,32 @@ const Login = () => {
                 console.log(result);
                 console.log(history);
                 history.push('/home');
-            }   
+            } else {
+                setInputUser({
+                    ...inputUser,
+                    extraClass: 'error'
+                });
+                setInputPassword({
+                    ...inputPassword,
+                    extraClass: 'error'
+                });
+            }
         });
     }
 
+    const handleChangeInput = (value: string, id: number) => {
+        if (id == 1) {
+            setUserData({
+                ...userData,
+                exp: value
+            })
+        } else if (id == 2) {
+            setUserData({
+                ...userData,
+                password: value
+            })
+        }
+    }
     return(
         <>
             <div className="login">
@@ -79,8 +101,8 @@ const Login = () => {
                         Iniciar sesion
                     </p>
                     <div className="inputs_container">
-                        <Input inputInfo={inputUser}></Input>
-                        <Input inputInfo={inputPassword}></Input>
+                        <Input inputInfo={inputUser} handleChangeInput={handleChangeInput}></Input>
+                        <Input inputInfo={inputPassword} handleChangeInput={handleChangeInput}></Input>
                     </div>
                     <Button buttonInfo={buttonInfo} handleClick={handleClickButton}></Button>
                 </div>
