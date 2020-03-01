@@ -8,7 +8,7 @@ interface Props {
     handleChangeInput: (value: string, id: number) => void;
 }
 export const Input: React.FunctionComponent<Props> = (props: Props) => {
-    let error,mostrar;
+    let error,mostrar = '';
     if(props.inputInfo.extraClass.includes('error')){
         error = '--error';
         mostrar = '--mostrar'

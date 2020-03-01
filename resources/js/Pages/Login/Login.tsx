@@ -37,7 +37,7 @@ const Login = () => {
         placeholder: 'Contraseña',
         color: 'secondary',
         type: 'password',
-        error_control_text: 'Los datos introducidos no coinciden',
+        error_control_text: '',
         extraClass: ''
     });
     
@@ -51,23 +51,38 @@ const Login = () => {
             exp: userData.exp,
             password: userData.password
         }
-        console.log('El expendiente del usuario es: ' + user.exp);
-        login(user).then(result => {
-            if (result) {
-                console.log(result);
-                console.log(history);
-                history.push('/home');
-            } else {
-                setInputUser({
-                    ...inputUser,
-                    extraClass: 'error'
-                });
-                setInputPassword({
-                    ...inputPassword,
-                    extraClass: 'error'
-                });
-            }
-        });
+        if(user.exp == '' || user.password == '') {
+            setInputUser({
+                ...inputUser,
+                extraClass: 'error'
+            });
+            setInputPassword({
+                ...inputPassword,
+                error_control_text: 'Alguno de los campos está vacío',
+                extraClass: 'error'
+            });
+
+        } else {
+            console.log('El expendiente del usuario es: ' + user.exp);
+            login(user).then(result => {
+                if (result) {
+                    console.log(result);
+                    console.log(history);
+                    history.push('/home');
+                } else {
+                    setInputUser({
+                        ...inputUser,
+                        extraClass: 'error'
+                    });
+                    setInputPassword({
+                        ...inputPassword,
+                        error_control_text: 'Los datos introducidos no coinciden',
+                        extraClass: 'error'
+                    });
+                }
+            });
+        }
+
     }
 
     const handleChangeInput = (value: string, id: number) => {

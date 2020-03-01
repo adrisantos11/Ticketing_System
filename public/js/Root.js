@@ -35469,10 +35469,8 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Button.scss */ "./resources/js/Components/Button/Button.scss");
 exports.Button = function (props) {
     var iconShow = '';
-    if (props.buttonInfo.icon != '') {
-        console.log(props.buttonInfo.icon);
+    if (props.buttonInfo.icon != '')
         iconShow = '--show';
-    }
     var handleClickButton = function (e) {
         props.handleClick(e, props.buttonInfo.id);
     };
@@ -35529,7 +35527,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Input.scss */ "./resources/js/Components/Input/Input.scss");
 exports.Input = function (props) {
-    var error, mostrar;
+    var error, mostrar = '';
     if (props.inputInfo.extraClass.includes('error')) {
         error = '--error';
         mostrar = '--mostrar';
@@ -35659,7 +35657,7 @@ var Login = function () {
         placeholder: 'Contraseña',
         color: 'secondary',
         type: 'password',
-        error_control_text: 'Los datos introducidos no coinciden',
+        error_control_text: '',
         extraClass: ''
     }), inputPassword = _b[0], setInputPassword = _b[1];
     var _c = React.useState({
@@ -35671,18 +35669,24 @@ var Login = function () {
             exp: userData.exp,
             password: userData.password
         };
-        console.log('El expendiente del usuario es: ' + user.exp);
-        Authentication_1.login(user).then(function (result) {
-            if (result) {
-                console.log(result);
-                console.log(history);
-                history.push('/home');
-            }
-            else {
-                setInputUser(__assign(__assign({}, inputUser), { extraClass: 'error' }));
-                setInputPassword(__assign(__assign({}, inputPassword), { extraClass: 'error' }));
-            }
-        });
+        if (user.exp == '' || user.password == '') {
+            setInputUser(__assign(__assign({}, inputUser), { extraClass: 'error' }));
+            setInputPassword(__assign(__assign({}, inputPassword), { error_control_text: 'Alguno de los campos está vacío', extraClass: 'error' }));
+        }
+        else {
+            console.log('El expendiente del usuario es: ' + user.exp);
+            Authentication_1.login(user).then(function (result) {
+                if (result) {
+                    console.log(result);
+                    console.log(history);
+                    history.push('/home');
+                }
+                else {
+                    setInputUser(__assign(__assign({}, inputUser), { extraClass: 'error' }));
+                    setInputPassword(__assign(__assign({}, inputPassword), { error_control_text: 'Los datos introducidos no coinciden', extraClass: 'error' }));
+                }
+            });
+        }
     };
     var handleChangeInput = function (value, id) {
         if (id == 1) {

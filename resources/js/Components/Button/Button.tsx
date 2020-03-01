@@ -10,10 +10,9 @@ interface Props {
 }
 export const Button: React.FunctionComponent<Props> = (props: Props) => {
     let iconShow = '';
-    if(props.buttonInfo.icon != '') {
-        console.log(props.buttonInfo.icon);
+    if(props.buttonInfo.icon != '')
         iconShow = '--show';
-    }
+    
     const handleClickButton = (e: React.MouseEvent) => {
         props.handleClick(e, props.buttonInfo.id);
     }
