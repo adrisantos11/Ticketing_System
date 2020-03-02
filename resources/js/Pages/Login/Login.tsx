@@ -9,14 +9,13 @@ import { login } from '../../Utilities/Authentication'
 import './Login.scss'
 import { HashRouter, useHistory } from "react-router-dom";
 
-
 const Login = () => {
     const history = useHistory();
     const [buttonInfo] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Identifícate',
-        color: '',
-        type: 'outline-secondary',
+        color: 'primary',
+        type: 'outline-primary',
         icon: 'fas fa-user',
         extraClass: ''
     });
@@ -25,7 +24,7 @@ const Login = () => {
         id: 1,
         label: 'Expediente',
         placeholder: 'Ej: 25342783',
-        color: 'secondary',
+        color: 'primary',
         type: 'number',
         error_control_text: '',
         extraClass: ''
@@ -35,7 +34,7 @@ const Login = () => {
         id: 2,
         label: 'Contraseña',
         placeholder: 'Contraseña',
-        color: 'secondary',
+        color: 'primary',
         type: 'password',
         error_control_text: '',
         extraClass: ''
@@ -47,6 +46,7 @@ const Login = () => {
     });
 
     const handleClickButton = (e: React.MouseEvent, id: number) => {
+        console.log('Holas');
         const user = {
             exp: userData.exp,
             password: userData.password
@@ -54,12 +54,12 @@ const Login = () => {
         if(user.exp == '' || user.password == '') {
             setInputUser({
                 ...inputUser,
-                extraClass: 'error'
+                color: 'red'
             });
             setInputPassword({
                 ...inputPassword,
                 error_control_text: 'Alguno de los campos está vacío',
-                extraClass: 'error'
+                color: 'red'
             });
 
         } else {
@@ -72,12 +72,12 @@ const Login = () => {
                 } else {
                     setInputUser({
                         ...inputUser,
-                        extraClass: 'error'
+                        color: 'red'
                     });
                     setInputPassword({
                         ...inputPassword,
                         error_control_text: 'Los datos introducidos no coinciden',
-                        extraClass: 'error'
+                        color: 'red'
                     });
                 }
             });
@@ -103,7 +103,7 @@ const Login = () => {
         <div className="login-main">
             <div className="login">
                 <div className="centered_container centered_container--description">
-                    <p className="login_title text-secondary">
+                    <p className="login_title">
                         TICKETCLASS :D
                     </p>
                     <div className="description_text">
@@ -111,9 +111,13 @@ const Login = () => {
                         <p> Explora y usa esta herramineta para la gestión de las incidencias dentro de tu entorno de trabajo.</p>
                         <p> Consigue una mayor rapidez de respuesta.</p>
                     </div>
+                    <div className="icons-container">
+                        <a><i className="far fa-envelope-open"></i></a>
+                        <a><i className="fas fa-phone"></i></a>
+                    </div>
                 </div>
                 <div className="centered_container centered_container--login">
-                    <p className="login_title text-secondary">
+                    <p className="login_title">
                         Iniciar sesion
                     </p>
                     <div className="inputs_container">

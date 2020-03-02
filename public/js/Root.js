@@ -2003,7 +2003,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button_css, .button_css--red, .button_css--white {\n  border-radius: 2.5rem;\n  padding: 0.5rem 1rem;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #27496d;\n  color: #27496d;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 0.938rem;\n}\n.button_css .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 0.938rem;\n}\n\n.button_css:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #3685EC;\n  color: #FFFFFF;\n  background-color: #3685EC;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .only-icon, .button_css--primary .only-icon, .button_css--white .only-icon, .button_css--red .only-icon {\n  padding: 0.5rem 1rem !important;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 0.938rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.1256rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -2022,7 +2022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label {\n  font-size: 1.1256rem;\n}\n.form-group .input_class_secondary:focus {\n  background-color: rgba(39, 73, 109, 0.1);\n  border-color: #27496d;\n}\n.form-group .input_class_secondary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(0, 168, 204, 0.1);\n  border-color: #00a8cc;\n}\n.form-group .input_class_primary--error {\n  background-color: rgba(220, 53, 69, 0.2);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
+exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label, .form-group .text_label--red, .form-group .text_label--primary {\n  font-size: 1.1256rem;\n}\n.form-group .text_label--primary {\n  color: #3685EC;\n}\n.form-group .text_label--red {\n  color: #dc3545;\n}\n.form-group .input_class--primary {\n  color: #3685EC;\n}\n.form-group .input_class--primary:focus {\n  background-color: rgba(54, 133, 236, 0.8);\n  border-color: #3685EC;\n  color: #FFFFFF;\n}\n.form-group .input_class--red {\n  border-color: #dc3545;\n  color: #dc3545;\n}\n.form-group .input_class--red::-webkit-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-moz-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red:-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::placeholder {\n  color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(54, 133, 236, 0.1);\n  border-color: #3685EC;\n}\n.form-group .input_class_primary--red {\n  background-color: rgba(247, 100, 115, 0.4);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -2041,7 +2041,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  background-color: rgba(39, 73, 109, 0.9);\n  height: 100%;\n  padding: 0.5rem;\n  width: 17.5rem;\n  align-items: center;\n  align-content: space-between;\n  justify-content: space-between;\n}\n.navbar-container .logo-container {\n  background-color: green;\n  height: 50px;\n  width: 50px;\n}", ""]);
+exports.push([module.i, ".navbar-container {\n  height: 100%;\n  width: 0;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container a {\n  padding: 8px 8px 8px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  color: #818181;\n  display: block;\n  transition: 0.3s;\n}\n.navbar-container .options-container a:hover {\n  color: #f1f1f1;\n}\n.navbar-container .options-container .btn-cerrar {\n  position: absolute;\n  top: 0;\n  right: 25px;\n  font-size: 36px;\n  margin-left: 50px;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}", ""]);
 
 // exports
 
@@ -2060,7 +2060,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  margin: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 1.876rem;\n  text-align: center;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 0.938rem;\n}\n.login-main .login .centered_container--login {\n  width: 70%;\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}", ""]);
+exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: auto;\n  display: flex;\n  flex-direction: row;\n  background-color: #7F7F7F;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 1.876rem;\n  text-align: center;\n  color: #3685EC;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n  background-color: #FFFFFF;\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 0.938rem;\n  color: #141414;\n}\n.login-main .login .centered_container--description .icons-container a {\n  font-size: 1.876rem;\n  color: #3685EC;\n  margin-right: 1.5rem;\n}\n.login-main .login .centered_container--description .icons-container a:hover {\n  color: #003877;\n  cursor: pointer;\n}\n.login-main .login .centered_container--login {\n  padding: 0;\n  width: 50%;\n  background-color: #262626;\n}\n@media (max-width: 600px) {\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}\n@media (max-width: 768px) {\n  .login-main .login {\n    flex-direction: column-reverse;\n  }\n  .login-main .login .centered_container--description {\n    width: 100%;\n  }\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}", ""]);
 
 // exports
 
@@ -2079,7 +2079,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100vh;\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100vh;\n  width: 100%;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}", ""]);
 
 // exports
 
@@ -35488,21 +35488,28 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Button.scss */ "./resources/js/Components/Button/Button.scss");
 var Button = function (props) {
     var colorProps = props.buttonInfo.color;
+    var textButton = props.buttonInfo.texto;
     var iconShow = '';
+    var color = '';
+    var onlyIcon = '';
     if (props.buttonInfo.icon != '')
         iconShow = '--show';
     var handleClickButton = function (e) {
         props.handleClick(e, props.buttonInfo.id);
     };
-    var color = '';
-    if (colorProps == 'white') {
+    if (colorProps == 'primary') {
+        color = '--primary';
+    }
+    else if (colorProps == 'white') {
         color = '--white';
     }
     else if (colorProps == 'red') {
         color = '--red';
     }
+    if (textButton == '')
+        onlyIcon = ' only-icon';
     return (React.createElement("div", { className: "buttonContainer" },
-        React.createElement("button", { id: props.buttonInfo.id.toString(), type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css" + color, onClick: handleClickButton },
+        React.createElement("button", { id: props.buttonInfo.id.toString(), type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css" + color + onlyIcon, onClick: handleClickButton },
             React.createElement("span", { className: "span_container" + iconShow },
                 React.createElement("i", { className: props.buttonInfo.icon })),
             React.createElement("a", { className: "button_text" }, props.buttonInfo.texto))));
@@ -35555,18 +35562,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Input.scss */ "./resources/js/Components/Input/Input.scss");
 exports.Input = function (props) {
-    var error, mostrar = '';
-    if (props.inputInfo.extraClass.includes('error')) {
-        error = '--error';
-        mostrar = '--mostrar';
-    }
+    var inputColor = props.inputInfo.color;
+    var color, mostrar = '';
     var handleChange = function (event) {
         props.handleChangeInput(event.target.value, event.target.id);
     };
+    if (inputColor == 'primary') {
+        color = '--primary';
+    }
+    else if (inputColor == 'red') {
+        color = '--red';
+        mostrar = '--mostrar';
+    }
+    // }  else if (colorProps == 'red') {
+    //     color = '--red';
+    // }
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'form-group' },
-            React.createElement("label", { htmlFor: "", className: "text_label text-" + props.inputInfo.color }, props.inputInfo.label),
-            React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class_" + props.inputInfo.color + error + " text-" + props.inputInfo.color + error, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange }),
+            React.createElement("label", { htmlFor: "", className: "text_label" }, props.inputInfo.label),
+            React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange }),
             React.createElement("small", { className: "form-text text-danger aviso" + mostrar }, props.inputInfo.error_control_text))));
 };
 
@@ -35629,16 +35643,23 @@ var Navbar = function (props) {
         icon: '',
         extraClass: ''
     }), logoutButton = _a[0], setLogoutButton = _a[1];
-    var handleClickButton = function (e) {
+    var handleClickLogoutButton = function (e) {
         Authentication_1.logout().then(function (result) {
             if (result)
                 history.push('/');
         });
     };
     return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: 'navbar-container' },
+        React.createElement("div", { className: 'navbar-container', id: "slidevar" },
             React.createElement("div", { className: "logo-container" }),
-            React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickButton }))));
+            React.createElement("div", { className: "options-container" },
+                React.createElement("a", { href: "#", className: "btn-cerrar" },
+                    React.createElement("i", { className: "far fa-times-circle" })),
+                React.createElement("a", { href: "#" }, "About"),
+                React.createElement("a", { href: "#" }, "Services"),
+                React.createElement("a", { href: "#" }, "Clients"),
+                React.createElement("a", { href: "#" }, "Contact")),
+            React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickLogoutButton }))));
 };
 exports.default = Navbar;
 
@@ -35737,8 +35758,8 @@ var Login = function () {
     var buttonInfo = React.useState({
         id: 1,
         texto: 'Identifícate',
-        color: '',
-        type: 'outline-secondary',
+        color: 'primary',
+        type: 'outline-primary',
         icon: 'fas fa-user',
         extraClass: ''
     })[0];
@@ -35746,7 +35767,7 @@ var Login = function () {
         id: 1,
         label: 'Expediente',
         placeholder: 'Ej: 25342783',
-        color: 'secondary',
+        color: 'primary',
         type: 'number',
         error_control_text: '',
         extraClass: ''
@@ -35755,7 +35776,7 @@ var Login = function () {
         id: 2,
         label: 'Contraseña',
         placeholder: 'Contraseña',
-        color: 'secondary',
+        color: 'primary',
         type: 'password',
         error_control_text: '',
         extraClass: ''
@@ -35765,13 +35786,14 @@ var Login = function () {
         password: ''
     }), userData = _c[0], setUserData = _c[1];
     var handleClickButton = function (e, id) {
+        console.log('Holas');
         var user = {
             exp: userData.exp,
             password: userData.password
         };
         if (user.exp == '' || user.password == '') {
-            setInputUser(__assign(__assign({}, inputUser), { extraClass: 'error' }));
-            setInputPassword(__assign(__assign({}, inputPassword), { error_control_text: 'Alguno de los campos está vacío', extraClass: 'error' }));
+            setInputUser(__assign(__assign({}, inputUser), { color: 'red' }));
+            setInputPassword(__assign(__assign({}, inputPassword), { error_control_text: 'Alguno de los campos está vacío', color: 'red' }));
         }
         else {
             console.log('El expendiente del usuario es: ' + user.exp);
@@ -35782,8 +35804,8 @@ var Login = function () {
                     history.push('/home');
                 }
                 else {
-                    setInputUser(__assign(__assign({}, inputUser), { extraClass: 'error' }));
-                    setInputPassword(__assign(__assign({}, inputPassword), { error_control_text: 'Los datos introducidos no coinciden', extraClass: 'error' }));
+                    setInputUser(__assign(__assign({}, inputUser), { color: 'red' }));
+                    setInputPassword(__assign(__assign({}, inputPassword), { error_control_text: 'Los datos introducidos no coinciden', color: 'red' }));
                 }
             });
         }
@@ -35800,16 +35822,21 @@ var Login = function () {
         React.createElement("div", { className: "login-main" },
             React.createElement("div", { className: "login" },
                 React.createElement("div", { className: "centered_container centered_container--description" },
-                    React.createElement("p", { className: "login_title text-secondary" }, "TICKETCLASS :D"),
+                    React.createElement("p", { className: "login_title" }, "TICKETCLASS :D"),
                     React.createElement("div", { className: "description_text" },
                         React.createElement("p", null,
                             "\u00A1Bienvenido a ",
                             React.createElement("b", null, "\"Ticketclass :D\""),
                             "!"),
                         React.createElement("p", null, " Explora y usa esta herramineta para la gesti\u00F3n de las incidencias dentro de tu entorno de trabajo."),
-                        React.createElement("p", null, " Consigue una mayor rapidez de respuesta."))),
+                        React.createElement("p", null, " Consigue una mayor rapidez de respuesta.")),
+                    React.createElement("div", { className: "icons-container" },
+                        React.createElement("a", null,
+                            React.createElement("i", { className: "far fa-envelope-open" })),
+                        React.createElement("a", null,
+                            React.createElement("i", { className: "fas fa-phone" })))),
                 React.createElement("div", { className: "centered_container centered_container--login" },
-                    React.createElement("p", { className: "login_title text-secondary" }, "Iniciar sesion"),
+                    React.createElement("p", { className: "login_title" }, "Iniciar sesion"),
                     React.createElement("div", { className: "inputs_container" },
                         React.createElement(Input_1.Input, { inputInfo: inputUser, handleChangeInput: handleChangeInput }),
                         React.createElement(Input_1.Input, { inputInfo: inputPassword, handleChangeInput: handleChangeInput })),
@@ -35872,6 +35899,7 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
 var Navbar_1 = __webpack_require__(/*! ../../Components/Navbar/Navbar */ "./resources/js/Components/Navbar/Navbar.tsx");
 __webpack_require__(/*! ./MainPage.scss */ "./resources/js/Pages/MainPage/MainPage.scss");
 var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
@@ -35896,6 +35924,14 @@ var MainPage = function () {
         phone: '',
         role: ''
     }), userLogged = _c[0], setUserLogged = _c[1];
+    var _d = React.useState({
+        id: 1,
+        texto: '',
+        color: 'primary',
+        type: 'outline-secondary',
+        icon: 'fas fa-bars',
+        extraClass: ''
+    }), closeSlidebarButton = _d[0], setCloseSlidebarButton = _d[1];
     React.useEffect(function () {
         Authentication_1.getProfile().then(function (res) {
             try {
@@ -35911,17 +35947,25 @@ var MainPage = function () {
             }
         });
     }, []);
+    var handleClickCloseSlidebar = function (e) {
+        console.log('Se cierra slidebar');
+        document.getElementById('slidevar').style.width = '250px';
+        document.getElementById('body').style.marginLeft = '250px';
+        console.log(document.getElementById('slidevar').style.width);
+    };
     if (isLogged) {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "mainpage-container" },
                 React.createElement(Navbar_1.default, null),
-                React.createElement("p", null,
-                    "N\u00BA expediente: ",
-                    React.createElement("b", null, userLogged.exp)),
-                React.createElement("br", null),
-                React.createElement("p", null,
-                    "Correo: ",
-                    React.createElement("b", null, userLogged.email)))));
+                React.createElement("div", { className: "body-container", id: "body" },
+                    React.createElement(Button_1.default, { buttonInfo: closeSlidebarButton, handleClick: handleClickCloseSlidebar }),
+                    React.createElement("p", null,
+                        "N\u00BA expediente: ",
+                        React.createElement("b", null, userLogged.exp)),
+                    React.createElement("br", null),
+                    React.createElement("p", null,
+                        "Correo: ",
+                        React.createElement("b", null, userLogged.email))))));
     }
     else {
         return (React.createElement(React.Fragment, null,

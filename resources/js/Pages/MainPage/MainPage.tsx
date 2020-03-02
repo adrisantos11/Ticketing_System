@@ -31,6 +31,15 @@ const MainPage = () => {
         role: ''
     });
 
+    const [closeSlidebarButton, setCloseSlidebarButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: '',
+        color: 'primary',
+        type: 'outline-secondary',
+        icon: 'fas fa-bars',
+        extraClass: ''
+    });
+
     React.useEffect(() => {
         getProfile().then(res => {
             try {
@@ -54,14 +63,24 @@ const MainPage = () => {
         })
     }, []);
 
+    const handleClickCloseSlidebar = (e: React.MouseEvent) => {
+        console.log('Se cierra slidebar');
+        document.getElementById('slidevar').style.width = '250px';
+        document.getElementById('body').style.marginLeft = '250px';
+        console.log(document.getElementById('slidevar').style.width);
+    }
+
     if(isLogged) {
         return(
             <>
             <div className="mainpage-container">
                 <Navbar></Navbar>
-                <p>Nº expediente: <b>{userLogged.exp}</b></p>
-                <br/>
-                <p>Correo: <b>{userLogged.email}</b></p>
+                <div className="body-container" id="body">
+                    <Button buttonInfo={closeSlidebarButton} handleClick={handleClickCloseSlidebar}></Button>
+                    <p>Nº expediente: <b>{userLogged.exp}</b></p>
+                    <br/>
+                    <p>Correo: <b>{userLogged.email}</b></p>
+                </div>
             </div>
             </>
         );

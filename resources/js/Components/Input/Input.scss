@@ -2,17 +2,41 @@
 
 .form-group {
     width: 100%;
+
     .text_label {
         font-size: $font_size*1.2;
-    }
-    .input_class_secondary {
-        &:focus {
-            background-color: rgba($color: $secondary_color, $alpha: 0.1);
-            border-color: $secondary_color;
+
+        &--primary {
+            @extend .text_label;
+            color: $primary_color;
         }
-        &--error{
-            background-color: rgba($color: $red_color, $alpha: 0.2);
+        &--red {
+            @extend .text_label;
+            color: $red_color;
+        }
+
+    }
+
+    .input_class {
+        &--primary {
+            @extend .input_class;
+            color: $primary_color;
+
+            &:focus {
+                background-color: rgba($color: $primary_color, $alpha: 0.8);
+                border-color: $primary_color;
+                color: $white_color;
+            }
+        }
+
+        &--red {
+            @extend .input_class;
             border-color: $red_color;
+            color: $red_color;
+
+            &::placeholder {
+                color: $red_color;
+            }
         }
 
     }
@@ -22,8 +46,9 @@
             background-color: rgba($color: $primary_color, $alpha: 0.1);
             border-color: $primary_color;
         }
-        &--error{
-            background-color: rgba($color: $red_color, $alpha: 0.2);
+
+        &--red {
+            background-color: rgba($color: $red_light_color, $alpha: 0.4);
             border-color: $red_color;
 
         }
@@ -32,6 +57,7 @@
 
     .aviso {
         display: none;
+
         &--mostrar {
             display: block;
         }

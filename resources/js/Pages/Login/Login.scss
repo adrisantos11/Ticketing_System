@@ -3,9 +3,10 @@
 
 .login-main {
     height: 100vh;
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: row;
+    background-color: $grey_color_127;
 
     .login {
         display: flex;
@@ -20,33 +21,66 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 0rem $default_padding*3;
+            padding: 0rem $default_padding*3;
 
             .login_title {
                 font-family: $title_font_family;
                 font-size: $font_size*2;
                 text-align: center;
+                color: $primary_color;
 
             }
 
             &--description {
                 width: 90%;
+                background-color: $white_color;
 
                 .description_text {
                     text-align: center;
                     font-size: $font_size;
+                    color: $black_color;
+                }
+
+                .icons-container {
+                    a {
+                        font-size: $font_size*2;
+                        color: $primary_color;
+                        margin-right: $default_padding*3;
+                    }
+
+                    a:hover {
+                        color: $secondary_color;
+                        cursor: pointer;
+                    }
                 }
             }
 
             &--login {
-                width: 70%;
-
+                padding: 0;
+                width: 50%;
+                background-color: $grey_color_38;
+                @media (max-width: 600px) {
+                    width: 100%;
+                }
             }
         }
 
         .description_container {
             width: 100%;
             height: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .login {
+            flex-direction: column-reverse;
+            // flex-wrap: wrap-reverse;
+            .centered_container--description {
+                width: 100%;
+            }
+            .centered_container--login {
+                width: 100%;
+            }
         }
     }
 }

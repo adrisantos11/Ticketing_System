@@ -2,7 +2,19 @@
 
 .button_css {
     border-radius: 2.5rem;
-    padding: $default_padding $default_padding*2;
+    padding: $default_padding $default_padding*4;
+    &--primary {
+        @extend .button_css;
+        background-color: transparent;
+        color: $primary_color;
+        border-color: $primary_color;
+    }
+    &--primary:hover {
+        border-color: $primary_color;
+        color: $white_color;
+        background-color: $primary_color;
+    }
+
     &--white {
         @extend .button_css;
         border-color: $white_color;
@@ -25,7 +37,9 @@
         color: $white_color;
         background-color: #BE2231;
     }
-
+    .only-icon {
+        padding: $default_padding $default_padding*2 !important;
+    }
     .span_container {
         display: none;
         padding-right: $default_padding;
@@ -36,7 +50,7 @@
         }
     }
     .button_text {
-        font-size: $font_size;
+        font-size: $font_size*1.2;
     }
 }
 

@@ -10,7 +10,11 @@ interface Props {
 }
 const Button: React.FunctionComponent<Props> = (props: Props) => {
     const colorProps = props.buttonInfo.color;
+    const textButton = props.buttonInfo.texto;
     let iconShow = '';
+    let color = '';
+    let onlyIcon = '';
+
     if(props.buttonInfo.icon != '')
         iconShow = '--show';
     
@@ -18,17 +22,22 @@ const Button: React.FunctionComponent<Props> = (props: Props) => {
         props.handleClick(e, props.buttonInfo.id);
     }
     
-    var color = '';
-    if (colorProps == 'white') {
+    if (colorProps == 'primary') {
+        color = '--primary';
+
+    } else if (colorProps == 'white') {
         color = '--white';
     }  else if (colorProps == 'red') {
         color = '--red';
     }
+
+    if(textButton == '')
+        onlyIcon = ' only-icon';
     return(
         <div className="buttonContainer">
             {/* <button type="button" className={`btn btn-${props.buttonInfo.type}-secondary `}>{props.buttonInfo.texto}</button> */}
             {/* <button type="button" className={`btn btn-${props.buttonInfo.type}-secondary btn-${props.buttonInfo.type}-secondary--rounded`}>{props.buttonInfo.texto}</button> */}
-            <button id={props.buttonInfo.id.toString()} type="button" className={`btn btn-${props.buttonInfo.type} button_css${color}`} onClick={handleClickButton}>
+            <button id={props.buttonInfo.id.toString()} type="button" className={`btn btn-${props.buttonInfo.type} button_css${color}${onlyIcon}`} onClick={handleClickButton}>
                 <span className={`span_container${iconShow}`}>
                     <i className={props.buttonInfo.icon}></i>
                 </span>

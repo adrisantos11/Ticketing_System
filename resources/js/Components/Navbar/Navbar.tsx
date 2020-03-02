@@ -18,7 +18,9 @@ const Navbar: React.FunctionComponent = (props: any) => {
         extraClass: ''
     });
 
-    const handleClickButton = (e: React.MouseEvent) => {
+
+
+    const handleClickLogoutButton = (e: React.MouseEvent) => {
         logout().then(result => {
             if (result)
                 history.push('/');
@@ -26,12 +28,20 @@ const Navbar: React.FunctionComponent = (props: any) => {
 
     }
 
+
     return(
         <>
-            <div className='navbar-container'>
+            <div className='navbar-container' id="slidevar">
                 <div className="logo-container">
                 </div>
-                    <Button buttonInfo={logoutButton} handleClick={handleClickButton}></Button>
+                <div className="options-container">
+                    <a href="#" className="btn-cerrar"><i className="far fa-times-circle"></i></a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Clients</a>
+                    <a href="#">Contact</a>
+                </div>
+                <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>
             </div>
         </>
     );
