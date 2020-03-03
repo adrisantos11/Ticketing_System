@@ -4,6 +4,78 @@ TUTORIALES DE AYUDA:
     *   https://www.youtube.com/watch?v=HPobijkTJAI (Login, Register and Indentify)
 
 
+-------------------------------- INSTALACIÓN --------------------------------
+    1)  Clonar el repositorio en una carpeta vacia:
+        ~ git clone https://github.com/adrisantos11/Ticketing_System.git ~
+
+    2)  Ejecutar los compandos de composer y npm para instalar todas las dependencias.
+        ~ composer install ~ y ~ npm install ~
+    
+    3)  Crear un fichero .env (en la raiz del proyecto), con la siguiente plantilla:
+        *********************************
+        APP_NAME=Laravel
+        APP_ENV=local
+        APP_KEY=base64:PiJg6xhIIWe1SueQMUYWnN3euEJYIdAy86eePZZ+qc8=
+        APP_DEBUG=true
+        APP_URL=http://localhost
+
+        LOG_CHANNEL=stack
+
+        DB_CONNECTION=mysql
+        DB_HOST=localhost
+        DB_PORT=3306
+        DB_DATABASE=TFG_Ticketing_System
+        DB_USERNAME=root
+        DB_PASSWORD=
+
+        BROADCAST_DRIVER=log
+        CACHE_DRIVER=file
+        QUEUE_CONNECTION=sync
+        SESSION_DRIVER=file
+        SESSION_LIFETIME=120
+
+        REDIS_HOST=127.0.0.1
+        REDIS_PASSWORD=null
+        REDIS_PORT=6379
+
+        MAIL_DRIVER=smtp
+        MAIL_HOST=smtp.mailtrap.io
+        MAIL_PORT=2525
+        MAIL_USERNAME=null
+        MAIL_PASSWORD=null
+        MAIL_ENCRYPTION=null
+        MAIL_FROM_ADDRESS=null
+        MAIL_FROM_NAME="${APP_NAME}"
+
+        AWS_ACCESS_KEY_ID=
+        AWS_SECRET_ACCESS_KEY=
+        AWS_DEFAULT_REGION=us-east-1
+        AWS_BUCKET=
+
+        PUSHER_APP_ID=
+        PUSHER_APP_KEY=
+        PUSHER_APP_SECRET=
+        PUSHER_APP_CLUSTER=mt1
+
+        MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+        MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+        JWT_SECRET=
+        *********************************
+    
+    4)  Generar una nueva Key para identificar el proyecto local sobre el que se está trabajando:
+        ~ php artisan key:generate ~
+    
+    5)  Hacer lo mismo con la key de JWTAuth:
+        ~ php artisan jwt:secret ~ 
+    
+    6)  Crear una migración a la Base de Datos de todas las seeders y tablas que se han creado en el proyecto:
+        ~ php artisan migrate:refresh --seed ~
+
+    7)  Iniciar la aplicación ejecutando los siguientes dos comandos:
+        ~ php artisan serve ~
+        ~ npm run watch ~
+
 -------------------------------- ESTRUCTURA 'webpack.mix.js' PARA TYPESCRIPT --------------------------------
 
 const mix = require('laravel-mix');

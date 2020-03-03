@@ -61,7 +61,7 @@ class UserController extends Controller
         ]);
         
         // Se genera un token específico para el usuario recién registrado.
-        $token = JWTAuth::fromUser($user);
+        $token = auth()->fromUser($user);
 
         // Se devuelve la respuesta HTTP en formato JSON con el 
         return response()->json(compact('user', 'token'), 201);
@@ -78,7 +78,7 @@ class UserController extends Controller
         $credentials = $request->only('exp', 'password');
 
         try {
-            if (! $token = JWTAuth::attempt($credentials)) 
+            if (! $token = auth()->attempt($credentials)) 
             {
                 return response()->json(['error' => 'invalid_credentials'], 400);
             }
