@@ -10,6 +10,7 @@
             @extend .text_label;
             color: $primary_color;
         }
+        
         &--red {
             @extend .text_label;
             color: $red_color;
@@ -26,6 +27,10 @@
                 background-color: rgba($color: $primary_color, $alpha: 0.8);
                 border-color: $primary_color;
                 color: $white_color;
+
+                &::-webkit-input-placeholder {
+                    color: rgba($color: $white_color, $alpha: 0.6);
+                }
             }
         }
 

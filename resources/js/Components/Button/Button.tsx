@@ -31,20 +31,25 @@ const Button: React.FunctionComponent<Props> = (props: Props) => {
         color = '--red';
     }
 
-    if(textButton == '')
+    if(textButton == '') {
         onlyIcon = ' only-icon';
-    return(
-        <div className="buttonContainer">
-            {/* <button type="button" className={`btn btn-${props.buttonInfo.type}-secondary `}>{props.buttonInfo.texto}</button> */}
-            {/* <button type="button" className={`btn btn-${props.buttonInfo.type}-secondary btn-${props.buttonInfo.type}-secondary--rounded`}>{props.buttonInfo.texto}</button> */}
-            <button id={props.buttonInfo.id.toString()} type="button" className={`btn btn-${props.buttonInfo.type} button_css${color}${onlyIcon}`} onClick={handleClickButton}>
-                <span className={`span_container${iconShow}`}>
-                    <i className={props.buttonInfo.icon}></i>
-                </span>
-                <a className="button_text">{props.buttonInfo.texto}</a>
-            </button>
-        </div>
-    );
+        return (
+            <span className="only-icon--primary" onClick={handleClickButton}><i className={props.buttonInfo.icon}></i></span>
+        )
+    } else {    
+        return(
+            <div className="buttonContainer">
+                {/* <button type="button" className={`btn btn-${props.buttonInfo.type}-secondary `}>{props.buttonInfo.texto}</button> */}
+                {/* <button type="button" className={`btn btn-${props.buttonInfo.type}-secondary btn-${props.buttonInfo.type}-secondary--rounded`}>{props.buttonInfo.texto}</button> */}
+                <button id={props.buttonInfo.id.toString()} type="button" className={`btn btn-${props.buttonInfo.type} button_css${color}`} onClick={handleClickButton}>
+                    <span className={`span_container${iconShow}`}>
+                        <i className={props.buttonInfo.icon}></i>
+                    </span>
+                    <a className="button_text">{props.buttonInfo.texto}</a>
+                </button>
+            </div>
+        );
+    }
 }
 
 export default Button;

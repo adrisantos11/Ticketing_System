@@ -3,12 +3,14 @@
 .button_css {
     border-radius: 2.5rem;
     padding: $default_padding $default_padding*4;
+
     &--primary {
         @extend .button_css;
         background-color: transparent;
         color: $primary_color;
         border-color: $primary_color;
     }
+
     &--primary:hover {
         border-color: $primary_color;
         color: $white_color;
@@ -20,35 +22,38 @@
         border-color: $white_color;
         color: $white_color;
     }
+
     &--white:hover {
         border-color: $secondary_color;
         color: $secondary_color;
         background-color: $white_color;
     }
+
     &--red {
         @extend .button_css;
         background-color: $red_color;
         color: $white_color;
         border-color: $red_color;
-        
+
     }
+
     &--red:hover {
         border-color: $red_color;
         color: $white_color;
         background-color: #BE2231;
     }
-    .only-icon {
-        padding: $default_padding $default_padding*2 !important;
-    }
+
     .span_container {
         display: none;
         padding-right: $default_padding;
         font-size: $font_size;
+
         &--show {
             @extend .span_container;
             display: inline;
         }
     }
+
     .button_text {
         font-size: $font_size*1.2;
     }
@@ -56,4 +61,14 @@
 
 .button_css:hover {
     cursor: pointer;
+}
+
+.only-icon {
+    padding: $default_padding $default_padding*2 !important;
+    cursor: pointer;
+    font-size: $font_size*2;
+    &--primary {
+        @extend .only-icon;
+        color: $primary_color;
+    }
 }

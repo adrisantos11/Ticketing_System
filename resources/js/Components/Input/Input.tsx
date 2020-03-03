@@ -28,7 +28,7 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
     return(
         <>
             <div className='form-group'>
-                <label htmlFor="" className={`text_label`}>{props.inputInfo.label}</label>
+                <label htmlFor="" className='text_label'>{props.inputInfo.label}</label>
                 <input 
                     id = {props.inputInfo.id.toString()}
                     type={props.inputInfo.type} 
