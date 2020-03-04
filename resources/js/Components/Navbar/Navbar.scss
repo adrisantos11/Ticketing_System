@@ -2,39 +2,74 @@
 
 .navbar-container {
     height: 100%;
-    width: 0;
+    width: 310px;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
+    left: -250px;
     background-color: $black_color;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+
     .options-container {
-        a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-    
-            &:hover {
-                color: #f1f1f1;
-            }
-        }
-    
+        display: flex;
+        flex-direction: column;
+
         .btn-cerrar {
             position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
+            top: 5px;
+            right: 18px;
+            font-size: 30px;
             margin-left: 50px;
+            cursor: pointer;
+            color: $white_color;
+
+            &:hover {
+                @extend .btn-cerrar;
+                color: $primary_color;
+            }
+        }
+
+        .span-container {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                line-height: 50px;
+                padding-left: 20px;
+                color: $grey_color_184;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                i {
+                    line-height: 50px;
+                    font-size: 25px;
+                    color: $grey_color_184;
+                    margin-right: 20px;
+                }
+
+                &:hover {
+                    @extend span;
+                    background-color: rgba($color: $grey_color_184, $alpha: 0.16);
+                }
+
+                &:active {
+                    @extend span;
+                    background-color: $primary_color;
+                    color: $white_color;
+
+                    i {
+                        color: $white_color;
+                    }
+                }
+            }
         }
     }
+
     #slidevar {
         transition: margin-left;
+
     }
 }
-

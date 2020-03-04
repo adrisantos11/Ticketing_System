@@ -28,18 +28,24 @@ const Navbar: React.FunctionComponent = (props: any) => {
 
     }
 
+    const handleClickCloseSlidebar = () => {
+        console.log('Se cierra slidebar');
+        document.getElementById('slidevar').style.left = '0px';
+        document.getElementById('body').style.marginLeft = '250px';
+        console.log(document.getElementById('slidevar').style.width);
+    }
 
     return(
         <>
             <div className='navbar-container' id="slidevar">
-                <div className="logo-container">
-                </div>
                 <div className="options-container">
-                    <a href="#" className="btn-cerrar"><i className="far fa-times-circle"></i></a>
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
-                    <a href="#">Contact</a>
+                    <span className="btn-cerrar" onClick={handleClickCloseSlidebar}><i className="fas fa-bars"></i></span>
+                    <div className="span-container">
+                        <span id="perfil-option">Perfil<i className="fas fa-user"></i></span>
+                        <span id="incidencias-option">Incidencias</span>
+                        <span id="calendario-option">Calendario</span>
+                        <span id="aulas-option">Disponibilidad Aulas</span>
+                    </div>
                 </div>
                 <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>
             </div>

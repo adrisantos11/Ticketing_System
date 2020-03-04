@@ -2041,7 +2041,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navbar-container {\n  height: 100%;\n  width: 0;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container a {\n  padding: 8px 8px 8px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  color: #818181;\n  display: block;\n  transition: 0.3s;\n}\n.navbar-container .options-container a:hover {\n  color: #f1f1f1;\n}\n.navbar-container .options-container .btn-cerrar {\n  position: absolute;\n  top: 0;\n  right: 25px;\n  font-size: 36px;\n  margin-left: 50px;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}", ""]);
+exports.push([module.i, ".navbar-container {\n  height: 100%;\n  width: 310px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -250px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .btn-cerrar, .navbar-container .options-container .btn-cerrar:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .btn-cerrar:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .span-container span, .navbar-container .options-container .span-container span:active, .navbar-container .options-container .span-container span:hover {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #b8b8b8;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.navbar-container .options-container .span-container span i, .navbar-container .options-container .span-container span:active i, .navbar-container .options-container .span-container span:hover i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #b8b8b8;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container span:hover {\n  background-color: rgba(184, 184, 184, 0.16);\n}\n.navbar-container .options-container .span-container span:active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container span:active i {\n  color: #FFFFFF;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}", ""]);
 
 // exports
 
@@ -2079,7 +2079,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100vh;\n  width: 100%;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}", ""]);
+exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100vh;\n  width: 100%;\n  margin-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}", ""]);
 
 // exports
 
@@ -35584,7 +35584,7 @@ exports.Input = function (props) {
     // }
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'form-group' },
-            React.createElement("label", { htmlFor: "", className: 'text_label' }, props.inputInfo.label),
+            React.createElement("label", { htmlFor: "", className: "text_label$" }, props.inputInfo.label),
             React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange }),
             React.createElement("small", { className: "form-text text-danger aviso" + mostrar }, props.inputInfo.error_control_text))));
 };
@@ -35654,16 +35654,24 @@ var Navbar = function (props) {
                 history.push('/');
         });
     };
+    var handleClickCloseSlidebar = function () {
+        console.log('Se cierra slidebar');
+        document.getElementById('slidevar').style.left = '0px';
+        document.getElementById('body').style.marginLeft = '250px';
+        console.log(document.getElementById('slidevar').style.width);
+    };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'navbar-container', id: "slidevar" },
-            React.createElement("div", { className: "logo-container" }),
             React.createElement("div", { className: "options-container" },
-                React.createElement("a", { href: "#", className: "btn-cerrar" },
-                    React.createElement("i", { className: "far fa-times-circle" })),
-                React.createElement("a", { href: "#" }, "About"),
-                React.createElement("a", { href: "#" }, "Services"),
-                React.createElement("a", { href: "#" }, "Clients"),
-                React.createElement("a", { href: "#" }, "Contact")),
+                React.createElement("span", { className: "btn-cerrar", onClick: handleClickCloseSlidebar },
+                    React.createElement("i", { className: "fas fa-bars" })),
+                React.createElement("div", { className: "span-container" },
+                    React.createElement("span", { id: "perfil-option" },
+                        "Perfil",
+                        React.createElement("i", { className: "fas fa-user" })),
+                    React.createElement("span", { id: "incidencias-option" }, "Incidencias"),
+                    React.createElement("span", { id: "calendario-option" }, "Calendario"),
+                    React.createElement("span", { id: "aulas-option" }, "Disponibilidad Aulas"))),
             React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickLogoutButton }))));
 };
 exports.default = Navbar;
@@ -35904,7 +35912,6 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
 var Navbar_1 = __webpack_require__(/*! ../../Components/Navbar/Navbar */ "./resources/js/Components/Navbar/Navbar.tsx");
 __webpack_require__(/*! ./MainPage.scss */ "./resources/js/Pages/MainPage/MainPage.scss");
 var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
@@ -35952,18 +35959,11 @@ var MainPage = function () {
             }
         });
     }, []);
-    var handleClickCloseSlidebar = function (e) {
-        console.log('Se cierra slidebar');
-        document.getElementById('slidevar').style.width = '250px';
-        document.getElementById('body').style.marginLeft = '250px';
-        console.log(document.getElementById('slidevar').style.width);
-    };
     if (isLogged) {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "mainpage-container" },
                 React.createElement(Navbar_1.default, null),
                 React.createElement("div", { className: "body-container", id: "body" },
-                    React.createElement(Button_1.default, { buttonInfo: closeSlidebarButton, handleClick: handleClickCloseSlidebar }),
                     React.createElement("p", null,
                         "N\u00BA expediente: ",
                         React.createElement("b", null, userLogged.exp)),
