@@ -28,18 +28,28 @@ const Navbar: React.FunctionComponent = (props: any) => {
 
     }
 
-    const handleClickCloseSlidebar = () => {
-        console.log('Se cierra slidebar');
+    const handleClickOpenSlidebar = () => {
         document.getElementById('slidevar').style.left = '0px';
         document.getElementById('body').style.marginLeft = '250px';
-        console.log(document.getElementById('slidevar').style.width);
+        document.getElementById('btn-cerrarMenu').style.display = 'unset';
+        document.getElementById('btn-abrirMenu').style.display = 'none';
+
+    }
+
+    const handleClickCloseSlidebar = () => {
+        document.getElementById('slidevar').style.left = '-250px';
+        document.getElementById('body').style.marginLeft = '0px';
+        document.getElementById('btn-cerrarMenu').style.display = 'none';
+        document.getElementById('btn-abrirMenu').style.display = 'unset';
     }
 
     return(
         <>
             <div className='navbar-container' id="slidevar">
                 <div className="options-container">
-                    <span className="btn-cerrar" onClick={handleClickCloseSlidebar}><i className="fas fa-bars"></i></span>
+                    <span className="menu-btn" id="btn-abrirMenu" onClick={handleClickOpenSlidebar}><i className="fas fa-bars"></i></span>
+                    <span className="menu-btn" id="btn-cerrarMenu" onClick={handleClickCloseSlidebar}><i className="fas fa-times"></i></span>
+
                     <div className="span-container">
                         <span id="perfil-option">Perfil<i className="fas fa-user"></i></span>
                         <span id="incidencias-option">Incidencias</span>
