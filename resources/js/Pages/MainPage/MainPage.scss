@@ -4,9 +4,9 @@
 .mainpage-container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    margin-left: 60px;
+    padding-left: 60px;
     .body-container {
         margin-left: 0px;
         transition: 0.5s;

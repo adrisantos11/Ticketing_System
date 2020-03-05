@@ -30,17 +30,23 @@ const Navbar: React.FunctionComponent = (props: any) => {
 
     const handleClickOpenSlidebar = () => {
         document.getElementById('slidevar').style.left = '0px';
-        document.getElementById('body').style.marginLeft = '250px';
+        document.getElementById('body').style.paddingLeft = '210px';
         document.getElementById('btn-cerrarMenu').style.display = 'unset';
         document.getElementById('btn-abrirMenu').style.display = 'none';
 
     }
 
     const handleClickCloseSlidebar = () => {
-        document.getElementById('slidevar').style.left = '-250px';
-        document.getElementById('body').style.marginLeft = '0px';
+        document.getElementById('slidevar').style.left = '-210px';
+        document.getElementById('body').style.paddingLeft = '0px';
         document.getElementById('btn-cerrarMenu').style.display = 'none';
         document.getElementById('btn-abrirMenu').style.display = 'unset';
+    }
+
+    const handleClickOptions = (e: any) => {
+        let optionSelected = e.target.getAttribute("data-id");
+        console.log(optionSelected);
+        e.target.classList.toggle('active');
     }
 
     return(
@@ -51,10 +57,10 @@ const Navbar: React.FunctionComponent = (props: any) => {
                     <span className="menu-btn" id="btn-cerrarMenu" onClick={handleClickCloseSlidebar}><i className="fas fa-times"></i></span>
 
                     <div className="span-container">
-                        <span id="perfil-option">Perfil<i className="fas fa-user"></i></span>
-                        <span id="incidencias-option">Incidencias</span>
-                        <span id="calendario-option">Calendario</span>
-                        <span id="aulas-option">Disponibilidad Aulas</span>
+                        <span data-id="perfil-option"><b>Perfil</b><i className="fas fa-user"></i></span>
+                        <span data-id="incidencias-option"><b>Incidencias</b><i className="fas fa-tools"></i></span>
+                        <span data-id="calendario-option"><b>Calendario</b><i className="far fa-calendar-alt"></i></span>
+                        <span data-id="aulas-option"><b>Disponibilidad Aulas</b><i className="far fa-clock"></i></span>
                     </div>
                 </div>
                 <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>

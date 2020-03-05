@@ -2041,7 +2041,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navbar-container {\n  height: 100%;\n  width: 310px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -250px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .span-container span, .navbar-container .options-container .span-container span:active, .navbar-container .options-container .span-container span:hover {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #b8b8b8;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.navbar-container .options-container .span-container span i, .navbar-container .options-container .span-container span:active i, .navbar-container .options-container .span-container span:hover i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #b8b8b8;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container span:hover {\n  background-color: rgba(184, 184, 184, 0.16);\n}\n.navbar-container .options-container .span-container span:active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container span:active i {\n  color: #FFFFFF;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}", ""]);
+exports.push([module.i, ".navbar-container {\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container span, .navbar-container .options-container .span-container span:hover, .navbar-container .options-container .span-container span .active {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #b8b8b8;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  z-index: 1;\n  margin: 0.5rem 0rem;\n}\n.navbar-container .options-container .span-container span i, .navbar-container .options-container .span-container span:hover i, .navbar-container .options-container .span-container span .active i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #b8b8b8;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container span .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container span .active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container span:hover, .navbar-container .options-container .span-container span .active:hover {\n  background-color: rgba(184, 184, 184, 0.16);\n}\n.navbar-container .button_css--red {\n  margin-left: 20px;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}", ""]);
 
 // exports
 
@@ -2079,7 +2079,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100vh;\n  width: 100%;\n  margin-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}", ""]);
+exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}", ""]);
 
 // exports
 
@@ -35656,15 +35656,20 @@ var Navbar = function (props) {
     };
     var handleClickOpenSlidebar = function () {
         document.getElementById('slidevar').style.left = '0px';
-        document.getElementById('body').style.marginLeft = '250px';
+        document.getElementById('body').style.paddingLeft = '210px';
         document.getElementById('btn-cerrarMenu').style.display = 'unset';
         document.getElementById('btn-abrirMenu').style.display = 'none';
     };
     var handleClickCloseSlidebar = function () {
-        document.getElementById('slidevar').style.left = '-250px';
-        document.getElementById('body').style.marginLeft = '0px';
+        document.getElementById('slidevar').style.left = '-210px';
+        document.getElementById('body').style.paddingLeft = '0px';
         document.getElementById('btn-cerrarMenu').style.display = 'none';
         document.getElementById('btn-abrirMenu').style.display = 'unset';
+    };
+    var handleClickOptions = function (e) {
+        var optionSelected = e.target.getAttribute("data-id");
+        console.log(optionSelected);
+        e.target.classList.toggle('active');
     };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'navbar-container', id: "slidevar" },
@@ -35674,12 +35679,18 @@ var Navbar = function (props) {
                 React.createElement("span", { className: "menu-btn", id: "btn-cerrarMenu", onClick: handleClickCloseSlidebar },
                     React.createElement("i", { className: "fas fa-times" })),
                 React.createElement("div", { className: "span-container" },
-                    React.createElement("span", { id: "perfil-option" },
-                        "Perfil",
+                    React.createElement("span", { "data-id": "perfil-option" },
+                        React.createElement("b", null, "Perfil"),
                         React.createElement("i", { className: "fas fa-user" })),
-                    React.createElement("span", { id: "incidencias-option" }, "Incidencias"),
-                    React.createElement("span", { id: "calendario-option" }, "Calendario"),
-                    React.createElement("span", { id: "aulas-option" }, "Disponibilidad Aulas"))),
+                    React.createElement("span", { "data-id": "incidencias-option" },
+                        React.createElement("b", null, "Incidencias"),
+                        React.createElement("i", { className: "fas fa-tools" })),
+                    React.createElement("span", { "data-id": "calendario-option" },
+                        React.createElement("b", null, "Calendario"),
+                        React.createElement("i", { className: "far fa-calendar-alt" })),
+                    React.createElement("span", { "data-id": "aulas-option" },
+                        React.createElement("b", null, "Disponibilidad Aulas"),
+                        React.createElement("i", { className: "far fa-clock" })))),
             React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickLogoutButton }))));
 };
 exports.default = Navbar;
@@ -36136,8 +36147,8 @@ __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

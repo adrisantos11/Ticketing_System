@@ -2,16 +2,16 @@
 
 .navbar-container {
     height: 100%;
-    width: 310px;
+    width: 270px;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: -250px;
+    left: -210px;
     background-color: $black_color;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-
+    
     .options-container {
         display: flex;
         flex-direction: column;
@@ -31,14 +31,14 @@
             }
 
             &#btn-cerrarMenu {
-                display:none;
+                display: none;
             }
         }
 
         .span-container {
             display: flex;
             flex-direction: column;
-
+            margin-top: $default_padding*2;
             span {
                 line-height: 50px;
                 padding-left: 20px;
@@ -46,7 +46,8 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-
+                z-index: 1;
+                margin: $default_padding 0rem;
                 i {
                     line-height: 50px;
                     font-size: 25px;
@@ -54,12 +55,7 @@
                     margin-right: 20px;
                 }
 
-                &:hover {
-                    @extend span;
-                    background-color: rgba($color: $grey_color_184, $alpha: 0.16);
-                }
-
-                &:active {
+                .active {
                     @extend span;
                     background-color: $primary_color;
                     color: $white_color;
@@ -68,8 +64,17 @@
                         color: $white_color;
                     }
                 }
+
+                &:hover {
+                    @extend span;
+                    background-color: rgba($color: $grey_color_184, $alpha: 0.16);
+                }
+
             }
         }
+    }
+    .button_css--red {
+        margin-left: 20px;
     }
 
     #slidevar {
