@@ -2010,6 +2010,25 @@ exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .but
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Dropdown/Dropdown.scss":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Dropdown/Dropdown.scss ***!
+  \*******************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Input/Input.scss":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Input/Input.scss ***!
@@ -2041,7 +2060,45 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navbar-container {\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container span, .navbar-container .options-container .span-container span:hover, .navbar-container .options-container .span-container span .active {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #b8b8b8;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  z-index: 1;\n  margin: 0.5rem 0rem;\n}\n.navbar-container .options-container .span-container span i, .navbar-container .options-container .span-container span:hover i, .navbar-container .options-container .span-container span .active i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #b8b8b8;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container span .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container span .active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container span:hover, .navbar-container .options-container .span-container span .active:hover {\n  background-color: rgba(184, 184, 184, 0.16);\n}\n.navbar-container .button_css--red {\n  margin-left: 20px;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}", ""]);
+exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #b8b8b8;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n}\n.navbar-container .options-container .span-container a i, .navbar-container .options-container .span-container a:hover i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #b8b8b8;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container a.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container a:hover {\n  text-decoration: none;\n  background-color: rgba(184, 184, 184, 0.16);\n}\n.navbar-container .options-container .span-container a:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .buttonContainer {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  background-color: rgba(184, 184, 184, 0.2);\n  text-align: center;\n  padding: 1rem;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.1256rem;\n  font-family: \"Black Han Sans\", sans-serif;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/CalendarPage/CalendarPage.scss":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/CalendarPage/CalendarPage.scss ***!
+  \**********************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss ***!
+  \****************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -2060,7 +2117,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: auto;\n  display: flex;\n  flex-direction: row;\n  background-color: #7F7F7F;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 1.876rem;\n  text-align: center;\n  color: #3685EC;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n  background-color: #FFFFFF;\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 0.938rem;\n  color: #141414;\n}\n.login-main .login .centered_container--description .icons-container a {\n  font-size: 1.876rem;\n  color: #3685EC;\n  margin-right: 1.5rem;\n}\n.login-main .login .centered_container--description .icons-container a:hover {\n  color: #003877;\n  cursor: pointer;\n}\n.login-main .login .centered_container--login {\n  padding: 0;\n  width: 50%;\n  background-color: #262626;\n}\n@media (max-width: 600px) {\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}\n@media (max-width: 768px) {\n  .login-main .login {\n    flex-direction: column-reverse;\n  }\n  .login-main .login .centered_container--description {\n    width: 100%;\n  }\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}", ""]);
+exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: auto;\n  display: flex;\n  flex-direction: row;\n  background-color: #7F7F7F;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 1.876rem;\n  text-align: center;\n  color: #3685EC;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n  background-color: #FFFFFF;\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 0.938rem;\n  color: #141414;\n}\n.login-main .login .centered_container--description .icons-container a {\n  font-size: 1.876rem;\n  color: #3685EC;\n  margin-right: 1.5rem;\n}\n.login-main .login .centered_container--description .icons-container a:hover {\n  color: #003877;\n  cursor: pointer;\n}\n.login-main .login .centered_container--login {\n  padding: 0;\n  width: 50%;\n  background-color: #262626;\n}\n@media (max-width: 600px) {\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}\n@media screen and (max-width: 768px) {\n  .login-main .login {\n    flex-direction: column-reverse;\n  }\n  .login-main .login .centered_container--description {\n    width: 100%;\n  }\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}", ""]);
 
 // exports
 
@@ -2079,7 +2136,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}", ""]);
+exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n  padding-top: 0;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .mainpage-container {\n    flex-direction: column;\n    padding-left: 0;\n  }\n  .mainpage-container .body-container {\n    padding-top: 56px;\n  }\n}", ""]);
 
 // exports
 
@@ -35524,6 +35581,61 @@ exports.default = Button;
 
 /***/ }),
 
+/***/ "./resources/js/Components/Dropdown/Dropdown.scss":
+/*!********************************************************!*\
+  !*** ./resources/js/Components/Dropdown/Dropdown.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Dropdown.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Dropdown/Dropdown.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Dropdown/Dropdown.tsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/Components/Dropdown/Dropdown.tsx ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./Dropdown.scss */ "./resources/js/Components/Dropdown/Dropdown.scss");
+var Dropdown = function (props) {
+    return (React.createElement("div", { className: "dropdown" },
+        React.createElement("button", { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenuButton", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }, "Dropdown button"),
+        React.createElement("div", { className: "dropdown-menu", "aria-labelledby": "dropdownMenuButton" },
+            React.createElement("a", { className: "dropdown-item", href: "#" }, "Action"),
+            React.createElement("a", { className: "dropdown-item", href: "#" }, "Another action"),
+            React.createElement("a", { className: "dropdown-item", href: "#" }, "Something else here"))));
+};
+exports.default = Dropdown;
+
+
+/***/ }),
+
 /***/ "./resources/js/Components/Input/Input.scss":
 /*!**************************************************!*\
   !*** ./resources/js/Components/Input/Input.scss ***!
@@ -35635,7 +35747,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 // import { InputModel } from '../../Model/model'
 __webpack_require__(/*! ./Navbar.scss */ "./resources/js/Components/Navbar/Navbar.scss");
-var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var Button_1 = __webpack_require__(/*! ../Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var Dropdown_1 = __webpack_require__(/*! ../Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var Navbar = function (props) {
@@ -35648,6 +35761,14 @@ var Navbar = function (props) {
         icon: '',
         extraClass: ''
     }), logoutButton = _a[0], setLogoutButton = _a[1];
+    var _b = React.useState({
+        id: 1,
+        groupName: "Adminstrador",
+        groupItems: [1],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    }), adminDropdown = _b[0], setAdminDropdown = _b[1];
     var handleClickLogoutButton = function (e) {
         Authentication_1.logout().then(function (result) {
             if (result)
@@ -35655,43 +35776,61 @@ var Navbar = function (props) {
         });
     };
     var handleClickOpenSlidebar = function () {
-        document.getElementById('slidevar').style.left = '0px';
-        document.getElementById('body').style.paddingLeft = '210px';
-        document.getElementById('btn-cerrarMenu').style.display = 'unset';
-        document.getElementById('btn-abrirMenu').style.display = 'none';
+        if (screen.width > 768) {
+            document.getElementById('slidevar').style.left = '0px';
+            document.getElementById('body').style.paddingLeft = '210px';
+            document.getElementById('btn-cerrarMenu').style.display = 'unset';
+            document.getElementById('btn-abrirMenu').style.display = 'none';
+        }
+        else {
+            document.getElementById('slidevar').style.top = '0px';
+            document.getElementById('body').style.paddingTop = '400px';
+            document.getElementById('btn-cerrarMenu').style.display = 'unset';
+            document.getElementById('btn-abrirMenu').style.display = 'none';
+        }
     };
     var handleClickCloseSlidebar = function () {
-        document.getElementById('slidevar').style.left = '-210px';
-        document.getElementById('body').style.paddingLeft = '0px';
-        document.getElementById('btn-cerrarMenu').style.display = 'none';
-        document.getElementById('btn-abrirMenu').style.display = 'unset';
+        if (screen.width > 768) {
+            document.getElementById('slidevar').style.left = '-210px';
+            document.getElementById('body').style.paddingLeft = '0px';
+            document.getElementById('btn-cerrarMenu').style.display = 'none';
+            document.getElementById('btn-abrirMenu').style.display = 'unset';
+        }
+        else {
+            document.getElementById('slidevar').style.top = '-344px';
+            document.getElementById('body').style.paddingTop = '56px';
+            document.getElementById('btn-cerrarMenu').style.display = 'none';
+            document.getElementById('btn-abrirMenu').style.display = 'unset';
+        }
     };
-    var handleClickOptions = function (e) {
+    var handleClickOption = function (e) {
         var optionSelected = e.target.getAttribute("data-id");
-        console.log(optionSelected);
-        e.target.classList.toggle('active');
+        props.handleClickOptions(optionSelected);
     };
     return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: 'navbar-container', id: "slidevar" },
-            React.createElement("div", { className: "options-container" },
-                React.createElement("span", { className: "menu-btn", id: "btn-abrirMenu", onClick: handleClickOpenSlidebar },
-                    React.createElement("i", { className: "fas fa-bars" })),
-                React.createElement("span", { className: "menu-btn", id: "btn-cerrarMenu", onClick: handleClickCloseSlidebar },
-                    React.createElement("i", { className: "fas fa-times" })),
-                React.createElement("div", { className: "span-container" },
-                    React.createElement("span", { "data-id": "perfil-option" },
-                        React.createElement("b", null, "Perfil"),
-                        React.createElement("i", { className: "fas fa-user" })),
-                    React.createElement("span", { "data-id": "incidencias-option" },
-                        React.createElement("b", null, "Incidencias"),
-                        React.createElement("i", { className: "fas fa-tools" })),
-                    React.createElement("span", { "data-id": "calendario-option" },
-                        React.createElement("b", null, "Calendario"),
-                        React.createElement("i", { className: "far fa-calendar-alt" })),
-                    React.createElement("span", { "data-id": "aulas-option" },
-                        React.createElement("b", null, "Disponibilidad Aulas"),
-                        React.createElement("i", { className: "far fa-clock" })))),
-            React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickLogoutButton }))));
+        React.createElement("div", { className: 'navbar-container ', id: "slidevar" },
+            React.createElement(react_router_dom_1.HashRouter, null,
+                React.createElement("div", { className: "options-container" },
+                    React.createElement("span", { className: "menu-btn", id: "btn-abrirMenu", onClick: handleClickOpenSlidebar },
+                        React.createElement("i", { className: "fas fa-bars" })),
+                    React.createElement("span", { className: "menu-btn", id: "btn-cerrarMenu", onClick: handleClickCloseSlidebar },
+                        React.createElement("i", { className: "fas fa-times" })),
+                    React.createElement("div", { className: "span-container" },
+                        React.createElement(react_router_dom_1.NavLink, { to: "/home/perfil", "data-toogle": "tooltip", "data-placement": "top", title: "Perfil" },
+                            React.createElement("b", null, "Perfil"),
+                            React.createElement("i", { className: "fas fa-user" })),
+                        React.createElement(react_router_dom_1.NavLink, { to: "/home/incidencias", "data-toogle": "tooltip", "data-placement": "top", title: "Incidencias" },
+                            React.createElement("b", null, "Incidencias"),
+                            React.createElement("i", { className: "fas fa-tools" })),
+                        React.createElement(react_router_dom_1.NavLink, { to: "/home/calendario", "data-toogle": "tooltip", "data-placement": "top", title: "Calendario" },
+                            React.createElement("b", null, "Calendario"),
+                            React.createElement("i", { className: "far fa-calendar-alt" })),
+                        React.createElement(react_router_dom_1.NavLink, { to: "/home/disponibilidad-aulas", "data-toogle": "tooltip", "data-placement": "top", title: "Disponibilidad Aulas" },
+                            React.createElement("b", null, "Disponibilidad Aulas"),
+                            React.createElement("i", { className: "far fa-clock" })))),
+                React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown }),
+                React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickLogoutButton }),
+                React.createElement("div", { className: "nabvar-footer" }, "Ticketclass :D")))));
 };
 exports.default = Navbar;
 
@@ -35724,6 +35863,106 @@ exports.Navigation = function () {
 if (document.getElementById('root')) {
     ReactDOM.render(React.createElement(exports.Navigation, null), document.getElementById('root'));
 }
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/CalendarPage/CalendarPage.scss":
+/*!***********************************************************!*\
+  !*** ./resources/js/Pages/CalendarPage/CalendarPage.scss ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./CalendarPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/CalendarPage/CalendarPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/CalendarPage/CalendarPage.tsx":
+/*!**********************************************************!*\
+  !*** ./resources/js/Pages/CalendarPage/CalendarPage.tsx ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./CalendarPage.scss */ "./resources/js/Pages/CalendarPage/CalendarPage.scss");
+var CalendarPage = function () {
+    return (React.createElement("div", null, "Esto es la p\u00E1gina de Calendario."));
+};
+exports.default = CalendarPage;
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./IncidenciasPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.tsx":
+/*!****************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/IncidenciasPage.tsx ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./IncidenciasPage.scss */ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss");
+var IncidenciasPage = function () {
+    return (React.createElement("div", null, "Esto es la p\u00E1gina de Incidencias."));
+};
+exports.default = IncidenciasPage;
 
 
 /***/ }),
@@ -35931,10 +36170,13 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var Navbar_1 = __webpack_require__(/*! ../../Components/Navbar/Navbar */ "./resources/js/Components/Navbar/Navbar.tsx");
-__webpack_require__(/*! ./MainPage.scss */ "./resources/js/Pages/MainPage/MainPage.scss");
-var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+__webpack_require__(/*! ./MainPage.scss */ "./resources/js/Pages/MainPage/MainPage.scss");
+var Navbar_1 = __webpack_require__(/*! ../../Components/Navbar/Navbar */ "./resources/js/Components/Navbar/Navbar.tsx");
+var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
+var PerfilPage_1 = __webpack_require__(/*! ../PerfilPage/PerfilPage */ "./resources/js/Pages/PerfilPage/PerfilPage.tsx");
+var IncidenciasPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciasPage */ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.tsx");
+var CalendarPage_1 = __webpack_require__(/*! ../CalendarPage/CalendarPage */ "./resources/js/Pages/CalendarPage/CalendarPage.tsx");
 var MainPage = function () {
     var history = react_router_dom_1.useHistory();
     var _a = React.useState(false), isLogged = _a[0], setIsLogged = _a[1];
@@ -35978,18 +36220,19 @@ var MainPage = function () {
             }
         });
     }, []);
+    var handleClickOptions = function (idOption) {
+        console.log(idOption);
+    };
     if (isLogged) {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "mainpage-container" },
-                React.createElement(Navbar_1.default, null),
+                React.createElement(Navbar_1.default, { handleClickOptions: handleClickOptions }),
                 React.createElement("div", { className: "body-container", id: "body" },
-                    React.createElement("p", null,
-                        "N\u00BA expediente: ",
-                        React.createElement("b", null, userLogged.exp)),
-                    React.createElement("br", null),
-                    React.createElement("p", null,
-                        "Correo: ",
-                        React.createElement("b", null, userLogged.email))))));
+                    React.createElement(react_router_dom_1.Switch, null,
+                        React.createElement(react_router_dom_1.Route, { path: "/home/perfil", component: PerfilPage_1.default }),
+                        React.createElement(react_router_dom_1.Route, { path: "/home/incidencias", component: IncidenciasPage_1.default }),
+                        React.createElement(react_router_dom_1.Route, { path: "/home/calendario", component: CalendarPage_1.default }),
+                        React.createElement(react_router_dom_1.Route, { path: "/home/disponibilidad-aulas", component: IncidenciasPage_1.default }))))));
     }
     else {
         return (React.createElement(React.Fragment, null,
@@ -35997,6 +36240,26 @@ var MainPage = function () {
     }
 };
 exports.default = MainPage;
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/PerfilPage/PerfilPage.tsx":
+/*!******************************************************!*\
+  !*** ./resources/js/Pages/PerfilPage/PerfilPage.tsx ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var PerfilPage = function () {
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: "perfilpage-container" }, "Eso es el perfil.")));
+};
+exports.default = PerfilPage;
 
 
 /***/ }),
@@ -36104,27 +36367,7 @@ exports.logout = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes React and other helpers. It's a great starting point while
- * building robust, powerful web applications using React + Laravel.
- */
-// require('./bootstrap');
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-// import * as ReactDOM from 'react-dom';
-// import * as React from 'react'
-// import { Login } from './Pages/Login/Login'
-// require('./Pages/Login/Login');
-// require('./Pages/MainPage/MainPage');
 __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
-// if (document.getElementById('root')) {
-//     console.log('Login');
-//     ReactDOM.render(<Login />, document.getElementById('root'));
-// }
 
 
 /***/ }),
@@ -36147,8 +36390,8 @@ __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

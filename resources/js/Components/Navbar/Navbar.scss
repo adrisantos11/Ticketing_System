@@ -1,6 +1,10 @@
 @import '../../../sass/app.scss';
 
 .navbar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     height: 100%;
     width: 270px;
     position: fixed;
@@ -11,7 +15,7 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    
+
     .options-container {
         display: flex;
         flex-direction: column;
@@ -39,15 +43,17 @@
             display: flex;
             flex-direction: column;
             margin-top: $default_padding*2;
-            span {
+
+            a {
                 line-height: 50px;
                 padding-left: 20px;
                 color: $grey_color_184;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                z-index: 1;
+                z-index: 0;
                 margin: $default_padding 0rem;
+
                 i {
                     line-height: 50px;
                     font-size: 25px;
@@ -55,10 +61,9 @@
                     margin-right: 20px;
                 }
 
-                .active {
-                    @extend span;
-                    background-color: $primary_color;
+                &.active {
                     color: $white_color;
+                    background-color: rgba($color: $primary_color, $alpha: 1);
 
                     i {
                         color: $white_color;
@@ -66,19 +71,81 @@
                 }
 
                 &:hover {
-                    @extend span;
+                    @extend a;
+                    text-decoration: none;
                     background-color: rgba($color: $grey_color_184, $alpha: 0.16);
+
+                    &.active {
+                        color: $white_color;
+                        background-color: rgba($color: $primary_color, $alpha: 1);
+
+                        i {
+                            color: $white_color;
+                        }
+                    }
                 }
 
             }
         }
     }
-    .button_css--red {
+
+    .buttonContainer {
         margin-left: 20px;
+    }
+
+    .nabvar-footer {
+        background-color: rgba($color: $grey_color_184, $alpha: 0.20);
+        text-align: center;
+        padding: $default_padding*2;
+        color: rgba($color: $white_color, $alpha: 0.8);
+        font-size: $font_size*1.2;
+        font-family: $title_font_family;
     }
 
     #slidevar {
         transition: margin-left;
 
+    }
+
+    @media screen and (max-width: 768px) {
+        
+        justify-content: space-between;
+        height: 400px;
+        width: 100%;
+        left: 0;
+        top: -344px;
+        overflow-y: hidden;
+        padding-top: 0;
+        .options-container {
+            margin-top: 0;
+
+            .menu-btn {
+                top: auto;
+                bottom: 5px;
+            }
+
+            .span-container {
+                margin-top: $default_padding*2.5;
+                flex-direction: column-reverse;
+                a {
+                    padding: 0 10%;
+                    margin: 0;
+                    // justify-content: center;
+                }
+            }
+        }
+
+        .dropdown {
+            text-align: center;
+        }
+        .nabvar-footer {
+            display: none;
+        }
+        .buttonContainer {
+            margin-left: 0;
+            margin-bottom: $default_padding*7;
+            text-align: center;
+            margin-top: $default_padding;
+        }
     }
 }

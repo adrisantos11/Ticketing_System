@@ -71,7 +71,7 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
         .login {
             flex-direction: column-reverse;
             // flex-wrap: wrap-reverse;

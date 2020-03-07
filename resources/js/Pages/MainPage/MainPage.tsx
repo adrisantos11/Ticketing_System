@@ -1,13 +1,16 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
+import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
+import './MainPage.scss'
 
 import { ButtonModel, InputModel } from '../../Model/model'
 import Button from '../../Components/Button/Button';
 import Navbar from '../../Components/Navbar/Navbar'
-import './MainPage.scss'
 
 import { getProfile, logout } from '../../Utilities/Authentication'
-import { HashRouter, useHistory } from "react-router-dom";
+import PerfilPage from "../PerfilPage/PerfilPage"
+import IncidenciasPage from "../IncidenciasPage/IncidenciasPage"
+import CalendarPage from "../CalendarPage/CalendarPage"
 
 const MainPage = () => {
     const history = useHistory();
@@ -63,16 +66,22 @@ const MainPage = () => {
         })
     }, []);
 
+    const handleClickOptions = (idOption: string) => {
+        console.log(idOption);
+    }
 
     if(isLogged) {
         return(
             <>
             <div className="mainpage-container">
-                <Navbar></Navbar>
+                <Navbar handleClickOptions={handleClickOptions}></Navbar>
                 <div className="body-container" id="body">
-                    <p>Nº expediente: <b>{userLogged.exp}</b></p>
-                    <br/>
-                    <p>Correo: <b>{userLogged.email}</b></p>
+                    <Switch>
+                        <Route path="/home/perfil" component={PerfilPage}></Route>
+                        <Route path="/home/incidencias" component={IncidenciasPage}></Route>
+                        <Route path="/home/calendario" component={CalendarPage}></Route>
+                        <Route path="/home/disponibilidad-aulas" component={IncidenciasPage}></Route>
+                    </Switch>
                 </div>
             </div>
             </>

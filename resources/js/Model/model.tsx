@@ -16,3 +16,12 @@ export interface InputModel {
     error_control_text: string;
     extraClass: string;
 }
+
+export interface DropdownModel {
+    id: number;
+    groupName: string;
+    groupItems: any[];
+    color: string;
+    enabled?: boolean;
+    extraClass: string;
+}

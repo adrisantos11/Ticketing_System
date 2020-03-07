@@ -2,12 +2,17 @@ import * as React from 'react'
 // import { InputModel } from '../../Model/model'
 
 import './Navbar.scss'
-import { ButtonModel, InputModel } from '../../Model/model'
-import Button from '../../Components/Button/Button';
+import { ButtonModel, InputModel, DropdownModel } from '../../Model/model'
+import Button from '../Button/Button';
+import Dropdown from '../Dropdown/Dropdown'
 import { getProfile, logout } from '../../Utilities/Authentication'
-import { HashRouter, useHistory } from "react-router-dom";
+import { HashRouter, useHistory, NavLink } from "react-router-dom";
 
-const Navbar: React.FunctionComponent = (props: any) => {
+interface NavbarIF {
+    handleClickOptions: (name: string) => void;
+}
+
+const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
     const history = useHistory();
     const [logoutButton, setLogoutButton] = React.useState<ButtonModel>({
         id: 1,
@@ -18,7 +23,14 @@ const Navbar: React.FunctionComponent = (props: any) => {
         extraClass: ''
     });
 
-
+    const [adminDropdown, setAdminDropdown] = React.useState<DropdownModel>({
+        id: 1,
+        groupName: "Adminstrador",
+        groupItems: [1],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    });
 
     const handleClickLogoutButton = (e: React.MouseEvent) => {
         logout().then(result => {
@@ -29,41 +41,60 @@ const Navbar: React.FunctionComponent = (props: any) => {
     }
 
     const handleClickOpenSlidebar = () => {
-        document.getElementById('slidevar').style.left = '0px';
-        document.getElementById('body').style.paddingLeft = '210px';
-        document.getElementById('btn-cerrarMenu').style.display = 'unset';
-        document.getElementById('btn-abrirMenu').style.display = 'none';
+        if(screen.width > 768) {
+            document.getElementById('slidevar').style.left = '0px';
+            document.getElementById('body').style.paddingLeft = '210px';
+            document.getElementById('btn-cerrarMenu').style.display = 'unset';
+            document.getElementById('btn-abrirMenu').style.display = 'none';
+        } else {
+            document.getElementById('slidevar').style.top = '0px';
+            document.getElementById('body').style.paddingTop = '400px';
+            document.getElementById('btn-cerrarMenu').style.display = 'unset';
+            document.getElementById('btn-abrirMenu').style.display = 'none';
+
+        }
 
     }
 
     const handleClickCloseSlidebar = () => {
-        document.getElementById('slidevar').style.left = '-210px';
-        document.getElementById('body').style.paddingLeft = '0px';
-        document.getElementById('btn-cerrarMenu').style.display = 'none';
-        document.getElementById('btn-abrirMenu').style.display = 'unset';
+        if(screen.width > 768) {
+            document.getElementById('slidevar').style.left = '-210px';
+            document.getElementById('body').style.paddingLeft = '0px';
+            document.getElementById('btn-cerrarMenu').style.display = 'none';
+            document.getElementById('btn-abrirMenu').style.display = 'unset';
+        } else {
+            document.getElementById('slidevar').style.top = '-344px';
+            document.getElementById('body').style.paddingTop = '56px';
+            document.getElementById('btn-cerrarMenu').style.display = 'none';
+            document.getElementById('btn-abrirMenu').style.display = 'unset';
+        }
     }
 
-    const handleClickOptions = (e: any) => {
+    const handleClickOption = (e: any) => {
         let optionSelected = e.target.getAttribute("data-id");
-        console.log(optionSelected);
-        e.target.classList.toggle('active');
+        props.handleClickOptions(optionSelected);
     }
 
     return(
         <>
-            <div className='navbar-container' id="slidevar">
-                <div className="options-container">
-                    <span className="menu-btn" id="btn-abrirMenu" onClick={handleClickOpenSlidebar}><i className="fas fa-bars"></i></span>
-                    <span className="menu-btn" id="btn-cerrarMenu" onClick={handleClickCloseSlidebar}><i className="fas fa-times"></i></span>
-
-                    <div className="span-container">
-                        <span data-id="perfil-option"><b>Perfil</b><i className="fas fa-user"></i></span>
-                        <span data-id="incidencias-option"><b>Incidencias</b><i className="fas fa-tools"></i></span>
-                        <span data-id="calendario-option"><b>Calendario</b><i className="far fa-calendar-alt"></i></span>
-                        <span data-id="aulas-option"><b>Disponibilidad Aulas</b><i className="far fa-clock"></i></span>
+            <div className='navbar-container ' id="slidevar">
+                <HashRouter>
+                    <div className="options-container">
+                        <span className="menu-btn" id="btn-abrirMenu" onClick={handleClickOpenSlidebar}><i className="fas fa-bars"></i></span>
+                        <span className="menu-btn" id="btn-cerrarMenu" onClick={handleClickCloseSlidebar}><i className="fas fa-times"></i></span>
+                        <div className="span-container">
+                            <NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user"></i></NavLink>
+                            <NavLink to="/home/incidencias" data-toogle="tooltip" data-placement="top" title="Incidencias"><b>Incidencias</b><i className="fas fa-tools"></i></NavLink>
+                            <NavLink to="/home/calendario" data-toogle="tooltip" data-placement="top" title="Calendario"><b>Calendario</b><i className="far fa-calendar-alt"></i></NavLink>
+                            <NavLink to="/home/disponibilidad-aulas" data-toogle="tooltip" data-placement="top" title="Disponibilidad Aulas"><b>Disponibilidad Aulas</b><i className="far fa-clock"></i></NavLink>
+                        </div>
                     </div>
-                </div>
-                <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>
+                    <Dropdown dropdownInfo={adminDropdown}></Dropdown>
+                    <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>
+                    <div className="nabvar-footer">
+                        Ticketclass :D
+                    </div>
+                </HashRouter>
             </div>
         </>
     );
