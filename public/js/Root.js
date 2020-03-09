@@ -36072,7 +36072,7 @@ var Login = function () {
                 if (result) {
                     console.log(result);
                     console.log(history);
-                    history.push('/home');
+                    history.push('/home/perfil');
                 }
                 else {
                     setInputUser(__assign(__assign({}, inputUser), { color: 'red' }));

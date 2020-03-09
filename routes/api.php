@@ -13,25 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
 Route::get('home', 'UserController@getAuthenticatedUser');
 Route::post('logout', 'UserController@logout');
 
+Route::namespace('Pages')->group(function () {
+    Route::get('incidencias', 'IncidenciasPageController@getTodasIncidencias');
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/*Route::group([
-
-    'middleware' => 'api',
-    'prefix' => 'auth'
-
-], function ($router) {
-
-    Route::post('login', 'UserController@login');
-    Route::post('register', 'UserController@register');
-    Route::post('home', 'UserController@getAuthenticatedUser');
-    // Route::post('me', 'AuthController@me');
-
-});*/

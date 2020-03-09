@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UsuariosTableSeeder extends Seeder
 {
-       /**
+    /**
      * Run the database seeds.
      *
      * @return void
@@ -16,18 +17,42 @@ class UsuariosTableSeeder extends Seeder
             'surname1' => 'Mena',
             'surname2' => 'Román',
             'exp' => '23423323',
-            'password' => '1234',
+            'password' => Hash::make('123456'),
             'email' => 'mbmr1966@gmail.com',
-            'phone' => '660200506'
+            'phone' => '660200506',
+            'role' => 'admin'
         ]);
         DB::table('users')->insert([
             'name' => 'Javier',
             'surname1' => 'Cai',
             'surname2' => 'Lin',
             'exp' => '24323323',
-            'password' => '4321',
+            'password' => Hash::make('123456'),
             'email' => 'jcl4332@gmail.com',
-            'phone' => '654345645'
+            'phone' => '654345645',
+            'role' => 'supervisor'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Adrian',
+            'surname1' => 'Santos',
+            'surname2' => 'Mena',
+            'exp' => '21619919',
+            'password' => Hash::make('123456'),
+            'email' => 'santos2menaaa@gmail.com',
+            'phone' => '608650958',
+            'role' => 'technical'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Emilio Manuel',
+            'surname1' => 'Santos',
+            'surname2' => 'Cañon',
+            'exp' => '21616161',
+            'password' => Hash::make('123456'),
+            'email' => 'manolitogafotas1966@gmail.com',
+            'phone' => '123456789',
+            'role' => 'technical'
         ]);
     }
 }

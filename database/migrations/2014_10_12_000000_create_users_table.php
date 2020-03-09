@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->enum('role', ['admin', 'supervisor', 'technical'])->default('technical');
-            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
