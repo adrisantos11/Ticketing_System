@@ -11,7 +11,7 @@ class IncidenciasSeeder extends Seeder
      */
     public function run()
     {
-        factory(Incidencia::class, 15)->create();
+        factory(Incidencia::class, 40)->create();
 
         DB::table('incidencias')->insert([
             'group_id' => 1,
@@ -20,6 +20,7 @@ class IncidenciasSeeder extends Seeder
             'title' => 'Problema software instalado',
             'description' => 'El problema se encuentra en que el ordenador XX no tiene instalado el Software xxxx para que el alumno que lo use pueda seguir la clase al mismo ritmo que todos los demás.',
             'department' => 'TIC',
+            'category' => 'Wi-Fi',
             'build' => 'C',
             'floor' => 3,
             'class' => 'C307',

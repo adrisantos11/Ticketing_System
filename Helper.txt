@@ -189,8 +189,6 @@ mix.js("resources/js/Root.tsx", "public/js")
         SOLUCIÓN:
             ~ composer dump-autoload ~
 
-
-
 -------------------------------- CONTROLLERS --------------------------------
 
 

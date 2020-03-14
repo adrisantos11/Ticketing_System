@@ -44,7 +44,7 @@ export const login = (user: any) => {
          *  - 'usertoken': el nombre del DOMString contenedor de la clave que se quiere actualizar.
          *  - 'res.data.token': dato que se guarda en el DOMString.
          */
-
+        console.log(res);
         localStorage.setItem('usertoken', res.data.token);
         return res;
     })
@@ -66,6 +66,7 @@ export const getProfile = () => {
         headers: { Authorization : `Bearer ${localStorage.usertoken}`}
     })
     .then(res => {
+        localStorage.setItem('userId', res.data.user.id);
         return res.data;
     })
     .catch(err => {

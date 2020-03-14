@@ -35959,8 +35959,47 @@ if(false) {}
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./IncidenciasPage.scss */ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss");
+var Incidencias_1 = __webpack_require__(/*! ../../Utilities/Incidencias */ "./resources/js/Utilities/Incidencias.tsx");
 var IncidenciasPage = function () {
-    return (React.createElement("div", null, "Esto es la p\u00E1gina de Incidencias."));
+    var user = {
+        id: localStorage.userId
+    };
+    var _a = React.useState(false), incidenciasLoaded = _a[0], setIncidenciasLoaded = _a[1];
+    var _b = React.useState([]), incidencias = _b[0], setIncidencias = _b[1];
+    React.useEffect(function () {
+        Incidencias_1.getIncidenciasAssignedToUser(user).then(function (res) {
+            setIncidencias(res.data);
+        });
+        setIncidenciasLoaded(true);
+    }, []);
+    if (incidenciasLoaded) {
+        return (React.createElement("div", null,
+            "ID del usuario: ",
+            React.createElement("b", null, localStorage.userId),
+            React.createElement("table", { className: "table" },
+                React.createElement("thead", null,
+                    React.createElement("tr", null,
+                        React.createElement("th", { scope: "col" }, "Id"),
+                        React.createElement("th", { scope: "col" }, "T\u00EDtulo"),
+                        React.createElement("th", { scope: "col" }, "Descripci\u00F3n"),
+                        React.createElement("th", { scope: "col" }, "Categor\u00EDa"),
+                        React.createElement("th", { scope: "col" }, "Prioridad"),
+                        React.createElement("th", { scope: "col" }, "Estado"),
+                        React.createElement("th", { scope: "col" }, "Fecha l\u00EDmite"))),
+                React.createElement("tbody", null, incidencias.map(function (element) {
+                    return (React.createElement("tr", null,
+                        React.createElement("th", { scope: "row" }, element.id),
+                        React.createElement("td", null, element.title),
+                        React.createElement("td", null, element.description),
+                        React.createElement("td", null, element.category),
+                        React.createElement("td", null, element.priority),
+                        React.createElement("td", null, element.state),
+                        React.createElement("td", null, element.limit_date)));
+                })))));
+    }
+    else {
+        return (React.createElement("div", null, "No se han cargado las incidencias."));
+    }
 };
 exports.default = IncidenciasPage;
 
@@ -36067,11 +36106,8 @@ var Login = function () {
             setInputPassword(__assign(__assign({}, inputPassword), { error_control_text: 'Alguno de los campos está vacío', color: 'red' }));
         }
         else {
-            console.log('El expendiente del usuario es: ' + user.exp);
             Authentication_1.login(user).then(function (result) {
                 if (result) {
-                    console.log(result);
-                    console.log(history);
                     history.push('/home/perfil');
                 }
                 else {
@@ -36314,6 +36350,7 @@ exports.login = function (user) {
          *  - 'usertoken': el nombre del DOMString contenedor de la clave que se quiere actualizar.
          *  - 'res.data.token': dato que se guarda en el DOMString.
          */
+        console.log(res);
         localStorage.setItem('usertoken', res.data.token);
         return res;
     })
@@ -36335,6 +36372,7 @@ exports.getProfile = function () {
         headers: { Authorization: "Bearer " + localStorage.usertoken }
     })
         .then(function (res) {
+        localStorage.setItem('userId', res.data.user.id);
         return res.data;
     })
         .catch(function (err) {
@@ -36353,6 +36391,64 @@ exports.logout = function () {
     })
         .catch(function (err) {
         if (err)
+            console.log(err);
+    });
+};
+
+
+/***/ }),
+
+/***/ "./resources/js/Utilities/Incidencias.tsx":
+/*!************************************************!*\
+  !*** ./resources/js/Utilities/Incidencias.tsx ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+exports.getAllIncidencias = function (user) {
+    return axios_1.default
+        .post('api/incidencias', {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        console.log(res);
+        return res;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.getIncidenciasAssignedToUser = function (user) {
+    return axios_1.default
+        .post('api/incidencias/assignedTo', {
+        id: user.id
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
             console.log(err);
     });
 };

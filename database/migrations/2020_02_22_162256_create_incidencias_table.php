@@ -19,8 +19,9 @@ class CreateIncidenciasTable extends Migration
             $table->integer('id_reporter');
             $table->integer('id_assigned');
             $table->string('title');
-            $table->string('description')->nullable()->default('Whitout description');
+            $table->string('description')->nullable()->default('Without description');
             $table->string('department');
+            $table->string('category');
             $table->string('build');
             $table->integer('floor');
             $table->string('class');

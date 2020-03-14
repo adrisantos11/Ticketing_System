@@ -63,11 +63,8 @@ const Login = () => {
             });
 
         } else {
-            console.log('El expendiente del usuario es: ' + user.exp);
             login(user).then(result => {
                 if (result) {
-                    console.log(result);
-                    console.log(history);
                     history.push('/home/perfil');
                 } else {
                     setInputUser({
