@@ -14,6 +14,7 @@ export interface InputModel {
     color: string;
     type: string;
     error_control_text: string;
+    enabled: boolean;
     extraClass: string;
 }
 
@@ -22,27 +23,34 @@ export interface DropdownModel {
     groupName: string;
     groupItems: any[];
     color: string;
-    enabled?: boolean;
+    enabled: boolean;
     extraClass: string;
 }
 
+export interface TabsModel {
+    idList: Array<string>;
+    valuesList: Array<string>;
+    color: string;
+    enabledList: Array<boolean>;
+}
+
 export interface IncidenciaModel {
-    'id': number,
-    'group_id': number,
-    'id_reporter': number,
-    'id_assigned': number,
-    'title': string,
-    'description': string,
-    'department': string,
-    'category': string,
-    'build': string,
-    'floor': number,
-    'class': string,
-    'url_data': string,
-    'creation_date': string,
-    'limit_date': string,
-    'assigned_date': string,
-    'resolution_date': string,
-    'priority': string,
-    'state': string
+    id: number,
+    group_id: number,
+    id_reporter: number,
+    id_assigned: number,
+    title: string,
+    description: string,
+    department: string,
+    category: string,
+    build: string,
+    floor: number,
+    class: string,
+    url_data: string,
+    creation_date: string,
+    limit_date: string,
+    assigned_date: string,
+    resolution_date: string,
+    priority: string,
+    state: string
 }

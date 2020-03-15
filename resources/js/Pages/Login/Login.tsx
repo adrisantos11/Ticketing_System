@@ -27,6 +27,7 @@ const Login = () => {
         color: 'primary',
         type: 'number',
         error_control_text: '',
+        enabled: true,
         extraClass: ''
     });
 
@@ -37,6 +38,7 @@ const Login = () => {
         color: 'primary',
         type: 'password',
         error_control_text: '',
+        enabled: true,
         extraClass: ''
     });
     
@@ -46,7 +48,6 @@ const Login = () => {
     });
 
     const handleClickButton = (e: React.MouseEvent, id: number) => {
-        console.log('Holas');
         const user = {
             exp: userData.exp,
             password: userData.password

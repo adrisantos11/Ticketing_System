@@ -14,7 +14,7 @@ interface NavbarIF {
 
 const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
     const history = useHistory();
-    const [logoutButton, setLogoutButton] = React.useState<ButtonModel>({
+    const [logoutButton] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Cerrar Sesión',
         color: 'red',

@@ -2067,6 +2067,25 @@ exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Tabs/Tabs.scss":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Tabs/Tabs.scss ***!
+  \***********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #3685EC;\n  color: #FFFFFF;\n  background-color: #3685EC;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 0.938rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.1256rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 1.876rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/CalendarPage/CalendarPage.scss":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/CalendarPage/CalendarPage.scss ***!
@@ -2094,6 +2113,44 @@ exports.push([module.i, "", ""]);
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.scss":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.scss ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -35681,6 +35738,7 @@ __webpack_require__(/*! ./Input.scss */ "./resources/js/Components/Input/Input.s
 exports.Input = function (props) {
     var inputColor = props.inputInfo.color;
     var color, mostrar = '';
+    var input;
     var handleChange = function (event) {
         props.handleChangeInput(event.target.value, event.target.id);
     };
@@ -35691,13 +35749,16 @@ exports.Input = function (props) {
         color = '--red';
         mostrar = '--mostrar';
     }
-    // }  else if (colorProps == 'red') {
-    //     color = '--red';
-    // }
+    if (!props.inputInfo.enabled) {
+        input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange, disabled: true }));
+    }
+    else {
+        input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange }));
+    }
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'form-group' },
             React.createElement("label", { htmlFor: "", className: "text_label$" }, props.inputInfo.label),
-            React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange }),
+            input,
             React.createElement("small", { className: "form-text text-danger aviso" + mostrar }, props.inputInfo.error_control_text))));
 };
 
@@ -35753,22 +35814,22 @@ var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var Navbar = function (props) {
     var history = react_router_dom_1.useHistory();
-    var _a = React.useState({
+    var logoutButton = React.useState({
         id: 1,
         texto: 'Cerrar Sesión',
         color: 'red',
         type: 'outline-secondary',
         icon: '',
         extraClass: ''
-    }), logoutButton = _a[0], setLogoutButton = _a[1];
-    var _b = React.useState({
+    })[0];
+    var _a = React.useState({
         id: 1,
         groupName: "Adminstrador",
         groupItems: [1],
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), adminDropdown = _b[0], setAdminDropdown = _b[1];
+    }), adminDropdown = _a[0], setAdminDropdown = _a[1];
     var handleClickLogoutButton = function (e) {
         Authentication_1.logout().then(function (result) {
             if (result)
@@ -35833,6 +35894,73 @@ var Navbar = function (props) {
                 React.createElement("div", { className: "nabvar-footer" }, "Ticketclass :D")))));
 };
 exports.default = Navbar;
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Tabs/Tabs.scss":
+/*!************************************************!*\
+  !*** ./resources/js/Components/Tabs/Tabs.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Tabs.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Tabs/Tabs.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Tabs/Tabs.tsx":
+/*!***********************************************!*\
+  !*** ./resources/js/Components/Tabs/Tabs.tsx ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./Tabs.scss */ "./resources/js/Components/Tabs/Tabs.scss");
+var Tabs = function (props) {
+    var handleClickTab = function (event) {
+        props.handleClick(event.target.id);
+    };
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: "btn-group btn-group-toggle", "data-toggle": "buttons" }, props.tabsInfo.valuesList.map(function (value, index) {
+            if (index == 0) {
+                return (React.createElement("label", { className: "btn btn-secondary active", key: index },
+                    React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], checked: true, onClick: handleClickTab }),
+                    " ",
+                    value));
+            }
+            else {
+                return (React.createElement("label", { className: "btn btn-secondary", key: index },
+                    React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], checked: true, onClick: handleClickTab }),
+                    " ",
+                    value));
+            }
+        }))));
+};
+exports.default = Tabs;
 
 
 /***/ }),
@@ -35958,50 +36086,196 @@ if(false) {}
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 __webpack_require__(/*! ./IncidenciasPage.scss */ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss");
-var Incidencias_1 = __webpack_require__(/*! ../../Utilities/Incidencias */ "./resources/js/Utilities/Incidencias.tsx");
+var Tabs_1 = __webpack_require__(/*! ../../Components/Tabs/Tabs */ "./resources/js/Components/Tabs/Tabs.tsx");
+var CreateIncidenciaPage_1 = __webpack_require__(/*! ./TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage */ "./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.tsx");
+var MostrarIncidenciasPage_1 = __webpack_require__(/*! ./TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage */ "./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.tsx");
 var IncidenciasPage = function () {
+    var history = react_router_dom_1.useHistory();
+    var tabsOptions = React.useState({
+        idList: ['mostrarIncidencias', 'crearIncidencia'],
+        valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
+        color: '',
+        enabledList: [true, true]
+    })[0];
+    var handleClickTab = function (id) {
+        if (id == 'crearIncidencia') {
+            history.push('/home/incidencias/create');
+        }
+        else if (id == 'mostrarIncidencias') {
+            history.push('/home/incidencias/show');
+        }
+    };
+    return (React.createElement("div", null,
+        React.createElement(Tabs_1.default, { tabsInfo: tabsOptions, handleClick: handleClickTab }),
+        React.createElement("div", { className: "table-container" },
+            React.createElement(react_router_dom_1.Switch, null,
+                React.createElement(react_router_dom_1.Route, { path: "/home/incidencias/create", component: CreateIncidenciaPage_1.default }),
+                React.createElement(react_router_dom_1.Route, { path: "/home/incidencias/show", component: MostrarIncidenciasPage_1.default })))));
+};
+exports.default = IncidenciasPage;
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.scss":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.scss ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./CreateIncidenciaPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.tsx":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.tsx ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./CreateIncidenciaPage.scss */ "./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.scss");
+var Input_1 = __webpack_require__(/*! ../../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
+var CreateIncidenciaPage = function () {
+    var userRol = localStorage.userRol;
+    var enableInput = true;
+    if (userRol == 'technical') {
+        enableInput = false;
+    }
+    var assignInput = React.useState({
+        id: 1,
+        label: 'Asignar a...',
+        placeholder: 'Ej: 25342783',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: enableInput,
+        extraClass: ''
+    })[0];
+    var handleChangeInput = function (value, id) {
+        // console.log(value);
+    };
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: "perfilpage-container" },
+            "Crear incidencia.",
+            React.createElement(Input_1.Input, { inputInfo: assignInput, handleChangeInput: handleChangeInput }))));
+};
+exports.default = CreateIncidenciaPage;
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./MostrarIncidenciasPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.tsx":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.tsx ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./MostrarIncidenciasPage.scss */ "./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss");
+var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/IncidenciasUtilities */ "./resources/js/Utilities/IncidenciasUtilities.tsx");
+var MostrarIncidenciasPage = function () {
+    var _a = React.useState(false), incidenciasLoaded = _a[0], setIncidenciasLoaded = _a[1];
+    var _b = React.useState([]), incidencias = _b[0], setIncidencias = _b[1];
     var user = {
         id: localStorage.userId
     };
-    var _a = React.useState(false), incidenciasLoaded = _a[0], setIncidenciasLoaded = _a[1];
-    var _b = React.useState([]), incidencias = _b[0], setIncidencias = _b[1];
     React.useEffect(function () {
-        Incidencias_1.getIncidenciasAssignedToUser(user).then(function (res) {
-            setIncidencias(res.data);
+        IncidenciasUtilities_1.getIncidenciasAssignedToUser(user).then(function (res) {
+            setIncidencias(res);
         });
         setIncidenciasLoaded(true);
     }, []);
     if (incidenciasLoaded) {
-        return (React.createElement("div", null,
-            "ID del usuario: ",
-            React.createElement("b", null, localStorage.userId),
-            React.createElement("table", { className: "table" },
-                React.createElement("thead", null,
-                    React.createElement("tr", null,
-                        React.createElement("th", { scope: "col" }, "Id"),
-                        React.createElement("th", { scope: "col" }, "T\u00EDtulo"),
-                        React.createElement("th", { scope: "col" }, "Descripci\u00F3n"),
-                        React.createElement("th", { scope: "col" }, "Categor\u00EDa"),
-                        React.createElement("th", { scope: "col" }, "Prioridad"),
-                        React.createElement("th", { scope: "col" }, "Estado"),
-                        React.createElement("th", { scope: "col" }, "Fecha l\u00EDmite"))),
-                React.createElement("tbody", null, incidencias.map(function (element) {
-                    return (React.createElement("tr", null,
-                        React.createElement("th", { scope: "row" }, element.id),
-                        React.createElement("td", null, element.title),
-                        React.createElement("td", null, element.description),
-                        React.createElement("td", null, element.category),
-                        React.createElement("td", null, element.priority),
-                        React.createElement("td", null, element.state),
-                        React.createElement("td", null, element.limit_date)));
-                })))));
+        return (React.createElement(React.Fragment, null,
+            React.createElement("div", { className: "perfilpage-container" },
+                React.createElement("table", { className: "table" },
+                    React.createElement("thead", null,
+                        React.createElement("tr", null,
+                            React.createElement("th", { scope: "col" }, "Id"),
+                            React.createElement("th", { scope: "col" }, "Nombre"),
+                            React.createElement("th", { scope: "col" }, "Descripci\u00F3n"),
+                            React.createElement("th", { scope: "col" }, "Categor\u00EDa"),
+                            React.createElement("th", { scope: "col" }, "Prioridad"),
+                            React.createElement("th", { scope: "col" }, "Estado"),
+                            React.createElement("th", { scope: "col" }, "Fecha l\u00EDmite"))),
+                    React.createElement("tbody", null, incidencias.map(function (element, index) {
+                        return (React.createElement("tr", { key: index },
+                            React.createElement("th", { scope: "row" }, element.id),
+                            React.createElement("td", null,
+                                React.createElement("a", { href: "" }, element.title)),
+                            React.createElement("td", null, element.description),
+                            React.createElement("td", null, element.category),
+                            React.createElement("td", null, element.priority),
+                            React.createElement("td", null, element.state),
+                            React.createElement("td", null, element.limit_date)));
+                    }))))));
     }
     else {
         return (React.createElement("div", null, "No se han cargado las incidencias."));
     }
 };
-exports.default = IncidenciasPage;
+exports.default = MostrarIncidenciasPage;
 
 
 /***/ }),
@@ -36080,6 +36354,7 @@ var Login = function () {
         color: 'primary',
         type: 'number',
         error_control_text: '',
+        enabled: true,
         extraClass: ''
     }), inputUser = _a[0], setInputUser = _a[1];
     var _b = React.useState({
@@ -36089,6 +36364,7 @@ var Login = function () {
         color: 'primary',
         type: 'password',
         error_control_text: '',
+        enabled: true,
         extraClass: ''
     }), inputPassword = _b[0], setInputPassword = _b[1];
     var _c = React.useState({
@@ -36096,7 +36372,6 @@ var Login = function () {
         password: ''
     }), userData = _c[0], setUserData = _c[1];
     var handleClickButton = function (e, id) {
-        console.log('Holas');
         var user = {
             exp: userData.exp,
             password: userData.password
@@ -36373,6 +36648,7 @@ exports.getProfile = function () {
     })
         .then(function (res) {
         localStorage.setItem('userId', res.data.user.id);
+        localStorage.setItem('userRol', res.data.user.rol);
         return res.data;
     })
         .catch(function (err) {
@@ -36398,10 +36674,10 @@ exports.logout = function () {
 
 /***/ }),
 
-/***/ "./resources/js/Utilities/Incidencias.tsx":
-/*!************************************************!*\
-  !*** ./resources/js/Utilities/Incidencias.tsx ***!
-  \************************************************/
+/***/ "./resources/js/Utilities/IncidenciasUtilities.tsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/Utilities/IncidenciasUtilities.tsx ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36415,7 +36691,6 @@ exports.getAllIncidencias = function (user) {
         headers: { 'Content-Type': 'application/json' }
     })
         .then(function (res) {
-        console.log(res);
         return res;
     })
         .catch(function (err) {
@@ -36438,7 +36713,7 @@ exports.getIncidenciasAssignedToUser = function (user) {
         headers: { 'Content-Type': 'application/json' }
     })
         .then(function (res) {
-        return res;
+        return res.data;
     })
         .catch(function (err) {
         if (err.response) {

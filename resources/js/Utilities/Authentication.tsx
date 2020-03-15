@@ -67,6 +67,8 @@ export const getProfile = () => {
     })
     .then(res => {
         localStorage.setItem('userId', res.data.user.id);
+        localStorage.setItem('userRol', res.data.user.rol);
+
         return res.data;
     })
     .catch(err => {

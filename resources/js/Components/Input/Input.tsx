@@ -10,6 +10,7 @@ interface Props {
 export const Input: React.FunctionComponent<Props> = (props: Props) => {
     const inputColor = props.inputInfo.color;
     let color,mostrar = '';
+    let input;
 
     const handleChange = (event: any) => {
         props.handleChangeInput(event.target.value, event.target.id);
@@ -21,20 +22,28 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
         color = '--red';
         mostrar = '--mostrar'
     }
-    // }  else if (colorProps == 'red') {
-    //     color = '--red';
-    // }
+
+    if (!props.inputInfo.enabled) {
+        input = (<input 
+            id = {props.inputInfo.id.toString()}
+            type={props.inputInfo.type} 
+            className={`form-control input_class${color} text-${color}`} 
+            aria-describedby="emailHelp" placeholder={props.inputInfo.placeholder}
+            onChange={handleChange} disabled/>)
+    } else {
+        input = (<input 
+            id = {props.inputInfo.id.toString()}
+            type={props.inputInfo.type} 
+            className={`form-control input_class${color} text-${color}`} 
+            aria-describedby="emailHelp" placeholder={props.inputInfo.placeholder}
+            onChange={handleChange}/>)
+    }
 
     return(
         <>
             <div className='form-group'>
                 <label htmlFor="" className={`text_label$`}>{props.inputInfo.label}</label>
-                <input 
-                    id = {props.inputInfo.id.toString()}
-                    type={props.inputInfo.type} 
-                    className={`form-control input_class${color} text-${color}`} 
-                    aria-describedby="emailHelp" placeholder={props.inputInfo.placeholder}
-                    onChange={handleChange}/>
+                {input}
                 <small className={`form-text text-danger aviso${mostrar}`}>{props.inputInfo.error_control_text}</small>
             </div>
         </>

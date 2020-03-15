@@ -11,6 +11,8 @@ import { getProfile, logout } from '../../Utilities/Authentication'
 import PerfilPage from "../PerfilPage/PerfilPage"
 import IncidenciasPage from "../IncidenciasPage/IncidenciasPage"
 import CalendarPage from "../CalendarPage/CalendarPage"
+import CreateIncidenciaPage from "../IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage"
+
 
 const MainPage = () => {
     const history = useHistory();
@@ -81,6 +83,7 @@ const MainPage = () => {
                         <Route path="/home/incidencias" component={IncidenciasPage}></Route>
                         <Route path="/home/calendario" component={CalendarPage}></Route>
                         <Route path="/home/disponibilidad-aulas" component={IncidenciasPage}></Route>
+                        {/* <Route path="/home/create-incidencia" component={CreateIncidenciaPage}></Route> */}
                     </Switch>
                 </div>
             </div>

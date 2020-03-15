@@ -2,66 +2,44 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 import './IncidenciasPage.scss'
-import {getIncidenciasAssignedToUser} from '../../Utilities/Incidencias'
-import {IncidenciaModel} from '../../Model/model';
+import { ButtonModel, InputModel, DropdownModel, TabsModel } from '../../Model/model'
+import Button from '../../Components/Button/Button';
+import Tabs from '../../Components/Tabs/Tabs';
+import CreateIncidenciaPage from './TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage';
+import MostrarIncidenciasPage from './TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage';
+
 
 const IncidenciasPage = () => {
-    const user = {
-        id: localStorage.userId
+    const history = useHistory();
+
+    const [tabsOptions] = React.useState<TabsModel>({
+        idList: ['mostrarIncidencias','crearIncidencia'],
+        valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
+        color: '',
+        enabledList: [true, true]
+    });
+    
+
+    const handleClickTab = (id: string) => {
+        if (id=='crearIncidencia') {
+            history.push('/home/incidencias/create');
+        } else if (id=='mostrarIncidencias') {
+            history.push('/home/incidencias/show');
+            
+        }
     }
 
-    const [incidenciasLoaded, setIncidenciasLoaded] = React.useState(false);
-    const [incidencias, setIncidencias] = React.useState([]);
-    React.useEffect(() => {
-        getIncidenciasAssignedToUser(user).then(res => {
-            setIncidencias(res.data);
-        })
-        setIncidenciasLoaded(true);
-    }, []);
-
-    if(incidenciasLoaded) {
         return( 
             <div>
-                ID del usuario: <b>{localStorage.userId}</b>
-                <table className="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Título</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Categoría</th>
-                        <th scope="col">Prioridad</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Fecha límite</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            incidencias.map(element => {
-                                return(
-                                    <tr>
-                                    <th scope="row">{element.id}</th>
-                                    <td>{element.title}</td>
-                                    <td>{element.description}</td>
-                                    <td>{element.category}</td>
-                                    <td>{element.priority}</td>
-                                    <td>{element.state}</td>
-                                    <td>{element.limit_date}</td>
-                                </tr>
-                                )
-                            }) 
-                        }
-                    </tbody>
-                </table>
+                <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
+                <div className="table-container">
+                    <Switch>
+                        <Route path="/home/incidencias/create" component={CreateIncidenciaPage}></Route>
+                        <Route path="/home/incidencias/show" component={MostrarIncidenciasPage}></Route>
+                    </Switch>
+                </div>
             </div>
         )
-    } else {
-        return(
-            <div>
-                No se han cargado las incidencias.
-            </div>
-        )
-    }
 }
 
 export default IncidenciasPage;

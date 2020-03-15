@@ -6,7 +6,6 @@ export const getAllIncidencias = (user: any) => {
         headers: {'Content-Type': 'application/json'}
     })
     .then(res => { 
-        console.log(res);
         return res;
     })
     .catch(err => {
@@ -30,7 +29,7 @@ export const getIncidenciasAssignedToUser = (user: any) => {
         headers: {'Content-Type': 'application/json'}
     })
     .then(res => { 
-        return res;
+        return res.data;
     })
     .catch(err => {
         if(err.response) {
