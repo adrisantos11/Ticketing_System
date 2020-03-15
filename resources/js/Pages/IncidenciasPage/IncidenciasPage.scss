@@ -1,2 +1,9 @@
 @import '../../../sass/app.scss';
 
+.incidencias-container {
+    margin-top: $default_padding*2;
+    border-color: $grey_color_127;
+    .data-container {
+        padding: $default_padding*2 $default_padding*2;
+    }
+}

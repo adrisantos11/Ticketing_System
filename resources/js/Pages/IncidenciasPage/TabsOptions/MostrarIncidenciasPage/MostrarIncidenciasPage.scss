@@ -1,1 +1,58 @@
 @import '../../../../../sass/app.scss';
+
+.perfilpage-container {
+    .filtrar-container {
+        display: flex;
+        flex-direction: row;
+
+    }
+    .table {
+        margin: $default_padding*3 0;
+        thead {
+            tr {
+                th {
+                    text-align: center;
+                    border-top: none;
+                    padding: 0;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                th {
+                    padding: $default_padding*2 $default_padding*2;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                td {
+                    max-width: $default_padding*40;
+                    text-align: center;
+                    padding: $default_padding*2 $default_padding*2;
+                    vertical-align: middle;
+                }
+
+                .columna-prioridad {
+                    font-weight: bold;
+                    &--red {
+                        @extend .columna-prioridad;
+                        color: $red_color;
+                    }
+
+                    &--orange {
+                        @extend .columna-prioridad;
+                        color: orange;
+                    }
+                    &--green {
+                        @extend .columna-prioridad;
+                        color: green;
+                    }
+                }
+            }
+
+            &:last-child {}
+        }
+
+    }
+}

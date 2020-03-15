@@ -84,7 +84,7 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
                         <span className="menu-btn" id="btn-cerrarMenu" onClick={handleClickCloseSlidebar}><i className="fas fa-times"></i></span>
                         <div className="span-container">
                             <NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user"></i></NavLink>
-                            <NavLink to="/home/incidencias" data-toogle="tooltip" data-placement="top" title="Incidencias"><b>Incidencias</b><i className="fas fa-tools"></i></NavLink>
+                            <NavLink to="/home/incidencias/show" data-toogle="tooltip" data-placement="top" title="Incidencias"><b>Incidencias</b><i className="fas fa-tools"></i></NavLink>
                             <NavLink to="/home/calendario" data-toogle="tooltip" data-placement="top" title="Calendario"><b>Calendario</b><i className="far fa-calendar-alt"></i></NavLink>
                             <NavLink to="/home/disponibilidad-aulas" data-toogle="tooltip" data-placement="top" title="Disponibilidad Aulas"><b>Disponibilidad Aulas</b><i className="far fa-clock"></i></NavLink>
                         </div>

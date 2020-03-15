@@ -11,8 +11,7 @@ class IncidenciasSeeder extends Seeder
      */
     public function run()
     {
-        factory(Incidencia::class, 40)->create();
-
+        
         DB::table('incidencias')->insert([
             'group_id' => 1,
             'id_reporter' => 2,
@@ -26,11 +25,14 @@ class IncidenciasSeeder extends Seeder
             'class' => 'C307',
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
-            'limit_date' => '2014-10-25 20:00:00',
+            'limit_date' => '2009-12-30 14:34:29',
             'assigned_date' => '2014-10-25 20:00:00',
             'resolution_date' => '2014-10-25 20:00:00',
-            'priority' => 'trivial',
+            'priority' => 'critical',
             'state' => 'todo'
-        ]);
-    }
+            ]);
+
+        factory(Incidencia::class, 40)->create();
+
+        }
 }

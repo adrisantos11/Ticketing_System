@@ -4,14 +4,26 @@ import './MostrarIncidenciasPage.scss'
 import { Input } from '../../../../Components/Input/Input';
 import { ButtonModel, InputModel, DropdownModel, IncidenciaModel } from '../../../../Model/model'
 import {getIncidenciasAssignedToUser} from '../../../../Utilities/IncidenciasUtilities'
+import Dropdown from '../../../../Components/Dropdown/Dropdown';
 
 const MostrarIncidenciasPage = () => {
     const [incidenciasLoaded, setIncidenciasLoaded] = React.useState(false);
     const [incidencias, setIncidencias] = React.useState([]);
+    let priorityText='';
+    let priorityColor='';
 
     const user = {
         id: localStorage.userId
     }
+    
+    const [adminDropdown] = React.useState<DropdownModel>({
+        id: 1,
+        groupName: "Adminstrador",
+        groupItems: [1],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    });
 
     React.useEffect(() => {
         getIncidenciasAssignedToUser(user).then(res => {
@@ -24,6 +36,12 @@ const MostrarIncidenciasPage = () => {
     return (
         <>
         <div className="perfilpage-container">
+            <div className="filtrar-container">
+                <p>
+                    Ordenar por:
+                </p>
+                <Dropdown dropdownInfo={adminDropdown}></Dropdown>
+            </div>
             <table className="table">
                 <thead>
                     <tr>
@@ -39,13 +57,25 @@ const MostrarIncidenciasPage = () => {
                 <tbody>
                     {
                         incidencias.map((element, index) => {
+                            if (element.priority == 'critical') {
+                                priorityColor = '--red';
+                                priorityText = 'crítica';
+
+                            } else if(element.priority == 'important') {
+                                priorityColor = '--orange';
+                                priorityText = 'importante';
+
+                            } else {
+                                priorityColor = '--green'
+                                priorityText = 'trivial';
+                            }
                             return(
                             <tr key={index}>
-                                <th scope="row">{element.id}</th>
+                                <th scope="row">{`#${element.id}`}</th>
                                 <td><a href="">{element.title}</a></td>
                                 <td>{element.description}</td>
                                 <td>{element.category}</td>
-                                <td>{element.priority}</td>
+                                <td className={`columna-prioridad${priorityColor}`}>{priorityText}</td>
                                 <td>{element.state}</td>
                                 <td>{element.limit_date}</td>
                             </tr>

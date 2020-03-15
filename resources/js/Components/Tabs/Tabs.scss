@@ -1,74 +1,53 @@
 @import '../../../sass/app.scss';
 
-.button_css {
-    border-radius: 2.5rem;
-    padding: $default_padding $default_padding*4;
+.tabs-container {
+    .btn-group {
 
-    &--primary {
-        @extend .button_css;
-        background-color: transparent;
-        color: $primary_color;
-        border-color: $primary_color;
-    }
+        .btn {
+            border-radius: 0;
+            border-top-right-radius: $default_padding*2;
+            cursor: pointer;
 
-    &--primary:hover {
-        border-color: $primary_color;
-        color: $white_color;
-        background-color: $primary_color;
-    }
+            &:first-child:not(:last-child):not(.dropdown-toggle) {
+                @extend .btn;
+                border-top-right-radius: 0;
+                border-top-left-radius: $default_padding*2;
 
-    &--white {
-        @extend .button_css;
-        border-color: $white_color;
-        color: $white_color;
-    }
+            }
 
-    &--white:hover {
-        border-color: $secondary_color;
-        color: $secondary_color;
-        background-color: $white_color;
-    }
+            &--primary {
+                @extend .btn;
+                background-color: transparent;
+                color: $primary_color;
+                border-color: $primary_color;
+                border-bottom: none;
+            }
 
-    &--red {
-        @extend .button_css;
-        background-color: $red_color;
-        color: $white_color;
-        border-color: $red_color;
+            &--grey {
+                @extend .btn;
+                background-color: $grey_color_184;
+                color: $grey_color_51;
+                //border-color: $primary_color;
+                border-bottom: none;
+            }
 
-    }
-
-    &--red:hover {
-        border-color: $red_color;
-        color: $white_color;
-        background-color: #BE2231;
-    }
-
-    .span_container {
-        display: none;
-        padding-right: $default_padding;
-        font-size: $font_size;
-
-        &--show {
-            @extend .span_container;
-            display: inline;
+            &--grey:hover {
+                background-color: $grey_color_127;
+            }
         }
-    }
 
-    .button_text {
-        font-size: $font_size*1.2;
-    }
-}
+        .active {
+            // font-weight: bold;
+            color: $primary_color;
+            background-color: transparent;
+            border-color: $primary_color;
+            border-bottom: none;
 
-.button_css:hover {
-    cursor: pointer;
-}
+            &:hover {
+                background-color: transparent;
 
-.only-icon {
-    padding: $default_padding $default_padding*2 !important;
-    cursor: pointer;
-    font-size: $font_size*2;
-    &--primary {
-        @extend .only-icon;
-        color: $primary_color;
+            }
+
+        }
     }
 }

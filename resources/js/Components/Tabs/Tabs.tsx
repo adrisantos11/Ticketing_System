@@ -15,28 +15,27 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
     }
 
     return(
-        <><div className="btn-group btn-group-toggle" data-toggle="buttons">
-            {
-                props.tabsInfo.valuesList.map((value, index) => {
-                    if (index == 0) {
-                        return(
-                            <label className="btn btn-secondary active" key={index}>
-                                <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
-                                
-                            </label>
-                        )
-    
-                    } else {
-                        return(
-                            <label className="btn btn-secondary" key={index}>
-                                <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
-                            </label>
-                        )
-                    }
-                })
-            }
+        <div className="tabs-container">  
+            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                {
+                    props.tabsInfo.valuesList.map((value, index) => {
+                        if (index == 0) {
+                            return(
+                                <label className="btn btn--grey active" key={index}>
+                                    <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value} 
+                                </label>
+                            )
+                        } else {
+                            return(
+                                <label className="btn btn--grey" key={index}>
+                                    <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
+                                </label>
+                            )
+                        }
+                    })
+                }
+            </div>
         </div>
-        </>
     );
 }
 
