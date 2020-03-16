@@ -72,7 +72,7 @@ const MostrarIncidenciasPage = () => {
                             return(
                             <tr key={index}>
                                 <th scope="row">{`#${element.id}`}</th>
-                                <td><a href="">{element.title}</a></td>
+                                <td><a href={`/home/incidencias/show-${element.id}`}>{element.title}</a></td>
                                 <td>{element.description}</td>
                                 <td>{element.category}</td>
                                 <td className={`columna-prioridad${priorityColor}`}>{priorityText}</td>

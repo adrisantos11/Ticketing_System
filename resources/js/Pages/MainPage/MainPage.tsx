@@ -93,6 +93,7 @@ const MainPage = () => {
         return (
             <>
                 <h1>Tienes que iniciar sesión para poder acceder a esta página.</h1>
+                <a href="/">Pagina de inicio</a>
             </>
         );
     }

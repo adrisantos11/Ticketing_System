@@ -10,10 +10,31 @@ const CreateIncidenciaPage = () => {
     if(userRol == 'technical') {
         enableInput = false;
     }
-    const [assignInput] = React.useState<InputModel>({
+    const [titleInput] = React.useState<InputModel>({
         id: 1,
-        label: 'Asignar a...',
-        placeholder: 'Ej: 25342783',
+        label: 'Título',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: enableInput,
+        extraClass: ''
+    });
+    const [descriptionInput] = React.useState<InputModel>({
+        id: 1,
+        label: 'Descripción',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: enableInput,
+        extraClass: ''
+    });
+
+    const [departamentInput] = React.useState<InputModel>({
+        id: 1,
+        label: 'Departamento',
+        placeholder: '',
         color: 'primary',
         type: 'text',
         error_control_text: '',
@@ -28,8 +49,9 @@ const CreateIncidenciaPage = () => {
     return (
         <>
         <div className="perfilpage-container">
-            Crear incidencia.
-            <Input inputInfo={assignInput} handleChangeInput={handleChangeInput}></Input>
+            <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
+            <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
+            <Input inputInfo={departamentInput} handleChangeInput={handleChangeInput}></Input>
         </div>
         </>
     )

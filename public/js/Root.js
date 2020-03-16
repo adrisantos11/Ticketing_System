@@ -2041,7 +2041,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label, .form-group .text_label--red, .form-group .text_label--primary {\n  font-size: 1.1256rem;\n}\n.form-group .text_label--primary {\n  color: #3685EC;\n}\n.form-group .text_label--red {\n  color: #dc3545;\n}\n.form-group .input_class--primary {\n  color: #3685EC;\n}\n.form-group .input_class--primary:focus {\n  background-color: rgba(54, 133, 236, 0.8);\n  border-color: #3685EC;\n  color: #FFFFFF;\n}\n.form-group .input_class--primary:focus::-webkit-input-placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.form-group .input_class--red {\n  border-color: #dc3545;\n  color: #dc3545;\n}\n.form-group .input_class--red::-webkit-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-moz-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red:-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::placeholder {\n  color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(54, 133, 236, 0.1);\n  border-color: #3685EC;\n}\n.form-group .input_class_primary--red {\n  background-color: rgba(247, 100, 115, 0.4);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
+exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label, .form-group .text_label--red, .form-group .text_label--primary {\n  font-size: 1.1256rem;\n}\n.form-group .text_label--primary {\n  color: #3685EC;\n}\n.form-group .text_label--red {\n  color: #dc3545;\n}\n.form-group .input_class--primary {\n  color: #3685EC;\n}\n.form-group .input_class--primary:focus {\n  background-color: #3685EC;\n  border-color: #3685EC;\n  color: #FFFFFF;\n}\n.form-group .input_class--primary:focus::-webkit-input-placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.form-group .input_class--red {\n  border-color: #dc3545;\n  color: #dc3545;\n}\n.form-group .input_class--red::-webkit-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-moz-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red:-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::placeholder {\n  color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(54, 133, 236, 0.1);\n  border-color: #3685EC;\n}\n.form-group .input_class_primary--red {\n  background-color: rgba(247, 100, 115, 0.4);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -2079,7 +2079,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".tabs-container .btn-group .btn, .tabs-container .btn-group .btn--grey, .tabs-container .btn-group .btn--grey:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--primary, .tabs-container .btn-group .btn--primary:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n  border-top-right-radius: 1rem;\n  cursor: pointer;\n}\n.tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--grey:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--primary:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-top-right-radius: 0;\n  border-top-left-radius: 1rem;\n}\n.tabs-container .btn-group .btn--primary {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n  border-bottom: none;\n}\n.tabs-container .btn-group .btn--grey {\n  background-color: #f1f1f1;\n  color: #333333;\n  border-bottom: none;\n}\n.tabs-container .btn-group .btn--grey:hover {\n  background-color: #c4c4c4;\n}\n.tabs-container .btn-group .active {\n  color: #3685EC;\n  background-color: transparent;\n  border-color: #3685EC;\n  border-bottom: none;\n}\n.tabs-container .btn-group .active:hover {\n  background-color: transparent;\n}", ""]);
+exports.push([module.i, ".tabs-container .btn-group .btn, .tabs-container .btn-group .btn--grey, .tabs-container .btn-group .btn--grey:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--primary, .tabs-container .btn-group .btn--primary:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n  border-top-right-radius: 1rem;\n  cursor: pointer;\n}\n.tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--grey:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--primary:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-top-right-radius: 0;\n  border-top-left-radius: 1rem;\n}\n.tabs-container .btn-group .btn--primary {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n  border-bottom: none;\n}\n.tabs-container .btn-group .btn--grey {\n  background-color: #f1f1f1;\n  color: #333333;\n  border-bottom: none;\n}\n.tabs-container .btn-group .btn--grey:hover {\n  background-color: #c4c4c4;\n}\n.tabs-container .btn-group .active {\n  color: #3685EC;\n  background-color: #fafafa;\n  border-bottom: none;\n  font-weight: bold;\n}\n.tabs-container .btn-group .active:hover {\n  background-color: transparent;\n}", ""]);
 
 // exports
 
@@ -36094,8 +36094,8 @@ var MostrarIncidenciasPage_1 = __webpack_require__(/*! ./TabsOptions/MostrarInci
 var IncidenciasPage = function () {
     var history = react_router_dom_1.useHistory();
     var tabsOptions = React.useState({
-        idList: ['mostrarIncidencias', 'crearIncidencia', 'ejemplo'],
-        valuesList: ['Mostrar incidencias', 'Crear nueva incidencia', 'ejemplo'],
+        idList: ['mostrarIncidencias', 'crearIncidencia'],
+        valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
         color: '',
         enabledList: [true, true]
     })[0];
@@ -36170,10 +36170,30 @@ var CreateIncidenciaPage = function () {
     if (userRol == 'technical') {
         enableInput = false;
     }
-    var assignInput = React.useState({
+    var titleInput = React.useState({
         id: 1,
-        label: 'Asignar a...',
-        placeholder: 'Ej: 25342783',
+        label: 'Título',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: enableInput,
+        extraClass: ''
+    })[0];
+    var descriptionInput = React.useState({
+        id: 1,
+        label: 'Descripción',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: enableInput,
+        extraClass: ''
+    })[0];
+    var departamentInput = React.useState({
+        id: 1,
+        label: 'Departamento',
+        placeholder: '',
         color: 'primary',
         type: 'text',
         error_control_text: '',
@@ -36185,8 +36205,9 @@ var CreateIncidenciaPage = function () {
     };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: "perfilpage-container" },
-            "Crear incidencia.",
-            React.createElement(Input_1.Input, { inputInfo: assignInput, handleChangeInput: handleChangeInput }))));
+            React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInput }),
+            React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInput }),
+            React.createElement(Input_1.Input, { inputInfo: departamentInput, handleChangeInput: handleChangeInput }))));
 };
 exports.default = CreateIncidenciaPage;
 
@@ -36291,7 +36312,7 @@ var MostrarIncidenciasPage = function () {
                         return (React.createElement("tr", { key: index },
                             React.createElement("th", { scope: "row" }, "#" + element.id),
                             React.createElement("td", null,
-                                React.createElement("a", { href: "" }, element.title)),
+                                React.createElement("a", { href: "/home/incidencias/show-" + element.id }, element.title)),
                             React.createElement("td", null, element.description),
                             React.createElement("td", null, element.category),
                             React.createElement("td", { className: "columna-prioridad" + priorityColor }, priorityText),
@@ -36575,7 +36596,8 @@ var MainPage = function () {
     }
     else {
         return (React.createElement(React.Fragment, null,
-            React.createElement("h1", null, "Tienes que iniciar sesi\u00F3n para poder acceder a esta p\u00E1gina.")));
+            React.createElement("h1", null, "Tienes que iniciar sesi\u00F3n para poder acceder a esta p\u00E1gina."),
+            React.createElement("a", { href: "/" }, "Pagina de inicio")));
     }
 };
 exports.default = MainPage;

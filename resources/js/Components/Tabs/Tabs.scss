@@ -39,9 +39,10 @@
         .active {
             // font-weight: bold;
             color: $primary_color;
-            background-color: transparent;
-            border-color: $primary_color;
+            background-color: $grey_color_250;
+            // border-color: $primary_color;
             border-bottom: none;
+            font-weight: bold;
 
             &:hover {
                 background-color: transparent;

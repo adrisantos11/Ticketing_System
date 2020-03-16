@@ -13,8 +13,8 @@ const IncidenciasPage = () => {
     const history = useHistory();
 
     const [tabsOptions] = React.useState<TabsModel>({
-        idList: ['mostrarIncidencias','crearIncidencia', 'ejemplo'],
-        valuesList: ['Mostrar incidencias', 'Crear nueva incidencia', 'ejemplo'],
+        idList: ['mostrarIncidencias','crearIncidencia'],
+        valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
         color: '',
         enabledList: [true, true]
     });

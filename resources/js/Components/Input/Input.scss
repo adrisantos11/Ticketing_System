@@ -24,7 +24,7 @@
             color: $primary_color;
 
             &:focus {
-                background-color: rgba($color: $primary_color, $alpha: 0.8);
+                background-color: $primary_color;
                 border-color: $primary_color;
                 color: $white_color;
 
