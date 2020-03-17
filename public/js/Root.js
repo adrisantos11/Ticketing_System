@@ -2022,7 +2022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".dropdown .btn {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.dropdown .dropdown-menu .dropdown-item:hover {\n  background-color: #f1f1f1;\n}\n.dropdown.show .btn {\n  background-color: #3685EC;\n  border: none;\n  color: #FFFFFF;\n}", ""]);
 
 // exports
 
@@ -35680,13 +35680,15 @@ if(false) {}
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Dropdown.scss */ "./resources/js/Components/Dropdown/Dropdown.scss");
+var onClickItem = function (e) {
+    console.log(e.target.id);
+};
 var Dropdown = function (props) {
     return (React.createElement("div", { className: "dropdown" },
-        React.createElement("button", { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenuButton", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }, "Dropdown button"),
-        React.createElement("div", { className: "dropdown-menu", "aria-labelledby": "dropdownMenuButton" },
-            React.createElement("a", { className: "dropdown-item", href: "#" }, "Action"),
-            React.createElement("a", { className: "dropdown-item", href: "#" }, "Another action"),
-            React.createElement("a", { className: "dropdown-item", href: "#" }, "Something else here"))));
+        React.createElement("button", { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenuButton", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }, props.dropdownInfo.groupName),
+        React.createElement("div", { className: "dropdown-menu", "aria-labelledby": "dropdownMenuButton" }, props.dropdownInfo.groupItems.map(function (value, index) {
+            return (React.createElement("a", { className: "dropdown-item", id: "" + index, onClick: onClickItem }, value));
+        }))));
 };
 exports.default = Dropdown;
 
@@ -35868,6 +35870,9 @@ var Navbar = function (props) {
         var optionSelected = e.target.getAttribute("data-id");
         props.handleClickOptions(optionSelected);
     };
+    var handleClickItemDD = function (id) {
+        console.log(id);
+    };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'navbar-container ', id: "slidevar" },
             React.createElement(react_router_dom_1.HashRouter, null,
@@ -35889,7 +35894,7 @@ var Navbar = function (props) {
                         React.createElement(react_router_dom_1.NavLink, { to: "/home/disponibilidad-aulas", "data-toogle": "tooltip", "data-placement": "top", title: "Disponibilidad Aulas" },
                             React.createElement("b", null, "Disponibilidad Aulas"),
                             React.createElement("i", { className: "far fa-clock" })))),
-                React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown }),
+                React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown, onClick: handleClickItemDD }),
                 React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickLogoutButton }),
                 React.createElement("div", { className: "nabvar-footer" }, "Ticketclass :D")))));
 };
@@ -36181,7 +36186,7 @@ var CreateIncidenciaPage = function () {
         extraClass: ''
     })[0];
     var descriptionInput = React.useState({
-        id: 1,
+        id: 2,
         label: 'Descripción',
         placeholder: '',
         color: 'primary',
@@ -36191,7 +36196,7 @@ var CreateIncidenciaPage = function () {
         extraClass: ''
     })[0];
     var departamentInput = React.useState({
-        id: 1,
+        id: 3,
         label: 'Departamento',
         placeholder: '',
         color: 'primary',
@@ -36268,8 +36273,8 @@ var MostrarIncidenciasPage = function () {
     };
     var adminDropdown = React.useState({
         id: 1,
-        groupName: "Adminstrador",
-        groupItems: [1],
+        groupName: "Ordenar por...",
+        groupItems: ['Prioridad', 'Fecha límite', 'Estado'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -36280,12 +36285,14 @@ var MostrarIncidenciasPage = function () {
         });
         setIncidenciasLoaded(true);
     }, []);
+    var handleClickItemDD = function (id) {
+        console.log(id);
+    };
     if (incidenciasLoaded) {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "perfilpage-container" },
                 React.createElement("div", { className: "filtrar-container" },
-                    React.createElement("p", null, "Ordenar por:"),
-                    React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown })),
+                    React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown, onClick: handleClickItemDD })),
                 React.createElement("table", { className: "table" },
                     React.createElement("thead", null,
                         React.createElement("tr", null,
@@ -36811,8 +36818,8 @@ __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -75,6 +75,9 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
         props.handleClickOptions(optionSelected);
     }
 
+    const handleClickItemDD = (id: number) => {
+        console.log(id);
+    }
     return(
         <>
             <div className='navbar-container ' id="slidevar">
@@ -89,7 +92,7 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
                             <NavLink to="/home/disponibilidad-aulas" data-toogle="tooltip" data-placement="top" title="Disponibilidad Aulas"><b>Disponibilidad Aulas</b><i className="far fa-clock"></i></NavLink>
                         </div>
                     </div>
-                    <Dropdown dropdownInfo={adminDropdown}></Dropdown>
+                    <Dropdown dropdownInfo={adminDropdown} onClick={handleClickItemDD}></Dropdown>
                     <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>
                     <div className="nabvar-footer">
                         Ticketclass :D

@@ -1,0 +1,27 @@
+@import '../../../sass/app.scss';
+
+.dropdown {
+    .btn {
+        background-color: transparent;
+        color: $primary_color;
+        border-color: $primary_color;
+    }
+
+    .dropdown-menu {
+
+        .dropdown-item {
+            &:hover{
+                @extend .dropdown-item;
+                background-color: $grey_color_184;
+            }
+        }
+    }
+
+    &.show {
+        .btn {
+            background-color: $primary_color;
+            border: none;
+            color: $white_color;
+        }
+    }
+}

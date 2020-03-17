@@ -21,7 +21,7 @@ const CreateIncidenciaPage = () => {
         extraClass: ''
     });
     const [descriptionInput] = React.useState<InputModel>({
-        id: 1,
+        id: 2,
         label: 'Descripción',
         placeholder: '',
         color: 'primary',
@@ -32,7 +32,7 @@ const CreateIncidenciaPage = () => {
     });
 
     const [departamentInput] = React.useState<InputModel>({
-        id: 1,
+        id: 3,
         label: 'Departamento',
         placeholder: '',
         color: 'primary',

@@ -18,8 +18,8 @@ const MostrarIncidenciasPage = () => {
     
     const [adminDropdown] = React.useState<DropdownModel>({
         id: 1,
-        groupName: "Adminstrador",
-        groupItems: [1],
+        groupName: "Ordenar por...",
+        groupItems: ['Prioridad', 'Fecha límite', 'Estado'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -32,15 +32,16 @@ const MostrarIncidenciasPage = () => {
         setIncidenciasLoaded(true);
     }, []);
 
+    const handleClickItemDD = (id: number) => {
+        console.log(id);
+    }
+
     if(incidenciasLoaded) {
     return (
         <>
         <div className="perfilpage-container">
             <div className="filtrar-container">
-                <p>
-                    Ordenar por:
-                </p>
-                <Dropdown dropdownInfo={adminDropdown}></Dropdown>
+                <Dropdown dropdownInfo={adminDropdown} onClick={handleClickItemDD}></Dropdown>
             </div>
             <table className="table">
                 <thead>
