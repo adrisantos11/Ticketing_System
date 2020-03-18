@@ -2124,6 +2124,25 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss":
 /*!****************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss ***!
@@ -36122,6 +36141,63 @@ exports.default = CalendarPage;
 
 /***/ }),
 
+/***/ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./IncidenciaViewPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.tsx":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.tsx ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./IncidenciaViewPage.scss */ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss");
+var react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+var IncidenciaViewPage = function () {
+    var idIncidencia = react_router_1.useParams().idIncidencia;
+    return (React.createElement("div", { className: 'incidenciaview-container' },
+        React.createElement("p", null,
+            "Vista inciencia \u00FAnica. ",
+            React.createElement("b", null, idIncidencia)),
+        React.createElement(react_router_dom_1.Link, { to: '/home/incidencias/show' }, "Volver a la p\u00E1gina anterior")));
+};
+exports.default = IncidenciaViewPage;
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss":
 /*!*****************************************************************!*\
   !*** ./resources/js/Pages/IncidenciasPage/IncidenciasPage.scss ***!
@@ -36467,6 +36543,7 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./MostrarIncidenciasPage.scss */ "./resources/js/Pages/IncidenciasPage/TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss");
 var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/IncidenciasUtilities */ "./resources/js/Utilities/IncidenciasUtilities.tsx");
 var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var MostrarIncidenciasPage = function () {
     var _a = React.useState(false), incidenciasLoaded = _a[0], setIncidenciasLoaded = _a[1];
     var _b = React.useState([]), incidencias = _b[0], setIncidencias = _b[1];
@@ -36484,6 +36561,7 @@ var MostrarIncidenciasPage = function () {
         extraClass: '',
     })[0];
     React.useEffect(function () {
+        var table = document.getElementById('dataTable');
         IncidenciasUtilities_1.getIncidenciasAssignedToUser(user).then(function (res) {
             setIncidencias(res);
         });
@@ -36497,7 +36575,7 @@ var MostrarIncidenciasPage = function () {
             React.createElement("div", { className: "incidenciasList-container" },
                 React.createElement("div", { className: "filtrar-container" },
                     React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown, onClick: handleClickItemDD })),
-                React.createElement("table", { className: "table" },
+                React.createElement("table", { className: "table", id: 'dataTable' },
                     React.createElement("thead", null,
                         React.createElement("tr", null,
                             React.createElement("th", { scope: "col" }, "Id"),
@@ -36523,7 +36601,8 @@ var MostrarIncidenciasPage = function () {
                         return (React.createElement("tr", { key: index },
                             React.createElement("th", { scope: "row" }, "#" + element.id),
                             React.createElement("td", null,
-                                React.createElement("a", { href: "/home/incidencias/show-" + element.id }, element.title)),
+                                React.createElement(react_router_dom_1.Link, { to: "/home/incidencia-view/" + element.id, "data-toogle": "tooltip", "data-placement": "top", title: "Incidencia " + element.id },
+                                    React.createElement("b", null, element.title))),
                             React.createElement("td", null, element.description),
                             React.createElement("td", null, element.category),
                             React.createElement("td", { className: "columna-prioridad" + priorityColor }, priorityText),
@@ -36748,6 +36827,7 @@ var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */
 var PerfilPage_1 = __webpack_require__(/*! ../PerfilPage/PerfilPage */ "./resources/js/Pages/PerfilPage/PerfilPage.tsx");
 var IncidenciasPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciasPage */ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.tsx");
 var CalendarPage_1 = __webpack_require__(/*! ../CalendarPage/CalendarPage */ "./resources/js/Pages/CalendarPage/CalendarPage.tsx");
+var IncidenciaViewPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage */ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.tsx");
 var MainPage = function () {
     var history = react_router_dom_1.useHistory();
     var _a = React.useState(false), isLogged = _a[0], setIsLogged = _a[1];
@@ -36803,7 +36883,8 @@ var MainPage = function () {
                         React.createElement(react_router_dom_1.Route, { path: "/home/perfil", component: PerfilPage_1.default }),
                         React.createElement(react_router_dom_1.Route, { path: "/home/incidencias", component: IncidenciasPage_1.default }),
                         React.createElement(react_router_dom_1.Route, { path: "/home/calendario", component: CalendarPage_1.default }),
-                        React.createElement(react_router_dom_1.Route, { path: "/home/disponibilidad-aulas", component: IncidenciasPage_1.default }))))));
+                        React.createElement(react_router_dom_1.Route, { path: "/home/disponibilidad-aulas", component: IncidenciasPage_1.default }),
+                        React.createElement(react_router_dom_1.Route, { path: "/home/incidencia-view/:idIncidencia", component: IncidenciaViewPage_1.default }))))));
     }
     else {
         return (React.createElement(React.Fragment, null,

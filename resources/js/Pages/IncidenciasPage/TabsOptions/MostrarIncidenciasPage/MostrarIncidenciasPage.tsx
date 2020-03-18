@@ -5,6 +5,7 @@ import { Input } from '../../../../Components/Input/Input';
 import { ButtonModel, InputModel, DropdownModel, IncidenciaModel } from '../../../../Model/model'
 import {getIncidenciasAssignedToUser} from '../../../../Utilities/IncidenciasUtilities'
 import Dropdown from '../../../../Components/Dropdown/Dropdown';
+import { NavLink, Link } from 'react-router-dom';
 
 const MostrarIncidenciasPage = () => {
     const [incidenciasLoaded, setIncidenciasLoaded] = React.useState(false);
@@ -26,6 +27,7 @@ const MostrarIncidenciasPage = () => {
     });
 
     React.useEffect(() => {
+        let table: HTMLElement = document.getElementById('dataTable');
         getIncidenciasAssignedToUser(user).then(res => {
             setIncidencias(res);
         })
@@ -43,7 +45,7 @@ const MostrarIncidenciasPage = () => {
             <div className="filtrar-container">
                 <Dropdown dropdownInfo={adminDropdown} onClick={handleClickItemDD}></Dropdown>
             </div>
-            <table className="table">
+            <table className="table" id='dataTable'>
                 <thead>
                     <tr>
                     <th scope="col">Id</th>
@@ -73,7 +75,7 @@ const MostrarIncidenciasPage = () => {
                             return(
                             <tr key={index}>
                                 <th scope="row">{`#${element.id}`}</th>
-                                <td><a href={`/home/incidencias/show-${element.id}`}>{element.title}</a></td>
+                                <td><Link to={`/home/incidencia-view/${element.id}`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
                                 <td>{element.description}</td>
                                 <td>{element.category}</td>
                                 <td className={`columna-prioridad${priorityColor}`}>{priorityText}</td>

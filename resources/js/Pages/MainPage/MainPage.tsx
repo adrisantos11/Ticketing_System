@@ -12,7 +12,7 @@ import PerfilPage from "../PerfilPage/PerfilPage"
 import IncidenciasPage from "../IncidenciasPage/IncidenciasPage"
 import CalendarPage from "../CalendarPage/CalendarPage"
 import CreateIncidenciaPage from "../IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage"
-
+import IncidenciaViewPage from "../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage"
 
 const MainPage = () => {
     const history = useHistory();
@@ -83,7 +83,7 @@ const MainPage = () => {
                         <Route path="/home/incidencias" component={IncidenciasPage}></Route>
                         <Route path="/home/calendario" component={CalendarPage}></Route>
                         <Route path="/home/disponibilidad-aulas" component={IncidenciasPage}></Route>
-                        {/* <Route path="/home/create-incidencia" component={CreateIncidenciaPage}></Route> */}
+                        <Route path="/home/incidencia-view/:idIncidencia" component={IncidenciaViewPage}></Route>
                     </Switch>
                 </div>
             </div>
