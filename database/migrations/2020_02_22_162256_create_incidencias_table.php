@@ -20,7 +20,7 @@ class CreateIncidenciasTable extends Migration
             $table->integer('id_assigned');
             $table->string('title');
             $table->string('description')->nullable()->default('Without description');
-            $table->string('department');
+            $table->string('department')->nullable();
             $table->string('category');
             $table->string('build');
             $table->integer('floor');
@@ -28,13 +28,10 @@ class CreateIncidenciasTable extends Migration
             $table->string('url_data')->nullable();
             $table->dateTime('creation_date');
             $table->dateTime('limit_date');
-            $table->dateTime('assigned_date');
-            $table->dateTime('resolution_date');
-            $table->enum('priority', ['critical', 'important', 'trivial'])->nullable()->default('trivial');
-            $table->enum('state', ['todo', 'doing', 'blocked', 'done'])->nullable()->default('todo');
-            
-            // $table->timestamps();
-            // $table->foreign('Grupo_ID')->refernces('ID')->on('GrupoIncidencias');
+            $table->dateTime('assigned_date')->nullable();
+            $table->dateTime('resolution_date')->nullable();
+            $table->enum('priority', ['critical', 'important', 'trivial'])->default('trivial');
+            $table->enum('state', ['todo', 'doing', 'blocked', 'done'])->default('todo');     
         });
     }
 

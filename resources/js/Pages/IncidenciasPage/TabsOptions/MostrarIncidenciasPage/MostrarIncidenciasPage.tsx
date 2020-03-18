@@ -39,7 +39,7 @@ const MostrarIncidenciasPage = () => {
     if(incidenciasLoaded) {
     return (
         <>
-        <div className="perfilpage-container">
+        <div className="incidenciasList-container">
             <div className="filtrar-container">
                 <Dropdown dropdownInfo={adminDropdown} onClick={handleClickItemDD}></Dropdown>
             </div>

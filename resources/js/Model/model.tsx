@@ -35,7 +35,6 @@ export interface TabsModel {
 }
 
 export interface IncidenciaModel {
-    id: number,
     group_id: number,
     id_reporter: number,
     id_assigned: number,

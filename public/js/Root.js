@@ -2086,6 +2086,25 @@ exports.push([module.i, ".tabs-container .btn-group .btn, .tabs-container .btn-g
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/UploadFile/UploadFile.scss":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/UploadFile/UploadFile.scss ***!
+  \***********************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/CalendarPage/CalendarPage.scss":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/CalendarPage/CalendarPage.scss ***!
@@ -2136,7 +2155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".createIncidencia-container {\n  width: 70%;\n}", ""]);
 
 // exports
 
@@ -2155,7 +2174,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".perfilpage-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n}\n.perfilpage-container .table {\n  margin: 1.5rem 0;\n}\n.perfilpage-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.perfilpage-container .table tbody tr th {\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.perfilpage-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.perfilpage-container .table tbody tr .columna-prioridad, .perfilpage-container .table tbody tr .columna-prioridad--green, .perfilpage-container .table tbody tr .columna-prioridad--orange, .perfilpage-container .table tbody tr .columna-prioridad--red {\n  font-weight: bold;\n}\n.perfilpage-container .table tbody tr .columna-prioridad--red {\n  color: #dc3545;\n}\n.perfilpage-container .table tbody tr .columna-prioridad--orange {\n  color: orange;\n}\n.perfilpage-container .table tbody tr .columna-prioridad--green {\n  color: green;\n}", ""]);
+exports.push([module.i, ".incidenciasList-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n}\n.incidenciasList-container .table {\n  margin: 1.5rem 0;\n}\n.incidenciasList-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.incidenciasList-container .table tbody tr th {\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table tbody tr .columna-prioridad, .incidenciasList-container .table tbody tr .columna-prioridad--green, .incidenciasList-container .table tbody tr .columna-prioridad--orange, .incidenciasList-container .table tbody tr .columna-prioridad--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table tbody tr .columna-prioridad--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table tbody tr .columna-prioridad--orange {\n  color: orange;\n}\n.incidenciasList-container .table tbody tr .columna-prioridad--green {\n  color: green;\n}", ""]);
 
 // exports
 
@@ -35680,14 +35699,14 @@ if(false) {}
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Dropdown.scss */ "./resources/js/Components/Dropdown/Dropdown.scss");
-var onClickItem = function (e) {
-    console.log(e.target.id);
-};
 var Dropdown = function (props) {
+    var onClickItem = function (e) {
+        props.onClick(e.target.id, props.dropdownInfo.id);
+    };
     return (React.createElement("div", { className: "dropdown" },
         React.createElement("button", { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenuButton", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }, props.dropdownInfo.groupName),
         React.createElement("div", { className: "dropdown-menu", "aria-labelledby": "dropdownMenuButton" }, props.dropdownInfo.groupItems.map(function (value, index) {
-            return (React.createElement("a", { className: "dropdown-item", id: "" + index, onClick: onClickItem }, value));
+            return (React.createElement("a", { className: "dropdown-item", key: "" + index, id: value, onClick: onClickItem }, value));
         }))));
 };
 exports.default = Dropdown;
@@ -35970,6 +35989,59 @@ exports.default = Tabs;
 
 /***/ }),
 
+/***/ "./resources/js/Components/UploadFile/UploadFile.scss":
+/*!************************************************************!*\
+  !*** ./resources/js/Components/UploadFile/UploadFile.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./UploadFile.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/UploadFile/UploadFile.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Components/UploadFile/UploadFile.tsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/Components/UploadFile/UploadFile.tsx ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./UploadFile.scss */ "./resources/js/Components/UploadFile/UploadFile.scss");
+var UploadFile = function (props) {
+    return (React.createElement("form", null,
+        React.createElement("div", { className: "form-group" },
+            React.createElement("label", null, "Example file input"),
+            React.createElement("input", { type: "file", className: "form-control-file", id: "exampleFormControlFile1" }))));
+};
+exports.default = UploadFile;
+
+
+/***/ }),
+
 /***/ "./resources/js/Navigation.tsx":
 /*!*************************************!*\
   !*** ./resources/js/Navigation.tsx ***!
@@ -36169,12 +36241,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./CreateIncidenciaPage.scss */ "./resources/js/Pages/IncidenciasPage/TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage.scss");
 var Input_1 = __webpack_require__(/*! ../../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
+var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
+var Button_1 = __webpack_require__(/*! ../../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var UploadFile_1 = __webpack_require__(/*! ../../../../Components/UploadFile/UploadFile */ "./resources/js/Components/UploadFile/UploadFile.tsx");
+var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/IncidenciasUtilities */ "./resources/js/Utilities/IncidenciasUtilities.tsx");
 var CreateIncidenciaPage = function () {
     var userRol = localStorage.userRol;
     var enableInput = true;
     if (userRol == 'technical') {
         enableInput = false;
     }
+    var _a = React.useState(''), title = _a[0], setTitle = _a[1];
+    var _b = React.useState(''), description = _b[0], setDescription = _b[1];
+    var _c = React.useState(''), department = _c[0], setDepartment = _c[1];
+    var _d = React.useState(''), category = _d[0], setCategory = _d[1];
+    var _e = React.useState(''), build = _e[0], setBuild = _e[1];
+    var _f = React.useState(0), floor = _f[0], setFloor = _f[1];
+    var _g = React.useState(''), classroom = _g[0], setClassroom = _g[1];
+    var _h = React.useState(''), priority = _h[0], setPriority = _h[1];
+    var _j = React.useState(''), urlFile = _j[0], setUrlFile = _j[1];
     var titleInput = React.useState({
         id: 1,
         label: 'Título',
@@ -36205,14 +36290,133 @@ var CreateIncidenciaPage = function () {
         enabled: enableInput,
         extraClass: ''
     })[0];
+    var categoryDropdown = React.useState({
+        id: 1,
+        groupName: 'Elegir categoría',
+        groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    })[0];
+    var buildDropdown = React.useState({
+        id: 2,
+        groupName: 'Elegir edificio',
+        groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)', 'Edificio E (Business)'],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    })[0];
+    var floorDropdown = React.useState({
+        id: 3,
+        groupName: 'Elegir piso',
+        groupItems: [],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    })[0];
+    var classDropdown = React.useState({
+        id: 4,
+        groupName: 'Elegir clase',
+        groupItems: [],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    })[0];
+    var priorityDropdown = React.useState({
+        id: 5,
+        groupName: 'Elegir prioridad',
+        groupItems: ['critical', 'important', 'trivial'],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    })[0];
+    var createIncidenciaButton = React.useState({
+        id: 1,
+        texto: 'Crear incidencia',
+        color: 'primary',
+        type: '',
+        icon: '',
+        extraClass: ''
+    })[0];
     var handleChangeInput = function (value, id) {
-        // console.log(value);
+        if (id == 1) {
+            setTitle(value);
+        }
+        else if (id == 2) {
+            setDescription(value);
+        }
+        else if (id == 3) {
+            setDepartment(value);
+        }
+    };
+    var handleClickItemDD = function (idItem, idDropdown) {
+        if (idDropdown == 1) {
+            setCategory(String(idItem));
+        }
+        else if (idDropdown == 2) {
+            if (String(idItem).includes('Salud')) {
+                setBuild('A');
+            }
+            else if (String(idItem).includes('Sociales')) {
+                setBuild('B');
+            }
+            else if (String(idItem).includes('Ingeniería')) {
+                setBuild('C');
+            }
+            else if (String(idItem).includes('Deporte')) {
+                setBuild('P');
+            }
+            else if (String(idItem).includes('Business')) {
+                setBuild('E');
+            }
+        }
+        else if (idDropdown == 3) {
+            setFloor(idItem);
+        }
+        else if (idDropdown == 4) {
+            setClassroom(String(idItem));
+        }
+        else if (idDropdown == 5) {
+            setPriority(String(idItem));
+        }
+    };
+    var hendleClickCreateIncidencia = function (e) {
+        var date = new Date();
+        var hoursMinutesSeconds = date.toLocaleString().split(' ');
+        var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + ' ' + hoursMinutesSeconds[1];
+        var incidencia = {
+            group_id: 0,
+            id_reporter: parseInt(localStorage.userId),
+            id_assigned: 0,
+            title: title,
+            description: description,
+            department: department,
+            category: category,
+            build: build,
+            floor: 3,
+            class: 'classroom',
+            url_data: '',
+            creation_date: currentDate,
+            limit_date: '1263645342',
+            assigned_date: '',
+            resolution_date: '',
+            priority: priority,
+            state: 'todo'
+        };
+        IncidenciasUtilities_1.createIncidencia(incidencia);
     };
     return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: "perfilpage-container" },
+        React.createElement("div", { className: 'createIncidencia-container' },
             React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInput }),
             React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInput }),
-            React.createElement(Input_1.Input, { inputInfo: departamentInput, handleChangeInput: handleChangeInput }))));
+            React.createElement(Input_1.Input, { inputInfo: departamentInput, handleChangeInput: handleChangeInput }),
+            React.createElement(Dropdown_1.default, { dropdownInfo: categoryDropdown, onClick: handleClickItemDD }),
+            React.createElement(Dropdown_1.default, { dropdownInfo: buildDropdown, onClick: handleClickItemDD }),
+            React.createElement(Dropdown_1.default, { dropdownInfo: floorDropdown, onClick: handleClickItemDD }),
+            React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD }),
+            React.createElement(UploadFile_1.default, null),
+            React.createElement(Dropdown_1.default, { dropdownInfo: priorityDropdown, onClick: handleClickItemDD }),
+            React.createElement(Button_1.default, { buttonInfo: createIncidenciaButton, handleClick: hendleClickCreateIncidencia }))));
 };
 exports.default = CreateIncidenciaPage;
 
@@ -36290,7 +36494,7 @@ var MostrarIncidenciasPage = function () {
     };
     if (incidenciasLoaded) {
         return (React.createElement(React.Fragment, null,
-            React.createElement("div", { className: "perfilpage-container" },
+            React.createElement("div", { className: "incidenciasList-container" },
                 React.createElement("div", { className: "filtrar-container" },
                     React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown, onClick: handleClickItemDD })),
                 React.createElement("table", { className: "table" },
@@ -36784,6 +36988,19 @@ exports.getIncidenciasAssignedToUser = function (user) {
             console.log(err);
     });
 };
+exports.createIncidencia = function (newIncidencia) {
+    console.log(newIncidencia);
+    return axios_1.default
+        .post('api/incidencias/create', newIncidencia, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        console.log(res);
+    })
+        .catch(function (err) {
+        console.log(err);
+    });
+};
 
 
 /***/ }),
@@ -36818,8 +37035,8 @@ __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\GitHub\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

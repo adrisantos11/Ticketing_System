@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pages;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 use App\Http\Controllers\Controller;
 use App\Incidencia;
@@ -54,15 +55,50 @@ class IncidenciasPageController extends Controller
     public function createIncidencia(Request $request) 
     {
         $validator = Validator::make($request->json()->all(), [
-            'name'      => 'required|string|max:255',
-            'surname1'  => 'required|string|max:255',
-            'surname2'  => 'required|string|max:255',
-            'exp'       => 'required|numeric|unique:users',
-            'email'     => 'required|string|email|max:255|unique:users',
-            'password'  => 'string|min:4',
-            'phone'     => 'required|numeric',
-            'role'      => 'required',
+            'group_id'          => 'required|numeric|max:255',
+            'id_reporter'       => 'required|numeric|max:255',
+            'id_assigned'       => 'required|numeric|max:255',
+            'title'             => 'required|string',
+            'description'       => 'required|string|max:255',
+            'department'        => 'string',
+            'category'          => 'required|string',
+            'build'             => 'required',
+            'floor'             => 'required|numeric',
+            'class'             => 'required',
+            'url_data'          => '',
+            'creation_date'     => 'required',
+            'limit_date'        => 'required',
+            'assigned_date'     => '',
+            'resolution_date'   => '',
+            'priority'          => 'required|string',
+            'state'             => 'required|string',
         ]);
+
+        if($validator->fails())
+        {
+            return response()->json($validator->errors()->toJson(), 400);
+        } else {
+            DB::table('incidencias')->insert([
+            'group_id'          => $request->group_id,
+            'id_reporter'       => $request->id_reporter,
+            'id_assigned'       => $request->id_assigned,
+            'title'             => $request->title,
+            'description'       => $request->description,
+            'department'        => $request->department,
+            'category'          => $request->category,
+            'build'             => $request->build,
+            'floor'             => $request->floor,
+            'class'             => $request->class,
+            'url_data'          => $request->url_data,
+            'creation_date'     => $request->creation_date,
+            'limit_date'        => date("Y-m-d H:i:s",$request->limit_date),
+            'assigned_date'     => null,
+            'resolution_date'   => null,
+            'priority'          => $request->priority,
+            'state'             => $request->state    
+            ]);
+        }
+
     }
 
     public function deleteIncidencia(Request $request) 

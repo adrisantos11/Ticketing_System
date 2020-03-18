@@ -43,6 +43,21 @@ export const getIncidenciasAssignedToUser = (user: any) => {
     })
 }
 
+export const createIncidencia = (newIncidencia: any) => {
+    console.log(newIncidencia);
+    return axios
+    .post('api/incidencias/create', newIncidencia, {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => {
+        console.log(res);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+
 
 
 
