@@ -1,9 +1,38 @@
 @import '../../../sass/app.scss';
 
 .incidencias-container {
-    margin-top: $default_padding*2;
     border-color: $grey_color_127;
+    height: 100%;
+
+    .title-container {
+        height: 15%;
+        padding: $default_padding $default_padding*2;
+        p {
+            margin: 0;
+        }
+        .title {
+            font-size: $font_size*2.5;
+            color: $primary_color;
+            font-weight: bold;
+        }
+    }
+
     .data-container {
-        padding: $default_padding*2 $default_padding*2;
+        height: 85%;
+        // padding-top: $default_padding*1;
+        .tabs-container {
+            .btn-group {
+                .active {
+                    border-bottom: none;
+
+                }
+            }
+        }
+
+        .dropdowndata-container {
+            height: 95%;
+            background-color: $grey_color_250;
+
+        }
     }
 }

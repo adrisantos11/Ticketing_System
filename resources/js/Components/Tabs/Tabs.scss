@@ -1,6 +1,7 @@
 @import '../../../sass/app.scss';
 
 .tabs-container {
+    height: auto;
     .btn-group {
 
         .btn {
@@ -22,30 +23,29 @@
                 border-color: $primary_color;
                 border-bottom: none;
             }
-
+            
             &--grey {
                 @extend .btn;
-                background-color: $grey_color_184;
+                background-color: $grey_color_226;
                 color: $grey_color_51;
                 //border-color: $primary_color;
                 border-bottom: none;
+                box-shadow: inset -8px -70px 50px -90px rgba(0,0,0,0.75);
             }
 
             &--grey:hover {
                 background-color: $grey_color_127;
             }
         }
-
+        
         .active {
-            // font-weight: bold;
             color: $primary_color;
             background-color: $grey_color_250;
-            // border-color: $primary_color;
-            border-bottom: none;
             font-weight: bold;
-
+            box-shadow: none;
+            
             &:hover {
-                background-color: transparent;
+                background-color: $grey_color_250;
 
             }
 

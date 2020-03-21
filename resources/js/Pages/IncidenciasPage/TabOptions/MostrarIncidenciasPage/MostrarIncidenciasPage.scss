@@ -1,0 +1,79 @@
+@import '../../../../../sass/app.scss';
+
+.incidenciasList-container {
+    padding-top: $default_padding*2;
+    padding-left: $default_padding*2;
+    height: 100%;
+    .filtrar-container {
+        display: flex;
+        flex-direction: row;
+        height: 6%;
+        padding-top: $default_padding;
+        padding-left: $default_padding;
+    }
+
+    .table-container {
+        max-height: 94%;
+        overflow-y: scroll;
+        .table {
+            margin: $default_padding*3 0;
+            height: 100%;
+            width: 100%;
+            thead {
+                tr {
+                    width: 100%;
+                    &:first-child{
+                        width: 4%;
+                    }
+                    th {
+                        text-align: center;
+                        border-top: none;
+                        padding: 0;
+                    }
+                }
+            }
+            
+            tbody {
+                tr {
+                    width: 100%;
+                    th {
+                        width: 4%;
+                        padding: $default_padding*2 $default_padding*2;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+
+                    td {
+                        max-width: $default_padding*40;
+                        text-align: center;
+                        padding: $default_padding*2 $default_padding*2;
+                        vertical-align: middle;
+                    }
+
+                    .columna-prioridad {
+                        font-weight: bold;
+
+                        &--red {
+                            @extend .columna-prioridad;
+                            color: $red_color;
+                        }
+
+                        &--orange {
+                            @extend .columna-prioridad;
+                            color: orange;
+                        }
+
+                        &--green {
+                            @extend .columna-prioridad;
+                            color: green;
+                        }
+                    }
+                }
+
+                &:last-child {}
+            }
+
+        }
+
+    }
+}

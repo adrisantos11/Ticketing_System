@@ -103,7 +103,13 @@ class IncidenciasPageController extends Controller
 
     public function deleteIncidencia(Request $request) 
     {
-        $id_incidencia = $request->only('id'); 
+        $id_incidencia = $request->id; 
         DB:table('incidencias')->where('id', $id_incidencia)->delete();
+    }
+
+    public function getIncidenciaUnique(Request $request) {
+        $id_incidencia = $request->id;
+        $incidencia = DB::table('incidencias')->where('id', $id_incidencia)->first();
+        return response()->json($incidencia);
     }
 }

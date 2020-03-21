@@ -28,6 +28,7 @@ Route::namespace('Pages')->group(function () {
     Route::post('incidencias/blocked', 'IncidenciasPageController@getIncidenciasBlocked');
     Route::post('incidencias/create', 'IncidenciasPageController@createIncidencia');
     Route::post('incidencias/orderByPriority', 'IncidenciasPageController@getIncidenciasOrderByLimitDay');
+    Route::post('incidencias/getIncidencia', 'IncidenciasPageController@getIncidenciaUnique');
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

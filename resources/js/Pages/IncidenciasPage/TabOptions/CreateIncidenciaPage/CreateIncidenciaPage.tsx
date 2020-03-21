@@ -22,8 +22,7 @@ const CreateIncidenciaPage = () => {
     const [classroom, setClassroom] = React.useState('');
     const [priority, setPriority] = React.useState('');
     const [urlFile, setUrlFile] = React.useState('');
-
-
+    
     const [titleInput] = React.useState<InputModel>({
         id: 1,
         label: 'Título',
@@ -65,16 +64,17 @@ const CreateIncidenciaPage = () => {
         extraClass: '',
     });
 
+    // groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
     const [buildDropdown] = React.useState<DropdownModel>({
         id: 2,
         groupName: 'Elegir edificio',
-        groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
+        groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         color: 'primary',
         enabled: false,
         extraClass: '',
     });
 
-    const [floorDropdown] = React.useState<DropdownModel>({
+    const [floorDropdown, setFloorDropdown] = React.useState<DropdownModel>({
         id: 3,
         groupName: 'Elegir piso',
         groupItems: [],
@@ -83,7 +83,7 @@ const CreateIncidenciaPage = () => {
         extraClass: '',
     });
 
-    const [classDropdown] = React.useState<DropdownModel>({
+    const [classDropdown, setClassDropdown] = React.useState<DropdownModel>({
         id: 4,
         groupName: 'Elegir clase',
         groupItems: [],
@@ -121,23 +121,128 @@ const CreateIncidenciaPage = () => {
         }
     }
 
+    const piso0_B = {
+        nombre: 0,
+        aulas: ['No hay aulas en este piso']
+    }
+    const piso1_B = {
+        nombre: 1,
+        aulas: ['B101','B102','B103','B104','B105','B106','B107','B108','B109','B110','B111','B112','B113','B114','B115','B116','B117','B118']
+    }
+    const piso2_B = {
+        nombre: 2,
+        aulas: ['B201','B202','B203','B204','B205','B206','B207','B208','B209','B210','B211','B212','B213','B214','B215','B216','B217','B218']
+    }
+    const piso3_B = {
+        nombre: 3,
+        aulas: ['B301','B302','B303','B304','B305','B306','B307','B308','B309','B310','B311','B312','B313','B314','B315','B316','B317','B318']
+    }
+    const edificioB = {
+        nombre: 'Edificio A',
+        pisos: [piso0_B, piso1_B, piso2_B, piso3_B]
+    }
+
+    const piso0_C = {
+        nombre: 0,
+        aulas: ['No hay aulas en este piso']
+    }
+    const piso1_C = {
+        nombre: 1,
+        aulas: ['C101','C102','C103','C104','C105','C106','C107','C108','C109','C110','C111','C112','C113','C114','C115','C116','C117','C118']
+    }
+    const piso2_C = {
+        nombre: 2,
+        aulas: ['C201','C202','C203','C204','C205','C206','C207','C208','C209','C210','C211','C212','C213','C214','C215','C216','C217','C218']
+    }
+    const piso3_C = {
+        nombre: 3,
+        aulas: ['C301','C302','C303','C304','C305','C306','C307','C308','C309','C310','C311','C312','C313','C314','C315','C316','C317','C318']
+    }
+    const edificioC = {
+        nombre: 'Edificio A',
+        pisos: [piso0_C, piso1_C, piso2_C, piso3_C]
+    }
+
     const handleClickItemDD = (idItem: number, idDropdown: number) => {
         if (idDropdown == 1) {
+            // Establece el valor elegido en el dropdown de categoría
             setCategory(String(idItem));
         } else if (idDropdown == 2) {
+            // Establece el valor elegido en el dropdown de edificio (dropdown precargado)
+            let array: number[]= [];
             if (String(idItem).includes('Salud')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso A
                 setBuild('A'); 
             } else if (String(idItem).includes('Sociales')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso B
                 setBuild('B'); 
+                edificioB.pisos.map(value => {
+                    array.push(value.nombre)
+                })
             } else if (String(idItem).includes('Ingeniería')) {
-                setBuild('C'); 
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso C
+                setBuild('C');
+                edificioC.pisos.map(value => {
+                    array.push(value.nombre)
+                })
             } else if (String(idItem).includes('Deporte')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso P
                 setBuild('P'); 
             } else if (String(idItem).includes('Business')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso E
                 setBuild('E'); 
             }
+            setFloorDropdown({
+                ...floorDropdown,
+                groupItems: array
+            })
         } else if (idDropdown == 3) {
-            setFloor(idItem); 
+            let array: string[] = []
+            setFloor(idItem);
+            if (build == 'A') {
+                console.log('A')
+            } else if (build == 'B') 
+            {
+                if (String(idItem).includes('0') ) {
+                    piso0_B.aulas.map(value => {
+                        array.push(value);
+                    });
+                } else if (String(idItem).includes('1') ) {
+                    piso1_B.aulas.map(value => {
+                        array.push(value);
+                    });
+                } else if (String(idItem).includes('2') ) {
+                    piso2_B.aulas.map(value => {
+                        array.push(value);
+                    });
+                } else if (String(idItem).includes('3') ) {
+                    piso3_B.aulas.map(value => {
+                        array.push(value);
+                    });
+                }
+            } else if(build == 'C'){
+                if (String(idItem).includes('0') ) {
+                    piso0_C.aulas.map(value => {
+                        array.push(value);
+                    });
+                } else if (String(idItem).includes('1') ) {
+                    piso1_C.aulas.map(value => {
+                        array.push(value);
+                    });
+                } else if (String(idItem).includes('2') ) {
+                    piso2_C.aulas.map(value => {
+                        array.push(value);
+                    });
+                } else if (String(idItem).includes('3') ) {
+                    piso3_C.aulas.map(value => {
+                        array.push(value);
+                    });
+                }
+            } 
+            setClassDropdown({
+                ...classDropdown,
+                groupItems: array
+            })
         } else if (idDropdown == 4) {
             setClassroom(String(idItem)); 
         } else if (idDropdown == 5) {
@@ -153,14 +258,14 @@ const CreateIncidenciaPage = () => {
         let incidencia: IncidenciaModel = {
             group_id: 0,
             id_reporter: parseInt(localStorage.userId),
-            id_assigned: 0,
+            id_assigned: 3,
             title: title,
             description: description,
             department: department,
             category: category,
             build: build,
-            floor: 3,
-            class: 'classroom',
+            floor: floor,
+            class: classroom,
             url_data: '',
             creation_date: currentDate,
             limit_date: '1263645342',
@@ -175,13 +280,17 @@ const CreateIncidenciaPage = () => {
     return (
         <>
         <div className='createIncidencia-container'>
+            <h2>Crear incidencia</h2>
             <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
             <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
             <Input inputInfo={departamentInput} handleChangeInput={handleChangeInput}></Input>
+            <h3>¿Dónde se produce la incidencia?</h3>
+            <div className="build-container">
+                <Dropdown dropdownInfo={buildDropdown} onClick={handleClickItemDD}></Dropdown>
+                <Dropdown dropdownInfo={floorDropdown} onClick={handleClickItemDD}></Dropdown>
+                <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
+            </div>
             <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
-            <Dropdown dropdownInfo={buildDropdown} onClick={handleClickItemDD}></Dropdown>
-            <Dropdown dropdownInfo={floorDropdown} onClick={handleClickItemDD}></Dropdown>
-            <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
             <UploadFile></UploadFile>
             <Dropdown dropdownInfo={priorityDropdown} onClick={handleClickItemDD}></Dropdown>
             <Button buttonInfo={createIncidenciaButton} handleClick={hendleClickCreateIncidencia}></Button>

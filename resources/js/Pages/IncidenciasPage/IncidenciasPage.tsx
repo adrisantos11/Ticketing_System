@@ -2,11 +2,11 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 import './IncidenciasPage.scss'
-import { ButtonModel, InputModel, DropdownModel, TabsModel } from '../../Model/model'
+import { TabsModel } from '../../Model/model'
 import Button from '../../Components/Button/Button';
 import Tabs from '../../Components/Tabs/Tabs';
-import CreateIncidenciaPage from './TabsOptions/CreateIncidenciaPage/CreateIncidenciaPage';
-import MostrarIncidenciasPage from './TabsOptions/MostrarIncidenciasPage/MostrarIncidenciasPage';
+import CreateIncidenciaPage from './TabOptions/CreateIncidenciaPage/CreateIncidenciaPage';
+import MostrarIncidenciasPage from './TabOptions/MostrarIncidenciasPage/MostrarIncidenciasPage';
 
 
 const IncidenciasPage = () => {
@@ -15,7 +15,7 @@ const IncidenciasPage = () => {
     const [tabsOptions] = React.useState<TabsModel>({
         idList: ['mostrarIncidencias','crearIncidencia'],
         valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
-        color: '',
+        color: '--grey',
         enabledList: [true, true]
     });
     
@@ -31,14 +31,18 @@ const IncidenciasPage = () => {
 
         return( 
             <div className="incidencias-container">
-                <h1>Gestor de incidencias</h1>
-                <p>En este apartado usted podrá gestionar todas las incidencias que hayan sido resportadas y asignadas.</p>
-                <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
+                <div className='title-container'>
+                    <p className="title">Gestor de incidencias</p>
+                    <p className="descripcion">En este apartado usted podrá gestionar todas las incidencias que hayan sido resportadas y asignadas.</p>
+                </div>
                 <div className="data-container">
-                    <Switch>
-                        <Route path="/home/incidencias/create" component={CreateIncidenciaPage}></Route>
-                        <Route path="/home/incidencias/show" component={MostrarIncidenciasPage}></Route>
-                    </Switch>
+                    <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
+                    <div className="dropdowndata-container">
+                        <Switch>
+                            <Route path="/home/incidencias/create" component={CreateIncidenciaPage}></Route>
+                            <Route path="/home/incidencias/show" component={MostrarIncidenciasPage}></Route>
+                        </Switch>     
+                    </div>
                 </div>
             </div>
         )
