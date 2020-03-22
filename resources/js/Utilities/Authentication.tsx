@@ -46,6 +46,8 @@ export const login = (user: any) => {
          */
         console.log(res);
         localStorage.setItem('usertoken', res.data.token);
+        localStorage.setItem('userId', res.data.user_id);
+        localStorage.setItem('userRol', res.data.user_role);
         return res;
     })
     .catch(err => {
@@ -66,8 +68,6 @@ export const getProfile = () => {
         headers: { Authorization : `Bearer ${localStorage.usertoken}`}
     })
     .then(res => {
-        localStorage.setItem('userId', res.data.user.id);
-        localStorage.setItem('userRol', res.data.user.rol);
 
         return res.data;
     })

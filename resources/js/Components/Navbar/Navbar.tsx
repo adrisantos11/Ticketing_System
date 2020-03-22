@@ -14,6 +14,15 @@ interface NavbarIF {
 
 const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
     const history = useHistory();
+    const userRolLogged = localStorage.userRol;
+
+    let iconProfile;
+    if (userRolLogged == 'technical') {
+        iconProfile = (<NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user"></i></NavLink>);
+    } else if (userRolLogged == 'supervisor') {
+        iconProfile = (<NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user-tie"></i></NavLink>);
+    }
+
     const [logoutButton] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Cerrar Sesión',
@@ -86,7 +95,8 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
                         <span className="menu-btn" id="btn-abrirMenu" onClick={handleClickOpenSlidebar}><i className="fas fa-bars"></i></span>
                         <span className="menu-btn" id="btn-cerrarMenu" onClick={handleClickCloseSlidebar}><i className="fas fa-times"></i></span>
                         <div className="span-container">
-                            <NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user"></i></NavLink>
+                            {iconProfile}
+                            {/* <NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b></NavLink> */}
                             <NavLink to="/home/incidencias/show" data-toogle="tooltip" data-placement="top" title="Incidencias"><b>Incidencias</b><i className="fas fa-tools"></i></NavLink>
                             <NavLink to="/home/calendario" data-toogle="tooltip" data-placement="top" title="Calendario"><b>Calendario</b><i className="far fa-calendar-alt"></i></NavLink>
                             <NavLink to="/home/disponibilidad-aulas" data-toogle="tooltip" data-placement="top" title="Disponibilidad Aulas"><b>Disponibilidad Aulas</b><i className="far fa-clock"></i></NavLink>

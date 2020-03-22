@@ -2136,7 +2136,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  margin: auto 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  height: 5%;\n  color: #3685EC;\n  font-size: 1.876rem;\n  margin: 0 auto;\n  padding: 1rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .active {\n  background-color: #e2e2e2;\n  border-bottom-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.5rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.5rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  width: 50%;\n  background-color: #f1f1f1;\n  max-height: 100%;\n}", ""]);
+exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 1.876rem;\n  margin: 0 auto;\n  padding: 1rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .active {\n  background-color: #e2e2e2;\n  border-bottom-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  width: 50%;\n  background-color: #f1f1f1;\n  max-height: 100%;\n}", ""]);
 
 // exports
 
@@ -2155,7 +2155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".incidencias-container {\n  border-color: #c4c4c4;\n  height: 100%;\n}\n.incidencias-container .title-container {\n  height: 15%;\n  padding: 0.5rem 1rem;\n}\n.incidencias-container .title-container p {\n  margin: 0;\n}\n.incidencias-container .title-container .title {\n  font-size: 2.345rem;\n  color: #3685EC;\n  font-weight: bold;\n}\n.incidencias-container .data-container {\n  height: 85%;\n}\n.incidencias-container .data-container .tabs-container .btn-group .active {\n  border-bottom: none;\n}\n.incidencias-container .data-container .dropdowndata-container {\n  height: 95%;\n  background-color: whitesmoke;\n}", ""]);
+exports.push([module.i, ".incidencias-container {\n  border-color: #c4c4c4;\n  height: 100%;\n}\n.incidencias-container .title-container {\n  height: 15%;\n  padding: 0.5rem 1rem;\n}\n.incidencias-container .title-container p {\n  margin: 0;\n}\n.incidencias-container .title-container .title {\n  font-size: 2.345rem;\n  color: #3685EC;\n  font-weight: bold;\n}\n.incidencias-container .data-container {\n  height: 85%;\n}\n.incidencias-container .data-container .tabs-container .btn-group .active {\n  border-bottom: none;\n}\n.incidencias-container .data-container .dropdowndata-container {\n  height: 95.5%;\n  background-color: whitesmoke;\n}", ""]);
 
 // exports
 
@@ -35859,6 +35859,18 @@ var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var Navbar = function (props) {
     var history = react_router_dom_1.useHistory();
+    var userRolLogged = localStorage.userRol;
+    var iconProfile;
+    if (userRolLogged == 'technical') {
+        iconProfile = (React.createElement(react_router_dom_1.NavLink, { to: "/home/perfil", "data-toogle": "tooltip", "data-placement": "top", title: "Perfil" },
+            React.createElement("b", null, "Perfil"),
+            React.createElement("i", { className: "fas fa-user" })));
+    }
+    else if (userRolLogged == 'supervisor') {
+        iconProfile = (React.createElement(react_router_dom_1.NavLink, { to: "/home/perfil", "data-toogle": "tooltip", "data-placement": "top", title: "Perfil" },
+            React.createElement("b", null, "Perfil"),
+            React.createElement("i", { className: "fas fa-user-tie" })));
+    }
     var logoutButton = React.useState({
         id: 1,
         texto: 'Cerrar Sesión',
@@ -35925,9 +35937,7 @@ var Navbar = function (props) {
                     React.createElement("span", { className: "menu-btn", id: "btn-cerrarMenu", onClick: handleClickCloseSlidebar },
                         React.createElement("i", { className: "fas fa-times" })),
                     React.createElement("div", { className: "span-container" },
-                        React.createElement(react_router_dom_1.NavLink, { to: "/home/perfil", "data-toogle": "tooltip", "data-placement": "top", title: "Perfil" },
-                            React.createElement("b", null, "Perfil"),
-                            React.createElement("i", { className: "fas fa-user" })),
+                        iconProfile,
                         React.createElement(react_router_dom_1.NavLink, { to: "/home/incidencias/show", "data-toogle": "tooltip", "data-placement": "top", title: "Incidencias" },
                             React.createElement("b", null, "Incidencias"),
                             React.createElement("i", { className: "fas fa-tools" })),
@@ -37224,6 +37234,8 @@ exports.login = function (user) {
          */
         console.log(res);
         localStorage.setItem('usertoken', res.data.token);
+        localStorage.setItem('userId', res.data.user_id);
+        localStorage.setItem('userRol', res.data.user_role);
         return res;
     })
         .catch(function (err) {
@@ -37244,8 +37256,6 @@ exports.getProfile = function () {
         headers: { Authorization: "Bearer " + localStorage.usertoken }
     })
         .then(function (res) {
-        localStorage.setItem('userId', res.data.user.id);
-        localStorage.setItem('userRol', res.data.user.rol);
         return res.data;
     })
         .catch(function (err) {
