@@ -36220,9 +36220,9 @@ var IncidenciaViewPage = function () {
         group_id: null,
         id_reporter: null,
         id_assigned: null,
+        id_team: null,
         title: null,
         description: null,
-        department: null,
         category: null,
         build: null,
         floor: null,
@@ -36244,7 +36244,7 @@ var IncidenciaViewPage = function () {
     var _b = React.useState(false), incidenciaLoaded = _b[0], setIncidenciaLoaded = _b[1];
     React.useEffect(function () {
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
-            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.group_id, id_reporter: result.id_reporter, id_assigned: result.id_assigned, title: result.title, description: result.description, department: result.department, category: result.category, build: result.build, floor: result.floor, class: result.class, url_data: result.url_data, creation_date: result.creation_date, limit_date: result.limit_date, assigned_date: result.assigned_date, resolution_date: result.resolution_date, priority: result.priority, state: result.state }));
+            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.group_id, id_reporter: result.id_reporter, id_assigned: result.id_assigned, id_team: result.id_team, title: result.title, description: result.description, category: result.category, build: result.build, floor: result.floor, class: result.class, url_data: result.url_data, creation_date: result.creation_date, limit_date: result.limit_date, assigned_date: result.assigned_date, resolution_date: result.resolution_date, priority: result.priority, state: result.state }));
         });
         setIncidenciaLoaded(true);
     }, []);
@@ -36283,6 +36283,9 @@ var IncidenciaViewPage = function () {
                     React.createElement("p", { className: "p-left" }, "Reporter (ID)"),
                     isDataNull(incidencia.id_reporter)),
                 React.createElement("div", { className: "info-container" },
+                    React.createElement("p", { className: "p-left" }, "Equipo asignado"),
+                    isDataNull(incidencia.id_team)),
+                React.createElement("div", { className: "info-container" },
                     React.createElement("p", { className: "p-left" }, "T\u00E9cnico asignado (ID)"),
                     isDataNull(incidencia.group_id)),
                 React.createElement("div", { className: "info-container" },
@@ -36291,9 +36294,6 @@ var IncidenciaViewPage = function () {
                 React.createElement("div", { className: "info-container" },
                     React.createElement("p", { className: "p-left" }, "Descripci\u00F3n"),
                     isDataNull(incidencia.description, true)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Departamento"),
-                    isDataNull(incidencia.department)),
                 React.createElement("div", { className: "info-container" },
                     React.createElement("p", { className: "p-left" }, "Categor\u00EDa"),
                     isDataNull(incidencia.category, true)),
@@ -36485,13 +36485,12 @@ var CreateIncidenciaPage = function () {
     }
     var _a = React.useState(''), title = _a[0], setTitle = _a[1];
     var _b = React.useState(''), description = _b[0], setDescription = _b[1];
-    var _c = React.useState(''), department = _c[0], setDepartment = _c[1];
-    var _d = React.useState(''), category = _d[0], setCategory = _d[1];
-    var _e = React.useState(''), build = _e[0], setBuild = _e[1];
-    var _f = React.useState(0), floor = _f[0], setFloor = _f[1];
-    var _g = React.useState(''), classroom = _g[0], setClassroom = _g[1];
-    var _h = React.useState(''), priority = _h[0], setPriority = _h[1];
-    var _j = React.useState(''), urlFile = _j[0], setUrlFile = _j[1];
+    var _c = React.useState(''), category = _c[0], setCategory = _c[1];
+    var _d = React.useState(''), build = _d[0], setBuild = _d[1];
+    var _e = React.useState(0), floor = _e[0], setFloor = _e[1];
+    var _f = React.useState(''), classroom = _f[0], setClassroom = _f[1];
+    var _g = React.useState(''), priority = _g[0], setPriority = _g[1];
+    var _h = React.useState(''), urlFile = _h[0], setUrlFile = _h[1];
     var titleInput = React.useState({
         id: 1,
         label: 'Título',
@@ -36539,22 +36538,22 @@ var CreateIncidenciaPage = function () {
         enabled: false,
         extraClass: '',
     })[0];
-    var _k = React.useState({
+    var _j = React.useState({
         id: 3,
         groupName: 'Elegir piso',
         groupItems: [],
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), floorDropdown = _k[0], setFloorDropdown = _k[1];
-    var _l = React.useState({
+    }), floorDropdown = _j[0], setFloorDropdown = _j[1];
+    var _k = React.useState({
         id: 4,
         groupName: 'Elegir clase',
         groupItems: [],
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), classDropdown = _l[0], setClassDropdown = _l[1];
+    }), classDropdown = _k[0], setClassDropdown = _k[1];
     var priorityDropdown = React.useState({
         id: 5,
         groupName: 'Elegir prioridad',
@@ -36577,9 +36576,6 @@ var CreateIncidenciaPage = function () {
         }
         else if (id == 2) {
             setDescription(value);
-        }
-        else if (id == 3) {
-            setDepartment(value);
         }
     };
     var piso0_B = {
@@ -36725,9 +36721,9 @@ var CreateIncidenciaPage = function () {
             group_id: 0,
             id_reporter: parseInt(localStorage.userId),
             id_assigned: 3,
+            id_team: null,
             title: title,
             description: description,
-            department: department,
             category: category,
             build: build,
             floor: floor,
@@ -36747,7 +36743,6 @@ var CreateIncidenciaPage = function () {
             React.createElement("h2", null, "Crear incidencia"),
             React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInput }),
             React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInput }),
-            React.createElement(Input_1.Input, { inputInfo: departamentInput, handleChangeInput: handleChangeInput }),
             React.createElement("h3", null, "\u00BFD\u00F3nde se produce la incidencia?"),
             React.createElement("div", { className: "build-container" },
                 React.createElement(Dropdown_1.default, { dropdownInfo: buildDropdown, onClick: handleClickItemDD }),
@@ -36825,7 +36820,6 @@ var MostrarIncidenciasPage = function () {
         extraClass: '',
     })[0];
     React.useEffect(function () {
-        var table = document.getElementById('dataTable');
         IncidenciasUtilities_1.getIncidenciasAssignedToUser(user).then(function (res) {
             setIncidencias(res);
         });

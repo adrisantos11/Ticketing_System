@@ -88,7 +88,7 @@ class UserController extends Controller
         }
         $user_id = auth()->user()->id;
         $user_role = auth()->user()->role;
-        return response()->json(compact('user_id','user_role', 'token'));
+        return response()->json(compact('user_id', 'user_role', 'token'));
     }
 
 

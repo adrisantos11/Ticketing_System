@@ -15,9 +15,9 @@ const IncidenciaViewPage = () => {
         group_id: null,
         id_reporter: null,
         id_assigned: null,
+        id_team: null,
         title: null,
         description: null,
-        department: null,
         category: null,
         build: null,
         floor: null,
@@ -47,9 +47,9 @@ const IncidenciaViewPage = () => {
                 group_id: result.group_id,
                 id_reporter: result.id_reporter,
                 id_assigned: result.id_assigned,
+                id_team: result.id_team,
                 title: result.title,
                 description: result.description,
-                department: result.department,
                 category: result.category,
                 build: result.build,
                 floor: result.floor,
@@ -114,6 +114,12 @@ const IncidenciaViewPage = () => {
                         }
                     </div>
                     <div className="info-container">
+                        <p className="p-left">Equipo asignado</p>
+                        {
+                        isDataNull(incidencia.id_team)
+                        }
+                    </div>
+                    <div className="info-container">
                         <p className="p-left">Técnico asignado (ID)</p>
                         {
                         isDataNull(incidencia.group_id)
@@ -129,12 +135,6 @@ const IncidenciaViewPage = () => {
                         <p className="p-left">Descripción</p>
                         {
                         isDataNull(incidencia.description, true)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Departamento</p>
-                        {
-                        isDataNull(incidencia.department)
                         }
                     </div>
                     <div className="info-container">

@@ -27,7 +27,6 @@ const MostrarIncidenciasPage = () => {
     });
 
     React.useEffect(() => {
-        let table: HTMLElement = document.getElementById('dataTable');
         getIncidenciasAssignedToUser(user).then(res => {
             setIncidencias(res);
         })

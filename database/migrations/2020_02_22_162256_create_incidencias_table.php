@@ -17,10 +17,10 @@ class CreateIncidenciasTable extends Migration
             $table->bigInteger('id')->autoIncrement()->unique();
             $table->integer('group_id');
             $table->integer('id_reporter');
-            $table->integer('id_assigned');
+            $table->integer('id_assigned')->nullable();
+            $table->integer('id_team')->nullable();
             $table->string('title');
             $table->string('description')->nullable()->default('Without description');
-            $table->string('department')->nullable();
             $table->string('category');
             $table->string('build');
             $table->integer('floor');

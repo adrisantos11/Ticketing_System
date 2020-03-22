@@ -15,7 +15,6 @@ const CreateIncidenciaPage = () => {
     }
     const [title, setTitle] = React.useState('');
     const [description, setDescription] = React.useState('');
-    const [department, setDepartment] = React.useState('');
     const [category, setCategory] = React.useState('');
     const [build, setBuild] = React.useState('');
     const [floor, setFloor] = React.useState(0);
@@ -116,8 +115,6 @@ const CreateIncidenciaPage = () => {
             setTitle(value);
         } else if (id == 2) {
             setDescription(value);
-        } else if (id == 3) {
-            setDepartment(value);
         }
     }
 
@@ -259,9 +256,9 @@ const CreateIncidenciaPage = () => {
             group_id: 0,
             id_reporter: parseInt(localStorage.userId),
             id_assigned: 3,
+            id_team: null,
             title: title,
             description: description,
-            department: department,
             category: category,
             build: build,
             floor: floor,
@@ -283,7 +280,6 @@ const CreateIncidenciaPage = () => {
             <h2>Crear incidencia</h2>
             <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
             <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
-            <Input inputInfo={departamentInput} handleChangeInput={handleChangeInput}></Input>
             <h3>¿Dónde se produce la incidencia?</h3>
             <div className="build-container">
                 <Dropdown dropdownInfo={buildDropdown} onClick={handleClickItemDD}></Dropdown>
