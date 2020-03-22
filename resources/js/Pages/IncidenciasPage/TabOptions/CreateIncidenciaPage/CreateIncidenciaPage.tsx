@@ -251,7 +251,7 @@ const CreateIncidenciaPage = () => {
         let date = new Date();
         let hoursMinutesSeconds = date.toLocaleString().split(' ');
 
-        let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + ' ' + hoursMinutesSeconds[1];
+        let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
         let incidencia: IncidenciaModel = {
             group_id: 0,
             id_reporter: parseInt(localStorage.userId),

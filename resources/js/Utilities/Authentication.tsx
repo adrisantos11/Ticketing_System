@@ -44,7 +44,6 @@ export const login = (user: any) => {
          *  - 'usertoken': el nombre del DOMString contenedor de la clave que se quiere actualizar.
          *  - 'res.data.token': dato que se guarda en el DOMString.
          */
-        console.log(res);
         localStorage.setItem('usertoken', res.data.token);
         localStorage.setItem('userId', res.data.user_id);
         localStorage.setItem('userRol', res.data.user_role);

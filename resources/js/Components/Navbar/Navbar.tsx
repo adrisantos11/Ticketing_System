@@ -15,7 +15,6 @@ interface NavbarIF {
 const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
     const history = useHistory();
     const userRolLogged = localStorage.userRol;
-
     let iconProfile;
     if (userRolLogged == 'technical') {
         iconProfile = (<NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user"></i></NavLink>);

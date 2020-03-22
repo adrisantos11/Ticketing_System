@@ -36716,7 +36716,7 @@ var CreateIncidenciaPage = function () {
     var hendleClickCreateIncidencia = function (e) {
         var date = new Date();
         var hoursMinutesSeconds = date.toLocaleString().split(' ');
-        var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + ' ' + hoursMinutesSeconds[1];
+        var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
         var incidencia = {
             group_id: 0,
             id_reporter: parseInt(localStorage.userId),
@@ -37226,7 +37226,6 @@ exports.login = function (user) {
          *  - 'usertoken': el nombre del DOMString contenedor de la clave que se quiere actualizar.
          *  - 'res.data.token': dato que se guarda en el DOMString.
          */
-        console.log(res);
         localStorage.setItem('usertoken', res.data.token);
         localStorage.setItem('userId', res.data.user_id);
         localStorage.setItem('userRol', res.data.user_role);

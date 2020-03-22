@@ -55,12 +55,12 @@ class IncidenciasPageController extends Controller
     public function createIncidencia(Request $request) 
     {
         $validator = Validator::make($request->json()->all(), [
-            'group_id'          => 'required|numeric|max:255',
-            'id_reporter'       => 'required|numeric|max:255',
-            'id_assigned'       => 'required|numeric|max:255',
+            'group_id'          => 'required',
+            'id_reporter'       => 'required',
+            'id_assigned'       => 'numeric',
+            'id_team'           => '',
             'title'             => 'required|string',
             'description'       => 'required|string|max:255',
-            'department'        => 'string',
             'category'          => 'required|string',
             'build'             => 'required',
             'floor'             => 'required|numeric',
