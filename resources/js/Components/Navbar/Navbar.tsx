@@ -35,6 +35,7 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
         id: 1,
         groupName: "Adminstrador",
         groupItems: [1],
+        groupIds: [1],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -83,7 +84,7 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
         props.handleClickOptions(optionSelected);
     }
 
-    const handleClickItemDD = (id: number) => {
+    const handleClickItemDD = (id: string) => {
         console.log(id);
     }
     return(

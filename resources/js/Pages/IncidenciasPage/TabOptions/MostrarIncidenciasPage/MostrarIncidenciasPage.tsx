@@ -3,16 +3,19 @@ import * as React from 'react'
 import './MostrarIncidenciasPage.scss'
 import { Input } from '../../../../Components/Input/Input';
 import { ButtonModel, InputModel, DropdownModel, IncidenciaModel } from '../../../../Model/model'
-import {getIncidenciasAssignedToUser} from '../../../../Utilities/IncidenciasUtilities'
 import Dropdown from '../../../../Components/Dropdown/Dropdown';
 import { NavLink, Link } from 'react-router-dom';
+
+import { getIncidenciasAssignedToUser } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
+import { getTechnicalIncidencias } from '../../../../Utilities/Incidencias/TechnicalUtilities'
 
 const MostrarIncidenciasPage = () => {
     const [incidenciasLoaded, setIncidenciasLoaded] = React.useState(false);
     const [incidencias, setIncidencias] = React.useState([]);
     let priorityText='';
     let priorityColor='';
-
+    const userRol = localStorage.userRol;
+    const [orderBy, setOrderBy] = React.useState('state');
     const user = {
         id: localStorage.userId
     }
@@ -20,21 +23,34 @@ const MostrarIncidenciasPage = () => {
     const [adminDropdown] = React.useState<DropdownModel>({
         id: 1,
         groupName: "Ordenar por...",
-        groupItems: ['Prioridad', 'Fecha límite', 'Estado'],
+        groupItems: ['Prioridad', 'Fecha límite', 'Estado', 'Categoría', 'ID'],
+        groupIds: ['priority', 'limit_date', 'state', 'category', 'id'],
         color: 'primary',
         enabled: false,
         extraClass: '',
     });
 
-    React.useEffect(() => {
-        getIncidenciasAssignedToUser(user).then(res => {
-            setIncidencias(res);
-        })
-        setIncidenciasLoaded(true);
-    }, []);
+    const getIncidenciasUser = (user: any, orderBy: string) => {
+        if (userRol == 'technical') {
+            getTechnicalIncidencias(user, orderBy).then(res => {
+                setIncidencias(res);
+            })
+        } else {
+            getIncidenciasAssignedToUser(user).then(res => {
+                setIncidencias(res);
+            })
+        }
+    }
 
-    const handleClickItemDD = (id: number) => {
-        console.log(id);
+    React.useEffect(() => {
+        getIncidenciasUser(user, orderBy);
+        setIncidenciasLoaded(true);
+    }, [orderBy]);
+
+    const handleClickItemDD = (idItem: string, idDropdown: number) => {
+        setOrderBy(idItem);
+        console.log(orderBy);
+        // getIncidenciasUser(user, orderBy);
     }
 
     if(incidenciasLoaded) {

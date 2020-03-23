@@ -41,7 +41,7 @@ class UsuariosTableSeeder extends Seeder
             'password'  => Hash::make('123456'),
             'email'     => 'santos2menaaa@gmail.com',
             'phone'     => '608650958',
-            'role'      => 'supervisor'
+            'role'      => 'technical'
         ]);
 
         DB::table('users')->insert([

@@ -6,7 +6,7 @@ import { ButtonModel, InputModel, DropdownModel, IncidenciaModel } from '../../.
 import Dropdown from '../../../../Components/Dropdown/Dropdown';
 import Button from '../../../../Components/Button/Button';
 import UploadFile from '../../../../Components/UploadFile/UploadFile';
-import { createIncidencia } from '../../../../Utilities/IncidenciasUtilities'
+import { createIncidencia } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
 const CreateIncidenciaPage = () => {
     let userRol = localStorage.userRol;
     let enableInput = true;
@@ -58,6 +58,7 @@ const CreateIncidenciaPage = () => {
         id: 1,
         groupName: 'Elegir categoría',
         groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
+        groupIds: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -68,6 +69,7 @@ const CreateIncidenciaPage = () => {
         id: 2,
         groupName: 'Elegir edificio',
         groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
+        groupIds:['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -77,6 +79,7 @@ const CreateIncidenciaPage = () => {
         id: 3,
         groupName: 'Elegir piso',
         groupItems: [],
+        groupIds: [],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -86,6 +89,7 @@ const CreateIncidenciaPage = () => {
         id: 4,
         groupName: 'Elegir clase',
         groupItems: [],
+        groupIds: [],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -95,6 +99,7 @@ const CreateIncidenciaPage = () => {
         id: 5,
         groupName: 'Elegir prioridad',
         groupItems: ['critical', 'important', 'trivial'],
+        groupIds: ['critical', 'important', 'trivial'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -160,32 +165,32 @@ const CreateIncidenciaPage = () => {
         pisos: [piso0_C, piso1_C, piso2_C, piso3_C]
     }
 
-    const handleClickItemDD = (idItem: number, idDropdown: number) => {
+    const handleClickItemDD = (idItem: string, idDropdown: number) => {
         if (idDropdown == 1) {
             // Establece el valor elegido en el dropdown de categoría
-            setCategory(String(idItem));
+            setCategory(idItem);
         } else if (idDropdown == 2) {
             // Establece el valor elegido en el dropdown de edificio (dropdown precargado)
             let array: number[]= [];
-            if (String(idItem).includes('Salud')) {
+            if (idItem.includes('Salud')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso A
                 setBuild('A'); 
-            } else if (String(idItem).includes('Sociales')) {
+            } else if (idItem.includes('Sociales')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso B
                 setBuild('B'); 
                 edificioB.pisos.map(value => {
                     array.push(value.nombre)
                 })
-            } else if (String(idItem).includes('Ingeniería')) {
+            } else if (idItem.includes('Ingeniería')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso C
                 setBuild('C');
                 edificioC.pisos.map(value => {
                     array.push(value.nombre)
                 })
-            } else if (String(idItem).includes('Deporte')) {
+            } else if (idItem.includes('Deporte')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso P
                 setBuild('P'); 
-            } else if (String(idItem).includes('Business')) {
+            } else if (idItem.includes('Business')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso E
                 setBuild('E'); 
             }
@@ -195,7 +200,7 @@ const CreateIncidenciaPage = () => {
             })
         } else if (idDropdown == 3) {
             let array: string[] = []
-            setFloor(idItem);
+            setFloor(Number(idItem));
             if (build == 'A') {
                 console.log('A')
             } else if (build == 'B') 

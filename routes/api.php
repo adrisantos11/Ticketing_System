@@ -31,6 +31,11 @@ Route::namespace('Pages')->group(function () {
     Route::post('incidencias/getIncidencia', 'IncidenciasPageController@getIncidenciaUnique');
 });
 
+Route::namespace('Pages\Technical')->group(function () {
+    Route::post('incidencias/technical/getAssigned/{orderBy}', 'TechnicalController@getAllTechnicalIncidencias');
+});
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -22,6 +22,7 @@ export interface DropdownModel {
     id: number;
     groupName: string;
     groupItems: any[];
+    groupIds: any[];
     color: string;
     enabled: boolean;
     extraClass: string;

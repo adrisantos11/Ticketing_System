@@ -35722,16 +35722,16 @@ var Dropdown = function (props) {
     var onClickItem = function (e) {
         props.onClick(e.target.id, props.dropdownInfo.id);
     };
-    var getItemsDropdown = function (lista) {
-        if (lista.length != 0) {
-            return (React.createElement("div", { className: "dropdown-menu", "aria-labelledby": "dropdownMenuButton" }, lista.map(function (value, index) {
-                return (React.createElement("a", { className: "dropdown-item", key: "" + index, id: value, onClick: onClickItem }, value));
+    var getItemsDropdown = function (namesList, idsList) {
+        if (namesList.length != 0) {
+            return (React.createElement("div", { className: "dropdown-menu", "aria-labelledby": "dropdownMenuButton" }, namesList.map(function (value, index) {
+                return (React.createElement("a", { className: "dropdown-item", key: "" + index, id: idsList[index], onClick: onClickItem }, value));
             })));
         }
     };
     return (React.createElement("div", { className: "dropdown" },
         React.createElement("button", { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenuButton", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }, props.dropdownInfo.groupName),
-        getItemsDropdown(props.dropdownInfo.groupItems)));
+        getItemsDropdown(props.dropdownInfo.groupItems, props.dropdownInfo.groupIds)));
 };
 exports.default = Dropdown;
 
@@ -35883,6 +35883,7 @@ var Navbar = function (props) {
         id: 1,
         groupName: "Adminstrador",
         groupItems: [1],
+        groupIds: [1],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -36211,7 +36212,7 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./IncidenciaViewPage.scss */ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss");
 var react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../Utilities/IncidenciasUtilities */ "./resources/js/Utilities/IncidenciasUtilities.tsx");
+var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
 var Tabs_1 = __webpack_require__(/*! ../../../Components/Tabs/Tabs */ "./resources/js/Components/Tabs/Tabs.tsx");
 var react_router_dom_2 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var IncidenciaViewPage = function () {
@@ -36476,7 +36477,7 @@ var Input_1 = __webpack_require__(/*! ../../../../Components/Input/Input */ "./r
 var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var Button_1 = __webpack_require__(/*! ../../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
 var UploadFile_1 = __webpack_require__(/*! ../../../../Components/UploadFile/UploadFile */ "./resources/js/Components/UploadFile/UploadFile.tsx");
-var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/IncidenciasUtilities */ "./resources/js/Utilities/IncidenciasUtilities.tsx");
+var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
 var CreateIncidenciaPage = function () {
     var userRol = localStorage.userRol;
     var enableInput = true;
@@ -36525,6 +36526,7 @@ var CreateIncidenciaPage = function () {
         id: 1,
         groupName: 'Elegir categoría',
         groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
+        groupIds: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -36534,6 +36536,7 @@ var CreateIncidenciaPage = function () {
         id: 2,
         groupName: 'Elegir edificio',
         groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
+        groupIds: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -36542,6 +36545,7 @@ var CreateIncidenciaPage = function () {
         id: 3,
         groupName: 'Elegir piso',
         groupItems: [],
+        groupIds: [],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -36550,6 +36554,7 @@ var CreateIncidenciaPage = function () {
         id: 4,
         groupName: 'Elegir clase',
         groupItems: [],
+        groupIds: [],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -36558,6 +36563,7 @@ var CreateIncidenciaPage = function () {
         id: 5,
         groupName: 'Elegir prioridad',
         groupItems: ['critical', 'important', 'trivial'],
+        groupIds: ['critical', 'important', 'trivial'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -36621,34 +36627,34 @@ var CreateIncidenciaPage = function () {
     var handleClickItemDD = function (idItem, idDropdown) {
         if (idDropdown == 1) {
             // Establece el valor elegido en el dropdown de categoría
-            setCategory(String(idItem));
+            setCategory(idItem);
         }
         else if (idDropdown == 2) {
             // Establece el valor elegido en el dropdown de edificio (dropdown precargado)
             var array_1 = [];
-            if (String(idItem).includes('Salud')) {
+            if (idItem.includes('Salud')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso A
                 setBuild('A');
             }
-            else if (String(idItem).includes('Sociales')) {
+            else if (idItem.includes('Sociales')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso B
                 setBuild('B');
                 edificioB.pisos.map(function (value) {
                     array_1.push(value.nombre);
                 });
             }
-            else if (String(idItem).includes('Ingeniería')) {
+            else if (idItem.includes('Ingeniería')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso C
                 setBuild('C');
                 edificioC.pisos.map(function (value) {
                     array_1.push(value.nombre);
                 });
             }
-            else if (String(idItem).includes('Deporte')) {
+            else if (idItem.includes('Deporte')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso P
                 setBuild('P');
             }
-            else if (String(idItem).includes('Business')) {
+            else if (idItem.includes('Business')) {
                 // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso E
                 setBuild('E');
             }
@@ -36656,7 +36662,7 @@ var CreateIncidenciaPage = function () {
         }
         else if (idDropdown == 3) {
             var array_2 = [];
-            setFloor(idItem);
+            setFloor(Number(idItem));
             if (build == 'A') {
                 console.log('A');
             }
@@ -36800,33 +36806,49 @@ if(false) {}
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./MostrarIncidenciasPage.scss */ "./resources/js/Pages/IncidenciasPage/TabOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss");
-var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/IncidenciasUtilities */ "./resources/js/Utilities/IncidenciasUtilities.tsx");
 var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
+var TechnicalUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/TechnicalUtilities */ "./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx");
 var MostrarIncidenciasPage = function () {
     var _a = React.useState(false), incidenciasLoaded = _a[0], setIncidenciasLoaded = _a[1];
     var _b = React.useState([]), incidencias = _b[0], setIncidencias = _b[1];
     var priorityText = '';
     var priorityColor = '';
+    var userRol = localStorage.userRol;
+    var _c = React.useState('state'), orderBy = _c[0], setOrderBy = _c[1];
     var user = {
         id: localStorage.userId
     };
     var adminDropdown = React.useState({
         id: 1,
         groupName: "Ordenar por...",
-        groupItems: ['Prioridad', 'Fecha límite', 'Estado'],
+        groupItems: ['Prioridad', 'Fecha límite', 'Estado', 'Categoría', 'ID'],
+        groupIds: ['priority', 'limit_date', 'state', 'category', 'id'],
         color: 'primary',
         enabled: false,
         extraClass: '',
     })[0];
+    var getIncidenciasUser = function (user, orderBy) {
+        if (userRol == 'technical') {
+            TechnicalUtilities_1.getTechnicalIncidencias(user, orderBy).then(function (res) {
+                setIncidencias(res);
+            });
+        }
+        else {
+            IncidenciasUtilities_1.getIncidenciasAssignedToUser(user).then(function (res) {
+                setIncidencias(res);
+            });
+        }
+    };
     React.useEffect(function () {
-        IncidenciasUtilities_1.getIncidenciasAssignedToUser(user).then(function (res) {
-            setIncidencias(res);
-        });
+        getIncidenciasUser(user, orderBy);
         setIncidenciasLoaded(true);
-    }, []);
-    var handleClickItemDD = function (id) {
-        console.log(id);
+    }, [orderBy]);
+    var handleClickItemDD = function (idItem, idDropdown) {
+        setOrderBy(idItem);
+        console.log(orderBy);
+        // getIncidenciasUser(user, orderBy);
     };
     if (incidenciasLoaded) {
         return (React.createElement(React.Fragment, null,
@@ -37274,10 +37296,10 @@ exports.logout = function () {
 
 /***/ }),
 
-/***/ "./resources/js/Utilities/IncidenciasUtilities.tsx":
-/*!*********************************************************!*\
-  !*** ./resources/js/Utilities/IncidenciasUtilities.tsx ***!
-  \*********************************************************/
+/***/ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37360,6 +37382,43 @@ exports.createIncidencia = function (newIncidencia) {
     })
         .catch(function (err) {
         console.log(err);
+    });
+};
+
+
+/***/ }),
+
+/***/ "./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx":
+/*!*******************************************************************!*\
+  !*** ./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+exports.getTechnicalIncidencias = function (user, orderBy) {
+    return axios_1.default
+        .post('api/incidencias/technical/getAssigned/' + orderBy, {
+        id: user.id
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
     });
 };
 

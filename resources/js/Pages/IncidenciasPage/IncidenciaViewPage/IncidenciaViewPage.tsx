@@ -2,10 +2,10 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './IncidenciaViewPage.scss'
 import { TabsModel, IncidenciaModel } from '../../../Model/model'
-import { createIncidencia } from '../../../Utilities/IncidenciasUtilities'
+import { createIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { getIncideniciaUnique } from '../../../Utilities/IncidenciasUtilities';
+import { getIncideniciaUnique } from '../../../Utilities/Incidencias/IncidenciasUtilities';
 import Tabs from '../../../Components/Tabs/Tabs';
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 

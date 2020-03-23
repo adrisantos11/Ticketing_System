@@ -15,7 +15,7 @@ class CreateIncidenciasTable extends Migration
     {
         Schema::create('incidencias', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement()->unique();
-            $table->integer('group_id');
+            $table->integer('group_id')->nullable();
             $table->integer('id_reporter');
             $table->integer('id_assigned')->nullable();
             $table->integer('id_team')->nullable();
