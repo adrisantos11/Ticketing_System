@@ -20,9 +20,9 @@ const MostrarIncidenciasPage = () => {
         id: localStorage.userId
     }
     
-    const [adminDropdown] = React.useState<DropdownModel>({
+    const [adminDropdown, setAdminDropdown] = React.useState<DropdownModel>({
         id: 1,
-        groupName: "Ordenar por...",
+        groupName: "Estado",
         groupItems: ['Prioridad', 'Fecha límite', 'Estado', 'Categoría', 'ID'],
         groupIds: ['priority', 'limit_date', 'state', 'category', 'id'],
         color: 'primary',
@@ -49,8 +49,6 @@ const MostrarIncidenciasPage = () => {
 
     const handleClickItemDD = (idItem: string, idDropdown: number) => {
         setOrderBy(idItem);
-        console.log(orderBy);
-        // getIncidenciasUser(user, orderBy);
     }
 
     if(incidenciasLoaded) {

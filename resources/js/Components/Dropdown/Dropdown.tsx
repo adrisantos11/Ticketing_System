@@ -9,8 +9,10 @@ interface Props {
     onClick: (idItem: string, idDropdown: number) => void;
 }
 const Dropdown: React.FunctionComponent<Props> = (props: Props) => {
+  const [dropdownName, setDropdownName] = React.useState(props.dropdownInfo.groupName)
   const onClickItem = (e: any) => {
     props.onClick(e.target.id, props.dropdownInfo.id);
+    setDropdownName(e.target.getAttribute('data-value'));
   }
 
   const getItemsDropdown = (namesList: string[], idsList: string[]) => {
@@ -19,7 +21,7 @@ const Dropdown: React.FunctionComponent<Props> = (props: Props) => {
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {
             namesList.map((value,index) => {
-              return(<a className="dropdown-item" key={`${index}`} id={idsList[index]} onClick={onClickItem}>{value}</a>)
+              return(<a className="dropdown-item" key={`${index}`} id={idsList[index]} onClick={onClickItem} data-value={value}>{value}</a>)
             })
           }
         </div>
@@ -30,7 +32,7 @@ const Dropdown: React.FunctionComponent<Props> = (props: Props) => {
   return(
       <div className="dropdown">
       <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {props.dropdownInfo.groupName}
+        {dropdownName}
       </button>
         {
           getItemsDropdown(props.dropdownInfo.groupItems, props.dropdownInfo.groupIds)

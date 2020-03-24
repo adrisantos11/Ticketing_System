@@ -35,7 +35,7 @@ class IncidenciasSeeder extends Seeder
         DB::table('incidencias')->insert([
             'group_id' => 1,
             'id_reporter' => 2,
-            'id_assigned' => null,
+            'id_assigned' => '',
             'id_team'=> 1,
             'title' => 'Incidencia grupo 1.1',
             'description' => 'Incidencia grupo 1.1',

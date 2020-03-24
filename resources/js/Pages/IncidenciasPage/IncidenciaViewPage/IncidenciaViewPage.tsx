@@ -122,7 +122,7 @@ const IncidenciaViewPage = () => {
                     <div className="info-container">
                         <p className="p-left">Técnico asignado (ID)</p>
                         {
-                        isDataNull(incidencia.group_id)
+                        isDataNull(incidencia.id_assigned)
                         }
                     </div>
                     <div className="info-container">

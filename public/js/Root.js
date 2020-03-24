@@ -2136,7 +2136,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 1.876rem;\n  margin: 0 auto;\n  padding: 1rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .active {\n  background-color: #e2e2e2;\n  border-bottom-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  width: 50%;\n  background-color: #f1f1f1;\n  max-height: 100%;\n}", ""]);
+exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 1.876rem;\n  margin: 0 auto;\n  padding: 1rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .active {\n  background-color: #e2e2e2;\n  border-bottom-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  width: 50%;\n  background-color: #f1f1f1;\n  max-height: 100%;\n}", ""]);
 
 // exports
 
@@ -35719,18 +35719,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Dropdown.scss */ "./resources/js/Components/Dropdown/Dropdown.scss");
 var Dropdown = function (props) {
+    var _a = React.useState(props.dropdownInfo.groupName), dropdownName = _a[0], setDropdownName = _a[1];
     var onClickItem = function (e) {
         props.onClick(e.target.id, props.dropdownInfo.id);
+        setDropdownName(e.target.getAttribute('data-value'));
     };
     var getItemsDropdown = function (namesList, idsList) {
         if (namesList.length != 0) {
             return (React.createElement("div", { className: "dropdown-menu", "aria-labelledby": "dropdownMenuButton" }, namesList.map(function (value, index) {
-                return (React.createElement("a", { className: "dropdown-item", key: "" + index, id: idsList[index], onClick: onClickItem }, value));
+                return (React.createElement("a", { className: "dropdown-item", key: "" + index, id: idsList[index], onClick: onClickItem, "data-value": value }, value));
             })));
         }
     };
     return (React.createElement("div", { className: "dropdown" },
-        React.createElement("button", { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenuButton", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }, props.dropdownInfo.groupName),
+        React.createElement("button", { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenuButton", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }, dropdownName),
         getItemsDropdown(props.dropdownInfo.groupItems, props.dropdownInfo.groupIds)));
 };
 exports.default = Dropdown;
@@ -36288,7 +36290,7 @@ var IncidenciaViewPage = function () {
                     isDataNull(incidencia.id_team)),
                 React.createElement("div", { className: "info-container" },
                     React.createElement("p", { className: "p-left" }, "T\u00E9cnico asignado (ID)"),
-                    isDataNull(incidencia.group_id)),
+                    isDataNull(incidencia.id_assigned)),
                 React.createElement("div", { className: "info-container" },
                     React.createElement("p", { className: "p-left" }, "T\u00EDtulo"),
                     isDataNull(incidencia.title, true)),
@@ -36820,15 +36822,15 @@ var MostrarIncidenciasPage = function () {
     var user = {
         id: localStorage.userId
     };
-    var adminDropdown = React.useState({
+    var _d = React.useState({
         id: 1,
-        groupName: "Ordenar por...",
+        groupName: "Estado",
         groupItems: ['Prioridad', 'Fecha límite', 'Estado', 'Categoría', 'ID'],
         groupIds: ['priority', 'limit_date', 'state', 'category', 'id'],
         color: 'primary',
         enabled: false,
         extraClass: '',
-    })[0];
+    }), adminDropdown = _d[0], setAdminDropdown = _d[1];
     var getIncidenciasUser = function (user, orderBy) {
         if (userRol == 'technical') {
             TechnicalUtilities_1.getTechnicalIncidencias(user, orderBy).then(function (res) {
@@ -36847,8 +36849,6 @@ var MostrarIncidenciasPage = function () {
     }, [orderBy]);
     var handleClickItemDD = function (idItem, idDropdown) {
         setOrderBy(idItem);
-        console.log(orderBy);
-        // getIncidenciasUser(user, orderBy);
     };
     if (incidenciasLoaded) {
         return (React.createElement(React.Fragment, null,
