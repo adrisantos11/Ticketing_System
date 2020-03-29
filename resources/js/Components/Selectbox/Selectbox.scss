@@ -1,0 +1,35 @@
+@import '../../../sass/app.scss';
+
+.selectbox-container {
+    height: auto;
+    .btn-group {
+        .btn {
+            border-radius: 130px;
+            cursor: pointer;
+
+            &--primary {
+                @extend .btn;
+                background-color: transparent;
+                color: $primary_color;
+                border-color: $primary_color;
+            }
+            &--primary:hover {
+                @extend .btn;
+                color: $white_color;
+                background-color: $primary_color;
+            }
+        }
+        
+        .active {
+            color: $white_color;
+            background-color: $primary_color;
+            font-weight: bold;
+            
+            &:hover {
+                background-color: $secondary_color;
+                border-color: $secondary_color;
+            }
+
+        }
+    }
+}

@@ -21,13 +21,13 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                     props.tabsInfo.valuesList.map((value, index) => {
                         if (index == 0) {
                             return(
-                                <label className={`btn btn${props.tabsInfo.color} active`} key={index}>
+                                <label className={`btn btn--${props.tabsInfo.color} active`} key={index}>
                                     <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value} 
                                 </label>
                             )
                         } else {
                             return(
-                                <label className={`btn btn${props.tabsInfo.color}`} key={index}>
+                                <label className={`btn btn--${props.tabsInfo.color}`} key={index}>
                                     <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
                                 </label>
                             )

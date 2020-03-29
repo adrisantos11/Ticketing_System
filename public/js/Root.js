@@ -2067,6 +2067,25 @@ exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Selectbox/Selectbox.scss":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Selectbox/Selectbox.scss ***!
+  \*********************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".selectbox-container {\n  height: auto;\n}\n.selectbox-container .btn-group .btn, .selectbox-container .btn-group .btn--primary:hover, .selectbox-container .btn-group .btn--primary {\n  border-radius: 130px;\n  cursor: pointer;\n}\n.selectbox-container .btn-group .btn--primary {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.selectbox-container .btn-group .btn--primary:hover {\n  color: #FFFFFF;\n  background-color: #3685EC;\n}\n.selectbox-container .btn-group .active {\n  color: #FFFFFF;\n  background-color: #3685EC;\n  font-weight: bold;\n}\n.selectbox-container .btn-group .active:hover {\n  background-color: #003877;\n  border-color: #003877;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Tabs/Tabs.scss":
 /*!***********************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Tabs/Tabs.scss ***!
@@ -2174,7 +2193,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".createIncidencia-container {\n  width: 70%;\n  padding-left: 1rem;\n  padding-top: 1rem;\n}\n.createIncidencia-container .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding: 1.5rem 5rem;\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -2232,6 +2251,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n  padding-top: 0;\n  width: 100%;\n  height: 100vh;\n  max-height: 100vh;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .mainpage-container {\n    flex-direction: column;\n    padding-left: 0;\n  }\n  .mainpage-container .body-container {\n    padding-top: 56px;\n  }\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss ***!
+  \****************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".createIncidencia-container {\n  width: 70%;\n  padding-left: 1rem;\n  padding-top: 1rem;\n}\n.createIncidencia-container .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding: 1.5rem 0;\n}\n.createIncidencia-container .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.createIncidencia-container .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n}\n.createIncidencia-container .build-container .dropdown-container .dropdown {\n  width: 95%;\n}\n.createIncidencia-container .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.createIncidencia-container .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: 100%;\n}\n.createIncidencia-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1.5rem 0;\n}\n.createIncidencia-container .assign-container span {\n  margin-right: 1rem;\n}\n.createIncidencia-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.createIncidencia-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.createIncidencia-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.createIncidencia-container .assign-container .tabs-container .btn-group .active {\n  background-color: #e2e2e2;\n  border-bottom-color: #3685EC;\n}", ""]);
 
 // exports
 
@@ -35959,6 +35997,68 @@ exports.default = Navbar;
 
 /***/ }),
 
+/***/ "./resources/js/Components/Selectbox/SelectBox.tsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/Components/Selectbox/SelectBox.tsx ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./Selectbox.scss */ "./resources/js/Components/Selectbox/Selectbox.scss");
+var Selectbox = function (props) {
+    var activeProps = props.selectboxInfo.active;
+    var active = '';
+    if (activeProps) {
+        active = 'active';
+    }
+    var handleClickTab = function (event) {
+        props.handleClickSelectbox(event.target.id);
+    };
+    return (React.createElement("div", { className: "selectbox-container" },
+        React.createElement("div", { className: "btn-group btn-group-toggle", "data-toggle": "buttons" },
+            React.createElement("label", { className: "btn btn--primary " + active, key: 1 },
+                React.createElement("input", { type: "checkbox", id: 'hola', onClick: handleClickTab }),
+                " Hola"))));
+};
+exports.default = Selectbox;
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Selectbox/Selectbox.scss":
+/*!**********************************************************!*\
+  !*** ./resources/js/Components/Selectbox/Selectbox.scss ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Selectbox.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Selectbox/Selectbox.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./resources/js/Components/Tabs/Tabs.scss":
 /*!************************************************!*\
   !*** ./resources/js/Components/Tabs/Tabs.scss ***!
@@ -36008,13 +36108,13 @@ var Tabs = function (props) {
     return (React.createElement("div", { className: "tabs-container" },
         React.createElement("div", { className: "btn-group btn-group-toggle", "data-toggle": "buttons" }, props.tabsInfo.valuesList.map(function (value, index) {
             if (index == 0) {
-                return (React.createElement("label", { className: "btn btn" + props.tabsInfo.color + " active", key: index },
+                return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color + " active", key: index },
                     React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], checked: true, onClick: handleClickTab }),
                     " ",
                     value));
             }
             else {
-                return (React.createElement("label", { className: "btn btn" + props.tabsInfo.color, key: index },
+                return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color, key: index },
                     React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], checked: true, onClick: handleClickTab }),
                     " ",
                     value));
@@ -36241,7 +36341,7 @@ var IncidenciaViewPage = function () {
     var tabsOptions = React.useState({
         idList: ['editar-incidencia', 'eliminar-incidencia', 'comentarios'],
         valuesList: ['Editar incidencia', 'Eliminar incidencia', 'Comentarios'],
-        color: '--primary',
+        color: 'primary',
         enabledList: [true, true]
     })[0];
     var _b = React.useState(false), incidenciaLoaded = _b[0], setIncidenciaLoaded = _b[1];
@@ -36395,7 +36495,7 @@ var IncidenciasPage = function () {
     var tabsOptions = React.useState({
         idList: ['mostrarIncidencias', 'crearIncidencia'],
         valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
-        color: '--grey',
+        color: 'grey',
         enabledList: [true, true]
     })[0];
     var handleClickTab = function (id) {
@@ -36461,305 +36561,12 @@ if(false) {}
 
 "use strict";
 
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./CreateIncidenciaPage.scss */ "./resources/js/Pages/IncidenciasPage/TabOptions/CreateIncidenciaPage/CreateIncidenciaPage.scss");
-var Input_1 = __webpack_require__(/*! ../../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
-var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
-var Button_1 = __webpack_require__(/*! ../../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
-var UploadFile_1 = __webpack_require__(/*! ../../../../Components/UploadFile/UploadFile */ "./resources/js/Components/UploadFile/UploadFile.tsx");
-var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
+var FormularioIncidencia_1 = __webpack_require__(/*! ../../../../Widgets/FormularioIncidencia/FormularioIncidencia */ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.tsx");
 var CreateIncidenciaPage = function () {
-    var userRol = localStorage.userRol;
-    var enableInput = true;
-    if (userRol == 'technical') {
-        enableInput = false;
-    }
-    var _a = React.useState(''), title = _a[0], setTitle = _a[1];
-    var _b = React.useState(''), description = _b[0], setDescription = _b[1];
-    var _c = React.useState(''), category = _c[0], setCategory = _c[1];
-    var _d = React.useState(''), build = _d[0], setBuild = _d[1];
-    var _e = React.useState(0), floor = _e[0], setFloor = _e[1];
-    var _f = React.useState(''), classroom = _f[0], setClassroom = _f[1];
-    var _g = React.useState(''), priority = _g[0], setPriority = _g[1];
-    var _h = React.useState(''), urlFile = _h[0], setUrlFile = _h[1];
-    var titleInput = React.useState({
-        id: 1,
-        label: 'Título',
-        placeholder: '',
-        color: 'primary',
-        type: 'text',
-        error_control_text: '',
-        enabled: enableInput,
-        extraClass: ''
-    })[0];
-    var descriptionInput = React.useState({
-        id: 2,
-        label: 'Descripción',
-        placeholder: '',
-        color: 'primary',
-        type: 'text',
-        error_control_text: '',
-        enabled: enableInput,
-        extraClass: ''
-    })[0];
-    var departamentInput = React.useState({
-        id: 3,
-        label: 'Departamento',
-        placeholder: '',
-        color: 'primary',
-        type: 'text',
-        error_control_text: '',
-        enabled: enableInput,
-        extraClass: ''
-    })[0];
-    var categoryDropdown = React.useState({
-        id: 1,
-        groupName: 'Elegir categoría',
-        groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
-        groupIds: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
-        color: 'primary',
-        enabled: false,
-        extraClass: '',
-    })[0];
-    // groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
-    var buildDropdown = React.useState({
-        id: 2,
-        groupName: 'Elegir edificio',
-        groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
-        groupIds: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
-        color: 'primary',
-        enabled: false,
-        extraClass: '',
-    })[0];
-    var _j = React.useState({
-        id: 3,
-        groupName: 'Elegir piso',
-        groupItems: [],
-        groupIds: [],
-        color: 'primary',
-        enabled: false,
-        extraClass: '',
-    }), floorDropdown = _j[0], setFloorDropdown = _j[1];
-    var _k = React.useState({
-        id: 4,
-        groupName: 'Elegir clase',
-        groupItems: [],
-        groupIds: [],
-        color: 'primary',
-        enabled: false,
-        extraClass: '',
-    }), classDropdown = _k[0], setClassDropdown = _k[1];
-    var priorityDropdown = React.useState({
-        id: 5,
-        groupName: 'Elegir prioridad',
-        groupItems: ['critical', 'important', 'trivial'],
-        groupIds: ['critical', 'important', 'trivial'],
-        color: 'primary',
-        enabled: false,
-        extraClass: '',
-    })[0];
-    var createIncidenciaButton = React.useState({
-        id: 1,
-        texto: 'Crear incidencia',
-        color: 'primary',
-        type: '',
-        icon: '',
-        extraClass: ''
-    })[0];
-    var handleChangeInput = function (value, id) {
-        if (id == 1) {
-            setTitle(value);
-        }
-        else if (id == 2) {
-            setDescription(value);
-        }
-    };
-    var piso0_B = {
-        nombre: 0,
-        aulas: ['No hay aulas en este piso']
-    };
-    var piso1_B = {
-        nombre: 1,
-        aulas: ['B101', 'B102', 'B103', 'B104', 'B105', 'B106', 'B107', 'B108', 'B109', 'B110', 'B111', 'B112', 'B113', 'B114', 'B115', 'B116', 'B117', 'B118']
-    };
-    var piso2_B = {
-        nombre: 2,
-        aulas: ['B201', 'B202', 'B203', 'B204', 'B205', 'B206', 'B207', 'B208', 'B209', 'B210', 'B211', 'B212', 'B213', 'B214', 'B215', 'B216', 'B217', 'B218']
-    };
-    var piso3_B = {
-        nombre: 3,
-        aulas: ['B301', 'B302', 'B303', 'B304', 'B305', 'B306', 'B307', 'B308', 'B309', 'B310', 'B311', 'B312', 'B313', 'B314', 'B315', 'B316', 'B317', 'B318']
-    };
-    var edificioB = {
-        nombre: 'Edificio A',
-        pisos: [piso0_B, piso1_B, piso2_B, piso3_B]
-    };
-    var piso0_C = {
-        nombre: 0,
-        aulas: ['No hay aulas en este piso']
-    };
-    var piso1_C = {
-        nombre: 1,
-        aulas: ['C101', 'C102', 'C103', 'C104', 'C105', 'C106', 'C107', 'C108', 'C109', 'C110', 'C111', 'C112', 'C113', 'C114', 'C115', 'C116', 'C117', 'C118']
-    };
-    var piso2_C = {
-        nombre: 2,
-        aulas: ['C201', 'C202', 'C203', 'C204', 'C205', 'C206', 'C207', 'C208', 'C209', 'C210', 'C211', 'C212', 'C213', 'C214', 'C215', 'C216', 'C217', 'C218']
-    };
-    var piso3_C = {
-        nombre: 3,
-        aulas: ['C301', 'C302', 'C303', 'C304', 'C305', 'C306', 'C307', 'C308', 'C309', 'C310', 'C311', 'C312', 'C313', 'C314', 'C315', 'C316', 'C317', 'C318']
-    };
-    var edificioC = {
-        nombre: 'Edificio A',
-        pisos: [piso0_C, piso1_C, piso2_C, piso3_C]
-    };
-    var handleClickItemDD = function (idItem, idDropdown) {
-        if (idDropdown == 1) {
-            // Establece el valor elegido en el dropdown de categoría
-            setCategory(idItem);
-        }
-        else if (idDropdown == 2) {
-            // Establece el valor elegido en el dropdown de edificio (dropdown precargado)
-            var array_1 = [];
-            if (idItem.includes('Salud')) {
-                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso A
-                setBuild('A');
-            }
-            else if (idItem.includes('Sociales')) {
-                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso B
-                setBuild('B');
-                edificioB.pisos.map(function (value) {
-                    array_1.push(value.nombre);
-                });
-            }
-            else if (idItem.includes('Ingeniería')) {
-                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso C
-                setBuild('C');
-                edificioC.pisos.map(function (value) {
-                    array_1.push(value.nombre);
-                });
-            }
-            else if (idItem.includes('Deporte')) {
-                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso P
-                setBuild('P');
-            }
-            else if (idItem.includes('Business')) {
-                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso E
-                setBuild('E');
-            }
-            setFloorDropdown(__assign(__assign({}, floorDropdown), { groupItems: array_1 }));
-        }
-        else if (idDropdown == 3) {
-            var array_2 = [];
-            setFloor(Number(idItem));
-            if (build == 'A') {
-                console.log('A');
-            }
-            else if (build == 'B') {
-                if (String(idItem).includes('0')) {
-                    piso0_B.aulas.map(function (value) {
-                        array_2.push(value);
-                    });
-                }
-                else if (String(idItem).includes('1')) {
-                    piso1_B.aulas.map(function (value) {
-                        array_2.push(value);
-                    });
-                }
-                else if (String(idItem).includes('2')) {
-                    piso2_B.aulas.map(function (value) {
-                        array_2.push(value);
-                    });
-                }
-                else if (String(idItem).includes('3')) {
-                    piso3_B.aulas.map(function (value) {
-                        array_2.push(value);
-                    });
-                }
-            }
-            else if (build == 'C') {
-                if (String(idItem).includes('0')) {
-                    piso0_C.aulas.map(function (value) {
-                        array_2.push(value);
-                    });
-                }
-                else if (String(idItem).includes('1')) {
-                    piso1_C.aulas.map(function (value) {
-                        array_2.push(value);
-                    });
-                }
-                else if (String(idItem).includes('2')) {
-                    piso2_C.aulas.map(function (value) {
-                        array_2.push(value);
-                    });
-                }
-                else if (String(idItem).includes('3')) {
-                    piso3_C.aulas.map(function (value) {
-                        array_2.push(value);
-                    });
-                }
-            }
-            setClassDropdown(__assign(__assign({}, classDropdown), { groupItems: array_2 }));
-        }
-        else if (idDropdown == 4) {
-            setClassroom(String(idItem));
-        }
-        else if (idDropdown == 5) {
-            setPriority(String(idItem));
-        }
-    };
-    var hendleClickCreateIncidencia = function (e) {
-        var date = new Date();
-        var hoursMinutesSeconds = date.toLocaleString().split(' ');
-        var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
-        var incidencia = {
-            group_id: 0,
-            id_reporter: parseInt(localStorage.userId),
-            id_assigned: 3,
-            id_team: null,
-            title: title,
-            description: description,
-            category: category,
-            build: build,
-            floor: floor,
-            class: classroom,
-            url_data: '',
-            creation_date: currentDate,
-            limit_date: '1263645342',
-            assigned_date: '',
-            resolution_date: '',
-            priority: priority,
-            state: 'todo'
-        };
-        IncidenciasUtilities_1.createIncidencia(incidencia);
-    };
-    return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: 'createIncidencia-container' },
-            React.createElement("h2", null, "Crear incidencia"),
-            React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInput }),
-            React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInput }),
-            React.createElement("h3", null, "\u00BFD\u00F3nde se produce la incidencia?"),
-            React.createElement("div", { className: "build-container" },
-                React.createElement(Dropdown_1.default, { dropdownInfo: buildDropdown, onClick: handleClickItemDD }),
-                React.createElement(Dropdown_1.default, { dropdownInfo: floorDropdown, onClick: handleClickItemDD }),
-                React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD })),
-            React.createElement(Dropdown_1.default, { dropdownInfo: categoryDropdown, onClick: handleClickItemDD }),
-            React.createElement(UploadFile_1.default, null),
-            React.createElement(Dropdown_1.default, { dropdownInfo: priorityDropdown, onClick: handleClickItemDD }),
-            React.createElement(Button_1.default, { buttonInfo: createIncidenciaButton, handleClick: hendleClickCreateIncidencia }))));
+    return (React.createElement(FormularioIncidencia_1.default, { widgetType: 'create', userRol: localStorage.userRol }));
 };
 exports.default = CreateIncidenciaPage;
 
@@ -36809,6 +36616,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./MostrarIncidenciasPage.scss */ "./resources/js/Pages/IncidenciasPage/TabOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.scss");
 var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
+var SelectBox_1 = __webpack_require__(/*! ../../../../Components/Selectbox/SelectBox */ "./resources/js/Components/Selectbox/SelectBox.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
 var TechnicalUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/TechnicalUtilities */ "./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx");
@@ -36831,6 +36639,16 @@ var MostrarIncidenciasPage = function () {
         enabled: false,
         extraClass: '',
     }), adminDropdown = _d[0], setAdminDropdown = _d[1];
+    var _e = React.useState({
+        active: true,
+        name: 'Pendientes',
+        id: 'todo'
+    }), selectboxActive = _e[0], setSelectboxActive = _e[1];
+    var _f = React.useState({
+        active: false,
+        name: 'Pendientes',
+        id: 'todo'
+    }), selectboxDisabled = _f[0], setSelectboxDisabled = _f[1];
     var getIncidenciasUser = function (user, orderBy) {
         if (userRol == 'technical') {
             TechnicalUtilities_1.getTechnicalIncidencias(user, orderBy).then(function (res) {
@@ -36850,11 +36668,18 @@ var MostrarIncidenciasPage = function () {
     var handleClickItemDD = function (idItem, idDropdown) {
         setOrderBy(idItem);
     };
+    var handleClickSelectedbox = function (id) {
+        console.log(id);
+    };
     if (incidenciasLoaded) {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "incidenciasList-container" },
                 React.createElement("div", { className: "filtrar-container" },
-                    React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown, onClick: handleClickItemDD })),
+                    React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown, onClick: handleClickItemDD }),
+                    React.createElement(SelectBox_1.default, { selectboxInfo: selectboxActive, handleClickSelectbox: handleClickSelectedbox }),
+                    React.createElement(SelectBox_1.default, { selectboxInfo: selectboxDisabled, handleClickSelectbox: handleClickSelectedbox }),
+                    React.createElement(SelectBox_1.default, { selectboxInfo: selectboxDisabled, handleClickSelectbox: handleClickSelectedbox }),
+                    React.createElement(SelectBox_1.default, { selectboxInfo: selectboxDisabled, handleClickSelectbox: handleClickSelectedbox })),
                 React.createElement("div", { className: "table-container" },
                     React.createElement("table", { className: "table", id: 'dataTable' },
                         React.createElement("thead", null,
@@ -37421,6 +37246,390 @@ exports.getTechnicalIncidencias = function (user, orderBy) {
             console.log(err);
     });
 };
+
+
+/***/ }),
+
+/***/ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./FormularioIncidencia.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.tsx":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.tsx ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./FormularioIncidencia.scss */ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss");
+var Input_1 = __webpack_require__(/*! ../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
+var Dropdown_1 = __webpack_require__(/*! ../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
+var Button_1 = __webpack_require__(/*! ../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var UploadFile_1 = __webpack_require__(/*! ../../Components/UploadFile/UploadFile */ "./resources/js/Components/UploadFile/UploadFile.tsx");
+var IncidenciasUtilities_1 = __webpack_require__(/*! ../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
+var Tabs_1 = __webpack_require__(/*! ../../Components/Tabs/Tabs */ "./resources/js/Components/Tabs/Tabs.tsx");
+var FormularioIncidencia = function (props) {
+    var userRol = props.userRol;
+    var widgetType = props.widgetType;
+    var enableInput = true;
+    var titleWidget = '';
+    // if(userRol == 'technical') {
+    //     enableInput = false;
+    // }
+    if (widgetType == 'create') {
+        titleWidget = 'Crear incidencia';
+    }
+    else if (widgetType == 'edit') {
+        titleWidget = 'Editar incidencia';
+    }
+    var _a = React.useState(''), title = _a[0], setTitle = _a[1];
+    var _b = React.useState(''), description = _b[0], setDescription = _b[1];
+    var _c = React.useState(''), category = _c[0], setCategory = _c[1];
+    var _d = React.useState(''), build = _d[0], setBuild = _d[1];
+    var _e = React.useState(0), floor = _e[0], setFloor = _e[1];
+    var _f = React.useState(''), classroom = _f[0], setClassroom = _f[1];
+    var _g = React.useState(''), priority = _g[0], setPriority = _g[1];
+    var _h = React.useState(''), urlFile = _h[0], setUrlFile = _h[1];
+    var titleInput = React.useState({
+        id: 1,
+        label: 'Título',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: enableInput,
+        extraClass: ''
+    })[0];
+    var descriptionInput = React.useState({
+        id: 2,
+        label: 'Descripción',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: enableInput,
+        extraClass: ''
+    })[0];
+    var departamentInput = React.useState({
+        id: 3,
+        label: 'Departamento',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: enableInput,
+        extraClass: ''
+    })[0];
+    var categoryDropdown = React.useState({
+        id: 1,
+        groupName: 'Elegir categoría',
+        groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
+        groupIds: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    })[0];
+    // groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
+    var buildDropdown = React.useState({
+        id: 2,
+        groupName: 'Elegir edificio',
+        groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
+        groupIds: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    })[0];
+    var _j = React.useState({
+        id: 3,
+        groupName: 'Elegir piso',
+        groupItems: [],
+        groupIds: [],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    }), floorDropdown = _j[0], setFloorDropdown = _j[1];
+    var _k = React.useState({
+        id: 4,
+        groupName: 'Elegir aula',
+        groupItems: [],
+        groupIds: [],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    }), classDropdown = _k[0], setClassDropdown = _k[1];
+    var priorityDropdown = React.useState({
+        id: 5,
+        groupName: 'Elegir prioridad',
+        groupItems: ['critical', 'important', 'trivial'],
+        groupIds: ['critical', 'important', 'trivial'],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    })[0];
+    var createIncidenciaButton = React.useState({
+        id: 1,
+        texto: 'Crear incidencia',
+        color: 'primary',
+        type: '',
+        icon: '',
+        extraClass: ''
+    })[0];
+    var handleChangeInput = function (value, id) {
+        if (id == 1) {
+            setTitle(value);
+        }
+        else if (id == 2) {
+            setDescription(value);
+        }
+    };
+    var piso0_B = {
+        nombre: 0,
+        aulas: ['No hay aulas en este piso']
+    };
+    var piso1_B = {
+        nombre: 1,
+        aulas: ['B101', 'B102', 'B103', 'B104', 'B105', 'B106', 'B107', 'B108', 'B109', 'B110', 'B111', 'B112', 'B113', 'B114', 'B115', 'B116', 'B117', 'B118']
+    };
+    var piso2_B = {
+        nombre: 2,
+        aulas: ['B201', 'B202', 'B203', 'B204', 'B205', 'B206', 'B207', 'B208', 'B209', 'B210', 'B211', 'B212', 'B213', 'B214', 'B215', 'B216', 'B217', 'B218']
+    };
+    var piso3_B = {
+        nombre: 3,
+        aulas: ['B301', 'B302', 'B303', 'B304', 'B305', 'B306', 'B307', 'B308', 'B309', 'B310', 'B311', 'B312', 'B313', 'B314', 'B315', 'B316', 'B317', 'B318']
+    };
+    var edificioB = {
+        nombre: 'Edificio A',
+        pisos: [piso0_B, piso1_B, piso2_B, piso3_B]
+    };
+    var piso0_C = {
+        nombre: 0,
+        aulas: ['No hay aulas en este piso']
+    };
+    var piso1_C = {
+        nombre: 1,
+        aulas: ['C101', 'C102', 'C103', 'C104', 'C105', 'C106', 'C107', 'C108', 'C109', 'C110', 'C111', 'C112', 'C113', 'C114', 'C115', 'C116', 'C117', 'C118']
+    };
+    var piso2_C = {
+        nombre: 2,
+        aulas: ['C201', 'C202', 'C203', 'C204', 'C205', 'C206', 'C207', 'C208', 'C209', 'C210', 'C211', 'C212', 'C213', 'C214', 'C215', 'C216', 'C217', 'C218']
+    };
+    var piso3_C = {
+        nombre: 3,
+        aulas: ['C301', 'C302', 'C303', 'C304', 'C305', 'C306', 'C307', 'C308', 'C309', 'C310', 'C311', 'C312', 'C313', 'C314', 'C315', 'C316', 'C317', 'C318']
+    };
+    var edificioC = {
+        nombre: 'Edificio A',
+        pisos: [piso0_C, piso1_C, piso2_C, piso3_C]
+    };
+    var handleClickItemDD = function (idItem, idDropdown) {
+        console.log(idDropdown);
+        console.log(idItem);
+        if (idDropdown == 1) {
+            // Establece el valor elegido en el dropdown de categoría
+            setCategory(idItem);
+        }
+        else if (idDropdown == 2) {
+            // Establece el valor elegido en el dropdown de edificio (dropdown precargado)
+            var arrayPisos_1 = [];
+            if (idItem.includes('Salud')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso A
+                setBuild('A');
+            }
+            else if (idItem.includes('Sociales')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso B
+                setBuild('B');
+                edificioB.pisos.map(function (value) {
+                    arrayPisos_1.push(value.nombre);
+                });
+            }
+            else if (idItem.includes('Ingeniería')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso C
+                setBuild('C');
+                edificioC.pisos.map(function (value) {
+                    arrayPisos_1.push(value.nombre);
+                });
+            }
+            else if (idItem.includes('Deporte')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso P
+                setBuild('P');
+            }
+            else if (idItem.includes('Business')) {
+                // Rellena el dropdown 'floorDropdown' con los pisos correspodientes al piso E
+                setBuild('E');
+            }
+            setFloorDropdown(__assign(__assign({}, floorDropdown), { groupIds: arrayPisos_1, groupItems: arrayPisos_1 }));
+        }
+        else if (idDropdown == 3) {
+            var arrayAulas_1 = [];
+            setFloor(Number(idItem));
+            if (build == 'A') {
+                console.log('A');
+            }
+            else if (build == 'B') {
+                console.log('Piso B seleccionado');
+                if (String(idItem).includes('0')) {
+                    console.log('Piso 0 seleccionado.');
+                    piso0_B.aulas.map(function (value) {
+                        console.log(value);
+                        arrayAulas_1.push(value);
+                    });
+                }
+                else if (String(idItem).includes('1')) {
+                    console.log('Piso 1 seleccionado.');
+                    piso1_B.aulas.map(function (value) {
+                        console.log(value);
+                        arrayAulas_1.push(value);
+                    });
+                }
+                else if (String(idItem).includes('2')) {
+                    piso2_B.aulas.map(function (value) {
+                        arrayAulas_1.push(value);
+                    });
+                }
+                else if (String(idItem).includes('3')) {
+                    piso3_B.aulas.map(function (value) {
+                        arrayAulas_1.push(value);
+                    });
+                }
+            }
+            else if (build == 'C') {
+                console.log('Piso C seleccionado');
+                if (String(idItem).includes('0')) {
+                    piso0_C.aulas.map(function (value) {
+                        arrayAulas_1.push(value);
+                    });
+                }
+                else if (String(idItem).includes('1')) {
+                    piso1_C.aulas.map(function (value) {
+                        arrayAulas_1.push(value);
+                    });
+                }
+                else if (String(idItem).includes('2')) {
+                    piso2_C.aulas.map(function (value) {
+                        arrayAulas_1.push(value);
+                    });
+                }
+                else if (String(idItem).includes('3')) {
+                    piso3_C.aulas.map(function (value) {
+                        arrayAulas_1.push(value);
+                    });
+                }
+            }
+            setClassDropdown(__assign(__assign({}, classDropdown), { groupIds: arrayAulas_1, groupItems: arrayAulas_1 }));
+        }
+        else if (idDropdown == 4) {
+            setClassroom(String(idItem));
+        }
+        else if (idDropdown == 5) {
+            setPriority(String(idItem));
+        }
+    };
+    var hendleClickCreateIncidencia = function (e) {
+        var date = new Date();
+        var hoursMinutesSeconds = date.toLocaleString().split(' ');
+        var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+        var incidencia = {
+            group_id: 0,
+            id_reporter: parseInt(localStorage.userId),
+            id_assigned: 3,
+            id_team: null,
+            title: title,
+            description: description,
+            category: category,
+            build: build,
+            floor: floor,
+            class: classroom,
+            url_data: '',
+            creation_date: currentDate,
+            limit_date: '1263645342',
+            assigned_date: '',
+            resolution_date: '',
+            priority: priority,
+            state: 'todo'
+        };
+        IncidenciasUtilities_1.createIncidencia(incidencia);
+    };
+    var assignUser = function (userRol) {
+        var tabsOptions = React.useState({
+            idList: ['group', 'technical'],
+            valuesList: ['Grupo de técnicos', 'Técnico'],
+            color: 'primary',
+            enabledList: [true, true]
+        })[0];
+        var handleClickTabsAssign = function (id) {
+        };
+        if (userRol == 'technical') {
+            return (React.createElement(React.Fragment, null,
+                React.createElement("div", { className: "assign-container" },
+                    React.createElement("span", null, "Asignar a"),
+                    React.createElement(Tabs_1.default, { tabsInfo: tabsOptions, handleClick: handleClickTabsAssign }))));
+        }
+    };
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: 'createIncidencia-container' },
+            React.createElement("h2", null, titleWidget),
+            React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInput }),
+            React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInput }),
+            React.createElement("h3", null, "\u00BFD\u00F3nde se produce la incidencia?"),
+            React.createElement("div", { className: "build-container" },
+                React.createElement("div", { className: "dropdown-container" },
+                    React.createElement("span", null, "Edificio"),
+                    React.createElement(Dropdown_1.default, { dropdownInfo: buildDropdown, onClick: handleClickItemDD })),
+                React.createElement("div", { className: "dropdown-container" },
+                    React.createElement("span", null, "Piso"),
+                    React.createElement(Dropdown_1.default, { dropdownInfo: floorDropdown, onClick: handleClickItemDD })),
+                React.createElement("div", { className: "dropdown-container" },
+                    React.createElement("span", null, "Aula"),
+                    React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD }))),
+            React.createElement(Dropdown_1.default, { dropdownInfo: categoryDropdown, onClick: handleClickItemDD }),
+            assignUser(userRol),
+            React.createElement(UploadFile_1.default, null),
+            React.createElement(Dropdown_1.default, { dropdownInfo: priorityDropdown, onClick: handleClickItemDD }),
+            React.createElement(Button_1.default, { buttonInfo: createIncidenciaButton, handleClick: hendleClickCreateIncidencia }))));
+};
+exports.default = FormularioIncidencia;
 
 
 /***/ }),

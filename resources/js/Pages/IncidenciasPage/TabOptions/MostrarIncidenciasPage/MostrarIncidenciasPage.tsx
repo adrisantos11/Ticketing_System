@@ -1,9 +1,9 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './MostrarIncidenciasPage.scss'
-import { Input } from '../../../../Components/Input/Input';
-import { ButtonModel, InputModel, DropdownModel, IncidenciaModel } from '../../../../Model/model'
+import { ButtonModel, InputModel, DropdownModel, IncidenciaModel, SelectboxModel } from '../../../../Model/model'
 import Dropdown from '../../../../Components/Dropdown/Dropdown';
+import Selectbox from '../../../../Components/Selectbox/SelectBox';
 import { NavLink, Link } from 'react-router-dom';
 
 import { getIncidenciasAssignedToUser } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
@@ -30,6 +30,18 @@ const MostrarIncidenciasPage = () => {
         extraClass: '',
     });
 
+    const [selectboxActive, setSelectboxActive] = React.useState<SelectboxModel>({
+        active: true,
+        name: 'Pendientes',
+        id: 'todo'
+    });
+
+    const [selectboxDisabled, setSelectboxDisabled] = React.useState<SelectboxModel>({
+        active: false,
+        name: 'Pendientes',
+        id: 'todo'
+    });
+
     const getIncidenciasUser = (user: any, orderBy: string) => {
         if (userRol == 'technical') {
             getTechnicalIncidencias(user, orderBy).then(res => {
@@ -51,12 +63,21 @@ const MostrarIncidenciasPage = () => {
         setOrderBy(idItem);
     }
 
+    const handleClickSelectedbox = (id: string) => {
+        console.log(id);
+    }
+
     if(incidenciasLoaded) {
     return (
         <>
         <div className="incidenciasList-container">
             <div className="filtrar-container">
                 <Dropdown dropdownInfo={adminDropdown} onClick={handleClickItemDD}></Dropdown>
+                <Selectbox selectboxInfo={selectboxActive} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
+                <Selectbox selectboxInfo={selectboxDisabled} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
+                <Selectbox selectboxInfo={selectboxDisabled} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
+                <Selectbox selectboxInfo={selectboxDisabled} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
+
             </div>
             <div className="table-container">
                 <table className="table" id='dataTable'>

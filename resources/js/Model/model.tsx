@@ -35,6 +35,12 @@ export interface TabsModel {
     enabledList: Array<boolean>;
 }
 
+export interface SelectboxModel {
+    active: boolean,
+    name: string,
+    id: string
+}
+
 export interface IncidenciaModel {
     group_id: number,
     id_reporter: number,

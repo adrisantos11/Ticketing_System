@@ -15,7 +15,7 @@ const IncidenciasPage = () => {
     const [tabsOptions] = React.useState<TabsModel>({
         idList: ['mostrarIncidencias','crearIncidencia'],
         valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
-        color: '--grey',
+        color: 'grey',
         enabledList: [true, true]
     });
     
