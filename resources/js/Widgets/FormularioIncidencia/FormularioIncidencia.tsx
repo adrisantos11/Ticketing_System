@@ -8,21 +8,29 @@ import Button from '../../Components/Button/Button';
 import UploadFile from '../../Components/UploadFile/UploadFile';
 import { createIncidencia } from '../../Utilities/Incidencias/IncidenciasUtilities'
 import Tabs from '../../Components/Tabs/Tabs'
+import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 
 const FormularioIncidencia = (props: any) => {
     const userRol = props.userRol;
     const widgetType = props.widgetType;
+    const urlGeneral = props.urlGeneral;
+    const history = useHistory();
     let enableInput = true;
-    let titleWidget = '';
-    // if(userRol == 'technical') {
-    //     enableInput = false;
-    // }
+
+    let title1;
+    let title2;
+    let title3;
 
     if (widgetType == 'create') {
-        titleWidget = 'Crear incidencia'
+        title1 = <p className="p-title">¿Cuál es la incidencia?</p>;
+        title2 = <p className="p-title">¿Dónde se produce la incidencia?</p>;
+        title3 = 'Crear incidencia';
     } else if (widgetType == 'edit') {
-        titleWidget = 'Editar incidencia'
+        title1 = '';
+        title2 = '';
+        title3 = '';
     }
+
 
     const [title, setTitle] = React.useState('');
     const [description, setDescription] = React.useState('');
@@ -109,7 +117,7 @@ const FormularioIncidencia = (props: any) => {
     const [priorityDropdown] = React.useState<DropdownModel>({
         id: 5,
         groupName: 'Elegir prioridad',
-        groupItems: ['critical', 'important', 'trivial'],
+        groupItems: ['Crítica', 'Importante', 'Trivial'],
         groupIds: ['critical', 'important', 'trivial'],
         color: 'primary',
         enabled: false,
@@ -179,8 +187,6 @@ const FormularioIncidencia = (props: any) => {
     }
 
     const handleClickItemDD = (idItem: string, idDropdown: number) => {
-        console.log(idDropdown);
-        console.log(idItem);
         if (idDropdown == 1) {
             // Establece el valor elegido en el dropdown de categoría
             setCategory(idItem);
@@ -218,20 +224,14 @@ const FormularioIncidencia = (props: any) => {
             let arrayAulas: string[] = []
             setFloor(Number(idItem));
             if (build == 'A') {
-                console.log('A')
             } else if (build == 'B') 
             {
-                console.log('Piso B seleccionado')
                 if (String(idItem).includes('0') ) {
-                    console.log('Piso 0 seleccionado.')
                     piso0_B.aulas.map(value => {
-                        console.log(value);
                         arrayAulas.push(value);
                     });
                 } else if (String(idItem).includes('1') ) {
-                    console.log('Piso 1 seleccionado.')
                     piso1_B.aulas.map(value => {
-                        console.log(value);
                         arrayAulas.push(value);
                     });
                 } else if (String(idItem).includes('2') ) {
@@ -302,58 +302,114 @@ const FormularioIncidencia = (props: any) => {
         createIncidencia(incidencia);
     }
     
-    const assignUser = (userRol: string) => {
-
+    const assignUser = (userRol: string, url: string) => {
         const [tabsOptions] = React.useState<TabsModel>({
             idList: ['group','technical'],
             valuesList: ['Grupo de técnicos', 'Técnico'],
             color: 'primary',
-            enabledList: [true, true]
+            enabledList: [true, true],
+            firstActive: false
         });
-        
+
+        const [groupsDropdown] = React.useState<DropdownModel>({
+            id: 1,
+            groupName: 'Elegir grupo',
+            groupItems: ['Cargar', 'datos', 'de', 'base de datos 1'],
+            groupIds: ['Cargar', 'datos', 'de', 'base de datos 1'],
+            color: 'primary',
+            enabled: false,
+            extraClass: '',
+        });
+
+        const [technicalsDropdown] = React.useState<DropdownModel>({
+            id: 2,
+            groupName: 'Elegir técnico',
+            groupItems: ['Cargar', 'datos', 'de', 'base de datos 2'],
+            groupIds: ['Cargar', 'datos', 'de', 'base de datos 2'],
+            color: 'primary',
+            enabled: false,
+            extraClass: '',
+        });
         const handleClickTabsAssign = (id: string) => {
-            
+            if (id=='group') {
+                console.log(`${url}/${widgetType}/assignGroup`);
+                history.push(`${url}/${widgetType}/assignGroup`);
+            } else if (id=='technical') {
+                console.log(`${url}/${widgetType}/assignTechnical`);
+                history.push(`${url}/${widgetType}/assignTechnical`);       
+            }
+        }
+
+        const handleClickDropdowns = (idItem: string, idDropdown: number) => {
+            console.log(idItem);
         }
             if (userRol == 'technical') {
             return(
                 <>
-                    <div className="assign-container">
-                        <span>Asignar a</span>
-                        <Tabs tabsInfo={tabsOptions} handleClick={handleClickTabsAssign}></Tabs>
+                    <div className="data-container">
+                        <p className="p-title">¿A quién se asigna la incidencia?</p>
+                        <div className="asignacion-container">
+                            <div className="assign-container">
+                                <span>Asignar a</span>
+                                <Tabs tabsInfo={tabsOptions} handleClick={handleClickTabsAssign}></Tabs>
+                            </div>
+                            <div className="dropdown-container">
+                                <Switch>
+                                    <Route path={`${url}/${widgetType}/assignGroup`}>
+                                        <div>
+                                            Elegir un grupo de técnicos:
+                                            <Dropdown dropdownInfo={groupsDropdown} onClick={handleClickDropdowns}></Dropdown>
+                                        </div>
+                                    </Route>
+                                    <Route path={`${url}/${widgetType}/assignTechnical`}>
+                                        Elegir un técnico:
+                                        <Dropdown dropdownInfo={technicalsDropdown} onClick={handleClickDropdowns}></Dropdown>
+                                    </Route>
+                                </Switch>     
+                            </div>
+                        </div>
                     </div>
                 </>
             )
             
+        } else {
+            return '';
         }
 
     }
     return (
         <>
         <div className='createIncidencia-container'>
-            <h2>{titleWidget}</h2>
-            <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
-            <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
-            <h3>¿Dónde se produce la incidencia?</h3>
-            <div className="build-container">
-                <div className="dropdown-container">
-                    <span>Edificio</span>
-                    <Dropdown dropdownInfo={buildDropdown} onClick={handleClickItemDD}></Dropdown>
-                </div>
-                <div className="dropdown-container">
-                    <span>Piso</span>
-                    <Dropdown dropdownInfo={floorDropdown} onClick={handleClickItemDD}></Dropdown>
-                </div>
-                <div className="dropdown-container">
-                    <span>Aula</span>
-                    <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
+            <div className="data-container">
+                {title1}
+                <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
+                <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
+                <div className="dropdowns-container">
+                    <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
+                    <Dropdown dropdownInfo={priorityDropdown} onClick={handleClickItemDD}></Dropdown>
+                    <UploadFile></UploadFile>
                 </div>
             </div>
-            <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
+            <div className="data-container">
+                {title2}
+                <div className="build-container">
+                    <div className="dropdown-container">
+                        <span>Edificio: <b></b></span>
+                        <Dropdown dropdownInfo={buildDropdown} onClick={handleClickItemDD}></Dropdown>
+                    </div>
+                    <div className="dropdown-container">
+                        <span>Piso: <b></b></span>
+                        <Dropdown dropdownInfo={floorDropdown} onClick={handleClickItemDD}></Dropdown>
+                    </div>
+                    <div className="dropdown-container">
+                        <span>Aula: <b></b></span>
+                        <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
+                    </div>
+                </div>
+            </div>
             {
-            assignUser(userRol)
+            assignUser(userRol, urlGeneral)
             }
-            <UploadFile></UploadFile>
-            <Dropdown dropdownInfo={priorityDropdown} onClick={handleClickItemDD}></Dropdown>
             <Button buttonInfo={createIncidenciaButton} handleClick={hendleClickCreateIncidencia}></Button>
         </div>
         </>

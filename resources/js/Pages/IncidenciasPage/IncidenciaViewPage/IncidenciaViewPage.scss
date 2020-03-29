@@ -108,10 +108,24 @@
     }
 
     .comments-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 50%;
         background-color: $grey_color_184;
         max-height: 100%;
-
+        padding: $default_padding*10 $default_padding*3;
+        .createIncidencia-container {
+            width: 100%;
+            padding: 0;
+            .data-container {
+                .asignacion-container {
+                    .assign-container {
+                        width: 60%;
+                    }
+                }
+            }
+        }
     }
 
 }

@@ -5,62 +5,104 @@
     padding-left: $default_padding*2;
     padding-top: $default_padding*2;
 
-    .build-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: $default_padding*3 0;
-        .dropdown-container {
+    .data-container {
+        background-color: $white_color;
+        padding: $default_padding*2 $default_padding*2;
+        margin: $default_padding 0;
+        border-style: dotted;
+        border-width: 2px;
+        border-color: $primary_color;
+        border-radius: 5px;
+
+        .p-title {
+            font-size: $font_size*1.5;
+            margin-bottom: $default_padding;
+            font-weight: 700;
+        }
+
+        .dropdowns-container {
             display: flex;
-            flex-direction: column;
-            width: 100%;
-            span {
-                margin-bottom: $default_padding;
-            }
-            .dropdown {
-                width: 95%;
-                .btn{
-                    width: 100%;
-                }
-                .dropdown-menu {
-                    width: 100%;
-                }
-            }
+            flex-direction: row;
+            align-items: center;
         }
-    }
-    .assign-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: $default_padding*3 0;
-        span {
-            margin-right: $default_padding*2;
-        }
-        .tabs-container {
-            // height: $default_padding*6.5;
 
-            .btn-group {
+        .build-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
 
-                .btn {
-                    border: none;
-                    box-shadow: none;
-                    background-color: $grey_color_184;
-                    &:first-child:not(:last-child):not(.dropdown-toggle) {
-                        border-bottom-left-radius: $default_padding*2;
+            //background-color: rgba($primary_color,0.1);
+            .dropdown-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
 
+                span {
+                    margin-bottom: $default_padding;
+                }
+
+                .dropdown {
+                    width: 95%;
+                    background-color: $white_color;
+
+                    .btn {
+                        width: 100%;
                     }
 
-                    &:last-child {
-                        border-bottom-right-radius: $default_padding*2;
+                    .dropdown-menu {
+                        width: 100%;
                     }
-                }
-
-                .active {
-                    // border: inherit;
-                    background-color: $grey_color_226;
-                    border-bottom-color: $primary_color;
                 }
             }
         }
+
+        .asignacion-container {
+            display: flex;
+            flex-direction: row;
+
+            .assign-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: $default_padding*3 0;
+                width: 35%;
+
+                span {
+                    margin-right: $default_padding*2;
+                }
+
+                .tabs-container {
+                    // height: $default_padding*6.5;
+
+                    .btn-group {
+
+                        .btn {
+                            border: none;
+                            box-shadow: none;
+                            background-color: $grey_color_184;
+
+                            &:first-child:not(:last-child):not(.dropdown-toggle) {
+                                border-bottom-left-radius: $default_padding*2;
+
+                            }
+
+                            &:last-child {
+                                border-bottom-right-radius: $default_padding*2;
+                            }
+                        }
+
+                        .active {
+                            // border: inherit;
+                            background-color: $primary_color;
+                            color: $white_color;
+                            border-bottom-color: $white_color;
+                            font-weight: unset;
+                        }
+                    }
+                }
+            }
+
+        }
     }
+
 }

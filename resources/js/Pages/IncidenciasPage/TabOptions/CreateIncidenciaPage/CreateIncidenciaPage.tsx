@@ -12,7 +12,7 @@ import FormularioIncidencia from '../../../../Widgets/FormularioIncidencia/Formu
 const CreateIncidenciaPage = () => {
 
     return (
-        <FormularioIncidencia widgetType='create' userRol={localStorage.userRol}></FormularioIncidencia>
+        <FormularioIncidencia widgetType='create' userRol={localStorage.userRol} urlGeneral='/home/incidencias'></FormularioIncidencia>
     )
 }
 

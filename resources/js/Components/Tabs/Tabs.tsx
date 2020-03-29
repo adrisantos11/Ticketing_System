@@ -19,7 +19,7 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {
                     props.tabsInfo.valuesList.map((value, index) => {
-                        if (index == 0) {
+                        if (index == 0 && props.tabsInfo.firstActive) {
                             return(
                                 <label className={`btn btn--${props.tabsInfo.color} active`} key={index}>
                                     <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value} 

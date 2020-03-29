@@ -8,9 +8,11 @@ import { Link } from 'react-router-dom';
 import { getIncideniciaUnique } from '../../../Utilities/Incidencias/IncidenciasUtilities';
 import Tabs from '../../../Components/Tabs/Tabs';
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
+import FormularioIncidencia from '../../../Widgets/FormularioIncidencia/FormularioIncidencia';
 
 const IncidenciaViewPage = () => {
     let {idIncidencia} = useParams();
+    const history = useHistory();
     const [incidencia, setIncidencia] = React.useState<IncidenciaModel>({
         group_id: null,
         id_reporter: null,
@@ -35,7 +37,8 @@ const IncidenciaViewPage = () => {
         idList: ['editar-incidencia','eliminar-incidencia', 'comentarios'],
         valuesList: ['Editar incidencia', 'Eliminar incidencia', 'Comentarios'],
         color: 'primary',
-        enabledList: [true, true]
+        enabledList: [true, true],
+        firstActive: true
     });
 
     const [incidenciaLoaded, setIncidenciaLoaded] = React.useState(false);
@@ -85,12 +88,14 @@ const IncidenciaViewPage = () => {
     }
 
     const handleClickTab = (id: string) => {
-        // if (id=='crearIncidencia') {
-        //     history.push('/home/incidencias/create');
-        // } else if (id=='mostrarIncidencias') {
-        //     history.push('/home/incidencias/show');
-            
-        // }
+        console.log(id);
+        if (id=='editar-incidencia') {
+            history.push(`/home/incidencia-view/${idIncidencia}/edit`);
+        } else if (id=='eliminar-incidencia') {
+            history.push(`/home/incidencia-view/${idIncidencia}/delete`);
+        } else if (id=='comentarios') {
+            history.push(`/home/incidencia-view/${idIncidencia}/comments`);
+        }
         console.log(id);
     }
     if (incidenciaLoaded) {
@@ -207,7 +212,15 @@ const IncidenciaViewPage = () => {
                 </div>
                 <div className="comments-container">
                     <Switch>
-                        {/* <Route path="/home/perfil" component={PerfilPage}></Route> */}
+                        <Route path={`/home/incidencia-view/${idIncidencia}/edit`}>
+                            <FormularioIncidencia widgetType='edit' userRol={localStorage.userRol} urlGeneral={`/home/incidencia-view/${idIncidencia}`}></FormularioIncidencia>
+                        </Route>
+                        <Route path={`/home/incidencia-view/${idIncidencia}/delete`}>
+                            <div>Eliminar incidencia</div>
+                        </Route>
+                        <Route path={`/home/incidencia-view/${idIncidencia}/comments`}>
+                            <div>Comentarios incidencia</div>
+                        </Route>
                     </Switch>
                 </div>
             </div>

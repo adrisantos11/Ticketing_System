@@ -16,7 +16,8 @@ const IncidenciasPage = () => {
         idList: ['mostrarIncidencias','crearIncidencia'],
         valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
         color: 'grey',
-        enabledList: [true, true]
+        enabledList: [true, true],
+        firstActive: true
     });
     
 

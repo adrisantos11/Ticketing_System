@@ -33,6 +33,7 @@ export interface TabsModel {
     valuesList: Array<string>;
     color: string;
     enabledList: Array<boolean>;
+    firstActive: boolean;
 }
 
 export interface SelectboxModel {
