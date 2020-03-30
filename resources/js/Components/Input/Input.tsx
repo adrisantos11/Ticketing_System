@@ -13,7 +13,11 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
     let input;
 
     const handleChange = (event: any) => {
-        props.handleChangeInput(event.target.value, event.target.id);
+        if (String(event.target.value).length == 1) {   
+            props.handleChangeInput(String(event.target.value).toUpperCase( ), event.target.id);
+        } else {
+            props.handleChangeInput(String(event.target.value), event.target.id);
+        }
     }
 
     if (inputColor == 'primary') {

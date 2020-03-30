@@ -21,14 +21,18 @@ const FormularioIncidencia = (props: any) => {
     let title2;
     let title3;
 
+    let titleContainerType = ''
+
     if (widgetType == 'create') {
         title1 = <p className="p-title">¿Cuál es la incidencia?</p>;
         title2 = <p className="p-title">¿Dónde se produce la incidencia?</p>;
-        title3 = 'Crear incidencia';
+        title3 = <p className="p-title">¿De qué tipo es la incidencia?</p>;
+        titleContainerType = '--row'
     } else if (widgetType == 'edit') {
         title1 = '';
         title2 = '';
         title3 = '';
+        titleContainerType = ''
     }
 
 
@@ -41,7 +45,7 @@ const FormularioIncidencia = (props: any) => {
     const [priority, setPriority] = React.useState('');
     const [urlFile, setUrlFile] = React.useState('');
     
-    const [titleInput] = React.useState<InputModel>({
+    const [titleInput, setTitleInput] = React.useState<InputModel>({
         id: 1,
         label: 'Título',
         placeholder: '',
@@ -51,7 +55,7 @@ const FormularioIncidencia = (props: any) => {
         enabled: enableInput,
         extraClass: ''
     });
-    const [descriptionInput] = React.useState<InputModel>({
+    const [descriptionInput, setDescriptionInput] = React.useState<InputModel>({
         id: 2,
         label: 'Descripción',
         placeholder: '',
@@ -73,7 +77,7 @@ const FormularioIncidencia = (props: any) => {
         extraClass: ''
     });
 
-    const [categoryDropdown] = React.useState<DropdownModel>({
+    const [categoryDropdown, setCategoryDropdown] = React.useState<DropdownModel>({
         id: 1,
         groupName: 'Elegir categoría',
         groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
@@ -84,7 +88,7 @@ const FormularioIncidencia = (props: any) => {
     });
 
     // groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
-    const [buildDropdown] = React.useState<DropdownModel>({
+    const [buildDropdown, setBuildDropdown] = React.useState<DropdownModel>({
         id: 2,
         groupName: 'Elegir edificio',
         groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
@@ -114,7 +118,7 @@ const FormularioIncidencia = (props: any) => {
         extraClass: '',
     });
 
-    const [priorityDropdown] = React.useState<DropdownModel>({
+    const [priorityDropdown, setPriorityDropdwn] = React.useState<DropdownModel>({
         id: 5,
         groupName: 'Elegir prioridad',
         groupItems: ['Crítica', 'Importante', 'Trivial'],
@@ -275,31 +279,152 @@ const FormularioIncidencia = (props: any) => {
         }
     }
 
-    const hendleClickCreateIncidencia = (e: React.MouseEvent) => {
-        let date = new Date();
-        let hoursMinutesSeconds = date.toLocaleString().split(' ');
-
-        let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
-        let incidencia: IncidenciaModel = {
-            group_id: 0,
-            id_reporter: parseInt(localStorage.userId),
-            id_assigned: 3,
-            id_team: null,
-            title: title,
-            description: description,
-            category: category,
-            build: build,
-            floor: floor,
-            class: classroom,
-            url_data: '',
-            creation_date: currentDate,
-            limit_date: '1263645342',
-            assigned_date: '',
-            resolution_date: '',
-            priority: priority,
-            state: 'todo'
+    const fieldsValidation = (title: string, description: string, category: string, build: string, floor: number, classroom: string, priority: string) => {
+        // console.log(floor);
+        let validation = false;
+        if(title != '') {
+            if (title.length > 70) {
+                setTitleInput({
+                    ...titleInput,
+                    error_control_text: 'El texto introducido excede los 70 caracteres. Tiene '+title.length+' caracteres.',
+                    color: 'red'
+                })
+            } else {
+                setTitleInput({
+                    ...titleInput,
+                    error_control_text: '',
+                    color: 'primary'
+                })
+                validation = true
+            }
+        } else {
+            setTitleInput({
+                ...titleInput,
+                error_control_text: 'No se ha introducido nningún dato.',
+                color: 'red'
+            })
         }
-        createIncidencia(incidencia);
+
+        if (description != '') {
+            if (description.length > 70) {
+                setDescriptionInput({
+                    ...descriptionInput,
+                    error_control_text: 'El texto introducido excede los 240 caracteres. Tiene '+description.length+' caracteres.',
+                    color: 'red'
+                })
+            } else {
+                setDescriptionInput({
+                    ...descriptionInput,
+                    error_control_text: '',
+                    color: 'primary'
+                })
+                validation = true
+            }
+        } else {
+            setDescriptionInput({
+                ...descriptionInput,
+                error_control_text: 'No se ha introducido ningún dato.',
+                color: 'red'
+            })
+        }
+
+        if (category != '') {
+            setCategoryDropdown({
+                ...categoryDropdown,
+                color: 'primary'
+            })
+            validation = true
+        } else {
+            setCategoryDropdown({
+                ...categoryDropdown,
+                color: 'red'
+            })
+        }
+
+        if (priority != '') {
+            setPriorityDropdwn({
+                ...priorityDropdown,
+                color: 'primary'
+            })
+            validation = true
+        } else {
+            setPriorityDropdwn({
+                ...priorityDropdown,
+                color: 'red'
+            })
+        }
+
+        if (build != '') {
+            setBuildDropdown({
+                ...buildDropdown,
+                color: 'primary'
+            })
+            validation = true
+        } else {
+            setBuildDropdown({
+                ...buildDropdown,
+                color: 'red'
+            })
+        }
+
+        if (floor != null) {
+            setFloorDropdown({
+                ...floorDropdown,
+                color: 'primary'
+            })
+            validation = true
+        } else {
+            setFloorDropdown({
+                ...floorDropdown,
+                color: 'red'
+            })
+        }
+
+        if (classroom != '') {
+            setClassDropdown({
+                ...classDropdown,
+                color: 'primary'
+            })
+            validation = true
+        } else {
+            setClassDropdown({
+                ...classDropdown,
+                color: 'red'
+            })
+        }
+        return validation;
+    }
+
+    const [camposValidados, setCamposValidados] = React.useState(false)
+    const hendleClickCreateIncidencia = (e: React.MouseEvent) => {
+        console.log('Boton crear incidencia.');
+        console.log(title);
+        if (fieldsValidation(title, description, category, build, floor, classroom, priority)) {
+            console.log('Todos los campos son correctos.')
+            let date = new Date();
+            let hoursMinutesSeconds = date.toLocaleString().split(' ');
+            let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+            let incidencia: IncidenciaModel = {
+                group_id: 0,
+                id_reporter: parseInt(localStorage.userId),
+                id_assigned: 3,
+                id_team: null,
+                title: title,
+                description: description,
+                category: category,
+                build: build,
+                floor: floor,
+                class: classroom,
+                url_data: '',
+                creation_date: currentDate,
+                limit_date: '1263645342',
+                assigned_date: '',
+                resolution_date: '',
+                priority: priority,
+                state: 'todo'
+            }
+            createIncidencia(incidencia);
+        }
     }
     
     const assignUser = (userRol: string, url: string) => {
@@ -380,11 +505,14 @@ const FormularioIncidencia = (props: any) => {
     return (
         <>
         <div className='createIncidencia-container'>
-            <div className="data-container">
-                {title1}
-                <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
-                <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
+            <div className={`data-container${titleContainerType}`}>
+                <div className="title-container">
+                    {title1}
+                    <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
+                    <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
+                </div>
                 <div className="dropdowns-container">
+                    {title3}
                     <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
                     <Dropdown dropdownInfo={priorityDropdown} onClick={handleClickItemDD}></Dropdown>
                     <UploadFile></UploadFile>

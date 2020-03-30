@@ -4,11 +4,22 @@
     .btn {
         cursor: pointer;
         background-color: transparent;
-        color: $primary_color;
-        border-color: $primary_color;
+        
+        &--primary {
+            @extend .btn;
+            color: $primary_color;
+            border-color: $primary_color;
+        }
+
+        &--red {
+            @extend .btn;
+            color: $red_color;
+            border-color: $red_color;
+        }
 
         &:hover {
             @extend .btn;
+            background-color: $grey_color_184;
         }
     }
 
@@ -25,9 +36,16 @@
 
     &.show {
         .btn {
-            background-color: $primary_color;
             border: none;
             color: $white_color;
+            &--primary {
+                @extend .btn;
+                background-color: $primary_color;
+            }
+            &--red {
+                @extend .btn;
+                background-color: $red_color;
+            }
         }
     }
 }
