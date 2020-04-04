@@ -11,13 +11,20 @@ import MostrarIncidenciasPage from './TabOptions/MostrarIncidenciasPage/MostrarI
 
 const IncidenciasPage = () => {
     const history = useHistory();
+    console.log(history.location.pathname);
 
+    let tabSelected;
+    if (history.location.pathname == '/home/incidencias/show')
+        tabSelected = 0;
+    else if (history.location.pathname == '/home/incidencias/create') 
+        tabSelected = 1;
+    
     const [tabsOptions] = React.useState<TabsModel>({
         idList: ['mostrarIncidencias','crearIncidencia'],
         valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
         color: 'grey',
         enabledList: [true, true],
-        firstActive: true
+        itemActive: tabSelected
     });
     
 

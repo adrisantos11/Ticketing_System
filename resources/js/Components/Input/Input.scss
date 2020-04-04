@@ -21,7 +21,7 @@
     .input_class {
         &--primary {
             @extend .input_class;
-            color: $primary_color;
+            color: $grey_color_38;
 
             &:focus {
                 background-color: $primary_color;

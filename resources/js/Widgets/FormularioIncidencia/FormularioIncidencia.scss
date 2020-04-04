@@ -3,15 +3,18 @@
 .createIncidencia-container {
     width: 100%;
     padding: $default_padding*2 $default_padding*2;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     .data-container {
         background-color: $white_color;
         padding: $default_padding*2 $default_padding*2;
         margin: $default_padding*2 0;
         border-style: dotted;
         border-width: 2px;
-        border-color: $primary_color;
+        border-color: $grey_color_83;
         border-radius: 5px;
-
+        width: 100%;
         .dropdowns-container {
             display: flex;
             flex-direction: row;
@@ -37,7 +40,7 @@
                 padding: 0;
                 border-style: dotted;
                 border-width: 2px;
-                border-color: $primary_color;
+                border-color: $grey_color_83;
                 border-radius: 5px;  
                 padding: $default_padding*2 $default_padding*2;
                 background-color: $white_color;
@@ -51,7 +54,7 @@
                 padding: $default_padding*2 $default_padding*2;
                 border-style: dotted;
                 border-width: 2px;
-                border-color: $primary_color;
+                border-color: $grey_color_83;
                 border-radius: 5px;  
                 background-color: $white_color;
 
@@ -82,6 +85,7 @@
 
                 span {
                     margin-bottom: $default_padding;
+                    font-size: $font_size*1.2;
                 }
 
                 .dropdown {

@@ -2,7 +2,7 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './FormularioIncidencia.scss'
 import { Input } from '../../Components/Input/Input';
-import { ButtonModel, InputModel, DropdownModel, IncidenciaModel, TabsModel } from '../../Model/model'
+import { ButtonModel, InputModel, DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel } from '../../Model/model'
 import Dropdown from '../../Components/Dropdown/Dropdown';
 import Button from '../../Components/Button/Button';
 import UploadFile from '../../Components/UploadFile/UploadFile';
@@ -10,29 +10,40 @@ import { createIncidencia } from '../../Utilities/Incidencias/IncidenciasUtiliti
 import Tabs from '../../Components/Tabs/Tabs'
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 
-const FormularioIncidencia = (props: any) => {
-    const userRol = props.userRol;
-    const widgetType = props.widgetType;
-    const urlGeneral = props.urlGeneral;
+interface Props {
+    formularioProps: FormularioIncidenciaModel;
+}
+
+const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
+    const userRol = props.formularioProps.userRol;
+    const widgetType = props.formularioProps.widgetType;
+    const urlGeneral = props.formularioProps.urlGeneral;
     const history = useHistory();
     let enableInput = true;
 
     let title1;
     let title2;
     let title3;
-
-    let titleContainerType = ''
+    let titleContainerType = '';
+    let valueTitleInput = '';
+    let valueDescriptionInput = '';
+    let buttonText = '';
 
     if (widgetType == 'create') {
         title1 = <p className="p-title">¿Cuál es la incidencia?</p>;
         title2 = <p className="p-title">¿Dónde se produce la incidencia?</p>;
         title3 = <p className="p-title">¿De qué tipo es la incidencia?</p>;
-        titleContainerType = '--row'
+        titleContainerType = '--row';
+        buttonText = 'Crear incidencia';
     } else if (widgetType == 'edit') {
         title1 = '';
         title2 = '';
         title3 = '';
         titleContainerType = ''
+        valueTitleInput = props.formularioProps.incidenciaData.title;
+        valueDescriptionInput = props.formularioProps.incidenciaData.description;
+        buttonText = 'Editar incidencia';
+        
     }
 
 
@@ -47,34 +58,37 @@ const FormularioIncidencia = (props: any) => {
     
     const [titleInput, setTitleInput] = React.useState<InputModel>({
         id: 1,
+        value: valueTitleInput,
         label: 'Título',
         placeholder: '',
         color: 'primary',
         type: 'text',
         error_control_text: '',
         enabled: enableInput,
-        extraClass: ''
+        inputSize: ''
     });
     const [descriptionInput, setDescriptionInput] = React.useState<InputModel>({
         id: 2,
+        value: valueDescriptionInput,
         label: 'Descripción',
         placeholder: '',
         color: 'primary',
         type: 'text',
         error_control_text: '',
         enabled: enableInput,
-        extraClass: ''
+        inputSize: ''
     });
 
     const [departamentInput] = React.useState<InputModel>({
         id: 3,
+        value: '',
         label: 'Departamento',
         placeholder: '',
         color: 'primary',
         type: 'text',
         error_control_text: '',
         enabled: enableInput,
-        extraClass: ''
+        inputSize: ''
     });
 
     const [categoryDropdown, setCategoryDropdown] = React.useState<DropdownModel>({
@@ -131,7 +145,7 @@ const FormularioIncidencia = (props: any) => {
 
     const [createIncidenciaButton] = React.useState<ButtonModel>({
         id: 1,
-        texto: 'Crear incidencia',
+        texto: buttonText,
         color: 'primary',
         type: '',
         icon: '',  
@@ -395,7 +409,6 @@ const FormularioIncidencia = (props: any) => {
         return validation;
     }
 
-    const [camposValidados, setCamposValidados] = React.useState(false)
     const hendleClickCreateIncidencia = (e: React.MouseEvent) => {
         console.log('Boton crear incidencia.');
         console.log(title);
@@ -433,7 +446,7 @@ const FormularioIncidencia = (props: any) => {
             valuesList: ['Grupo de técnicos', 'Técnico'],
             color: 'primary',
             enabledList: [true, true],
-            firstActive: false
+            itemActive: 1
         });
 
         const [groupsDropdown] = React.useState<DropdownModel>({
@@ -502,6 +515,9 @@ const FormularioIncidencia = (props: any) => {
         }
 
     }
+
+    
+
     return (
         <>
         <div className='createIncidencia-container'>

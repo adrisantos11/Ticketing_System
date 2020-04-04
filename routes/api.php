@@ -21,18 +21,24 @@ Route::post('logout', 'UserController@logout');
 
 Route::namespace('Pages')->group(function () {
     Route::get('incidencias', 'IncidenciasPageController@getTodasIncidencias');
+    Route::post('incidencias/create', 'IncidenciasPageController@createIncidencia');
+    
+    
     Route::post('incidencias/reportedBy', 'IncidenciasPageController@getIncidenciasReportedBy');
     Route::post('incidencias/assignedTo', 'IncidenciasPageController@getIncidenciasAssignedTo');
     Route::post('incidencias/todo', 'IncidenciasPageController@getIncidenciasToDo');
     Route::post('incidencias/doing', 'IncidenciasPageController@getIncidenciasDoing');
     Route::post('incidencias/blocked', 'IncidenciasPageController@getIncidenciasBlocked');
-    Route::post('incidencias/create', 'IncidenciasPageController@createIncidencia');
-    Route::post('incidencias/orderByPriority', 'IncidenciasPageController@getIncidenciasOrderByLimitDay');
     Route::post('incidencias/getIncidencia', 'IncidenciasPageController@getIncidenciaUnique');
 });
 
-Route::namespace('Pages\Technical')->group(function () {
-    Route::post('incidencias/technical/getAssigned/{orderBy}', 'TechnicalController@getAllTechnicalIncidencias');
+Route::namespace('Users')->group(function () {
+    // -------- Controlador Técnico --------
+    Route::post('incidencias/technical/getAssigned/{orderBy}', 'TechnicalController@getTechnicalIncidencias');
+
+    // -------- Controlador Supervisor --------
+    Route::post('incidencias/supervisor/getIncidencias/{orderBy}', 'SupervisorController@getSupervisorIncidencias');
+    
 });
 
 

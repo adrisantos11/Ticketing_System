@@ -12,6 +12,11 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
     let color,mostrar = '';
     let input;
 
+    let value = null;
+    if (props.inputInfo.value != null && props.inputInfo.value != '') {
+        value = props.inputInfo.value;
+    }
+
     const handleChange = (event: any) => {
         if (String(event.target.value).length == 1) {   
             props.handleChangeInput(String(event.target.value).toUpperCase( ), event.target.id);
@@ -33,20 +38,20 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
             type={props.inputInfo.type} 
             className={`form-control input_class${color} text-${color}`} 
             aria-describedby="emailHelp" placeholder={props.inputInfo.placeholder}
-            onChange={handleChange} disabled/>)
+            onChange={handleChange} value={value} disabled/>)
     } else {
         input = (<input 
             id = {props.inputInfo.id.toString()}
             type={props.inputInfo.type} 
             className={`form-control input_class${color} text-${color}`} 
             aria-describedby="emailHelp" placeholder={props.inputInfo.placeholder}
-            onChange={handleChange}/>)
+            onChange={handleChange} value={value}/>)
     }
 
     return(
         <>
             <div className='form-group'>
-                <label htmlFor="" className={`text_label$`}>{props.inputInfo.label}</label>
+                <label htmlFor="" className={`text_label`}>{props.inputInfo.label}</label>
                 {input}
                 <small className={`form-text text-danger aviso${mostrar}`}>{props.inputInfo.error_control_text}</small>
             </div>

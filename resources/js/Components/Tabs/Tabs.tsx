@@ -13,24 +13,40 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
     const handleClickTab = (event: any) => {
         props.handleClick(event.target.id);
     }
-
+    console.log(props.tabsInfo.itemActive);
     return(
         <div className="tabs-container">  
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {
                     props.tabsInfo.valuesList.map((value, index) => {
-                        if (index == 0 && props.tabsInfo.firstActive) {
-                            return(
-                                <label className={`btn btn--${props.tabsInfo.color} active`} key={index}>
-                                    <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value} 
-                                </label>
-                            )
+                        if (props.tabsInfo.itemActive == index) {
+                            if (props.tabsInfo.enabledList[index]) {
+                                return(
+                                    <label className={`btn btn--${props.tabsInfo.color} active`} key={index}>
+                                        <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value} 
+                                    </label>
+                                )     
+                            } else {
+                                return(
+                                    <label className={`btn btn--${props.tabsInfo.color} active disabled`} key={index}>
+                                        <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value} 
+                                    </label>
+                                )
+                            }
                         } else {
-                            return(
-                                <label className={`btn btn--${props.tabsInfo.color}`} key={index}>
-                                    <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
-                                </label>
-                            )
+                            if (props.tabsInfo.enabledList[index]) {
+                                return(
+                                    <label className={`btn btn--${props.tabsInfo.color}`} key={index}>
+                                        <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
+                                    </label>
+                                )
+                            } else {
+                                return(
+                                    <label className={`btn btn--${props.tabsInfo.color} disabled`} key={index}>
+                                        <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
+                                    </label>
+                                )
+                            }
                         }
                     })
                 }

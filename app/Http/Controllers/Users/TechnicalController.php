@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Pages\Technical;
+namespace App\Http\Controllers\Users;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,11 +11,12 @@ use App\Incidencia;
 
 class TechnicalController extends Controller
 {
-    public function getAllTechnicalIncidencias(Request $request, $orderBy) 
+    public function getTechnicalIncidencias(Request $request, $orderBy) 
     {
         $id_user = $request->id;
         $orderByDirection = 'asc';
 
+        // En el caso en el que sea por estado, ordenarlo en modo descendente.
         if ($orderBy == 'state') {
             $orderByDirection = 'desc';
         }

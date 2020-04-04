@@ -9,13 +9,14 @@ export interface ButtonModel {
 
 export interface InputModel {
     id: number;
+    value: string
     label: string;
     placeholder: string;
     color: string;
     type: string;
     error_control_text: string;
     enabled: boolean;
-    extraClass: string;
+    inputSize: string;
 }
 
 export interface DropdownModel {
@@ -33,7 +34,7 @@ export interface TabsModel {
     valuesList: Array<string>;
     color: string;
     enabledList: Array<boolean>;
-    firstActive: boolean;
+    itemActive: any;
 }
 
 export interface SelectboxModel {
@@ -60,4 +61,11 @@ export interface IncidenciaModel {
     resolution_date: string,
     priority: string,
     state: string
+}
+
+export interface FormularioIncidenciaModel {
+    widgetType: string;
+    userRol: string;
+    urlGeneral: string;
+    incidenciaData?: IncidenciaModel;
 }

@@ -22,24 +22,26 @@ const Login = () => {
 
     const [inputUser, setInputUser] = React.useState<InputModel>({
         id: 1,
+        value: '',
         label: 'Expediente',
         placeholder: 'Ej: 25342783',
         color: 'primary',
         type: 'number',
         error_control_text: '',
         enabled: true,
-        extraClass: ''
+        inputSize: ''
     });
 
     const [inputPassword, setInputPassword] = React.useState<InputModel>({
         id: 2,
+        value: '',
         label: 'Contraseña',
         placeholder: 'Contraseña',
         color: 'primary',
         type: 'password',
         error_control_text: '',
         enabled: true,
-        extraClass: ''
+        inputSize: ''
     });
     
     const [userData, setUserData] = React.useState({

@@ -15,7 +15,7 @@ class IncidenciasSeeder extends Seeder
         DB::table('incidencias')->insert([
             'group_id' => 1,
             'id_reporter' => 2,
-            'id_assigned' => 3,
+            'id_assigned' => 5,
             'id_team'=> null,
             'title' => 'Problema software instalado',
             'description' => 'El problema se encuentra en que el ordenador XX no tiene instalado el Software xxxx para que el alumno que lo use pueda seguir la clase al mismo ritmo que todos los demás.',
@@ -35,7 +35,7 @@ class IncidenciasSeeder extends Seeder
         DB::table('incidencias')->insert([
             'group_id' => 1,
             'id_reporter' => 2,
-            'id_assigned' => '',
+            'id_assigned' => null,
             'id_team'=> 1,
             'title' => 'Incidencia grupo 1.1',
             'description' => 'Incidencia grupo 1.1',
