@@ -26,7 +26,7 @@ class TeamSeeder extends Seeder
         DB::table('teams')->insert([
             'description'   => 'Equipo encargado de las incidencias producidas en las conexiones y redes de internet.',
             'category'      => 'Redes y conexión wifi',
-            'id_supervisor' => 3
+            'id_supervisor' => 2
         ]);
     }
 }

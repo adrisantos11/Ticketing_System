@@ -16,7 +16,7 @@ const MostrarIncidenciasPage = () => {
     let priorityText='';
     let priorityColor='';
     const userRol = localStorage.userRol;
-    const [orderBy, setOrderBy] = React.useState('priority');
+    const [orderBy, setOrderBy] = React.useState('');
     const headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad','Estado','Fecha límite', '¿Asignada?']
 
     const user = {
@@ -33,7 +33,7 @@ const MostrarIncidenciasPage = () => {
     
     const [adminDropdown, setAdminDropdown] = React.useState<DropdownModel>({
         id: 1,
-        groupName: "Ordenar por...",
+        groupName: "Seleccionar...",
         groupItems: dropdownItems,
         groupIds: dropdownIds,
         color: 'primary',
@@ -43,6 +43,7 @@ const MostrarIncidenciasPage = () => {
 
     const [incidenciasSize, setIncidenciasSize] = React.useState(0);
     const getIncidenciasUser = (user: any, orderBy: string) => {
+        console.log(orderBy);
         setDivSelectedData([]);
         if (userRol == 'technical') {
             getTechnicalIncidencias(user, orderBy).then(res => {
@@ -50,23 +51,41 @@ const MostrarIncidenciasPage = () => {
                 setIncidencias(res.data);
             })
         } else if (userRol == 'supervisor'){
-            getSupervisorIncidencias(user, orderBy).then(res => {
-                setIncidenciasSize(res.data.length);
-                console.log(res.data);
-                setIncidencias(res.data);
-                if (orderBy == 'priority' || orderBy == 'category' || orderBy == 'state') {
-                    let index = 0;
-                    res.sizes.map(function(value: any) {
-                        console.log(value.value);
-                        setDivSelectedData(divSelectedData => [
-                            ...divSelectedData,
-                            <React.Fragment key={index}><div className="vertical-separator"></div><div className='dataSelection-container--filter'><b>{`${value.value
-                                }: `}</b><span className={`span--${res.colors[index]}`}>{value.count}</span></div></React.Fragment>
-                        ]);
-                        index++;
-                    }) 
-                }    
-            })
+            if(orderBy == '') {
+                console.log('""""""""""""')
+                getSupervisorIncidencias(user, 'priority').then(res => {
+                    setIncidenciasSize(res.data.length);
+                    setIncidencias(res.data);
+                });
+            } else {
+                console.log('.............')
+                getSupervisorIncidencias(user, orderBy).then(res => {
+                    setIncidenciasSize(res.data.length);
+                    setIncidencias(res.data);
+                    let helperList: { value: any; count: any; }[] = [];
+                    if (orderBy == 'priority' || orderBy == 'category' || orderBy == 'state') {
+                        res.sizes.map((element: { value: any; count: any;}) => {
+                            const i = helperList.map((value: { value: any;}) => {
+                                return value.value
+                            }).indexOf(element.value);
+                            if (i == -1) {
+                                helperList.push(element);
+                            } else {
+                                helperList[i].count = helperList[i].count+element.count;
+                            }
+                        })
+                        helperList.map((value, index) => {
+                            setDivSelectedData(divSelectedData => [
+                                ...divSelectedData,
+                                <React.Fragment key={index}><div className="vertical-separator"></div><div className='dataSelection-container--filter'><b>{`${value.value
+                                    }: `}</b><span className={`span--${res.colors[index]}`}>{value.count}</span></div></React.Fragment>
+                                ]);
+    
+                        })
+                    }    
+                })
+
+            }
         }
     }
 
@@ -130,12 +149,9 @@ const MostrarIncidenciasPage = () => {
 
             
         });
-        console.log(selectboxList);
     }
 
     const handleClickSelectedbox = (idSelectbox: string, color: string) => {
-        console.log(idSelectbox);
-        console.log(orderBy);
         const i = idSelectboxList.indexOf(idSelectbox);
         let helperList = idSelectboxList;
         if (i == -1) {
@@ -163,7 +179,7 @@ const MostrarIncidenciasPage = () => {
             <>
             <div className="incidenciasList-container">
                 <div className="filtrar-container">
-                    Ordenar por: 
+                    Ordenar por:
                     <Dropdown dropdownInfo={adminDropdown} onClick={handleClickItemDD}></Dropdown>
                     <div className="vertical-separator"></div>
                     <div className="selectboxes-container">

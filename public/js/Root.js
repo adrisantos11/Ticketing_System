@@ -36714,7 +36714,7 @@ var MostrarIncidenciasPage = function () {
     var priorityText = '';
     var priorityColor = '';
     var userRol = localStorage.userRol;
-    var _c = React.useState('priority'), orderBy = _c[0], setOrderBy = _c[1];
+    var _c = React.useState(''), orderBy = _c[0], setOrderBy = _c[1];
     var headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad', 'Estado', 'Fecha límite', '¿Asignada?'];
     var user = {
         id: localStorage.userId
@@ -36727,7 +36727,7 @@ var MostrarIncidenciasPage = function () {
     }
     var _d = React.useState({
         id: 1,
-        groupName: "Ordenar por...",
+        groupName: "Seleccionar...",
         groupItems: dropdownItems,
         groupIds: dropdownIds,
         color: 'primary',
@@ -36736,6 +36736,7 @@ var MostrarIncidenciasPage = function () {
     }), adminDropdown = _d[0], setAdminDropdown = _d[1];
     var _e = React.useState(0), incidenciasSize = _e[0], setIncidenciasSize = _e[1];
     var getIncidenciasUser = function (user, orderBy) {
+        console.log(orderBy);
         setDivSelectedData([]);
         if (userRol == 'technical') {
             TechnicalUtilities_1.getTechnicalIncidencias(user, orderBy).then(function (res) {
@@ -36744,25 +36745,43 @@ var MostrarIncidenciasPage = function () {
             });
         }
         else if (userRol == 'supervisor') {
-            SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
-                setIncidenciasSize(res.data.length);
-                console.log(res.data);
-                setIncidencias(res.data);
-                if (orderBy == 'priority' || orderBy == 'category' || orderBy == 'state') {
-                    var index_1 = 0;
-                    res.sizes.map(function (value) {
-                        console.log(value.value);
-                        setDivSelectedData(function (divSelectedData) { return __spreadArrays(divSelectedData, [
-                            React.createElement(React.Fragment, { key: index_1 },
-                                React.createElement("div", { className: "vertical-separator" }),
-                                React.createElement("div", { className: 'dataSelection-container--filter' },
-                                    React.createElement("b", null, value.value + ": "),
-                                    React.createElement("span", { className: "span--" + res.colors[index_1] }, value.count)))
-                        ]); });
-                        index_1++;
-                    });
-                }
-            });
+            if (orderBy == '') {
+                console.log('""""""""""""');
+                SupervisorUtilities_1.getSupervisorIncidencias(user, 'priority').then(function (res) {
+                    setIncidenciasSize(res.data.length);
+                    setIncidencias(res.data);
+                });
+            }
+            else {
+                console.log('.............');
+                SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
+                    setIncidenciasSize(res.data.length);
+                    setIncidencias(res.data);
+                    var helperList = [];
+                    if (orderBy == 'priority' || orderBy == 'category' || orderBy == 'state') {
+                        res.sizes.map(function (element) {
+                            var i = helperList.map(function (value) {
+                                return value.value;
+                            }).indexOf(element.value);
+                            if (i == -1) {
+                                helperList.push(element);
+                            }
+                            else {
+                                helperList[i].count = helperList[i].count + element.count;
+                            }
+                        });
+                        helperList.map(function (value, index) {
+                            setDivSelectedData(function (divSelectedData) { return __spreadArrays(divSelectedData, [
+                                React.createElement(React.Fragment, { key: index },
+                                    React.createElement("div", { className: "vertical-separator" }),
+                                    React.createElement("div", { className: 'dataSelection-container--filter' },
+                                        React.createElement("b", null, value.value + ": "),
+                                        React.createElement("span", { className: "span--" + res.colors[index] }, value.count)))
+                            ]); });
+                        });
+                    }
+                });
+            }
         }
     };
     React.useEffect(function () {
@@ -36820,11 +36839,8 @@ var MostrarIncidenciasPage = function () {
                 });
             }
         });
-        console.log(selectboxList);
     };
     var handleClickSelectedbox = function (idSelectbox, color) {
-        console.log(idSelectbox);
-        console.log(orderBy);
         var i = idSelectboxList.indexOf(idSelectbox);
         var helperList = idSelectboxList;
         if (i == -1) {

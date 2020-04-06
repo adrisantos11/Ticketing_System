@@ -111,6 +111,66 @@ class IncidenciasSeeder extends Seeder
             'priority' => 'critical',
             'state' => 'todo'
         ]);
+
+        DB::table('incidencias')->insert([
+            'group_id' => 1,
+            'id_reporter' => 2,
+            'id_assigned' => null,
+            'id_team'=> 3,
+            'title' => 'Incidencia grupo 3.1',
+            'description' => 'Incidencia grupo 3.1',
+            'category' => 'Wi-Fi',
+            'build' => 'C',
+            'floor' => 3,
+            'class' => 'C307',
+            'url_data' => '',
+            'creation_date' => '2014-10-25 20:00:00',
+            'limit_date' => '2009-12-30 14:34:29',
+            'assigned_date' => '2014-10-25 20:00:00',
+            'resolution_date' => '2014-10-25 20:00:00',
+            'priority' => 'critical',
+            'state' => 'todo'
+        ]);
+
+        DB::table('incidencias')->insert([
+            'group_id' => 1,
+            'id_reporter' => 2,
+            'id_assigned' => null,
+            'id_team'=> 3,
+            'title' => 'Incidencia grupo 3.2',
+            'description' => 'Incidencia grupo 3.2',
+            'category' => 'Wi-Fi',
+            'build' => 'C',
+            'floor' => 3,
+            'class' => 'C307',
+            'url_data' => '',
+            'creation_date' => '2014-10-25 20:00:00',
+            'limit_date' => '2009-12-30 14:34:29',
+            'assigned_date' => '2014-10-25 20:00:00',
+            'resolution_date' => '2014-10-25 20:00:00',
+            'priority' => 'critical',
+            'state' => 'todo'
+        ]);
+
+        DB::table('incidencias')->insert([
+            'group_id' => 1,
+            'id_reporter' => 2,
+            'id_assigned' => null,
+            'id_team'=> null,
+            'title' => 'Prueba de fuego',
+            'description' => 'Prueba de fuego',
+            'category' => 'Wi-Fi',
+            'build' => 'C',
+            'floor' => 3,
+            'class' => 'C307',
+            'url_data' => '',
+            'creation_date' => '2014-10-25 20:00:00',
+            'limit_date' => '2009-12-30 14:34:29',
+            'assigned_date' => '2014-10-25 20:00:00',
+            'resolution_date' => '2014-10-25 20:00:00',
+            'priority' => 'critical',
+            'state' => 'todo'
+        ]);
         
         factory(Incidencia::class, 40)->create();
 
