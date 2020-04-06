@@ -2,34 +2,68 @@
 
 .selectbox-container {
     height: auto;
+
     .btn-group {
         .btn {
             border-radius: 130px;
             cursor: pointer;
-
+            background-color: transparent;
+            padding: $default_padding $default_padding;
             &--primary {
                 @extend .btn;
-                background-color: transparent;
                 color: $primary_color;
                 border-color: $primary_color;
+
+                .active {
+                    color: $white_color;
+                    background-color: $primary_color;
+                }
             }
-            &--primary:hover {
+
+            &--orange {
                 @extend .btn;
-                color: $white_color;
-                background-color: $primary_color;
+                color: $orange_color;
+                border-color: $orange_color;
             }
-        }
-        
-        .active {
-            color: $white_color;
-            background-color: $primary_color;
-            font-weight: bold;
-            
-            &:hover {
-                background-color: $secondary_color;
-                border-color: $secondary_color;
+
+            &--red {
+                @extend .btn;
+                color: $red_color;
+                border-color: $red_color;
+
+            }
+
+            &--green {
+                @extend .btn;
+                color: $green_color;
+                border-color: $green_color;
             }
 
         }
+
+        .btn:hover {
+            box-shadow: 0px 0px 5px 0.5px rgba(0, 0, 0, 0.75);
+        }
+
+        .btn--primary.active {
+            color: $white_color;
+            background-color: $primary_color;
+        }
+
+        .btn--orange.active {
+            color: $white_color;
+            background-color: $orange_color;
+        }
+
+        .btn--red.active {
+            color: $white_color;
+            background-color: $red_color;
+        }
+
+        .btn--green.active {
+            color: $white_color;
+            background-color: $green_color;
+        }
+
     }
 }

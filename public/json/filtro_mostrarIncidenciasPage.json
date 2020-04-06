@@ -1,0 +1,86 @@
+{
+    "priority": [
+        {
+            "active": false,
+            "name": "Crítica",
+            "id": "critical_selection",
+            "color": "red"
+        },
+        {
+            "active": false,
+            "name": "Importante",
+            "id": "important_selection",
+            "color": "orange"
+        },
+        {
+            "active": false,
+            "name": "Trivial",
+            "id": "trivial_selection",
+            "color": "green"
+        }
+    ],
+    "state": [
+        {
+            "active": false,
+            "name": "Pendiente",
+            "id": "todo_selection",
+            "color": "primary"
+        },
+        {
+            "active": false,
+            "name": "En proceso",
+            "id": "doing_selection",
+            "color": "orange"
+        },
+        {
+            "active": false,
+            "name": "Bloqueado",
+            "id": "blocked_selection",
+            "color": "red"
+        },
+        {
+            "active": false,
+            "name": "Solucionado",
+            "id": "blocked_selection",
+            "color": "green"
+        }
+    ],
+    "category": [
+        {
+            "active": false,
+            "name": "Mobiliario",
+            "id": "Mobiliario_selection",
+            "color": "primary"
+        },
+        {
+            "active": false,
+            "name": "Wi-Fi",
+            "id": "Wi-fi_selection",
+            "color": "primary"
+        },
+        {
+            "active": false,
+            "name": "Red",
+            "id": "Red_selection",
+            "color": "primary"
+        },
+        {
+            "active": false,
+            "name": "Switch",
+            "id": "Switch_selection",
+            "color": "primary"
+        },
+        {
+            "active": false,
+            "name": "Hardware",
+            "id": "Hardware_selection",
+            "color": "primary"
+        },
+        {
+            "active": false,
+            "name": "Software",
+            "id": "Software_selection",
+            "color": "primary"
+        }
+    ]
+}

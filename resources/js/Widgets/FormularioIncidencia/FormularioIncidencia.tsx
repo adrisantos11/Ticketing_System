@@ -19,8 +19,16 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     const widgetType = props.formularioProps.widgetType;
     const urlGeneral = props.formularioProps.urlGeneral;
     const history = useHistory();
-    let enableInput = true;
+    const [title, setTitle] = React.useState('');
+    const [description, setDescription] = React.useState('');
+    const [category, setCategory] = React.useState('');
+    const [build, setBuild] = React.useState('');
+    const [floor, setFloor] = React.useState(0);
+    const [classroom, setClassroom] = React.useState('');
+    const [priority, setPriority] = React.useState('');
+    const [urlFile, setUrlFile] = React.useState('');
 
+    let enableInput = true;
     let title1;
     let title2;
     let title3;
@@ -46,16 +54,6 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         
     }
 
-
-    const [title, setTitle] = React.useState('');
-    const [description, setDescription] = React.useState('');
-    const [category, setCategory] = React.useState('');
-    const [build, setBuild] = React.useState('');
-    const [floor, setFloor] = React.useState(0);
-    const [classroom, setClassroom] = React.useState('');
-    const [priority, setPriority] = React.useState('');
-    const [urlFile, setUrlFile] = React.useState('');
-    
     const [titleInput, setTitleInput] = React.useState<InputModel>({
         id: 1,
         value: valueTitleInput,
@@ -71,18 +69,6 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         id: 2,
         value: valueDescriptionInput,
         label: 'Descripción',
-        placeholder: '',
-        color: 'primary',
-        type: 'text',
-        error_control_text: '',
-        enabled: enableInput,
-        inputSize: ''
-    });
-
-    const [departamentInput] = React.useState<InputModel>({
-        id: 3,
-        value: '',
-        label: 'Departamento',
         placeholder: '',
         color: 'primary',
         type: 'text',
@@ -320,7 +306,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         }
 
         if (description != '') {
-            if (description.length > 70) {
+            if (description.length > 240) {
                 setDescriptionInput({
                     ...descriptionInput,
                     error_control_text: 'El texto introducido excede los 240 caracteres. Tiene '+description.length+' caracteres.',
@@ -409,19 +395,24 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         return validation;
     }
 
-    const hendleClickCreateIncidencia = (e: React.MouseEvent) => {
-        console.log('Boton crear incidencia.');
-        console.log(title);
+    const handleClickCreateIncidencia = (e: React.MouseEvent) => {
         if (fieldsValidation(title, description, category, build, floor, classroom, priority)) {
-            console.log('Todos los campos son correctos.')
+            let assignedUser, assignedTeam;
+            if (userRol == 'supervisor') {
+                assignedUser = null;
+                assignedTeam = null;
+            } else if (userRol == 'technical') {
+                assignedUser = null;
+                assignedTeam = null;
+            }
             let date = new Date();
             let hoursMinutesSeconds = date.toLocaleString().split(' ');
             let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
             let incidencia: IncidenciaModel = {
                 group_id: 0,
                 id_reporter: parseInt(localStorage.userId),
-                id_assigned: 3,
-                id_team: null,
+                id_assigned: assignedUser,
+                id_team: assignedTeam,
                 title: title,
                 description: description,
                 category: category,
@@ -446,7 +437,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             valuesList: ['Grupo de técnicos', 'Técnico'],
             color: 'primary',
             enabledList: [true, true],
-            itemActive: 1
+            itemActive: null
         });
 
         const [groupsDropdown] = React.useState<DropdownModel>({
@@ -481,7 +472,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         const handleClickDropdowns = (idItem: string, idDropdown: number) => {
             console.log(idItem);
         }
-            if (userRol == 'technical') {
+        if (userRol == 'supervisor') {
             return(
                 <>
                     <div className="data-container">
@@ -509,8 +500,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                     </div>
                 </>
             )
-            
-        } else {
+        } else if (userRol == 'technical') {
+            console.log(userRol);
             return '';
         }
 
@@ -538,23 +529,23 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 {title2}
                 <div className="build-container">
                     <div className="dropdown-container">
-                        <span>Edificio: <b></b></span>
+                        <span>Edificio: <b>{build}</b></span>
                         <Dropdown dropdownInfo={buildDropdown} onClick={handleClickItemDD}></Dropdown>
                     </div>
                     <div className="dropdown-container">
-                        <span>Piso: <b></b></span>
+                        <span>Piso: <b>{floor}</b></span>
                         <Dropdown dropdownInfo={floorDropdown} onClick={handleClickItemDD}></Dropdown>
                     </div>
                     <div className="dropdown-container">
-                        <span>Aula: <b></b></span>
+                        <span>Aula: <b>{classroom}</b></span>
                         <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
                     </div>
                 </div>
             </div>
             {
-            assignUser(userRol, urlGeneral)
+                assignUser(userRol, urlGeneral)
             }
-            <Button buttonInfo={createIncidenciaButton} handleClick={hendleClickCreateIncidencia}></Button>
+            <Button buttonInfo={createIncidenciaButton} handleClick={handleClickCreateIncidencia}></Button>
         </div>
         </>
     )

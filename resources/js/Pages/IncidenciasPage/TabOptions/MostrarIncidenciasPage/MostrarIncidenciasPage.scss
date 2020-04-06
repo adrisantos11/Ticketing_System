@@ -1,30 +1,62 @@
 @import '../../../../../sass/app.scss';
 
 .incidenciasList-container {
-    padding-top: $default_padding*2;
-    padding-left: $default_padding*2;
+    // padding-left: $default_padding*2;
     height: 100%;
+
     .filtrar-container {
         display: flex;
         flex-direction: row;
-        height: 6%;
-        padding-top: $default_padding;
-        padding-left: $default_padding;
+        align-content: center;
+        align-items: center;
+        height: 10%;
+        padding-left: $default_padding*2;
+
+        .dropdown {
+            margin-left: $default_padding;
+            padding-right: $default_padding*3;
+        }
+
+        .selectboxes-container {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+            margin-left: $default_padding*3;
+
+            .btn-group {
+                margin: 0 $default_padding;
+            }
+        }
+
+        .vertical-separator {
+            height: 50%;
+            border: solid;
+            border-width: 1px;
+            border-color: $grey_color_127;
+            width: 1px;
+        }
     }
 
     .table-container {
-        max-height: 94%;
+        height: auto;
+        max-height: 80%;
         overflow-y: scroll;
+        box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);
+        padding: $default_padding;
+
         .table {
-            margin: $default_padding*3 0;
             height: 100%;
             width: 100%;
+
             thead {
                 tr {
                     width: 100%;
-                    &:first-child{
-                        width: 4%;
+
+                    &:first-child {
+                        width: 8%;
                     }
+
                     th {
                         text-align: center;
                         border-top: none;
@@ -32,12 +64,13 @@
                     }
                 }
             }
-            
+
             tbody {
                 tr {
                     width: 100%;
+
                     th {
-                        width: 4%;
+                        width: 8%;
                         padding: $default_padding*2 $default_padding*2;
                         text-align: center;
                         vertical-align: middle;
@@ -75,5 +108,59 @@
 
         }
 
+    }
+
+    .footer-container {
+        height: 10%;
+        padding: $default_padding $default_padding*2;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+
+        // justify-content: space-between;
+
+        .vertical-separator {
+            height: 50%;
+            border: solid;
+            border-width: 1px;
+            border-color: $grey_color_127;
+            width: 1px;
+            margin: 0 $default_padding*4;
+        }
+
+        .dataSelection-container {
+
+            &--filter {
+                @extend .dataSelection-container;
+                .span {
+                    font-weight: bold;
+
+                    &--primary {
+                        @extend .span;
+                        color: $primary_color;
+                    }
+
+                    &--orange {
+                        @extend .span;
+                        color: $orange_color;
+
+                    }
+
+                    &--red {
+                        @extend .span;
+                        color: $red_color;
+
+                    }
+
+                    &--green {
+                        @extend .span;
+                        color: $green_color;
+
+                    }
+                }
+            }
+        }
     }
 }

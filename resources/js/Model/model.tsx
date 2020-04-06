@@ -40,7 +40,8 @@ export interface TabsModel {
 export interface SelectboxModel {
     active: boolean,
     name: string,
-    id: string
+    id: string,
+    color: string
 }
 
 export interface IncidenciaModel {

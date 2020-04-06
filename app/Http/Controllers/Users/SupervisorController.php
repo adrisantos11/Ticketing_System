@@ -43,7 +43,52 @@ class SupervisorController extends Controller
             $second_union   = DB::table('incidencias')->whereNull('id_assigned')->whereNull('id_team');
             $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->join('team_assigns', 'incidencias.id_team', '=', 'team_assigns.id_team')->where('id_reporter',$id_user)->union($first_union)->union($second_union)->orderBy($orderBy, $orderByDirection)->orderBy('limit_date', 'asc')->get();
             
-            return $hole_union;
+            $raw = $orderBy.' AS value';
+            $count_query    = DB::table('incidencias')->select(DB::raw($raw), DB::raw('count(*) AS count'))->groupBy($orderBy)->get();
+            $colour_list = array();
+            if ($orderBy == 'priority') {
+                array_push($colour_list, 'red', 'orange', 'green');
+            } else if ($orderBy == 'category') {
+                array_push($colour_list, 'primary', 'primary', 'primary', 'primary', 'primary', 'primary');
+            } else if($orderBy == 'state') {
+                array_push($colour_list, 'primary', 'orange', 'red', 'green');
+            }
+            $data_json = array('data' => $hole_union, 'sizes' => $count_query, 'colors' => $colour_list);
+            return json_encode($data_json);
         }
+    }
+
+    public function getFilteredIncidencias(Request $request)
+    {
+        $userId = $request->userId;
+        $idDropdown = $request->idDropdown;
+        $idSelectedBoxList = $request->idSelectboxList;
+
+        if ($idDropdown == 'state') {
+            $orderByDirection = 'desc';
+        }
+        $filterBy;
+        $filterList = array();
+        foreach($idSelectedBoxList as $valor) { 
+            preg_match('/^.*?(?=_)/', $valor, $match);
+            array_push($filterList, $match[0]);
+        }
+        
+        $first_union    = DB::table('incidencias')->where('id_reporter',$userId)->where(function($query) use ($filterList, $idDropdown) {
+            foreach($filterList as $valor) {
+                $query->orWhere($idDropdown, $valor);
+            }
+        });
+        $second_union   = DB::table('incidencias')->whereNull('id_assigned')->whereNull('id_team')->where(function($query) use ($filterList, $idDropdown) {
+            foreach($filterList as $valor) {
+                $query->orWhere($idDropdown, $valor);
+            }
+        });
+        $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->join('team_assigns', 'incidencias.id_team', '=', 'team_assigns.id_team')->where('id_reporter',$userId)->where(function($query) use ($filterList, $idDropdown) {
+            foreach($filterList as $valor) {
+                $query->orWhere($idDropdown, $valor);
+            }
+        })->union($first_union)->union($second_union)->orderBy($idDropdown, 'asc')->orderBy('limit_date', 'asc')->get();  
+        return $hole_union;
     }
 }

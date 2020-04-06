@@ -5,6 +5,7 @@
     
     .text_label {
         font-size: $font_size*1.2;
+        font-weight: 700;
 
         &--primary {
             @extend .text_label;
