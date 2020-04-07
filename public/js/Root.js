@@ -35679,6 +35679,7 @@ __webpack_require__(/*! ./Button.scss */ "./resources/js/Components/Button/Butto
 var Button = function (props) {
     var colorProps = props.buttonInfo.color;
     var textButton = props.buttonInfo.texto;
+    var modalTarget = props.buttonInfo.target_modal;
     var iconShow = '';
     var color = '';
     var onlyIcon = '';
@@ -35687,6 +35688,12 @@ var Button = function (props) {
     var handleClickButton = function (e) {
         props.handleClick(e, props.buttonInfo.id);
     };
+    var dataToogle = '';
+    var dataTarget = '';
+    if (props.buttonInfo.target_modal != '') {
+        dataToogle = 'modal';
+        dataTarget = '#' + modalTarget;
+    }
     if (colorProps == 'primary') {
         color = '--primary';
     }
@@ -35703,7 +35710,7 @@ var Button = function (props) {
     }
     else {
         return (React.createElement("div", { className: "buttonContainer" },
-            React.createElement("button", { id: props.buttonInfo.id.toString(), type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css" + color, onClick: handleClickButton },
+            React.createElement("button", { id: props.buttonInfo.id.toString(), type: "button", className: "btn btn-" + props.buttonInfo.type + " button_css" + color, "data-toggle": dataToogle, "data-target": dataTarget, onClick: handleClickButton },
                 React.createElement("span", { className: "span_container" + iconShow },
                     React.createElement("i", { className: props.buttonInfo.icon })),
                 React.createElement("a", { className: "button_text" }, props.buttonInfo.texto))));
@@ -37746,7 +37753,16 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         type: '',
         icon: '',
-        target_modal: '',
+        target_modal: 'confirmationModal',
+        extraClass: ''
+    })[0];
+    var confirmButton = React.useState({
+        id: 1,
+        texto: 'Confirmar',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal: 'confirmationModal',
         extraClass: ''
     })[0];
     var handleChangeInput = function (value, id) {
@@ -37957,6 +37973,9 @@ var FormularioIncidencia = function (props) {
         return validation;
     };
     var handleClickCreateIncidencia = function (e) {
+        console.log(e);
+    };
+    var handleClickConfirmIncidencia = function (e) {
         if (fieldsValidation(title, description, category, build, floor, classroom, priority)) {
             var assignedUser = void 0, assignedTeam = void 0;
             if (userRol == 'supervisor') {
@@ -37990,6 +38009,9 @@ var FormularioIncidencia = function (props) {
                 state: 'todo'
             };
             IncidenciasUtilities_1.createIncidencia(incidencia);
+            // if (widgetType == 'create') {
+            //     history.push(urlGeneral+'/show');
+            // }
         }
     };
     var assignUser = function (userRol, url) {
@@ -38085,6 +38107,20 @@ var FormularioIncidencia = function (props) {
                             React.createElement("b", null, classroom)),
                         React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD })))),
             assignUser(userRol, urlGeneral),
+            React.createElement("div", { className: "modal fade", id: "confirmationModal", tabIndex: -1, role: "dialog", "aria-labelledby": "confirmationModalLabel", "aria-hidden": "false" },
+                React.createElement("div", { className: "modal-dialog", role: "document" },
+                    React.createElement("div", { className: "modal-content" },
+                        React.createElement("div", { className: "modal-header" },
+                            React.createElement("h5", { className: "modal-title", id: "exampleModalLabel" }, "\u00BFSeguro?"),
+                            React.createElement("button", { type: "button", className: "close", "data-dismiss": "modal", "aria-label": "Close" },
+                                React.createElement("span", { "aria-hidden": "true" }, "\u00D7"))),
+                        React.createElement("div", { className: "modal-body" },
+                            "Pulse el bot\u00F3n de ",
+                            React.createElement("b", null, "'Confirmar'"),
+                            " si los cambios realizados en la incidencia son correctos."),
+                        React.createElement("div", { className: "modal-footer" },
+                            React.createElement("button", { type: "button", className: "btn btn-secondary", "data-dismiss": "modal" }, "Close"),
+                            React.createElement(Button_1.default, { buttonInfo: confirmButton, handleClick: handleClickConfirmIncidencia }))))),
             React.createElement(Button_1.default, { buttonInfo: createIncidenciaButton, handleClick: handleClickCreateIncidencia }))));
 };
 exports.default = FormularioIncidencia;

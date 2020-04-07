@@ -11,6 +11,7 @@ interface Props {
 const Button: React.FunctionComponent<Props> = (props: Props) => {
     const colorProps = props.buttonInfo.color;
     const textButton = props.buttonInfo.texto;
+    const modalTarget = props.buttonInfo.target_modal;
     let iconShow = '';
     let color = '';
     let onlyIcon = '';
@@ -21,7 +22,13 @@ const Button: React.FunctionComponent<Props> = (props: Props) => {
     const handleClickButton = (e: React.MouseEvent) => {
         props.handleClick(e, props.buttonInfo.id);
     }
-    
+
+    let dataToogle = '';
+    let dataTarget = ''
+    if(props.buttonInfo.target_modal != '') {
+        dataToogle = 'modal';
+        dataTarget = '#'+modalTarget;
+    }
     if (colorProps == 'primary') {
         color = '--primary';
 
@@ -41,7 +48,7 @@ const Button: React.FunctionComponent<Props> = (props: Props) => {
             <div className="buttonContainer">
                 {/* <button type="button" className={`btn btn-${props.buttonInfo.type}-secondary `}>{props.buttonInfo.texto}</button> */}
                 {/* <button type="button" className={`btn btn-${props.buttonInfo.type}-secondary btn-${props.buttonInfo.type}-secondary--rounded`}>{props.buttonInfo.texto}</button> */}
-                <button id={props.buttonInfo.id.toString()} type="button" className={`btn btn-${props.buttonInfo.type} button_css${color}`} onClick={handleClickButton}>
+                <button id={props.buttonInfo.id.toString()} type="button" className={`btn btn-${props.buttonInfo.type} button_css${color}`} data-toggle={dataToogle} data-target={dataTarget} onClick={handleClickButton}>
                     <span className={`span_container${iconShow}`}>
                         <i className={props.buttonInfo.icon}></i>
                     </span>

@@ -20,6 +20,7 @@ const CreateIncidenciaPage = () => {
 
     return (
         <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
+        
     )
 }
 

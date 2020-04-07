@@ -135,7 +135,17 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         color: 'primary',
         type: '',
         icon: '',
-        target_modal:'',  
+        target_modal:'confirmationModal',  
+        extraClass: ''
+    });
+
+    const [confirmButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Confirmar',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'confirmationModal',  
         extraClass: ''
     });
 
@@ -397,6 +407,10 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     }
 
     const handleClickCreateIncidencia = (e: React.MouseEvent) => {
+        console.log(e);
+    }
+
+    const handleClickConfirmIncidencia = (e: React.MouseEvent) => {
         if (fieldsValidation(title, description, category, build, floor, classroom, priority)) {
             let assignedUser, assignedTeam;
             if (userRol == 'supervisor') {
@@ -429,8 +443,13 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 state: 'todo'
             }
             createIncidencia(incidencia);
+            // if (widgetType == 'create') {
+            //     history.push(urlGeneral+'/show');
+            // }
         }
     }
+
+
     
     const assignUser = (userRol: string, url: string) => {
         const [tabsOptions] = React.useState<TabsModel>({
@@ -546,7 +565,28 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             {
                 assignUser(userRol, urlGeneral)
             }
+            <div className="modal fade" id="confirmationModal" tabIndex={-1} role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="false">
+                <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">¿Seguro?</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+                        Pulse el botón de <b>'Confirmar'</b> si los cambios realizados en la incidencia son correctos.
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <Button buttonInfo={confirmButton} handleClick={handleClickConfirmIncidencia}></Button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
             <Button buttonInfo={createIncidenciaButton} handleClick={handleClickCreateIncidencia}></Button>
+            
         </div>
         </>
     )
