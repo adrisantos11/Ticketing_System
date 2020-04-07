@@ -124,7 +124,7 @@ class SupervisorController extends Controller
             } else if ($orderBy == 'category') {
                 array_push($colour_list, 'primary', 'primary', 'primary', 'primary', 'primary', 'primary');
             } else if($orderBy == 'state') {
-                array_push($colour_list, 'primary', 'orange', 'red', 'green');
+                array_push($colour_list, 'primary', 'green', 'orange', 'red');
             }
             $data_json = array('data' => $hole_union, 'sizes' => $main_count_query, 'colors' => $colour_list);
             return json_encode($data_json);

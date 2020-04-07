@@ -23,6 +23,7 @@ const MainPage = () => {
         color: 'red',
         type: 'outline-secondary',
         icon: '',
+        target_modal:'',
         extraClass: ''
     });
 
@@ -42,6 +43,7 @@ const MainPage = () => {
         color: 'primary',
         type: 'outline-secondary',
         icon: 'fas fa-bars',
+        target_modal:'',
         extraClass: ''
     });
 

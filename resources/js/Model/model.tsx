@@ -4,6 +4,7 @@ export interface ButtonModel {
     color: string;
     type: string;
     icon: string;
+    target_modal: string;
     extraClass: string;
 }
 

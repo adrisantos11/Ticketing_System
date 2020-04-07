@@ -28,6 +28,7 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
         color: 'red',
         type: 'outline-secondary',
         icon: '',
+        target_modal:'',
         extraClass: ''
     });
 

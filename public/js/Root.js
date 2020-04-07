@@ -35925,6 +35925,7 @@ var Navbar = function (props) {
         color: 'red',
         type: 'outline-secondary',
         icon: '',
+        target_modal: '',
         extraClass: ''
     })[0];
     var _a = React.useState({
@@ -36854,9 +36855,7 @@ var MostrarIncidenciasPage = function () {
             });
         }
         else {
-            console.log('Hola');
             SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
-                console.log(res.data);
                 setIncidenciasSize(res.length);
                 setIncidencias(res.data);
             });
@@ -37043,6 +37042,7 @@ var Login = function () {
         color: 'primary',
         type: 'outline-primary',
         icon: 'fas fa-user',
+        target_modal: '',
         extraClass: ''
     })[0];
     var _a = React.useState({
@@ -37198,6 +37198,7 @@ var MainPage = function () {
         color: 'red',
         type: 'outline-secondary',
         icon: '',
+        target_modal: '',
         extraClass: ''
     }), logoutButton = _b[0], setLogoutButton = _b[1];
     var _c = React.useState({
@@ -37215,6 +37216,7 @@ var MainPage = function () {
         color: 'primary',
         type: 'outline-secondary',
         icon: 'fas fa-bars',
+        target_modal: '',
         extraClass: ''
     }), closeSlidebarButton = _d[0], setCloseSlidebarButton = _d[1];
     React.useEffect(function () {
@@ -37744,6 +37746,7 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         type: '',
         icon: '',
+        target_modal: '',
         extraClass: ''
     })[0];
     var handleChangeInput = function (value, id) {

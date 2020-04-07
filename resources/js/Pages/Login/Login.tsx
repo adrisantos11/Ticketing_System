@@ -17,6 +17,7 @@ const Login = () => {
         color: 'primary',
         type: 'outline-primary',
         icon: 'fas fa-user',
+        target_modal:'',
         extraClass: ''
     });
 

@@ -134,7 +134,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         texto: buttonText,
         color: 'primary',
         type: '',
-        icon: '',  
+        icon: '',
+        target_modal:'',  
         extraClass: ''
     });
 
