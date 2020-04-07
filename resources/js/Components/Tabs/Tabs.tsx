@@ -13,7 +13,6 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
     const handleClickTab = (event: any) => {
         props.handleClick(event.target.id);
     }
-    console.log(props.tabsInfo.itemActive);
     return(
         <div className="tabs-container">  
             <div className="btn-group btn-group-toggle" data-toggle="buttons">

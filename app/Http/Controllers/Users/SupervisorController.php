@@ -103,9 +103,9 @@ class SupervisorController extends Controller
             
             /**
              * Ejemplo con 'state':
-             * SELECT DISTINCT incidencias.id, incidencias.category from incidencias
-inner JOIN teams on incidencias.id_team = teams.id
-where teams.id_supervisor = 3
+             *  SELECT DISTINCT incidencias.id, incidencias.category from incidencias
+                inner JOIN teams on incidencias.id_team = teams.id
+                where teams.id_supervisor = 3
              * [
                     {
                         "value": "todo",

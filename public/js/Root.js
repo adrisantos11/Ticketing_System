@@ -36114,7 +36114,6 @@ var Tabs = function (props) {
     var handleClickTab = function (event) {
         props.handleClick(event.target.id);
     };
-    console.log(props.tabsInfo.itemActive);
     return (React.createElement("div", { className: "tabs-container" },
         React.createElement("div", { className: "btn-group btn-group-toggle", "data-toggle": "buttons" }, props.tabsInfo.valuesList.map(function (value, index) {
             if (props.tabsInfo.itemActive == index) {
@@ -36736,7 +36735,6 @@ var MostrarIncidenciasPage = function () {
     }), adminDropdown = _d[0], setAdminDropdown = _d[1];
     var _e = React.useState(0), incidenciasSize = _e[0], setIncidenciasSize = _e[1];
     var getIncidenciasUser = function (user, orderBy) {
-        console.log(orderBy);
         setDivSelectedData([]);
         if (userRol == 'technical') {
             TechnicalUtilities_1.getTechnicalIncidencias(user, orderBy).then(function (res) {
@@ -36746,14 +36744,12 @@ var MostrarIncidenciasPage = function () {
         }
         else if (userRol == 'supervisor') {
             if (orderBy == '') {
-                console.log('""""""""""""');
                 SupervisorUtilities_1.getSupervisorIncidencias(user, 'priority').then(function (res) {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                 });
             }
             else {
-                console.log('.............');
                 SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);

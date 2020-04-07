@@ -43,7 +43,6 @@ const MostrarIncidenciasPage = () => {
 
     const [incidenciasSize, setIncidenciasSize] = React.useState(0);
     const getIncidenciasUser = (user: any, orderBy: string) => {
-        console.log(orderBy);
         setDivSelectedData([]);
         if (userRol == 'technical') {
             getTechnicalIncidencias(user, orderBy).then(res => {
@@ -52,13 +51,11 @@ const MostrarIncidenciasPage = () => {
             })
         } else if (userRol == 'supervisor'){
             if(orderBy == '') {
-                console.log('""""""""""""')
                 getSupervisorIncidencias(user, 'priority').then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                 });
             } else {
-                console.log('.............')
                 getSupervisorIncidencias(user, orderBy).then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
