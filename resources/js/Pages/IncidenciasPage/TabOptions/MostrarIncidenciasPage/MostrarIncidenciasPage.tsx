@@ -164,9 +164,11 @@ const MostrarIncidenciasPage = () => {
                 setIncidencias(res);
             })
         } else {
+            console.log('Hola');
             getSupervisorIncidencias(user, orderBy).then(res => {
+                console.log(res.data)
                 setIncidenciasSize(res.length);
-                setIncidencias(res);
+                setIncidencias(res.data);
             })
         }
     }

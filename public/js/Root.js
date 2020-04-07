@@ -36854,9 +36854,11 @@ var MostrarIncidenciasPage = function () {
             });
         }
         else {
+            console.log('Hola');
             SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
+                console.log(res.data);
                 setIncidenciasSize(res.length);
-                setIncidencias(res);
+                setIncidencias(res.data);
             });
         }
     };
