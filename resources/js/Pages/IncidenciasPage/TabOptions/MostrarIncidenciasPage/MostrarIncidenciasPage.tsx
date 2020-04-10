@@ -229,14 +229,31 @@ const MostrarIncidenciasPage = () => {
                                         priorityColor = '--green'
                                         priorityText = 'trivial';
                                     }
+
+                                    let state;
+                                    let stateColor = '';
+                                    if (element.state == 'todo') {
+                                        state = 'Pendiente';
+                                        stateColor = '--bg-primary';
+                                    } else if (element.state == 'doing') {
+                                        state = 'En proceso';
+                                        stateColor = '--bg-orange';
+                                    } else if (element.state == 'blocked') {
+                                        state = 'Bloqueado';
+                                        stateColor = '--bg-red';
+                                    } else if (element.state == 'done') {
+                                        state = 'Solucionado';
+                                        stateColor = '--bg-green';
+
+                                    }
                                     return(
                                     <tr key={index}>
                                         <th scope="row">{`#${element.id}`}</th>
                                         <td><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
                                         <td>{element.description}</td>
                                         <td>{element.category}</td>
-                                        <td className={`columna-prioridad${priorityColor}`}>{priorityText}</td>
-                                        <td>{element.state}</td>
+                                        <td className={`columna${priorityColor}`}>{priorityText}</td>
+                                        <td className={`columna${stateColor}`}>{state}</td>
                                         <td>{element.limit_date}</td>
                                         <td>{isAssigned}</td>
                                     </tr>
