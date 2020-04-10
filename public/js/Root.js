@@ -2193,7 +2193,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".incidencias-container {\n  border-color: #c4c4c4;\n  height: 100%;\n}\n.incidencias-container .title-container {\n  height: 15%;\n  padding: 0.5rem 1rem;\n}\n.incidencias-container .title-container p {\n  margin: 0;\n}\n.incidencias-container .title-container .title {\n  font-size: 2.345rem;\n  color: #3685EC;\n  font-weight: bold;\n}\n.incidencias-container .data-container {\n  height: 85%;\n}\n.incidencias-container .data-container .tabs-container .btn-group .active {\n  border-bottom: none;\n}\n.incidencias-container .data-container .dropdowndata-container {\n  height: 95%;\n  background-color: whitesmoke;\n}", ""]);
+exports.push([module.i, ".incidencias-container {\n  border-color: #c4c4c4;\n  height: 100%;\n}\n.incidencias-container .title-container {\n  height: 25%;\n  padding: 0.5rem 1rem;\n}\n.incidencias-container .title-container p {\n  margin: 0;\n}\n.incidencias-container .title-container .title {\n  font-size: 2.345rem;\n  color: #3685EC;\n  font-weight: bold;\n}\n.incidencias-container .data-container {\n  height: 75%;\n}\n.incidencias-container .data-container .tabs-container .btn-group .active {\n  border-bottom: none;\n}\n.incidencias-container .data-container .dropdowndata-container {\n  height: 95%;\n  background-color: whitesmoke;\n}", ""]);
 
 // exports
 
@@ -36283,6 +36283,7 @@ var Tabs = function (props) {
     return (React.createElement("div", { className: "tabs-container" },
         React.createElement("div", { className: "btn-group btn-group-toggle", "data-toggle": "buttons" }, props.tabsInfo.valuesList.map(function (value, index) {
             if (props.tabsInfo.itemActive == index) {
+                console.log(value);
                 if (props.tabsInfo.enabledList[index]) {
                     return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color + " active", key: index },
                         React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], checked: true, onClick: handleClickTab }),
@@ -36299,13 +36300,13 @@ var Tabs = function (props) {
             else {
                 if (props.tabsInfo.enabledList[index]) {
                     return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color, key: index },
-                        React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], checked: true, onClick: handleClickTab }),
+                        React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], onClick: handleClickTab }),
                         " ",
                         value));
                 }
                 else {
                     return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color + " disabled", key: index },
-                        React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], checked: true, onClick: handleClickTab }),
+                        React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], onClick: handleClickTab }),
                         " ",
                         value));
                 }
@@ -36566,14 +36567,13 @@ var IncidenciaViewPage = function () {
     React.useEffect(function () {
         setFormularioIncidencia(__assign(__assign({}, formularioIncidencia), { incidenciaData: incidencia }));
         if (userRol == 'supervisor') {
-            console.log('Hola');
             setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [true, true, true], itemActive: tabSelected }));
         }
         else if (userRol == 'technical') {
             console.log(incidencia.id_reporter);
             console.log(userId);
             if (incidencia.id_reporter == userId) {
-                setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [true, true, true], itemActive: tabSelected }));
+                setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [true, false, true], itemActive: tabSelected }));
             }
             else {
                 setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [false, false, true], itemActive: null }));
@@ -36723,6 +36723,17 @@ if(false) {}
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
@@ -36732,30 +36743,63 @@ var CreateIncidenciaPage_1 = __webpack_require__(/*! ./TabOptions/CreateIncidenc
 var MostrarIncidenciasPage_1 = __webpack_require__(/*! ./TabOptions/MostrarIncidenciasPage/MostrarIncidenciasPage */ "./resources/js/Pages/IncidenciasPage/TabOptions/MostrarIncidenciasPage/MostrarIncidenciasPage.tsx");
 var IncidenciasPage = function () {
     var history = react_router_dom_1.useHistory();
+    var userRol = localStorage.userRol;
     var tabSelected;
-    if (history.location.pathname.includes('/home/incidencias/show'))
+    if (history.location.pathname.includes('show')) {
         tabSelected = 0;
-    else if (history.location.pathname.includes('/home/incidencias/create'))
+        console.log(history.location.pathname);
+    }
+    else if (history.location.pathname.includes('create')) {
         tabSelected = 1;
-    var tabsOptions = React.useState({
+        console.log(history.location.pathname);
+    }
+    var optionsList;
+    if (userRol == 'supervisor') {
+        optionsList = React.createElement(React.Fragment, null,
+            React.createElement("p", null, "En este apartado usted podr\u00E1 gestionar todas las incidencias que hayan sido resportadas y asignadas. Tendr\u00E1 las siguientes opciones:"),
+            React.createElement("ul", null,
+                React.createElement("li", null,
+                    React.createElement("b", null, "Visualizar"),
+                    " todas las incidencias"),
+                React.createElement("li", null,
+                    React.createElement("b", null, "Filtrar"),
+                    " incidencias para mejor b\u00FAsqueda."),
+                React.createElement("li", null,
+                    "Acceder a los ",
+                    React.createElement("b", null, "datos de una incidencia espec\u00EDfica"),
+                    "."),
+                React.createElement("li", null,
+                    React.createElement("b", null, "Editar"),
+                    " o ",
+                    React.createElement("b", null, "eliminar"),
+                    " cualquier incidencia una vez se ha accedido a sus datos."),
+                React.createElement("li", null,
+                    React.createElement("b", null, "Visualizar"),
+                    " y ",
+                    React.createElement("b", null, "a\u00F1adir"),
+                    " comentarios a la incidencia.")));
+    }
+    var _a = React.useState({
         idList: ['mostrarIncidencias', 'crearIncidencia'],
         valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
         color: 'grey',
         enabledList: [true, true],
         itemActive: tabSelected
-    })[0];
+    }), tabsOptions = _a[0], setTabsOptions = _a[1];
     var handleClickTab = function (id) {
         if (id == 'crearIncidencia') {
             history.push('/home/incidencias/create');
+            setTabsOptions(__assign(__assign({}, tabsOptions), { itemActive: 1 }));
         }
         else if (id == 'mostrarIncidencias') {
             history.push('/home/incidencias/show');
+            setTabsOptions(__assign(__assign({}, tabsOptions), { itemActive: 0 }));
         }
     };
     return (React.createElement("div", { className: "incidencias-container" },
         React.createElement("div", { className: 'title-container' },
             React.createElement("p", { className: "title" }, "Gestor de incidencias"),
-            React.createElement("p", { className: "descripcion" }, "En este apartado usted podr\u00E1 gestionar todas las incidencias que hayan sido resportadas y asignadas.")),
+            React.createElement("div", { className: "descripcion" }, optionsList)),
         React.createElement("div", { className: "data-container" },
             React.createElement(Tabs_1.default, { tabsInfo: tabsOptions, handleClick: handleClickTab }),
             React.createElement("div", { className: "dropdowndata-container" },

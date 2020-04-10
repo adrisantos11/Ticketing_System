@@ -106,7 +106,6 @@ const IncidenciaViewPage = () => {
         })
 
         if (userRol == 'supervisor') {
-            console.log('Hola');
             setTabsOptions({
                 ...tabsOptions,
                 enabledList: [true, true, true],
@@ -119,7 +118,7 @@ const IncidenciaViewPage = () => {
             if (incidencia.id_reporter == userId) {
                 setTabsOptions({
                     ...tabsOptions,
-                    enabledList: [true, true, true],
+                    enabledList: [true, false, true],
                     itemActive: tabSelected
                 })
     

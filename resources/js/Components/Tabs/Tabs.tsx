@@ -19,6 +19,7 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                 {
                     props.tabsInfo.valuesList.map((value, index) => {
                         if (props.tabsInfo.itemActive == index) {
+                            console.log(value);
                             if (props.tabsInfo.enabledList[index]) {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color} active`} key={index}>
@@ -36,13 +37,13 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                             if (props.tabsInfo.enabledList[index]) {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color}`} key={index}>
-                                        <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
+                                        <input type="radio" name="options" id={props.tabsInfo.idList[index]} onClick={handleClickTab}/> {value}
                                     </label>
                                 )
                             } else {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color} disabled`} key={index}>
-                                        <input type="radio" name="options" id={props.tabsInfo.idList[index]} checked onClick={handleClickTab}/> {value}
+                                        <input type="radio" name="options" id={props.tabsInfo.idList[index]} onClick={handleClickTab}/> {value}
                                     </label>
                                 )
                             }

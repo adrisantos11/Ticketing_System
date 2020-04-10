@@ -11,14 +11,31 @@ import MostrarIncidenciasPage from './TabOptions/MostrarIncidenciasPage/MostrarI
 
 const IncidenciasPage = () => {
     const history = useHistory();
+    const userRol = localStorage.userRol;
 
     let tabSelected;
-    if (history.location.pathname.includes('/home/incidencias/show'))
+    if (history.location.pathname.includes('show')) {
         tabSelected = 0;
-    else if (history.location.pathname.includes('/home/incidencias/create')) 
+        console.log(history.location.pathname);
+    }
+    else if (history.location.pathname.includes('create')) {
         tabSelected = 1;
+        console.log(history.location.pathname);
+    }
+
+    
+    let optionsList;
+    if (userRol == 'supervisor') {
+        optionsList = <><p>En este apartado usted podrá gestionar todas las incidencias que hayan sido resportadas y asignadas. Tendrá las siguientes opciones:</p><ul>
+            <li><b>Visualizar</b> todas las incidencias</li>
+            <li><b>Filtrar</b> incidencias para mejor búsqueda.</li>
+            <li>Acceder a los <b>datos de una incidencia específica</b>.</li>
+            <li><b>Editar</b> o <b>eliminar</b> cualquier incidencia una vez se ha accedido a sus datos.</li>
+            <li><b>Visualizar</b> y <b>añadir</b> comentarios a la incidencia.</li>
+        </ul></>
+    }
         
-    const [tabsOptions] = React.useState<TabsModel>({
+    const [tabsOptions, setTabsOptions] = React.useState<TabsModel>({
         idList: ['mostrarIncidencias','crearIncidencia'],
         valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
         color: 'grey',
@@ -30,8 +47,16 @@ const IncidenciasPage = () => {
     const handleClickTab = (id: string) => {
         if (id=='crearIncidencia') {
             history.push('/home/incidencias/create');
+            setTabsOptions({
+                ...tabsOptions,
+                itemActive: 1
+            })
         } else if (id=='mostrarIncidencias') {
             history.push('/home/incidencias/show');
+            setTabsOptions({
+                ...tabsOptions,
+                itemActive: 0
+            }
             
         }
     }
@@ -40,7 +65,7 @@ const IncidenciasPage = () => {
             <div className="incidencias-container">
                 <div className='title-container'>
                     <p className="title">Gestor de incidencias</p>
-                    <p className="descripcion">En este apartado usted podrá gestionar todas las incidencias que hayan sido resportadas y asignadas.</p>
+                    <div className="descripcion">{optionsList}</div>
                 </div>
                 <div className="data-container">
                     <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
