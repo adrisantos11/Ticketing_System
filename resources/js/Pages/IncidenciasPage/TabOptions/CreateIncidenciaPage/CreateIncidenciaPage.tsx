@@ -19,7 +19,9 @@ const CreateIncidenciaPage = () => {
     });
 
     return (
-        <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
+        <div className="createIncidencia-container">
+            <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
+        </div>
         
     )
 }

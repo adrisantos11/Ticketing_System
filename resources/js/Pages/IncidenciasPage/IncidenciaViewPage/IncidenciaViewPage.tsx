@@ -16,11 +16,11 @@ const IncidenciaViewPage = () => {
     const userId = localStorage.userId;
     const history = useHistory();
 
-    let tabSelected = 2;
+    let tabSelected = 1;
     if (history.location.pathname.endsWith('comments'))
-        tabSelected = 2;
-    else if (history.location.pathname.endsWith('delete')) 
         tabSelected = 1;
+    else if (history.location.pathname.endsWith('delete')) 
+        tabSelected = 2;
     else if (history.location.pathname.endsWith('edit')) 
         tabSelected = 0;
 
@@ -50,11 +50,11 @@ const IncidenciaViewPage = () => {
     
 
     const [tabsOptions, setTabsOptions] = React.useState<TabsModel>({
-        idList: ['editar-incidencia','eliminar-incidencia', 'comentarios'],
-        valuesList: ['Editar incidencia', 'Eliminar incidencia', 'Comentarios'],
-        color: 'primary',
+        idList: ['editar-incidencia', 'comentarios','eliminar-incidencia'],
+        valuesList: ['Editar incidencia', 'Comentarios', 'Eliminar incidencia'],
+        color: ['primary','primary', 'red'],
         enabledList: [],
-        itemActive: null
+        itemActive: tabSelected
     });
 
 

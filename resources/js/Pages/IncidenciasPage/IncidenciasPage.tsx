@@ -25,20 +25,31 @@ const IncidenciasPage = () => {
 
     
     let optionsList;
+    let titlePage;
     if (userRol == 'supervisor') {
+        titlePage = 'Gestor de incidencias - Supervisor'
         optionsList = <><p>En este apartado usted podrá gestionar todas las incidencias que hayan sido resportadas y asignadas. Tendrá las siguientes opciones:</p><ul>
-            <li><b>Visualizar</b> todas las incidencias</li>
+            <li><b>Visualizar</b> todas las incidencias.</li>
             <li><b>Filtrar</b> incidencias para mejor búsqueda.</li>
             <li>Acceder a los <b>datos de una incidencia específica</b>.</li>
             <li><b>Editar</b> o <b>eliminar</b> cualquier incidencia una vez se ha accedido a sus datos.</li>
             <li><b>Visualizar</b> y <b>añadir</b> comentarios a la incidencia.</li>
         </ul></>
+    } else  if (userRol == 'technical'){
+        titlePage = 'Gestor de incidencias - Técnico'
+        optionsList = <><p>En este apartado podrá:</p><ul>
+        <li><b>Visualizar</b> las incidencias asignadas a usted, a los grupos a los que pertencezca.</li>
+        <li><b>Visualizar</b>, <b>editar</b> y <b>borrar</b> las incidencias creadas por usted.</li>
+        <li><b>Filtrar</b> incidencias para mejor búsqueda.</li>
+        <li>Acceder a los <b>datos de una incidencia específica</b>.</li>
+        <li><b>Visualizar</b> y <b>añadir</b> comentarios a la incidencia.</li>
+    </ul></>
     }
         
     const [tabsOptions, setTabsOptions] = React.useState<TabsModel>({
         idList: ['mostrarIncidencias','crearIncidencia'],
         valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
-        color: 'grey',
+        color: ['grey', 'grey'],
         enabledList: [true, true],
         itemActive: tabSelected
     });
@@ -56,15 +67,14 @@ const IncidenciasPage = () => {
             setTabsOptions({
                 ...tabsOptions,
                 itemActive: 0
-            }
-            
+            })
         }
     }
 
         return( 
             <div className="incidencias-container">
                 <div className='title-container'>
-                    <p className="title">Gestor de incidencias</p>
+                    <p className="title">{titlePage}</p>
                     <div className="descripcion">{optionsList}</div>
                 </div>
                 <div className="data-container">

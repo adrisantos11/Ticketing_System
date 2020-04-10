@@ -37,9 +37,9 @@
                 .btn-group {
 
                     .btn {
-                        border: none;
-                        box-shadow: none;
-                        background-color: $grey_color_184;
+                        // border: none;
+                        // box-shadow: none;
+                        // background-color: $grey_color_184;
                         &:first-child:not(:last-child):not(.dropdown-toggle) {
                             border-bottom-left-radius: $default_padding*2;
 
@@ -48,12 +48,6 @@
                         &:last-child {
                             border-bottom-right-radius: $default_padding*2;
                         }
-                    }
-
-                    .active {
-                        // border: inherit;
-                        background-color: $grey_color_226;
-                        border-bottom-color: $primary_color;
                     }
                 }
             }

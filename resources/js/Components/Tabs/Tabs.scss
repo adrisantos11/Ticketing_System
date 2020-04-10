@@ -2,6 +2,7 @@
 
 .tabs-container {
     height: auto;
+
     .btn-group {
         .btn {
             border-radius: 0;
@@ -17,37 +18,68 @@
 
             &--primary {
                 @extend .btn;
-                background-color: transparent;
+                background-color: $grey_color_184;
                 color: $primary_color;
-                border-color: $primary_color;
+                border: none;
+                box-shadow: none;
+            }
+            &--primary:hover {
+                background-color: $grey_color_226;
+            }
+
+            &--red {
+                @extend .btn;
+                background-color: $grey_color_184;
+                color: $red_color;
+                //border-color: $primary_color;
                 border-bottom: none;
             }
-            
+
+            &--red:hover {
+                background-color: $grey_color_226;
+            }
+
             &--grey {
                 @extend .btn;
                 background-color: $grey_color_226;
                 color: $grey_color_51;
                 //border-color: $primary_color;
                 border-bottom: none;
-                box-shadow: inset -8px -70px 50px -90px rgba(0,0,0,0.75);
+                box-shadow: inset -8px -70px 50px -90px rgba(0, 0, 0, 0.75);
             }
 
             &--grey:hover {
                 background-color: $grey_color_127;
             }
+
         }
-        
-        .active {
+
+        .btn--primary.active {
+            color: $primary_color;
+            background-color: $grey_color_226;
+            font-weight: bold;
+            box-shadow: none;
+
+        }
+
+        .btn--red.active {
+            color: $white_color;
+            background-color: $red_color;
+            font-weight: bold;
+            box-shadow: none;
+
+            &:hover {
+                background-color: $red_light_color;
+
+            }
+
+        }
+
+        .btn--grey.active {
             color: $primary_color;
             background-color: $grey_color_250;
             font-weight: bold;
             box-shadow: none;
-            
-            &:hover {
-                background-color: $grey_color_250;
-
-            }
-
         }
     }
 }

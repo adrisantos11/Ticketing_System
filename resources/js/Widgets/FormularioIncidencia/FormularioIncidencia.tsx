@@ -2,7 +2,7 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './FormularioIncidencia.scss'
 import { Input } from '../../Components/Input/Input';
-import { ButtonModel, InputModel, AutocompleteInputModel , DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel } from '../../Model/model'
+import { ButtonModel, InputModel, AutocompleteInputModel , DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel, ModalModel } from '../../Model/model'
 import Dropdown from '../../Components/Dropdown/Dropdown';
 import Button from '../../Components/Button/Button';
 import AutocompleteInput from '../../Components/AutocompleteInput/AutocompleteInput'
@@ -10,6 +10,7 @@ import UploadFile from '../../Components/UploadFile/UploadFile';
 import { createIncidencia, editIncidencia } from '../../Utilities/Incidencias/IncidenciasUtilities'
 import Tabs from '../../Components/Tabs/Tabs'
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
+import Modal from '../../Components/Modal/Modal';
 
 interface Props {
     formularioProps: FormularioIncidenciaModel;
@@ -196,6 +197,12 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         target_modal:'confirmationModal',  
         extraClass: ''
     });
+
+    const [modalCreateIncidencia] = React.useState<ModalModel>({
+        id: 'confirmationModal',
+        title: '¿Seguro?',
+        buttonProps: confirmButton
+    })
 
     const handleChangeInput = (value: string, id: number) => {
         if(id == 1){
@@ -471,41 +478,59 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         } else {
             'Hay errores.'
         }
-        console.log(e);
     }
 
-    const handleClickConfirmIncidencia = (e: React.MouseEvent) => {
+    const handleClickConfirmIncidencia = () => {
         if (userRol == 'technical') {
             setUserSelected(null);
             setGroupSelected(null);
-        }
-        let incidencia: IncidenciaModel = {
-            id: props.formularioProps.incidenciaData.id,
-            group_id: 0,
-            id_reporter: parseInt(localStorage.userId),
-            id_assigned: userSelected,
-            id_team: groupSelected,
-            title: title,
-            description: description,
-            category: category,
-            build: build,
-            floor: floor,
-            class: classroom,
-            url_data: '',
-            creation_date: props.formularioProps.incidenciaData.creation_date,
-            limit_date: '1263645342',
-            assigned_date: props.formularioProps.incidenciaData.assigned_date,
-            resolution_date: props.formularioProps.incidenciaData.resolution_date,
-            priority: priority,
-            state: 'todo'
         }
         if (props.formularioProps.widgetType == 'create') {
             let date = new Date();
             let hoursMinutesSeconds = date.toLocaleString().split(' ');
             let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
-            incidencia.creation_date = currentDate;
+            let incidencia: IncidenciaModel = {
+                id: 0,
+                group_id: 0,
+                id_reporter: parseInt(localStorage.userId),
+                id_assigned: userSelected,
+                id_team: groupSelected,
+                title: title,
+                description: description,
+                category: category,
+                build: build,
+                floor: floor,
+                class: classroom,
+                url_data: '',
+                creation_date: currentDate,
+                limit_date: '1263645342',
+                assigned_date: '',
+                resolution_date: '',
+                priority: priority,
+                state: 'todo'
+            }
             createIncidencia(incidencia);    
         } else {
+            let incidencia: IncidenciaModel = {
+                id: 0,
+                group_id: 0,
+                id_reporter: parseInt(localStorage.userId),
+                id_assigned: userSelected,
+                id_team: groupSelected,
+                title: title,
+                description: description,
+                category: category,
+                build: build,
+                floor: floor,
+                class: classroom,
+                url_data: '',
+                creation_date: props.formularioProps.incidenciaData.creation_date,
+                limit_date: '1263645342',
+                assigned_date: props.formularioProps.incidenciaData.assigned_date,
+                resolution_date: props.formularioProps.incidenciaData.resolution_date,
+                priority: priority,
+                state: 'todo'
+            }
             console.log('Editar....');
             editIncidencia(incidencia);   
         }
@@ -517,7 +542,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         const [tabsOptions] = React.useState<TabsModel>({
             idList: ['group','technical'],
             valuesList: ['Grupo de técnicos', 'Técnico'],
-            color: 'primary',
+            color: ['primary', 'primary'],
             enabledList: [true, true],
             itemActive: null
         });
@@ -599,7 +624,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
     return (
         <>
-        <div className='createIncidencia-container'>
+        <div className='formularioIncidencia-container'>
             <div className={`data-container${titleContainerType}`}>
                 <div className="title-container">
                     {title1}
@@ -633,26 +658,11 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             {
                 assignUser(userRol, urlGeneral)
             }
-            <div className="modal fade" id="confirmationModal" tabIndex={-1} role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="false">
-                <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">¿Seguro?</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div className="modal-body">
-                        Pulse el botón de <b>'Confirmar'</b> si los cambios realizados en la incidencia son correctos.
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <Button buttonInfo={confirmButton} handleClick={handleClickConfirmIncidencia}></Button>
-                    </div>
-                    </div>
-                </div>
-            </div>
+            <Modal modalProps={modalCreateIncidencia} onClick={handleClickConfirmIncidencia}>
+                <div>Pulse el botón de <b>'Confirmar'</b> si los cambios realizados en la incidencia son correctos.</div>
+            </Modal>
             <Button buttonInfo={createIncidenciaButton} handleClick={handleClickCreateIncidencia}></Button>
+
         </div>
         </>
     )

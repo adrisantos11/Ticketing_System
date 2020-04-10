@@ -186,9 +186,9 @@ const MostrarIncidenciasPage = () => {
                     <div className="selectboxes-container">
                         Filtrar por:
                         {
-                            selectboxList.map(value => {
+                            selectboxList.map((value, index) => {
                                 return(
-                                    <Selectbox selectboxInfo={value} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
+                                    <Selectbox key={index} selectboxInfo={value} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
                                 )
                             })
                         }

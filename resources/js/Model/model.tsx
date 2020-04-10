@@ -33,7 +33,7 @@ export interface DropdownModel {
 export interface TabsModel {
     idList: Array<string>;
     valuesList: Array<string>;
-    color: string;
+    color: Array<string>;
     enabledList: Array<boolean>;
     itemActive: any;
 }
@@ -81,4 +81,10 @@ export interface AutocompleteInputModel {
     enabled: boolean;
     tableToSearchIn: string;
     matchingWords: string[];
+}
+
+export interface ModalModel {
+    id: string,
+    title: string,
+    buttonProps: ButtonModel,
 }
