@@ -46,6 +46,7 @@ export interface SelectboxModel {
 }
 
 export interface IncidenciaModel {
+    id?: number,
     group_id: number,
     id_reporter: number,
     id_assigned: number,
@@ -70,4 +71,14 @@ export interface FormularioIncidenciaModel {
     userRol: string;
     urlGeneral: string;
     incidenciaData?: IncidenciaModel;
+}
+
+export interface AutocompleteInputModel {
+    id: number;
+    placeholderInput: string;
+    colorInput: string;
+    typeInput: string;
+    enabled: boolean;
+    tableToSearchIn: string;
+    matchingWords: string[];
 }

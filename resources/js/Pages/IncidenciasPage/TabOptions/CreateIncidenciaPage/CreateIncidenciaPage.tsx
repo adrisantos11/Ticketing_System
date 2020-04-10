@@ -10,7 +10,7 @@ import { createIncidencia } from '../../../../Utilities/Incidencias/IncidenciasU
 import FormularioIncidencia from '../../../../Widgets/FormularioIncidencia/FormularioIncidencia';
 
 const CreateIncidenciaPage = () => {
-
+    
     const [formularioIncidencia, setFormularioIncidencia] = React.useState<FormularioIncidenciaModel>({
         widgetType: 'create',
         userRol: localStorage.userRol,

@@ -2,11 +2,12 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './FormularioIncidencia.scss'
 import { Input } from '../../Components/Input/Input';
-import { ButtonModel, InputModel, DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel } from '../../Model/model'
+import { ButtonModel, InputModel, AutocompleteInputModel , DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel } from '../../Model/model'
 import Dropdown from '../../Components/Dropdown/Dropdown';
 import Button from '../../Components/Button/Button';
+import AutocompleteInput from '../../Components/AutocompleteInput/AutocompleteInput'
 import UploadFile from '../../Components/UploadFile/UploadFile';
-import { createIncidencia } from '../../Utilities/Incidencias/IncidenciasUtilities'
+import { createIncidencia, editIncidencia } from '../../Utilities/Incidencias/IncidenciasUtilities'
 import Tabs from '../../Components/Tabs/Tabs'
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 
@@ -15,48 +16,95 @@ interface Props {
 }
 
 const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
+    // Propiedades del formulario
     const userRol = props.formularioProps.userRol;
     const widgetType = props.formularioProps.widgetType;
     const urlGeneral = props.formularioProps.urlGeneral;
-    const history = useHistory();
-    const [title, setTitle] = React.useState('');
-    const [description, setDescription] = React.useState('');
-    const [category, setCategory] = React.useState('');
-    const [build, setBuild] = React.useState('');
-    const [floor, setFloor] = React.useState(0);
-    const [classroom, setClassroom] = React.useState('');
-    const [priority, setPriority] = React.useState('');
-    const [urlFile, setUrlFile] = React.useState('');
 
+    // Variables que sirven para rellenar los parámtros de los elementos del componente.
+    let titleInputValue = '';
+    let descriptionInputValue = '';
+    let categoryDropdownName = 'Elegir categoría';
+    let userSelectedDropdownName = null;
+    let teamSelectedDropdownName = null;
+    let buildDropdownName = 'Elegir edificio';
+    let floorDropdownName = 'Elegir piso';
+    let classDropdownName = 'Elegir aula';
+    let priorityDropdownName = 'Elegir prioridad';
+
+    const history = useHistory();
+
+    
+    let titleIncidencia = '';
+    let descriptionIncidencia = '';
+    let categoryIncidencia = '';
+    let userSelectedIncidencia = null;
+    let teamSelectedIncidencia = null;
+    let buildIncidencia = '';
+    let floorIncidencia = 0;
+    let classIncidencia = '';
+    let priorityIncidencia = '';
+    let urlFileIncidencia = '';
+
+    // Datos que variarán dependiendo de qué tipo de componente se va a pintar.
     let enableInput = true;
-    let title1;
-    let title2;
-    let title3;
-    let titleContainerType = '';
-    let valueTitleInput = '';
-    let valueDescriptionInput = '';
-    let buttonText = '';
+    let title1; // Título del recuadro para poner título y descripción a la incidencia.
+    let title2; // Título del recuadro en el que se va a elegir dónde se produce la incidenciaº.
+    let title3; // Título del recuadro en el que se va a elegir el tipo de incidencia.
+    let titleContainerType = '--row'; // Tipo de container: --row o nada.
+    let valueBuildDropdown = '';
+
+    let buttonText = 'Crear incidencia'; // Texto del botón, cambiará dependiendo del tipo de componente que se esté creando: 'create' o 'edit'
 
     if (widgetType == 'create') {
         title1 = <p className="p-title">¿Cuál es la incidencia?</p>;
         title2 = <p className="p-title">¿Dónde se produce la incidencia?</p>;
         title3 = <p className="p-title">¿De qué tipo es la incidencia?</p>;
-        titleContainerType = '--row';
-        buttonText = 'Crear incidencia';
     } else if (widgetType == 'edit') {
         title1 = '';
         title2 = '';
         title3 = '';
         titleContainerType = ''
-        valueTitleInput = props.formularioProps.incidenciaData.title;
-        valueDescriptionInput = props.formularioProps.incidenciaData.description;
+
+        titleIncidencia = props.formularioProps.incidenciaData.title;
+        descriptionIncidencia = props.formularioProps.incidenciaData.description;        
+        categoryIncidencia = props.formularioProps.incidenciaData.category;
+        userSelectedIncidencia = props.formularioProps.incidenciaData.id_assigned;
+        teamSelectedIncidencia = props.formularioProps.incidenciaData.id_team;
+        buildIncidencia = props.formularioProps.incidenciaData.build;
+        floorIncidencia = props.formularioProps.incidenciaData.floor;
+        classIncidencia = props.formularioProps.incidenciaData.class;
+        priorityIncidencia = props.formularioProps.incidenciaData.priority;
+        urlFileIncidencia = props.formularioProps.incidenciaData.url_data;
+
+        titleInputValue = props.formularioProps.incidenciaData.title;
+        descriptionInputValue = props.formularioProps.incidenciaData.description;        
+        categoryDropdownName = props.formularioProps.incidenciaData.category;
+        userSelectedDropdownName = props.formularioProps.incidenciaData.id_assigned;
+        teamSelectedDropdownName = props.formularioProps.incidenciaData.id_team;
+        buildDropdownName = props.formularioProps.incidenciaData.build;
+        floorDropdownName = String(props.formularioProps.incidenciaData.floor);
+        classDropdownName = props.formularioProps.incidenciaData.class;
+        priorityDropdownName = props.formularioProps.incidenciaData.priority;
         buttonText = 'Editar incidencia';
-        
     }
+    
+    // Hooks en los que se van a guardar los datos de la incidencia.
+    const [title, setTitle] = React.useState(titleIncidencia);
+    const [description, setDescription] = React.useState(descriptionIncidencia);
+    const [category, setCategory] = React.useState(categoryIncidencia);
+    const [userSelected, setUserSelected] = React.useState(userSelectedIncidencia);
+    const [groupSelected, setGroupSelected] = React.useState(teamSelectedIncidencia);
+    const [build, setBuild] = React.useState(buildIncidencia);
+    const [floor, setFloor] = React.useState(floorIncidencia);
+    const [classroom, setClassroom] = React.useState(classIncidencia);
+    const [priority, setPriority] = React.useState(priorityIncidencia);
+    const [urlFile, setUrlFile] = React.useState(urlFileIncidencia);
+
 
     const [titleInput, setTitleInput] = React.useState<InputModel>({
         id: 1,
-        value: valueTitleInput,
+        value: titleInputValue,
         label: 'Título',
         placeholder: '',
         color: 'primary',
@@ -67,7 +115,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     });
     const [descriptionInput, setDescriptionInput] = React.useState<InputModel>({
         id: 2,
-        value: valueDescriptionInput,
+        value: descriptionInputValue,
         label: 'Descripción',
         placeholder: '',
         color: 'primary',
@@ -79,7 +127,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
     const [categoryDropdown, setCategoryDropdown] = React.useState<DropdownModel>({
         id: 1,
-        groupName: 'Elegir categoría',
+        groupName: categoryDropdownName,
         groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
         groupIds: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
         color: 'primary',
@@ -90,7 +138,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     // groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
     const [buildDropdown, setBuildDropdown] = React.useState<DropdownModel>({
         id: 2,
-        groupName: 'Elegir edificio',
+        groupName: buildDropdownName,
         groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         groupIds:['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         color: 'primary',
@@ -100,7 +148,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
     const [floorDropdown, setFloorDropdown] = React.useState<DropdownModel>({
         id: 3,
-        groupName: 'Elegir piso',
+        groupName: floorDropdownName,
         groupItems: [],
         groupIds: [],
         color: 'primary',
@@ -110,7 +158,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
     const [classDropdown, setClassDropdown] = React.useState<DropdownModel>({
         id: 4,
-        groupName: 'Elegir aula',
+        groupName: classDropdownName,
         groupItems: [],
         groupIds: [],
         color: 'primary',
@@ -120,7 +168,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
     const [priorityDropdown, setPriorityDropdwn] = React.useState<DropdownModel>({
         id: 5,
-        groupName: 'Elegir prioridad',
+        groupName: priorityDropdownName,
         groupItems: ['Crítica', 'Importante', 'Trivial'],
         groupIds: ['critical', 'important', 'trivial'],
         color: 'primary',
@@ -135,7 +183,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         color: 'primary',
         type: '',
         icon: '',
-        target_modal:'confirmationModal',  
+        target_modal:'',  
         extraClass: ''
     });
 
@@ -300,6 +348,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                     error_control_text: 'El texto introducido excede los 70 caracteres. Tiene '+title.length+' caracteres.',
                     color: 'red'
                 })
+                validation = false;
             } else {
                 setTitleInput({
                     ...titleInput,
@@ -314,6 +363,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 error_control_text: 'No se ha introducido nningún dato.',
                 color: 'red'
             })
+            validation = false;
         }
 
         if (description != '') {
@@ -323,6 +373,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                     error_control_text: 'El texto introducido excede los 240 caracteres. Tiene '+description.length+' caracteres.',
                     color: 'red'
                 })
+                validation = false;
             } else {
                 setDescriptionInput({
                     ...descriptionInput,
@@ -337,6 +388,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 error_control_text: 'No se ha introducido ningún dato.',
                 color: 'red'
             })
+            validation = false;
         }
 
         if (category != '') {
@@ -350,6 +402,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 ...categoryDropdown,
                 color: 'red'
             })
+            validation = false;
         }
 
         if (priority != '') {
@@ -363,6 +416,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 ...priorityDropdown,
                 color: 'red'
             })
+            validation = false;
         }
 
         if (build != '') {
@@ -376,6 +430,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 ...buildDropdown,
                 color: 'red'
             })
+            validation = false;
         }
 
         if (floor != null) {
@@ -389,6 +444,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 ...floorDropdown,
                 color: 'red'
             })
+            validation = false;
         }
 
         if (classroom != '') {
@@ -402,50 +458,56 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 ...classDropdown,
                 color: 'red'
             })
+            validation = false;
         }
         return validation;
     }
 
     const handleClickCreateIncidencia = (e: React.MouseEvent) => {
+        const validation = fieldsValidation(title, description, category, build, floor, classroom, priority);
+        if (validation) {
+            console.log('Todos los elemenos están correctamente introducidos.');
+            $('#confirmationModal').modal('show');   
+        } else {
+            'Hay errores.'
+        }
         console.log(e);
     }
 
     const handleClickConfirmIncidencia = (e: React.MouseEvent) => {
-        if (fieldsValidation(title, description, category, build, floor, classroom, priority)) {
-            let assignedUser, assignedTeam;
-            if (userRol == 'supervisor') {
-                assignedUser = null;
-                assignedTeam = null;
-            } else if (userRol == 'technical') {
-                assignedUser = null;
-                assignedTeam = null;
-            }
+        if (userRol == 'technical') {
+            setUserSelected(null);
+            setGroupSelected(null);
+        }
+        let incidencia: IncidenciaModel = {
+            id: props.formularioProps.incidenciaData.id,
+            group_id: 0,
+            id_reporter: parseInt(localStorage.userId),
+            id_assigned: userSelected,
+            id_team: groupSelected,
+            title: title,
+            description: description,
+            category: category,
+            build: build,
+            floor: floor,
+            class: classroom,
+            url_data: '',
+            creation_date: props.formularioProps.incidenciaData.creation_date,
+            limit_date: '1263645342',
+            assigned_date: props.formularioProps.incidenciaData.assigned_date,
+            resolution_date: props.formularioProps.incidenciaData.resolution_date,
+            priority: priority,
+            state: 'todo'
+        }
+        if (props.formularioProps.widgetType == 'create') {
             let date = new Date();
             let hoursMinutesSeconds = date.toLocaleString().split(' ');
             let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
-            let incidencia: IncidenciaModel = {
-                group_id: 0,
-                id_reporter: parseInt(localStorage.userId),
-                id_assigned: assignedUser,
-                id_team: assignedTeam,
-                title: title,
-                description: description,
-                category: category,
-                build: build,
-                floor: floor,
-                class: classroom,
-                url_data: '',
-                creation_date: currentDate,
-                limit_date: '1263645342',
-                assigned_date: '',
-                resolution_date: '',
-                priority: priority,
-                state: 'todo'
-            }
-            createIncidencia(incidencia);
-            // if (widgetType == 'create') {
-            //     history.push(urlGeneral+'/show');
-            // }
+            incidencia.creation_date = currentDate;
+            createIncidencia(incidencia);    
+        } else {
+            console.log('Editar....');
+            editIncidencia(incidencia);   
         }
     }
 
@@ -470,15 +532,16 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             extraClass: '',
         });
 
-        const [technicalsDropdown] = React.useState<DropdownModel>({
-            id: 2,
-            groupName: 'Elegir técnico',
-            groupItems: ['Cargar', 'datos', 'de', 'base de datos 2'],
-            groupIds: ['Cargar', 'datos', 'de', 'base de datos 2'],
-            color: 'primary',
-            enabled: false,
-            extraClass: '',
-        });
+        const [autocompleteInputValues, setAutocompleteInputValues] = React.useState<AutocompleteInputModel>({
+            id: 1,
+            placeholderInput: 'Nombre...',
+            colorInput: 'primary',
+            typeInput: 'text',
+            enabled: true,
+            tableToSearchIn: 'users',
+            matchingWords: ['name', 'surname1', 'surname2']
+        })
+
         const handleClickTabsAssign = (id: string) => {
             if (id=='group') {
                 console.log(`${url}/${widgetType}/assignGroup`);
@@ -492,6 +555,13 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         const handleClickDropdowns = (idItem: string, idDropdown: number) => {
             console.log(idItem);
         }
+
+        const handleClickAutocomplete = (id: number) => {
+            console.log(id);
+            setUserSelected(id);
+            setGroupSelected(null);
+        }
+
         if (userRol == 'supervisor') {
             return(
                 <>
@@ -505,14 +575,12 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                             <div className="dropdown-container">
                                 <Switch>
                                     <Route path={`${url}/${widgetType}/assignGroup`}>
-                                        <div>
-                                            Elegir un grupo de técnicos:
+                                            <span>Elegir un grupo de técnicos:</span>
                                             <Dropdown dropdownInfo={groupsDropdown} onClick={handleClickDropdowns}></Dropdown>
-                                        </div>
                                     </Route>
                                     <Route path={`${url}/${widgetType}/assignTechnical`}>
-                                        Elegir un técnico:
-                                        <Dropdown dropdownInfo={technicalsDropdown} onClick={handleClickDropdowns}></Dropdown>
+                                            <span>Elegir un técnico:</span>
+                                            <AutocompleteInput autocompleteInputInfo={autocompleteInputValues} handleClick={handleClickAutocomplete}></AutocompleteInput>
                                     </Route>
                                 </Switch>     
                             </div>
@@ -584,9 +652,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                     </div>
                 </div>
             </div>
-
             <Button buttonInfo={createIncidenciaButton} handleClick={handleClickCreateIncidencia}></Button>
-            
         </div>
         </>
     )

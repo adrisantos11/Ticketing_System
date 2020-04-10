@@ -22,7 +22,7 @@ Route::post('logout', 'UserController@logout');
 Route::namespace('Pages')->group(function () {
     Route::get('incidencias', 'IncidenciasPageController@getTodasIncidencias');
     Route::post('incidencias/create', 'IncidenciasPageController@createIncidencia');
-    
+    Route::post('incidencias/edit', 'IncidenciasPageController@editIncidencia');
     
     Route::post('incidencias/reportedBy', 'IncidenciasPageController@getIncidenciasReportedBy');
     Route::post('incidencias/assignedTo', 'IncidenciasPageController@getIncidenciasAssignedTo');
@@ -31,7 +31,6 @@ Route::namespace('Pages')->group(function () {
     Route::post('incidencias/blocked', 'IncidenciasPageController@getIncidenciasBlocked');
     Route::post('incidencias/getIncidencia', 'IncidenciasPageController@getIncidenciaUnique');
     Route::post('incidencias/filtered', 'IncidenciasPageController@getFilteredIncidencias');
-
 });
 
 Route::namespace('Users')->group(function () {
@@ -44,6 +43,10 @@ Route::namespace('Users')->group(function () {
 
 });
 
+Route::namespace('Utilidades')->group(function () {
+    Route::post('getFilteredUsers', 'AutocompleteController@filterUsers');
+
+});
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

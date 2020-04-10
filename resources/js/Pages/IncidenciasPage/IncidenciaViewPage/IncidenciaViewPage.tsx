@@ -15,7 +15,19 @@ const IncidenciaViewPage = () => {
     const userRol = localStorage.userRol;
     const userId = localStorage.userId;
     const history = useHistory();
+
+    let tabSelected = 2;
+    if (history.location.pathname.endsWith('comments'))
+        tabSelected = 2;
+    else if (history.location.pathname.endsWith('delete')) 
+        tabSelected = 1;
+    else if (history.location.pathname.endsWith('edit')) 
+        tabSelected = 0;
+
+    console.log(tabSelected);
+
     const [incidencia, setIncidencia] = React.useState<IncidenciaModel>({
+        id: Number(idIncidencia),
         group_id: null,
         id_reporter: null,
         id_assigned: null,
@@ -94,13 +106,13 @@ const IncidenciaViewPage = () => {
         })
 
         if (userRol == 'supervisor') {
+            console.log('Hola');
             setTabsOptions({
                 ...tabsOptions,
                 enabledList: [true, true, true],
-                itemActive: 2
+                itemActive: tabSelected
             })
-            // setEnableListTabs([true, true, true]);
-            // setItemSelected(0)
+
         } else if (userRol == 'technical') {
             console.log(incidencia.id_reporter);
             console.log(userId);
@@ -108,7 +120,7 @@ const IncidenciaViewPage = () => {
                 setTabsOptions({
                     ...tabsOptions,
                     enabledList: [true, true, true],
-                    itemActive: 2
+                    itemActive: tabSelected
                 })
     
             } else {

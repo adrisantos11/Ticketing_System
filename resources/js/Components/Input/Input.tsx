@@ -9,15 +9,25 @@ interface Props {
 }
 export const Input: React.FunctionComponent<Props> = (props: Props) => {
     const inputColor = props.inputInfo.color;
+    const inputValue = props.inputInfo.value;
+    const [value, setValue] = React.useState(inputValue);
     let color,mostrar = '';
     let input;
 
-    let value = null;
-    if (props.inputInfo.value != null && props.inputInfo.value != '') {
-        value = props.inputInfo.value;
+    let labelTitle;
+    if (props.inputInfo.label != '') {
+        labelTitle = <label htmlFor="" className={`text_label`}>{props.inputInfo.label}</label>;
+    } else {
+        labelTitle = '';
     }
 
+    React.useEffect(()=> {
+        setValue(props.inputInfo.value);
+        console.log('Hola');
+    }, [props.inputInfo.value]);
+
     const handleChange = (event: any) => {
+        setValue(event.target.value);
         if (String(event.target.value).length == 1) {   
             props.handleChangeInput(String(event.target.value).toUpperCase( ), event.target.id);
         } else {
@@ -51,7 +61,7 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
     return(
         <>
             <div className='form-group'>
-                <label htmlFor="" className={`text_label`}>{props.inputInfo.label}</label>
+                {labelTitle}
                 {input}
                 <small className={`form-text text-danger aviso${mostrar}`}>{props.inputInfo.error_control_text}</small>
             </div>

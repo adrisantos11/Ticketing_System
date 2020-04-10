@@ -111,7 +111,7 @@
             .assign-container {
                 display: flex;
                 flex-direction: row;
-                align-items: center;
+                align-items: flex-start;
                 margin: $default_padding*3 0;
                 width: 35%;
 

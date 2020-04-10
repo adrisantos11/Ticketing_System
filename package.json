@@ -19,6 +19,7 @@
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addons": "^5.3.14",
     "@storybook/react": "^5.3.14",
+    "@types/bootstrap": "^4.3.2",
     "axios": "^0.19.2",
     "babel-loader": "^8.0.6",
     "bootstrap": "^4.0.0",
@@ -36,6 +37,7 @@
     "webpack-bundle-analyzer": "^3.6.0"
   },
   "dependencies": {
+    "@types/jquery": "^3.3.34",
     "@types/react-dom": "^16.9.5",
     "@types/react-router-dom": "^5.1.3",
     "laravel-mix-react-typescript-extension": "^1.0.0",

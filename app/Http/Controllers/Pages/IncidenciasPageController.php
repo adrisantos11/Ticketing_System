@@ -107,6 +107,25 @@ class IncidenciasPageController extends Controller
         DB:table('incidencias')->where('id', $id_incidencia)->delete();
     }
 
+    public function editIncidencia(Request $request) {
+        $id_incidencia = $request->id;
+        DB::table('incidencias')->where('id', $id_incidencia)
+            ->update([
+                'id_assigned' => $request->id_assigned,
+                'id_team' => $request->id_team,
+                'title' => $request->title,
+                'description' => $request->description,
+                'category' => $request->category,
+                'build' => $request->build,
+                'floor' => $request->floor,
+                'class' => $request->class,
+                'url_data' => $request->url_data,
+                'limit_date'=> date("Y-m-d H:i:s",$request->limit_date),
+                'priority'=> $request->priority,
+                'state' => $request->state
+            ]);
+    }
+
     public function getIncidenciaUnique(Request $request) {
         $id_incidencia = $request->id;
         $incidencia = DB::table('incidencias')->where('id', $id_incidencia)->first();

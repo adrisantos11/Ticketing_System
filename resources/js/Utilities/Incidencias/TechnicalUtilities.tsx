@@ -10,6 +10,7 @@ export const getTechnicalIncidencias = (user: any, orderBy: string) => {
         headers: {'Content-Type': 'application/json'}
     })
     .then(res => { 
+        console.log(res);
         return res.data;
     })
     .catch(err => {

@@ -1,0 +1,60 @@
+@import '../../../sass/app.scss';
+
+.autocompleteInput-container {
+    .dropdown-menu {
+        display: none;
+        position: relative;
+        float: none;
+        left: 0;
+        top: -16px;
+        background-color: $grey_color_184;
+        height: auto;
+        max-height: 150px;
+        width: 130%;
+        max-height: 122px;
+        z-index: 1000;
+        &--show {
+            @extend .dropdown-menu;
+            display: block;
+            // flex-direction: column;
+            &--scroll {
+                @extend .dropdown-menu--show;
+                overflow-y: scroll;
+            }
+        }
+        .dropdown-item {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            flex-direction: row;
+            padding: $default_padding $default_padding*2;
+            cursor: pointer;
+            .id-data {
+                width: 20%;
+            }
+            .value-data {
+                width: 80%;
+            }
+
+            &:hover {
+                @extend .dropdown-item;
+                background-color: $grey_color_226;
+                &:active {
+                    @extend .dropdown-item;
+                    background-color: $primary_color;
+                }
+            }
+
+
+        }
+        .dropdown-divider {
+            margin: 0;
+        }
+        .separator {
+            width: 100%;
+            border: solid;
+            border-width: 0.5px;
+            height: 1px;
+        }
+    }
+}

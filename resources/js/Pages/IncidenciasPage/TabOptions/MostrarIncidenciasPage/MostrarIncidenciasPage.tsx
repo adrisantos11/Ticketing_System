@@ -45,10 +45,14 @@ const MostrarIncidenciasPage = () => {
     const getIncidenciasUser = (user: any, orderBy: string) => {
         setDivSelectedData([]);
         if (userRol == 'technical') {
-            getTechnicalIncidencias(user, orderBy).then(res => {
-                setIncidenciasSize(res.length);
-                setIncidencias(res.data);
-            })
+            console.log('Hola');
+            if(orderBy == '') {
+                getTechnicalIncidencias(user, 'priority').then(res => {
+                    console.log(res);
+                    setIncidenciasSize(res.length);
+                    setIncidencias(res);
+                });
+            }
         } else if (userRol == 'supervisor'){
             if(orderBy == '') {
                 getSupervisorIncidencias(user, 'priority').then(res => {
