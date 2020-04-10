@@ -126,6 +126,11 @@ class IncidenciasPageController extends Controller
             ]);
     }
 
+    public function removeIncidencia(Request $request) {
+        $id_incidencia = $request->id;
+        DB::delete('delete from incidencias where incidencias.id = ?', [$id_incidencia]);
+    }
+
     public function getIncidenciaUnique(Request $request) {
         $id_incidencia = $request->id;
         $incidencia = DB::table('incidencias')->where('id', $id_incidencia)->first();

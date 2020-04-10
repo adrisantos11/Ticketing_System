@@ -1,14 +1,15 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './IncidenciaViewPage.scss'
-import { TabsModel, IncidenciaModel, FormularioIncidenciaModel } from '../../../Model/model'
+import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel } from '../../../Model/model'
 import { createIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { getIncideniciaUnique } from '../../../Utilities/Incidencias/IncidenciasUtilities';
+import { getIncideniciaUnique, deleteIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities';
 import Tabs from '../../../Components/Tabs/Tabs';
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 import FormularioIncidencia from '../../../Widgets/FormularioIncidencia/FormularioIncidencia';
+import Modal from '../../../Components/Modal/Modal';
 
 const IncidenciaViewPage = () => {
     let {idIncidencia} = useParams();
@@ -66,9 +67,28 @@ const IncidenciaViewPage = () => {
         urlGeneral: `/home/incidencia-view/${idIncidencia}`,
         incidenciaData: incidencia
     });
+    
+    const [confirmButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Confirmar',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'deleteIncidenciaModal',  
+        extraClass: ''
+    });
+
+    const [modalDeleteIncidencia] = React.useState<ModalModel>({
+        id: 'deleteIncidenciaModal',
+        title: 'Confimar acción',
+        buttonProps: confirmButton
+    })
+
 
     React.useEffect(() => {
+        console.log('Cargamos datos incidencia...')
         getIncideniciaUnique(Number(idIncidencia)).then(result => {
+            console.log(result);
             setIncidencia({
                 ...incidencia,
                 group_id: result.group_id,
@@ -131,9 +151,8 @@ const IncidenciaViewPage = () => {
     
             }
         }
-
-
     }, [incidencia]);
+
 
     const isDataNull = (data: any, isBold?: boolean) => {
         if (data == null || data == '') {
@@ -158,11 +177,16 @@ const IncidenciaViewPage = () => {
         if (id=='editar-incidencia') {
             history.push(`/home/incidencia-view/${idIncidencia}/edit`);
         } else if (id=='eliminar-incidencia') {
-            history.push(`/home/incidencia-view/${idIncidencia}/delete`);
+            $('#'+modalDeleteIncidencia.id).modal('show');
         } else if (id=='comentarios') {
             history.push(`/home/incidencia-view/${idIncidencia}/comments`);
         }
         console.log(id);
+    }
+
+    const handleClickDeleteIncidencia = () => {
+        deleteIncidencia(Number(idIncidencia));
+        history.push('/home/incidencias/show');
     }
 
     if (incidenciaLoaded) {
@@ -290,6 +314,9 @@ const IncidenciaViewPage = () => {
                         </Route>
                     </Switch>
                 </div>
+                <Modal modalProps={modalDeleteIncidencia} onClick={handleClickDeleteIncidencia}>
+                    <div>Pulse el botón de <b>'Confirmar'</b> para eliminar la incidencia <b>PERMANENTEMENTE</b></div>
+                </Modal>
             </div>
         )
         

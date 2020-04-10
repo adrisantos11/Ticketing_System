@@ -474,7 +474,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         const validation = fieldsValidation(title, description, category, build, floor, classroom, priority);
         if (validation) {
             console.log('Todos los elemenos están correctamente introducidos.');
-            $('#confirmationModal').modal('show');   
+            $('#'+modalCreateIncidencia.id).modal('show');   
         } else {
             'Hay errores.'
         }
@@ -512,7 +512,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             createIncidencia(incidencia);    
         } else {
             let incidencia: IncidenciaModel = {
-                id: 0,
+                id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
                 id_reporter: parseInt(localStorage.userId),
                 id_assigned: userSelected,
@@ -569,10 +569,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
         const handleClickTabsAssign = (id: string) => {
             if (id=='group') {
-                console.log(`${url}/${widgetType}/assignGroup`);
                 history.push(`${url}/${widgetType}/assignGroup`);
             } else if (id=='technical') {
-                console.log(`${url}/${widgetType}/assignTechnical`);
                 history.push(`${url}/${widgetType}/assignTechnical`);       
             }
         }
@@ -659,7 +657,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 assignUser(userRol, urlGeneral)
             }
             <Modal modalProps={modalCreateIncidencia} onClick={handleClickConfirmIncidencia}>
-                <div>Pulse el botón de <b>'Confirmar'</b> si los cambios realizados en la incidencia son correctos.</div>
+                <div>Pulse el botón de <b>'Confirmar'</b> si los datos introducidos son correctos.</div>
             </Modal>
             <Button buttonInfo={createIncidenciaButton} handleClick={handleClickCreateIncidencia}></Button>
 

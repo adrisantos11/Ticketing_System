@@ -23,6 +23,7 @@ Route::namespace('Pages')->group(function () {
     Route::get('incidencias', 'IncidenciasPageController@getTodasIncidencias');
     Route::post('incidencias/create', 'IncidenciasPageController@createIncidencia');
     Route::post('incidencias/edit', 'IncidenciasPageController@editIncidencia');
+    Route::post('incidencias/remove', 'IncidenciasPageController@removeIncidencia');
     
     Route::post('incidencias/reportedBy', 'IncidenciasPageController@getIncidenciasReportedBy');
     Route::post('incidencias/assignedTo', 'IncidenciasPageController@getIncidenciasAssignedTo');

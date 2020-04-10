@@ -78,9 +78,19 @@ export const createIncidencia = (newIncidencia: any) => {
 }
 
 export const editIncidencia = (incidencia: any) => {
-    console.log(incidencia);
     return axios
     .post('api/incidencias/edit', incidencia, {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+export const deleteIncidencia = (id: number) => {
+    console.log(id);
+    return axios
+    .post('api/incidencias/remove', {id}, {
         headers: {'Content-Type': 'application/json'}
     })
     .catch(err => {

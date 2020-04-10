@@ -36593,6 +36593,7 @@ var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidenc
 var Tabs_1 = __webpack_require__(/*! ../../../Components/Tabs/Tabs */ "./resources/js/Components/Tabs/Tabs.tsx");
 var react_router_dom_2 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var FormularioIncidencia_1 = __webpack_require__(/*! ../../../Widgets/FormularioIncidencia/FormularioIncidencia */ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.tsx");
+var Modal_1 = __webpack_require__(/*! ../../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
 var IncidenciaViewPage = function () {
     var idIncidencia = react_router_1.useParams().idIncidencia;
     var userRol = localStorage.userRol;
@@ -36640,8 +36641,24 @@ var IncidenciaViewPage = function () {
         urlGeneral: "/home/incidencia-view/" + idIncidencia,
         incidenciaData: incidencia
     }), formularioIncidencia = _d[0], setFormularioIncidencia = _d[1];
+    var confirmButton = React.useState({
+        id: 1,
+        texto: 'Confirmar',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal: 'deleteIncidenciaModal',
+        extraClass: ''
+    })[0];
+    var modalDeleteIncidencia = React.useState({
+        id: 'deleteIncidenciaModal',
+        title: 'Confimar acción',
+        buttonProps: confirmButton
+    })[0];
     React.useEffect(function () {
+        console.log('Cargamos datos incidencia...');
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
+            console.log(result);
             setIncidencia(__assign(__assign({}, incidencia), { group_id: result.group_id, id_reporter: result.id_reporter, id_assigned: result.id_assigned, id_team: result.id_team, title: result.title, description: result.description, category: result.category, build: result.build, floor: result.floor, class: result.class, url_data: result.url_data, creation_date: result.creation_date, limit_date: result.limit_date, assigned_date: result.assigned_date, resolution_date: result.resolution_date, priority: result.priority, state: result.state }));
         });
         setFormularioIncidencia(__assign(__assign({}, formularioIncidencia), { incidenciaData: incidencia }));
@@ -36682,12 +36699,16 @@ var IncidenciaViewPage = function () {
             history.push("/home/incidencia-view/" + idIncidencia + "/edit");
         }
         else if (id == 'eliminar-incidencia') {
-            history.push("/home/incidencia-view/" + idIncidencia + "/delete");
+            $('#' + modalDeleteIncidencia.id).modal('show');
         }
         else if (id == 'comentarios') {
             history.push("/home/incidencia-view/" + idIncidencia + "/comments");
         }
         console.log(id);
+    };
+    var handleClickDeleteIncidencia = function () {
+        IncidenciasUtilities_1.deleteIncidencia(Number(idIncidencia));
+        history.push('/home/incidencias/show');
     };
     if (incidenciaLoaded) {
         return (React.createElement("div", { className: 'incidenciaview-container' },
@@ -36755,7 +36776,13 @@ var IncidenciaViewPage = function () {
                     React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/delete" },
                         React.createElement("div", null, "Eliminar incidencia")),
                     React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/comments" },
-                        React.createElement("div", null, "Comentarios incidencia"))))));
+                        React.createElement("div", null, "Comentarios incidencia")))),
+            React.createElement(Modal_1.default, { modalProps: modalDeleteIncidencia, onClick: handleClickDeleteIncidencia },
+                React.createElement("div", null,
+                    "Pulse el bot\u00F3n de ",
+                    React.createElement("b", null, "'Confirmar'"),
+                    " para eliminar la incidencia ",
+                    React.createElement("b", null, "PERMANENTEMENTE")))));
     }
     else {
         return (React.createElement("div", null,
@@ -37825,9 +37852,18 @@ exports.createIncidencia = function (newIncidencia) {
     });
 };
 exports.editIncidencia = function (incidencia) {
-    console.log(incidencia);
     return axios_1.default
         .post('api/incidencias/edit', incidencia, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .catch(function (err) {
+        console.log(err);
+    });
+};
+exports.deleteIncidencia = function (id) {
+    console.log(id);
+    return axios_1.default
+        .post('api/incidencias/remove', { id: id }, {
         headers: { 'Content-Type': 'application/json' }
     })
         .catch(function (err) {
@@ -38396,7 +38432,7 @@ var FormularioIncidencia = function (props) {
         var validation = fieldsValidation(title, description, category, build, floor, classroom, priority);
         if (validation) {
             console.log('Todos los elemenos están correctamente introducidos.');
-            $('#confirmationModal').modal('show');
+            $('#' + modalCreateIncidencia.id).modal('show');
         }
         else {
             'Hay errores.';
@@ -38435,7 +38471,7 @@ var FormularioIncidencia = function (props) {
         }
         else {
             var incidencia = {
-                id: 0,
+                id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
                 id_reporter: parseInt(localStorage.userId),
                 id_assigned: userSelected,
@@ -38486,11 +38522,9 @@ var FormularioIncidencia = function (props) {
         }), autocompleteInputValues = _a[0], setAutocompleteInputValues = _a[1];
         var handleClickTabsAssign = function (id) {
             if (id == 'group') {
-                console.log(url + "/" + widgetType + "/assignGroup");
                 history.push(url + "/" + widgetType + "/assignGroup");
             }
             else if (id == 'technical') {
-                console.log(url + "/" + widgetType + "/assignTechnical");
                 history.push(url + "/" + widgetType + "/assignTechnical");
             }
         };
@@ -38559,7 +38593,7 @@ var FormularioIncidencia = function (props) {
                 React.createElement("div", null,
                     "Pulse el bot\u00F3n de ",
                     React.createElement("b", null, "'Confirmar'"),
-                    " si los cambios realizados en la incidencia son correctos.")),
+                    " si los datos introducidos son correctos.")),
             React.createElement(Button_1.default, { buttonInfo: createIncidenciaButton, handleClick: handleClickCreateIncidencia }))));
 };
 exports.default = FormularioIncidencia;
