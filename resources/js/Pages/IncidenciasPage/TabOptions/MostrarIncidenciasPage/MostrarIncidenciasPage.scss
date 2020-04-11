@@ -103,7 +103,7 @@
 
                         &--bg-red {
                             @extend .columna;
-                            background-color: rgba($color: $red_light_color, $alpha: 0.9);
+                            background-color: rgba($color: $red_color, $alpha: 0.9);
                             color: $white_color;
                         }
 
@@ -121,6 +121,7 @@
 
                         &--bg-primary {
                             @extend .columna;
+                            margin: $default_padding*3 $default_padding;
                             background-color: rgba($color: $primary_color, $alpha: 0.9);
                             color: $white_color;
                         }

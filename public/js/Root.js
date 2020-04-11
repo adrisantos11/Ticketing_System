@@ -2250,7 +2250,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".incidenciasList-container {\n  height: 100%;\n}\n.incidenciasList-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  height: 10%;\n  padding-left: 1rem;\n}\n.incidenciasList-container .filtrar-container .dropdown {\n  margin-left: 0.5rem;\n  padding-right: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  margin-left: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container .btn-group {\n  margin: 0 0.5rem;\n}\n.incidenciasList-container .filtrar-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n}\n.incidenciasList-container .table-container {\n  height: auto;\n  max-height: 80%;\n  overflow-y: scroll;\n  box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);\n  padding: 0.5rem;\n}\n.incidenciasList-container .table-container .table {\n  height: 100%;\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr:first-child {\n  width: 8%;\n}\n.incidenciasList-container .table-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.incidenciasList-container .table-container .table tbody tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr th {\n  width: 8%;\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr .columna, .incidenciasList-container .table-container .table tbody tr .columna--bg-primary, .incidenciasList-container .table-container .table tbody tr .columna--bg-green, .incidenciasList-container .table-container .table tbody tr .columna--bg-orange, .incidenciasList-container .table-container .table tbody tr .columna--bg-red, .incidenciasList-container .table-container .table tbody tr .columna--green, .incidenciasList-container .table-container .table tbody tr .columna--orange, .incidenciasList-container .table-container .table tbody tr .columna--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--orange {\n  color: #e78738;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--green {\n  color: #07a744;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-red {\n  background-color: rgba(247, 100, 115, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-orange {\n  background-color: rgba(231, 135, 56, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-green {\n  background-color: rgba(7, 167, 68, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-primary {\n  background-color: rgba(54, 133, 236, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .footer-container {\n  height: 10%;\n  padding: 0.5rem 1rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-content: center;\n  align-items: center;\n}\n.incidenciasList-container .footer-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n  margin: 0 2rem;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span, .incidenciasList-container .footer-container .dataSelection-container--filter .span--green, .incidenciasList-container .footer-container .dataSelection-container--filter .span--red, .incidenciasList-container .footer-container .dataSelection-container--filter .span--orange, .incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  font-weight: bold;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  color: #3685EC;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--orange {\n  color: #e78738;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--red {\n  color: #dc3545;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--green {\n  color: #07a744;\n}", ""]);
+exports.push([module.i, ".incidenciasList-container {\n  height: 100%;\n}\n.incidenciasList-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  height: 10%;\n  padding-left: 1rem;\n}\n.incidenciasList-container .filtrar-container .dropdown {\n  margin-left: 0.5rem;\n  padding-right: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  margin-left: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container .btn-group {\n  margin: 0 0.5rem;\n}\n.incidenciasList-container .filtrar-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n}\n.incidenciasList-container .table-container {\n  height: auto;\n  max-height: 80%;\n  overflow-y: scroll;\n  box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);\n  padding: 0.5rem;\n}\n.incidenciasList-container .table-container .table {\n  height: 100%;\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr:first-child {\n  width: 8%;\n}\n.incidenciasList-container .table-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.incidenciasList-container .table-container .table tbody tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr th {\n  width: 8%;\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr .columna, .incidenciasList-container .table-container .table tbody tr .columna--bg-primary, .incidenciasList-container .table-container .table tbody tr .columna--bg-green, .incidenciasList-container .table-container .table tbody tr .columna--bg-orange, .incidenciasList-container .table-container .table tbody tr .columna--bg-red, .incidenciasList-container .table-container .table tbody tr .columna--green, .incidenciasList-container .table-container .table tbody tr .columna--orange, .incidenciasList-container .table-container .table tbody tr .columna--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--orange {\n  color: #e78738;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--green {\n  color: #07a744;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-red {\n  background-color: rgba(220, 53, 69, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-orange {\n  background-color: rgba(231, 135, 56, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-green {\n  background-color: rgba(7, 167, 68, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-primary {\n  margin: 1.5rem 0.5rem;\n  background-color: rgba(54, 133, 236, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .footer-container {\n  height: 10%;\n  padding: 0.5rem 1rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-content: center;\n  align-items: center;\n}\n.incidenciasList-container .footer-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n  margin: 0 2rem;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span, .incidenciasList-container .footer-container .dataSelection-container--filter .span--green, .incidenciasList-container .footer-container .dataSelection-container--filter .span--red, .incidenciasList-container .footer-container .dataSelection-container--filter .span--orange, .incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  font-weight: bold;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  color: #3685EC;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--orange {\n  color: #e78738;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--red {\n  color: #dc3545;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--green {\n  color: #07a744;\n}", ""]);
 
 // exports
 
@@ -36673,10 +36673,11 @@ var IncidenciaViewPage = function () {
             console.log(incidencia.id_reporter);
             console.log(userId);
             if (incidencia.id_reporter == userId) {
-                setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [true, false, true], itemActive: tabSelected }));
+                setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [true, true, false], itemActive: tabSelected }));
             }
             else {
-                setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [false, false, true], itemActive: null }));
+                setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [false, true, false], itemActive: 1 }));
+                history.push('/home/incidencia-view/' + idIncidencia + '/comments');
             }
         }
     }, [incidencia]);
@@ -37068,8 +37069,6 @@ var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incid
 var MostrarIncidenciasPage = function () {
     var _a = React.useState(false), incidenciasLoaded = _a[0], setIncidenciasLoaded = _a[1];
     var _b = React.useState([]), incidencias = _b[0], setIncidencias = _b[1];
-    var priorityText = '';
-    var priorityColor = '';
     var userRol = localStorage.userRol;
     var _c = React.useState(''), orderBy = _c[0], setOrderBy = _c[1];
     var headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad', 'Estado', 'Fecha límite', '¿Asignada?'];
@@ -37082,6 +37081,7 @@ var MostrarIncidenciasPage = function () {
         dropdownItems.push('Sin asignar');
         dropdownIds.push('no_assigned');
     }
+    // Datos con los que se va a cargar el dropdown con las opción de ordenación de las incidencias.
     var _d = React.useState({
         id: 1,
         groupName: "Seleccionar...",
@@ -37090,54 +37090,88 @@ var MostrarIncidenciasPage = function () {
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), adminDropdown = _d[0], setAdminDropdown = _d[1];
+    }), orderByDropdown = _d[0], setOrderByDropdown = _d[1];
+    var drawFooter = function (orderBy, sizesList, colorsList) {
+        var helperList = [];
+        /**
+         * En el caso en el que orderBy sea 'priority', 'category' o 'state', mandamos mapear el objeto de 'sizes' del resultado
+         * y se hace recuento de la cantidad de incidencias que hay dentro de cada tipo dentro de la categoría.
+         *
+         * -------------------- EJEMPLO --------------------
+         * Si la categoría es 'priority', se hace recuento de la incidencias que hay en:
+         *      - Critial
+         *      - Important
+         *      - Trivial
+         * -------------------------------------------------
+         * Para ello se hace uso de una lista auxiliar en la que se iran guadando los tipos devueltos y la cantidad.
+         * En el caso en el que el tipo no exista en la lista, se añáde. Si existe, se añade uno al contador de ese tipo.
+         */
+        if (orderBy == 'priority' || orderBy == 'category' || orderBy == 'state') {
+            sizesList.map(function (element) {
+                var i = helperList.map(function (value) {
+                    return value.value;
+                }).indexOf(element.value);
+                if (i == -1) {
+                    helperList.push(element);
+                }
+                else {
+                    helperList[i].count = helperList[i].count + element.count;
+                }
+            });
+            /**
+             * Se recorre la lista auxiliar creada para visualizar los datos obtenidos de todos los tipos de la categoría.
+             * Para ello se crea un footer con el nombre del tipo y la cantidad de incidencias coincidentes con el tipo.
+             */
+            helperList.map(function (value, index) {
+                setDivSelectedData(function (divSelectedData) { return __spreadArrays(divSelectedData, [
+                    React.createElement(React.Fragment, { key: index },
+                        React.createElement("div", { className: "vertical-separator" }),
+                        React.createElement("div", { className: 'dataSelection-container--filter' },
+                            React.createElement("b", null, value.value + ": "),
+                            React.createElement("span", { className: "span--" + colorsList[index] }, value.count)))
+                ]); });
+            });
+        }
+    };
     var _e = React.useState(0), incidenciasSize = _e[0], setIncidenciasSize = _e[1];
+    /**
+     * Función que obtiene las incidencias asociadas al usuario que ha iniciado sesión.
+     * @param user objeto que contiene el id del usuario.
+     * @param orderBy String que indentifica en qué orden se tiene que extraer las incidencias de la BBDD.
+     */
     var getIncidenciasUser = function (user, orderBy) {
         setDivSelectedData([]);
         if (userRol == 'technical') {
-            console.log('Hola');
+            // En el caso en el que orderBy esté vacío, mandamos que se obtengan las incidencias ordenads por 'Prioridadd'
             if (orderBy == '') {
                 TechnicalUtilities_1.getTechnicalIncidencias(user, 'priority').then(function (res) {
-                    console.log(res);
-                    setIncidenciasSize(res.length);
-                    setIncidencias(res);
+                    setIncidenciasSize(res.data.length);
+                    setIncidencias(res.data);
+                    drawFooter('priority', res.sizes, res.colors);
+                });
+            }
+            else {
+                TechnicalUtilities_1.getTechnicalIncidencias(user, orderBy).then(function (res) {
+                    setIncidenciasSize(res.data.length);
+                    setIncidencias(res.data);
+                    drawFooter(orderBy, res.sizes, res.colors);
                 });
             }
         }
         else if (userRol == 'supervisor') {
+            // En el caso en el que orderBy esté vacío, se manda obtener las incidencias ordenads por 'Prioridadd'
             if (orderBy == '') {
                 SupervisorUtilities_1.getSupervisorIncidencias(user, 'priority').then(function (res) {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
+                    drawFooter('priority', res.sizes, res.colors);
                 });
             }
             else {
                 SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
-                    var helperList = [];
-                    if (orderBy == 'priority' || orderBy == 'category' || orderBy == 'state') {
-                        res.sizes.map(function (element) {
-                            var i = helperList.map(function (value) {
-                                return value.value;
-                            }).indexOf(element.value);
-                            if (i == -1) {
-                                helperList.push(element);
-                            }
-                            else {
-                                helperList[i].count = helperList[i].count + element.count;
-                            }
-                        });
-                        helperList.map(function (value, index) {
-                            setDivSelectedData(function (divSelectedData) { return __spreadArrays(divSelectedData, [
-                                React.createElement(React.Fragment, { key: index },
-                                    React.createElement("div", { className: "vertical-separator" }),
-                                    React.createElement("div", { className: 'dataSelection-container--filter' },
-                                        React.createElement("b", null, value.value + ": "),
-                                        React.createElement("span", { className: "span--" + res.colors[index] }, value.count)))
-                            ]); });
-                        });
-                    }
+                    drawFooter(orderBy, res.sizes, res.colors);
                 });
             }
         }
@@ -37227,7 +37261,7 @@ var MostrarIncidenciasPage = function () {
             React.createElement("div", { className: "incidenciasList-container" },
                 React.createElement("div", { className: "filtrar-container" },
                     "Ordenar por:",
-                    React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown, onClick: handleClickItemDD }),
+                    React.createElement(Dropdown_1.default, { dropdownInfo: orderByDropdown, onClick: handleClickItemDD }),
                     React.createElement("div", { className: "vertical-separator" }),
                     React.createElement("div", { className: "selectboxes-container" },
                         "Filtrar por:",
@@ -37247,6 +37281,8 @@ var MostrarIncidenciasPage = function () {
                                 React.createElement("th", { scope: "col" }, headerList[6]),
                                 React.createElement("th", { scope: "col" }, headerList[7]))),
                         React.createElement("tbody", null, incidencias.map(function (element, index) {
+                            var priorityText = '';
+                            var priorityColor = '';
                             var isAssigned = 'SI';
                             if (element.id_assigned == null && element.id_team == null) {
                                 isAssigned = 'NO';
@@ -37304,7 +37340,7 @@ var MostrarIncidenciasPage = function () {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "incidenciasList-container" },
                 React.createElement("div", { className: "filtrar-container" },
-                    React.createElement(Dropdown_1.default, { dropdownInfo: adminDropdown, onClick: handleClickItemDD }),
+                    React.createElement(Dropdown_1.default, { dropdownInfo: orderByDropdown, onClick: handleClickItemDD }),
                     React.createElement("div", { className: "vertical-separator" }),
                     React.createElement("div", { className: "selectboxes-container" },
                         "Filtrar por:",
@@ -37323,6 +37359,8 @@ var MostrarIncidenciasPage = function () {
                                 React.createElement("th", { scope: "col" }, headerList[5]),
                                 React.createElement("th", { scope: "col" }, headerList[6]))),
                         React.createElement("tbody", null, incidencias.map(function (element, index) {
+                            var priorityText = '';
+                            var priorityColor = '';
                             if (element.priority == 'critical') {
                                 priorityColor = '--red';
                                 priorityText = 'crítica';
@@ -37335,6 +37373,24 @@ var MostrarIncidenciasPage = function () {
                                 priorityColor = '--green';
                                 priorityText = 'trivial';
                             }
+                            var state;
+                            var stateColor = '';
+                            if (element.state == 'todo') {
+                                state = 'Pendiente';
+                                stateColor = '--bg-primary';
+                            }
+                            else if (element.state == 'doing') {
+                                state = 'En proceso';
+                                stateColor = '--bg-orange';
+                            }
+                            else if (element.state == 'blocked') {
+                                state = 'Bloqueado';
+                                stateColor = '--bg-red';
+                            }
+                            else if (element.state == 'done') {
+                                state = 'Solucionado';
+                                stateColor = '--bg-green';
+                            }
                             return (React.createElement("tr", { key: index },
                                 React.createElement("th", { scope: "row" }, "#" + element.id),
                                 React.createElement("td", null,
@@ -37342,10 +37398,18 @@ var MostrarIncidenciasPage = function () {
                                         React.createElement("b", null, element.title))),
                                 React.createElement("td", null, element.description),
                                 React.createElement("td", null, element.category),
-                                React.createElement("td", { className: "columna-prioridad" + priorityColor }, priorityText),
-                                React.createElement("td", null, element.state),
+                                React.createElement("td", { className: "columna" + priorityColor },
+                                    React.createElement("span", null, priorityText)),
+                                React.createElement("td", { className: "columna" + stateColor },
+                                    React.createElement("span", null, state)),
                                 React.createElement("td", null, element.limit_date)));
-                        })))))));
+                        })))),
+                React.createElement("div", { className: 'footer-container' },
+                    React.createElement("div", { className: "dataSelection-container" },
+                        React.createElement("span", null,
+                            "N\u00BA total de incidencias filtradas: ",
+                            React.createElement("b", null, incidenciasSize))),
+                    divSelectedData))));
     }
     else {
         return (React.createElement("div", null, "No se han cargado las incidencias."));
@@ -38486,6 +38550,8 @@ var FormularioIncidencia = function (props) {
                 state: 'todo'
             };
             IncidenciasUtilities_1.createIncidencia(incidencia);
+            $('#' + modalCreateIncidencia.id).modal('hide');
+            history.push('/home/incidencias/show');
         }
         else {
             var incidencia = {
@@ -38510,6 +38576,8 @@ var FormularioIncidencia = function (props) {
             };
             console.log('Editar....');
             IncidenciasUtilities_1.editIncidencia(incidencia);
+            $('#' + modalCreateIncidencia.id).modal('hide');
+            history.push('/home/incidencia-view/' + props.formularioProps.incidenciaData.id + '/comments');
         }
     };
     var assignUser = function (userRol, url) {

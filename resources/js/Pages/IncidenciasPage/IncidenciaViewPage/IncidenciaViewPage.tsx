@@ -138,16 +138,17 @@ const IncidenciaViewPage = () => {
             if (incidencia.id_reporter == userId) {
                 setTabsOptions({
                     ...tabsOptions,
-                    enabledList: [true, false, true],
+                    enabledList: [true, true, false],
                     itemActive: tabSelected
                 })
-    
+                
             } else {
                 setTabsOptions({
                     ...tabsOptions,
-                    enabledList: [false, false, true],
-                    itemActive: null
+                    enabledList: [false, true, false],
+                    itemActive: 1
                 })
+                history.push('/home/incidencia-view/'+idIncidencia+'/comments')
     
             }
         }

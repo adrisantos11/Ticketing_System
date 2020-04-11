@@ -13,8 +13,6 @@ import { getFilters } from '../../../../Utilities/Incidencias/IncidenciasUtiliti
 const MostrarIncidenciasPage = () => {
     const [incidenciasLoaded, setIncidenciasLoaded] = React.useState(false);
     const [incidencias, setIncidencias] = React.useState([]);
-    let priorityText='';
-    let priorityColor='';
     const userRol = localStorage.userRol;
     const [orderBy, setOrderBy] = React.useState('');
     const headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad','Estado','Fecha límite', '¿Asignada?']
@@ -30,8 +28,8 @@ const MostrarIncidenciasPage = () => {
         dropdownIds.push('no_assigned');
     } 
 
-    
-    const [adminDropdown, setAdminDropdown] = React.useState<DropdownModel>({
+    // Datos con los que se va a cargar el dropdown con las opción de ordenación de las incidencias.
+    const [orderByDropdown, setOrderByDropdown] = React.useState<DropdownModel>({
         id: 1,
         groupName: "Seleccionar...",
         groupItems: dropdownItems,
@@ -41,49 +39,85 @@ const MostrarIncidenciasPage = () => {
         extraClass: '',
     });
 
+    const drawFooter = (orderBy: string, sizesList: any[], colorsList: any[]) => {
+        let helperList: { value: any; count: any; }[] = [];
+        /**
+         * En el caso en el que orderBy sea 'priority', 'category' o 'state', mandamos mapear el objeto de 'sizes' del resultado
+         * y se hace recuento de la cantidad de incidencias que hay dentro de cada tipo dentro de la categoría.
+         * 
+         * -------------------- EJEMPLO --------------------
+         * Si la categoría es 'priority', se hace recuento de la incidencias que hay en:
+         *      - Critial
+         *      - Important
+         *      - Trivial
+         * -------------------------------------------------
+         * Para ello se hace uso de una lista auxiliar en la que se iran guadando los tipos devueltos y la cantidad.
+         * En el caso en el que el tipo no exista en la lista, se añáde. Si existe, se añade uno al contador de ese tipo.
+         */
+        if (orderBy == 'priority' || orderBy == 'category' || orderBy == 'state') {
+            sizesList.map((element: { value: any; count: any;}) => {
+                const i = helperList.map((value: { value: any;}) => {
+                    return value.value
+                }).indexOf(element.value);
+                if (i == -1) {
+                    helperList.push(element);
+                } else {
+                    helperList[i].count = helperList[i].count+element.count;
+                }
+            })
+
+            /**
+             * Se recorre la lista auxiliar creada para visualizar los datos obtenidos de todos los tipos de la categoría.
+             * Para ello se crea un footer con el nombre del tipo y la cantidad de incidencias coincidentes con el tipo.
+             */
+            helperList.map((value, index) => {
+                setDivSelectedData(divSelectedData => [
+                    ...divSelectedData,
+                    <React.Fragment key={index}><div className="vertical-separator"></div><div className='dataSelection-container--filter'><b>{`${value.value
+                        }: `}</b><span className={`span--${colorsList[index]}`}>{value.count}</span></div></React.Fragment>
+                    ]);
+
+            })
+        }    
+
+    }
+
     const [incidenciasSize, setIncidenciasSize] = React.useState(0);
+    /**
+     * Función que obtiene las incidencias asociadas al usuario que ha iniciado sesión.
+     * @param user objeto que contiene el id del usuario.
+     * @param orderBy String que indentifica en qué orden se tiene que extraer las incidencias de la BBDD.
+     */
     const getIncidenciasUser = (user: any, orderBy: string) => {
         setDivSelectedData([]);
         if (userRol == 'technical') {
-            console.log('Hola');
+            // En el caso en el que orderBy esté vacío, mandamos que se obtengan las incidencias ordenads por 'Prioridadd'
             if(orderBy == '') {
                 getTechnicalIncidencias(user, 'priority').then(res => {
-                    console.log(res);
-                    setIncidenciasSize(res.length);
-                    setIncidencias(res);
+                    setIncidenciasSize(res.data.length);
+                    setIncidencias(res.data);
+                    drawFooter('priority', res.sizes, res.colors);
+                });
+            } else {
+                getTechnicalIncidencias(user, orderBy).then(res => {
+                    setIncidenciasSize(res.data.length);
+                    setIncidencias(res.data);
+                    drawFooter(orderBy, res.sizes, res.colors);
                 });
             }
         } else if (userRol == 'supervisor'){
+            // En el caso en el que orderBy esté vacío, se manda obtener las incidencias ordenads por 'Prioridadd'
             if(orderBy == '') {
                 getSupervisorIncidencias(user, 'priority').then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
+                    drawFooter('priority', res.sizes, res.colors);
                 });
             } else {
                 getSupervisorIncidencias(user, orderBy).then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
-                    let helperList: { value: any; count: any; }[] = [];
-                    if (orderBy == 'priority' || orderBy == 'category' || orderBy == 'state') {
-                        res.sizes.map((element: { value: any; count: any;}) => {
-                            const i = helperList.map((value: { value: any;}) => {
-                                return value.value
-                            }).indexOf(element.value);
-                            if (i == -1) {
-                                helperList.push(element);
-                            } else {
-                                helperList[i].count = helperList[i].count+element.count;
-                            }
-                        })
-                        helperList.map((value, index) => {
-                            setDivSelectedData(divSelectedData => [
-                                ...divSelectedData,
-                                <React.Fragment key={index}><div className="vertical-separator"></div><div className='dataSelection-container--filter'><b>{`${value.value
-                                    }: `}</b><span className={`span--${res.colors[index]}`}>{value.count}</span></div></React.Fragment>
-                                ]);
-    
-                        })
-                    }    
+                    drawFooter(orderBy, res.sizes,res.colors);
                 })
 
             }
@@ -181,7 +215,7 @@ const MostrarIncidenciasPage = () => {
             <div className="incidenciasList-container">
                 <div className="filtrar-container">
                     Ordenar por:
-                    <Dropdown dropdownInfo={adminDropdown} onClick={handleClickItemDD}></Dropdown>
+                    <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
                     <div className="vertical-separator"></div>
                     <div className="selectboxes-container">
                         Filtrar por:
@@ -213,6 +247,9 @@ const MostrarIncidenciasPage = () => {
                         <tbody>
                             {
                                 incidencias.map((element, index) => {
+                                    let priorityText='';
+                                    let priorityColor='';
+                                
                                     let isAssigned = 'SI';
                                     if (element.id_assigned == null && element.id_team == null) {
                                         isAssigned = 'NO';
@@ -264,7 +301,6 @@ const MostrarIncidenciasPage = () => {
                     </table>
                 </div>
                 <div className='footer-container'>
-                    {/* <p className='title-footer'>Datos de la selección</p> */}
                     <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
                     {
                         divSelectedData
@@ -278,7 +314,7 @@ const MostrarIncidenciasPage = () => {
                 <>
                 <div className="incidenciasList-container">
                     <div className="filtrar-container">
-                        <Dropdown dropdownInfo={adminDropdown} onClick={handleClickItemDD}></Dropdown>
+                        <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
                         <div className="vertical-separator"></div>
                         <div className="selectboxes-container">
                             Filtrar por:
@@ -308,6 +344,9 @@ const MostrarIncidenciasPage = () => {
                             <tbody>
                                 {
                                     incidencias.map((element, index) => {
+                                        let priorityText='';
+                                        let priorityColor='';
+                                    
                                         if (element.priority == 'critical') {
                                             priorityColor = '--red';
                                             priorityText = 'crítica';
@@ -320,14 +359,32 @@ const MostrarIncidenciasPage = () => {
                                             priorityColor = '--green'
                                             priorityText = 'trivial';
                                         }
+
+                                        let state;
+                                        let stateColor = '';
+                                        if (element.state == 'todo') {
+                                            state = 'Pendiente';
+                                            stateColor = '--bg-primary';
+                                        } else if (element.state == 'doing') {
+                                            state = 'En proceso';
+                                            stateColor = '--bg-orange';
+                                        } else if (element.state == 'blocked') {
+                                            state = 'Bloqueado';
+                                            stateColor = '--bg-red';
+                                        } else if (element.state == 'done') {
+                                            state = 'Solucionado';
+                                            stateColor = '--bg-green';
+    
+                                        }
+    
                                         return(
                                         <tr key={index}>
                                             <th scope="row">{`#${element.id}`}</th>
                                             <td><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
                                             <td>{element.description}</td>
                                             <td>{element.category}</td>
-                                            <td className={`columna-prioridad${priorityColor}`}>{priorityText}</td>
-                                            <td>{element.state}</td>
+                                            <td className={`columna${priorityColor}`}><span>{priorityText}</span></td>
+                                            <td className={`columna${stateColor}`}><span>{state}</span></td>
                                             <td>{element.limit_date}</td>
                                         </tr>
                                         )
@@ -335,6 +392,12 @@ const MostrarIncidenciasPage = () => {
                                 }
                             </tbody>
                         </table>
+                    </div>
+                    <div className='footer-container'>
+                    <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
+                    {
+                        divSelectedData
+                    }
                     </div>
                 </div>
                 </>

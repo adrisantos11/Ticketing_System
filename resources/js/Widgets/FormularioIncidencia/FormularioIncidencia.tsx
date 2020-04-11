@@ -510,6 +510,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 state: 'todo'
             }
             createIncidencia(incidencia);    
+            $('#'+modalCreateIncidencia.id).modal('hide'); 
+            history.push('/home/incidencias/show');
         } else {
             let incidencia: IncidenciaModel = {
                 id: props.formularioProps.incidenciaData.id,
@@ -532,7 +534,10 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 state: 'todo'
             }
             console.log('Editar....');
-            editIncidencia(incidencia);   
+            editIncidencia(incidencia);
+            $('#'+modalCreateIncidencia.id).modal('hide'); 
+            history.push('/home/incidencia-view/'+props.formularioProps.incidenciaData.id+'/comments');
+   
         }
     }
 
