@@ -37167,6 +37167,12 @@ var MostrarIncidenciasPage = function () {
                     drawFooter('priority', res.sizes, res.colors);
                 });
             }
+            else if (orderBy == 'no_assigned') {
+                SupervisorUtilities_1.getNoAssignedIncidencias(user).then(function (res) {
+                    setIncidenciasSize(res.length);
+                    setIncidencias(res);
+                });
+            }
             else {
                 SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
                     setIncidenciasSize(res.data.length);
@@ -38005,6 +38011,28 @@ exports.getSupervisorFilteredIncidencias = function (userId, idDropdown, idSelec
         userId: userId,
         idDropdown: idDropdown,
         idSelectboxList: idSelectboxList
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.getNoAssignedIncidencias = function (userId) {
+    return axios_1.default
+        .post('api/incidencias/supervisor/noAssigned', {
+        userId: userId
     }, {
         headers: { 'Content-Type': 'application/json' }
     })

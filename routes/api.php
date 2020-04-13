@@ -41,6 +41,7 @@ Route::namespace('Users')->group(function () {
     // -------- Controlador Supervisor --------
     Route::post('incidencias/supervisor/getIncidencias/{orderBy}', 'SupervisorController@getSupervisorIncidencias');
     Route::post('incidencias/supervisor/filtered', 'SupervisorController@getFilteredIncidencias');
+    Route::post('incidencias/supervisor/noAssigned', 'SupervisorController@getWithoutAssignIncidencias');
 
 });
 

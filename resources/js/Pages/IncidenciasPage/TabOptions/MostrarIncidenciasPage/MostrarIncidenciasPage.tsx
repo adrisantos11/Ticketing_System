@@ -6,7 +6,7 @@ import Selectbox from '../../../../Components/Selectbox/SelectBox';
 import { Link } from 'react-router-dom';
 
 import { getTechnicalIncidencias } from '../../../../Utilities/Incidencias/TechnicalUtilities'
-import { getSupervisorIncidencias, getSupervisorFilteredIncidencias } from '../../../../Utilities/Incidencias/SupervisorUtilities'
+import { getSupervisorIncidencias, getSupervisorFilteredIncidencias, getNoAssignedIncidencias } from '../../../../Utilities/Incidencias/SupervisorUtilities'
 
 import { getFilters } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
 
@@ -112,6 +112,11 @@ const MostrarIncidenciasPage = () => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
+                });
+            } else if (orderBy == 'no_assigned') {
+                getNoAssignedIncidencias(user).then(res => {
+                    setIncidenciasSize(res.length);
+                    setIncidencias(res);
                 });
             } else {
                 getSupervisorIncidencias(user, orderBy).then(res => {
