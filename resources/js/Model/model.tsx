@@ -88,3 +88,10 @@ export interface ModalModel {
     title: string,
     buttonProps: ButtonModel,
 }
+
+export interface DataCardModel {
+    id: number,
+    title: string,
+    popoverIcon: string,
+    popoverText: string
+}

@@ -110,7 +110,10 @@
         width: 50%;
         // background-color: $grey_color_184;
         max-height: 100%;
-        padding: 0 $default_padding*3;
+        box-shadow: inset 0px 0px 21px -8px rgba(0,0,0,0.75);
+        margin: $default_padding*4 0;
+        margin-right: $default_padding*4;
+        padding: 0 $default_padding*5;
         .createIncidencia-container {
             width: 100%;
             padding: 0;

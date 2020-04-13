@@ -1,0 +1,30 @@
+@import '../../../sass/app.scss';
+
+.dataCard-container {
+    width: auto;
+    .dataCard-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: $primary_color;
+        color: $white_color;
+        font-weight: bold;
+        padding: $default_padding*0.5 $default_padding*2;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        .info-icon {
+            color: $white_color;
+            font-size: $font_size*1.4;
+            cursor: pointer;
+        }
+    }
+
+    .dataCard-body {
+
+    }
+
+    
+}

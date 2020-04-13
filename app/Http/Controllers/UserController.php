@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 use App\Incidencia;
 
@@ -116,5 +117,11 @@ class UserController extends Controller
         } catch (JWTException $th) {
             return response()->json(['error' => 'no se puede cerrar sesión']);
         }
+    }
+
+    public function getUserLogged(Request $request) {
+        $user_id = $request->id;
+        $user    = DB::table('users')->select('id', 'name', 'surname1', 'surname2', 'exp', 'email', 'role', 'phone')->where('id', $user_id)->get();
+        return $user;
     }
 }

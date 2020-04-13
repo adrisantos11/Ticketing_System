@@ -149,7 +149,6 @@ const IncidenciaViewPage = () => {
                     itemActive: 1
                 })
                 history.push('/home/incidencia-view/'+idIncidencia+'/comments')
-    
             }
         }
     }, [incidencia]);

@@ -90,3 +90,19 @@ export const logout = () => {
             console.log(err);
     })
 }
+
+export const getUserLogged = (id: number) => {
+    return axios
+    .post('api/getUser',{
+        id: id
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => {
+        return res.data;
+    })
+    .catch(err => {
+        if(err)
+            console.log(err);
+    })
+}

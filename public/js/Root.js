@@ -2029,6 +2029,25 @@ exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .but
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/DataCard/DataCard.scss":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/DataCard/DataCard.scss ***!
+  \*******************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".dataCard-container {\n  width: auto;\n}\n.dataCard-container .dataCard-header {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  background-color: #3685EC;\n  color: #FFFFFF;\n  font-weight: bold;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n.dataCard-container .dataCard-header .info-icon {\n  color: #FFFFFF;\n  font-size: 1.3132rem;\n  cursor: pointer;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Dropdown/Dropdown.scss":
 /*!*******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Dropdown/Dropdown.scss ***!
@@ -2193,7 +2212,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 1.876rem;\n  margin: 0 auto;\n  padding-bottom: 0.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n  margin: 1.5rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 50%;\n  max-height: 100%;\n  padding: 0 1.5rem;\n}\n.incidenciaview-container .comments-container .createIncidencia-container {\n  width: 100%;\n  padding: 0;\n}\n.incidenciaview-container .comments-container .createIncidencia-container .data-container .asignacion-container .assign-container {\n  width: 60%;\n}", ""]);
+exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 1.876rem;\n  margin: 0 auto;\n  padding-bottom: 0.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n  margin: 1.5rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 50%;\n  max-height: 100%;\n  box-shadow: inset 0px 0px 21px -8px rgba(0, 0, 0, 0.75);\n  margin: 2rem 0;\n  margin-right: 2rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .comments-container .createIncidencia-container {\n  width: 100%;\n  padding: 0;\n}\n.incidenciaview-container .comments-container .createIncidencia-container .data-container .asignacion-container .assign-container {\n  width: 60%;\n}", ""]);
 
 // exports
 
@@ -2295,6 +2314,25 @@ exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-directi
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/PerfilPage/PerfilPage.scss":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/PerfilPage/PerfilPage.scss ***!
+  \******************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 6%;\n  background-color: white;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 1.876rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.407rem;\n  margin: 0;\n  font-style: italic;\n  margin-right: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon, .perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  font-size: 1.2194rem;\n  color: #3685EC;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 0 1rem;\n}\n.perfilpage-container .bodyperfil-container .bodydescription-container .title {\n  font-size: 2.345rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 25%;\n  height: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 70%;\n  background-color: red;\n  height: 100%;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss":
 /*!****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss ***!
@@ -2307,7 +2345,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: bold;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  padding: 1rem 1rem;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.1256rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin: 1.5rem 0;\n  width: 35%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}", ""]);
+exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: bold;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  padding: 1rem 1rem;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.1256rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}", ""]);
 
 // exports
 
@@ -35888,6 +35926,73 @@ exports.default = Button;
 
 /***/ }),
 
+/***/ "./resources/js/Components/DataCard/DataCard.scss":
+/*!********************************************************!*\
+  !*** ./resources/js/Components/DataCard/DataCard.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./DataCard.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/DataCard/DataCard.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Components/DataCard/DataCard.tsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/Components/DataCard/DataCard.tsx ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./DataCard.scss */ "./resources/js/Components/DataCard/DataCard.scss");
+var DataCard = function (props) {
+    var _a = React.useState(false), iconClicked = _a[0], setIconClicked = _a[1];
+    var showPopover = function () {
+        if (iconClicked) {
+            $('#info').popover('hide');
+            setIconClicked(false);
+        }
+        else {
+            $('#info').popover('show');
+            setIconClicked(true);
+        }
+    };
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: "dataCard-container" },
+            React.createElement("div", { className: "dataCard-header" },
+                props.dataCardInfo.title,
+                React.createElement("span", { id: 'info', className: "info-icon", "data-toggle": "popover", "data-content": props.dataCardInfo.popoverText, onClick: showPopover },
+                    React.createElement("i", { className: "far " + props.dataCardInfo.popoverIcon }))),
+            React.createElement("div", { className: "dataCard-body" }, props.children))));
+};
+exports.default = DataCard;
+
+
+/***/ }),
+
 /***/ "./resources/js/Components/Dropdown/Dropdown.scss":
 /*!********************************************************!*\
   !*** ./resources/js/Components/Dropdown/Dropdown.scss ***!
@@ -37709,6 +37814,36 @@ exports.default = MainPage;
 
 /***/ }),
 
+/***/ "./resources/js/Pages/PerfilPage/PerfilPage.scss":
+/*!*******************************************************!*\
+  !*** ./resources/js/Pages/PerfilPage/PerfilPage.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./PerfilPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/PerfilPage/PerfilPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/PerfilPage/PerfilPage.tsx":
 /*!******************************************************!*\
   !*** ./resources/js/Pages/PerfilPage/PerfilPage.tsx ***!
@@ -37718,11 +37853,119 @@ exports.default = MainPage;
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./PerfilPage.scss */ "./resources/js/Pages/PerfilPage/PerfilPage.scss");
+var DataCard_1 = __webpack_require__(/*! ../../Components/DataCard/DataCard */ "./resources/js/Components/DataCard/DataCard.tsx");
+var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
 var PerfilPage = function () {
-    return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: "perfilpage-container" }, "Eso es el perfil.")));
+    var _a = React.useState({
+        id: 1,
+        title: 'Información sobre el usuario',
+        popoverIcon: 'fa-question-circle',
+        popoverText: 'En este apartado se muestran todos los datos de su perfil.'
+    }), perfilDC = _a[0], setperfilDC = _a[1];
+    var _b = React.useState({
+        id: localStorage.userId,
+        name: 'Hola',
+        surname1: '',
+        surname2: '',
+        exp: '',
+        email: '',
+        role: '',
+        phone: ''
+    }), userLogged = _b[0], setUserLogged = _b[1];
+    var _c = React.useState(false), profileIsLoaded = _c[0], setProfileIsLoaded = _c[1];
+    React.useEffect(function () {
+        Authentication_1.getUserLogged(localStorage.userId).then(function (res) {
+            try {
+                if (res) {
+                    console.log(res);
+                    var rol = void 0;
+                    if (res[0].role == 'technical') {
+                        rol = 'Técnico';
+                    }
+                    else if (res[0].role == 'supervisor') {
+                        rol = 'Supervisor';
+                    }
+                    setUserLogged(__assign(__assign({}, userLogged), { name: res[0].name, surname1: res[0].surname1, surname2: res[0].surname2, exp: res[0].exp, email: res[0].email, role: rol, phone: res[0].phone }));
+                    setProfileIsLoaded(true);
+                }
+                else {
+                    setProfileIsLoaded(false);
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
+        });
+        console.log(userLogged);
+    }, []);
+    if (profileIsLoaded) {
+        return (React.createElement(React.Fragment, null,
+            React.createElement("div", { className: "perfilpage-container" },
+                React.createElement("div", { className: 'headerperfil-container' }),
+                React.createElement("div", { className: "photo-container" },
+                    React.createElement("div", { className: "photo-container" },
+                        React.createElement("div", { className: "photo" },
+                            React.createElement("img", { src: "https://www.cobdoglaps.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg", alt: "" })),
+                        React.createElement("p", { className: 'p-name' }, userLogged.name + " " + userLogged.surname1 + " " + userLogged.surname2),
+                        React.createElement("div", { className: "role-container" },
+                            React.createElement("p", { className: 'p-role' }, userLogged.role),
+                            React.createElement("span", { className: 'settings-icon' },
+                                React.createElement("i", { className: "fas fa-cog" }))))),
+                React.createElement("div", { className: "bodyperfil-container" },
+                    React.createElement("div", { className: "bodydescription-container" },
+                        React.createElement("p", { className: "title" }, "Perfil"),
+                        React.createElement("p", null, "En este apartado encontrar\u00E1 toda la informaci\u00F3n relacionada con usted: incidencias, datos del perfil, configuraci\u00F3n de cuenta...")),
+                    React.createElement("div", { className: "content-container" },
+                        React.createElement("div", { className: "left-container" },
+                            React.createElement(DataCard_1.default, { dataCardInfo: perfilDC },
+                                React.createElement(React.Fragment, null,
+                                    React.createElement("div", { className: "inner-body" },
+                                        React.createElement("div", { className: "data-row" },
+                                            React.createElement("p", { className: 'static-text' }, "Nombre: "),
+                                            React.createElement("p", null, userLogged.name)),
+                                        React.createElement("div", { className: "horizontal-separator" }),
+                                        React.createElement("div", { className: "data-row" },
+                                            React.createElement("p", { className: 'static-text' }, "Primer apellido: "),
+                                            React.createElement("p", null, userLogged.surname1)),
+                                        React.createElement("div", { className: "horizontal-separator" }),
+                                        React.createElement("div", { className: "data-row" },
+                                            React.createElement("p", { className: 'static-text' }, "Segundo apellido: "),
+                                            React.createElement("p", null, userLogged.surname2)),
+                                        React.createElement("div", { className: "horizontal-separator" }),
+                                        React.createElement("div", { className: "data-row" },
+                                            React.createElement("p", { className: 'static-text' }, "Expediente: "),
+                                            React.createElement("p", null, userLogged.exp)),
+                                        React.createElement("div", { className: "horizontal-separator" }),
+                                        React.createElement("div", { className: "data-row" },
+                                            React.createElement("p", { className: 'static-text' }, "Direcci\u00F3n de correo: "),
+                                            React.createElement("p", null, userLogged.email)),
+                                        React.createElement("div", { className: "horizontal-separator" }),
+                                        React.createElement("div", { className: "data-row" },
+                                            React.createElement("p", { className: 'static-text' }, "Rol: "),
+                                            React.createElement("p", null, userLogged.role)),
+                                        React.createElement("div", { className: "horizontal-separator" }),
+                                        React.createElement("div", { className: "data-row" },
+                                            React.createElement("p", { className: 'static-text' }, "Tel\u00E9fono de contacto: "),
+                                            React.createElement("p", null, userLogged.phone)))))),
+                        React.createElement("div", { className: "right-container" }))))));
+    }
+    else {
+        return (React.createElement(React.Fragment, null, "no se han cargado los datos."));
+    }
 };
 exports.default = PerfilPage;
 
@@ -37817,6 +38060,21 @@ exports.logout = function () {
     })
         .then(function (res) {
         return res;
+    })
+        .catch(function (err) {
+        if (err)
+            console.log(err);
+    });
+};
+exports.getUserLogged = function (id) {
+    return axios_1.default
+        .post('api/getUser', {
+        id: id
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
     })
         .catch(function (err) {
         if (err)

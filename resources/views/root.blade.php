@@ -30,6 +30,9 @@
             font-family: 'Sen', sans-serif;
 
         }
+        .popover {
+        font-family: 'Sen', sans-serif;
+        }
     </style>
 </head>
 
