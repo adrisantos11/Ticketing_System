@@ -20,7 +20,7 @@ class CreateIncidenciasTable extends Migration
             $table->integer('id_assigned')->nullable();
             $table->integer('id_team')->nullable();
             $table->string('title');
-            $table->string('description')->nullable()->default('Without description');
+            $table->longText('description')->nullable();
             $table->string('category');
             $table->string('build');
             $table->integer('floor');

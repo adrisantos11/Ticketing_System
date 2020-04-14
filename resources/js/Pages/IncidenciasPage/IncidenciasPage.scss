@@ -5,7 +5,7 @@
     height: 100%;
 
     .title-container {
-        height: 25%;
+        height: $default_padding*29;
         padding: $default_padding $default_padding*2;
         p {
             margin: 0;
@@ -31,7 +31,7 @@
 
         .dropdowndata-container {
             height: 95%;
-            background-color: $grey_color_250;
+            // background-color: $grey_color_250;
 
         }
     }

@@ -15,56 +15,49 @@ const PerfilPage = () => {
 
     const [userLogged, setUserLogged] = React.useState({
         id: localStorage.userId,
-        name: 'Hola',
+        name: '',
         surname1: '',
         surname2: '',
         exp: '',
         email: '',
         role: '',
-        phone: ''
+        phone: '',
+        image_url: ''
     });
-    const [profileIsLoaded, setProfileIsLoaded] = React.useState(false);
 
    
     React.useEffect(() => {
         getUserLogged(localStorage.userId).then(res => {
             try {
-                if (res) {
-                    console.log(res);
-                    let rol;
-                    if (res[0].role == 'technical') {
-                        rol = 'Técnico'
-                    } else if (res[0].role == 'supervisor') {
-                        rol = 'Supervisor'
-                    }
-                    setUserLogged({
-                        ...userLogged,
-                        name: res[0].name,
-                        surname1: res[0].surname1,
-                        surname2: res[0].surname2,
-                        exp: res[0].exp,
-                        email: res[0].email,
-                        role: rol,
-                        phone: res[0].phone
-                    })
-                    setProfileIsLoaded(true);
-                    
-                } else {
-                    setProfileIsLoaded(false);
-                } 
+                console.log(res);
+                let rol;
+                if (res[0].role == 'technical') {
+                    rol = 'Técnico'
+                } else if (res[0].role == 'supervisor') {
+                    rol = 'Supervisor'
+                }
+                setUserLogged({
+                    ...userLogged,
+                    name: res[0].name,
+                    surname1: res[0].surname1,
+                    surname2: res[0].surname2,
+                    exp: res[0].exp,
+                    email: res[0].email,
+                    role: rol,
+                    phone: res[0].phone,
+                    image_url: res[0].image_url
+                })                    
             } catch (error) {
                 console.log(error);
             }
         });
-        console.log(userLogged);
     }, []);
 
-    if (profileIsLoaded) {
         return (
             <>
             <div className="perfilpage-container">     
                 <div className='headerperfil-container'>
-    
+                    <p className="title">Perfil del usuario</p>
                 </div>
                 <div className="photo-container">
                     {/* <div className="bg-header"></div>
@@ -72,7 +65,7 @@ const PerfilPage = () => {
                     <div className="photo-container">
                         <div className="photo">
                             {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" alt=""/> */}
-                            <img src="https://www.cobdoglaps.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg" alt=""/>
+                            <img src={userLogged.image_url} alt=""/>
                         </div>
                         <p className='p-name'>{`${userLogged.name} ${userLogged.surname1} ${userLogged.surname2}`}</p>
                         <div className="role-container">
@@ -83,7 +76,6 @@ const PerfilPage = () => {
                 </div>
                 <div className="bodyperfil-container">
                     <div className="bodydescription-container">
-                        <p className="title">Perfil</p>
                         <p>En este apartado encontrará toda la información relacionada con usted: incidencias, datos del perfil, configuración de cuenta...</p>
                         
                     </div>
@@ -166,13 +158,6 @@ const PerfilPage = () => {
             </div>
             </>
         )
-    } else {
-        return(
-            <>
-            no se han cargado los datos.
-            </>
-        )
-    }
 }
 
 export default PerfilPage;

@@ -20,6 +20,9 @@ const CreateIncidenciaPage = () => {
 
     return (
         <div className="createIncidencia-container">
+            <div className='info-container'>
+                Apartado para <b>crear una incidencia</b>. Deberá rellenar correctamente todos los campos para la correcta creación de la incidencia.
+            </div>
             <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
         </div>
         

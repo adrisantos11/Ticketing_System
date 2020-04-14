@@ -60,7 +60,7 @@ class IncidenciasPageController extends Controller
             'id_assigned'       => '',
             'id_team'           => '',
             'title'             => 'required|string',
-            'description'       => 'required|string|max:255',
+            'description'       => 'required|string',
             'category'          => 'required|string',
             'build'             => 'required',
             'floor'             => 'required|numeric',

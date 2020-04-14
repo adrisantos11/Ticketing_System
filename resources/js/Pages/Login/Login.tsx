@@ -30,7 +30,8 @@ const Login = () => {
         type: 'number',
         error_control_text: '',
         enabled: true,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: false
     });
 
     const [inputPassword, setInputPassword] = React.useState<InputModel>({
@@ -42,7 +43,8 @@ const Login = () => {
         type: 'password',
         error_control_text: '',
         enabled: true,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: false
     });
     
     const [userData, setUserData] = React.useState({

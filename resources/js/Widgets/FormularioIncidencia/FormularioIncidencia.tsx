@@ -112,7 +112,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         type: 'text',
         error_control_text: '',
         enabled: enableInput,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: false
     });
     const [descriptionInput, setDescriptionInput] = React.useState<InputModel>({
         id: 2,
@@ -123,7 +124,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         type: 'text',
         error_control_text: '',
         enabled: enableInput,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: true
     });
 
     const [categoryDropdown, setCategoryDropdown] = React.useState<DropdownModel>({
@@ -373,29 +375,20 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             validation = false;
         }
 
-        if (description != '') {
-            if (description.length > 240) {
-                setDescriptionInput({
-                    ...descriptionInput,
-                    error_control_text: 'El texto introducido excede los 240 caracteres. Tiene '+description.length+' caracteres.',
-                    color: 'red'
-                })
-                validation = false;
-            } else {
-                setDescriptionInput({
-                    ...descriptionInput,
-                    error_control_text: '',
-                    color: 'primary'
-                })
-                validation = true
-            }
-        } else {
+        if (description == '') {
             setDescriptionInput({
                 ...descriptionInput,
                 error_control_text: 'No se ha introducido ningún dato.',
                 color: 'red'
             })
             validation = false;
+        } else {
+            setDescriptionInput({
+                ...descriptionInput,
+                error_control_text: '',
+                color: 'primary'
+            })
+            validation = true
         }
 
         if (category != '') {

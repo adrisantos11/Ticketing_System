@@ -18,6 +18,7 @@ export interface InputModel {
     error_control_text: string;
     enabled: boolean;
     inputSize: string;
+    isTextArea: boolean;
 }
 
 export interface DropdownModel {

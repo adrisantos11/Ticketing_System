@@ -1,5 +1,10 @@
 @import '../../../../../sass/app.scss';
 
 .createIncidencia-container {
-    padding: 0 $default_padding*2;
+    padding: $default_padding*2 $default_padding*2;
+    background-color: $grey_color_250;
+
+    .info-container {
+        height: auto;
+    }
 }

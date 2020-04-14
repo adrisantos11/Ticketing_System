@@ -17,7 +17,8 @@ const AutocompleteInput: React.FunctionComponent<Props> = (props: Props) => {
         type: props.autocompleteInputInfo.typeInput,
         error_control_text: '',
         enabled: props.autocompleteInputInfo.enabled,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: false
     });
     const [userList, setUserList] = React.useState([])
     const [dataDivState, setDataDivState] = React.useState('')

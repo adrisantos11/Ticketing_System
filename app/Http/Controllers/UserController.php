@@ -121,7 +121,7 @@ class UserController extends Controller
 
     public function getUserLogged(Request $request) {
         $user_id = $request->id;
-        $user    = DB::table('users')->select('id', 'name', 'surname1', 'surname2', 'exp', 'email', 'role', 'phone')->where('id', $user_id)->get();
+        $user    = DB::table('users')->select('id', 'name', 'surname1', 'surname2', 'exp', 'email', 'role', 'phone', 'image_url')->where('id', $user_id)->get();
         return $user;
     }
 }

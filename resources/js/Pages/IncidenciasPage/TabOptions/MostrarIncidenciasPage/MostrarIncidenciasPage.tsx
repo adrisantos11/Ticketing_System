@@ -286,13 +286,19 @@ const MostrarIncidenciasPage = () => {
                                     } else if (element.state == 'done') {
                                         state = 'Solucionado';
                                         stateColor = '--bg-green';
-
+                                    }
+                                    
+                                    let description;
+                                    if (element.description.length > 90) {
+                                        description = element.description.substr(0, 90) + '...';
+                                    } else {
+                                        description = element.description;
                                     }
                                     return(
                                     <tr key={index}>
                                         <th scope="row">{`#${element.id}`}</th>
                                         <td><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
-                                        <td>{element.description}</td>
+                                        <td>{description}</td>
                                         <td>{element.category}</td>
                                         <td className={`columna${priorityColor}`}>{priorityText}</td>
                                         <td className={`columna${stateColor}`}>{state}</td>
@@ -381,12 +387,19 @@ const MostrarIncidenciasPage = () => {
                                             stateColor = '--bg-green';
     
                                         }
+
+                                        let description;
+                                        if (element.description.length > 90) {
+                                            description = element.description.substr(0, 90) + '...';
+                                        } else {
+                                            description = element.description;
+                                        }
     
                                         return(
                                         <tr key={index}>
                                             <th scope="row">{`#${element.id}`}</th>
                                             <td><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
-                                            <td>{element.description}</td>
+                                            <td>{description}</td>
                                             <td>{element.category}</td>
                                             <td className={`columna${priorityColor}`}><span>{priorityText}</span></td>
                                             <td className={`columna${stateColor}`}><span>{state}</span></td>

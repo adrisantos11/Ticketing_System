@@ -41,21 +41,41 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
         color = '--red';
         mostrar = '--mostrar'
     }
-
-    if (!props.inputInfo.enabled) {
-        input = (<input 
-            id = {props.inputInfo.id.toString()}
-            type={props.inputInfo.type} 
-            className={`form-control input_class${color} text-${color}`} 
-            aria-describedby="emailHelp" placeholder={props.inputInfo.placeholder}
-            onChange={handleChange} value={value} disabled/>)
+    if (!props.inputInfo.isTextArea) {
+        if (!props.inputInfo.enabled) {
+            input = (<input 
+                id = {props.inputInfo.id.toString()}
+                type={props.inputInfo.type} 
+                className={`form-control input_class${color} text-${color}`} 
+                placeholder={props.inputInfo.placeholder}
+                onChange={handleChange} value={value} disabled/>)
+        } else {
+            input = (<input 
+                id = {props.inputInfo.id.toString()}
+                type={props.inputInfo.type} 
+                className={`form-control input_class${color} text-${color}`} 
+                placeholder={props.inputInfo.placeholder}
+                onChange={handleChange} value={value}/>)
+        }
     } else {
-        input = (<input 
-            id = {props.inputInfo.id.toString()}
-            type={props.inputInfo.type} 
-            className={`form-control input_class${color} text-${color}`} 
-            aria-describedby="emailHelp" placeholder={props.inputInfo.placeholder}
-            onChange={handleChange} value={value}/>)
+        if (!props.inputInfo.enabled) {
+            input = (<textarea 
+                id = {props.inputInfo.id.toString()}
+                className={`form-control input_class${color} text-${color}`} 
+                placeholder={props.inputInfo.placeholder}
+                onChange={handleChange} 
+                value={value} 
+                rows={4}
+                disabled/>)
+        } else {
+            input = (<textarea 
+                id = {props.inputInfo.id.toString()}
+                className={`form-control input_class${color} text-${color}`} 
+                placeholder={props.inputInfo.placeholder}
+                onChange={handleChange}
+                value={value}
+                rows={4}/>)
+        }
     }
 
     return(

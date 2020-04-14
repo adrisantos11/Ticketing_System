@@ -2022,7 +2022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #3685EC;\n  color: #FFFFFF;\n  background-color: #3685EC;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 0.938rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.1256rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 1.876rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
+exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #3685EC;\n  color: #FFFFFF;\n  background-color: #3685EC;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.2rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 2rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
 
 // exports
 
@@ -2041,7 +2041,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".dataCard-container {\n  width: auto;\n}\n.dataCard-container .dataCard-header {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  background-color: #3685EC;\n  color: #FFFFFF;\n  font-weight: bold;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n.dataCard-container .dataCard-header .info-icon {\n  color: #FFFFFF;\n  font-size: 1.3132rem;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".dataCard-container {\n  width: auto;\n}\n.dataCard-container .dataCard-header {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  background-color: #3685EC;\n  color: #FFFFFF;\n  font-weight: bold;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n.dataCard-container .dataCard-header .info-icon {\n  color: #FFFFFF;\n  font-size: 1.4rem;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -2079,7 +2079,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label, .form-group .text_label--red, .form-group .text_label--primary {\n  font-size: 1.1256rem;\n  font-weight: 700;\n}\n.form-group .text_label--primary {\n  color: #3685EC;\n}\n.form-group .text_label--red {\n  color: #dc3545;\n}\n.form-group .input_class--primary {\n  color: #262626;\n}\n.form-group .input_class--primary:focus {\n  background-color: #3685EC;\n  border-color: #3685EC;\n  color: #FFFFFF;\n}\n.form-group .input_class--primary:focus::-webkit-input-placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.form-group .input_class--red {\n  border-color: #dc3545;\n  color: #dc3545;\n}\n.form-group .input_class--red::-webkit-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-moz-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red:-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::placeholder {\n  color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(54, 133, 236, 0.1);\n  border-color: #3685EC;\n}\n.form-group .input_class_primary--red {\n  background-color: rgba(247, 100, 115, 0.4);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
+exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label, .form-group .text_label--red, .form-group .text_label--primary {\n  font-size: 1.2rem;\n  font-weight: 700;\n}\n.form-group .text_label--primary {\n  color: #3685EC;\n}\n.form-group .text_label--red {\n  color: #dc3545;\n}\n.form-group .input_class--primary {\n  color: #262626;\n}\n.form-group .input_class--primary:focus {\n  background-color: #3685EC;\n  border-color: #3685EC;\n  color: #FFFFFF;\n}\n.form-group .input_class--primary:focus::-webkit-input-placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.form-group .input_class--red {\n  border-color: #dc3545;\n  color: #dc3545;\n}\n.form-group .input_class--red::-webkit-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-moz-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red:-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::placeholder {\n  color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(54, 133, 236, 0.1);\n  border-color: #3685EC;\n}\n.form-group .input_class_primary--red {\n  background-color: rgba(247, 100, 115, 0.4);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -2117,7 +2117,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #f1f1f1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n}\n.navbar-container .options-container .span-container a i, .navbar-container .options-container .span-container a:hover i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #f1f1f1;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container a.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container a:hover {\n  text-decoration: none;\n  background-color: rgba(241, 241, 241, 0.16);\n}\n.navbar-container .options-container .span-container a:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .buttonContainer {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  background-color: rgba(241, 241, 241, 0.2);\n  text-align: center;\n  padding: 1rem;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.1256rem;\n  font-family: \"Black Han Sans\", sans-serif;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
+exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #f1f1f1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n}\n.navbar-container .options-container .span-container a i, .navbar-container .options-container .span-container a:hover i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #f1f1f1;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container a.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container a:hover {\n  text-decoration: none;\n  background-color: rgba(241, 241, 241, 0.16);\n}\n.navbar-container .options-container .span-container a:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .buttonContainer {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  background-color: rgba(241, 241, 241, 0.2);\n  text-align: center;\n  padding: 1rem;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.2rem;\n  font-family: \"Black Han Sans\", sans-serif;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
 
 // exports
 
@@ -2212,7 +2212,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 1.876rem;\n  margin: 0 auto;\n  padding-bottom: 0.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n  margin: 1.5rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 50%;\n  max-height: 100%;\n  box-shadow: inset 0px 0px 21px -8px rgba(0, 0, 0, 0.75);\n  margin: 2rem 0;\n  margin-right: 2rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .comments-container .createIncidencia-container {\n  width: 100%;\n  padding: 0;\n}\n.incidenciaview-container .comments-container .createIncidencia-container .data-container .asignacion-container .assign-container {\n  width: 60%;\n}", ""]);
+exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 2rem;\n  margin: 0 auto;\n  padding-bottom: 0.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n  margin: 1.5rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 50%;\n  max-height: 100%;\n  box-shadow: inset 0px 0px 21px -8px rgba(0, 0, 0, 0.75);\n  margin: 2rem 0;\n  margin-right: 2rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .comments-container .createIncidencia-container {\n  width: 100%;\n  padding: 0;\n}\n.incidenciaview-container .comments-container .createIncidencia-container .data-container .asignacion-container .assign-container {\n  width: 60%;\n}", ""]);
 
 // exports
 
@@ -2231,7 +2231,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".incidencias-container {\n  border-color: #c4c4c4;\n  height: 100%;\n}\n.incidencias-container .title-container {\n  height: 25%;\n  padding: 0.5rem 1rem;\n}\n.incidencias-container .title-container p {\n  margin: 0;\n}\n.incidencias-container .title-container .title {\n  font-size: 2.345rem;\n  color: #3685EC;\n  font-weight: bold;\n}\n.incidencias-container .data-container {\n  height: 75%;\n}\n.incidencias-container .data-container .tabs-container .btn-group .active {\n  border-bottom: none;\n}\n.incidencias-container .data-container .dropdowndata-container {\n  height: 95%;\n  background-color: whitesmoke;\n}", ""]);
+exports.push([module.i, ".incidencias-container {\n  border-color: #c4c4c4;\n  height: 100%;\n}\n.incidencias-container .title-container {\n  height: 14.5rem;\n  padding: 0.5rem 1rem;\n}\n.incidencias-container .title-container p {\n  margin: 0;\n}\n.incidencias-container .title-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n}\n.incidencias-container .data-container {\n  height: 75%;\n}\n.incidencias-container .data-container .tabs-container .btn-group .active {\n  border-bottom: none;\n}\n.incidencias-container .data-container .dropdowndata-container {\n  height: 95%;\n}", ""]);
 
 // exports
 
@@ -2250,7 +2250,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".createIncidencia-container {\n  padding: 0 1rem;\n}", ""]);
+exports.push([module.i, ".createIncidencia-container {\n  padding: 1rem 1rem;\n  background-color: whitesmoke;\n}\n.createIncidencia-container .info-container {\n  height: auto;\n}", ""]);
 
 // exports
 
@@ -2269,7 +2269,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".incidenciasList-container {\n  height: 100%;\n}\n.incidenciasList-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  height: 10%;\n  padding-left: 1rem;\n}\n.incidenciasList-container .filtrar-container .dropdown {\n  margin-left: 0.5rem;\n  padding-right: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  margin-left: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container .btn-group {\n  margin: 0 0.5rem;\n}\n.incidenciasList-container .filtrar-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n}\n.incidenciasList-container .table-container {\n  height: auto;\n  max-height: 80%;\n  overflow-y: scroll;\n  box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);\n  padding: 0.5rem;\n}\n.incidenciasList-container .table-container .table {\n  height: 100%;\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr:first-child {\n  width: 8%;\n}\n.incidenciasList-container .table-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.incidenciasList-container .table-container .table tbody tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr th {\n  width: 8%;\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr .columna, .incidenciasList-container .table-container .table tbody tr .columna--bg-primary, .incidenciasList-container .table-container .table tbody tr .columna--bg-green, .incidenciasList-container .table-container .table tbody tr .columna--bg-orange, .incidenciasList-container .table-container .table tbody tr .columna--bg-red, .incidenciasList-container .table-container .table tbody tr .columna--green, .incidenciasList-container .table-container .table tbody tr .columna--orange, .incidenciasList-container .table-container .table tbody tr .columna--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--orange {\n  color: #e78738;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--green {\n  color: #07a744;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-red {\n  background-color: rgba(220, 53, 69, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-orange {\n  background-color: rgba(231, 135, 56, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-green {\n  background-color: rgba(7, 167, 68, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-primary {\n  margin: 1.5rem 0.5rem;\n  background-color: rgba(54, 133, 236, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .footer-container {\n  height: 10%;\n  padding: 0.5rem 1rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-content: center;\n  align-items: center;\n}\n.incidenciasList-container .footer-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n  margin: 0 2rem;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span, .incidenciasList-container .footer-container .dataSelection-container--filter .span--green, .incidenciasList-container .footer-container .dataSelection-container--filter .span--red, .incidenciasList-container .footer-container .dataSelection-container--filter .span--orange, .incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  font-weight: bold;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  color: #3685EC;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--orange {\n  color: #e78738;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--red {\n  color: #dc3545;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--green {\n  color: #07a744;\n}", ""]);
+exports.push([module.i, ".incidenciasList-container {\n  height: 100%;\n}\n.incidenciasList-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  height: 10%;\n  padding-left: 1rem;\n  background-color: whitesmoke;\n}\n.incidenciasList-container .filtrar-container .dropdown {\n  margin-left: 0.5rem;\n  padding-right: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  margin-left: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container .btn-group {\n  margin: 0 0.5rem;\n}\n.incidenciasList-container .filtrar-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n}\n.incidenciasList-container .table-container {\n  height: auto;\n  max-height: 80%;\n  overflow-y: scroll;\n  box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);\n  padding: 0.5rem;\n}\n.incidenciasList-container .table-container .table {\n  height: 100%;\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr:first-child {\n  width: 8%;\n}\n.incidenciasList-container .table-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.incidenciasList-container .table-container .table tbody tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr th {\n  width: 8%;\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr .columna, .incidenciasList-container .table-container .table tbody tr .columna--bg-primary, .incidenciasList-container .table-container .table tbody tr .columna--bg-green, .incidenciasList-container .table-container .table tbody tr .columna--bg-orange, .incidenciasList-container .table-container .table tbody tr .columna--bg-red, .incidenciasList-container .table-container .table tbody tr .columna--green, .incidenciasList-container .table-container .table tbody tr .columna--orange, .incidenciasList-container .table-container .table tbody tr .columna--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--orange {\n  color: #e78738;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--green {\n  color: #07a744;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-red {\n  background-color: rgba(220, 53, 69, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-orange {\n  background-color: rgba(231, 135, 56, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-green {\n  background-color: rgba(7, 167, 68, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-primary {\n  margin: 1.5rem 0.5rem;\n  background-color: rgba(54, 133, 236, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .footer-container {\n  height: 10%;\n  padding: 0.5rem 1rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-content: center;\n  align-items: center;\n}\n.incidenciasList-container .footer-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n  margin: 0 2rem;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span, .incidenciasList-container .footer-container .dataSelection-container--filter .span--green, .incidenciasList-container .footer-container .dataSelection-container--filter .span--red, .incidenciasList-container .footer-container .dataSelection-container--filter .span--orange, .incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  font-weight: bold;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  color: #3685EC;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--orange {\n  color: #e78738;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--red {\n  color: #dc3545;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--green {\n  color: #07a744;\n}", ""]);
 
 // exports
 
@@ -2288,7 +2288,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: auto;\n  display: flex;\n  flex-direction: row;\n  background-color: #c4c4c4;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 1.876rem;\n  text-align: center;\n  color: #3685EC;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n  background-color: #FFFFFF;\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 0.938rem;\n  color: #141414;\n}\n.login-main .login .centered_container--description .icons-container a {\n  font-size: 1.876rem;\n  color: #3685EC;\n  margin-right: 1.5rem;\n}\n.login-main .login .centered_container--description .icons-container a:hover {\n  color: #003877;\n  cursor: pointer;\n}\n.login-main .login .centered_container--login {\n  padding: 0;\n  width: 50%;\n  background-color: #262626;\n}\n@media (max-width: 600px) {\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}\n@media screen and (max-width: 768px) {\n  .login-main .login {\n    flex-direction: column-reverse;\n  }\n  .login-main .login .centered_container--description {\n    width: 100%;\n  }\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}", ""]);
+exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: auto;\n  display: flex;\n  flex-direction: row;\n  background-color: #c4c4c4;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 2rem;\n  text-align: center;\n  color: #3685EC;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n  background-color: #FFFFFF;\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 1rem;\n  color: #141414;\n}\n.login-main .login .centered_container--description .icons-container a {\n  font-size: 2rem;\n  color: #3685EC;\n  margin-right: 1.5rem;\n}\n.login-main .login .centered_container--description .icons-container a:hover {\n  color: #003877;\n  cursor: pointer;\n}\n.login-main .login .centered_container--login {\n  padding: 0;\n  width: 50%;\n  background-color: #262626;\n}\n@media (max-width: 600px) {\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}\n@media screen and (max-width: 768px) {\n  .login-main .login {\n    flex-direction: column-reverse;\n  }\n  .login-main .login .centered_container--description {\n    width: 100%;\n  }\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}", ""]);
 
 // exports
 
@@ -2326,7 +2326,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 6%;\n  background-color: white;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 1.876rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.407rem;\n  margin: 0;\n  font-style: italic;\n  margin-right: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon, .perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  font-size: 1.2194rem;\n  color: #3685EC;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 0 1rem;\n}\n.perfilpage-container .bodyperfil-container .bodydescription-container .title {\n  font-size: 2.345rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 25%;\n  height: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 70%;\n  background-color: red;\n  height: 100%;\n}", ""]);
+exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 4rem;\n  background-color: white;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .headerperfil-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 2rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.5rem;\n  margin: 0;\n  font-style: italic;\n  margin-right: 0.75rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon, .perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  font-size: 1.3rem;\n  color: #3685EC;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 1rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 25%;\n  height: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 70%;\n  background-color: red;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -2345,7 +2345,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: bold;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  padding: 1rem 1rem;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.407rem;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.1256rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}", ""]);
+exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n  font-weight: bold;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  padding: 1rem 1rem;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: dotted;\n  border-width: 2px;\n  border-color: #838383;\n  border-radius: 5px;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.2rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}", ""]);
 
 // exports
 
@@ -35775,7 +35775,8 @@ var AutocompleteInput = function (props) {
         type: props.autocompleteInputInfo.typeInput,
         error_control_text: '',
         enabled: props.autocompleteInputInfo.enabled,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: false
     }), input = _a[0], setInput = _a[1];
     var _b = React.useState([]), userList = _b[0], setUserList = _b[1];
     var _c = React.useState(''), dataDivState = _c[0], setDataDivState = _c[1];
@@ -36132,11 +36133,21 @@ exports.Input = function (props) {
         color = '--red';
         mostrar = '--mostrar';
     }
-    if (!props.inputInfo.enabled) {
-        input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, disabled: true }));
+    if (!props.inputInfo.isTextArea) {
+        if (!props.inputInfo.enabled) {
+            input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, disabled: true }));
+        }
+        else {
+            input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value }));
+        }
     }
     else {
-        input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, "aria-describedby": "emailHelp", placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value }));
+        if (!props.inputInfo.enabled) {
+            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + color + " text-" + color, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, rows: 4, disabled: true }));
+        }
+        else {
+            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + color + " text-" + color, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, rows: 4 }));
+        }
     }
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'form-group' },
@@ -37109,6 +37120,10 @@ var CreateIncidenciaPage = function () {
         incidenciaData: null
     }), formularioIncidencia = _a[0], setFormularioIncidencia = _a[1];
     return (React.createElement("div", { className: "createIncidencia-container" },
+        React.createElement("div", { className: 'info-container' },
+            "Apartado para ",
+            React.createElement("b", null, "crear una incidencia"),
+            ". Deber\u00E1 rellenar correctamente todos los campos para la correcta creaci\u00F3n de la incidencia."),
         React.createElement(FormularioIncidencia_1.default, { formularioProps: formularioIncidencia })));
 };
 exports.default = CreateIncidenciaPage;
@@ -37428,12 +37443,19 @@ var MostrarIncidenciasPage = function () {
                                 state = 'Solucionado';
                                 stateColor = '--bg-green';
                             }
+                            var description;
+                            if (element.description.length > 90) {
+                                description = element.description.substr(0, 90) + '...';
+                            }
+                            else {
+                                description = element.description;
+                            }
                             return (React.createElement("tr", { key: index },
                                 React.createElement("th", { scope: "row" }, "#" + element.id),
                                 React.createElement("td", null,
                                     React.createElement(react_router_dom_1.Link, { to: "/home/incidencia-view/" + element.id + "/comments", "data-toogle": "tooltip", "data-placement": "top", title: "Incidencia " + element.id },
                                         React.createElement("b", null, element.title))),
-                                React.createElement("td", null, element.description),
+                                React.createElement("td", null, description),
                                 React.createElement("td", null, element.category),
                                 React.createElement("td", { className: "columna" + priorityColor }, priorityText),
                                 React.createElement("td", { className: "columna" + stateColor }, state),
@@ -37502,12 +37524,19 @@ var MostrarIncidenciasPage = function () {
                                 state = 'Solucionado';
                                 stateColor = '--bg-green';
                             }
+                            var description;
+                            if (element.description.length > 90) {
+                                description = element.description.substr(0, 90) + '...';
+                            }
+                            else {
+                                description = element.description;
+                            }
                             return (React.createElement("tr", { key: index },
                                 React.createElement("th", { scope: "row" }, "#" + element.id),
                                 React.createElement("td", null,
                                     React.createElement(react_router_dom_1.Link, { to: "/home/incidencia-view/" + element.id + "/comments", "data-toogle": "tooltip", "data-placement": "top", title: "Incidencia " + element.id },
                                         React.createElement("b", null, element.title))),
-                                React.createElement("td", null, element.description),
+                                React.createElement("td", null, description),
                                 React.createElement("td", null, element.category),
                                 React.createElement("td", { className: "columna" + priorityColor },
                                     React.createElement("span", null, priorityText)),
@@ -37608,7 +37637,8 @@ var Login = function () {
         type: 'number',
         error_control_text: '',
         enabled: true,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: false
     }), inputUser = _a[0], setInputUser = _a[1];
     var _b = React.useState({
         id: 2,
@@ -37619,7 +37649,8 @@ var Login = function () {
         type: 'password',
         error_control_text: '',
         enabled: true,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: false
     }), inputPassword = _b[0], setInputPassword = _b[1];
     var _c = React.useState({
         exp: '',
@@ -37878,94 +37909,82 @@ var PerfilPage = function () {
     }), perfilDC = _a[0], setperfilDC = _a[1];
     var _b = React.useState({
         id: localStorage.userId,
-        name: 'Hola',
+        name: '',
         surname1: '',
         surname2: '',
         exp: '',
         email: '',
         role: '',
-        phone: ''
+        phone: '',
+        image_url: ''
     }), userLogged = _b[0], setUserLogged = _b[1];
-    var _c = React.useState(false), profileIsLoaded = _c[0], setProfileIsLoaded = _c[1];
     React.useEffect(function () {
         Authentication_1.getUserLogged(localStorage.userId).then(function (res) {
             try {
-                if (res) {
-                    console.log(res);
-                    var rol = void 0;
-                    if (res[0].role == 'technical') {
-                        rol = 'Técnico';
-                    }
-                    else if (res[0].role == 'supervisor') {
-                        rol = 'Supervisor';
-                    }
-                    setUserLogged(__assign(__assign({}, userLogged), { name: res[0].name, surname1: res[0].surname1, surname2: res[0].surname2, exp: res[0].exp, email: res[0].email, role: rol, phone: res[0].phone }));
-                    setProfileIsLoaded(true);
+                console.log(res);
+                var rol = void 0;
+                if (res[0].role == 'technical') {
+                    rol = 'Técnico';
                 }
-                else {
-                    setProfileIsLoaded(false);
+                else if (res[0].role == 'supervisor') {
+                    rol = 'Supervisor';
                 }
+                setUserLogged(__assign(__assign({}, userLogged), { name: res[0].name, surname1: res[0].surname1, surname2: res[0].surname2, exp: res[0].exp, email: res[0].email, role: rol, phone: res[0].phone, image_url: res[0].image_url }));
             }
             catch (error) {
                 console.log(error);
             }
         });
-        console.log(userLogged);
     }, []);
-    if (profileIsLoaded) {
-        return (React.createElement(React.Fragment, null,
-            React.createElement("div", { className: "perfilpage-container" },
-                React.createElement("div", { className: 'headerperfil-container' }),
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: "perfilpage-container" },
+            React.createElement("div", { className: 'headerperfil-container' },
+                React.createElement("p", { className: "title" }, "Perfil del usuario")),
+            React.createElement("div", { className: "photo-container" },
                 React.createElement("div", { className: "photo-container" },
-                    React.createElement("div", { className: "photo-container" },
-                        React.createElement("div", { className: "photo" },
-                            React.createElement("img", { src: "https://www.cobdoglaps.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg", alt: "" })),
-                        React.createElement("p", { className: 'p-name' }, userLogged.name + " " + userLogged.surname1 + " " + userLogged.surname2),
-                        React.createElement("div", { className: "role-container" },
-                            React.createElement("p", { className: 'p-role' }, userLogged.role),
-                            React.createElement("span", { className: 'settings-icon' },
-                                React.createElement("i", { className: "fas fa-cog" }))))),
-                React.createElement("div", { className: "bodyperfil-container" },
-                    React.createElement("div", { className: "bodydescription-container" },
-                        React.createElement("p", { className: "title" }, "Perfil"),
-                        React.createElement("p", null, "En este apartado encontrar\u00E1 toda la informaci\u00F3n relacionada con usted: incidencias, datos del perfil, configuraci\u00F3n de cuenta...")),
-                    React.createElement("div", { className: "content-container" },
-                        React.createElement("div", { className: "left-container" },
-                            React.createElement(DataCard_1.default, { dataCardInfo: perfilDC },
-                                React.createElement(React.Fragment, null,
-                                    React.createElement("div", { className: "inner-body" },
-                                        React.createElement("div", { className: "data-row" },
-                                            React.createElement("p", { className: 'static-text' }, "Nombre: "),
-                                            React.createElement("p", null, userLogged.name)),
-                                        React.createElement("div", { className: "horizontal-separator" }),
-                                        React.createElement("div", { className: "data-row" },
-                                            React.createElement("p", { className: 'static-text' }, "Primer apellido: "),
-                                            React.createElement("p", null, userLogged.surname1)),
-                                        React.createElement("div", { className: "horizontal-separator" }),
-                                        React.createElement("div", { className: "data-row" },
-                                            React.createElement("p", { className: 'static-text' }, "Segundo apellido: "),
-                                            React.createElement("p", null, userLogged.surname2)),
-                                        React.createElement("div", { className: "horizontal-separator" }),
-                                        React.createElement("div", { className: "data-row" },
-                                            React.createElement("p", { className: 'static-text' }, "Expediente: "),
-                                            React.createElement("p", null, userLogged.exp)),
-                                        React.createElement("div", { className: "horizontal-separator" }),
-                                        React.createElement("div", { className: "data-row" },
-                                            React.createElement("p", { className: 'static-text' }, "Direcci\u00F3n de correo: "),
-                                            React.createElement("p", null, userLogged.email)),
-                                        React.createElement("div", { className: "horizontal-separator" }),
-                                        React.createElement("div", { className: "data-row" },
-                                            React.createElement("p", { className: 'static-text' }, "Rol: "),
-                                            React.createElement("p", null, userLogged.role)),
-                                        React.createElement("div", { className: "horizontal-separator" }),
-                                        React.createElement("div", { className: "data-row" },
-                                            React.createElement("p", { className: 'static-text' }, "Tel\u00E9fono de contacto: "),
-                                            React.createElement("p", null, userLogged.phone)))))),
-                        React.createElement("div", { className: "right-container" }))))));
-    }
-    else {
-        return (React.createElement(React.Fragment, null, "no se han cargado los datos."));
-    }
+                    React.createElement("div", { className: "photo" },
+                        React.createElement("img", { src: userLogged.image_url, alt: "" })),
+                    React.createElement("p", { className: 'p-name' }, userLogged.name + " " + userLogged.surname1 + " " + userLogged.surname2),
+                    React.createElement("div", { className: "role-container" },
+                        React.createElement("p", { className: 'p-role' }, userLogged.role),
+                        React.createElement("span", { className: 'settings-icon' },
+                            React.createElement("i", { className: "fas fa-cog" }))))),
+            React.createElement("div", { className: "bodyperfil-container" },
+                React.createElement("div", { className: "bodydescription-container" },
+                    React.createElement("p", null, "En este apartado encontrar\u00E1 toda la informaci\u00F3n relacionada con usted: incidencias, datos del perfil, configuraci\u00F3n de cuenta...")),
+                React.createElement("div", { className: "content-container" },
+                    React.createElement("div", { className: "left-container" },
+                        React.createElement(DataCard_1.default, { dataCardInfo: perfilDC },
+                            React.createElement(React.Fragment, null,
+                                React.createElement("div", { className: "inner-body" },
+                                    React.createElement("div", { className: "data-row" },
+                                        React.createElement("p", { className: 'static-text' }, "Nombre: "),
+                                        React.createElement("p", null, userLogged.name)),
+                                    React.createElement("div", { className: "horizontal-separator" }),
+                                    React.createElement("div", { className: "data-row" },
+                                        React.createElement("p", { className: 'static-text' }, "Primer apellido: "),
+                                        React.createElement("p", null, userLogged.surname1)),
+                                    React.createElement("div", { className: "horizontal-separator" }),
+                                    React.createElement("div", { className: "data-row" },
+                                        React.createElement("p", { className: 'static-text' }, "Segundo apellido: "),
+                                        React.createElement("p", null, userLogged.surname2)),
+                                    React.createElement("div", { className: "horizontal-separator" }),
+                                    React.createElement("div", { className: "data-row" },
+                                        React.createElement("p", { className: 'static-text' }, "Expediente: "),
+                                        React.createElement("p", null, userLogged.exp)),
+                                    React.createElement("div", { className: "horizontal-separator" }),
+                                    React.createElement("div", { className: "data-row" },
+                                        React.createElement("p", { className: 'static-text' }, "Direcci\u00F3n de correo: "),
+                                        React.createElement("p", null, userLogged.email)),
+                                    React.createElement("div", { className: "horizontal-separator" }),
+                                    React.createElement("div", { className: "data-row" },
+                                        React.createElement("p", { className: 'static-text' }, "Rol: "),
+                                        React.createElement("p", null, userLogged.role)),
+                                    React.createElement("div", { className: "horizontal-separator" }),
+                                    React.createElement("div", { className: "data-row" },
+                                        React.createElement("p", { className: 'static-text' }, "Tel\u00E9fono de contacto: "),
+                                        React.createElement("p", null, userLogged.phone)))))),
+                    React.createElement("div", { className: "right-container" }))))));
 };
 exports.default = PerfilPage;
 
@@ -38498,7 +38517,8 @@ var FormularioIncidencia = function (props) {
         type: 'text',
         error_control_text: '',
         enabled: enableInput,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: false
     }), titleInput = _l[0], setTitleInput = _l[1];
     var _m = React.useState({
         id: 2,
@@ -38509,7 +38529,8 @@ var FormularioIncidencia = function (props) {
         type: 'text',
         error_control_text: '',
         enabled: enableInput,
-        inputSize: ''
+        inputSize: '',
+        isTextArea: true
     }), descriptionInput = _m[0], setDescriptionInput = _m[1];
     var _o = React.useState({
         id: 1,
@@ -38740,19 +38761,13 @@ var FormularioIncidencia = function (props) {
             setTitleInput(__assign(__assign({}, titleInput), { error_control_text: 'No se ha introducido nningún dato.', color: 'red' }));
             validation = false;
         }
-        if (description != '') {
-            if (description.length > 240) {
-                setDescriptionInput(__assign(__assign({}, descriptionInput), { error_control_text: 'El texto introducido excede los 240 caracteres. Tiene ' + description.length + ' caracteres.', color: 'red' }));
-                validation = false;
-            }
-            else {
-                setDescriptionInput(__assign(__assign({}, descriptionInput), { error_control_text: '', color: 'primary' }));
-                validation = true;
-            }
-        }
-        else {
+        if (description == '') {
             setDescriptionInput(__assign(__assign({}, descriptionInput), { error_control_text: 'No se ha introducido ningún dato.', color: 'red' }));
             validation = false;
+        }
+        else {
+            setDescriptionInput(__assign(__assign({}, descriptionInput), { error_control_text: '', color: 'primary' }));
+            validation = true;
         }
         if (category != '') {
             setCategoryDropdown(__assign(__assign({}, categoryDropdown), { color: 'primary' }));
