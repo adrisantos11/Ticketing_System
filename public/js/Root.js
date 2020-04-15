@@ -2022,7 +2022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: transparent;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #3685EC;\n  color: #FFFFFF;\n  background-color: #3685EC;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.2rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 2rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
+exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: #FFFFFF;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #3685EC;\n  color: #FFFFFF;\n  background-color: #3685EC;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.2rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 2rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
 
 // exports
 
@@ -2212,7 +2212,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".incidenciaview-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview-container .incidenciaData-container {\n  width: 50%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 2rem;\n  margin: 0 auto;\n  padding-bottom: 0.5rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n  margin: 1.5rem 0;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right, .incidenciaview-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview-container .incidenciaData-container a {\n  text-align: center;\n  margin: 1rem auto;\n}\n.incidenciaview-container .comments-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 50%;\n  max-height: 100%;\n  box-shadow: inset 0px 0px 21px -8px rgba(0, 0, 0, 0.75);\n  margin: 2rem 0;\n  margin-right: 2rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview-container .comments-container .createIncidencia-container {\n  width: 100%;\n  padding: 0;\n}\n.incidenciaview-container .comments-container .createIncidencia-container .data-container .asignacion-container .assign-container {\n  width: 60%;\n}", ""]);
+exports.push([module.i, ".incidenciaview1-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.incidenciaview1-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 2rem;\n  margin: 0 auto;\n  padding-top: 1.5rem;\n}\n.incidenciaview1-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n  margin: 1rem 0;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview1-container .incidenciaview2-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container {\n  width: 40%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container {\n  display: flex;\n  flex-direction: column;\n  padding-bottom: 1.5rem;\n  justify-content: center;\n  align-items: center;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container p {\n  margin: 0;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--green, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--red, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--orange, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--blue {\n  font-size: 1.5rem;\n  font-weight: bold;\n  width: 100%;\n  text-align: center;\n  margin: 0 2rem;\n  margin-bottom: 1.5rem;\n  padding: 0.5rem;\n  border: dashed;\n  border-width: 1.5px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--blue {\n  border-color: #3685EC;\n  background-color: rgba(54, 133, 236, 0.15);\n  color: #3685EC;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--orange {\n  border-color: #e78738;\n  background-color: rgba(231, 135, 56, 0.15);\n  color: #e78738;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--red {\n  border-color: #dc3545;\n  background-color: rgba(220, 53, 69, 0.15);\n  color: #dc3545;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--green {\n  border-color: #07a744;\n  background-color: rgba(7, 167, 68, 0.15);\n  color: #07a744;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .dropdown {\n  margin: 0.5rem 0;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .footer-container {\n  text-align: center;\n  padding: 1rem 0;\n}\n.incidenciaview1-container .incidenciaview2-container .comments-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 60%;\n  background-color: #f1f1f1;\n  max-height: 100%;\n  box-shadow: inset 0px 0px 19px -5px rgba(0, 0, 0, 0.75);\n  margin: 1rem 0;\n  margin-right: 2rem;\n  padding: 1.5rem 2.5rem;\n}\n.incidenciaview1-container .incidenciaview2-container .comments-container .createIncidencia-container {\n  width: 100%;\n  padding: 0;\n}\n.incidenciaview1-container .incidenciaview2-container .comments-container .createIncidencia-container .data-container .asignacion-container .assign-container {\n  width: 60%;\n}", ""]);
 
 // exports
 
@@ -36710,6 +36710,7 @@ var Tabs_1 = __webpack_require__(/*! ../../../Components/Tabs/Tabs */ "./resourc
 var react_router_dom_2 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var FormularioIncidencia_1 = __webpack_require__(/*! ../../../Widgets/FormularioIncidencia/FormularioIncidencia */ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.tsx");
 var Modal_1 = __webpack_require__(/*! ../../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
+var Dropdown_1 = __webpack_require__(/*! ../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var IncidenciaViewPage = function () {
     var idIncidencia = react_router_1.useParams().idIncidencia;
     var userRol = localStorage.userRol;
@@ -36750,13 +36751,26 @@ var IncidenciaViewPage = function () {
         enabledList: [],
         itemActive: tabSelected
     }), tabsOptions = _b[0], setTabsOptions = _b[1];
-    var _c = React.useState(false), incidenciaLoaded = _c[0], setIncidenciaLoaded = _c[1];
-    var _d = React.useState({
+    var dropdownItems = ['Pendiente', 'En proceso', 'Bloqueado', 'Solucionado'];
+    var dropdownIds = ['todo', 'doing', 'blocked', 'done'];
+    var _c = React.useState({
+        id: 1,
+        groupName: "Seleccionar...",
+        groupItems: dropdownItems,
+        groupIds: dropdownIds,
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    }), orderByDropdown = _c[0], setOrderByDropdown = _c[1];
+    var _d = React.useState(''), incidenciaState = _d[0], setIncidenciaState = _d[1];
+    var _e = React.useState(''), incidenciaStateColor = _e[0], setIncidenciaStateColor = _e[1];
+    var _f = React.useState(false), incidenciaLoaded = _f[0], setIncidenciaLoaded = _f[1];
+    var _g = React.useState({
         widgetType: 'edit',
         userRol: localStorage.userRol,
         urlGeneral: "/home/incidencia-view/" + idIncidencia,
         incidenciaData: incidencia
-    }), formularioIncidencia = _d[0], setFormularioIncidencia = _d[1];
+    }), formularioIncidencia = _g[0], setFormularioIncidencia = _g[1];
     var confirmButton = React.useState({
         id: 1,
         texto: 'Confirmar',
@@ -36775,7 +36789,30 @@ var IncidenciaViewPage = function () {
         console.log('Cargamos datos incidencia...');
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
             console.log(result);
-            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.group_id, id_reporter: result.id_reporter, id_assigned: result.id_assigned, id_team: result.id_team, title: result.title, description: result.description, category: result.category, build: result.build, floor: result.floor, class: result.class, url_data: result.url_data, creation_date: result.creation_date, limit_date: result.limit_date, assigned_date: result.assigned_date, resolution_date: result.resolution_date, priority: result.priority, state: result.state }));
+            var stateAux;
+            switch (result.state) {
+                case 'todo':
+                    stateAux = 'Pendiente de solucionar';
+                    setIncidenciaState('Pendiente');
+                    setIncidenciaStateColor('--blue');
+                    break;
+                case 'doing':
+                    stateAux = 'En proceso';
+                    setIncidenciaState('En proceso');
+                    setIncidenciaStateColor('--orange');
+                    break;
+                case 'blocked':
+                    stateAux = 'Bloqueada';
+                    setIncidenciaState('Bloqueada');
+                    setIncidenciaStateColor('--red');
+                    break;
+                case 'done':
+                    stateAux = 'Solucionada';
+                    setIncidenciaState('Solucionada');
+                    setIncidenciaStateColor('--green');
+                    break;
+            }
+            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.group_id, id_reporter: result.id_reporter, id_assigned: result.id_assigned, id_team: result.id_team, title: result.title, description: result.description, category: result.category, build: result.build, floor: result.floor, class: result.class, url_data: result.url_data, creation_date: result.creation_date, limit_date: result.limit_date, assigned_date: result.assigned_date, resolution_date: result.resolution_date, priority: result.priority, state: stateAux }));
         });
         setFormularioIncidencia(__assign(__assign({}, formularioIncidencia), { incidenciaData: incidencia }));
         setIncidenciaLoaded(true);
@@ -36827,73 +36864,100 @@ var IncidenciaViewPage = function () {
         IncidenciasUtilities_1.deleteIncidencia(Number(idIncidencia));
         history.push('/home/incidencias/show');
     };
+    var handleClickItemDD = function (idItem, idDropdown) {
+        switch (idItem) {
+            case 'todo':
+                setIncidenciaState('Pendiente');
+                setIncidenciaStateColor('--blue');
+                break;
+            case 'doing':
+                setIncidenciaState('En proceso');
+                setIncidenciaStateColor('--orange');
+                break;
+            case 'blocked':
+                setIncidenciaState('Bloqueada');
+                setIncidenciaStateColor('--red');
+                break;
+            case 'done':
+                setIncidenciaState('Solucionada');
+                setIncidenciaStateColor('--green');
+                break;
+        }
+        IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, idItem);
+    };
     if (incidenciaLoaded) {
-        return (React.createElement("div", { className: 'incidenciaview-container' },
-            React.createElement("div", { className: "incidenciaData-container" },
-                React.createElement("div", { className: "titleincidencia-container" },
-                    React.createElement("p", null,
-                        React.createElement("b", null, "Incidencia #" + idIncidencia + " - " + incidencia.title)),
-                    React.createElement(Tabs_1.default, { tabsInfo: tabsOptions, handleClick: handleClickTab })),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Grupo de incidencia"),
-                    isDataNull(incidencia.group_id)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Reporter (ID)"),
-                    isDataNull(incidencia.id_reporter)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Equipo asignado"),
-                    isDataNull(incidencia.id_team)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "T\u00E9cnico asignado (ID)"),
-                    isDataNull(incidencia.id_assigned)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "T\u00EDtulo"),
-                    isDataNull(incidencia.title, true)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Descripci\u00F3n"),
-                    isDataNull(incidencia.description, true)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Categor\u00EDa"),
-                    isDataNull(incidencia.category, true)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Edificio"),
-                    isDataNull(incidencia.build)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Piso"),
-                    isDataNull(incidencia.floor)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Aula"),
-                    isDataNull(incidencia.class, true)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "URL de acceso al archivo"),
-                    isDataNull(incidencia.url_data)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Fecha l\u00EDmite de realizaci\u00F3n"),
-                    isDataNull(incidencia.limit_date, true)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Fecha de creaci\u00F3n"),
-                    isDataNull(incidencia.creation_date)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Fecha de asignaci\u00F3n"),
-                    isDataNull(incidencia.assigned_date)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Fecha de resoluci\u00F3n"),
-                    isDataNull(incidencia.resolution_date)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Prioridad"),
-                    isDataNull(incidencia.priority, true)),
-                React.createElement("div", { className: "info-container" },
-                    React.createElement("p", { className: "p-left" }, "Estado actual"),
-                    isDataNull(incidencia.state, true)),
-                React.createElement(react_router_dom_1.Link, { to: '/home/incidencias/show' }, "Volver a la p\u00E1gina anterior")),
-            React.createElement("div", { className: "comments-container" },
-                React.createElement(react_router_dom_2.Switch, null,
-                    React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/edit" },
-                        React.createElement(FormularioIncidencia_1.default, { formularioProps: formularioIncidencia })),
-                    React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/delete" },
-                        React.createElement("div", null, "Eliminar incidencia")),
-                    React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/comments" },
-                        React.createElement("div", null, "Comentarios incidencia")))),
+        return (React.createElement("div", { className: "incidenciaview1-container" },
+            React.createElement("div", { className: "titleincidencia-container" },
+                React.createElement("p", null,
+                    React.createElement("b", null, "Incidencia #" + idIncidencia + " - " + incidencia.title)),
+                React.createElement(Tabs_1.default, { tabsInfo: tabsOptions, handleClick: handleClickTab })),
+            React.createElement("div", { className: 'incidenciaview2-container' },
+                React.createElement("div", { className: "incidenciaData-container" },
+                    React.createElement("div", { className: "state-container" },
+                        React.createElement("p", { className: "incidencia-state" + incidenciaStateColor }, incidenciaState),
+                        React.createElement("p", null, "\u00BFDesea cambiar el estado de la incidencia?"),
+                        React.createElement(Dropdown_1.default, { dropdownInfo: orderByDropdown, onClick: handleClickItemDD })),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Grupo de incidencia"),
+                        isDataNull(incidencia.group_id)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Reporter (ID)"),
+                        isDataNull(incidencia.id_reporter)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Equipo asignado"),
+                        isDataNull(incidencia.id_team)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "T\u00E9cnico asignado (ID)"),
+                        isDataNull(incidencia.id_assigned)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "T\u00EDtulo"),
+                        isDataNull(incidencia.title, true)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Descripci\u00F3n"),
+                        isDataNull(incidencia.description, true)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Categor\u00EDa"),
+                        isDataNull(incidencia.category, true)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Edificio"),
+                        isDataNull(incidencia.build)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Piso"),
+                        isDataNull(incidencia.floor)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Aula"),
+                        isDataNull(incidencia.class, true)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "URL de acceso al archivo"),
+                        isDataNull(incidencia.url_data)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Fecha l\u00EDmite de realizaci\u00F3n"),
+                        isDataNull(incidencia.limit_date, true)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Fecha de creaci\u00F3n"),
+                        isDataNull(incidencia.creation_date)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Fecha de asignaci\u00F3n"),
+                        isDataNull(incidencia.assigned_date)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Fecha de resoluci\u00F3n"),
+                        isDataNull(incidencia.resolution_date)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Prioridad"),
+                        isDataNull(incidencia.priority, true)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Estado actual"),
+                        isDataNull(incidencia.state, true)),
+                    React.createElement("div", { className: "footer-container" },
+                        React.createElement(react_router_dom_1.Link, { to: '/home/incidencias/show' }, "Volver a la p\u00E1gina anterior"))),
+                React.createElement("div", { className: "comments-container" },
+                    React.createElement(react_router_dom_2.Switch, null,
+                        React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/edit" },
+                            React.createElement(FormularioIncidencia_1.default, { formularioProps: formularioIncidencia })),
+                        React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/delete" },
+                            React.createElement("div", null, "Eliminar incidencia")),
+                        React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/comments" },
+                            React.createElement("div", null, "Comentarios incidencia"))))),
             React.createElement(Modal_1.default, { modalProps: modalDeleteIncidencia, onClick: handleClickDeleteIncidencia },
                 React.createElement("div", null,
                     "Pulse el bot\u00F3n de ",
@@ -38306,6 +38370,18 @@ exports.getFilteredIncidencias = function (userId, userRol, idDropdown, idSelect
         }
         else
             console.log(err);
+    });
+};
+exports.updateStateIncidencia = function (idIncidencia, newState) {
+    return axios_1.default
+        .post('api/incidencias/updateState', {
+        id: idIncidencia,
+        newState: newState
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .catch(function (err) {
+        console.log(err);
     });
 };
 

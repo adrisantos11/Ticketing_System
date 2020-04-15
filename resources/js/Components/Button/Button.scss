@@ -6,7 +6,7 @@
 
     &--primary {
         @extend .button_css;
-        background-color: transparent;
+        background-color: $white_color;
         color: $primary_color;
         border-color: $primary_color;
     }

@@ -136,4 +136,14 @@ class IncidenciasPageController extends Controller
         $incidencia = DB::table('incidencias')->where('id', $id_incidencia)->first();
         return response()->json($incidencia);
     }
+
+    public function updateStateIncidencia(Request $request) {
+        $id_incidencia = $request->id;
+        $state = $request->newState;
+
+        DB::table('incidencias')->where('id', $id_incidencia)
+            ->update([
+                'state' => $state
+            ]);
+    }
 }

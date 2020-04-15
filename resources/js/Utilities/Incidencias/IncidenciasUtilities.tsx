@@ -156,3 +156,16 @@ export const getFilteredIncidencias = (userId: number, userRol: string, idDropdo
             console.log(err);
     })
 }
+
+export const updateStateIncidencia = (idIncidencia: number, newState: string) => {
+    return axios
+    .post('api/incidencias/updateState', {
+        id: idIncidencia,
+        newState: newState
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}

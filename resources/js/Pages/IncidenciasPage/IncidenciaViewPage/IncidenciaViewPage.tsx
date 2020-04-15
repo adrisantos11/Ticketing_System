@@ -1,15 +1,16 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './IncidenciaViewPage.scss'
-import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel } from '../../../Model/model'
+import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel, DropdownModel } from '../../../Model/model'
 import { createIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { getIncideniciaUnique, deleteIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities';
+import { getIncideniciaUnique, deleteIncidencia, updateStateIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities';
 import Tabs from '../../../Components/Tabs/Tabs';
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 import FormularioIncidencia from '../../../Widgets/FormularioIncidencia/FormularioIncidencia';
 import Modal from '../../../Components/Modal/Modal';
+import Dropdown from '../../../Components/Dropdown/Dropdown';
 
 const IncidenciaViewPage = () => {
     let {idIncidencia} = useParams();
@@ -58,6 +59,20 @@ const IncidenciaViewPage = () => {
         itemActive: tabSelected
     });
 
+    let dropdownItems = ['Pendiente', 'En proceso', 'Bloqueado', 'Solucionado'];
+    let dropdownIds = ['todo', 'doing', 'blocked', 'done'];
+    const [orderByDropdown, setOrderByDropdown] = React.useState<DropdownModel>({
+        id: 1,
+        groupName: "Seleccionar...",
+        groupItems: dropdownItems,
+        groupIds: dropdownIds,
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    });
+
+    const [incidenciaState, setIncidenciaState] = React.useState('');
+    const [incidenciaStateColor, setIncidenciaStateColor] = React.useState('');
 
     const [incidenciaLoaded, setIncidenciaLoaded] = React.useState(false);
         
@@ -89,6 +104,32 @@ const IncidenciaViewPage = () => {
         console.log('Cargamos datos incidencia...')
         getIncideniciaUnique(Number(idIncidencia)).then(result => {
             console.log(result);
+            let stateAux;   
+            switch (result.state) {
+                case 'todo':
+                    stateAux = 'Pendiente de solucionar'
+                    setIncidenciaState('Pendiente');
+                    setIncidenciaStateColor('--blue');
+                    break;
+                case 'doing':
+                    stateAux = 'En proceso'
+                    setIncidenciaState('En proceso');
+                    setIncidenciaStateColor('--orange');
+
+                    break;
+                case 'blocked':
+                    stateAux = 'Bloqueada'
+                    setIncidenciaState('Bloqueada');
+                    setIncidenciaStateColor('--red');
+            
+                    break;
+                case 'done':
+                    stateAux = 'Solucionada'
+                    setIncidenciaState('Solucionada');
+                    setIncidenciaStateColor('--green');
+        
+                    break;
+            }
             setIncidencia({
                 ...incidencia,
                 group_id: result.group_id,
@@ -107,7 +148,7 @@ const IncidenciaViewPage = () => {
                 assigned_date: result.assigned_date,
                 resolution_date: result.resolution_date,
                 priority: result.priority,
-                state: result.state
+                state: stateAux
             });
         });
 
@@ -189,130 +230,165 @@ const IncidenciaViewPage = () => {
         history.push('/home/incidencias/show');
     }
 
+    const handleClickItemDD = (idItem: string, idDropdown: number) => {
+        switch (idItem) {
+            case 'todo':
+                setIncidenciaState('Pendiente');
+                setIncidenciaStateColor('--blue');
+                break;
+            case 'doing':
+                setIncidenciaState('En proceso');
+                setIncidenciaStateColor('--orange');
+
+                break;
+            case 'blocked':
+                setIncidenciaState('Bloqueada');
+                setIncidenciaStateColor('--red');
+        
+                break;
+            case 'done':
+                setIncidenciaState('Solucionada');
+                setIncidenciaStateColor('--green');
+    
+                break;
+        }
+        updateStateIncidencia(incidencia.id, idItem);
+    }
+
     if (incidenciaLoaded) {
         return(
-            <div className='incidenciaview-container'>
-                <div className="incidenciaData-container">
-                    <div className="titleincidencia-container">
-                        <p><b>{`Incidencia #${idIncidencia} - ${incidencia.title}`}</b></p>
-                        <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
+            <div className="incidenciaview1-container">
+                        <div className="titleincidencia-container">
+                            <p><b>{`Incidencia #${idIncidencia} - ${incidencia.title}`}</b></p>
+                            <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
+                        </div>
+
+                <div className='incidenciaview2-container'>
+                    <div className="incidenciaData-container">
+                        <div className="state-container">
+                            <p className={`incidencia-state${incidenciaStateColor}`}>{incidenciaState}</p>
+                            <p>¿Desea cambiar el estado de la incidencia?</p>
+                            <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Grupo de incidencia</p>
+                            {
+                            isDataNull(incidencia.group_id)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Reporter (ID)</p>
+                            {
+                            isDataNull(incidencia.id_reporter)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Equipo asignado</p>
+                            {
+                            isDataNull(incidencia.id_team)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Técnico asignado (ID)</p>
+                            {
+                            isDataNull(incidencia.id_assigned)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Título</p>
+                            {
+                            isDataNull(incidencia.title, true)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Descripción</p>
+                            {
+                            isDataNull(incidencia.description, true)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Categoría</p>
+                            {
+                            isDataNull(incidencia.category, true)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Edificio</p>
+                            {
+                            isDataNull(incidencia.build)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Piso</p>
+                            {
+                            isDataNull(incidencia.floor)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Aula</p>
+                            {
+                            isDataNull(incidencia.class, true)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">URL de acceso al archivo</p>
+                            {
+                            isDataNull(incidencia.url_data)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Fecha límite de realización</p>
+                            {
+                            isDataNull(incidencia.limit_date, true)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Fecha de creación</p>
+                            {
+                            isDataNull(incidencia.creation_date)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Fecha de asignación</p>
+                            {
+                            isDataNull(incidencia.assigned_date)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Fecha de resolución</p>
+                            {
+                            isDataNull(incidencia.resolution_date)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Prioridad</p>
+                            {
+                            isDataNull(incidencia.priority, true)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Estado actual</p>
+                            {
+                            isDataNull(incidencia.state, true)
+                            }
+                        </div>
+                        <div className="footer-container">
+                            <Link to='/home/incidencias/show'>Volver a la página anterior</Link>
+                        </div>
                     </div>
-                    <div className="info-container">
-                        <p className="p-left">Grupo de incidencia</p>
-                        {
-                        isDataNull(incidencia.group_id)
-                        }
+                    <div className="comments-container">
+                        <Switch>
+                            <Route path={`/home/incidencia-view/${idIncidencia}/edit`}>
+                                <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
+                            </Route>
+                            <Route path={`/home/incidencia-view/${idIncidencia}/delete`}>
+                                <div>Eliminar incidencia</div>
+                            </Route>
+                            <Route path={`/home/incidencia-view/${idIncidencia}/comments`}>
+                                <div>Comentarios incidencia</div>
+                            </Route>
+                        </Switch>
                     </div>
-                    <div className="info-container">
-                        <p className="p-left">Reporter (ID)</p>
-                        {
-                        isDataNull(incidencia.id_reporter)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Equipo asignado</p>
-                        {
-                        isDataNull(incidencia.id_team)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Técnico asignado (ID)</p>
-                        {
-                        isDataNull(incidencia.id_assigned)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Título</p>
-                        {
-                        isDataNull(incidencia.title, true)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Descripción</p>
-                        {
-                        isDataNull(incidencia.description, true)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Categoría</p>
-                        {
-                        isDataNull(incidencia.category, true)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Edificio</p>
-                        {
-                        isDataNull(incidencia.build)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Piso</p>
-                        {
-                        isDataNull(incidencia.floor)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Aula</p>
-                        {
-                        isDataNull(incidencia.class, true)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">URL de acceso al archivo</p>
-                        {
-                        isDataNull(incidencia.url_data)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Fecha límite de realización</p>
-                        {
-                        isDataNull(incidencia.limit_date, true)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Fecha de creación</p>
-                        {
-                        isDataNull(incidencia.creation_date)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Fecha de asignación</p>
-                        {
-                        isDataNull(incidencia.assigned_date)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Fecha de resolución</p>
-                        {
-                        isDataNull(incidencia.resolution_date)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Prioridad</p>
-                        {
-                        isDataNull(incidencia.priority, true)
-                        }
-                    </div>
-                    <div className="info-container">
-                        <p className="p-left">Estado actual</p>
-                        {
-                        isDataNull(incidencia.state, true)
-                        }
-                    </div>
-                    <Link to='/home/incidencias/show'>Volver a la página anterior</Link>
-                </div>
-                <div className="comments-container">
-                    <Switch>
-                        <Route path={`/home/incidencia-view/${idIncidencia}/edit`}>
-                            <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
-                        </Route>
-                        <Route path={`/home/incidencia-view/${idIncidencia}/delete`}>
-                            <div>Eliminar incidencia</div>
-                        </Route>
-                        <Route path={`/home/incidencia-view/${idIncidencia}/comments`}>
-                            <div>Comentarios incidencia</div>
-                        </Route>
-                    </Switch>
                 </div>
                 <Modal modalProps={modalDeleteIncidencia} onClick={handleClickDeleteIncidencia}>
                     <div>Pulse el botón de <b>'Confirmar'</b> para eliminar la incidencia <b>PERMANENTEMENTE</b></div>
