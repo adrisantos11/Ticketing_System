@@ -90,5 +90,14 @@ class TechnicalController extends Controller
         return $filtered_query;
     }
 
+    public function getAssignedToTechnical(Request $request) 
+    {
+        $id_user = $request->id;
+        $orderByDirection = 'asc';  
+
+        $hole_union = DB::table('incidencias')->distinct('id')->where('id_assigned', $id_user)->orderBy('limit_date', 'asc')->get();
+        return $hole_union;
+    }
+
 
 }

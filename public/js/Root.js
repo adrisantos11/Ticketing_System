@@ -37184,6 +37184,7 @@ var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdow
 var SelectBox_1 = __webpack_require__(/*! ../../../../Components/Selectbox/SelectBox */ "./resources/js/Components/Selectbox/SelectBox.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var SupervisorUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
+var TechnicalUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/TechnicalUtilities */ "./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx");
 var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
 var IncidenciasUtilities_2 = __webpack_require__(/*! ../../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
 var MostrarIncidenciasPage = function () {
@@ -37200,6 +37201,10 @@ var MostrarIncidenciasPage = function () {
     if (userRol == 'supervisor') {
         dropdownItems.push('Sin asignar');
         dropdownIds.push('no_assigned');
+    }
+    else if (userRol == 'technical') {
+        dropdownItems.splice(0, 0, 'Mis incidencias');
+        dropdownIds.splice(0, 0, 'my_incidencias');
     }
     // Datos con los que se va a cargar el dropdown con las opción de ordenación de las incidencias.
     var _d = React.useState({
@@ -37268,6 +37273,12 @@ var MostrarIncidenciasPage = function () {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
+                });
+            }
+            else if (orderBy == 'my_incidencias') {
+                TechnicalUtilities_1.getAssignedIncidencias(user.id).then(function (res) {
+                    setIncidenciasSize(res.length);
+                    setIncidencias(res);
                 });
             }
             else {
@@ -38310,6 +38321,66 @@ exports.getNoAssignedIncidencias = function (userId) {
     return axios_1.default
         .post('api/incidencias/supervisor/noAssigned', {
         userId: userId
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+
+
+/***/ }),
+
+/***/ "./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx":
+/*!*******************************************************************!*\
+  !*** ./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+exports.getTechnicalIncidencias = function (user, orderBy) {
+    return axios_1.default
+        .post('api/incidencias/technical/getAssigned/' + orderBy, {
+        id: user.id
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        console.log(res);
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.getAssignedIncidencias = function (id_user) {
+    return axios_1.default
+        .post('api/incidencias/technical/getIncidenciasAssigned', {
+        id: id_user
     }, {
         headers: { 'Content-Type': 'application/json' }
     })

@@ -38,8 +38,9 @@ Route::namespace('Pages')->group(function () {
 Route::namespace('Users')->group(function () {
     // -------- Controlador Técnico --------
     Route::post('incidencias/technical/getIncidencias/{orderBy}', 'TechnicalController@getTechnicalIncidencias');
-    Route::post('incidencias/technical/filtered', 'TechnicalController@getFilteredIncidencias');
-
+    Route::post('incidencias/technical/filtered', 'TechnicalController@getFilteredIncidencias, ');
+    Route::post('incidencias/technical/getIncidenciasAssigned', 'TechnicalController@getAssignedToTechnical');
+    
     // -------- Controlador Supervisor --------
     Route::post('incidencias/supervisor/getIncidencias/{orderBy}', 'SupervisorController@getSupervisorIncidencias');
     Route::post('incidencias/supervisor/filtered', 'SupervisorController@getFilteredIncidencias');

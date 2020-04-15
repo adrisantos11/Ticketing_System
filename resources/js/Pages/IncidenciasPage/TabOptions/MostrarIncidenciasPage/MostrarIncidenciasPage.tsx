@@ -6,6 +6,8 @@ import Selectbox from '../../../../Components/Selectbox/SelectBox';
 import { Link } from 'react-router-dom';
 
 import { getNoAssignedIncidencias } from '../../../../Utilities/Incidencias/SupervisorUtilities'
+import { getAssignedIncidencias } from '../../../../Utilities/Incidencias/TechnicalUtilities'
+
 import { getIncidencias, getFilteredIncidencias } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
 
 import { getFilters } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
@@ -26,7 +28,10 @@ const MostrarIncidenciasPage = () => {
     if (userRol == 'supervisor') {
         dropdownItems.push('Sin asignar');
         dropdownIds.push('no_assigned');
-    } 
+    } else if(userRol == 'technical') {
+        dropdownItems.splice(0,0,'Mis incidencias');
+        dropdownIds.splice(0,0,'my_incidencias');
+    }
 
     // Datos con los que se va a cargar el dropdown con las opción de ordenación de las incidencias.
     const [orderByDropdown, setOrderByDropdown] = React.useState<DropdownModel>({
@@ -97,6 +102,11 @@ const MostrarIncidenciasPage = () => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
+                });
+            }else if (orderBy == 'my_incidencias') {
+                getAssignedIncidencias(user.id).then(res => {
+                    setIncidenciasSize(res.length);
+                    setIncidencias(res);
                 });
             } else {
                 getIncidencias(user, userRol, orderBy).then(res => {
