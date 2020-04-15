@@ -37203,8 +37203,8 @@ var MostrarIncidenciasPage = function () {
         dropdownIds.push('no_assigned');
     }
     else if (userRol == 'technical') {
-        dropdownItems.splice(0, 0, 'Mis incidencias');
-        dropdownIds.splice(0, 0, 'my_incidencias');
+        dropdownItems.splice(0, 0, 'Mis incidencias', 'Incidencias grupales');
+        dropdownIds.splice(0, 0, 'my_incidencias', 'group_incidencias');
     }
     // Datos con los que se va a cargar el dropdown con las opción de ordenación de las incidencias.
     var _d = React.useState({
@@ -37277,6 +37277,12 @@ var MostrarIncidenciasPage = function () {
             }
             else if (orderBy == 'my_incidencias') {
                 TechnicalUtilities_1.getAssignedIncidencias(user.id).then(function (res) {
+                    setIncidenciasSize(res.length);
+                    setIncidencias(res);
+                });
+            }
+            else if (orderBy == 'group_incidencias') {
+                TechnicalUtilities_1.getGroupIncidencias(user.id).then(function (res) {
                     setIncidenciasSize(res.length);
                     setIncidencias(res);
                 });
@@ -38380,6 +38386,28 @@ exports.getTechnicalIncidencias = function (user, orderBy) {
 exports.getAssignedIncidencias = function (id_user) {
     return axios_1.default
         .post('api/incidencias/technical/getIncidenciasAssigned', {
+        id: id_user
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.getGroupIncidencias = function (id_user) {
+    return axios_1.default
+        .post('api/incidencias/technical/getGroupsIncidencias', {
         id: id_user
     }, {
         headers: { 'Content-Type': 'application/json' }

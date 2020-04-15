@@ -6,7 +6,7 @@ import Selectbox from '../../../../Components/Selectbox/SelectBox';
 import { Link } from 'react-router-dom';
 
 import { getNoAssignedIncidencias } from '../../../../Utilities/Incidencias/SupervisorUtilities'
-import { getAssignedIncidencias } from '../../../../Utilities/Incidencias/TechnicalUtilities'
+import { getAssignedIncidencias, getGroupIncidencias } from '../../../../Utilities/Incidencias/TechnicalUtilities'
 
 import { getIncidencias, getFilteredIncidencias } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
 
@@ -29,8 +29,8 @@ const MostrarIncidenciasPage = () => {
         dropdownItems.push('Sin asignar');
         dropdownIds.push('no_assigned');
     } else if(userRol == 'technical') {
-        dropdownItems.splice(0,0,'Mis incidencias');
-        dropdownIds.splice(0,0,'my_incidencias');
+        dropdownItems.splice(0,0,'Mis incidencias', 'Incidencias grupales');
+        dropdownIds.splice(0,0,'my_incidencias', 'group_incidencias');
     }
 
     // Datos con los que se va a cargar el dropdown con las opción de ordenación de las incidencias.
@@ -103,8 +103,13 @@ const MostrarIncidenciasPage = () => {
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
                 });
-            }else if (orderBy == 'my_incidencias') {
+            } else if (orderBy == 'my_incidencias') {
                 getAssignedIncidencias(user.id).then(res => {
+                    setIncidenciasSize(res.length);
+                    setIncidencias(res);
+                });
+            } else if (orderBy == 'group_incidencias') {
+                    getGroupIncidencias(user.id).then(res => {
                     setIncidenciasSize(res.length);
                     setIncidencias(res);
                 });

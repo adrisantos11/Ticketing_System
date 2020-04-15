@@ -95,7 +95,16 @@ class TechnicalController extends Controller
         $id_user = $request->id;
         $orderByDirection = 'asc';  
 
-        $hole_union = DB::table('incidencias')->distinct('id')->where('id_assigned', $id_user)->orderBy('limit_date', 'asc')->get();
+        $hole_union = DB::table('incidencias')->distinct('id')->where('id_assigned', $id_user)->orderBy('limit_date', $orderByDirection)->get();
+        return $hole_union;
+    }
+
+    public function getTechnicalGroupIncidencias(Request $request) 
+    {
+        $id_user = $request->id;
+        $orderByDirection = 'asc';  
+
+        $hole_union = DB::table('incidencias')->distinct('id')->join('team_assigns', 'incidencias.id_team', '=', 'team_assigns.id_team')->where('team_assigns.id_user', $id_user)->orderBy('limit_date', $orderByDirection)->get();
         return $hole_union;
     }
 

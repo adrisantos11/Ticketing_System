@@ -40,6 +40,7 @@ Route::namespace('Users')->group(function () {
     Route::post('incidencias/technical/getIncidencias/{orderBy}', 'TechnicalController@getTechnicalIncidencias');
     Route::post('incidencias/technical/filtered', 'TechnicalController@getFilteredIncidencias, ');
     Route::post('incidencias/technical/getIncidenciasAssigned', 'TechnicalController@getAssignedToTechnical');
+    Route::post('incidencias/technical/getGroupsIncidencias', 'TechnicalController@getTechnicalGroupIncidencias');
     
     // -------- Controlador Supervisor --------
     Route::post('incidencias/supervisor/getIncidencias/{orderBy}', 'SupervisorController@getSupervisorIncidencias');
