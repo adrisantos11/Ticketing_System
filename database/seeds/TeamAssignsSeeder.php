@@ -17,7 +17,7 @@ class TeamAssignsSeeder extends Seeder
         ]);
 
         DB::table('team_assigns')->insert([
-            'id_user' => 4,
+            'id_user' => 2,
             'id_team' => 2
         ]);
     }

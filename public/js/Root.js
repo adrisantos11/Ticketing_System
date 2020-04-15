@@ -37183,9 +37183,9 @@ __webpack_require__(/*! ./MostrarIncidenciasPage.scss */ "./resources/js/Pages/I
 var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var SelectBox_1 = __webpack_require__(/*! ../../../../Components/Selectbox/SelectBox */ "./resources/js/Components/Selectbox/SelectBox.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-var TechnicalUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/TechnicalUtilities */ "./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx");
 var SupervisorUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
 var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
+var IncidenciasUtilities_2 = __webpack_require__(/*! ../../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
 var MostrarIncidenciasPage = function () {
     var _a = React.useState(false), incidenciasLoaded = _a[0], setIncidenciasLoaded = _a[1];
     var _b = React.useState([]), incidencias = _b[0], setIncidencias = _b[1];
@@ -37264,14 +37264,14 @@ var MostrarIncidenciasPage = function () {
         if (userRol == 'technical') {
             // En el caso en el que orderBy esté vacío, mandamos que se obtengan las incidencias ordenads por 'Prioridadd'
             if (orderBy == '') {
-                TechnicalUtilities_1.getTechnicalIncidencias(user, 'priority').then(function (res) {
+                IncidenciasUtilities_1.getIncidencias(user, userRol, 'priority').then(function (res) {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
                 });
             }
             else {
-                TechnicalUtilities_1.getTechnicalIncidencias(user, orderBy).then(function (res) {
+                IncidenciasUtilities_1.getIncidencias(user, userRol, orderBy).then(function (res) {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter(orderBy, res.sizes, res.colors);
@@ -37281,7 +37281,7 @@ var MostrarIncidenciasPage = function () {
         else if (userRol == 'supervisor') {
             // En el caso en el que orderBy esté vacío, se manda obtener las incidencias ordenads por 'Prioridadd'
             if (orderBy == '') {
-                SupervisorUtilities_1.getSupervisorIncidencias(user, 'priority').then(function (res) {
+                IncidenciasUtilities_1.getIncidencias(user, userRol, 'priority').then(function (res) {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
@@ -37294,7 +37294,7 @@ var MostrarIncidenciasPage = function () {
                 });
             }
             else {
-                SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
+                IncidenciasUtilities_1.getIncidencias(user, userRol, orderBy).then(function (res) {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter(orderBy, res.sizes, res.colors);
@@ -37313,7 +37313,7 @@ var MostrarIncidenciasPage = function () {
         // setIdSelectboxList([]);
         setOrderBy(idItem);
         setSelectboxList([]);
-        IncidenciasUtilities_1.getFilters().then(function (res) {
+        IncidenciasUtilities_2.getFilters().then(function (res) {
             if (idItem == 'priority') {
                 setDivSelectedData([]);
                 res.priority.map(function (value) {
@@ -37370,13 +37370,13 @@ var MostrarIncidenciasPage = function () {
             setIdSelectboxList(helperList);
         }
         if (helperList.length != 0) {
-            SupervisorUtilities_1.getSupervisorFilteredIncidencias(user.id, orderBy, helperList).then(function (res) {
+            IncidenciasUtilities_1.getFilteredIncidencias(user.id, userRol, orderBy, helperList).then(function (res) {
                 setIncidenciasSize(res.length);
                 setIncidencias(res);
             });
         }
         else {
-            SupervisorUtilities_1.getSupervisorIncidencias(user, orderBy).then(function (res) {
+            IncidenciasUtilities_1.getIncidencias(user, userRol, orderBy).then(function (res) {
                 setIncidenciasSize(res.length);
                 setIncidencias(res.data);
             });
@@ -38245,24 +38245,9 @@ exports.getFilters = function () {
         console.log(err);
     });
 };
-
-
-/***/ }),
-
-/***/ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx":
-/*!********************************************************************!*\
-  !*** ./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-exports.getSupervisorIncidencias = function (user, orderBy) {
+exports.getIncidencias = function (user, userRol, orderBy) {
     return axios_1.default
-        .post('api/incidencias/supervisor/getIncidencias/' + orderBy, {
+        .post('api/incidencias/' + userRol + '/getIncidencias/' + orderBy, {
         id: user.id
     }, {
         headers: { 'Content-Type': 'application/json' }
@@ -38282,9 +38267,9 @@ exports.getSupervisorIncidencias = function (user, orderBy) {
             console.log(err);
     });
 };
-exports.getSupervisorFilteredIncidencias = function (userId, idDropdown, idSelectboxList) {
+exports.getFilteredIncidencias = function (userId, userRol, idDropdown, idSelectboxList) {
     return axios_1.default
-        .post('api/incidencias/supervisor/filtered', {
+        .post('api/incidencias/' + userRol + '/filtered', {
         userId: userId,
         idDropdown: idDropdown,
         idSelectboxList: idSelectboxList
@@ -38306,6 +38291,21 @@ exports.getSupervisorFilteredIncidencias = function (userId, idDropdown, idSelec
             console.log(err);
     });
 };
+
+
+/***/ }),
+
+/***/ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx":
+/*!********************************************************************!*\
+  !*** ./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 exports.getNoAssignedIncidencias = function (userId) {
     return axios_1.default
         .post('api/incidencias/supervisor/noAssigned', {
@@ -38314,44 +38314,6 @@ exports.getNoAssignedIncidencias = function (userId) {
         headers: { 'Content-Type': 'application/json' }
     })
         .then(function (res) {
-        return res.data;
-    })
-        .catch(function (err) {
-        if (err.response) {
-            console.log(err.response.data.error);
-            console.log(err.response.status);
-        }
-        else if (err.request) {
-            console.log(err.request);
-        }
-        else
-            console.log(err);
-    });
-};
-
-
-/***/ }),
-
-/***/ "./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx":
-/*!*******************************************************************!*\
-  !*** ./resources/js/Utilities/Incidencias/TechnicalUtilities.tsx ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-exports.getTechnicalIncidencias = function (user, orderBy) {
-    return axios_1.default
-        .post('api/incidencias/technical/getAssigned/' + orderBy, {
-        id: user.id
-    }, {
-        headers: { 'Content-Type': 'application/json' }
-    })
-        .then(function (res) {
-        console.log(res);
         return res.data;
     })
         .catch(function (err) {

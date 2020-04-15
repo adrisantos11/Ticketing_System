@@ -108,3 +108,51 @@ export const getFilters = () => {
         console.log(err);
     });
 }
+
+export const getIncidencias = (user: any,userRol: string, orderBy: string) => {
+    return axios
+    .post('api/incidencias/'+userRol+'/getIncidencias/'+ orderBy,{
+        id: user.id
+    },
+    {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => { 
+        return res.data;
+    })
+    .catch(err => {
+        if(err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        } else if (err.request) {
+            console.log(err.request);
+            
+        } else
+            console.log(err);
+    })
+}
+
+export const getFilteredIncidencias = (userId: number, userRol: string, idDropdown: string, idSelectboxList: string[]) => {
+    return axios
+    .post('api/incidencias/'+userRol+'/filtered', {
+        userId: userId,
+        idDropdown: idDropdown,
+        idSelectboxList: idSelectboxList
+    },
+    {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => {
+        return res.data;
+    })
+    .catch(err => {
+        if(err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        } else if (err.request) {
+            console.log(err.request);
+            
+        } else
+            console.log(err);
+    })
+}

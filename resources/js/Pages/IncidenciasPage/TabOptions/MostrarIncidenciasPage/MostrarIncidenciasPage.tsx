@@ -5,8 +5,8 @@ import Dropdown from '../../../../Components/Dropdown/Dropdown';
 import Selectbox from '../../../../Components/Selectbox/SelectBox';
 import { Link } from 'react-router-dom';
 
-import { getTechnicalIncidencias } from '../../../../Utilities/Incidencias/TechnicalUtilities'
-import { getSupervisorIncidencias, getSupervisorFilteredIncidencias, getNoAssignedIncidencias } from '../../../../Utilities/Incidencias/SupervisorUtilities'
+import { getNoAssignedIncidencias } from '../../../../Utilities/Incidencias/SupervisorUtilities'
+import { getIncidencias, getFilteredIncidencias } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
 
 import { getFilters } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
 
@@ -93,13 +93,13 @@ const MostrarIncidenciasPage = () => {
         if (userRol == 'technical') {
             // En el caso en el que orderBy esté vacío, mandamos que se obtengan las incidencias ordenads por 'Prioridadd'
             if(orderBy == '') {
-                getTechnicalIncidencias(user, 'priority').then(res => {
+                getIncidencias(user, userRol, 'priority').then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
                 });
             } else {
-                getTechnicalIncidencias(user, orderBy).then(res => {
+                getIncidencias(user, userRol, orderBy).then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter(orderBy, res.sizes, res.colors);
@@ -108,7 +108,7 @@ const MostrarIncidenciasPage = () => {
         } else if (userRol == 'supervisor'){
             // En el caso en el que orderBy esté vacío, se manda obtener las incidencias ordenads por 'Prioridadd'
             if(orderBy == '') {
-                getSupervisorIncidencias(user, 'priority').then(res => {
+                getIncidencias(user, userRol, 'priority').then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
@@ -119,7 +119,7 @@ const MostrarIncidenciasPage = () => {
                     setIncidencias(res);
                 });
             } else {
-                getSupervisorIncidencias(user, orderBy).then(res => {
+                getIncidencias(user, userRol, orderBy).then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter(orderBy, res.sizes,res.colors);
@@ -202,12 +202,12 @@ const MostrarIncidenciasPage = () => {
             setIdSelectboxList(helperList);
         }
         if(helperList.length != 0) {
-            getSupervisorFilteredIncidencias(user.id, orderBy, helperList).then(res => {
+            getFilteredIncidencias(user.id, userRol,  orderBy, helperList).then(res => {
                 setIncidenciasSize(res.length);
                 setIncidencias(res);
             })
         } else {
-            getSupervisorIncidencias(user, orderBy).then(res => {
+            getIncidencias(user, userRol, orderBy).then(res => {
                 setIncidenciasSize(res.length);
                 setIncidencias(res.data);
             })

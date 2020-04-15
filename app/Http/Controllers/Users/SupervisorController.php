@@ -35,7 +35,7 @@ class SupervisorController extends Controller
          * ________________ SQL Query ________________
          *  SELECT * from incidencias INNER JOIN teams ON incidencias.id_team = teams.id WHERE teams.id_supervisor = 3
          */
-        $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->join('teams', 'incidencias.id_team', '=', 'teams.id')->where('teams.id_supervisor',$id_user)->union($first_union_1)->union($second_union_1)->orderBy($orderBy, $orderDirection)->orderBy('limit_date', 'asc')->get();
+        $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->join('teams', 'incidencias.id_team', '=', 'teams.id')->where('teams.id_supervisor',$id_user)->union($first_union_1)->union($second_union_1)->orderBy($orderBy, $orderDirection)->orderBy('limit_date', 'asc');
 
         return $hole_union;
 }
@@ -52,7 +52,7 @@ class SupervisorController extends Controller
             return DB::table('incidencias')->whereNull('id_assigned')->whereNull('id_team')->get();
         } else  {
 
-            $hole_union = $this->supervisorIncidencias($id_user, $orderByDirection, $orderBy);
+            $hole_union = $this->supervisorIncidencias($id_user, $orderByDirection, $orderBy)->get();
             
             /**
              * Ejemplo con 'state': 
@@ -137,33 +137,32 @@ class SupervisorController extends Controller
         $userId = $request->userId;
         $idDropdown = $request->idDropdown;
         $idSelectedBoxList = $request->idSelectboxList;
+        $orderByDirection = 'asc';
 
         if ($idDropdown == 'state') {
             $orderByDirection = 'desc';
         }
         $filterBy;
         $filterList = array();
+        $index = 0;
+        $where_raw = '';
+
         foreach($idSelectedBoxList as $valor) { 
             preg_match('/^.*?(?=_)/', $valor, $match);
             array_push($filterList, $match[0]);
+            if($index == 0) {
+                $where_raw = $where_raw.'IncidenciasList.'.$idDropdown.'="'.$match[0].'"';
+            } else {
+                $where_raw = $where_raw.'OR IncidenciasList.'.$idDropdown.'="'.$match[0].'"';
+            }
+            $index = $index +1;
         }
-        
-        $first_union    = DB::table('incidencias')->where('id_reporter',$userId)->where(function($query) use ($filterList, $idDropdown) {
-            foreach($filterList as $valor) {
-                $query->orWhere($idDropdown, $valor);
-            }
-        });
-        $second_union   = DB::table('incidencias')->whereNull('id_assigned')->whereNull('id_team')->where(function($query) use ($filterList, $idDropdown) {
-            foreach($filterList as $valor) {
-                $query->orWhere($idDropdown, $valor);
-            }
-        });
-        $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->join('team_assigns', 'incidencias.id_team', '=', 'team_assigns.id_team')->where('id_reporter',$userId)->where(function($query) use ($filterList, $idDropdown) {
-            foreach($filterList as $valor) {
-                $query->orWhere($idDropdown, $valor);
-            }
-        })->union($first_union)->union($second_union)->orderBy($idDropdown, 'asc')->orderBy('limit_date', 'asc')->get();  
-        return $hole_union;
+
+
+        $hole_union = $this->supervisorIncidencias($userId, $orderByDirection, $idDropdown);
+
+        $filtered_query = DB::table(DB::raw("({$hole_union->toSql()}) as IncidenciasList "))->mergeBindings($hole_union)->whereRaw($where_raw)->get();
+        return $filtered_query;
     }
 
     public function getWithoutAssignIncidencias(Request $request) {
