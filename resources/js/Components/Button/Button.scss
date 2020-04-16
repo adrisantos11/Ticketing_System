@@ -6,15 +6,15 @@
 
     &--primary {
         @extend .button_css;
-        background-color: $white_color;
-        color: $primary_color;
+        background-color: $primary_color;
+        color: $white_color;
         border-color: $primary_color;
     }
 
     &--primary:hover {
-        border-color: $primary_color;
+        border-color: $secondary_color;
         color: $white_color;
-        background-color: $primary_color;
+        background-color: $secondary_color;
     }
 
     &--white {

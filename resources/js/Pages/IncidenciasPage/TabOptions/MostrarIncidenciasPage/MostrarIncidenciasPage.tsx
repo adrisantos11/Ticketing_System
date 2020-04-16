@@ -17,7 +17,11 @@ const MostrarIncidenciasPage = () => {
     const [incidencias, setIncidencias] = React.useState([]);
     const userRol = localStorage.userRol;
     const [orderBy, setOrderBy] = React.useState('');
-    const headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad','Estado','Fecha límite', '¿Asignada?']
+    const headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad','Estado','Fecha límite', '¿Asignada?', 'Tiempo transcurrido desde su creación']
+
+    let date = new Date();
+    let hoursMinutesSeconds = date.toLocaleString().split(' ');
+    let actualDate = new Date(date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1]);
 
     const user = {
         id: localStorage.userId
@@ -229,6 +233,34 @@ const MostrarIncidenciasPage = () => {
         }
     }
 
+    const getDateDifference = (date1: Date, date2: Date) => {
+        const days = Math.floor((((date1.getTime()-date2.getTime())/1000)/3600)/24);
+        let hours = Math.floor((((date1.getTime()-date2.getTime())/1000)/3600)%24);
+        let mins = Math.floor(hours%60);
+        let daysData;
+        let hoursData;
+        if (days == 0 && hours==0) {
+            console.log('Hola');
+            mins = Math.floor((((date1.getTime()-date2.getTime())/1000)/60));
+            console.log(mins);
+        }
+        if (days != 0) {
+            daysData = <><b>{days}</b> días - </>
+        } else {
+            daysData = '';
+            hours = Math.floor(((date1.getTime()-date2.getTime())/1000)/3600);
+        }
+
+        if (hours != 0) {
+            hoursData = <><b>{hours}</b> horas - </>
+        } else {
+            hoursData = '';
+        }
+        return (
+        <>{daysData}{hoursData}<b>{mins}</b> minutos</>
+        )
+    }
+
     if(incidenciasLoaded && userRol=='supervisor') {
         return (
             <>
@@ -262,6 +294,7 @@ const MostrarIncidenciasPage = () => {
                                 <th scope="col">{headerList[5]}</th>
                                 <th scope="col">{headerList[6]}</th>
                                 <th scope="col">{headerList[7]}</th>
+                                <th scope="col">{headerList[8]}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -269,7 +302,7 @@ const MostrarIncidenciasPage = () => {
                                 incidencias.map((element, index) => {
                                     let priorityText='';
                                     let priorityColor='';
-                                
+                                    
                                     let isAssigned = 'SI';
                                     if (element.id_assigned == null && element.id_team == null) {
                                         isAssigned = 'NO';
@@ -309,6 +342,9 @@ const MostrarIncidenciasPage = () => {
                                     } else {
                                         description = element.description;
                                     }
+
+                                    const incidenciaLimitDate = new Date(element.creation_date);
+                                    // let timeOpen = actualDate.getDate()-incidenciaLimitDate.getDate();
                                     return(
                                     <tr key={index}>
                                         <th scope="row">{`#${element.id}`}</th>
@@ -319,6 +355,7 @@ const MostrarIncidenciasPage = () => {
                                         <td className={`columna${stateColor}`}>{state}</td>
                                         <td>{element.limit_date}</td>
                                         <td>{isAssigned}</td>
+                                        <td>{getDateDifference(actualDate, incidenciaLimitDate)}</td>
                                     </tr>
                                     )
                                 }) 
@@ -365,6 +402,7 @@ const MostrarIncidenciasPage = () => {
                                 <th scope="col">{headerList[4]}</th>
                                 <th scope="col">{headerList[5]}</th>
                                 <th scope="col">{headerList[6]}</th>
+                                <th scope="col">{headerList[8]}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -409,7 +447,9 @@ const MostrarIncidenciasPage = () => {
                                         } else {
                                             description = element.description;
                                         }
-    
+
+                                        const incidenciaLimitDate = new Date(element.creation_date);
+
                                         return(
                                         <tr key={index}>
                                             <th scope="row">{`#${element.id}`}</th>
@@ -419,6 +459,7 @@ const MostrarIncidenciasPage = () => {
                                             <td className={`columna${priorityColor}`}><span>{priorityText}</span></td>
                                             <td className={`columna${stateColor}`}><span>{state}</span></td>
                                             <td>{element.limit_date}</td>
+                                            <td>{getDateDifference(actualDate, incidenciaLimitDate)}</td>
                                         </tr>
                                         )
                                     }) 

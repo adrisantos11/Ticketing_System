@@ -2022,7 +2022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: #FFFFFF;\n  color: #3685EC;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #3685EC;\n  color: #FFFFFF;\n  background-color: #3685EC;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.2rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 2rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
+exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #003877;\n  color: #FFFFFF;\n  background-color: #003877;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.2rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 2rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
 
 // exports
 
@@ -37256,7 +37256,10 @@ var MostrarIncidenciasPage = function () {
     var _b = React.useState([]), incidencias = _b[0], setIncidencias = _b[1];
     var userRol = localStorage.userRol;
     var _c = React.useState(''), orderBy = _c[0], setOrderBy = _c[1];
-    var headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad', 'Estado', 'Fecha límite', '¿Asignada?'];
+    var headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad', 'Estado', 'Fecha límite', '¿Asignada?', 'Tiempo transcurrido desde su creación'];
+    var date = new Date();
+    var hoursMinutesSeconds = date.toLocaleString().split(' ');
+    var actualDate = new Date(date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1]);
     var user = {
         id: localStorage.userId
     };
@@ -37463,6 +37466,40 @@ var MostrarIncidenciasPage = function () {
             });
         }
     };
+    var getDateDifference = function (date1, date2) {
+        var days = Math.floor((((date1.getTime() - date2.getTime()) / 1000) / 3600) / 24);
+        var hours = Math.floor((((date1.getTime() - date2.getTime()) / 1000) / 3600) % 24);
+        var mins = Math.floor(hours % 60);
+        var daysData;
+        var hoursData;
+        if (days == 0 && hours == 0) {
+            console.log('Hola');
+            mins = Math.floor((((date1.getTime() - date2.getTime()) / 1000) / 60));
+            console.log(mins);
+        }
+        if (days != 0) {
+            daysData = React.createElement(React.Fragment, null,
+                React.createElement("b", null, days),
+                " d\u00EDas - ");
+        }
+        else {
+            daysData = '';
+            hours = Math.floor(((date1.getTime() - date2.getTime()) / 1000) / 3600);
+        }
+        if (hours != 0) {
+            hoursData = React.createElement(React.Fragment, null,
+                React.createElement("b", null, hours),
+                " horas - ");
+        }
+        else {
+            hoursData = '';
+        }
+        return (React.createElement(React.Fragment, null,
+            daysData,
+            hoursData,
+            React.createElement("b", null, mins),
+            " minutos"));
+    };
     if (incidenciasLoaded && userRol == 'supervisor') {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "incidenciasList-container" },
@@ -37486,7 +37523,8 @@ var MostrarIncidenciasPage = function () {
                                 React.createElement("th", { scope: "col" }, headerList[4]),
                                 React.createElement("th", { scope: "col" }, headerList[5]),
                                 React.createElement("th", { scope: "col" }, headerList[6]),
-                                React.createElement("th", { scope: "col" }, headerList[7]))),
+                                React.createElement("th", { scope: "col" }, headerList[7]),
+                                React.createElement("th", { scope: "col" }, headerList[8]))),
                         React.createElement("tbody", null, incidencias.map(function (element, index) {
                             var priorityText = '';
                             var priorityColor = '';
@@ -37531,6 +37569,8 @@ var MostrarIncidenciasPage = function () {
                             else {
                                 description = element.description;
                             }
+                            var incidenciaLimitDate = new Date(element.creation_date);
+                            // let timeOpen = actualDate.getDate()-incidenciaLimitDate.getDate();
                             return (React.createElement("tr", { key: index },
                                 React.createElement("th", { scope: "row" }, "#" + element.id),
                                 React.createElement("td", null,
@@ -37541,7 +37581,8 @@ var MostrarIncidenciasPage = function () {
                                 React.createElement("td", { className: "columna" + priorityColor }, priorityText),
                                 React.createElement("td", { className: "columna" + stateColor }, state),
                                 React.createElement("td", null, element.limit_date),
-                                React.createElement("td", null, isAssigned)));
+                                React.createElement("td", null, isAssigned),
+                                React.createElement("td", null, getDateDifference(actualDate, incidenciaLimitDate))));
                         })))),
                 React.createElement("div", { className: 'footer-container' },
                     React.createElement("div", { className: "dataSelection-container" },
@@ -37571,7 +37612,8 @@ var MostrarIncidenciasPage = function () {
                                 React.createElement("th", { scope: "col" }, headerList[3]),
                                 React.createElement("th", { scope: "col" }, headerList[4]),
                                 React.createElement("th", { scope: "col" }, headerList[5]),
-                                React.createElement("th", { scope: "col" }, headerList[6]))),
+                                React.createElement("th", { scope: "col" }, headerList[6]),
+                                React.createElement("th", { scope: "col" }, headerList[8]))),
                         React.createElement("tbody", null, incidencias.map(function (element, index) {
                             var priorityText = '';
                             var priorityColor = '';
@@ -37612,6 +37654,7 @@ var MostrarIncidenciasPage = function () {
                             else {
                                 description = element.description;
                             }
+                            var incidenciaLimitDate = new Date(element.creation_date);
                             return (React.createElement("tr", { key: index },
                                 React.createElement("th", { scope: "row" }, "#" + element.id),
                                 React.createElement("td", null,
@@ -37623,7 +37666,8 @@ var MostrarIncidenciasPage = function () {
                                     React.createElement("span", null, priorityText)),
                                 React.createElement("td", { className: "columna" + stateColor },
                                     React.createElement("span", null, state)),
-                                React.createElement("td", null, element.limit_date)));
+                                React.createElement("td", null, element.limit_date),
+                                React.createElement("td", null, getDateDifference(actualDate, incidenciaLimitDate))));
                         })))),
                 React.createElement("div", { className: 'footer-container' },
                     React.createElement("div", { className: "dataSelection-container" },
