@@ -505,6 +505,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             createIncidencia(incidencia);    
             $('#'+modalCreateIncidencia.id).modal('hide'); 
             history.push('/home/incidencias/show');
+            $('#toastCreate').show();
+            $('#toastCreate').toast('show');
         } else {
             let incidencia: IncidenciaModel = {
                 id: props.formularioProps.incidenciaData.id,

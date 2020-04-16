@@ -2162,6 +2162,25 @@ exports.push([module.i, ".tabs-container {\n  height: auto;\n}\n.tabs-container 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Toast/Toast.scss":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/Toast/Toast.scss ***!
+  \*************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".toast {\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 5px;\n  box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.75);\n}\n.toast .toast-header {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-bottom-color: #e2e2e2;\n  padding: 0.25rem 0.5rem;\n  background-color: #f1f1f1;\n}\n.toast .toast-header .circle-div, .toast .toast-header .circle-div--blue, .toast .toast-header .circle-div--red {\n  height: 20px;\n  width: 20px;\n  border-radius: 20px;\n  margin: 0.5rem;\n}\n.toast .toast-header .circle-div--red {\n  background-color: #dc3545;\n}\n.toast .toast-header .circle-div--blue {\n  background-color: #3685EC;\n}\n.toast .toast-header .mr-auto {\n  margin: 0 0.5rem;\n}\n.toast .toast-header .close {\n  margin-right: 0.5rem;\n}\n.toast .toast-body {\n  padding: 1rem;\n  background-color: #FFFFFF;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/UploadFile/UploadFile.scss":
 /*!***********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Components/UploadFile/UploadFile.scss ***!
@@ -2269,7 +2288,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".incidenciasList-container {\n  height: 100%;\n}\n.incidenciasList-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  height: 10%;\n  padding-left: 1rem;\n  background-color: whitesmoke;\n}\n.incidenciasList-container .filtrar-container .dropdown {\n  margin-left: 0.5rem;\n  padding-right: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  margin-left: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container .btn-group {\n  margin: 0 0.5rem;\n}\n.incidenciasList-container .filtrar-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n}\n.incidenciasList-container .table-container {\n  height: auto;\n  max-height: 80%;\n  overflow-y: scroll;\n  box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);\n  padding: 0.5rem;\n}\n.incidenciasList-container .table-container .table {\n  height: 100%;\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr:first-child {\n  width: 8%;\n}\n.incidenciasList-container .table-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.incidenciasList-container .table-container .table tbody tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr th {\n  width: 8%;\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr .columna, .incidenciasList-container .table-container .table tbody tr .columna--bg-primary, .incidenciasList-container .table-container .table tbody tr .columna--bg-green, .incidenciasList-container .table-container .table tbody tr .columna--bg-orange, .incidenciasList-container .table-container .table tbody tr .columna--bg-red, .incidenciasList-container .table-container .table tbody tr .columna--green, .incidenciasList-container .table-container .table tbody tr .columna--orange, .incidenciasList-container .table-container .table tbody tr .columna--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--orange {\n  color: #e78738;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--green {\n  color: #07a744;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-red {\n  background-color: rgba(220, 53, 69, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-orange {\n  background-color: rgba(231, 135, 56, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-green {\n  background-color: rgba(7, 167, 68, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-primary {\n  margin: 1.5rem 0.5rem;\n  background-color: rgba(54, 133, 236, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .footer-container {\n  height: 10%;\n  padding: 0.5rem 1rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-content: center;\n  align-items: center;\n}\n.incidenciasList-container .footer-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n  margin: 0 2rem;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span, .incidenciasList-container .footer-container .dataSelection-container--filter .span--green, .incidenciasList-container .footer-container .dataSelection-container--filter .span--red, .incidenciasList-container .footer-container .dataSelection-container--filter .span--orange, .incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  font-weight: bold;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  color: #3685EC;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--orange {\n  color: #e78738;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--red {\n  color: #dc3545;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--green {\n  color: #07a744;\n}", ""]);
+exports.push([module.i, ".incidenciasList-container {\n  height: 100%;\n}\n.incidenciasList-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  height: 10%;\n  padding-left: 1rem;\n  background-color: whitesmoke;\n}\n.incidenciasList-container .filtrar-container .dropdown {\n  margin-left: 0.5rem;\n  padding-right: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  margin-left: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container .btn-group {\n  margin: 0 0.5rem;\n}\n.incidenciasList-container .filtrar-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n}\n.incidenciasList-container .table-container {\n  height: auto;\n  max-height: 80%;\n  overflow-y: scroll;\n  box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);\n  padding: 0.5rem;\n}\n.incidenciasList-container .table-container .table {\n  height: 100%;\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr:first-child {\n  width: 8%;\n}\n.incidenciasList-container .table-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.incidenciasList-container .table-container .table tbody tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr th {\n  width: 8%;\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr .limitDate-column {\n  color: #dc3545;\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna, .incidenciasList-container .table-container .table tbody tr .columna--bg-primary, .incidenciasList-container .table-container .table tbody tr .columna--bg-green, .incidenciasList-container .table-container .table tbody tr .columna--bg-orange, .incidenciasList-container .table-container .table tbody tr .columna--bg-red, .incidenciasList-container .table-container .table tbody tr .columna--green, .incidenciasList-container .table-container .table tbody tr .columna--orange, .incidenciasList-container .table-container .table tbody tr .columna--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--orange {\n  color: #e78738;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--green {\n  color: #07a744;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-red {\n  background-color: rgba(220, 53, 69, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-orange {\n  background-color: rgba(231, 135, 56, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-green {\n  background-color: rgba(7, 167, 68, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-primary {\n  margin: 1.5rem 0.5rem;\n  background-color: rgba(54, 133, 236, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .footer-container {\n  height: 10%;\n  padding: 0.5rem 1rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-content: center;\n  align-items: center;\n}\n.incidenciasList-container .footer-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n  margin: 0 2rem;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span, .incidenciasList-container .footer-container .dataSelection-container--filter .span--green, .incidenciasList-container .footer-container .dataSelection-container--filter .span--red, .incidenciasList-container .footer-container .dataSelection-container--filter .span--orange, .incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  font-weight: bold;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  color: #3685EC;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--orange {\n  color: #e78738;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--red {\n  color: #dc3545;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--green {\n  color: #07a744;\n}", ""]);
 
 // exports
 
@@ -2307,7 +2326,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n  padding-top: 0;\n  width: 100%;\n  height: 100vh;\n  max-height: 100vh;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .mainpage-container {\n    flex-direction: column;\n    padding-left: 0;\n  }\n  .mainpage-container .body-container {\n    padding-top: 56px;\n  }\n}", ""]);
+exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n  padding-top: 0;\n  width: 100%;\n  height: 100vh;\n  max-height: 100vh;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .mainpage-container {\n    flex-direction: column;\n    padding-left: 0;\n  }\n  .mainpage-container .body-container {\n    padding-top: 56px;\n  }\n}\n.mainpage-container .toast-container {\n  position: absolute;\n  top: 20px;\n  right: 20px;\n}\n.mainpage-container .toast-container .toast {\n  margin: 0.5rem;\n  display: none;\n}", ""]);
 
 // exports
 
@@ -36517,6 +36536,62 @@ exports.default = Tabs;
 
 /***/ }),
 
+/***/ "./resources/js/Components/Toast/Toast.scss":
+/*!**************************************************!*\
+  !*** ./resources/js/Components/Toast/Toast.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Toast.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Components/Toast/Toast.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Toast/Toast.tsx":
+/*!*************************************************!*\
+  !*** ./resources/js/Components/Toast/Toast.tsx ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./Toast.scss */ "./resources/js/Components/Toast/Toast.scss");
+var Toast = function (props) {
+    return (React.createElement("div", { className: "toast", role: "alert", "aria-live": "assertive", "aria-atomic": "true", "data-delay": props.toastProps.delay, id: props.toastProps.id },
+        React.createElement("div", { className: "toast-header" },
+            React.createElement("div", { className: "circle-div" + props.toastProps.circleColor }),
+            React.createElement("strong", { className: "mr-auto" }, props.toastProps.title),
+            React.createElement("button", { type: "button", className: "ml-2 mb-1 close", "data-dismiss": "toast", "aria-label": "Close" },
+                React.createElement("span", { "aria-hidden": "true" }, "\u00D7"))),
+        React.createElement("div", { className: "toast-body" }, props.toastProps.description)));
+};
+exports.default = Toast;
+
+
+/***/ }),
+
 /***/ "./resources/js/Components/UploadFile/UploadFile.scss":
 /*!************************************************************!*\
   !*** ./resources/js/Components/UploadFile/UploadFile.scss ***!
@@ -36863,6 +36938,8 @@ var IncidenciaViewPage = function () {
     var handleClickDeleteIncidencia = function () {
         IncidenciasUtilities_1.deleteIncidencia(Number(idIncidencia));
         history.push('/home/incidencias/show');
+        $('#toastDelete').show();
+        $('#toastDelete').toast('show');
     };
     var handleClickItemDD = function (idItem, idDropdown) {
         switch (idItem) {
@@ -37569,6 +37646,15 @@ var MostrarIncidenciasPage = function () {
                             else {
                                 description = element.description;
                             }
+                            var limit_date = '';
+                            var date_column = '';
+                            if (element.limit_date == null) {
+                                limit_date = '--';
+                                date_column = 'limitDate-column';
+                            }
+                            else {
+                                limit_date = element.limit_date;
+                            }
                             var incidenciaLimitDate = new Date(element.creation_date);
                             // let timeOpen = actualDate.getDate()-incidenciaLimitDate.getDate();
                             return (React.createElement("tr", { key: index },
@@ -37580,7 +37666,7 @@ var MostrarIncidenciasPage = function () {
                                 React.createElement("td", null, element.category),
                                 React.createElement("td", { className: "columna" + priorityColor }, priorityText),
                                 React.createElement("td", { className: "columna" + stateColor }, state),
-                                React.createElement("td", null, element.limit_date),
+                                React.createElement("td", { className: date_column }, limit_date),
                                 React.createElement("td", null, isAssigned),
                                 React.createElement("td", null, getDateDifference(actualDate, incidenciaLimitDate))));
                         })))),
@@ -37899,7 +37985,10 @@ var PerfilPage_1 = __webpack_require__(/*! ../PerfilPage/PerfilPage */ "./resour
 var IncidenciasPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciasPage */ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.tsx");
 var CalendarPage_1 = __webpack_require__(/*! ../CalendarPage/CalendarPage */ "./resources/js/Pages/CalendarPage/CalendarPage.tsx");
 var IncidenciaViewPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage */ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.tsx");
+var Toast_1 = __webpack_require__(/*! ../../Components/Toast/Toast */ "./resources/js/Components/Toast/Toast.tsx");
 var MainPage = function () {
+    // $('#toastDelete').toast('hide');
+    // $('#toastCreate').toast('hide');
     var history = react_router_dom_1.useHistory();
     var _a = React.useState(false), isLogged = _a[0], setIsLogged = _a[1];
     var _b = React.useState({
@@ -37929,6 +38018,20 @@ var MainPage = function () {
         target_modal: '',
         extraClass: ''
     }), closeSlidebarButton = _d[0], setCloseSlidebarButton = _d[1];
+    var toastDeleteIncidencia = React.useState({
+        id: 'toastDelete',
+        title: 'Incidencia eliminada',
+        description: 'La incidencia ha sido eliminada correctamente.',
+        circleColor: '--red',
+        delay: 4000
+    })[0];
+    var toastCreateIncidencia = React.useState({
+        id: 'toastCreate',
+        title: 'Incidencia creada',
+        description: 'La incidencia se ha creado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    })[0];
     React.useEffect(function () {
         Authentication_1.getProfile().then(function (res) {
             try {
@@ -37957,7 +38060,10 @@ var MainPage = function () {
                         React.createElement(react_router_dom_1.Route, { path: "/home/incidencias", component: IncidenciasPage_1.default }),
                         React.createElement(react_router_dom_1.Route, { path: "/home/calendario", component: CalendarPage_1.default }),
                         React.createElement(react_router_dom_1.Route, { path: "/home/disponibilidad-aulas", component: IncidenciasPage_1.default }),
-                        React.createElement(react_router_dom_1.Route, { path: "/home/incidencia-view/:idIncidencia", component: IncidenciaViewPage_1.default }))))));
+                        React.createElement(react_router_dom_1.Route, { path: "/home/incidencia-view/:idIncidencia", component: IncidenciaViewPage_1.default }))),
+                React.createElement("div", { className: "toast-container" },
+                    React.createElement(Toast_1.default, { toastProps: toastDeleteIncidencia }),
+                    React.createElement(Toast_1.default, { toastProps: toastCreateIncidencia })))));
     }
     else {
         return (React.createElement(React.Fragment, null,
@@ -39034,6 +39140,8 @@ var FormularioIncidencia = function (props) {
             IncidenciasUtilities_1.createIncidencia(incidencia);
             $('#' + modalCreateIncidencia.id).modal('hide');
             history.push('/home/incidencias/show');
+            $('#toastCreate').show();
+            $('#toastCreate').toast('show');
         }
         else {
             var incidencia = {

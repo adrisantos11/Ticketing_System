@@ -27,7 +27,7 @@ class CreateIncidenciasTable extends Migration
             $table->string('class');
             $table->string('url_data')->nullable();
             $table->dateTime('creation_date');
-            $table->dateTime('limit_date');
+            $table->dateTime('limit_date')->nullable();
             $table->dateTime('assigned_date')->nullable();
             $table->dateTime('resolution_date')->nullable();
             $table->enum('priority', ['critical', 'important', 'trivial'])->default('trivial');

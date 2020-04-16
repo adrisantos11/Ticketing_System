@@ -84,6 +84,12 @@
                         vertical-align: middle;
                     }
 
+                    .limitDate-column {
+                        color: $red_color;
+                        font-weight: bold;
+
+                    }
+
                     .columna {
                         font-weight: bold;
 
@@ -160,6 +166,7 @@
 
             &--filter {
                 @extend .dataSelection-container;
+
                 .span {
                     font-weight: bold;
 
@@ -189,4 +196,6 @@
             }
         }
     }
+
+
 }

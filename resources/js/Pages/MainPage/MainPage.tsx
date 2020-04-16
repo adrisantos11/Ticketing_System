@@ -3,7 +3,7 @@ import * as React from 'react'
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 import './MainPage.scss'
 
-import { ButtonModel, InputModel } from '../../Model/model'
+import { ButtonModel, InputModel, ToastModel } from '../../Model/model'
 import Button from '../../Components/Button/Button';
 import Navbar from '../../Components/Navbar/Navbar'
 
@@ -13,8 +13,12 @@ import IncidenciasPage from "../IncidenciasPage/IncidenciasPage"
 import CalendarPage from "../CalendarPage/CalendarPage"
 import CreateIncidenciaPage from "../IncidenciasPage/TabOptions/CreateIncidenciaPage/CreateIncidenciaPage"
 import IncidenciaViewPage from "../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage"
+import Toast from '../../Components/Toast/Toast';
 
 const MainPage = () => {
+    // $('#toastDelete').toast('hide');
+    // $('#toastCreate').toast('hide');
+
     const history = useHistory();
     const [isLogged, setIsLogged] = React.useState(false);
     const [logoutButton, setLogoutButton] = React.useState<ButtonModel>({
@@ -45,6 +49,22 @@ const MainPage = () => {
         icon: 'fas fa-bars',
         target_modal:'',
         extraClass: ''
+    });
+
+    const [toastDeleteIncidencia] = React.useState<ToastModel>({
+        id: 'toastDelete',
+        title: 'Incidencia eliminada',
+        description: 'La incidencia ha sido eliminada correctamente.',
+        circleColor: '--red',
+        delay: 4000
+    });
+
+    const [toastCreateIncidencia] = React.useState<ToastModel>({
+        id: 'toastCreate',
+        title: 'Incidencia creada',
+        description: 'La incidencia se ha creado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
     });
 
     React.useEffect(() => {
@@ -87,6 +107,10 @@ const MainPage = () => {
                         <Route path="/home/disponibilidad-aulas" component={IncidenciasPage}></Route>
                         <Route path="/home/incidencia-view/:idIncidencia" component={IncidenciaViewPage}></Route>
                     </Switch>
+                </div>
+                <div className="toast-container">
+                    <Toast toastProps={toastDeleteIncidencia}></Toast>
+                    <Toast toastProps={toastCreateIncidencia}></Toast>
                 </div>
             </div>
             </>

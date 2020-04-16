@@ -1,0 +1,52 @@
+@import '../../../sass/app.scss';
+
+.toast {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-width: 1px;
+    border-color: $grey_color_226;
+    border-radius: 5px;
+    box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
+    .toast-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        border-bottom: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: $grey_color_226;
+        padding: $default_padding*0.5 $default_padding;
+        background-color: $grey_color_184;
+
+        .circle-div {
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+            margin: $default_padding;
+
+            &--red {
+                @extend .circle-div;
+                background-color: $red_color;
+            }
+
+            &--blue {
+                @extend .circle-div;
+                background-color: $primary-color;
+            }
+        }
+
+        .mr-auto {
+            margin: 0 $default_padding;
+        }
+        .close {
+            margin-right: $default_padding;
+        }
+    }
+
+    .toast-body {
+        padding: $default_padding*2;
+        background-color: $white_color;
+    }
+}

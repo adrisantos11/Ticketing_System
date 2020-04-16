@@ -165,7 +165,7 @@ class IncidenciasSeeder extends Seeder
             'class' => 'C307',
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
-            'limit_date' => '2009-12-30 14:34:29',
+            'limit_date' => null,
             'assigned_date' => '2014-10-25 20:00:00',
             'resolution_date' => '2014-10-25 20:00:00',
             'priority' => 'critical',

@@ -96,3 +96,11 @@ export interface DataCardModel {
     popoverIcon: string,
     popoverText: string
 }
+
+export interface ToastModel {
+    id: string,
+    title: string,
+    description: string,
+    circleColor: string,
+    delay: number
+}

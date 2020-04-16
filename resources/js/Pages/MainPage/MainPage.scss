@@ -26,4 +26,14 @@
             padding-top: 56px;
         }
     }
+
+    .toast-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        .toast {
+            margin: $default_padding;
+            display: none;
+        }
+    }
 }

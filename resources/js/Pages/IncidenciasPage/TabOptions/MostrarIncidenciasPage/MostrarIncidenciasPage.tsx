@@ -13,6 +13,7 @@ import { getIncidencias, getFilteredIncidencias } from '../../../../Utilities/In
 import { getFilters } from '../../../../Utilities/Incidencias/IncidenciasUtilities'
 
 const MostrarIncidenciasPage = () => {
+
     const [incidenciasLoaded, setIncidenciasLoaded] = React.useState(false);
     const [incidencias, setIncidencias] = React.useState([]);
     const userRol = localStorage.userRol;
@@ -343,6 +344,15 @@ const MostrarIncidenciasPage = () => {
                                         description = element.description;
                                     }
 
+                                    let limit_date = '';
+                                    let date_column = ''
+                                    if (element.limit_date == null) {
+                                        limit_date = '--';
+                                        date_column = 'limitDate-column';
+                                    } else {
+                                        limit_date = element.limit_date;
+                                    }
+
                                     const incidenciaLimitDate = new Date(element.creation_date);
                                     // let timeOpen = actualDate.getDate()-incidenciaLimitDate.getDate();
                                     return(
@@ -353,7 +363,7 @@ const MostrarIncidenciasPage = () => {
                                         <td>{element.category}</td>
                                         <td className={`columna${priorityColor}`}>{priorityText}</td>
                                         <td className={`columna${stateColor}`}>{state}</td>
-                                        <td>{element.limit_date}</td>
+                                        <td className={date_column}>{limit_date}</td>
                                         <td>{isAssigned}</td>
                                         <td>{getDateDifference(actualDate, incidenciaLimitDate)}</td>
                                     </tr>

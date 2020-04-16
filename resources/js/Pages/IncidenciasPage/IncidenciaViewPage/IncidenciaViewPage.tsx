@@ -228,6 +228,9 @@ const IncidenciaViewPage = () => {
     const handleClickDeleteIncidencia = () => {
         deleteIncidencia(Number(idIncidencia));
         history.push('/home/incidencias/show');
+        $('#toastDelete').show();
+        $('#toastDelete').toast('show');
+
     }
 
     const handleClickItemDD = (idItem: string, idDropdown: number) => {
