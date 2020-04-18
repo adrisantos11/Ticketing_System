@@ -51,6 +51,7 @@ const MainPage = () => {
         extraClass: ''
     });
 
+    
     const [toastDeleteIncidencia] = React.useState<ToastModel>({
         id: 'toastDelete',
         title: 'Incidencia eliminada',

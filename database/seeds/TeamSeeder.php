@@ -12,18 +12,21 @@ class TeamSeeder extends Seeder
     public function run()
     {
         DB::table('teams')->insert([
+            'name'          => 'Equipo de software',
             'description'   => 'Este equipo se hará cargo de las incidencias producidas con el material software de las aulas.',
             'category'      => 'Software',
             'id_supervisor' => 3
         ]);
 
         DB::table('teams')->insert([
+            'name'          => 'Equipo de aulas',
             'description'   => 'Equipo encargado del material hardware de las aulas.',
             'category'      => 'Hardware',
             'id_supervisor' => 3
         ]);
 
         DB::table('teams')->insert([
+            'name'          => 'Equipo de internet',
             'description'   => 'Equipo encargado de las incidencias producidas en las conexiones y redes de internet.',
             'category'      => 'Redes y conexión wifi',
             'id_supervisor' => 2

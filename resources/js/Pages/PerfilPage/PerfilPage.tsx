@@ -3,9 +3,22 @@ import * as React from 'react'
 import './PerfilPage.scss'
 import DataCard from '../../Components/DataCard/DataCard';
 import { DataCardModel } from '../../Model/model';
-import { getUserLogged } from '../../Utilities/Authentication'
+import { getUserLogged } from '../../Utilities/Authentication'; 
+import { Line, Bar } from 'react-chartjs-2';
+import { defaults } from 'react-chartjs-2';
 
 const PerfilPage = () => {
+
+    // Estilo de letra de la gráfica ---> https://www.chartjs.org/docs/latest/configuration/elements.html
+    defaults.global.defaultFontFamily = 'Sen, sans-serif';
+    defaults.global.legend.position = 'bottom';
+    defaults.global.title.display = true;
+    defaults.global.title.fontColor = '#141414';
+    defaults.global.title.fontSize = 20;
+    defaults.global.title.fontStyle = 'bold';
+
+    // defaults.global.defaultFontSize = '1rem';
+
     const [perfilDC, setperfilDC] = React.useState<DataCardModel>({
         id: 1,
         title: 'Información sobre el usuario',
@@ -52,6 +65,45 @@ const PerfilPage = () => {
             }
         });
     }, []);
+
+    let data = {
+        labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Solucionadas'],
+        datasets: [
+          {
+            label: 'Mis incidencias',
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor: [
+                "#3685EC",
+                "#e78738",
+                "#dc3545",
+                "#07a744",
+            ],
+            borderColor: 'rgba(75,192,192,1)',
+            borderCapStyle: 'butt',
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            // pointBorderColor: 'rgba(75,192,192,1)',
+            // pointBackgroundColor: '#fff',
+            // pointBorderWidth: 1,
+            // pointHoverRadius: 5,
+            // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+            // pointHoverBorderColor: 'rgba(220,220,220,1)',
+            // pointHoverBorderWidth: 2,
+            // pointRadius: 1,
+            // pointHitRadius: 10,
+            data: [65, 59, 80, 81]
+          }
+        ]
+      };
+
+      let options = {
+            legend: {
+                labels: {
+                defaultFontSize: 15
+                }
+            }
+        }
 
         return (
             <>
@@ -126,7 +178,11 @@ const PerfilPage = () => {
                             <span className="badge">New</span>
                             <span className="badge">New</span> */}
                         </div>
-                        <div className="right-container"></div>
+                        <div className="right-container">
+                            <div className="rightData-container">
+                                <Bar data={data} options={options}/>    
+                            </div>
+                        </div>
                     </div>
                     {/* <table className="table" id='dataTable'>
                         <thead>

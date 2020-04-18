@@ -15,6 +15,7 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->string('description');
             $table->string('category')->nullable();
             $table->integer('id_supervisor');
