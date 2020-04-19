@@ -18183,7 +18183,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #003877;\n  color: #FFFFFF;\n  background-color: #003877;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1.2rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 2rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
+exports.push([module.i, ".button_css, .button_css--red, .button_css--white, .button_css--primary {\n  border-radius: 2.5rem;\n  padding: 0.5rem 2rem;\n}\n.button_css--primary {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-color: #3685EC;\n}\n.button_css--primary:hover {\n  border-color: #003877;\n  color: #FFFFFF;\n  background-color: #003877;\n}\n.button_css--white {\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n}\n.button_css--white:hover {\n  border-color: #003877;\n  color: #003877;\n  background-color: #FFFFFF;\n}\n.button_css--red {\n  background-color: #dc3545;\n  color: #FFFFFF;\n  border-color: #dc3545;\n}\n.button_css--red:hover {\n  border-color: #dc3545;\n  color: #FFFFFF;\n  background-color: #BE2231;\n}\n.button_css .span_container, .button_css .span_container--show, .button_css--primary .span_container, .button_css--primary .span_container--show, .button_css--white .span_container, .button_css--white .span_container--show, .button_css--red .span_container, .button_css--red .span_container--show {\n  display: none;\n  padding-right: 0.5rem;\n  font-size: 1rem;\n}\n.button_css .span_container--show, .button_css--primary .span_container--show, .button_css--white .span_container--show, .button_css--red .span_container--show {\n  display: inline;\n}\n.button_css .button_text, .button_css--primary .button_text, .button_css--white .button_text, .button_css--red .button_text {\n  font-size: 1rem;\n}\n\n.button_css:hover, .button_css--primary:hover, .button_css--white:hover, .button_css--red:hover {\n  cursor: pointer;\n}\n\n.only-icon, .only-icon--primary {\n  padding: 0.5rem 1rem !important;\n  cursor: pointer;\n  font-size: 2rem;\n}\n.only-icon--primary {\n  color: #3685EC;\n}", ""]);
 
 // exports
 
@@ -18468,7 +18468,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".technicalGroups-container {\n  background-color: whitesmoke;\n  height: 100%;\n}\n.technicalGroups-container .left-container {\n  width: 50%;\n  padding: 1rem;\n}\n.technicalGroups-container .right-container {\n  width: 50%;\n  padding: 0.5rem 0.5rem;\n}", ""]);
+exports.push([module.i, ".technicalGroups-container {\n  background-color: whitesmoke;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.technicalGroups-container .title-page {\n  font-size: 1.5rem;\n  color: #636b6f;\n  font-weight: bold;\n  margin: 0;\n  padding-left: 1rem;\n  padding-top: 1rem;\n}\n.technicalGroups-container .top-container {\n  display: flex;\n  flex-direction: row;\n  height: auto;\n}\n.technicalGroups-container .top-container .left-container {\n  width: 40%;\n  padding: 1rem;\n}\n.technicalGroups-container .top-container .left-container .list-group .list-group-item {\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .left-container .list-group .active {\n  background-color: #838383;\n  border: none;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container {\n  width: 60%;\n  padding: 1rem;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  height: 50px;\n  padding: 0 1rem;\n  background-color: #3685EC;\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .name-text {\n  font-size: 1.2rem;\n  font-weight: bold;\n  color: #FFFFFF;\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .options-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container {\n  display: flex;\n  flex-direction: row;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  height: auto;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container p {\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container {\n  width: 50%;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container {\n  margin-bottom: 1rem;\n  margin-right: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  background-color: #838383;\n  padding: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header .label-text {\n  font-size: 1rem;\n  font-weight: bold;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body {\n  background-color: whitesmoke;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  padding: 0.5rem;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body .dataLabel-text {\n  font-size: 1rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .vertical-separator {\n  height: auto;\n  width: 0;\n  border: dashed;\n  border-width: 0.5px;\n  border-color: #c4c4c4;\n  margin: 0 1rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container {\n  width: 50%;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-title {\n  font-size: 1.2rem;\n  font-weight: bold;\n  color: #3685EC;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list {\n  margin-top: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .technical-name {\n  border-top-left-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .delete-technical {\n  border-top-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .technical-name {\n  border-bottom-left-radius: 4px;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .delete-technical {\n  border-bottom-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  background-color: whitesmoke;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .technical-name {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  padding: 0.5rem;\n  padding-left: 1rem;\n  border-bottom: none;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical {\n  width: 45px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #dc3545;\n  padding: 0.5rem;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-bottom-color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical .delete-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container {\n  display: flex;\n  flex-direction: row;\n  margin-top: 1rem;\n  justify-content: space-between;\n}\n.technicalGroups-container .bottom-container {\n  height: auto;\n}", ""]);
 
 // exports
 
@@ -76189,7 +76189,7 @@ var IncidenciasPage = function () {
     var titlePage;
     var enableTehnicalGroups = true;
     var idListTabs = ['mostrarIncidencias', 'crearIncidencia'];
-    var valuesListTabs = ['Mostrar incidencias', 'Crear nueva incidencia'];
+    var valuesListTabs = ['Mis incidencias', 'Crear nueva incidencia'];
     var colorListTabs = ['grey', 'grey'];
     if (userRol == 'supervisor') {
         titlePage = 'Gestor de incidencias - Supervisor';
@@ -76904,16 +76904,87 @@ if(false) {}
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./TechnicalGroupsPage.scss */ "./resources/js/Pages/IncidenciasPage/TabOptions/TechnicalGroupsPage/TechnicalGroupsPage.scss");
+var AutocompleteInput_1 = __webpack_require__(/*! ../../../../Components/AutocompleteInput/AutocompleteInput */ "./resources/js/Components/AutocompleteInput/AutocompleteInput.tsx");
+var Button_1 = __webpack_require__(/*! ../../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
 var TechnicalGroupsPage = function () {
+    var _a = React.useState({
+        id: 1,
+        placeholderInput: 'Nombre...',
+        colorInput: 'primary',
+        typeInput: 'text',
+        enabled: true,
+        tableToSearchIn: 'users',
+        matchingWords: ['name', 'surname1', 'surname2']
+    }), autocompleteInputValues = _a[0], setAutocompleteInputValues = _a[1];
+    var createIncidenciaButton = React.useState({
+        id: 1,
+        texto: 'Añadir técnico',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal: '',
+        extraClass: ''
+    })[0];
+    var handleClickAutocomplete = function (id) {
+        console.log(id);
+    };
+    var handleClickCreateIncidencia = function (e) {
+        console.log(e);
+    };
     return (React.createElement("div", { className: "technicalGroups-container" },
-        React.createElement("div", { className: "left-container" },
-            "Lista de los grupos asociados",
-            React.createElement("div", { className: "list-group", id: "list-tab", role: "tablist" },
-                React.createElement("a", { className: "list-group-item list-group-item-action active", id: "list-home-list", "data-toggle": "list", href: "#list-home", role: "tab", "aria-controls": "home" }, "Home"),
-                React.createElement("a", { className: "list-group-item list-group-item-action", id: "list-profile-list", "data-toggle": "list", href: "#list-profile", role: "tab", "aria-controls": "profile" }, "Profile"),
-                React.createElement("a", { className: "list-group-item list-group-item-action", id: "list-messages-list", "data-toggle": "list", href: "#list-messages", role: "tab", "aria-controls": "messages" }, "Messages"),
-                React.createElement("a", { className: "list-group-item list-group-item-action", id: "list-settings-list", "data-toggle": "list", href: "#list-settings", role: "tab", "aria-controls": "settings" }, "Settings"))),
-        React.createElement("div", { className: "right-container" })));
+        React.createElement("p", { className: 'title-page' }, "Lista de los grupos asociados"),
+        React.createElement("div", { className: "top-container" },
+            React.createElement("div", { className: "left-container" },
+                React.createElement("div", { className: "list-group", id: "list-tab", role: "tablist" },
+                    React.createElement("span", { className: "list-group-item list-group-item-action active", id: "list-home-list", "data-toggle": "list", role: "tab", "aria-controls": "home" }, "Home"),
+                    React.createElement("span", { className: "list-group-item list-group-item-action", id: "list-profile-list", "data-toggle": "list", role: "tab", "aria-controls": "profile" }, "Profile"),
+                    React.createElement("span", { className: "list-group-item list-group-item-action", id: "list-messages-list", "data-toggle": "list", role: "tab", "aria-controls": "messages" }, "Messages"),
+                    React.createElement("span", { className: "list-group-item list-group-item-action", id: "list-settings-list", "data-toggle": "list", role: "tab", "aria-controls": "settings" }, "Settings"))),
+            React.createElement("div", { className: "right-container" },
+                React.createElement("div", { className: "nameGroup-container" },
+                    React.createElement("p", { className: 'name-text' }, "Groupo de incidencias 1"),
+                    React.createElement("span", { className: "options-icon" },
+                        React.createElement("i", { className: "fas fa-ellipsis-v" }))),
+                React.createElement("div", { className: "dataGroup-container" },
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("div", { className: "feature-container" },
+                            React.createElement("div", { className: "feature-header" },
+                                React.createElement("p", { className: 'label-text' }, "Nombre")),
+                            React.createElement("div", { className: "feature-body" },
+                                React.createElement("p", { className: 'dataLabel-text' }, "Grupo de incidencias 1"))),
+                        React.createElement("div", { className: "feature-container" },
+                            React.createElement("div", { className: "feature-header" },
+                                React.createElement("p", { className: 'label-text' }, "Descripci\u00F3n")),
+                            React.createElement("div", { className: "feature-body" },
+                                React.createElement("p", { className: 'dataLabel-text' }, "Este grupo ha sido creado para la implementaci\u00F3n de todos los programas necesarios en sus respectivas aulas."))),
+                        React.createElement("div", { className: "feature-container", style: { marginBottom: 0 } },
+                            React.createElement("div", { className: "feature-header" },
+                                React.createElement("p", { className: 'label-text' }, "Categor\u00EDa")),
+                            React.createElement("div", { className: "feature-body" },
+                                React.createElement("p", { className: 'dataLabel-text' }, "---")))),
+                    React.createElement("div", { className: "vertical-separator" }),
+                    React.createElement("div", { className: "technical-container" },
+                        React.createElement("p", { className: 'technical-title' }, "Lista t\u00E9cnicos"),
+                        React.createElement("div", { className: "technical-list" },
+                            React.createElement("div", { className: "technical-info" },
+                                React.createElement("div", { className: "technical-name" }, "Adrian Santos Mena"),
+                                React.createElement("div", { className: "delete-technical" },
+                                    React.createElement("span", { className: 'delete-icon' },
+                                        React.createElement("i", { className: "fas fa-user-times" })))),
+                            React.createElement("div", { className: "technical-info" },
+                                React.createElement("div", { className: "technical-name" }, "Adrian Santos Mena"),
+                                React.createElement("div", { className: "delete-technical" },
+                                    React.createElement("span", { className: 'delete-icon' },
+                                        React.createElement("i", { className: "fas fa-user-times" })))),
+                            React.createElement("div", { className: "technical-info" },
+                                React.createElement("div", { className: "technical-name" }, "Adrian Santos Mena"),
+                                React.createElement("div", { className: "delete-technical" },
+                                    React.createElement("span", { className: 'delete-icon' },
+                                        React.createElement("i", { className: "fas fa-user-times" }))))),
+                        React.createElement("div", { className: "addTechnical-container" },
+                            React.createElement(AutocompleteInput_1.default, { autocompleteInputInfo: autocompleteInputValues, handleClick: handleClickAutocomplete }),
+                            React.createElement(Button_1.default, { buttonInfo: createIncidenciaButton, handleClick: handleClickCreateIncidencia })))))),
+        React.createElement("div", { className: "bot-container" })));
 };
 exports.default = TechnicalGroupsPage;
 

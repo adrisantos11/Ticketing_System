@@ -30,7 +30,7 @@ const IncidenciasPage = () => {
     let enableTehnicalGroups = true;
 
     let idListTabs = ['mostrarIncidencias','crearIncidencia'];
-    let valuesListTabs = ['Mostrar incidencias', 'Crear nueva incidencia'];
+    let valuesListTabs = ['Mis incidencias', 'Crear nueva incidencia'];
     let colorListTabs = ['grey', 'grey'];
 
     if (userRol == 'supervisor') {
