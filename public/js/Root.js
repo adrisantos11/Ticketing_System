@@ -18449,7 +18449,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".incidenciasList-container {\n  height: 100%;\n}\n.incidenciasList-container .filtrar-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  height: 10%;\n  padding-left: 1rem;\n  background-color: whitesmoke;\n}\n.incidenciasList-container .filtrar-container .dropdown {\n  margin-left: 0.5rem;\n  padding-right: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  margin-left: 1.5rem;\n}\n.incidenciasList-container .filtrar-container .selectboxes-container .btn-group {\n  margin: 0 0.5rem;\n}\n.incidenciasList-container .filtrar-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n}\n.incidenciasList-container .table-container {\n  height: auto;\n  max-height: 80%;\n  overflow-y: scroll;\n  box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);\n  padding: 0.5rem;\n}\n.incidenciasList-container .table-container .table {\n  height: 100%;\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table thead tr:first-child {\n  width: 8%;\n}\n.incidenciasList-container .table-container .table thead tr th {\n  text-align: center;\n  border-top: none;\n  padding: 0;\n}\n.incidenciasList-container .table-container .table tbody tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr th {\n  width: 8%;\n  padding: 1rem 1rem;\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr td {\n  max-width: 20rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr .limitDate-column {\n  color: #dc3545;\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna, .incidenciasList-container .table-container .table tbody tr .columna--bg-primary, .incidenciasList-container .table-container .table tbody tr .columna--bg-green, .incidenciasList-container .table-container .table tbody tr .columna--bg-orange, .incidenciasList-container .table-container .table tbody tr .columna--bg-red, .incidenciasList-container .table-container .table tbody tr .columna--green, .incidenciasList-container .table-container .table tbody tr .columna--orange, .incidenciasList-container .table-container .table tbody tr .columna--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--orange {\n  color: #e78738;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--green {\n  color: #07a744;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-red {\n  background-color: rgba(220, 53, 69, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-orange {\n  background-color: rgba(231, 135, 56, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-green {\n  background-color: rgba(7, 167, 68, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-primary {\n  margin: 1.5rem 0.5rem;\n  background-color: rgba(54, 133, 236, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .footer-container {\n  height: 10%;\n  padding: 0.5rem 1rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-content: center;\n  align-items: center;\n}\n.incidenciasList-container .footer-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n  margin: 0 2rem;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span, .incidenciasList-container .footer-container .dataSelection-container--filter .span--green, .incidenciasList-container .footer-container .dataSelection-container--filter .span--red, .incidenciasList-container .footer-container .dataSelection-container--filter .span--orange, .incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  font-weight: bold;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--primary {\n  color: #3685EC;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--orange {\n  color: #e78738;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--red {\n  color: #dc3545;\n}\n.incidenciasList-container .footer-container .dataSelection-container--filter .span--green {\n  color: #07a744;\n}", ""]);
+exports.push([module.i, ".incidenciasList-container {\n  height: 100%;\n}\n.incidenciasList-container .header-container {\n  background-color: whitesmoke;\n  padding: 1rem 1rem;\n  height: 35%;\n}\n.incidenciasList-container .header-container .filtrar-container {\n  height: 40px;\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n}\n.incidenciasList-container .header-container .filtrar-container .dropdown {\n  margin-left: 0.5rem;\n  padding-right: 1.5rem;\n}\n.incidenciasList-container .header-container .filtrar-container .selectboxes-container {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  align-items: center;\n  margin-left: 1.5rem;\n}\n.incidenciasList-container .header-container .filtrar-container .selectboxes-container .btn-group {\n  margin: 0 0.5rem;\n}\n.incidenciasList-container .header-container .filtrar-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n}\n.incidenciasList-container .header-container .horizontal-separator {\n  width: auto;\n  height: 0px;\n  border: dashed;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  margin: 1rem 0;\n}\n.incidenciasList-container .header-container .footer-container {\n  height: 40%;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-content: center;\n  align-items: center;\n  background-color: #FFFFFF;\n  padding: 1rem;\n  box-shadow: inset 0px 0px 15px -8px rgba(0, 0, 0, 0.75);\n}\n.incidenciasList-container .header-container .footer-container .vertical-separator {\n  height: 50%;\n  border: solid;\n  border-width: 1px;\n  border-color: #c4c4c4;\n  width: 1px;\n  margin: 0 2rem;\n}\n.incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span, .incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span--green, .incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span--red, .incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span--orange, .incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span--primary {\n  font-weight: bold;\n}\n.incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span--primary {\n  color: #3685EC;\n}\n.incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span--orange {\n  color: #e78738;\n}\n.incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span--red {\n  color: #dc3545;\n}\n.incidenciasList-container .header-container .footer-container .dataSelection-container--filter .span--green {\n  color: #07a744;\n}\n.incidenciasList-container .header-container .tableHeaders-container {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  padding: 0.5rem;\n  padding-right: 1.5rem;\n  background-color: whitesmoke;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header, .incidenciasList-container .header-container .tableHeaders-container .header--creationTime_Technical, .incidenciasList-container .header-container .tableHeaders-container .header--limitDate_Technical, .incidenciasList-container .header-container .tableHeaders-container .header--state_Technical, .incidenciasList-container .header-container .tableHeaders-container .header--priority_Technical, .incidenciasList-container .header-container .tableHeaders-container .header--category_Technical, .incidenciasList-container .header-container .tableHeaders-container .header--description_Technical, .incidenciasList-container .header-container .tableHeaders-container .header--name_Technical, .incidenciasList-container .header-container .tableHeaders-container .header--id_Technical, .incidenciasList-container .header-container .tableHeaders-container .header--creationTime_Supervisor, .incidenciasList-container .header-container .tableHeaders-container .header--assigned_Supervisor, .incidenciasList-container .header-container .tableHeaders-container .header--limitDate_Supervisor, .incidenciasList-container .header-container .tableHeaders-container .header--state_Supervisor, .incidenciasList-container .header-container .tableHeaders-container .header--priority_Supervisor, .incidenciasList-container .header-container .tableHeaders-container .header--category_Supervisor, .incidenciasList-container .header-container .tableHeaders-container .header--description_Supervisor, .incidenciasList-container .header-container .tableHeaders-container .header--name_Supervisor, .incidenciasList-container .header-container .tableHeaders-container .header--id_Supervisor {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n  font-weight: bold;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--id_Supervisor {\n  width: 4%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--name_Supervisor {\n  width: 14%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--description_Supervisor {\n  width: 20%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--category_Supervisor {\n  width: 9%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--priority_Supervisor {\n  width: 7%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--state_Supervisor {\n  width: 9%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--limitDate_Supervisor {\n  width: 13%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--assigned_Supervisor {\n  width: 7%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--creationTime_Supervisor {\n  padding: 0 1rem;\n  width: 17%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--id_Technical {\n  padding: 0.75rem;\n  width: 4%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--name_Technical {\n  width: 15%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--description_Technical {\n  width: 21%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--category_Technical {\n  width: 10%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--priority_Technical {\n  width: 8%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--state_Technical {\n  width: 10%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--limitDate_Technical {\n  width: 14%;\n}\n.incidenciasList-container .header-container .tableHeaders-container .header--creationTime_Technical {\n  padding: 0 1rem;\n  width: 18%;\n}\n.incidenciasList-container .table-container {\n  height: auto;\n  max-height: 65%;\n  overflow-y: scroll;\n  box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);\n  padding: 0.5rem;\n}\n.incidenciasList-container .table-container .table {\n  height: 100%;\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr {\n  width: 100%;\n}\n.incidenciasList-container .table-container .table tbody tr th {\n  text-align: center;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr td {\n  text-align: center;\n  padding: 0.5rem;\n  vertical-align: middle;\n}\n.incidenciasList-container .table-container .table tbody tr .id-column, .incidenciasList-container .table-container .table tbody tr .id-column--technical {\n  width: 4%;\n}\n.incidenciasList-container .table-container .table tbody tr .id-column--technical {\n  width: 4%;\n}\n.incidenciasList-container .table-container .table tbody tr .name-column, .incidenciasList-container .table-container .table tbody tr .name-column--technical {\n  width: 14%;\n}\n.incidenciasList-container .table-container .table tbody tr .name-column--technical {\n  width: 15%;\n}\n.incidenciasList-container .table-container .table tbody tr .description-column, .incidenciasList-container .table-container .table tbody tr .description-column--technical {\n  width: 20%;\n}\n.incidenciasList-container .table-container .table tbody tr .description-column--technical {\n  width: 21%;\n}\n.incidenciasList-container .table-container .table tbody tr .category-column, .incidenciasList-container .table-container .table tbody tr .category-column--technical {\n  width: 9%;\n}\n.incidenciasList-container .table-container .table tbody tr .category-column--technical {\n  width: 10%;\n}\n.incidenciasList-container .table-container .table tbody tr .priority-column, .incidenciasList-container .table-container .table tbody tr .priority-column--technical {\n  width: 7%;\n}\n.incidenciasList-container .table-container .table tbody tr .priority-column--technical {\n  width: 8%;\n}\n.incidenciasList-container .table-container .table tbody tr .state-column, .incidenciasList-container .table-container .table tbody tr .state-column--technical {\n  width: 9%;\n}\n.incidenciasList-container .table-container .table tbody tr .state-column--technical {\n  width: 10%;\n}\n.incidenciasList-container .table-container .table tbody tr .limitDate-column, .incidenciasList-container .table-container .table tbody tr .limitDate-column--technical, .incidenciasList-container .table-container .table tbody tr .limitDate-column--red {\n  width: 13%;\n}\n.incidenciasList-container .table-container .table tbody tr .limitDate-column--red {\n  color: #dc3545;\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .limitDate-column--technical {\n  width: 14%;\n}\n.incidenciasList-container .table-container .table tbody tr .assigned-column {\n  width: 7%;\n}\n.incidenciasList-container .table-container .table tbody tr .creationTime-column, .incidenciasList-container .table-container .table tbody tr .creationTime-column--technical {\n  width: 17%;\n}\n.incidenciasList-container .table-container .table tbody tr .creationTime-column--technical {\n  width: 18;\n}\n.incidenciasList-container .table-container .table tbody tr .columna, .incidenciasList-container .table-container .table tbody tr .columna--bg-primary, .incidenciasList-container .table-container .table tbody tr .columna--bg-green, .incidenciasList-container .table-container .table tbody tr .columna--bg-orange, .incidenciasList-container .table-container .table tbody tr .columna--bg-red, .incidenciasList-container .table-container .table tbody tr .columna--green, .incidenciasList-container .table-container .table tbody tr .columna--orange, .incidenciasList-container .table-container .table tbody tr .columna--red {\n  font-weight: bold;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--red {\n  color: #dc3545;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--orange {\n  color: #e78738;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--green {\n  color: #07a744;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-red {\n  background-color: rgba(220, 53, 69, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-orange {\n  background-color: rgba(231, 135, 56, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-green {\n  background-color: rgba(7, 167, 68, 0.9);\n  color: #FFFFFF;\n}\n.incidenciasList-container .table-container .table tbody tr .columna--bg-primary {\n  margin: 1.5rem 0.5rem;\n  background-color: rgba(54, 133, 236, 0.9);\n  color: #FFFFFF;\n}", ""]);
 
 // exports
 
@@ -76623,28 +76623,35 @@ var MostrarIncidenciasPage = function () {
     if (incidenciasLoaded && userRol == 'supervisor') {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "incidenciasList-container" },
-                React.createElement("div", { className: "filtrar-container" },
-                    "Ordenar por:",
-                    React.createElement(Dropdown_1.default, { dropdownInfo: orderByDropdown, onClick: handleClickItemDD }),
-                    React.createElement("div", { className: "vertical-separator" }),
-                    React.createElement("div", { className: "selectboxes-container" },
-                        "Filtrar por:",
-                        selectboxList.map(function (value, index) {
-                            return (React.createElement(SelectBox_1.default, { key: index, selectboxInfo: value, handleClickSelectbox: handleClickSelectedbox }));
-                        }))),
+                React.createElement("div", { className: "header-container" },
+                    React.createElement("div", { className: "filtrar-container" },
+                        "Ordenar por:",
+                        React.createElement(Dropdown_1.default, { dropdownInfo: orderByDropdown, onClick: handleClickItemDD }),
+                        React.createElement("div", { className: "vertical-separator" }),
+                        React.createElement("div", { className: "selectboxes-container" },
+                            "Filtrar por:",
+                            selectboxList.map(function (value, index) {
+                                return (React.createElement(SelectBox_1.default, { key: index, selectboxInfo: value, handleClickSelectbox: handleClickSelectedbox }));
+                            }))),
+                    React.createElement("div", { className: "horizontal-separator" }),
+                    React.createElement("div", { className: 'footer-container' },
+                        React.createElement("div", { className: "dataSelection-container" },
+                            React.createElement("span", null,
+                                "N\u00BA total de incidencias filtradas: ",
+                                React.createElement("b", null, incidenciasSize))),
+                        divSelectedData),
+                    React.createElement("div", { className: "tableHeaders-container" },
+                        React.createElement("div", { className: "header--id_Supervisor" }, headerList[0]),
+                        React.createElement("div", { className: "header--name_Supervisor" }, headerList[1]),
+                        React.createElement("div", { className: "header--description_Supervisor" }, headerList[2]),
+                        React.createElement("div", { className: "header--category_Supervisor" }, headerList[3]),
+                        React.createElement("div", { className: "header--priority_Supervisor" }, headerList[4]),
+                        React.createElement("div", { className: "header--state_Supervisor" }, headerList[5]),
+                        React.createElement("div", { className: "header--limitDate_Supervisor" }, headerList[6]),
+                        React.createElement("div", { className: "header--assigned_Supervisor" }, headerList[7]),
+                        React.createElement("div", { className: "header--creationTime_Supervisor" }, headerList[8]))),
                 React.createElement("div", { className: "table-container" },
                     React.createElement("table", { className: "table", id: 'dataTable' },
-                        React.createElement("thead", null,
-                            React.createElement("tr", null,
-                                React.createElement("th", { scope: "col" }, headerList[0]),
-                                React.createElement("th", { scope: "col" }, headerList[1]),
-                                React.createElement("th", { scope: "col" }, headerList[2]),
-                                React.createElement("th", { scope: "col" }, headerList[3]),
-                                React.createElement("th", { scope: "col" }, headerList[4]),
-                                React.createElement("th", { scope: "col" }, headerList[5]),
-                                React.createElement("th", { scope: "col" }, headerList[6]),
-                                React.createElement("th", { scope: "col" }, headerList[7]),
-                                React.createElement("th", { scope: "col" }, headerList[8]))),
                         React.createElement("tbody", null, incidencias.map(function (element, index) {
                             var priorityText = '';
                             var priorityColor = '';
@@ -76689,11 +76696,11 @@ var MostrarIncidenciasPage = function () {
                             else {
                                 description = element.description;
                             }
-                            var limit_date = '';
+                            var limit_date = 'limitDate-column';
                             var date_column = '';
                             if (element.limit_date == null) {
                                 limit_date = '--';
-                                date_column = 'limitDate-column';
+                                date_column = 'limitDate-column--red';
                             }
                             else {
                                 limit_date = element.limit_date;
@@ -76701,48 +76708,49 @@ var MostrarIncidenciasPage = function () {
                             var incidenciaLimitDate = new Date(element.creation_date);
                             // let timeOpen = actualDate.getDate()-incidenciaLimitDate.getDate();
                             return (React.createElement("tr", { key: index },
-                                React.createElement("th", { scope: "row" }, "#" + element.id),
-                                React.createElement("td", null,
+                                React.createElement("th", { scope: "row", className: 'id-column' }, "#" + element.id),
+                                React.createElement("td", { className: 'name-column' },
                                     React.createElement(react_router_dom_1.Link, { to: "/home/incidencia-view/" + element.id + "/comments", "data-toogle": "tooltip", "data-placement": "top", title: "Incidencia " + element.id },
                                         React.createElement("b", null, element.title))),
-                                React.createElement("td", null, description),
-                                React.createElement("td", null, element.category),
-                                React.createElement("td", { className: "columna" + priorityColor }, priorityText),
-                                React.createElement("td", { className: "columna" + stateColor }, state),
+                                React.createElement("td", { className: 'description-column' }, description),
+                                React.createElement("td", { className: 'category-column' }, element.category),
+                                React.createElement("td", { className: "priority-column columna" + priorityColor }, priorityText),
+                                React.createElement("td", { className: "state-column columna" + stateColor }, state),
                                 React.createElement("td", { className: date_column }, limit_date),
-                                React.createElement("td", null, isAssigned),
-                                React.createElement("td", null, getDateDifference(actualDate, incidenciaLimitDate))));
-                        })))),
-                React.createElement("div", { className: 'footer-container' },
-                    React.createElement("div", { className: "dataSelection-container" },
-                        React.createElement("span", null,
-                            "N\u00BA total de incidencias filtradas: ",
-                            React.createElement("b", null, incidenciasSize))),
-                    divSelectedData))));
+                                React.createElement("td", { className: 'assigned-column' }, isAssigned),
+                                React.createElement("td", { className: 'creationTime-column' }, getDateDifference(actualDate, incidenciaLimitDate))));
+                        })))))));
     }
     else if (incidenciasLoaded && userRol == 'technical') {
         return (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "incidenciasList-container" },
-                React.createElement("div", { className: "filtrar-container" },
-                    React.createElement(Dropdown_1.default, { dropdownInfo: orderByDropdown, onClick: handleClickItemDD }),
-                    React.createElement("div", { className: "vertical-separator" }),
-                    React.createElement("div", { className: "selectboxes-container" },
-                        "Filtrar por:",
-                        selectboxList.map(function (value) {
-                            return (React.createElement(SelectBox_1.default, { selectboxInfo: value, handleClickSelectbox: handleClickSelectedbox }));
-                        }))),
+                React.createElement("div", { className: "header-container" },
+                    React.createElement("div", { className: "filtrar-container" },
+                        React.createElement(Dropdown_1.default, { dropdownInfo: orderByDropdown, onClick: handleClickItemDD }),
+                        React.createElement("div", { className: "vertical-separator" }),
+                        React.createElement("div", { className: "selectboxes-container" },
+                            "Filtrar por:",
+                            selectboxList.map(function (value) {
+                                return (React.createElement(SelectBox_1.default, { selectboxInfo: value, handleClickSelectbox: handleClickSelectedbox }));
+                            }))),
+                    React.createElement("div", { className: "horizontal-separator" }),
+                    React.createElement("div", { className: 'footer-container' },
+                        React.createElement("div", { className: "dataSelection-container" },
+                            React.createElement("span", null,
+                                "N\u00BA total de incidencias filtradas: ",
+                                React.createElement("b", null, incidenciasSize))),
+                        divSelectedData),
+                    React.createElement("div", { className: "tableHeaders-container" },
+                        React.createElement("div", { className: "header--id_Technical" }, headerList[0]),
+                        React.createElement("div", { className: "header--name_Technical" }, headerList[1]),
+                        React.createElement("div", { className: "header--description_Technical" }, headerList[2]),
+                        React.createElement("div", { className: "header--category_Technical" }, headerList[3]),
+                        React.createElement("div", { className: "header--priority_Technical" }, headerList[4]),
+                        React.createElement("div", { className: "header--state_Technical" }, headerList[5]),
+                        React.createElement("div", { className: "header--limitDate_Technical" }, headerList[6]),
+                        React.createElement("div", { className: "header--creationTime_Technical" }, headerList[8]))),
                 React.createElement("div", { className: "table-container" },
                     React.createElement("table", { className: "table", id: 'dataTable' },
-                        React.createElement("thead", null,
-                            React.createElement("tr", null,
-                                React.createElement("th", { scope: "col" }, headerList[0]),
-                                React.createElement("th", { scope: "col" }, headerList[1]),
-                                React.createElement("th", { scope: "col" }, headerList[2]),
-                                React.createElement("th", { scope: "col" }, headerList[3]),
-                                React.createElement("th", { scope: "col" }, headerList[4]),
-                                React.createElement("th", { scope: "col" }, headerList[5]),
-                                React.createElement("th", { scope: "col" }, headerList[6]),
-                                React.createElement("th", { scope: "col" }, headerList[8]))),
                         React.createElement("tbody", null, incidencias.map(function (element, index) {
                             var priorityText = '';
                             var priorityColor = '';
@@ -76785,25 +76793,17 @@ var MostrarIncidenciasPage = function () {
                             }
                             var incidenciaLimitDate = new Date(element.creation_date);
                             return (React.createElement("tr", { key: index },
-                                React.createElement("th", { scope: "row" }, "#" + element.id),
-                                React.createElement("td", null,
+                                React.createElement("th", { scope: "row", className: 'id-column--technical' }, "#" + element.id),
+                                React.createElement("td", { className: 'name-column--technical' },
                                     React.createElement(react_router_dom_1.Link, { to: "/home/incidencia-view/" + element.id + "/comments", "data-toogle": "tooltip", "data-placement": "top", title: "Incidencia " + element.id },
                                         React.createElement("b", null, element.title))),
-                                React.createElement("td", null, description),
-                                React.createElement("td", null, element.category),
-                                React.createElement("td", { className: "columna" + priorityColor },
-                                    React.createElement("span", null, priorityText)),
-                                React.createElement("td", { className: "columna" + stateColor },
-                                    React.createElement("span", null, state)),
-                                React.createElement("td", null, element.limit_date),
-                                React.createElement("td", null, getDateDifference(actualDate, incidenciaLimitDate))));
-                        })))),
-                React.createElement("div", { className: 'footer-container' },
-                    React.createElement("div", { className: "dataSelection-container" },
-                        React.createElement("span", null,
-                            "N\u00BA total de incidencias filtradas: ",
-                            React.createElement("b", null, incidenciasSize))),
-                    divSelectedData))));
+                                React.createElement("td", { className: 'description-column--technical' }, description),
+                                React.createElement("td", { className: 'category-column--technical' }, element.category),
+                                React.createElement("td", { className: "priority-column--technical columna" + priorityColor }, priorityText),
+                                React.createElement("td", { className: "state-column--technical columna" + stateColor }, state),
+                                React.createElement("td", { className: 'limitDate-column--technical' }, element.limit_date),
+                                React.createElement("td", { className: 'creationTime-column--technical' }, getDateDifference(actualDate, incidenciaLimitDate))));
+                        })))))));
     }
     else {
         return (React.createElement("div", null, "No se han cargado las incidencias."));
@@ -77180,10 +77180,10 @@ var PerfilPage = function () {
     // Estilo de letra de la gráfica ---> https://www.chartjs.org/docs/latest/configuration/elements.html
     react_chartjs_2_2.defaults.global.defaultFontFamily = 'Sen, sans-serif';
     react_chartjs_2_2.defaults.global.legend.position = 'bottom';
-    react_chartjs_2_2.defaults.global.title.display = true;
-    react_chartjs_2_2.defaults.global.title.fontColor = '#141414';
-    react_chartjs_2_2.defaults.global.title.fontSize = 20;
-    react_chartjs_2_2.defaults.global.title.fontStyle = 'bold';
+    // defaults.global.title.display = true;
+    // defaults.global.title.fontColor = '#636b6f';
+    // defaults.global.title.fontSize = 20;
+    // defaults.global.title.fontStyle = 'bold';
     // defaults.global.defaultFontSize = '1rem';
     var _a = React.useState({
         id: 1,
@@ -77246,15 +77246,28 @@ var PerfilPage = function () {
                 // pointHoverBorderWidth: 2,
                 // pointRadius: 1,
                 // pointHitRadius: 10,
-                data: [65, 59, 80, 81]
+                data: [6, 14, 4, 7]
             }
         ]
     };
     var options = {
         legend: {
             labels: {
-                defaultFontSize: 15
+                fontSize: 15
             }
+        },
+        title: {
+            display: true,
+            text: 'Historial de incidencias (Total: 31)',
+            fontSize: 20,
+            fontColor: '#636b6f'
+        },
+        scales: {
+            yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
         }
     };
     return (React.createElement(React.Fragment, null,

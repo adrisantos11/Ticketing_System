@@ -266,38 +266,45 @@ const MostrarIncidenciasPage = () => {
         return (
             <>
             <div className="incidenciasList-container">
-                <div className="filtrar-container">
-                    Ordenar por:
-                    <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
-                    <div className="vertical-separator"></div>
-                    <div className="selectboxes-container">
-                        Filtrar por:
-                        {
-                            selectboxList.map((value, index) => {
-                                return(
-                                    <Selectbox key={index} selectboxInfo={value} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
-                                )
-                            })
-                        }
+                <div className="header-container">
+                    <div className="filtrar-container">
+                        Ordenar por:
+                        <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
+                        <div className="vertical-separator"></div>
+                        <div className="selectboxes-container">
+                            Filtrar por:
+                            {
+                                selectboxList.map((value, index) => {
+                                    return(
+                                        <Selectbox key={index} selectboxInfo={value} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
+                                    )
+                                })
+                            }
+
+                        </div>
 
                     </div>
-
+                    <div className="horizontal-separator"></div>
+                    <div className='footer-container'>
+                        <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
+                        {
+                            divSelectedData
+                        }
+                    </div>
+                    <div className="tableHeaders-container">
+                        <div className="header--id_Supervisor">{headerList[0]}</div>
+                        <div className="header--name_Supervisor">{headerList[1]}</div>
+                        <div className="header--description_Supervisor">{headerList[2]}</div>
+                        <div className="header--category_Supervisor">{headerList[3]}</div>
+                        <div className="header--priority_Supervisor">{headerList[4]}</div>
+                        <div className="header--state_Supervisor">{headerList[5]}</div>
+                        <div className="header--limitDate_Supervisor">{headerList[6]}</div>
+                        <div className="header--assigned_Supervisor">{headerList[7]}</div>
+                        <div className="header--creationTime_Supervisor">{headerList[8]}</div>
+                    </div>
                 </div>
                 <div className="table-container">
                     <table className="table" id='dataTable'>
-                        <thead>
-                            <tr>
-                                <th scope="col">{headerList[0]}</th>
-                                <th scope="col">{headerList[1]}</th>
-                                <th scope="col">{headerList[2]}</th>
-                                <th scope="col">{headerList[3]}</th>
-                                <th scope="col">{headerList[4]}</th>
-                                <th scope="col">{headerList[5]}</th>
-                                <th scope="col">{headerList[6]}</th>
-                                <th scope="col">{headerList[7]}</th>
-                                <th scope="col">{headerList[8]}</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             {
                                 incidencias.map((element, index) => {
@@ -344,11 +351,11 @@ const MostrarIncidenciasPage = () => {
                                         description = element.description;
                                     }
 
-                                    let limit_date = '';
+                                    let limit_date = 'limitDate-column';
                                     let date_column = ''
                                     if (element.limit_date == null) {
                                         limit_date = '--';
-                                        date_column = 'limitDate-column';
+                                        date_column = 'limitDate-column--red';
                                     } else {
                                         limit_date = element.limit_date;
                                     }
@@ -357,27 +364,21 @@ const MostrarIncidenciasPage = () => {
                                     // let timeOpen = actualDate.getDate()-incidenciaLimitDate.getDate();
                                     return(
                                     <tr key={index}>
-                                        <th scope="row">{`#${element.id}`}</th>
-                                        <td><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
-                                        <td>{description}</td>
-                                        <td>{element.category}</td>
-                                        <td className={`columna${priorityColor}`}>{priorityText}</td>
-                                        <td className={`columna${stateColor}`}>{state}</td>
+                                        <th scope="row" className='id-column'>{`#${element.id}`}</th>
+                                        <td className='name-column'><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
+                                        <td className='description-column'>{description}</td>
+                                        <td className='category-column'>{element.category}</td>
+                                        <td className={`priority-column columna${priorityColor}`}>{priorityText}</td>
+                                        <td className={`state-column columna${stateColor}`}>{state}</td>
                                         <td className={date_column}>{limit_date}</td>
-                                        <td>{isAssigned}</td>
-                                        <td>{getDateDifference(actualDate, incidenciaLimitDate)}</td>
+                                        <td className='assigned-column'>{isAssigned}</td>
+                                        <td className='creationTime-column'>{getDateDifference(actualDate, incidenciaLimitDate)}</td>
                                     </tr>
                                     )
                                 }) 
                             }
                         </tbody>
                     </table>
-                </div>
-                <div className='footer-container'>
-                    <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
-                    {
-                        divSelectedData
-                    }
                 </div>
             </div>
             </>
@@ -386,35 +387,42 @@ const MostrarIncidenciasPage = () => {
             return (
                 <>
                 <div className="incidenciasList-container">
-                    <div className="filtrar-container">
-                        <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
-                        <div className="vertical-separator"></div>
-                        <div className="selectboxes-container">
-                            Filtrar por:
-                            {
-                                selectboxList.map(value => {
-                                    return(
-                                        <Selectbox selectboxInfo={value} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
-                                    )
-                                })
-                            }
+                    <div className="header-container">
+                        <div className="filtrar-container">
+                            <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
+                            <div className="vertical-separator"></div>
+                            <div className="selectboxes-container">
+                                Filtrar por:
+                                {
+                                    selectboxList.map(value => {
+                                        return(
+                                            <Selectbox selectboxInfo={value} handleClickSelectbox={handleClickSelectedbox}></Selectbox>
+                                        )
+                                    })
+                                }
 
+                            </div>
                         </div>
+                        <div className="horizontal-separator"></div>
+                        <div className='footer-container'>
+                            <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
+                            {
+                                divSelectedData
+                            }
+                        </div>
+                    <div className="tableHeaders-container">
+                        <div className="header--id_Technical">{headerList[0]}</div>
+                        <div className="header--name_Technical">{headerList[1]}</div>
+                        <div className="header--description_Technical">{headerList[2]}</div>
+                        <div className="header--category_Technical">{headerList[3]}</div>
+                        <div className="header--priority_Technical">{headerList[4]}</div>
+                        <div className="header--state_Technical">{headerList[5]}</div>
+                        <div className="header--limitDate_Technical">{headerList[6]}</div>
+                        <div className="header--creationTime_Technical">{headerList[8]}</div>
+                    </div>
                     </div>
                     <div className="table-container">
                         <table className="table" id='dataTable'>
-                            <thead>
-                                <tr>
-                                <th scope="col">{headerList[0]}</th>
-                                <th scope="col">{headerList[1]}</th>
-                                <th scope="col">{headerList[2]}</th>
-                                <th scope="col">{headerList[3]}</th>
-                                <th scope="col">{headerList[4]}</th>
-                                <th scope="col">{headerList[5]}</th>
-                                <th scope="col">{headerList[6]}</th>
-                                <th scope="col">{headerList[8]}</th>
-                                </tr>
-                            </thead>
                             <tbody>
                                 {
                                     incidencias.map((element, index) => {
@@ -462,26 +470,21 @@ const MostrarIncidenciasPage = () => {
 
                                         return(
                                         <tr key={index}>
-                                            <th scope="row">{`#${element.id}`}</th>
-                                            <td><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
-                                            <td>{description}</td>
-                                            <td>{element.category}</td>
-                                            <td className={`columna${priorityColor}`}><span>{priorityText}</span></td>
-                                            <td className={`columna${stateColor}`}><span>{state}</span></td>
-                                            <td>{element.limit_date}</td>
-                                            <td>{getDateDifference(actualDate, incidenciaLimitDate)}</td>
+                                            <th scope="row" className='id-column--technical'>{`#${element.id}`}</th>
+                                            <td className='name-column--technical'><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
+                                            <td className='description-column--technical'>{description}</td>
+                                            <td className='category-column--technical'>{element.category}</td>
+                                            <td className={`priority-column--technical columna${priorityColor}`}>{priorityText}</td>
+                                            <td className={`state-column--technical columna${stateColor}`}>{state}</td>
+                                            <td className='limitDate-column--technical'>{element.limit_date}</td>
+                                            <td className='creationTime-column--technical'>{getDateDifference(actualDate, incidenciaLimitDate)}</td>
+
                                         </tr>
                                         )
                                     }) 
                                 }
                             </tbody>
                         </table>
-                    </div>
-                    <div className='footer-container'>
-                    <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
-                    {
-                        divSelectedData
-                    }
                     </div>
                 </div>
                 </>

@@ -12,10 +12,10 @@ const PerfilPage = () => {
     // Estilo de letra de la gráfica ---> https://www.chartjs.org/docs/latest/configuration/elements.html
     defaults.global.defaultFontFamily = 'Sen, sans-serif';
     defaults.global.legend.position = 'bottom';
-    defaults.global.title.display = true;
-    defaults.global.title.fontColor = '#141414';
-    defaults.global.title.fontSize = 20;
-    defaults.global.title.fontStyle = 'bold';
+    // defaults.global.title.display = true;
+    // defaults.global.title.fontColor = '#636b6f';
+    // defaults.global.title.fontSize = 20;
+    // defaults.global.title.fontStyle = 'bold';
 
     // defaults.global.defaultFontSize = '1rem';
 
@@ -92,7 +92,7 @@ const PerfilPage = () => {
             // pointHoverBorderWidth: 2,
             // pointRadius: 1,
             // pointHitRadius: 10,
-            data: [65, 59, 80, 81]
+            data: [6, 14, 4, 7]
           }
         ]
       };
@@ -100,8 +100,22 @@ const PerfilPage = () => {
       let options = {
             legend: {
                 labels: {
-                defaultFontSize: 15
+                    fontSize: 15
                 }
+            },
+            title: {
+                display: true,
+                text: 'Historial de incidencias (Total: 31)',
+                fontSize: 20,
+                fontColor: '#636b6f'
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        // suggestedMax: 15
+                    }
+                }]
             }
         }
 

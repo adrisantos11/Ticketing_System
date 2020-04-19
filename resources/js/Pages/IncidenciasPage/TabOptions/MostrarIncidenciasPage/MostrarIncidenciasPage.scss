@@ -3,91 +3,341 @@
 .incidenciasList-container {
     // padding-left: $default_padding*2;
     height: 100%;
-
-    .filtrar-container {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        align-items: center;
-        height: 10%;
-        padding-left: $default_padding*2;
+    .header-container {
         background-color: $grey_color_250;
-
-        .dropdown {
-            margin-left: $default_padding;
-            padding-right: $default_padding*3;
-        }
-
-        .selectboxes-container {
+        padding: $default_padding*2 $default_padding*2;
+        height: 35%;
+        .filtrar-container {
+            height: 40px;
             display: flex;
             flex-direction: row;
             align-content: center;
             align-items: center;
-            margin-left: $default_padding*3;
-
-            .btn-group {
-                margin: 0 $default_padding;
+            .dropdown {
+                margin-left: $default_padding;
+                padding-right: $default_padding*3;
+            }
+    
+            .selectboxes-container {
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                align-items: center;
+                margin-left: $default_padding*3;
+    
+                .btn-group {
+                    margin: 0 $default_padding;
+                }
+            }
+    
+            .vertical-separator {
+                height: 50%;
+                border: solid;
+                border-width: 1px;
+                border-color: $grey_color_127;
+                width: 1px;
             }
         }
 
-        .vertical-separator {
-            height: 50%;
-            border: solid;
+        .horizontal-separator {
+            width: auto;
+            height: 0px;
+            border: dashed;
             border-width: 1px;
             border-color: $grey_color_127;
-            width: 1px;
+            margin: $default_padding*2 0;
         }
-    }
-
-    .table-container {
-        height: auto;
-        max-height: 80%;
-        overflow-y: scroll;
-        box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);
-        padding: $default_padding;
-
-        .table {
-            height: 100%;
-            width: 100%;
-
-            thead {
-                tr {
-                    width: 100%;
-
-                    &:first-child {
-                        width: 8%;
-                    }
-
-                    th {
-                        text-align: center;
-                        border-top: none;
-                        padding: 0;
+    
+        .footer-container {
+            height: 40%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            background-color: $white_color;
+            padding: $default_padding*2;
+            box-shadow: inset 0px 0px 15px -8px rgba(0,0,0,0.75);
+            // justify-content: space-between;
+    
+            .vertical-separator {
+                height: 50%;
+                border: solid;
+                border-width: 1px;
+                border-color: $grey_color_127;
+                width: 1px;
+                margin: 0 $default_padding*4;
+            }
+    
+            .dataSelection-container {
+    
+                &--filter {
+                    @extend .dataSelection-container;
+    
+                    .span {
+                        font-weight: bold;
+    
+                        &--primary {
+                            @extend .span;
+                            color: $primary_color;
+                        }
+    
+                        &--orange {
+                            @extend .span;
+                            color: $orange_color;
+    
+                        }
+    
+                        &--red {
+                            @extend .span;
+                            color: $red_color;
+    
+                        }
+    
+                        &--green {
+                            @extend .span;
+                            color: $green_color;
+    
+                        }
                     }
                 }
             }
+        }
+    
+        .tableHeaders-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding: $default_padding;
+            padding-right: $default_padding*3;
+            background-color: $grey_color_250;
+    
+            .header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-weight: bold;
+                &--id_Supervisor {
+                    @extend .header;
+                    // padding: $default_padding*1.5;
+                    width: 4%;
+                }
+        
+                &--name_Supervisor {
+                    @extend .header;
+                    
+                    width: 14%;
+                    
+                }
+        
+                &--description_Supervisor {
+                    @extend .header;
+        
+                    width: 20%;
+        
+                }
+        
+                &--category_Supervisor {
+                    @extend .header;
+        
+                    width: 9%;
+        
+                }
+        
+                &--priority_Supervisor {
+                    @extend .header;
+        
+                    width: 7%;
+        
+                }
+        
+                &--state_Supervisor {
+                    @extend .header;
+        
+                    width: 9%;
+        
+                }
+        
+                &--limitDate_Supervisor {
+                    @extend .header;
+        
+                    width: 13%;
+                    
+                }
+        
+                &--assigned_Supervisor {
+                    @extend .header;
+                    width: 7%;
+        
+                }
+        
+                &--creationTime_Supervisor {
+                    @extend .header;
+                    padding: 0 $default_padding*2;
+                    width: 17%;
+        
+                }
+    
+                &--id_Technical {
+                    @extend .header;
+                    padding: $default_padding*1.5;
+                    width: 4%;
+                }
+        
+                &--name_Technical {
+                    @extend .header;
+                    
+                    width: 15%;
+                    
+                }
+        
+                &--description_Technical {
+                    @extend .header;
+        
+                    width: 21%;
+        
+                }
+        
+                &--category_Technical {
+                    @extend .header;
+        
+                    width: 10%;
+        
+                }
+        
+                &--priority_Technical {
+                    @extend .header;
+        
+                    width: 8%;
+        
+                }
+        
+                &--state_Technical {
+                    @extend .header;
+        
+                    width: 10%;
+        
+                }
+        
+                &--limitDate_Technical {
+                    @extend .header;
+        
+                    width: 14%;
+                    
+                }
+        
+        
+                &--creationTime_Technical {
+                    @extend .header;
+                    padding: 0 $default_padding*2;
+                    width: 18%;
+        
+                }
+            }
+    
+        }
+    }
 
+
+    .table-container {
+        height: auto;
+        max-height: 65%;
+        overflow-y: scroll;
+        box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);
+        padding: $default_padding;
+        // responsice 1018px w
+        .table {
+            height: 100%;
+            width: 100%;
             tbody {
                 tr {
                     width: 100%;
 
                     th {
-                        width: 8%;
-                        padding: $default_padding*2 $default_padding*2;
                         text-align: center;
                         vertical-align: middle;
                     }
 
                     td {
-                        max-width: $default_padding*40;
                         text-align: center;
-                        padding: $default_padding*2 $default_padding*2;
+                        padding: $default_padding;
                         vertical-align: middle;
                     }
 
-                    .limitDate-column {
-                        color: $red_color;
-                        font-weight: bold;
+                    .id-column {
+                        width: 4%;
 
+                        &--technical {
+                           @extend .id-column;
+                           width: 4%;
+
+                        }
+                    }
+
+                    .name-column {
+                        width: 14%;
+                        &--technical {
+                            @extend .name-column;
+                            width: 15%;
+                        }                        
+                    }
+
+                    .description-column {
+                        width: 20%;
+                        &--technical {
+                            @extend .description-column;
+                            width: 21%;
+                        }
+                    }
+
+                    .category-column {
+                        width: 9%;
+                        &--technical {
+                            @extend .category-column;
+                            width: 10%;
+                        }
+                    }
+
+                    .priority-column {
+                        width: 7%;
+                        &--technical {
+                            @extend .priority-column;
+                            width: 8%;
+                        }
+                    }
+
+                    .state-column {
+                        width: 9%;
+                        &--technical {
+                            @extend .state-column;
+                            width: 10%;
+                        }
+                    }
+
+                    .limitDate-column {
+                        width: 13%;
+                        &--red {
+                            @extend .limitDate-column;
+                            color: $red_color;
+                            font-weight: bold;
+                        }
+                        &--technical {
+                            @extend .limitDate-column;
+                            width: 14%;
+                        }
+                    }
+
+                    .assigned-column {
+                        width: 7%;
+                    }
+
+                    .creationTime-column {
+                        width: 17%;
+                        &--technical {
+                            @extend .creationTime-column;
+                            width: 18;
+                        }
                     }
 
                     .columna {
@@ -142,60 +392,7 @@
 
     }
 
-    .footer-container {
-        height: 10%;
-        padding: $default_padding $default_padding*2;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        align-items: center;
 
-        // justify-content: space-between;
-
-        .vertical-separator {
-            height: 50%;
-            border: solid;
-            border-width: 1px;
-            border-color: $grey_color_127;
-            width: 1px;
-            margin: 0 $default_padding*4;
-        }
-
-        .dataSelection-container {
-
-            &--filter {
-                @extend .dataSelection-container;
-
-                .span {
-                    font-weight: bold;
-
-                    &--primary {
-                        @extend .span;
-                        color: $primary_color;
-                    }
-
-                    &--orange {
-                        @extend .span;
-                        color: $orange_color;
-
-                    }
-
-                    &--red {
-                        @extend .span;
-                        color: $red_color;
-
-                    }
-
-                    &--green {
-                        @extend .span;
-                        color: $green_color;
-
-                    }
-                }
-            }
-        }
-    }
 
 
 }
