@@ -7,7 +7,7 @@ import Button from '../../Components/Button/Button';
 import Tabs from '../../Components/Tabs/Tabs';
 import CreateIncidenciaPage from './TabOptions/CreateIncidenciaPage/CreateIncidenciaPage';
 import MostrarIncidenciasPage from './TabOptions/MostrarIncidenciasPage/MostrarIncidenciasPage';
-
+import TechnicalGroupsPage from './TabOptions/TechnicalGroupsPage/TechnicalGroupsPage'
 
 const IncidenciasPage = () => {
     const history = useHistory();
@@ -16,18 +16,28 @@ const IncidenciasPage = () => {
     let tabSelected;
     if (history.location.pathname.includes('show')) {
         tabSelected = 0;
-        console.log(history.location.pathname);
     }
     else if (history.location.pathname.includes('create')) {
         tabSelected = 1;
-        console.log(history.location.pathname);
+    }
+    else if (history.location.pathname.includes('technicalGroups')) {
+        tabSelected = 2;
     }
 
     
     let optionsList;
     let titlePage;
+    let enableTehnicalGroups = true;
+
+    let idListTabs = ['mostrarIncidencias','crearIncidencia'];
+    let valuesListTabs = ['Mostrar incidencias', 'Crear nueva incidencia'];
+    let colorListTabs = ['grey', 'grey'];
+
     if (userRol == 'supervisor') {
-        titlePage = 'Gestor de incidencias - Supervisor'
+        titlePage = 'Gestor de incidencias - Supervisor';
+        idListTabs.push('technicalGroups');
+        valuesListTabs.push('Mis grupos de ténicos');
+        colorListTabs.push('grey');
         optionsList = <><p>En este apartado usted podrá gestionar todas las incidencias que hayan sido resportadas y asignadas. Tendrá las siguientes opciones:</p><ul>
             <li><b>Visualizar</b> todas las incidencias.</li>
             <li><b>Filtrar</b> incidencias para mejor búsqueda.</li>
@@ -36,7 +46,8 @@ const IncidenciasPage = () => {
             <li><b>Visualizar</b> y <b>añadir</b> comentarios a la incidencia.</li>
         </ul></>
     } else  if (userRol == 'technical'){
-        titlePage = 'Gestor de incidencias - Técnico'
+        titlePage = 'Gestor de incidencias - Técnico';
+        enableTehnicalGroups = false;
         optionsList = <><p>En este apartado podrá:</p><ul>
         <li><b>Visualizar</b> las incidencias asignadas a usted, a los grupos a los que pertencezca.</li>
         <li><b>Visualizar</b>, <b>editar</b> y <b>borrar</b> las incidencias creadas por usted.</li>
@@ -45,12 +56,12 @@ const IncidenciasPage = () => {
         <li><b>Visualizar</b> y <b>añadir</b> comentarios a la incidencia.</li>
     </ul></>
     }
-        
+    
     const [tabsOptions, setTabsOptions] = React.useState<TabsModel>({
-        idList: ['mostrarIncidencias','crearIncidencia'],
-        valuesList: ['Mostrar incidencias', 'Crear nueva incidencia'],
-        color: ['grey', 'grey'],
-        enabledList: [true, true],
+        idList: idListTabs,
+        valuesList: valuesListTabs,
+        color: colorListTabs,
+        enabledList: [true, true, enableTehnicalGroups],
         itemActive: tabSelected
     });
     
@@ -68,6 +79,12 @@ const IncidenciasPage = () => {
                 ...tabsOptions,
                 itemActive: 0
             })
+        } else if (id=='technicalGroups') {
+            history.push('/home/incidencias/technicalGroups');
+            setTabsOptions({
+                ...tabsOptions,
+                itemActive: 2
+            })
         }
     }
 
@@ -83,6 +100,8 @@ const IncidenciasPage = () => {
                         <Switch>
                             <Route path="/home/incidencias/create" component={CreateIncidenciaPage}></Route>
                             <Route path="/home/incidencias/show" component={MostrarIncidenciasPage}></Route>
+                            <Route path="/home/incidencias/technicalGroups" component={TechnicalGroupsPage}></Route>
+
                         </Switch>     
                     </div>
                 </div>

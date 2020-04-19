@@ -284,7 +284,7 @@ const MostrarIncidenciasPage = () => {
                         </div>
 
                     </div>
-                    <div className="horizontal-separator"></div>
+                    {/* <div className="horizontal-separator"></div> */}
                     <div className='footer-container'>
                         <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
                         {
@@ -293,13 +293,21 @@ const MostrarIncidenciasPage = () => {
                     </div>
                     <div className="tableHeaders-container">
                         <div className="header--id_Supervisor">{headerList[0]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--name_Supervisor">{headerList[1]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--description_Supervisor">{headerList[2]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--category_Supervisor">{headerList[3]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--priority_Supervisor">{headerList[4]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--state_Supervisor">{headerList[5]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--limitDate_Supervisor">{headerList[6]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--assigned_Supervisor">{headerList[7]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--creationTime_Supervisor">{headerList[8]}</div>
                     </div>
                 </div>
@@ -412,12 +420,19 @@ const MostrarIncidenciasPage = () => {
                         </div>
                     <div className="tableHeaders-container">
                         <div className="header--id_Technical">{headerList[0]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--name_Technical">{headerList[1]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--description_Technical">{headerList[2]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--category_Technical">{headerList[3]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--priority_Technical">{headerList[4]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--state_Technical">{headerList[5]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--limitDate_Technical">{headerList[6]}</div>
+                        <div className="vertical-separator2"></div>
                         <div className="header--creationTime_Technical">{headerList[8]}</div>
                     </div>
                     </div>

@@ -1,0 +1,17 @@
+@import '../../../../../sass/app.scss';
+
+
+.technicalGroups-container {
+    background-color: $grey_color_250;
+    height: 100%;
+    .left-container {
+        width: 50%;
+        padding: $default_padding*2;
+    }
+
+    .right-container {
+        width: 50%;
+        padding: $default_padding $default_padding;
+
+    }
+}

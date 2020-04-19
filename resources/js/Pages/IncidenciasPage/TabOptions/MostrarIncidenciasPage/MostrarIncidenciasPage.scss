@@ -6,13 +6,15 @@
     .header-container {
         background-color: $grey_color_250;
         padding: $default_padding*2 $default_padding*2;
-        height: 35%;
+        padding-bottom: 0;
+        height: 30%;
         .filtrar-container {
             height: 40px;
             display: flex;
             flex-direction: row;
             align-content: center;
             align-items: center;
+            margin-bottom: $default_padding*2;
             .dropdown {
                 margin-left: $default_padding;
                 padding-right: $default_padding*3;
@@ -47,16 +49,18 @@
             border-color: $grey_color_127;
             margin: $default_padding*2 0;
         }
+
+        
     
         .footer-container {
-            height: 40%;
+            height: 35%;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             align-content: center;
             align-items: center;
             background-color: $white_color;
-            padding: $default_padding*2;
+            padding: $default_padding;
             box-shadow: inset 0px 0px 15px -8px rgba(0,0,0,0.75);
             // justify-content: space-between;
     
@@ -108,9 +112,15 @@
             display: flex;
             flex-direction: row;
             width: 100%;
-            padding: $default_padding;
-            padding-right: $default_padding*3;
+            padding: $default_padding $default_padding*3 0 0;
             background-color: $grey_color_250;
+            .vertical-separator2 {
+                height: 50px;
+                border: solid;
+                border-width: 0.5px;
+                border-color: $grey_color_127;
+                width: 1px;
+            }
     
             .header {
                 display: flex;
@@ -242,7 +252,7 @@
 
     .table-container {
         height: auto;
-        max-height: 65%;
+        max-height: 70%;
         overflow-y: scroll;
         box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);
         padding: $default_padding;
