@@ -53,17 +53,18 @@
         
     
         .footer-container {
-            height: 35%;
+            height: auto;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             align-content: center;
             align-items: center;
             background-color: $white_color;
-            padding: $default_padding;
-            box-shadow: inset 0px 0px 15px -8px rgba(0,0,0,0.75);
+            padding: $default_padding*2;
+            // box-shadow: inset 0px 0px 15px -8px rgba(0,0,0,0.75);
+            box-shadow: inset 0px 0px 5px -2px rgba(0,0,0,0.75);
             // justify-content: space-between;
-    
+            border-radius: 4px;
             .vertical-separator {
                 height: 50%;
                 border: solid;

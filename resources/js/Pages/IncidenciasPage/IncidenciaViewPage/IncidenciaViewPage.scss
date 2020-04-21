@@ -166,7 +166,9 @@
             width: 60%;
             background-color: $grey_color_184;
             max-height: 100%;
-            box-shadow: inset 0px 0px 19px -5px rgba(0, 0, 0, 0.75);
+            // box-shadow: inset 0px 0px 19px -5px rgba(0, 0, 0, 0.75);
+            box-shadow: inset 0px 0px 7px -1px rgba(0,0,0,0.75);
+
             margin: $default_padding*2 0;
             margin-right: $default_padding*4;
             padding: $default_padding*3 $default_padding*5;

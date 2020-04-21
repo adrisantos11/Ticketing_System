@@ -2,7 +2,9 @@ import * as React from 'react'
 import './TechnicalGroupsPage.scss'
 import AutocompleteInput from '../../../../Components/AutocompleteInput/AutocompleteInput'
 import Button from '../../../../Components/Button/Button'
-import { AutocompleteInputModel, ButtonModel } from '../../../../Model/model'
+import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel } from '../../../../Model/model'
+import { Input } from '../../../../Components/Input/Input'
+import Dropdown from '../../../../Components/Dropdown/Dropdown'
 const TechnicalGroupsPage = () => {
     
     const [autocompleteInputValues, setAutocompleteInputValues] = React.useState<AutocompleteInputModel>({
@@ -15,9 +17,56 @@ const TechnicalGroupsPage = () => {
         matchingWords: ['name', 'surname1', 'surname2']
     });
 
-    const [createIncidenciaButton] = React.useState<ButtonModel>({
+    const [addTechnicalButton] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Añadir técnico',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'',  
+        extraClass: ''
+    });
+
+    const [titleInput, setTitleInput] = React.useState<InputModel>({
+        id: 1,
+        value: '',
+        label: 'Nombre del grupo',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    });
+
+    const [descriptionInput, setDescriptionInput] = React.useState<InputModel>({
+        id: 1,
+        value: '',
+        label: 'Descripción',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: true
+    });
+
+    const [classDropdown, setClassDropdown] = React.useState<DropdownModel>({
+        id: 4,
+        groupName: 'Categoría',
+        groupItems: [],
+        groupIds: [],
+        color: 'primary',
+        enabled: false,
+        extraClass: '',
+    });
+
+
+    const [createTechnicalGroupButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Crear grupo',
         color: 'primary',
         type: '',
         icon: '',
@@ -32,18 +81,24 @@ const TechnicalGroupsPage = () => {
     const handleClickCreateIncidencia = (e: React.MouseEvent) => {
         console.log(e);
     }
+
+    const handleChangeInput = (value: string, id: number) => {
+        console.log(value);
+    }
+    const handleClickItemDD = (idItem: string, idDropdown: number) => { }
     
     return(
         <div className="technicalGroups-container">
-            <p className='title-page'>Lista de los grupos asociados</p>
             <div className="top-container">
                 <div className="left-container">
+                    <p className='title-page'>Lista de los grupos asociados</p>
                     <div className="list-group" id="list-tab" role="tablist">
                         <span className="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" role="tab" aria-controls="home">Home</span>
                         <span className="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" role="tab" aria-controls="profile">Profile</span>
                         <span className="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" role="tab" aria-controls="messages">Messages</span>
                         <span className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings">Settings</span>
                     </div>
+                    Crear nuevo grupo...
                 </div>
                 <div className="right-container">
                     <div className="nameGroup-container">
@@ -78,33 +133,24 @@ const TechnicalGroupsPage = () => {
                                         <span className='delete-icon'><i className="fas fa-user-times"></i></span>
                                     </div>
                                 </div>
-                                <div className="technical-info">
-                                    <div className="technical-name">
-                                        Adrian Santos Mena
-                                    </div>
-                                    <div className="delete-technical">
-                                        <span className='delete-icon'><i className="fas fa-user-times"></i></span>
-                                    </div>
-                                </div>
-                                <div className="technical-info">
-                                    <div className="technical-name">
-                                        Adrian Santos Mena
-                                    </div>
-                                    <div className="delete-technical">
-                                        <span className='delete-icon'><i className="fas fa-user-times"></i></span>
-                                    </div>
-                                </div>
                             </div>
                             <div className="addTechnical-container">
                                 <AutocompleteInput autocompleteInputInfo={autocompleteInputValues} handleClick={handleClickAutocomplete}></AutocompleteInput>
-                                <Button buttonInfo={createIncidenciaButton} handleClick={handleClickCreateIncidencia}></Button>
+                                <Button buttonInfo={addTechnicalButton} handleClick={handleClickCreateIncidencia}></Button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="bot-container">
-            
+            <div className="bottom-container">
+                <p className="bottom-title">Crear nuevo grupo de incidencias</p>
+                <div className="bottom-content">
+                    <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
+                    <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
+                    <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
+                    <Button buttonInfo={createTechnicalGroupButton} handleClick={handleClickCreateIncidencia}></Button>
+
+                </div>
             </div>
 
         </div>
