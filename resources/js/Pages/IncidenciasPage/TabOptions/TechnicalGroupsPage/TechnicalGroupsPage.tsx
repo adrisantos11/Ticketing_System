@@ -6,11 +6,12 @@ import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel } from '
 import { Input } from '../../../../Components/Input/Input'
 import Dropdown from '../../../../Components/Dropdown/Dropdown'
 
-import {getGroups, getTechnicalsGroup} from '../../../../Utilities/Incidencias/SupervisorUtilities';
+import {getGroups, getTechnicalsGroup, deleteTechnicalAssign} from '../../../../Utilities/Incidencias/SupervisorUtilities';
 
 const TechnicalGroupsPage = () => {
 
     const [groups, setGroups] = React.useState([]);
+    const [groupId, setGroupId] = React.useState();
     const [groupName, setGroupName] = React.useState('--');
     const [groupDescription, setGroupDescription] = React.useState('--');
     const [groupCategory, setGroupCategory] = React.useState('--');
@@ -20,7 +21,6 @@ const TechnicalGroupsPage = () => {
         const helperList: any[] = [];
         getTechnicalsGroup(idGroup).then(res => {
             res.map((data: any) => {
-                console.log(data)
                 if (data.role == 'technical')
                     helperList.push(data);    
             })            
@@ -35,6 +35,7 @@ const TechnicalGroupsPage = () => {
             let index = 0;
             res.map((data: any) => {
                 if (index == 0) {
+                    setGroupId(data.id);
                     setGroupName(data.name)
                     setGroupDescription(data.description); 
                     setGroupCategory(data.category); 
@@ -135,6 +136,7 @@ const TechnicalGroupsPage = () => {
         setGroupName(groupSelected.name)
         setGroupDescription(groupSelected.description);
         setGroupCategory(groupSelected.category); 
+        setGroupId(groupSelected.id);
         
         getTechnicals(groupSelected.id);
     }
@@ -154,6 +156,8 @@ const TechnicalGroupsPage = () => {
     
     const deleteUserFromGroup = (idUser: number) => {
         console.log('El usuario a eliminar tiene le id: ' + idUser);
+        deleteTechnicalAssign(Number(idUser), Number(groupId));
+        getTechnicals(Number(groupId));
     }
     return(
         <div className="technicalGroups-container">

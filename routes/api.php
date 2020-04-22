@@ -49,6 +49,7 @@ Route::namespace('Users')->group(function () {
     Route::post('incidencias/supervisor/noAssigned', 'SupervisorController@getWithoutAssignIncidencias');
     Route::post('incidencias/supervisor/gropus/getGroups', 'SupervisorController@getTechnicalGroups');
     Route::post('incidencias/supervisor/groups/getTechnicalsGroup', 'SupervisorController@getGroupUsers');
+    Route::post('incidencias/supervisor/groups/deleteTechnicalAssign', 'SupervisorController@deleteTechnicalAssign');
 
 });
 

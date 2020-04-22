@@ -200,4 +200,12 @@ where teams.id = 1
 
         return $group_users;
     }
+
+    public function deleteTechnicalAssign(Request $request) {
+        $technical_id = $request->userId;
+        $team_id = $request->teamId;
+
+        DB::delete('delete from team_assigns where team_assigns.id_user = ? and team_assigns.id_team = ?', [$technical_id, $team_id]);
+
+    }
 }

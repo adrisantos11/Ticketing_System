@@ -68,3 +68,17 @@ export const getTechnicalsGroup = (groupId: number) => {
             console.log(err);
     })
 }
+
+export const deleteTechnicalAssign = (idUser: number, idTeam: number) => {
+    console.log(idTeam);
+    return axios
+    .post('api/incidencias/supervisor/groups/deleteTechnicalAssign', {
+        userId: idUser,
+        teamId: idTeam
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}

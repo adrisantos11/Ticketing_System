@@ -76918,15 +76918,15 @@ var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdow
 var SupervisorUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
 var TechnicalGroupsPage = function () {
     var _a = React.useState([]), groups = _a[0], setGroups = _a[1];
-    var _b = React.useState('--'), groupName = _b[0], setGroupName = _b[1];
-    var _c = React.useState('--'), groupDescription = _c[0], setGroupDescription = _c[1];
-    var _d = React.useState('--'), groupCategory = _d[0], setGroupCategory = _d[1];
-    var _e = React.useState([]), technicalsList = _e[0], setTechnicalsList = _e[1];
+    var _b = React.useState(), groupId = _b[0], setGroupId = _b[1];
+    var _c = React.useState('--'), groupName = _c[0], setGroupName = _c[1];
+    var _d = React.useState('--'), groupDescription = _d[0], setGroupDescription = _d[1];
+    var _e = React.useState('--'), groupCategory = _e[0], setGroupCategory = _e[1];
+    var _f = React.useState([]), technicalsList = _f[0], setTechnicalsList = _f[1];
     var getTechnicals = function (idGroup) {
         var helperList = [];
         SupervisorUtilities_1.getTechnicalsGroup(idGroup).then(function (res) {
             res.map(function (data) {
-                console.log(data);
                 if (data.role == 'technical')
                     helperList.push(data);
             });
@@ -76939,6 +76939,7 @@ var TechnicalGroupsPage = function () {
             var index = 0;
             res.map(function (data) {
                 if (index == 0) {
+                    setGroupId(data.id);
                     setGroupName(data.name);
                     setGroupDescription(data.description);
                     setGroupCategory(data.category);
@@ -76954,7 +76955,7 @@ var TechnicalGroupsPage = function () {
     React.useEffect(function () {
         setTechnicalGroups();
     }, []);
-    var _f = React.useState({
+    var _g = React.useState({
         id: 1,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
@@ -76962,7 +76963,7 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         tableToSearchIn: 'users',
         matchingWords: ['name', 'surname1', 'surname2']
-    }), autocompleteInputValues = _f[0], setAutocompleteInputValues = _f[1];
+    }), autocompleteInputValues = _g[0], setAutocompleteInputValues = _g[1];
     var addTechnicalButton = React.useState({
         id: 1,
         texto: 'Añadir técnico',
@@ -76972,7 +76973,7 @@ var TechnicalGroupsPage = function () {
         target_modal: '',
         extraClass: ''
     })[0];
-    var _g = React.useState({
+    var _h = React.useState({
         id: 1,
         value: '',
         label: 'Nombre del grupo',
@@ -76983,8 +76984,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: false
-    }), titleInput = _g[0], setTitleInput = _g[1];
-    var _h = React.useState({
+    }), titleInput = _h[0], setTitleInput = _h[1];
+    var _j = React.useState({
         id: 1,
         value: '',
         label: 'Descripción',
@@ -76995,8 +76996,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), descriptionInput = _h[0], setDescriptionInput = _h[1];
-    var _j = React.useState({
+    }), descriptionInput = _j[0], setDescriptionInput = _j[1];
+    var _k = React.useState({
         id: 4,
         groupName: 'Categoría',
         groupItems: [],
@@ -77004,7 +77005,7 @@ var TechnicalGroupsPage = function () {
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), classDropdown = _j[0], setClassDropdown = _j[1];
+    }), classDropdown = _k[0], setClassDropdown = _k[1];
     var createTechnicalGroupButton = React.useState({
         id: 1,
         texto: 'Crear grupo',
@@ -77024,6 +77025,7 @@ var TechnicalGroupsPage = function () {
         setGroupName(groupSelected.name);
         setGroupDescription(groupSelected.description);
         setGroupCategory(groupSelected.category);
+        setGroupId(groupSelected.id);
         getTechnicals(groupSelected.id);
     };
     React.useEffect(function () {
@@ -77037,6 +77039,8 @@ var TechnicalGroupsPage = function () {
     var handleClickItemDD = function (idItem, idDropdown) { };
     var deleteUserFromGroup = function (idUser) {
         console.log('El usuario a eliminar tiene le id: ' + idUser);
+        SupervisorUtilities_1.deleteTechnicalAssign(Number(idUser), Number(groupId));
+        getTechnicals(Number(groupId));
     };
     return (React.createElement("div", { className: "technicalGroups-container" },
         React.createElement("div", { className: "top-container" },
@@ -78003,6 +78007,19 @@ exports.getTechnicalsGroup = function (groupId) {
         }
         else
             console.log(err);
+    });
+};
+exports.deleteTechnicalAssign = function (idUser, idTeam) {
+    console.log(idTeam);
+    return axios_1.default
+        .post('api/incidencias/supervisor/groups/deleteTechnicalAssign', {
+        userId: idUser,
+        teamId: idTeam
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .catch(function (err) {
+        console.log(err);
     });
 };
 
