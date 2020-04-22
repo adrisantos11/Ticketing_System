@@ -12,13 +12,25 @@ class TeamAssignsSeeder extends Seeder
     public function run()
     {
         DB::table('team_assigns')->insert([
-            'id_user' => 3,
+            'id_user' => 5,
             'id_team' => 1
         ]);
 
         DB::table('team_assigns')->insert([
-            'id_user' => 2,
+            'id_user' => 4,
             'id_team' => 2
+        ]);
+        DB::table('team_assigns')->insert([
+            'id_user' => 4,
+            'id_team' => 3
+        ]);
+        DB::table('team_assigns')->insert([
+            'id_user' => 5,
+            'id_team' => 2
+        ]);
+        DB::table('team_assigns')->insert([
+            'id_user' => 5,
+            'id_team' => 3
         ]);
     }
 }

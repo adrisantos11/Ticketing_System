@@ -18468,7 +18468,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".technicalGroups-container {\n  background-color: whitesmoke;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding: 1rem;\n}\n.technicalGroups-container .top-container {\n  display: flex;\n  flex-direction: row;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  padding: 1rem;\n  background-color: #FFFFFF;\n}\n.technicalGroups-container .top-container .left-container {\n  width: 40%;\n  padding-right: 1rem;\n}\n.technicalGroups-container .top-container .left-container .title-page {\n  font-size: 1.5rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .left-container .list-group .list-group-item {\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .left-container .list-group .active {\n  background-color: #3685EC;\n  border: none;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container {\n  width: 60%;\n  padding: 1rem;\n  padding-right: 0;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  height: 50px;\n  padding: 0 1rem;\n  background-color: #3685EC;\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .name-text {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .options-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container {\n  display: flex;\n  flex-direction: row;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  height: auto;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container p {\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container {\n  width: 50%;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container {\n  margin-bottom: 1rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  background-color: #838383;\n  padding: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header .label-text {\n  font-size: 1rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body {\n  background-color: whitesmoke;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  padding: 0.5rem;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body .dataLabel-text {\n  font-size: 1rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .vertical-separator {\n  height: auto;\n  width: 0;\n  border: dashed;\n  border-width: 0.5px;\n  border-color: #c4c4c4;\n  margin: 0 1rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container {\n  width: 50%;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-title {\n  font-size: 1.2rem;\n  color: #3685EC;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list {\n  margin-top: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .technical-name {\n  border-top-left-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .delete-technical {\n  border-top-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .technical-name {\n  border-bottom-left-radius: 4px;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .delete-technical {\n  border-bottom-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  background-color: whitesmoke;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .technical-name {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  padding: 0.5rem;\n  padding-left: 1rem;\n  border-bottom: none;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical {\n  width: 45px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #dc3545;\n  padding: 0.5rem;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-bottom-color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical .delete-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container {\n  display: flex;\n  flex-direction: row;\n  margin-top: 1rem;\n  justify-content: space-between;\n}\n.technicalGroups-container .bottom-container {\n  width: 100%;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n.technicalGroups-container .bottom-container .bottom-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.technicalGroups-container .bottom-container .bottom-content {\n  display: flex;\n  flex-direction: column;\n}\n.technicalGroups-container .bottom-container .bottom-content .form-group .text_label {\n  font-weight: 500;\n}\n.technicalGroups-container .bottom-container .bottom-content .buttonContainer {\n  padding-top: 1rem;\n}", ""]);
+exports.push([module.i, ".technicalGroups-container {\n  background-color: whitesmoke;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding: 1rem;\n}\n.technicalGroups-container .top-container {\n  display: flex;\n  flex-direction: row;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  padding: 1rem;\n  background-color: #FFFFFF;\n}\n.technicalGroups-container .top-container .left-container {\n  width: 40%;\n  padding-right: 1rem;\n}\n.technicalGroups-container .top-container .left-container .title-page {\n  font-size: 1.5rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .left-container .list-group .list-group-item {\n  color: #636b6f;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .left-container .list-group .active {\n  background-color: #3685EC;\n  border: none;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container {\n  width: 60%;\n  padding: 1rem;\n  padding-right: 0;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  height: 50px;\n  padding: 0 1rem;\n  background-color: #3685EC;\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .name-text {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .options-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container {\n  display: flex;\n  flex-direction: row;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  height: auto;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container p {\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container {\n  width: 50%;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container {\n  margin-bottom: 1rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  background-color: #838383;\n  padding: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header .label-text {\n  font-size: 1rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body {\n  background-color: whitesmoke;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  padding: 0.5rem;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body .dataLabel-text {\n  font-size: 1rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .vertical-separator {\n  height: auto;\n  width: 0;\n  border: dashed;\n  border-width: 0.5px;\n  border-color: #c4c4c4;\n  margin: 0 1rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container {\n  width: 50%;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-title {\n  font-size: 1.2rem;\n  color: #3685EC;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list {\n  margin-top: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .technical-name {\n  border-top-left-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .delete-technical {\n  border-top-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .technical-name {\n  border-bottom-left-radius: 4px;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .delete-technical {\n  border-bottom-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  background-color: whitesmoke;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .technical-name {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  padding: 0.5rem;\n  padding-left: 1rem;\n  border-bottom: none;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical {\n  width: 45px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #dc3545;\n  padding: 0.5rem;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-bottom-color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical .delete-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container {\n  display: flex;\n  flex-direction: row;\n  margin-top: 1rem;\n  justify-content: space-between;\n}\n.technicalGroups-container .bottom-container {\n  width: 100%;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n.technicalGroups-container .bottom-container .bottom-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.technicalGroups-container .bottom-container .bottom-content {\n  display: flex;\n  flex-direction: column;\n}\n.technicalGroups-container .bottom-container .bottom-content .form-group .text_label {\n  font-weight: 500;\n}\n.technicalGroups-container .bottom-container .bottom-content .buttonContainer {\n  padding-top: 1rem;\n}", ""]);
 
 // exports
 
@@ -76901,6 +76901,13 @@ if(false) {}
 
 "use strict";
 
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./TechnicalGroupsPage.scss */ "./resources/js/Pages/IncidenciasPage/TabOptions/TechnicalGroupsPage/TechnicalGroupsPage.scss");
@@ -76908,8 +76915,46 @@ var AutocompleteInput_1 = __webpack_require__(/*! ../../../../Components/Autocom
 var Button_1 = __webpack_require__(/*! ../../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
 var Input_1 = __webpack_require__(/*! ../../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
 var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
+var SupervisorUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
 var TechnicalGroupsPage = function () {
-    var _a = React.useState({
+    var _a = React.useState([]), groups = _a[0], setGroups = _a[1];
+    var _b = React.useState('--'), groupName = _b[0], setGroupName = _b[1];
+    var _c = React.useState('--'), groupDescription = _c[0], setGroupDescription = _c[1];
+    var _d = React.useState('--'), groupCategory = _d[0], setGroupCategory = _d[1];
+    var _e = React.useState([]), technicalsList = _e[0], setTechnicalsList = _e[1];
+    var getTechnicals = function (idGroup) {
+        var helperList = [];
+        SupervisorUtilities_1.getTechnicalsGroup(idGroup).then(function (res) {
+            res.map(function (data) {
+                console.log(data);
+                if (data.role == 'technical')
+                    helperList.push(data);
+            });
+            setTechnicalsList(helperList);
+        });
+    };
+    var setTechnicalGroups = function () {
+        SupervisorUtilities_1.getGroups(localStorage.userId).then(function (res) {
+            console.log(res);
+            var index = 0;
+            res.map(function (data) {
+                if (index == 0) {
+                    setGroupName(data.name);
+                    setGroupDescription(data.description);
+                    setGroupCategory(data.category);
+                    getTechnicals(data.id);
+                }
+                setGroups(function (groups) { return __spreadArrays(groups, [
+                    data
+                ]); });
+                index++;
+            });
+        });
+    };
+    React.useEffect(function () {
+        setTechnicalGroups();
+    }, []);
+    var _f = React.useState({
         id: 1,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
@@ -76917,7 +76962,7 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         tableToSearchIn: 'users',
         matchingWords: ['name', 'surname1', 'surname2']
-    }), autocompleteInputValues = _a[0], setAutocompleteInputValues = _a[1];
+    }), autocompleteInputValues = _f[0], setAutocompleteInputValues = _f[1];
     var addTechnicalButton = React.useState({
         id: 1,
         texto: 'Añadir técnico',
@@ -76927,7 +76972,7 @@ var TechnicalGroupsPage = function () {
         target_modal: '',
         extraClass: ''
     })[0];
-    var _b = React.useState({
+    var _g = React.useState({
         id: 1,
         value: '',
         label: 'Nombre del grupo',
@@ -76938,8 +76983,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: false
-    }), titleInput = _b[0], setTitleInput = _b[1];
-    var _c = React.useState({
+    }), titleInput = _g[0], setTitleInput = _g[1];
+    var _h = React.useState({
         id: 1,
         value: '',
         label: 'Descripción',
@@ -76950,8 +76995,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), descriptionInput = _c[0], setDescriptionInput = _c[1];
-    var _d = React.useState({
+    }), descriptionInput = _h[0], setDescriptionInput = _h[1];
+    var _j = React.useState({
         id: 4,
         groupName: 'Categoría',
         groupItems: [],
@@ -76959,7 +77004,7 @@ var TechnicalGroupsPage = function () {
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), classDropdown = _d[0], setClassDropdown = _d[1];
+    }), classDropdown = _j[0], setClassDropdown = _j[1];
     var createTechnicalGroupButton = React.useState({
         id: 1,
         texto: 'Crear grupo',
@@ -76972,6 +77017,17 @@ var TechnicalGroupsPage = function () {
     var handleClickAutocomplete = function (id) {
         console.log(id);
     };
+    var getUsersGroup = function (idGroup) {
+    };
+    var handleSpanClick = function (e) {
+        var groupSelected = groups[e.target.id];
+        setGroupName(groupSelected.name);
+        setGroupDescription(groupSelected.description);
+        setGroupCategory(groupSelected.category);
+        getTechnicals(groupSelected.id);
+    };
+    React.useEffect(function () {
+    });
     var handleClickCreateIncidencia = function (e) {
         console.log(e);
     };
@@ -76979,19 +77035,25 @@ var TechnicalGroupsPage = function () {
         console.log(value);
     };
     var handleClickItemDD = function (idItem, idDropdown) { };
+    var deleteUserFromGroup = function (idUser) {
+        console.log('El usuario a eliminar tiene le id: ' + idUser);
+    };
     return (React.createElement("div", { className: "technicalGroups-container" },
         React.createElement("div", { className: "top-container" },
             React.createElement("div", { className: "left-container" },
                 React.createElement("p", { className: 'title-page' }, "Lista de los grupos asociados"),
-                React.createElement("div", { className: "list-group", id: "list-tab", role: "tablist" },
-                    React.createElement("span", { className: "list-group-item list-group-item-action active", id: "list-home-list", "data-toggle": "list", role: "tab", "aria-controls": "home" }, "Home"),
-                    React.createElement("span", { className: "list-group-item list-group-item-action", id: "list-profile-list", "data-toggle": "list", role: "tab", "aria-controls": "profile" }, "Profile"),
-                    React.createElement("span", { className: "list-group-item list-group-item-action", id: "list-messages-list", "data-toggle": "list", role: "tab", "aria-controls": "messages" }, "Messages"),
-                    React.createElement("span", { className: "list-group-item list-group-item-action", id: "list-settings-list", "data-toggle": "list", role: "tab", "aria-controls": "settings" }, "Settings")),
+                React.createElement("div", { className: "list-group", id: "list-tab", role: "tablist" }, groups.map(function (data, index) {
+                    if (index == 0) {
+                        return (React.createElement("span", { key: index, className: "list-group-item list-group-item-action active", id: String(index), "data-toggle": "list", role: "tab", "aria-controls": "home", onClick: handleSpanClick }, data.name));
+                    }
+                    else {
+                        return (React.createElement("span", { className: "list-group-item list-group-item-action", id: String(index), "data-toggle": "list", role: "tab", "aria-controls": "home", onClick: handleSpanClick }, data.name));
+                    }
+                })),
                 "Crear nuevo grupo..."),
             React.createElement("div", { className: "right-container" },
                 React.createElement("div", { className: "nameGroup-container" },
-                    React.createElement("p", { className: 'name-text' }, "Groupo de incidencias 1"),
+                    React.createElement("p", { className: 'name-text' }, groupName),
                     React.createElement("span", { className: "options-icon" },
                         React.createElement("i", { className: "fas fa-ellipsis-v" }))),
                 React.createElement("div", { className: "dataGroup-container" },
@@ -77000,26 +77062,27 @@ var TechnicalGroupsPage = function () {
                             React.createElement("div", { className: "feature-header" },
                                 React.createElement("p", { className: 'label-text' }, "Nombre")),
                             React.createElement("div", { className: "feature-body" },
-                                React.createElement("p", { className: 'dataLabel-text' }, "Grupo de incidencias 1"))),
+                                React.createElement("p", { className: 'dataLabel-text' }, groupName))),
                         React.createElement("div", { className: "feature-container" },
                             React.createElement("div", { className: "feature-header" },
                                 React.createElement("p", { className: 'label-text' }, "Descripci\u00F3n")),
                             React.createElement("div", { className: "feature-body" },
-                                React.createElement("p", { className: 'dataLabel-text' }, "Este grupo ha sido creado para la implementaci\u00F3n de todos los programas necesarios en sus respectivas aulas."))),
+                                React.createElement("p", { className: 'dataLabel-text' }, groupDescription))),
                         React.createElement("div", { className: "feature-container", style: { marginBottom: 0 } },
                             React.createElement("div", { className: "feature-header" },
                                 React.createElement("p", { className: 'label-text' }, "Categor\u00EDa")),
                             React.createElement("div", { className: "feature-body" },
-                                React.createElement("p", { className: 'dataLabel-text' }, "---")))),
+                                React.createElement("p", { className: 'dataLabel-text' }, groupCategory)))),
                     React.createElement("div", { className: "vertical-separator" }),
                     React.createElement("div", { className: "technical-container" },
                         React.createElement("p", { className: 'technical-title' }, "Lista t\u00E9cnicos"),
-                        React.createElement("div", { className: "technical-list" },
-                            React.createElement("div", { className: "technical-info" },
-                                React.createElement("div", { className: "technical-name" }, "Adrian Santos Mena"),
+                        React.createElement("div", { className: "technical-list" }, technicalsList.map(function (data, index) {
+                            return (React.createElement("div", { key: index, className: "technical-info" },
+                                React.createElement("div", { className: "technical-name" }, data.name + " " + data.surname1 + " " + data.surname2),
                                 React.createElement("div", { className: "delete-technical" },
-                                    React.createElement("span", { className: 'delete-icon' },
-                                        React.createElement("i", { className: "fas fa-user-times" }))))),
+                                    React.createElement("span", { className: 'delete-icon', onClick: function () { return deleteUserFromGroup(data.id); } },
+                                        React.createElement("i", { className: "fas fa-user-times" })))));
+                        })),
                         React.createElement("div", { className: "addTechnical-container" },
                             React.createElement(AutocompleteInput_1.default, { autocompleteInputInfo: autocompleteInputValues, handleClick: handleClickAutocomplete }),
                             React.createElement(Button_1.default, { buttonInfo: addTechnicalButton, handleClick: handleClickCreateIncidencia })))))),
@@ -77880,6 +77943,50 @@ exports.getNoAssignedIncidencias = function (userId) {
     return axios_1.default
         .post('api/incidencias/supervisor/noAssigned', {
         userId: userId
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.getGroups = function (userId) {
+    return axios_1.default
+        .post('api/incidencias/supervisor/gropus/getGroups', {
+        id: userId
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.getTechnicalsGroup = function (groupId) {
+    return axios_1.default
+        .post('api/incidencias/supervisor/groups/getTechnicalsGroup', {
+        id: groupId
     }, {
         headers: { 'Content-Type': 'application/json' }
     })

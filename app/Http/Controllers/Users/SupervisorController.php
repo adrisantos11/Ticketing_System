@@ -175,4 +175,29 @@ class SupervisorController extends Controller
 
         return $hole_union; 
     }
+
+
+    /**
+     * SELECT * FROM teams WHERE id_supervisor = 3
+     */
+    public function getTechnicalGroups(Request $request) {
+       $id_supervisor = $request->id;
+
+       $groups = DB::table('teams')->where('id_supervisor', $id_supervisor)->get();
+       return $groups;
+    }
+
+
+    /**
+     * SELECT * from users 
+inner JOIN team_assigns on users.id = team_assigns.id_user
+inner JOIN teams on team_assigns.id_team = teams.id
+where teams.id = 1
+     */
+    public function getGroupUsers(Request $request) {
+        $id_group = $request->id;
+        $group_users = DB::table('users')->select('users.id','users.name','users.surname1','users.surname2', 'users.role')->join('team_assigns', 'users.id', '=', 'team_assigns.id_user')->join('teams', 'team_assigns.id_team', '=', 'teams.id')->where('teams.id', $id_group)->get();
+
+        return $group_users;
+    }
 }

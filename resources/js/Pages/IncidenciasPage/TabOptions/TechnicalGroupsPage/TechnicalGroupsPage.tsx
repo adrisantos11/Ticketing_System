@@ -5,8 +5,56 @@ import Button from '../../../../Components/Button/Button'
 import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel } from '../../../../Model/model'
 import { Input } from '../../../../Components/Input/Input'
 import Dropdown from '../../../../Components/Dropdown/Dropdown'
+
+import {getGroups, getTechnicalsGroup} from '../../../../Utilities/Incidencias/SupervisorUtilities';
+
 const TechnicalGroupsPage = () => {
-    
+
+    const [groups, setGroups] = React.useState([]);
+    const [groupName, setGroupName] = React.useState('--');
+    const [groupDescription, setGroupDescription] = React.useState('--');
+    const [groupCategory, setGroupCategory] = React.useState('--');
+    const [technicalsList, setTechnicalsList] = React.useState([]);
+
+    const getTechnicals = (idGroup: number)=> {
+        const helperList: any[] = [];
+        getTechnicalsGroup(idGroup).then(res => {
+            res.map((data: any) => {
+                console.log(data)
+                if (data.role == 'technical')
+                    helperList.push(data);    
+            })            
+            setTechnicalsList(helperList);
+        })
+
+    }
+
+    const setTechnicalGroups = () => {
+        getGroups(localStorage.userId).then(res => {
+            console.log(res);
+            let index = 0;
+            res.map((data: any) => {
+                if (index == 0) {
+                    setGroupName(data.name)
+                    setGroupDescription(data.description); 
+                    setGroupCategory(data.category); 
+                    getTechnicals(data.id);
+                }
+                setGroups(groups => [
+                    ...groups,
+                    data
+                ]
+                )
+                index++;
+            })
+        });
+
+    }
+    React.useEffect(() => {
+        setTechnicalGroups()
+
+    }, [])
+
     const [autocompleteInputValues, setAutocompleteInputValues] = React.useState<AutocompleteInputModel>({
         id: 1,
         placeholderInput: 'Nombre...',
@@ -78,6 +126,23 @@ const TechnicalGroupsPage = () => {
         console.log(id);
     }
 
+    const getUsersGroup = (idGroup: number) => {
+
+    }
+
+    const handleSpanClick = (e: any) => {
+        const groupSelected = groups[e.target.id];
+        setGroupName(groupSelected.name)
+        setGroupDescription(groupSelected.description);
+        setGroupCategory(groupSelected.category); 
+        
+        getTechnicals(groupSelected.id);
+    }
+
+    React.useEffect(()=> {
+        
+    })
+
     const handleClickCreateIncidencia = (e: React.MouseEvent) => {
         console.log(e);
     }
@@ -87,37 +152,52 @@ const TechnicalGroupsPage = () => {
     }
     const handleClickItemDD = (idItem: string, idDropdown: number) => { }
     
+    const deleteUserFromGroup = (idUser: number) => {
+        console.log('El usuario a eliminar tiene le id: ' + idUser);
+    }
     return(
         <div className="technicalGroups-container">
             <div className="top-container">
                 <div className="left-container">
                     <p className='title-page'>Lista de los grupos asociados</p>
                     <div className="list-group" id="list-tab" role="tablist">
-                        <span className="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" role="tab" aria-controls="home">Home</span>
-                        <span className="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" role="tab" aria-controls="profile">Profile</span>
+                        {
+                            groups.map((data, index) => {
+                                if (index == 0) {
+                                    return (
+                                        <span key={index} className="list-group-item list-group-item-action active" id={String(index)} data-toggle="list" role="tab" aria-controls="home" onClick={handleSpanClick}>{data.name}</span>
+                                    )  
+                                } else {
+                                    return (
+                                        <span className="list-group-item list-group-item-action" id={String(index)} data-toggle="list" role="tab" aria-controls="home" onClick={handleSpanClick}>{data.name}</span>
+                                    )  
+                                }
+                            })
+                        }
+                        {/* <span className="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" role="tab" aria-controls="profile">Profile</span>
                         <span className="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" role="tab" aria-controls="messages">Messages</span>
-                        <span className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings">Settings</span>
+                        <span className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings">Settings</span> */}
                     </div>
                     Crear nuevo grupo...
                 </div>
                 <div className="right-container">
                     <div className="nameGroup-container">
-                        <p className='name-text'>Groupo de incidencias 1</p>
+                        <p className='name-text'>{groupName}</p>
                         <span className="options-icon"><i className="fas fa-ellipsis-v"></i></span>
                     </div>
                     <div className="dataGroup-container">
                         <div className="info-container">
                             <div className="feature-container">
                                 <div className="feature-header"><p className='label-text'>Nombre</p></div>
-                                <div className="feature-body"><p className='dataLabel-text'>Grupo de incidencias 1</p></div>
+                                <div className="feature-body"><p className='dataLabel-text'>{groupName}</p></div>
                             </div>
                             <div className="feature-container">
                                 <div className="feature-header"><p className='label-text'>Descripción</p></div>
-                                <div className="feature-body"><p className='dataLabel-text'>Este grupo ha sido creado para la implementación de todos los programas necesarios en sus respectivas aulas.</p></div>
+                                <div className="feature-body"><p className='dataLabel-text'>{groupDescription}</p></div>
                             </div>
                             <div className="feature-container" style={{marginBottom: 0}}>
                                 <div className="feature-header"><p className='label-text'>Categoría</p></div>
-                                <div className="feature-body"><p className='dataLabel-text'>---</p></div>
+                                <div className="feature-body"><p className='dataLabel-text'>{groupCategory}</p></div>
                             </div>
                         </div>
                         <div className="vertical-separator"></div>
@@ -125,14 +205,20 @@ const TechnicalGroupsPage = () => {
                         <div className="technical-container">
                             <p className='technical-title'>Lista técnicos</p>
                             <div className="technical-list">
-                                <div className="technical-info">
-                                    <div className="technical-name">
-                                        Adrian Santos Mena
-                                    </div>
-                                    <div className="delete-technical">
-                                        <span className='delete-icon'><i className="fas fa-user-times"></i></span>
-                                    </div>
-                                </div>
+                                {
+                                    technicalsList.map((data, index) => {
+                                        return(
+                                            <div key={index} className="technical-info">
+                                                <div className="technical-name">
+                                                    {`${data.name} ${data.surname1} ${data.surname2}`}
+                                                </div>
+                                                <div className="delete-technical">
+                                                    <span className='delete-icon' onClick={() => deleteUserFromGroup(data.id)}><i className="fas fa-user-times"></i></span>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                             <div className="addTechnical-container">
                                 <AutocompleteInput autocompleteInputInfo={autocompleteInputValues} handleClick={handleClickAutocomplete}></AutocompleteInput>
