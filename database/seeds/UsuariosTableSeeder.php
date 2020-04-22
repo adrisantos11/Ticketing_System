@@ -58,14 +58,15 @@ class UsuariosTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name'      => 'Eladio',
-            'surname1'  => 'Mena',
-            'surname2'  => 'xxxx',
+            'name'      => 'Pablo',
+            'surname1'  => 'Elias',
+            'surname2'  => 'Caballero',
             'exp'       => '12345678',
             'password'  => Hash::make('123456'),
-            'email'     => 'eladiomena@gmail.com',
+            'email'     => 'pabloelias@gmail.com',
             'phone'     => '123456789',
-            'role'      => 'technical'
+            'role'      => 'technical',
+            'image_url' => '/images/pablo-elias.jpeg'
         ]);
     }
 }

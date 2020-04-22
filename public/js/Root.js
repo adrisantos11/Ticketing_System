@@ -75295,7 +75295,7 @@ var Modal = function (props) {
                         React.createElement("span", { "aria-hidden": "true" }, "\u00D7"))),
                 React.createElement("div", { className: "modal-body" }, props.children),
                 React.createElement("div", { className: "modal-footer" },
-                    React.createElement("button", { type: "button", className: "btn btn-secondary", "data-dismiss": "modal" }, "Close"),
+                    React.createElement("button", { type: "button", className: "btn btn-danger", "data-dismiss": "modal" }, "Close"),
                     React.createElement(Button_1.default, { buttonInfo: props.modalProps.buttonProps, handleClick: onClickButton }))))));
 };
 exports.default = Modal;
