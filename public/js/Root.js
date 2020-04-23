@@ -75282,6 +75282,21 @@ var Modal = function (props) {
     var onClickButton = function () {
         props.onClick();
     };
+    var modalFooter;
+    if (!props.modalProps.infoModel) {
+        if (props.modalProps.enableCloseButton) {
+            modalFooter = React.createElement(React.Fragment, null,
+                React.createElement("div", { className: "modal-footer" },
+                    React.createElement("button", { type: "button", className: "btn btn-danger", "data-dismiss": "modal" }, "Close"),
+                    React.createElement(Button_1.default, { buttonInfo: props.modalProps.buttonProps, handleClick: onClickButton })));
+        }
+        else {
+            modalFooter = React.createElement(React.Fragment, null,
+                React.createElement("div", { className: "modal-footer" },
+                    React.createElement(Button_1.default, { buttonInfo: props.modalProps.buttonProps, handleClick: onClickButton })));
+        }
+        modalFooter = '';
+    }
     return (React.createElement("div", { className: "modal fade", id: props.modalProps.id, tabIndex: -1, role: "dialog", "aria-labelledby": props.modalProps.id + "Label", "aria-hidden": "false" },
         React.createElement("div", { className: "modal-dialog", role: "document" },
             React.createElement("div", { className: "modal-content" },
@@ -75290,9 +75305,7 @@ var Modal = function (props) {
                     React.createElement("button", { type: "button", className: "close", "data-dismiss": "modal", "aria-label": "Close" },
                         React.createElement("span", { "aria-hidden": "true" }, "\u00D7"))),
                 React.createElement("div", { className: "modal-body" }, props.children),
-                React.createElement("div", { className: "modal-footer" },
-                    React.createElement("button", { type: "button", className: "btn btn-danger", "data-dismiss": "modal" }, "Close"),
-                    React.createElement(Button_1.default, { buttonInfo: props.modalProps.buttonProps, handleClick: onClickButton }))))));
+                modalFooter))));
 };
 exports.default = Modal;
 

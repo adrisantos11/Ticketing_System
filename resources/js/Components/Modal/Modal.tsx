@@ -15,27 +15,43 @@ const Modal: React.FunctionComponent<Props> = (props: Props) => {
     props.onClick();
   }
 
+  let modalFooter;
+  if (!props.modalProps.infoModel) {
+    if (props.modalProps.enableCloseButton) {
+      modalFooter = <>
+          <div className="modal-footer">
+              <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
+              <Button buttonInfo={props.modalProps.buttonProps} handleClick={onClickButton}></Button>
+          </div>
+      </>
+    } else {
+      modalFooter = <>
+          <div className="modal-footer">
+              <Button buttonInfo={props.modalProps.buttonProps} handleClick={onClickButton}></Button>
+          </div>
+      </>
+    }
+    modalFooter = '';
+  }
+
   return(
-    <div className="modal fade" id={props.modalProps.id} tabIndex={-1} role="dialog" aria-labelledby={`${props.modalProps.id}Label`} aria-hidden="false">
+    <div className="modal fade" id={props.modalProps.id} tabIndex={-1} role="dialog"
+        aria-labelledby={`${props.modalProps.id}Label`} aria-hidden="false">
         <div className="modal-dialog" role="document">
-        <div className="modal-content">
-            <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">{props.modalProps.title}</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div className="modal-body">
-                {props.children}
-            </div>
-            <div className="modal-footer">
-                <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
-                <Button buttonInfo={props.modalProps.buttonProps} handleClick={onClickButton}></Button>
-            </div>
+            <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">{props.modalProps.title}</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div className="modal-body">
+                    {props.children}
+                </div>
+                    {modalFooter}
             </div>
         </div>
     </div>
-
   )
 }
 
