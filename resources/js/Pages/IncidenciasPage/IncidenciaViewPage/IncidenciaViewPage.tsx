@@ -96,7 +96,9 @@ const IncidenciaViewPage = () => {
     const [modalDeleteIncidencia] = React.useState<ModalModel>({
         id: 'deleteIncidenciaModal',
         title: 'Confimar acción',
-        buttonProps: confirmButton
+        buttonProps: confirmButton,
+        enableCloseButton: true,
+        infoModel: false
     })
 
 

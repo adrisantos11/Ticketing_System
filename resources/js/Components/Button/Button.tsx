@@ -19,7 +19,7 @@ const Button: React.FunctionComponent<Props> = (props: Props) => {
     if(props.buttonInfo.icon != '')
         iconShow = '--show';
     
-    const handleClickButton = (e: React.MouseEvent) => {
+    const handleClickButton = (e: any) => {
         props.handleClick(e, props.buttonInfo.id);
     }
 

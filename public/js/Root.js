@@ -74872,10 +74872,6 @@ var AutocompleteInput = function (props) {
             Autocomplete_1.getFilteredUsers(event).then(function (res) {
                 var helperList = [];
                 res.map(function (value) {
-                    // setUserList(userList => [
-                    //     ...userList,
-                    //     value
-                    // ])
                     helperList.push(value);
                 });
                 setUserList(helperList);
@@ -75919,7 +75915,9 @@ var IncidenciaViewPage = function () {
     var modalDeleteIncidencia = React.useState({
         id: 'deleteIncidenciaModal',
         title: 'Confimar acción',
-        buttonProps: confirmButton
+        buttonProps: confirmButton,
+        enableCloseButton: true,
+        infoModel: false
     })[0];
     React.useEffect(function () {
         console.log('Cargamos datos incidencia...');
@@ -76916,13 +76914,17 @@ var Button_1 = __webpack_require__(/*! ../../../../Components/Button/Button */ "
 var Input_1 = __webpack_require__(/*! ../../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
 var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var SupervisorUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
+var Modal_1 = __webpack_require__(/*! ../../../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
 var TechnicalGroupsPage = function () {
     var _a = React.useState([]), groups = _a[0], setGroups = _a[1];
-    var _b = React.useState(), groupId = _b[0], setGroupId = _b[1];
-    var _c = React.useState('--'), groupName = _c[0], setGroupName = _c[1];
-    var _d = React.useState('--'), groupDescription = _d[0], setGroupDescription = _d[1];
-    var _e = React.useState('--'), groupCategory = _e[0], setGroupCategory = _e[1];
-    var _f = React.useState([]), technicalsList = _f[0], setTechnicalsList = _f[1];
+    var _b = React.useState({
+        id: 0,
+        name: null,
+        description: null,
+        category: null,
+        id_supervisor: 0
+    }), selectedGroup = _b[0], setSelectedGroup = _b[1];
+    var _c = React.useState([]), technicalsList = _c[0], setTechnicalsList = _c[1];
     var getTechnicals = function (idGroup) {
         var helperList = [];
         SupervisorUtilities_1.getTechnicalsGroup(idGroup).then(function (res) {
@@ -76939,10 +76941,11 @@ var TechnicalGroupsPage = function () {
             var index = 0;
             res.map(function (data) {
                 if (index == 0) {
-                    setGroupId(data.id);
-                    setGroupName(data.name);
-                    setGroupDescription(data.description);
-                    setGroupCategory(data.category);
+                    setSelectedGroup(data);
+                    // setGroupId(data.id);
+                    // setGroupName(data.name)
+                    // setGroupDescription(data.description); 
+                    // setGroupCategory(data.category); 
                     getTechnicals(data.id);
                 }
                 setGroups(function (groups) { return __spreadArrays(groups, [
@@ -76955,7 +76958,7 @@ var TechnicalGroupsPage = function () {
     React.useEffect(function () {
         setTechnicalGroups();
     }, []);
-    var _g = React.useState({
+    var _d = React.useState({
         id: 1,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
@@ -76963,7 +76966,7 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         tableToSearchIn: 'users',
         matchingWords: ['name', 'surname1', 'surname2']
-    }), autocompleteInputValues = _g[0], setAutocompleteInputValues = _g[1];
+    }), autocompleteInputValues = _d[0], setAutocompleteInputValues = _d[1];
     var addTechnicalButton = React.useState({
         id: 1,
         texto: 'Añadir técnico',
@@ -76973,7 +76976,7 @@ var TechnicalGroupsPage = function () {
         target_modal: '',
         extraClass: ''
     })[0];
-    var _h = React.useState({
+    var _e = React.useState({
         id: 1,
         value: '',
         label: 'Nombre del grupo',
@@ -76984,8 +76987,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: false
-    }), titleInput = _h[0], setTitleInput = _h[1];
-    var _j = React.useState({
+    }), titleInput = _e[0], setTitleInput = _e[1];
+    var _f = React.useState({
         id: 1,
         value: '',
         label: 'Descripción',
@@ -76996,8 +76999,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), descriptionInput = _j[0], setDescriptionInput = _j[1];
-    var _k = React.useState({
+    }), descriptionInput = _f[0], setDescriptionInput = _f[1];
+    var _g = React.useState({
         id: 4,
         groupName: 'Categoría',
         groupItems: [],
@@ -77005,7 +77008,7 @@ var TechnicalGroupsPage = function () {
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), classDropdown = _k[0], setClassDropdown = _k[1];
+    }), classDropdown = _g[0], setClassDropdown = _g[1];
     var createTechnicalGroupButton = React.useState({
         id: 1,
         texto: 'Crear grupo',
@@ -77015,6 +77018,29 @@ var TechnicalGroupsPage = function () {
         target_modal: '',
         extraClass: ''
     })[0];
+    var confirmButton = React.useState({
+        id: 1,
+        texto: 'Eliminar',
+        color: 'red',
+        type: '',
+        icon: 'fas fa-times',
+        target_modal: 'deleteTechnicalModal',
+        extraClass: ''
+    })[0];
+    var modalDeleteTechnical = React.useState({
+        id: 'deleteTechnicalModal',
+        title: '¿Eliminar técnico?',
+        buttonProps: confirmButton,
+        enableCloseButton: false,
+        infoModel: false
+    })[0];
+    var _h = React.useState({
+        id: 0,
+        name: null,
+        surname1: null,
+        surname2: null,
+        role: null
+    }), technicalToDelete = _h[0], setTechnicalToDelete = _h[1];
     var handleClickAutocomplete = function (id) {
         console.log(id);
     };
@@ -77022,10 +77048,7 @@ var TechnicalGroupsPage = function () {
     };
     var handleSpanClick = function (e) {
         var groupSelected = groups[e.target.id];
-        setGroupName(groupSelected.name);
-        setGroupDescription(groupSelected.description);
-        setGroupCategory(groupSelected.category);
-        setGroupId(groupSelected.id);
+        setSelectedGroup(groupSelected);
         getTechnicals(groupSelected.id);
     };
     React.useEffect(function () {
@@ -77037,10 +77060,14 @@ var TechnicalGroupsPage = function () {
         console.log(value);
     };
     var handleClickItemDD = function (idItem, idDropdown) { };
-    var deleteUserFromGroup = function (idUser) {
-        console.log('El usuario a eliminar tiene le id: ' + idUser);
-        SupervisorUtilities_1.deleteTechnicalAssign(Number(idUser), Number(groupId));
-        getTechnicals(Number(groupId));
+    var deleteUserFromGroup = function (user) {
+        setTechnicalToDelete(user);
+        $('#' + modalDeleteTechnical.id).modal('show');
+    };
+    var handleClickDeleteTechncial = function () {
+        console.log('El usuario a eliminar tiene le id: ' + technicalToDelete);
+        SupervisorUtilities_1.deleteTechnicalAssign(Number(technicalToDelete.id), Number(selectedGroup.id));
+        getTechnicals(Number(selectedGroup.id));
     };
     return (React.createElement("div", { className: "technicalGroups-container" },
         React.createElement("div", { className: "top-container" },
@@ -77057,7 +77084,7 @@ var TechnicalGroupsPage = function () {
                 "Crear nuevo grupo..."),
             React.createElement("div", { className: "right-container" },
                 React.createElement("div", { className: "nameGroup-container" },
-                    React.createElement("p", { className: 'name-text' }, groupName),
+                    React.createElement("p", { className: 'name-text' }, selectedGroup.name),
                     React.createElement("span", { className: "options-icon" },
                         React.createElement("i", { className: "fas fa-ellipsis-v" }))),
                 React.createElement("div", { className: "dataGroup-container" },
@@ -77066,17 +77093,17 @@ var TechnicalGroupsPage = function () {
                             React.createElement("div", { className: "feature-header" },
                                 React.createElement("p", { className: 'label-text' }, "Nombre")),
                             React.createElement("div", { className: "feature-body" },
-                                React.createElement("p", { className: 'dataLabel-text' }, groupName))),
+                                React.createElement("p", { className: 'dataLabel-text' }, selectedGroup.name))),
                         React.createElement("div", { className: "feature-container" },
                             React.createElement("div", { className: "feature-header" },
                                 React.createElement("p", { className: 'label-text' }, "Descripci\u00F3n")),
                             React.createElement("div", { className: "feature-body" },
-                                React.createElement("p", { className: 'dataLabel-text' }, groupDescription))),
+                                React.createElement("p", { className: 'dataLabel-text' }, selectedGroup.description))),
                         React.createElement("div", { className: "feature-container", style: { marginBottom: 0 } },
                             React.createElement("div", { className: "feature-header" },
                                 React.createElement("p", { className: 'label-text' }, "Categor\u00EDa")),
                             React.createElement("div", { className: "feature-body" },
-                                React.createElement("p", { className: 'dataLabel-text' }, groupCategory)))),
+                                React.createElement("p", { className: 'dataLabel-text' }, selectedGroup.category)))),
                     React.createElement("div", { className: "vertical-separator" }),
                     React.createElement("div", { className: "technical-container" },
                         React.createElement("p", { className: 'technical-title' }, "Lista t\u00E9cnicos"),
@@ -77084,7 +77111,7 @@ var TechnicalGroupsPage = function () {
                             return (React.createElement("div", { key: index, className: "technical-info" },
                                 React.createElement("div", { className: "technical-name" }, data.name + " " + data.surname1 + " " + data.surname2),
                                 React.createElement("div", { className: "delete-technical" },
-                                    React.createElement("span", { className: 'delete-icon', onClick: function () { return deleteUserFromGroup(data.id); } },
+                                    React.createElement("span", { className: 'delete-icon', onClick: function () { return deleteUserFromGroup(data); } },
                                         React.createElement("i", { className: "fas fa-user-times" })))));
                         })),
                         React.createElement("div", { className: "addTechnical-container" },
@@ -77096,7 +77123,20 @@ var TechnicalGroupsPage = function () {
                 React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInput }),
                 React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInput }),
                 React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD }),
-                React.createElement(Button_1.default, { buttonInfo: createTechnicalGroupButton, handleClick: handleClickCreateIncidencia })))));
+                React.createElement(Button_1.default, { buttonInfo: createTechnicalGroupButton, handleClick: handleClickCreateIncidencia }))),
+        React.createElement(Modal_1.default, { modalProps: modalDeleteTechnical, onClick: handleClickDeleteTechncial },
+            React.createElement("div", null,
+                React.createElement("p", null,
+                    "T\u00E9cnico que se va a eliminar: ",
+                    React.createElement("b", null,
+                        technicalToDelete.name,
+                        " ",
+                        technicalToDelete.surname1,
+                        " ",
+                        technicalToDelete.surname2)),
+                React.createElement("p", null,
+                    "Grupo seleccionado: ",
+                    React.createElement("b", null, selectedGroup.name))))));
 };
 exports.default = TechnicalGroupsPage;
 
@@ -78337,7 +78377,9 @@ var FormularioIncidencia = function (props) {
     var modalCreateIncidencia = React.useState({
         id: 'confirmationModal',
         title: '¿Seguro?',
-        buttonProps: confirmButton
+        buttonProps: confirmButton,
+        enableCloseButton: true,
+        infoModel: false
     })[0];
     var handleChangeInput = function (value, id) {
         if (id == 1) {

@@ -203,7 +203,9 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     const [modalCreateIncidencia] = React.useState<ModalModel>({
         id: 'confirmationModal',
         title: '¿Seguro?',
-        buttonProps: confirmButton
+        buttonProps: confirmButton,
+        enableCloseButton: true,
+        infoModel: false
     })
 
     const handleChangeInput = (value: string, id: number) => {

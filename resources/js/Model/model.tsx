@@ -88,6 +88,8 @@ export interface ModalModel {
     id: string,
     title: string,
     buttonProps: ButtonModel,
+    enableCloseButton: boolean,
+    infoModel: boolean
 }
 
 export interface DataCardModel {

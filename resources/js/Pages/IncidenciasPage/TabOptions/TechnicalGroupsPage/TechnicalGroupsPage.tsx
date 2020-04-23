@@ -2,19 +2,23 @@ import * as React from 'react'
 import './TechnicalGroupsPage.scss'
 import AutocompleteInput from '../../../../Components/AutocompleteInput/AutocompleteInput'
 import Button from '../../../../Components/Button/Button'
-import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel } from '../../../../Model/model'
+import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel, ModalModel } from '../../../../Model/model'
 import { Input } from '../../../../Components/Input/Input'
 import Dropdown from '../../../../Components/Dropdown/Dropdown'
 
 import {getGroups, getTechnicalsGroup, deleteTechnicalAssign} from '../../../../Utilities/Incidencias/SupervisorUtilities';
+import Modal from '../../../../Components/Modal/Modal'
 
 const TechnicalGroupsPage = () => {
 
     const [groups, setGroups] = React.useState([]);
-    const [groupId, setGroupId] = React.useState();
-    const [groupName, setGroupName] = React.useState('--');
-    const [groupDescription, setGroupDescription] = React.useState('--');
-    const [groupCategory, setGroupCategory] = React.useState('--');
+    const [selectedGroup, setSelectedGroup] = React.useState({
+        id: 0,
+        name: null,
+        description: null,
+        category: null,
+        id_supervisor: 0
+    })
     const [technicalsList, setTechnicalsList] = React.useState([]);
 
     const getTechnicals = (idGroup: number)=> {
@@ -35,10 +39,11 @@ const TechnicalGroupsPage = () => {
             let index = 0;
             res.map((data: any) => {
                 if (index == 0) {
-                    setGroupId(data.id);
-                    setGroupName(data.name)
-                    setGroupDescription(data.description); 
-                    setGroupCategory(data.category); 
+                    setSelectedGroup(data)
+                    // setGroupId(data.id);
+                    // setGroupName(data.name)
+                    // setGroupDescription(data.description); 
+                    // setGroupCategory(data.category); 
                     getTechnicals(data.id);
                 }
                 setGroups(groups => [
@@ -122,6 +127,31 @@ const TechnicalGroupsPage = () => {
         target_modal:'',  
         extraClass: ''
     });
+    const [confirmButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Eliminar',
+        color: 'red',
+        type: '',
+        icon: 'fas fa-times',
+        target_modal:'deleteTechnicalModal',  
+        extraClass: ''
+    });
+
+    const [modalDeleteTechnical] = React.useState<ModalModel>({
+        id: 'deleteTechnicalModal',
+        title: '¿Eliminar técnico?',
+        buttonProps: confirmButton,
+        enableCloseButton: false,
+        infoModel: false
+    })
+
+    const [technicalToDelete, setTechnicalToDelete] = React.useState({
+        id: 0,
+        name: null,
+        surname1: null,
+        surname2: null,
+        role: null
+    });
 
     const handleClickAutocomplete = (id: number) => {
         console.log(id);
@@ -133,10 +163,7 @@ const TechnicalGroupsPage = () => {
 
     const handleSpanClick = (e: any) => {
         const groupSelected = groups[e.target.id];
-        setGroupName(groupSelected.name)
-        setGroupDescription(groupSelected.description);
-        setGroupCategory(groupSelected.category); 
-        setGroupId(groupSelected.id);
+        setSelectedGroup(groupSelected);
         
         getTechnicals(groupSelected.id);
     }
@@ -154,11 +181,17 @@ const TechnicalGroupsPage = () => {
     }
     const handleClickItemDD = (idItem: string, idDropdown: number) => { }
     
-    const deleteUserFromGroup = (idUser: number) => {
-        console.log('El usuario a eliminar tiene le id: ' + idUser);
-        deleteTechnicalAssign(Number(idUser), Number(groupId));
-        getTechnicals(Number(groupId));
+    const deleteUserFromGroup = (user: any) => {
+        setTechnicalToDelete(user);
+        $('#'+modalDeleteTechnical.id).modal('show'); 
     }
+    
+    const handleClickDeleteTechncial = () => {
+        console.log('El usuario a eliminar tiene le id: ' + technicalToDelete);
+        deleteTechnicalAssign(Number(technicalToDelete.id), Number(selectedGroup.id));
+        getTechnicals(Number(selectedGroup.id));
+    }
+
     return(
         <div className="technicalGroups-container">
             <div className="top-container">
@@ -186,22 +219,22 @@ const TechnicalGroupsPage = () => {
                 </div>
                 <div className="right-container">
                     <div className="nameGroup-container">
-                        <p className='name-text'>{groupName}</p>
+                        <p className='name-text'>{selectedGroup.name}</p>
                         <span className="options-icon"><i className="fas fa-ellipsis-v"></i></span>
                     </div>
                     <div className="dataGroup-container">
                         <div className="info-container">
                             <div className="feature-container">
                                 <div className="feature-header"><p className='label-text'>Nombre</p></div>
-                                <div className="feature-body"><p className='dataLabel-text'>{groupName}</p></div>
+                                <div className="feature-body"><p className='dataLabel-text'>{selectedGroup.name}</p></div>
                             </div>
                             <div className="feature-container">
                                 <div className="feature-header"><p className='label-text'>Descripción</p></div>
-                                <div className="feature-body"><p className='dataLabel-text'>{groupDescription}</p></div>
+                                <div className="feature-body"><p className='dataLabel-text'>{selectedGroup.description}</p></div>
                             </div>
                             <div className="feature-container" style={{marginBottom: 0}}>
                                 <div className="feature-header"><p className='label-text'>Categoría</p></div>
-                                <div className="feature-body"><p className='dataLabel-text'>{groupCategory}</p></div>
+                                <div className="feature-body"><p className='dataLabel-text'>{selectedGroup.category}</p></div>
                             </div>
                         </div>
                         <div className="vertical-separator"></div>
@@ -217,7 +250,7 @@ const TechnicalGroupsPage = () => {
                                                     {`${data.name} ${data.surname1} ${data.surname2}`}
                                                 </div>
                                                 <div className="delete-technical">
-                                                    <span className='delete-icon' onClick={() => deleteUserFromGroup(data.id)}><i className="fas fa-user-times"></i></span>
+                                                    <span className='delete-icon' onClick={() => deleteUserFromGroup(data)}><i className="fas fa-user-times"></i></span>
                                                 </div>
                                             </div>
                                         )
@@ -242,7 +275,17 @@ const TechnicalGroupsPage = () => {
 
                 </div>
             </div>
+            <Modal modalProps={modalDeleteTechnical} onClick={handleClickDeleteTechncial}>
+                <div>
+                    <p>
+                        Técnico que se va a eliminar: <b>{technicalToDelete.name} {technicalToDelete.surname1} {technicalToDelete.surname2}</b>
+                    </p>
+                    <p>
+                        Grupo seleccionado: <b>{selectedGroup.name}</b>
+                    </p>
 
+                </div>
+            </Modal>
         </div>
     )
 }

@@ -34,10 +34,6 @@ const AutocompleteInput: React.FunctionComponent<Props> = (props: Props) => {
             getFilteredUsers(event).then(res => {
                 let helperList: any[] = [];
                 res.map((value: any) => {
-                    // setUserList(userList => [
-                    //     ...userList,
-                    //     value
-                    // ])
                     helperList.push(value);
                 })
                 setUserList(helperList);
