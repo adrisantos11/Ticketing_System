@@ -1,3 +1,11 @@
+export interface BasicUserModel {
+    id: number,
+    name: string,
+    surname1: string,
+    surname2: string,
+    role: string
+}
+
 export interface ButtonModel {
     id: number;
     texto: string;

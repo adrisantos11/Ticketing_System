@@ -21,6 +21,8 @@
         height: 75%;
         // padding-top: $default_padding*1;
         .tabs-container {
+            display: flex;
+            flex-direction: row;
             .btn-group {
                 .active {
                     border-bottom: none;

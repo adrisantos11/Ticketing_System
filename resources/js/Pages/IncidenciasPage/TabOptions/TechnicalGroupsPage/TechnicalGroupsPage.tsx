@@ -2,11 +2,11 @@ import * as React from 'react'
 import './TechnicalGroupsPage.scss'
 import AutocompleteInput from '../../../../Components/AutocompleteInput/AutocompleteInput'
 import Button from '../../../../Components/Button/Button'
-import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel, ModalModel } from '../../../../Model/model'
+import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel, ModalModel, BasicUserModel } from '../../../../Model/model'
 import { Input } from '../../../../Components/Input/Input'
 import Dropdown from '../../../../Components/Dropdown/Dropdown'
 
-import {getGroups, getTechnicalsGroup, deleteTechnicalAssign} from '../../../../Utilities/Incidencias/SupervisorUtilities';
+import {getGroups, getTechnicalsGroup, deleteTechnicalAssign, addTechnicalToGroup} from '../../../../Utilities/Incidencias/SupervisorUtilities';
 import Modal from '../../../../Components/Modal/Modal'
 
 const TechnicalGroupsPage = () => {
@@ -56,6 +56,7 @@ const TechnicalGroupsPage = () => {
         });
 
     }
+
     React.useEffect(() => {
         setTechnicalGroups()
 
@@ -127,7 +128,7 @@ const TechnicalGroupsPage = () => {
         target_modal:'',  
         extraClass: ''
     });
-    const [confirmButton] = React.useState<ButtonModel>({
+    const [confirmDeleteButton] = React.useState<ButtonModel>({
         id: 1,
         texto: 'Eliminar',
         color: 'red',
@@ -137,15 +138,42 @@ const TechnicalGroupsPage = () => {
         extraClass: ''
     });
 
+    const [confirmAddTechnicalButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Añadir',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'addTechnicalModal',  
+        extraClass: ''
+    });
+
     const [modalDeleteTechnical] = React.useState<ModalModel>({
         id: 'deleteTechnicalModal',
-        title: '¿Eliminar técnico?',
-        buttonProps: confirmButton,
+        title: '¿Está seguro de elimnar el técnico?',
+        buttonProps: confirmDeleteButton,
         enableCloseButton: false,
         infoModel: false
     })
 
-    const [technicalToDelete, setTechnicalToDelete] = React.useState({
+    
+    const [modalAddTechncial] = React.useState<ModalModel>({
+        id: 'addTechnicalModal',
+        title: '¿Añadir técnico?',
+        buttonProps: confirmAddTechnicalButton,
+        enableCloseButton: true,
+        infoModel: false
+    })
+
+    const [modalTechnicalIsAlreadyAdded] = React.useState<ModalModel>({
+        id: 'technicalAlreadyAddedModal',
+        title: 'No se puede realizar la acción',
+        buttonProps: confirmAddTechnicalButton,
+        enableCloseButton: false,
+        infoModel: true
+    })
+
+    const [technicalSelected, setTechnicalSelected] = React.useState<BasicUserModel>({
         id: 0,
         name: null,
         surname1: null,
@@ -153,18 +181,28 @@ const TechnicalGroupsPage = () => {
         role: null
     });
 
-    const handleClickAutocomplete = (id: number) => {
-        console.log(id);
+    const handleClickAutocomplete = (user: BasicUserModel) => {
+        setTechnicalSelected(user);
     }
 
-    const getUsersGroup = (idGroup: number) => {
+    const handleClickAddTechnical = () => { 
+        const technicalFound = technicalsList.findIndex(x => x.id === technicalSelected.id);
+        console.log(technicalFound);
+        if (technicalFound == -1 && technicalSelected.role == 'technical') {
+            $('#'+modalAddTechncial.id).modal('show'); 
+        } else {
+            $('#'+modalTechnicalIsAlreadyAdded.id).modal('show'); 
+        }
+    }
 
+    const handleClickAddTechncialModal = () => {
+        addTechnicalToGroup(technicalSelected.id,  selectedGroup.id);
+        getTechnicals(Number(selectedGroup.id));
     }
 
     const handleSpanClick = (e: any) => {
         const groupSelected = groups[e.target.id];
-        setSelectedGroup(groupSelected);
-        
+        setSelectedGroup(groupSelected); 
         getTechnicals(groupSelected.id);
     }
 
@@ -172,9 +210,10 @@ const TechnicalGroupsPage = () => {
         
     })
 
-    const handleClickCreateIncidencia = (e: React.MouseEvent) => {
-        console.log(e);
-    }
+
+
+    const handleClickCreateTeam = () => { }
+
 
     const handleChangeInput = (value: string, id: number) => {
         console.log(value);
@@ -182,13 +221,13 @@ const TechnicalGroupsPage = () => {
     const handleClickItemDD = (idItem: string, idDropdown: number) => { }
     
     const deleteUserFromGroup = (user: any) => {
-        setTechnicalToDelete(user);
+        setTechnicalSelected(user);
         $('#'+modalDeleteTechnical.id).modal('show'); 
     }
     
     const handleClickDeleteTechncial = () => {
-        console.log('El usuario a eliminar tiene le id: ' + technicalToDelete);
-        deleteTechnicalAssign(Number(technicalToDelete.id), Number(selectedGroup.id));
+        console.log('El usuario a eliminar tiene le id: ' + technicalSelected);
+        deleteTechnicalAssign(Number(technicalSelected.id), Number(selectedGroup.id));
         getTechnicals(Number(selectedGroup.id));
     }
 
@@ -259,7 +298,7 @@ const TechnicalGroupsPage = () => {
                             </div>
                             <div className="addTechnical-container">
                                 <AutocompleteInput autocompleteInputInfo={autocompleteInputValues} handleClick={handleClickAutocomplete}></AutocompleteInput>
-                                <Button buttonInfo={addTechnicalButton} handleClick={handleClickCreateIncidencia}></Button>
+                                <Button buttonInfo={addTechnicalButton} handleClick={handleClickAddTechnical}></Button>
                             </div>
                         </div>
                     </div>
@@ -271,20 +310,30 @@ const TechnicalGroupsPage = () => {
                     <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
                     <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
                     <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
-                    <Button buttonInfo={createTechnicalGroupButton} handleClick={handleClickCreateIncidencia}></Button>
-
+                    <Button buttonInfo={createTechnicalGroupButton} handleClick={handleClickCreateTeam}></Button>
                 </div>
             </div>
             <Modal modalProps={modalDeleteTechnical} onClick={handleClickDeleteTechncial}>
                 <div>
                     <p>
-                        Técnico que se va a eliminar: <b>{technicalToDelete.name} {technicalToDelete.surname1} {technicalToDelete.surname2}</b>
+                        Técnico que se va a eliminar: <b>{technicalSelected.name} {technicalSelected.surname1} {technicalSelected.surname2}</b>
                     </p>
                     <p>
                         Grupo seleccionado: <b>{selectedGroup.name}</b>
                     </p>
 
                 </div>
+            </Modal>
+            <Modal modalProps={modalAddTechncial} onClick={handleClickAddTechncialModal}>
+                <p>
+                    Técnico que se va a añadir: <b>{technicalSelected.name} {technicalSelected.surname1} {technicalSelected.surname2}</b>
+                </p>
+                <p>
+                    Grupo seleccionado: <b>{selectedGroup.name}</b>
+                </p>
+            </Modal>
+            <Modal modalProps={modalTechnicalIsAlreadyAdded}>
+                <div>El usuario ya pertenece al grupo seleccionado.</div>
             </Modal>
         </div>
     )

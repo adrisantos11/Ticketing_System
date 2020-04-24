@@ -18316,7 +18316,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".tabs-container {\n  height: auto;\n}\n.tabs-container .btn-group .btn, .tabs-container .btn-group .btn--grey, .tabs-container .btn-group .btn--grey:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--red, .tabs-container .btn-group .btn--red:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--primary, .tabs-container .btn-group .btn--primary:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n  border-top-right-radius: 1rem;\n  cursor: pointer;\n}\n.tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--grey:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--red:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--primary:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-top-right-radius: 0;\n  border-top-left-radius: 1rem;\n}\n.tabs-container .btn-group .btn--primary {\n  background-color: #f1f1f1;\n  color: #3685EC;\n  border: none;\n  box-shadow: none;\n}\n.tabs-container .btn-group .btn--primary:hover {\n  background-color: #e2e2e2;\n}\n.tabs-container .btn-group .btn--red {\n  background-color: #f1f1f1;\n  color: #dc3545;\n  border-bottom: none;\n}\n.tabs-container .btn-group .btn--red:hover {\n  background-color: #e2e2e2;\n}\n.tabs-container .btn-group .btn--grey {\n  background-color: #e2e2e2;\n  color: #333333;\n  border-bottom: none;\n  box-shadow: inset -8px -70px 50px -90px rgba(0, 0, 0, 0.75);\n}\n.tabs-container .btn-group .btn--grey:hover {\n  background-color: #c4c4c4;\n}\n.tabs-container .btn-group .btn--primary.active {\n  color: #3685EC;\n  background-color: #e2e2e2;\n  font-weight: bold;\n  box-shadow: none;\n}\n.tabs-container .btn-group .btn--red.active {\n  color: #FFFFFF;\n  background-color: #dc3545;\n  font-weight: bold;\n  box-shadow: none;\n}\n.tabs-container .btn-group .btn--red.active:hover {\n  background-color: #f76473;\n}\n.tabs-container .btn-group .btn--grey.active {\n  color: #3685EC;\n  background-color: whitesmoke;\n  font-weight: bold;\n  box-shadow: none;\n}", ""]);
+exports.push([module.i, ".tabs-container {\n  height: auto;\n}\n.tabs-container .btn-group .btn, .tabs-container .btn-group .btn--grey, .tabs-container .btn-group .btn--grey:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--red, .tabs-container .btn-group .btn--red:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--primary, .tabs-container .btn-group .btn--primary:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n  border-top-right-radius: 1rem;\n  cursor: pointer;\n  padding: 0.75rem 1rem;\n}\n.tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--grey:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--red:first-child:not(:last-child):not(.dropdown-toggle), .tabs-container .btn-group .btn--primary:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-top-right-radius: 0;\n  border-top-left-radius: 1rem;\n}\n.tabs-container .btn-group .btn--primary {\n  background-color: #f1f1f1;\n  color: #3685EC;\n  border: none;\n  box-shadow: none;\n}\n.tabs-container .btn-group .btn--primary:hover {\n  background-color: #e2e2e2;\n}\n.tabs-container .btn-group .btn--red {\n  background-color: #f1f1f1;\n  color: #dc3545;\n  border-bottom: none;\n}\n.tabs-container .btn-group .btn--red:hover {\n  background-color: #e2e2e2;\n}\n.tabs-container .btn-group .btn--grey {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom: none;\n  box-shadow: inset -8px -70px 50px -90px rgba(0, 0, 0, 0.75);\n}\n.tabs-container .btn-group .btn--grey:hover {\n  background-color: #003877;\n}\n.tabs-container .btn-group .btn--primary.active {\n  color: #3685EC;\n  background-color: #e2e2e2;\n  font-weight: bold;\n  box-shadow: none;\n}\n.tabs-container .btn-group .btn--red.active {\n  color: #FFFFFF;\n  background-color: #dc3545;\n  font-weight: bold;\n  box-shadow: none;\n}\n.tabs-container .btn-group .btn--red.active:hover {\n  background-color: #f76473;\n}\n.tabs-container .btn-group .btn--grey.active {\n  color: #3685EC;\n  background-color: whitesmoke;\n  font-weight: bold;\n  border-color: #e2e2e2;\n  box-shadow: none;\n}", ""]);
 
 // exports
 
@@ -18411,7 +18411,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".incidencias-container {\n  border-color: #c4c4c4;\n  height: 100%;\n}\n.incidencias-container .title-container {\n  height: 14.5rem;\n  padding: 0.5rem 1rem;\n}\n.incidencias-container .title-container p {\n  margin: 0;\n}\n.incidencias-container .title-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n}\n.incidencias-container .data-container {\n  height: 75%;\n}\n.incidencias-container .data-container .tabs-container .btn-group .active {\n  border-bottom: none;\n}\n.incidencias-container .data-container .dropdowndata-container {\n  height: 95%;\n}", ""]);
+exports.push([module.i, ".incidencias-container {\n  border-color: #c4c4c4;\n  height: 100%;\n}\n.incidencias-container .title-container {\n  height: 14.5rem;\n  padding: 0.5rem 1rem;\n}\n.incidencias-container .title-container p {\n  margin: 0;\n}\n.incidencias-container .title-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n}\n.incidencias-container .data-container {\n  height: 75%;\n}\n.incidencias-container .data-container .tabs-container {\n  display: flex;\n  flex-direction: row;\n}\n.incidencias-container .data-container .tabs-container .btn-group .active {\n  border-bottom: none;\n}\n.incidencias-container .data-container .dropdowndata-container {\n  height: 95%;\n}", ""]);
 
 // exports
 
@@ -18525,7 +18525,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 4rem;\n  background-color: white;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .headerperfil-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 2rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.5rem;\n  margin: 0;\n  font-style: italic;\n  margin-right: 0.75rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon, .perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  font-size: 1.3rem;\n  color: #3685EC;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 1rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 25%;\n  height: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 70%;\n  height: auto;\n  padding: 1rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  box-shadow: inset 0px 0px 15px -8px rgba(0, 0, 0, 0.75);\n  margin: 0 0.5rem;\n  margin-left: 2rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container {\n  width: 70%;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .chartjs-render-monitor {\n  font-family: \"Sen\", sans-serif;\n}", ""]);
+exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 4rem;\n  background-color: white;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .headerperfil-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 2rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.5rem;\n  margin: 0;\n  font-style: italic;\n  margin-right: 0.75rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon, .perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  font-size: 1.3rem;\n  color: #3685EC;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 1rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 25%;\n  height: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 70%;\n  height: auto;\n  padding: 1rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  margin: 0 0.5rem;\n  margin-left: 2rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container {\n  width: 70%;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .chartjs-render-monitor {\n  font-family: \"Sen\", sans-serif;\n}", ""]);
 
 // exports
 
@@ -74886,25 +74886,24 @@ var AutocompleteInput = function (props) {
         console.log('Recargamos lista.');
         console.log(userList);
     }, []);
-    var onClickOption = function (id, name, surname1, surname2) {
-        console.log(name + ' ' + surname1 + ' ' + surname2);
-        setInput(__assign(__assign({}, input), { value: name + ' ' + surname1 + ' ' + surname2 }));
+    var onClickOption = function (user) {
+        setInput(__assign(__assign({}, input), { value: user.name + ' ' + user.surname1 + ' ' + user.surname2 }));
         setDataDivState('');
         setScrollAttribute('');
-        props.handleClick(Number(id));
+        props.handleClick(user);
     };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: 'autocompleteInput-container' },
             React.createElement(Input_1.Input, { inputInfo: input, handleChangeInput: handleChangeInput }),
             React.createElement("div", { className: "dropdown-menu" + dataDivState + scrollAttribute }, userList.map(function (value, index) {
                 if (index == userList.length - 1) {
-                    return (React.createElement("div", { className: 'dropdown-item', "data-id": value.id, "data-name": value.name, onClick: function () { return onClickOption(value.id, value.name, value.surname1, value.surname2); } },
+                    return (React.createElement("div", { className: 'dropdown-item', "data-id": value.id, "data-name": value.name, onClick: function () { return onClickOption(value); } },
                         React.createElement("span", { className: 'id-data' }, "#" + value.id),
                         React.createElement("span", { className: 'value-data' }, value.name + " " + value.surname1 + " " + value.surname2)));
                 }
                 else {
                     return (React.createElement(React.Fragment, null,
-                        React.createElement("div", { className: 'item-autocomplete dropdown-item', onClick: function () { return onClickOption(value.id, value.name, value.surname1, value.surname2); } },
+                        React.createElement("div", { className: 'item-autocomplete dropdown-item', onClick: function () { return onClickOption(value); } },
                             React.createElement("span", { className: 'id-data' }, "#" + value.id),
                             React.createElement("span", { className: 'value-data' }, value.name + " " + value.surname1 + " " + value.surname2)),
                         React.createElement("div", { className: 'dropdown-divider' })));
@@ -75295,6 +75294,8 @@ var Modal = function (props) {
                 React.createElement("div", { className: "modal-footer" },
                     React.createElement(Button_1.default, { buttonInfo: props.modalProps.buttonProps, handleClick: onClickButton })));
         }
+    }
+    else {
         modalFooter = '';
     }
     return (React.createElement("div", { className: "modal fade", id: props.modalProps.id, tabIndex: -1, role: "dialog", "aria-labelledby": props.modalProps.id + "Label", "aria-hidden": "false" },
@@ -76215,7 +76216,7 @@ var IncidenciasPage = function () {
                     " todas las incidencias."),
                 React.createElement("li", null,
                     React.createElement("b", null, "Filtrar"),
-                    " incidencias para mejor b\u00FAsqueda."),
+                    " incidencias para una mejor b\u00FAsqueda."),
                 React.createElement("li", null,
                     "Acceder a los ",
                     React.createElement("b", null, "datos de una incidencia espec\u00EDfica"),
@@ -77031,7 +77032,7 @@ var TechnicalGroupsPage = function () {
         target_modal: '',
         extraClass: ''
     })[0];
-    var confirmButton = React.useState({
+    var confirmDeleteButton = React.useState({
         id: 1,
         texto: 'Eliminar',
         color: 'red',
@@ -77040,12 +77041,35 @@ var TechnicalGroupsPage = function () {
         target_modal: 'deleteTechnicalModal',
         extraClass: ''
     })[0];
+    var confirmAddTechnicalButton = React.useState({
+        id: 1,
+        texto: 'Añadir',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal: 'addTechnicalModal',
+        extraClass: ''
+    })[0];
     var modalDeleteTechnical = React.useState({
         id: 'deleteTechnicalModal',
-        title: '¿Eliminar técnico?',
-        buttonProps: confirmButton,
+        title: '¿Está seguro de elimnar el técnico?',
+        buttonProps: confirmDeleteButton,
         enableCloseButton: false,
         infoModel: false
+    })[0];
+    var modalAddTechncial = React.useState({
+        id: 'addTechnicalModal',
+        title: '¿Añadir técnico?',
+        buttonProps: confirmAddTechnicalButton,
+        enableCloseButton: true,
+        infoModel: false
+    })[0];
+    var modalTechnicalIsAlreadyAdded = React.useState({
+        id: 'technicalAlreadyAddedModal',
+        title: 'No se puede realizar la acción',
+        buttonProps: confirmAddTechnicalButton,
+        enableCloseButton: false,
+        infoModel: true
     })[0];
     var _h = React.useState({
         id: 0,
@@ -77053,11 +77077,23 @@ var TechnicalGroupsPage = function () {
         surname1: null,
         surname2: null,
         role: null
-    }), technicalToDelete = _h[0], setTechnicalToDelete = _h[1];
-    var handleClickAutocomplete = function (id) {
-        console.log(id);
+    }), technicalSelected = _h[0], setTechnicalSelected = _h[1];
+    var handleClickAutocomplete = function (user) {
+        setTechnicalSelected(user);
     };
-    var getUsersGroup = function (idGroup) {
+    var handleClickAddTechnical = function () {
+        var technicalFound = technicalsList.findIndex(function (x) { return x.id === technicalSelected.id; });
+        console.log(technicalFound);
+        if (technicalFound == -1 && technicalSelected.role == 'technical') {
+            $('#' + modalAddTechncial.id).modal('show');
+        }
+        else {
+            $('#' + modalTechnicalIsAlreadyAdded.id).modal('show');
+        }
+    };
+    var handleClickAddTechncialModal = function () {
+        SupervisorUtilities_1.addTechnicalToGroup(technicalSelected.id, selectedGroup.id);
+        getTechnicals(Number(selectedGroup.id));
     };
     var handleSpanClick = function (e) {
         var groupSelected = groups[e.target.id];
@@ -77066,20 +77102,18 @@ var TechnicalGroupsPage = function () {
     };
     React.useEffect(function () {
     });
-    var handleClickCreateIncidencia = function (e) {
-        console.log(e);
-    };
+    var handleClickCreateTeam = function () { };
     var handleChangeInput = function (value, id) {
         console.log(value);
     };
     var handleClickItemDD = function (idItem, idDropdown) { };
     var deleteUserFromGroup = function (user) {
-        setTechnicalToDelete(user);
+        setTechnicalSelected(user);
         $('#' + modalDeleteTechnical.id).modal('show');
     };
     var handleClickDeleteTechncial = function () {
-        console.log('El usuario a eliminar tiene le id: ' + technicalToDelete);
-        SupervisorUtilities_1.deleteTechnicalAssign(Number(technicalToDelete.id), Number(selectedGroup.id));
+        console.log('El usuario a eliminar tiene le id: ' + technicalSelected);
+        SupervisorUtilities_1.deleteTechnicalAssign(Number(technicalSelected.id), Number(selectedGroup.id));
         getTechnicals(Number(selectedGroup.id));
     };
     return (React.createElement("div", { className: "technicalGroups-container" },
@@ -77129,27 +77163,41 @@ var TechnicalGroupsPage = function () {
                         })),
                         React.createElement("div", { className: "addTechnical-container" },
                             React.createElement(AutocompleteInput_1.default, { autocompleteInputInfo: autocompleteInputValues, handleClick: handleClickAutocomplete }),
-                            React.createElement(Button_1.default, { buttonInfo: addTechnicalButton, handleClick: handleClickCreateIncidencia })))))),
+                            React.createElement(Button_1.default, { buttonInfo: addTechnicalButton, handleClick: handleClickAddTechnical })))))),
         React.createElement("div", { className: "bottom-container" },
             React.createElement("p", { className: "bottom-title" }, "Crear nuevo grupo de incidencias"),
             React.createElement("div", { className: "bottom-content" },
                 React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInput }),
                 React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInput }),
                 React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD }),
-                React.createElement(Button_1.default, { buttonInfo: createTechnicalGroupButton, handleClick: handleClickCreateIncidencia }))),
+                React.createElement(Button_1.default, { buttonInfo: createTechnicalGroupButton, handleClick: handleClickCreateTeam }))),
         React.createElement(Modal_1.default, { modalProps: modalDeleteTechnical, onClick: handleClickDeleteTechncial },
             React.createElement("div", null,
                 React.createElement("p", null,
                     "T\u00E9cnico que se va a eliminar: ",
                     React.createElement("b", null,
-                        technicalToDelete.name,
+                        technicalSelected.name,
                         " ",
-                        technicalToDelete.surname1,
+                        technicalSelected.surname1,
                         " ",
-                        technicalToDelete.surname2)),
+                        technicalSelected.surname2)),
                 React.createElement("p", null,
                     "Grupo seleccionado: ",
-                    React.createElement("b", null, selectedGroup.name))))));
+                    React.createElement("b", null, selectedGroup.name)))),
+        React.createElement(Modal_1.default, { modalProps: modalAddTechncial, onClick: handleClickAddTechncialModal },
+            React.createElement("p", null,
+                "T\u00E9cnico que se va a a\u00F1adir: ",
+                React.createElement("b", null,
+                    technicalSelected.name,
+                    " ",
+                    technicalSelected.surname1,
+                    " ",
+                    technicalSelected.surname2)),
+            React.createElement("p", null,
+                "Grupo seleccionado: ",
+                React.createElement("b", null, selectedGroup.name))),
+        React.createElement(Modal_1.default, { modalProps: modalTechnicalIsAlreadyAdded },
+            React.createElement("div", null, "El usuario ya pertenece al grupo seleccionado."))));
 };
 exports.default = TechnicalGroupsPage;
 
@@ -77662,7 +77710,7 @@ var PerfilPage = function () {
                                         React.createElement("p", null, userLogged.phone)))))),
                     React.createElement("div", { className: "right-container" },
                         React.createElement("div", { className: "rightData-container" },
-                            React.createElement(react_chartjs_2_1.Bar, { data: data, options: options }))))))));
+                            React.createElement(react_chartjs_2_1.Line, { data: data, options: options }))))))));
 };
 exports.default = PerfilPage;
 
@@ -78075,6 +78123,19 @@ exports.deleteTechnicalAssign = function (idUser, idTeam) {
         console.log(err);
     });
 };
+exports.addTechnicalToGroup = function (idUser, idTeam) {
+    console.log(idTeam);
+    return axios_1.default
+        .post('api/incidencias/supervisor/groups/addTechnicalToGroup', {
+        userId: idUser,
+        teamId: idTeam
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .catch(function (err) {
+        console.log(err);
+    });
+};
 
 
 /***/ }),
@@ -78392,7 +78453,7 @@ var FormularioIncidencia = function (props) {
         title: '¿Seguro?',
         buttonProps: confirmButton,
         enableCloseButton: true,
-        infoModel: false
+        infoModel: true
     })[0];
     var handleChangeInput = function (value, id) {
         if (id == 1) {
@@ -78713,9 +78774,9 @@ var FormularioIncidencia = function (props) {
         var handleClickDropdowns = function (idItem, idDropdown) {
             console.log(idItem);
         };
-        var handleClickAutocomplete = function (id) {
-            console.log(id);
-            setUserSelected(id);
+        var handleClickAutocomplete = function (user) {
+            console.log(user.id);
+            setUserSelected(user.id);
             setGroupSelected(null);
         };
         if (userRol == 'supervisor') {

@@ -208,4 +208,11 @@ where teams.id = 1
         DB::delete('delete from team_assigns where team_assigns.id_user = ? and team_assigns.id_team = ?', [$technical_id, $team_id]);
 
     }
+
+    public function addTechnicalToGroup(Request $request) {
+        $id_user = $request->userId;
+        $id_team = $request->teamId;
+
+        DB::insert('insert into team_assigns (id_user, id_team) values (?, ?)', [$id_user, $id_team]);
+    }
 }

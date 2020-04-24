@@ -40,7 +40,7 @@ const IncidenciasPage = () => {
         colorListTabs.push('grey');
         optionsList = <><p>En este apartado usted podrá gestionar todas las incidencias que hayan sido resportadas y asignadas. Tendrá las siguientes opciones:</p><ul>
             <li><b>Visualizar</b> todas las incidencias.</li>
-            <li><b>Filtrar</b> incidencias para mejor búsqueda.</li>
+            <li><b>Filtrar</b> incidencias para una mejor búsqueda.</li>
             <li>Acceder a los <b>datos de una incidencia específica</b>.</li>
             <li><b>Editar</b> o <b>eliminar</b> cualquier incidencia una vez se ha accedido a sus datos.</li>
             <li><b>Visualizar</b> y <b>añadir</b> comentarios a la incidencia.</li>

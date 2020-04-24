@@ -13,7 +13,7 @@
         border-width: 1px;
         border-color: $grey_color_226;
         border-radius: 4px;
-        box-shadow: inset 0px 0px 5px -2px rgba(0,0,0,0.75);
+        box-shadow: $box_shadow;
         width: 100%;
 
         .dropdowns-container {
@@ -50,7 +50,7 @@
                 background-color: $white_color;
                 margin-right: $default_padding*2;
                 padding: $default_padding*2 $default_padding*2;
-                box-shadow: inset 0px 0px 5px -2px rgba(0,0,0,0.75);
+                box-shadow: $box_shadow;
                 
                 .p-title {
                     font-size: $font_size*1.5;
@@ -86,7 +86,7 @@
                 border-color: $grey_color_226;
                 border-radius: 4px;  
                 background-color: $white_color;
-                box-shadow: inset 0px 0px 5px -2px rgba(0,0,0,0.75);
+                box-shadow: $box_shadow;
 
                 .p-title {
                     font-size: $font_size*1.5;

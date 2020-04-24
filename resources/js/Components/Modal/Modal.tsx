@@ -7,7 +7,7 @@ import './Modal.scss'
 interface Props {
     modalProps: ModalModel,
     children?: JSX.Element[] | JSX.Element;
-    onClick: () => void;
+    onClick?: () => void;
 }
 const Modal: React.FunctionComponent<Props> = (props: Props) => {
   
@@ -31,7 +31,9 @@ const Modal: React.FunctionComponent<Props> = (props: Props) => {
           </div>
       </>
     }
+  } else {
     modalFooter = '';
+
   }
 
   return(
@@ -48,7 +50,11 @@ const Modal: React.FunctionComponent<Props> = (props: Props) => {
                 <div className="modal-body">
                     {props.children}
                 </div>
-                    {modalFooter}
+                  { modalFooter }
+                  {/* <div className="modal-footer">
+                      <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
+                      <Button buttonInfo={props.modalProps.buttonProps} handleClick={onClickButton}></Button>
+                  </div> */}
             </div>
         </div>
     </div>

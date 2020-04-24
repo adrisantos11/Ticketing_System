@@ -2,7 +2,7 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './FormularioIncidencia.scss'
 import { Input } from '../../Components/Input/Input';
-import { ButtonModel, InputModel, AutocompleteInputModel , DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel, ModalModel } from '../../Model/model'
+import { ButtonModel, InputModel, AutocompleteInputModel , DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel, ModalModel, BasicUserModel } from '../../Model/model'
 import Dropdown from '../../Components/Dropdown/Dropdown';
 import Button from '../../Components/Button/Button';
 import AutocompleteInput from '../../Components/AutocompleteInput/AutocompleteInput'
@@ -205,7 +205,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         title: '¿Seguro?',
         buttonProps: confirmButton,
         enableCloseButton: true,
-        infoModel: false
+        infoModel: true
     })
 
     const handleChangeInput = (value: string, id: number) => {
@@ -581,9 +581,9 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             console.log(idItem);
         }
 
-        const handleClickAutocomplete = (id: number) => {
-            console.log(id);
-            setUserSelected(id);
+        const handleClickAutocomplete = (user: BasicUserModel) => {
+            console.log(user.id);
+            setUserSelected(user.id);
             setGroupSelected(null);
         }
 

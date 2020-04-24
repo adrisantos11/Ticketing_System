@@ -176,7 +176,7 @@
                 align-items: center;
                 align-content: center;
                 justify-content: center;
-                box-shadow: inset 0px 0px 15px -8px rgba(0,0,0,0.75);
+                box-shadow: $box_shadow;
                 margin: 0 $default_padding;
                 margin-left: $default_padding*4;
                 .rightData-container {

@@ -8,6 +8,7 @@
             border-radius: 0;
             border-top-right-radius: $default_padding*2;
             cursor: pointer;
+            padding: $default_padding*1.5 $default_padding*2;
 
             &:first-child:not(:last-child):not(.dropdown-toggle) {
                 @extend .btn;
@@ -41,15 +42,15 @@
 
             &--grey {
                 @extend .btn;
-                background-color: $grey_color_226;
-                color: $grey_color_51;
-                //border-color: $primary_color;
+                background-color: $primary_color;
+                color: $white_color;
+                // border-color: $primary_color;
                 border-bottom: none;
                 box-shadow: inset -8px -70px 50px -90px rgba(0, 0, 0, 0.75);
             }
 
             &--grey:hover {
-                background-color: $grey_color_127;
+                background-color: $secondary_color;
             }
 
         }
@@ -79,6 +80,7 @@
             color: $primary_color;
             background-color: $grey_color_250;
             font-weight: bold;
+            border-color: $grey_color_226;
             box-shadow: none;
         }
     }
