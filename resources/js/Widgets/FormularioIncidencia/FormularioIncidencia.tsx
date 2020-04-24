@@ -633,8 +633,14 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 </div>
                 <div className="dropdowns-container">
                     {title3}
-                    <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
-                    <Dropdown dropdownInfo={priorityDropdown} onClick={handleClickItemDD}></Dropdown>
+                    <div className="category-container">
+                        <p>Categoría: </p>
+                        <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
+                    </div>
+                    <div className="priority-container">
+                        <p>Prioridad: </p>
+                        <Dropdown dropdownInfo={priorityDropdown} onClick={handleClickItemDD}></Dropdown>
+                    </div>
                     <UploadFile></UploadFile>
                 </div>
             </div>

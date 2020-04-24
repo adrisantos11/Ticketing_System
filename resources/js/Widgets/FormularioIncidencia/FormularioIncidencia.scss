@@ -21,6 +21,28 @@
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
+
+            .category-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                p {
+                    margin: 0;
+                    font-size: $font_size*1.2;
+                    margin-right: $default_padding;
+                }
+            }
+
+            .priority-container {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                p {
+                    margin: 0;
+                    font-size: $font_size*1.2;
+                    margin-right: $default_padding;
+                }
+            }
             
             .p-title {
                 font-size: $font_size*1.5;
