@@ -76913,13 +76913,6 @@ if(false) {}
 
 "use strict";
 
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./TechnicalGroupsPage.scss */ "./resources/js/Pages/IncidenciasPage/TabOptions/TechnicalGroupsPage/TechnicalGroupsPage.scss");
@@ -76950,29 +76943,25 @@ var TechnicalGroupsPage = function () {
         });
     };
     var setTechnicalGroups = function () {
+        var helperList = [];
         SupervisorUtilities_1.getGroups(localStorage.userId).then(function (res) {
             console.log(res);
             var index = 0;
             res.map(function (data) {
                 if (index == 0) {
                     setSelectedGroup(data);
-                    // setGroupId(data.id);
-                    // setGroupName(data.name)
-                    // setGroupDescription(data.description); 
-                    // setGroupCategory(data.category); 
                     getTechnicals(data.id);
                 }
-                setGroups(function (groups) { return __spreadArrays(groups, [
-                    data
-                ]); });
+                helperList.push(data);
                 index++;
             });
+            setGroups(helperList);
         });
     };
     React.useEffect(function () {
         setTechnicalGroups();
     }, []);
-    var _d = React.useState({
+    var autocompleteInputValues = React.useState({
         id: 1,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
@@ -76980,7 +76969,7 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         tableToSearchIn: 'users',
         matchingWords: ['name', 'surname1', 'surname2']
-    }), autocompleteInputValues = _d[0], setAutocompleteInputValues = _d[1];
+    })[0];
     var addTechnicalButton = React.useState({
         id: 1,
         texto: 'Añadir técnico',
@@ -76990,7 +76979,7 @@ var TechnicalGroupsPage = function () {
         target_modal: '',
         extraClass: ''
     })[0];
-    var _e = React.useState({
+    var _d = React.useState({
         id: 1,
         value: '',
         label: 'Nombre del grupo',
@@ -77001,8 +76990,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: false
-    }), titleInput = _e[0], setTitleInput = _e[1];
-    var _f = React.useState({
+    }), titleInput = _d[0], setTitleInput = _d[1];
+    var _e = React.useState({
         id: 1,
         value: '',
         label: 'Descripción',
@@ -77013,16 +77002,16 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), descriptionInput = _f[0], setDescriptionInput = _f[1];
-    var _g = React.useState({
+    }), descriptionInput = _e[0], setDescriptionInput = _e[1];
+    var _f = React.useState({
         id: 4,
         groupName: 'Categoría',
-        groupItems: [],
-        groupIds: [],
+        groupItems: ['Software', 'Hardware', 'Redes y conexión wifi'],
+        groupIds: ['Software', 'Hardware', 'Redes y conexión wifi'],
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), classDropdown = _g[0], setClassDropdown = _g[1];
+    }), classDropdown = _f[0], setClassDropdown = _f[1];
     var createTechnicalGroupButton = React.useState({
         id: 1,
         texto: 'Crear grupo',
@@ -77071,13 +77060,13 @@ var TechnicalGroupsPage = function () {
         enableCloseButton: false,
         infoModel: true
     })[0];
-    var _h = React.useState({
+    var _g = React.useState({
         id: 0,
         name: null,
         surname1: null,
         surname2: null,
         role: null
-    }), technicalSelected = _h[0], setTechnicalSelected = _h[1];
+    }), technicalSelected = _g[0], setTechnicalSelected = _g[1];
     var handleClickAutocomplete = function (user) {
         setTechnicalSelected(user);
     };
@@ -77091,6 +77080,9 @@ var TechnicalGroupsPage = function () {
             $('#' + modalTechnicalIsAlreadyAdded.id).modal('show');
         }
     };
+    var _h = React.useState(''), groupName = _h[0], setGroupName = _h[1];
+    var _j = React.useState(''), groupDescription = _j[0], setGroupDescription = _j[1];
+    var _k = React.useState(''), groupCategory = _k[0], setGroupCategory = _k[1];
     var handleClickAddTechncialModal = function () {
         SupervisorUtilities_1.addTechnicalToGroup(technicalSelected.id, selectedGroup.id);
         getTechnicals(Number(selectedGroup.id));
@@ -77100,13 +77092,25 @@ var TechnicalGroupsPage = function () {
         setSelectedGroup(groupSelected);
         getTechnicals(groupSelected.id);
     };
-    React.useEffect(function () {
-    });
-    var handleClickCreateTeam = function () { };
-    var handleChangeInput = function (value, id) {
-        console.log(value);
+    var handleClickCreateTeam = function () {
+        var group = {
+            name: groupName,
+            description: groupDescription,
+            category: groupCategory,
+            id_supervisor: localStorage.userId
+        };
+        SupervisorUtilities_1.createGroup(group);
+        setTechnicalGroups();
     };
-    var handleClickItemDD = function (idItem, idDropdown) { };
+    var handleChangeName = function (value, id) {
+        setGroupName(value);
+    };
+    var handleChangeDescription = function (value, id) {
+        setGroupDescription(value);
+    };
+    var handleClickItemDD = function (idItem, idDropdown) {
+        setGroupCategory(idItem);
+    };
     var deleteUserFromGroup = function (user) {
         setTechnicalSelected(user);
         $('#' + modalDeleteTechnical.id).modal('show');
@@ -77167,8 +77171,8 @@ var TechnicalGroupsPage = function () {
         React.createElement("div", { className: "bottom-container" },
             React.createElement("p", { className: "bottom-title" }, "Crear nuevo grupo de incidencias"),
             React.createElement("div", { className: "bottom-content" },
-                React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInput }),
-                React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInput }),
+                React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeName }),
+                React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeDescription }),
                 React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD }),
                 React.createElement(Button_1.default, { buttonInfo: createTechnicalGroupButton, handleClick: handleClickCreateTeam }))),
         React.createElement(Modal_1.default, { modalProps: modalDeleteTechnical, onClick: handleClickDeleteTechncial },
@@ -77710,7 +77714,7 @@ var PerfilPage = function () {
                                         React.createElement("p", null, userLogged.phone)))))),
                     React.createElement("div", { className: "right-container" },
                         React.createElement("div", { className: "rightData-container" },
-                            React.createElement(react_chartjs_2_1.Line, { data: data, options: options }))))))));
+                            React.createElement(react_chartjs_2_1.Bar, { data: data, options: options }))))))));
 };
 exports.default = PerfilPage;
 
@@ -78066,9 +78070,23 @@ exports.getNoAssignedIncidencias = function (userId) {
             console.log(err);
     });
 };
+exports.createGroup = function (team) {
+    return axios_1.default
+        .post('api/incidencias/supervisor/groups/createGroup', {
+        name: team.name,
+        description: team.description,
+        category: team.category,
+        idSupervisor: team.id_supervisor
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .catch(function (err) {
+        console.log(err);
+    });
+};
 exports.getGroups = function (userId) {
     return axios_1.default
-        .post('api/incidencias/supervisor/gropus/getGroups', {
+        .post('api/incidencias/supervisor/groups/getGroups', {
         id: userId
     }, {
         headers: { 'Content-Type': 'application/json' }

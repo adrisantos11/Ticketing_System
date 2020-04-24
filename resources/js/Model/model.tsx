@@ -6,6 +6,13 @@ export interface BasicUserModel {
     role: string
 }
 
+export interface TeamModel {
+    name: string,
+    description: string,
+    category: string,
+    id_supervisor: number
+}
+
 export interface ButtonModel {
     id: number;
     texto: string;

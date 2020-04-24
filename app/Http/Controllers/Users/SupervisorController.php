@@ -215,4 +215,26 @@ where teams.id = 1
 
         DB::insert('insert into team_assigns (id_user, id_team) values (?, ?)', [$id_user, $id_team]);
     }
+
+    public function createTechnicalTeam(Request $request) {
+        $validator = Validator::make($request->json()->all(), [
+            'name'          => 'required',
+            'description'   => 'required',
+            'category'      => 'required',
+            'idSupervisor'  => 'required'
+        ]);
+
+        if($validator->fails())
+        {
+            return response()->json($validator->errors()->toJson(), 400);
+        } else {
+            DB::table('teams')->insert([
+                'name'          => $request->name,
+                'description'   => $request->description,
+                'category'      => $request->category,
+                'id_supervisor' => $request->idSupervisor
+            ]);
+        }
+
+    }
 }

@@ -2,11 +2,11 @@ import * as React from 'react'
 import './TechnicalGroupsPage.scss'
 import AutocompleteInput from '../../../../Components/AutocompleteInput/AutocompleteInput'
 import Button from '../../../../Components/Button/Button'
-import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel, ModalModel, BasicUserModel } from '../../../../Model/model'
+import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel, ModalModel, BasicUserModel, TeamModel } from '../../../../Model/model'
 import { Input } from '../../../../Components/Input/Input'
 import Dropdown from '../../../../Components/Dropdown/Dropdown'
 
-import {getGroups, getTechnicalsGroup, deleteTechnicalAssign, addTechnicalToGroup} from '../../../../Utilities/Incidencias/SupervisorUtilities';
+import {getGroups, getTechnicalsGroup, deleteTechnicalAssign, addTechnicalToGroup, createGroup} from '../../../../Utilities/Incidencias/SupervisorUtilities';
 import Modal from '../../../../Components/Modal/Modal'
 
 const TechnicalGroupsPage = () => {
@@ -34,35 +34,28 @@ const TechnicalGroupsPage = () => {
     }
 
     const setTechnicalGroups = () => {
+        const helperList: React.SetStateAction<any[]> = [];
         getGroups(localStorage.userId).then(res => {
             console.log(res);
             let index = 0;
             res.map((data: any) => {
                 if (index == 0) {
                     setSelectedGroup(data)
-                    // setGroupId(data.id);
-                    // setGroupName(data.name)
-                    // setGroupDescription(data.description); 
-                    // setGroupCategory(data.category); 
                     getTechnicals(data.id);
                 }
-                setGroups(groups => [
-                    ...groups,
-                    data
-                ]
-                )
+                helperList.push(data);
                 index++;
             })
+            setGroups(helperList);
         });
 
     }
 
     React.useEffect(() => {
-        setTechnicalGroups()
-
+        setTechnicalGroups();
     }, [])
 
-    const [autocompleteInputValues, setAutocompleteInputValues] = React.useState<AutocompleteInputModel>({
+    const [autocompleteInputValues] = React.useState<AutocompleteInputModel>({
         id: 1,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
@@ -111,8 +104,8 @@ const TechnicalGroupsPage = () => {
     const [classDropdown, setClassDropdown] = React.useState<DropdownModel>({
         id: 4,
         groupName: 'Categoría',
-        groupItems: [],
-        groupIds: [],
+        groupItems: ['Software', 'Hardware', 'Redes y conexión wifi'],
+        groupIds: ['Software', 'Hardware', 'Redes y conexión wifi'],
         color: 'primary',
         enabled: false,
         extraClass: '',
@@ -195,6 +188,11 @@ const TechnicalGroupsPage = () => {
         }
     }
 
+    const [groupName, setGroupName] = React.useState('');
+    const [groupDescription, setGroupDescription] = React.useState('');
+    const [groupCategory, setGroupCategory] = React.useState('');
+
+
     const handleClickAddTechncialModal = () => {
         addTechnicalToGroup(technicalSelected.id,  selectedGroup.id);
         getTechnicals(Number(selectedGroup.id));
@@ -206,19 +204,30 @@ const TechnicalGroupsPage = () => {
         getTechnicals(groupSelected.id);
     }
 
-    React.useEffect(()=> {
-        
-    })
-
-
-
-    const handleClickCreateTeam = () => { }
-
-
-    const handleChangeInput = (value: string, id: number) => {
-        console.log(value);
+    const handleClickCreateTeam = () => { 
+        const group: TeamModel = {
+            name: groupName,
+            description: groupDescription,
+            category: groupCategory,
+            id_supervisor: localStorage.userId
+        }
+        createGroup(group);
+        setTechnicalGroups();     
     }
-    const handleClickItemDD = (idItem: string, idDropdown: number) => { }
+
+
+    const handleChangeName = (value: string, id: number) => {
+        setGroupName(value);
+    }
+    
+
+    const handleChangeDescription = (value: string, id: number) => {
+        setGroupDescription(value);
+    }
+
+    const handleClickItemDD = (idItem: string, idDropdown: number) => { 
+        setGroupCategory(idItem);
+    }
     
     const deleteUserFromGroup = (user: any) => {
         setTechnicalSelected(user);
@@ -307,8 +316,8 @@ const TechnicalGroupsPage = () => {
             <div className="bottom-container">
                 <p className="bottom-title">Crear nuevo grupo de incidencias</p>
                 <div className="bottom-content">
-                    <Input inputInfo={titleInput} handleChangeInput={handleChangeInput}></Input>
-                    <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInput}></Input>
+                    <Input inputInfo={titleInput} handleChangeInput={handleChangeName}></Input>
+                    <Input inputInfo={descriptionInput} handleChangeInput={handleChangeDescription}></Input>
                     <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
                     <Button buttonInfo={createTechnicalGroupButton} handleClick={handleClickCreateTeam}></Button>
                 </div>

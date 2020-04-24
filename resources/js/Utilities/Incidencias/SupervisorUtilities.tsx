@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { TeamModel } from '../../Model/model' 
 
 export const getNoAssignedIncidencias = (userId: number) => {
     return axios
@@ -23,9 +24,25 @@ export const getNoAssignedIncidencias = (userId: number) => {
     })
 }
 
+export const createGroup = (team: TeamModel) => {
+    return axios
+    .post('api/incidencias/supervisor/groups/createGroup', {
+        name: team.name,
+        description: team.description,
+        category: team.category,
+        idSupervisor: team.id_supervisor
+    },
+    {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
 export const getGroups = (userId: number) => {
     return axios
-    .post('api/incidencias/supervisor/gropus/getGroups', {
+    .post('api/incidencias/supervisor/groups/getGroups', {
         id: userId
     },
     {
