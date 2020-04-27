@@ -2,16 +2,20 @@
 
 .form-group {
     width: 100%;
-    
+
     .text_label {
         font-size: $font_size*1.2;
-        font-weight: 700;
 
         &--primary {
             @extend .text_label;
             color: $primary_color;
         }
-        
+
+        &--white {
+            @extend .text_label;
+            color: $white_color;
+        }
+
         &--red {
             @extend .text_label;
             color: $red_color;

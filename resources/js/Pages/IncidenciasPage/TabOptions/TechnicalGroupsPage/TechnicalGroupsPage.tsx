@@ -79,6 +79,7 @@ const TechnicalGroupsPage = () => {
         id: 1,
         value: '',
         label: 'Nombre del grupo',
+        labelColor: 'primary',
         placeholder: '',
         color: 'primary',
         type: 'text',
@@ -92,6 +93,7 @@ const TechnicalGroupsPage = () => {
         id: 1,
         value: '',
         label: 'Descripción',
+        labelColor: 'primary',
         placeholder: '',
         color: 'primary',
         type: 'text',
@@ -171,7 +173,8 @@ const TechnicalGroupsPage = () => {
         name: null,
         surname1: null,
         surname2: null,
-        role: null
+        role: null,
+        userImage: null
     });
 
     const handleClickAutocomplete = (user: BasicUserModel) => {

@@ -18240,7 +18240,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label, .form-group .text_label--red, .form-group .text_label--primary {\n  font-size: 1.2rem;\n  font-weight: 700;\n}\n.form-group .text_label--primary {\n  color: #3685EC;\n}\n.form-group .text_label--red {\n  color: #dc3545;\n}\n.form-group .input_class--primary {\n  color: #262626;\n}\n.form-group .input_class--primary:focus {\n  background-color: #3685EC;\n  border-color: #3685EC;\n  color: #FFFFFF;\n}\n.form-group .input_class--primary:focus::-webkit-input-placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.form-group .input_class--red {\n  border-color: #dc3545;\n  color: #dc3545;\n}\n.form-group .input_class--red::-webkit-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-moz-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red:-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::placeholder {\n  color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(54, 133, 236, 0.1);\n  border-color: #3685EC;\n}\n.form-group .input_class_primary--red {\n  background-color: rgba(247, 100, 115, 0.4);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
+exports.push([module.i, ".form-group {\n  width: 100%;\n}\n.form-group .text_label, .form-group .text_label--red, .form-group .text_label--white, .form-group .text_label--primary {\n  font-size: 1.2rem;\n}\n.form-group .text_label--primary {\n  color: #3685EC;\n}\n.form-group .text_label--white {\n  color: #FFFFFF;\n}\n.form-group .text_label--red {\n  color: #dc3545;\n}\n.form-group .input_class--primary {\n  color: #262626;\n}\n.form-group .input_class--primary:focus {\n  background-color: #3685EC;\n  border-color: #3685EC;\n  color: #FFFFFF;\n}\n.form-group .input_class--primary:focus::-webkit-input-placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.form-group .input_class--red {\n  border-color: #dc3545;\n  color: #dc3545;\n}\n.form-group .input_class--red::-webkit-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-moz-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red:-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::-ms-input-placeholder {\n  color: #dc3545;\n}\n.form-group .input_class--red::placeholder {\n  color: #dc3545;\n}\n.form-group .input_class_primary:focus {\n  background-color: rgba(54, 133, 236, 0.1);\n  border-color: #3685EC;\n}\n.form-group .input_class_primary--red {\n  background-color: rgba(247, 100, 115, 0.4);\n  border-color: #dc3545;\n}\n.form-group .aviso {\n  display: none;\n}\n.form-group .aviso--mostrar {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -18259,7 +18259,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".modal .modal-dialog .modal-content .modal-footer .btn-danger {\n  border-radius: 40px;\n  text-align: center;\n  vertical-align: center;\n  cursor: pointer;\n}\n.modal .modal-dialog .modal-content .modal-footer .btn-danger .close-icon {\n  color: #FFFFFF;\n  font-size: 1.2rem;\n}", ""]);
 
 // exports
 
@@ -18380,6 +18380,25 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.scss":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.scss ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".comments-container {\n  width: 100%;\n  height: 100%;\n}\n.comments-container .sendmsg-container {\n  display: flex;\n  flex-direction: row;\n  height: auto;\n  background-color: #3685EC;\n  border-top-right-radius: 4px;\n  border-top-left-radius: 4px;\n  padding: 1rem;\n}\n.comments-container .sendmsg-container .form-group {\n  margin-right: 1rem;\n}\n.comments-container .sendmsg-container .form-group .form-control:focus {\n  background-color: #FFFFFF;\n  color: black;\n}\n.comments-container .sendmsg-container .send-button, .comments-container .sendmsg-container .send-button:active, .comments-container .sendmsg-container .send-button:active:hover, .comments-container .sendmsg-container .send-button:hover {\n  height: 2.5rem;\n  width: 2.5rem;\n  color: #3685EC;\n  background-color: #FFFFFF;\n  padding-top: 0.4rem;\n  padding-right: 0.25rem;\n  margin-top: 36px;\n  border-radius: 2.5rem;\n  font-size: 1.2rem;\n  text-align: center;\n  cursor: pointer;\n}\n.comments-container .sendmsg-container .send-button:hover, .comments-container .sendmsg-container .send-button:hover:active, .comments-container .sendmsg-container .send-button:hover {\n  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n}\n.comments-container .sendmsg-container .send-button:active, .comments-container .sendmsg-container .send-button:active, .comments-container .sendmsg-container .send-button:active:hover {\n  background-color: #f1f1f1;\n}\n.comments-container .chat-list {\n  padding: 0.5rem 1rem;\n  display: flex;\n  flex-direction: column;\n  overflow-y: scroll;\n  max-height: 900px;\n}\n.comments-container .chat-list .chatbox-container {\n  margin: 1rem 0;\n}\n.comments-container .chat-list .noComments-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 60px;\n  font-size: 1.5rem;\n  vertical-align: center;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss ***!
@@ -18392,7 +18411,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".incidenciaview1-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.incidenciaview1-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 2rem;\n  margin: 0 auto;\n  padding-top: 1.5rem;\n}\n.incidenciaview1-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n  margin: 1rem 0;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview1-container .incidenciaview2-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container {\n  width: 40%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container {\n  display: flex;\n  flex-direction: column;\n  padding-bottom: 1.5rem;\n  justify-content: center;\n  align-items: center;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container p {\n  margin: 0;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--green, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--red, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--orange, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--blue {\n  font-size: 1.5rem;\n  font-weight: bold;\n  width: 100%;\n  text-align: center;\n  margin: 0 2rem;\n  margin-bottom: 1.5rem;\n  padding: 0.5rem;\n  border: dashed;\n  border-width: 1.5px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--blue {\n  border-color: #3685EC;\n  background-color: rgba(54, 133, 236, 0.15);\n  color: #3685EC;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--orange {\n  border-color: #e78738;\n  background-color: rgba(231, 135, 56, 0.15);\n  color: #e78738;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--red {\n  border-color: #dc3545;\n  background-color: rgba(220, 53, 69, 0.15);\n  color: #dc3545;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--green {\n  border-color: #07a744;\n  background-color: rgba(7, 167, 68, 0.15);\n  color: #07a744;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .dropdown {\n  margin: 0.5rem 0;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .footer-container {\n  text-align: center;\n  padding: 1rem 0;\n}\n.incidenciaview1-container .incidenciaview2-container .comments-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 60%;\n  background-color: #f1f1f1;\n  max-height: 100%;\n  box-shadow: inset 0px 0px 7px -1px rgba(0, 0, 0, 0.75);\n  margin: 1rem 0;\n  margin-right: 2rem;\n  padding: 1.5rem 2.5rem;\n}\n.incidenciaview1-container .incidenciaview2-container .comments-container .createIncidencia-container {\n  width: 100%;\n  padding: 0;\n}\n.incidenciaview1-container .incidenciaview2-container .comments-container .createIncidencia-container .data-container .asignacion-container .assign-container {\n  width: 60%;\n}", ""]);
+exports.push([module.i, ".incidenciaview1-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.incidenciaview1-container .titleincidencia-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  color: #3685EC;\n  font-size: 2rem;\n  margin: 0 auto;\n  padding-top: 1.5rem;\n}\n.incidenciaview1-container .titleincidencia-container p {\n  margin: 0;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container {\n  height: 3.25rem;\n  margin: 1rem 0;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.incidenciaview1-container .titleincidencia-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.incidenciaview1-container .incidenciaview2-container {\n  width: 100%;\n  height: auto;\n  min-height: 100%;\n  display: flex;\n  flex-direction: row;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container {\n  width: 40%;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  margin: 1rem 1.5rem;\n  padding: 0 2.5rem;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container {\n  display: flex;\n  flex-direction: column;\n  padding-bottom: 1.5rem;\n  justify-content: center;\n  align-items: center;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container p {\n  margin: 0;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--green, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--red, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--orange, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--blue {\n  font-size: 1.5rem;\n  font-weight: bold;\n  width: 100%;\n  text-align: center;\n  margin: 0 2rem;\n  margin-bottom: 1.5rem;\n  padding: 0.5rem;\n  border: dashed;\n  border-width: 1.5px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--blue {\n  border-color: #3685EC;\n  background-color: rgba(54, 133, 236, 0.15);\n  color: #3685EC;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--orange {\n  border-color: #e78738;\n  background-color: rgba(231, 135, 56, 0.15);\n  color: #e78738;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--red {\n  border-color: #dc3545;\n  background-color: rgba(220, 53, 69, 0.15);\n  color: #dc3545;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .incidencia-state--green {\n  border-color: #07a744;\n  background-color: rgba(7, 167, 68, 0.15);\n  color: #07a744;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .state-container .dropdown {\n  margin: 0.5rem 0;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.15rem;\n  border-color: #3685EC;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-left {\n  width: 30%;\n  background-color: #3685EC;\n  font-weight: 500;\n  color: #FFFFFF;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--bold, .incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--red {\n  width: 70%;\n  background-color: #e2e2e2;\n  font-weight: 500;\n  margin: 0;\n  padding: 0.25rem 1rem;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--red {\n  color: #dc3545;\n  font-weight: 600;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .info-container .p-right--bold {\n  font-weight: 600;\n}\n.incidenciaview1-container .incidenciaview2-container .incidenciaData-container .footer-container {\n  text-align: center;\n  padding: 1rem 0;\n}\n.incidenciaview1-container .incidenciaview2-container .options-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 60%;\n  background-color: #f1f1f1;\n  height: 100%;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  margin: 1rem 0;\n  margin-right: 2rem;\n  border-radius: 4px;\n}\n.incidenciaview1-container .incidenciaview2-container .options-container .edit-container {\n  padding: 1.5rem 2.5rem;\n}\n.incidenciaview1-container .incidenciaview2-container .options-container .edit-container .createIncidencia-container {\n  width: 100%;\n  padding: 0;\n}\n.incidenciaview1-container .incidenciaview2-container .options-container .edit-container .createIncidencia-container .data-container .asignacion-container .assign-container {\n  width: 60%;\n}", ""]);
 
 // exports
 
@@ -18526,6 +18545,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 4rem;\n  background-color: white;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .headerperfil-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 2rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.5rem;\n  margin: 0;\n  font-style: italic;\n  margin-right: 0.75rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon, .perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  font-size: 1.3rem;\n  color: #3685EC;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 1rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 25%;\n  height: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 70%;\n  height: auto;\n  padding: 1rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  margin: 0 0.5rem;\n  margin-left: 2rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container {\n  width: 70%;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .chartjs-render-monitor {\n  font-family: \"Sen\", sans-serif;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Widgets/ChatBox/ChatBox.scss":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Widgets/ChatBox/ChatBox.scss ***!
+  \**************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".chatbox-container {\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  border-style: solid;\n  border-width: 0.5px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  background-color: #FFFFFF;\n  padding: 1rem;\n}\n.chatbox-container .left-container {\n  width: 10%;\n  padding: 0.5rem;\n  text-align: center;\n}\n.chatbox-container .left-container .photo {\n  height: 3rem;\n  width: 3rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.chatbox-container .left-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.chatbox-container .vertical-separator {\n  height: 100%;\n  border: solid;\n  border-width: 1px;\n}\n.chatbox-container .right-container {\n  width: 90%;\n  display: flex;\n  flex-direction: column;\n}\n.chatbox-container .right-container .top-right-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.chatbox-container .right-container .top-right-container .user-name {\n  font-size: 1.1rem;\n}\n.chatbox-container .right-container .top-right-container .user-name .user-role {\n  font-style: italic;\n  font-size: 0.8rem;\n}\n.chatbox-container .right-container .top-right-container .msg-date {\n  font-style: italic;\n  font-size: 0.8rem;\n}\n.chatbox-container .right-container .bottom-right-container {\n  margin-top: 0.5rem;\n}", ""]);
 
 // exports
 
@@ -74850,6 +74888,7 @@ var AutocompleteInput = function (props) {
         id: 1,
         value: '',
         label: '',
+        labelColor: '',
         placeholder: props.autocompleteInputInfo.placeholderInput,
         color: props.autocompleteInputInfo.colorInput,
         type: props.autocompleteInputInfo.typeInput,
@@ -75176,21 +75215,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./Input.scss */ "./resources/js/Components/Input/Input.scss");
 exports.Input = function (props) {
-    var inputColor = props.inputInfo.color;
-    var inputValue = props.inputInfo.value;
-    var _a = React.useState(inputValue), value = _a[0], setValue = _a[1];
-    var color, mostrar = '';
+    var inputColorProp = props.inputInfo.color;
+    var labelColorProp = props.inputInfo.labelColor;
+    var _a = React.useState(props.inputInfo.value), value = _a[0], setValue = _a[1];
+    var inputColor, mostrar, labelColor = '';
     var input;
-    var labelTitle;
-    if (props.inputInfo.label != '') {
-        labelTitle = React.createElement("label", { htmlFor: "", className: "text_label" }, props.inputInfo.label);
-    }
-    else {
-        labelTitle = '';
-    }
     React.useEffect(function () {
         setValue(props.inputInfo.value);
-        console.log('Hola');
     }, [props.inputInfo.value]);
     var handleChange = function (event) {
         setValue(event.target.value);
@@ -75201,27 +75232,43 @@ exports.Input = function (props) {
             props.handleChangeInput(String(event.target.value), event.target.id);
         }
     };
-    if (inputColor == 'primary') {
-        color = '--primary';
+    if (inputColorProp == 'primary') {
+        inputColor = '--primary';
     }
-    else if (inputColor == 'red') {
-        color = '--red';
+    else if (inputColorProp == 'red') {
+        inputColor = '--red';
         mostrar = '--mostrar';
+    }
+    if (labelColorProp == 'primary') {
+        labelColor = '--primary';
+    }
+    else if (labelColorProp == 'red') {
+        labelColor = '--red';
+    }
+    else if (labelColorProp == 'white') {
+        labelColor = '--white';
+    }
+    var labelTitle;
+    if (props.inputInfo.label != '') {
+        labelTitle = React.createElement("label", { htmlFor: "", className: "text_label" + labelColor }, props.inputInfo.label);
+    }
+    else {
+        labelTitle = '';
     }
     if (!props.inputInfo.isTextArea) {
         if (!props.inputInfo.enabled) {
-            input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, disabled: true }));
+            input = (React.createElement("input", { id: "input-" + props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, disabled: true }));
         }
         else {
-            input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + color + " text-" + color, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value }));
+            input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value }));
         }
     }
     else {
         if (!props.inputInfo.enabled) {
-            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + color + " text-" + color, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, rows: 4, disabled: true }));
+            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, rows: 4, disabled: true }));
         }
         else {
-            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + color + " text-" + color, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, rows: 4 }));
+            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, rows: 4 }));
         }
     }
     return (React.createElement(React.Fragment, null,
@@ -75286,7 +75333,9 @@ var Modal = function (props) {
         if (props.modalProps.enableCloseButton) {
             modalFooter = React.createElement(React.Fragment, null,
                 React.createElement("div", { className: "modal-footer" },
-                    React.createElement("button", { type: "button", className: "btn btn-danger", "data-dismiss": "modal" }, "Close"),
+                    React.createElement("button", { type: "button", className: "btn btn-danger", "data-dismiss": "modal" },
+                        React.createElement("span", { className: "close-icon" },
+                            React.createElement("i", { className: "far fa-times-circle" }))),
                     React.createElement(Button_1.default, { buttonInfo: props.modalProps.buttonProps, handleClick: onClickButton })));
         }
         else {
@@ -75572,7 +75621,6 @@ var Tabs = function (props) {
     return (React.createElement("div", { className: "tabs-container" },
         React.createElement("div", { className: "btn-group btn-group-toggle", "data-toggle": "buttons" }, props.tabsInfo.valuesList.map(function (value, index) {
             if (props.tabsInfo.itemActive == index) {
-                console.log(value);
                 if (props.tabsInfo.enabledList[index]) {
                     return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " active", key: index },
                         React.createElement("input", { type: "radio", name: "options", id: props.tabsInfo.idList[index], checked: true, onClick: handleClickTab }),
@@ -75796,6 +75844,166 @@ exports.default = CalendarPage;
 
 /***/ }),
 
+/***/ "./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.scss":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.scss ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./CommentsPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.tsx":
+/*!**************************************************************************!*\
+  !*** ./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.tsx ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./CommentsPage.scss */ "./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.scss");
+var ChatBox_1 = __webpack_require__(/*! ../../../Widgets/ChatBox/ChatBox */ "./resources/js/Widgets/ChatBox/ChatBox.tsx");
+var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
+var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
+var CommentsPage = function (props) {
+    var _a = React.useState([]), commentsList = _a[0], setCommentsList = _a[1];
+    var _b = React.useState(true), noComments = _b[0], setNoComments = _b[1];
+    var date = new Date();
+    var hoursMinutesSeconds = date.toLocaleString().split(' ');
+    var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+    var user = {
+        id: 1,
+        name: 'prueba',
+        surname1: 'prueba1',
+        surname2: 'surname2',
+        role: 'Technical',
+        userImage: '/images/default-profile-image.jpg'
+    };
+    var _c = React.useState({
+        user: user,
+        dateMessage: '11/11/20',
+        textMessage: 'sjudfnfskjdfnkjsdnfgvlijuwserdnfvkmdn owiaeru sdaio vhjsaiodv ijur vhiqujewrnv jiwedf vujkadsf vuiedfv uqerv dsakjf vbnsjhfiuyjlvb adjmch bjsludf hvkjudf vmjhxc bviu rfbvmhx bviuwe yrgbvxcyv bseiduf',
+        isLoggedUser: false
+    }), chatbox1 = _c[0], setChatbox1 = _c[1];
+    var _d = React.useState({
+        user: user,
+        dateMessage: '--',
+        textMessage: '--',
+        isLoggedUser: true
+    }), chatbox2 = _d[0], setChatbox2 = _d[1];
+    var _e = React.useState({
+        id: 324,
+        value: '',
+        label: 'Comentario',
+        labelColor: 'white',
+        placeholder: 'Enviar comentario...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), messageInput = _e[0], setMessageInput = _e[1];
+    var getIncidenciaComments = function () {
+        var helperList = [];
+        IncidenciasUtilities_1.getCommentsIncidencia(props.incidenciaId).then(function (res) {
+            res.map(function (data) {
+                var userRole = '';
+                if (data.user_role == 'technical') {
+                    userRole = 'Técnico';
+                }
+                else if (data.user_role == 'supervisor') {
+                    userRole = 'Supervisor';
+                }
+                var user = {
+                    id: data.user_id,
+                    name: data.user_name,
+                    surname1: data.user_surname1,
+                    surname2: data.user_surname2,
+                    role: userRole,
+                    userImage: data.user_imageURL
+                };
+                var message = {
+                    user: user,
+                    dateMessage: data.sent_date,
+                    textMessage: data.text,
+                    isLoggedUser: false
+                };
+                helperList.push(message);
+            });
+            if (helperList.length != 0) {
+                setNoComments(false);
+            }
+            setCommentsList(helperList);
+        });
+    };
+    React.useEffect(function () {
+        getIncidenciaComments();
+    }, []);
+    var _f = React.useState(''), textComment = _f[0], setTextComment = _f[1];
+    var handleChangeInput = function (value) {
+        setTextComment(value);
+    };
+    var enviarComentario = function () {
+        if (textComment != '') {
+            IncidenciasUtilities_1.saveCommentIncidencia(localStorage.userId, props.incidenciaId, textComment, currentDate, '');
+            getIncidenciaComments();
+            setMessageInput(__assign(__assign({}, messageInput), { color: 'primary', error_control_text: '', value: '' }));
+            // document.getElementById('inout-324').reset()
+        }
+        else {
+            setMessageInput(__assign(__assign({}, messageInput), { color: 'red' }));
+        }
+    };
+    return (React.createElement("div", { className: "comments-container" },
+        React.createElement("div", { className: "sendmsg-container" },
+            React.createElement(Input_1.Input, { inputInfo: messageInput, handleChangeInput: handleChangeInput }),
+            React.createElement("span", { className: 'send-button', onClick: enviarComentario },
+                React.createElement("i", { className: "fas fa-paper-plane" }))),
+        React.createElement("div", { className: "chat-list" }, noComments ? React.createElement("div", { className: "noComments-container" }, "No hay comentarios disponibles") : commentsList.map(function (data, index) {
+            return (React.createElement(ChatBox_1.default, { key: index, chatboxProps: data }));
+        }))));
+};
+exports.default = CommentsPage;
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss":
 /*!***************************************************************************************!*\
   !*** ./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.scss ***!
@@ -75857,6 +76065,7 @@ var react_router_dom_2 = __webpack_require__(/*! react-router-dom */ "./node_mod
 var FormularioIncidencia_1 = __webpack_require__(/*! ../../../Widgets/FormularioIncidencia/FormularioIncidencia */ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.tsx");
 var Modal_1 = __webpack_require__(/*! ../../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
 var Dropdown_1 = __webpack_require__(/*! ../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
+var CommentsPage_1 = __webpack_require__(/*! ../CommentsPage/CommentsPage */ "./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.tsx");
 var IncidenciaViewPage = function () {
     var idIncidencia = react_router_1.useParams().idIncidencia;
     var userRol = localStorage.userRol;
@@ -75869,7 +76078,6 @@ var IncidenciaViewPage = function () {
         tabSelected = 2;
     else if (history.location.pathname.endsWith('edit'))
         tabSelected = 0;
-    console.log(tabSelected);
     var _a = React.useState({
         id: Number(idIncidencia),
         group_id: null,
@@ -75934,9 +76142,7 @@ var IncidenciaViewPage = function () {
         infoModel: false
     })[0];
     React.useEffect(function () {
-        console.log('Cargamos datos incidencia...');
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
-            console.log(result);
             var stateAux;
             switch (result.state) {
                 case 'todo':
@@ -75971,8 +76177,6 @@ var IncidenciaViewPage = function () {
             setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [true, true, true], itemActive: tabSelected }));
         }
         else if (userRol == 'technical') {
-            console.log(incidencia.id_reporter);
-            console.log(userId);
             if (incidencia.id_reporter == userId) {
                 setTabsOptions(__assign(__assign({}, tabsOptions), { enabledList: [true, true, false], itemActive: tabSelected }));
             }
@@ -75996,7 +76200,6 @@ var IncidenciaViewPage = function () {
         }
     };
     var handleClickTab = function (id) {
-        console.log(id);
         if (id == 'editar-incidencia') {
             history.push("/home/incidencia-view/" + idIncidencia + "/edit");
         }
@@ -76006,7 +76209,6 @@ var IncidenciaViewPage = function () {
         else if (id == 'comentarios') {
             history.push("/home/incidencia-view/" + idIncidencia + "/comments");
         }
-        console.log(id);
     };
     var handleClickDeleteIncidencia = function () {
         IncidenciasUtilities_1.deleteIncidencia(Number(idIncidencia));
@@ -76101,14 +76303,15 @@ var IncidenciaViewPage = function () {
                         isDataNull(incidencia.state, true)),
                     React.createElement("div", { className: "footer-container" },
                         React.createElement(react_router_dom_1.Link, { to: '/home/incidencias/show' }, "Volver a la p\u00E1gina anterior"))),
-                React.createElement("div", { className: "comments-container" },
+                React.createElement("div", { className: "options-container" },
                     React.createElement(react_router_dom_2.Switch, null,
                         React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/edit" },
-                            React.createElement(FormularioIncidencia_1.default, { formularioProps: formularioIncidencia })),
+                            React.createElement("div", { className: "edit-container" },
+                                React.createElement(FormularioIncidencia_1.default, { formularioProps: formularioIncidencia }))),
                         React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/delete" },
                             React.createElement("div", null, "Eliminar incidencia")),
                         React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/comments" },
-                            React.createElement("div", null, "Comentarios incidencia"))))),
+                            React.createElement(CommentsPage_1.default, { incidenciaId: idIncidencia }))))),
             React.createElement(Modal_1.default, { modalProps: modalDeleteIncidencia, onClick: handleClickDeleteIncidencia },
                 React.createElement("div", null,
                     "Pulse el bot\u00F3n de ",
@@ -76983,6 +77186,7 @@ var TechnicalGroupsPage = function () {
         id: 1,
         value: '',
         label: 'Nombre del grupo',
+        labelColor: 'primary',
         placeholder: '',
         color: 'primary',
         type: 'text',
@@ -76995,6 +77199,7 @@ var TechnicalGroupsPage = function () {
         id: 1,
         value: '',
         label: 'Descripción',
+        labelColor: 'primary',
         placeholder: '',
         color: 'primary',
         type: 'text',
@@ -77065,7 +77270,8 @@ var TechnicalGroupsPage = function () {
         name: null,
         surname1: null,
         surname2: null,
-        role: null
+        role: null,
+        userImage: null
     }), technicalSelected = _g[0], setTechnicalSelected = _g[1];
     var handleClickAutocomplete = function (user) {
         setTechnicalSelected(user);
@@ -77280,6 +77486,7 @@ var Login = function () {
         id: 1,
         value: '',
         label: 'Expediente',
+        labelColor: 'white',
         placeholder: 'Ej: 25342783',
         color: 'primary',
         type: 'number',
@@ -77293,6 +77500,7 @@ var Login = function () {
         value: '',
         label: 'Contraseña',
         placeholder: 'Contraseña',
+        labelColor: 'white',
         color: 'primary',
         type: 'password',
         error_control_text: '',
@@ -77937,7 +78145,6 @@ exports.getIncideniciaUnique = function (id) {
     });
 };
 exports.createIncidencia = function (newIncidencia) {
-    console.log(newIncidencia);
     return axios_1.default
         .post('api/incidencias/create', newIncidencia, {
         headers: { 'Content-Type': 'application/json' }
@@ -78026,6 +78233,43 @@ exports.updateStateIncidencia = function (idIncidencia, newState) {
         .post('api/incidencias/updateState', {
         id: idIncidencia,
         newState: newState
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .catch(function (err) {
+        console.log(err);
+    });
+};
+exports.getCommentsIncidencia = function (idIncidencia) {
+    return axios_1.default
+        .post('api/incidencias/getComments', {
+        idIncidencia: idIncidencia
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.saveCommentIncidencia = function (userId, incidenciaId, text, date, urlData) {
+    return axios_1.default
+        .post('api/incidencias/createComment', {
+        userId: userId,
+        incidenciaId: incidenciaId,
+        text: text,
+        date: date,
+        urlData: urlData
     }, {
         headers: { 'Content-Type': 'application/json' }
     })
@@ -78240,6 +78484,71 @@ exports.getGroupIncidencias = function (id_user) {
 
 /***/ }),
 
+/***/ "./resources/js/Widgets/ChatBox/ChatBox.scss":
+/*!***************************************************!*\
+  !*** ./resources/js/Widgets/ChatBox/ChatBox.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./ChatBox.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Widgets/ChatBox/ChatBox.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Widgets/ChatBox/ChatBox.tsx":
+/*!**************************************************!*\
+  !*** ./resources/js/Widgets/ChatBox/ChatBox.tsx ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./ChatBox.scss */ "./resources/js/Widgets/ChatBox/ChatBox.scss");
+var ChatBox = function (props) {
+    var fullUserName = (props.chatboxProps.user.name + ' ' + props.chatboxProps.user.surname1 + ' ' + props.chatboxProps.user.surname2).toUpperCase();
+    return (React.createElement("div", { className: "chatbox-container" },
+        React.createElement("div", { className: "left-container" },
+            React.createElement("div", { className: "photo" },
+                React.createElement("img", { src: props.chatboxProps.user.userImage, alt: "" }))),
+        React.createElement("div", { className: "right-container" },
+            React.createElement("div", { className: "top-right-container" },
+                React.createElement("span", { className: 'user-name' },
+                    fullUserName,
+                    " ",
+                    React.createElement("span", { className: 'user-role' },
+                        "(",
+                        props.chatboxProps.user.role,
+                        ")")),
+                React.createElement("span", { className: 'msg-date' }, props.chatboxProps.dateMessage)),
+            React.createElement("div", { className: "bottom-right-container" }, props.chatboxProps.textMessage))));
+};
+exports.default = ChatBox;
+
+
+/***/ }),
+
 /***/ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss":
 /*!*****************************************************************************!*\
   !*** ./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.scss ***!
@@ -78382,6 +78691,7 @@ var FormularioIncidencia = function (props) {
         id: 1,
         value: titleInputValue,
         label: 'Título',
+        labelColor: 'primary',
         placeholder: '',
         color: 'primary',
         type: 'text',
@@ -78394,6 +78704,7 @@ var FormularioIncidencia = function (props) {
         id: 2,
         value: descriptionInputValue,
         label: 'Descripción',
+        labelColor: 'primary',
         placeholder: '',
         color: 'primary',
         type: 'text',

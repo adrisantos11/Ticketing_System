@@ -3,7 +3,8 @@ export interface BasicUserModel {
     name: string,
     surname1: string,
     surname2: string,
-    role: string
+    role: string,
+    userImage: string
 }
 
 export interface TeamModel {
@@ -27,6 +28,7 @@ export interface InputModel {
     id: number;
     value: string
     label: string;
+    labelColor: string;
     placeholder: string;
     color: string;
     type: string;
@@ -120,4 +122,11 @@ export interface ToastModel {
     description: string,
     circleColor: string,
     delay: number
+}
+
+export interface ChatBoxModel {
+    user: BasicUserModel,
+    dateMessage: string,
+    textMessage: string,
+    isLoggedUser: boolean
 }

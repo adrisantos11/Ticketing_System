@@ -19,7 +19,6 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                 {
                     props.tabsInfo.valuesList.map((value, index) => {
                         if (props.tabsInfo.itemActive == index) {
-                            console.log(value);
                             if (props.tabsInfo.enabledList[index]) {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color[index]} active`} key={index}>

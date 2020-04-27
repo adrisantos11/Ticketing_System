@@ -8,22 +8,15 @@ interface Props {
     handleChangeInput: (value: string, id: number) => void;
 }
 export const Input: React.FunctionComponent<Props> = (props: Props) => {
-    const inputColor = props.inputInfo.color;
-    const inputValue = props.inputInfo.value;
-    const [value, setValue] = React.useState(inputValue);
-    let color,mostrar = '';
+    const inputColorProp = props.inputInfo.color;
+    const labelColorProp = props.inputInfo.labelColor;
+    const [value, setValue] = React.useState(props.inputInfo.value);
+    let inputColor ,mostrar, labelColor = '';
     let input;
 
-    let labelTitle;
-    if (props.inputInfo.label != '') {
-        labelTitle = <label htmlFor="" className={`text_label`}>{props.inputInfo.label}</label>;
-    } else {
-        labelTitle = '';
-    }
 
     React.useEffect(()=> {
         setValue(props.inputInfo.value);
-        console.log('Hola');
     }, [props.inputInfo.value]);
 
     const handleChange = (event: any) => {
@@ -35,33 +28,52 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
         }
     }
 
-    if (inputColor == 'primary') {
-        color = '--primary';
-    } else if (inputColor == 'red') {
-        color = '--red';
+    if (inputColorProp == 'primary') {
+        inputColor = '--primary';
+    } else if (inputColorProp == 'red') {
+        inputColor = '--red';
         mostrar = '--mostrar'
     }
+
+    if (labelColorProp == 'primary') {
+        labelColor = '--primary';
+    } else if (labelColorProp == 'red') {
+        labelColor = '--red';
+    } else if (labelColorProp == 'white') {
+        labelColor = '--white';
+    }
+
+    let labelTitle;
+    if (props.inputInfo.label != '') {
+        labelTitle = <label htmlFor="" className={`text_label${labelColor}`}>{props.inputInfo.label}</label>;
+    } else {
+        labelTitle = '';
+    }
+
     if (!props.inputInfo.isTextArea) {
         if (!props.inputInfo.enabled) {
             input = (<input 
-                id = {props.inputInfo.id.toString()}
+                id = {`input-${props.inputInfo.id.toString()}`}
                 type={props.inputInfo.type} 
-                className={`form-control input_class${color} text-${color}`} 
+                className={`form-control input_class${inputColor} text-${inputColor}`} 
                 placeholder={props.inputInfo.placeholder}
-                onChange={handleChange} value={value} disabled/>)
+                onChange={handleChange}
+                value={value}
+                disabled/>)
         } else {
             input = (<input 
                 id = {props.inputInfo.id.toString()}
                 type={props.inputInfo.type} 
-                className={`form-control input_class${color} text-${color}`} 
+                className={`form-control input_class${inputColor} text-${inputColor}`} 
                 placeholder={props.inputInfo.placeholder}
-                onChange={handleChange} value={value}/>)
+                onChange={handleChange}
+                value={value}/>)
         }
     } else {
         if (!props.inputInfo.enabled) {
             input = (<textarea 
                 id = {props.inputInfo.id.toString()}
-                className={`form-control input_class${color} text-${color}`} 
+                className={`form-control input_class${inputColor} text-${inputColor}`} 
                 placeholder={props.inputInfo.placeholder}
                 onChange={handleChange} 
                 value={value} 
@@ -70,7 +82,7 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
         } else {
             input = (<textarea 
                 id = {props.inputInfo.id.toString()}
-                className={`form-control input_class${color} text-${color}`} 
+                className={`form-control input_class${inputColor} text-${inputColor}`} 
                 placeholder={props.inputInfo.placeholder}
                 onChange={handleChange}
                 value={value}

@@ -15,6 +15,7 @@ const AutocompleteInput: React.FunctionComponent<Props> = (props: Props) => {
         id: 1,
         value: '',
         label: '',
+        labelColor: '',
         placeholder: props.autocompleteInputInfo.placeholderInput,
         color: props.autocompleteInputInfo.colorInput,
         type: props.autocompleteInputInfo.typeInput,

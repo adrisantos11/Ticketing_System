@@ -67,7 +67,6 @@ export const getIncideniciaUnique = (id: number) => {
 }
 
 export const createIncidencia = (newIncidencia: any) => {
-    console.log(newIncidencia);
     return axios
     .post('api/incidencias/create', newIncidencia, {
         headers: {'Content-Type': 'application/json'}
@@ -162,6 +161,45 @@ export const updateStateIncidencia = (idIncidencia: number, newState: string) =>
     .post('api/incidencias/updateState', {
         id: idIncidencia,
         newState: newState
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+export const getCommentsIncidencia = (idIncidencia: number) => {
+    return axios
+    .post('api/incidencias/getComments', {
+        idIncidencia: idIncidencia
+    },
+    {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => {
+        return res.data;
+    })
+    .catch(err => {
+        if(err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        } else if (err.request) {
+            console.log(err.request);
+            
+        } else
+            console.log(err);
+    })
+}
+
+export const saveCommentIncidencia = (userId: number, incidenciaId: number, text: string, date: string, urlData: string) => {
+    return axios
+    .post('api/incidencias/createComment', {
+        userId: userId,
+        incidenciaId: incidenciaId,
+        text: text,
+        date: date,
+        urlData: urlData
     }, {
         headers: {'Content-Type': 'application/json'}
     })

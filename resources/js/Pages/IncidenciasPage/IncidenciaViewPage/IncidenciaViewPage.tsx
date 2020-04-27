@@ -11,6 +11,7 @@ import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 import FormularioIncidencia from '../../../Widgets/FormularioIncidencia/FormularioIncidencia';
 import Modal from '../../../Components/Modal/Modal';
 import Dropdown from '../../../Components/Dropdown/Dropdown';
+import CommentsPage from '../CommentsPage/CommentsPage';
 
 const IncidenciaViewPage = () => {
     let {idIncidencia} = useParams();
@@ -26,7 +27,6 @@ const IncidenciaViewPage = () => {
     else if (history.location.pathname.endsWith('edit')) 
         tabSelected = 0;
 
-    console.log(tabSelected);
 
     const [incidencia, setIncidencia] = React.useState<IncidenciaModel>({
         id: Number(idIncidencia),
@@ -103,9 +103,7 @@ const IncidenciaViewPage = () => {
 
 
     React.useEffect(() => {
-        console.log('Cargamos datos incidencia...')
         getIncideniciaUnique(Number(idIncidencia)).then(result => {
-            console.log(result);
             let stateAux;   
             switch (result.state) {
                 case 'todo':
@@ -176,8 +174,6 @@ const IncidenciaViewPage = () => {
             })
 
         } else if (userRol == 'technical') {
-            console.log(incidencia.id_reporter);
-            console.log(userId);
             if (incidencia.id_reporter == userId) {
                 setTabsOptions({
                     ...tabsOptions,
@@ -216,7 +212,6 @@ const IncidenciaViewPage = () => {
     }
 
     const handleClickTab = (id: string) => {
-        console.log(id);
         if (id=='editar-incidencia') {
             history.push(`/home/incidencia-view/${idIncidencia}/edit`);
         } else if (id=='eliminar-incidencia') {
@@ -224,7 +219,6 @@ const IncidenciaViewPage = () => {
         } else if (id=='comentarios') {
             history.push(`/home/incidencia-view/${idIncidencia}/comments`);
         }
-        console.log(id);
     }
 
     const handleClickDeleteIncidencia = () => {
@@ -382,16 +376,18 @@ const IncidenciaViewPage = () => {
                             <Link to='/home/incidencias/show'>Volver a la página anterior</Link>
                         </div>
                     </div>
-                    <div className="comments-container">
+                    <div className="options-container">
                         <Switch>
                             <Route path={`/home/incidencia-view/${idIncidencia}/edit`}>
-                                <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
+                                <div className="edit-container">
+                                    <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
+                                </div>
                             </Route>
                             <Route path={`/home/incidencia-view/${idIncidencia}/delete`}>
                                 <div>Eliminar incidencia</div>
                             </Route>
                             <Route path={`/home/incidencia-view/${idIncidencia}/comments`}>
-                                <div>Comentarios incidencia</div>
+                                <CommentsPage incidenciaId={idIncidencia}></CommentsPage>
                             </Route>
                         </Switch>
                     </div>

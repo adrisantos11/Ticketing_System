@@ -20,7 +20,7 @@ const Modal: React.FunctionComponent<Props> = (props: Props) => {
     if (props.modalProps.enableCloseButton) {
       modalFooter = <>
           <div className="modal-footer">
-              <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-danger" data-dismiss="modal"><span className="close-icon"><i className="far fa-times-circle"></i></span></button>
               <Button buttonInfo={props.modalProps.buttonProps} handleClick={onClickButton}></Button>
           </div>
       </>

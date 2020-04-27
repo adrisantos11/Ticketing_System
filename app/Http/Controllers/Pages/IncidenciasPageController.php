@@ -146,4 +146,43 @@ class IncidenciasPageController extends Controller
                 'state' => $state
             ]);
     }
+
+    /**
+     *  SELECT comments.*, users.name, users.surname1, users.surname2, users.role, users.image_url
+        from comments
+        INNER JOIN users ON comments.user_id = users.id
+        WHERE comments.incidencia_id = 8
+        ORDER BY comments.id
+     */
+    public function getComments(Request $request) {
+        $id_incidencia = $request->idIncidencia;
+        $comments = DB::table('comments')->select(DB::raw('comments.*, users.name as user_name, users.surname1 as user_surname1, users.surname2 as user_surname2, users.role as user_role, users.image_url as user_imageURL'))->join('users', 'comments.user_id', '=', 'users.id')->where('comments.incidencia_id', $id_incidencia)->orderBy('comments.id', 'desc')->get();
+
+        return $comments;
+    }
+
+    public function createIncidenciaComment(Request $request) 
+    {
+        $validator = Validator::make($request->json()->all(), [
+            'incidenciaId'  => 'required|numeric',
+            'userId'        => 'required|numeric',
+            'text'          => 'required|string',
+            'date'          => 'required|string',
+        ]);
+
+        if($validator->fails())
+        {
+            return response()->json($validator->errors()->toJson(), 400);
+        } else {
+            DB::table('comments')->insert([
+            'incidencia_id' => $request->incidenciaId,
+            'user_id'       => $request->userId,
+            'text'          => $request->text,
+            'sent_Date'     => $request->date,
+            'url_data'      => $request->urlData,
+            ]);
+        }
+
+    }
+
 }

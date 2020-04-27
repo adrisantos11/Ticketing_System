@@ -1,0 +1,30 @@
+
+@import '../../../sass/app.scss';
+
+.modal {
+    .modal-dialog {
+        .modal-content {
+            .modal-header {
+
+            }
+
+            .modal-body {
+            }
+            
+            .modal-footer {
+                .btn-danger {
+                    border-radius: 40px;
+                    text-align: center;
+                    vertical-align: center;
+                    cursor: pointer;
+                    // padding: $default_padding $default_padding*2;
+                    .close-icon {
+                        color: $white_color;
+                        font-size: $font_size*1.2;
+                    }
+                }
+                
+            }
+        }
+    }
+}

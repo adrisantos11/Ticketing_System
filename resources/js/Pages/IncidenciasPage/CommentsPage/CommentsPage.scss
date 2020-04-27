@@ -1,0 +1,72 @@
+@import '../../../../sass/app.scss';
+
+.comments-container {
+    width: 100%;
+    height: 100%;
+    .sendmsg-container {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        background-color: $primary_color;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        padding: $default_padding*2;
+
+        .form-group {
+            margin-right: $default_padding*2;
+            .form-control {
+                &:focus {
+                    @extend .form-control;
+                    background-color: $white_color;
+                    color: black;
+                }
+            }
+        }
+
+        .send-button {
+            height: $default_padding*5;
+            width: $default_padding*5;
+            color: $primary_color;
+            background-color: $white_color;
+            padding-top: $default_padding*0.8;
+            padding-right: $default_padding*0.5;
+            margin-top: 36px;
+            // margin-left: $default_padding*2;
+            border-radius: $default_padding*5;
+            font-size: $font_size*1.2;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                @extend .send-button;
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                // background-color: rgba($color: $white_color, $alpha: 0.2);
+            }
+
+            &:active {
+                @extend .send-button;
+                background-color: $grey_color_184;
+            }
+        }
+    }
+    .chat-list {
+        padding: $default_padding $default_padding*2;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        max-height: 900px;
+        // margin-top: $default_padding;
+        .chatbox-container {
+            margin: $default_padding*2 0;
+        }
+
+        .noComments-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            font-size: $font_size*1.5;
+            vertical-align: center;
+        }
+    }
+}
