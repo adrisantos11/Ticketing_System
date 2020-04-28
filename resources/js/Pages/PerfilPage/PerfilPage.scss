@@ -105,15 +105,28 @@
         background-color: white;
         padding: $default_padding*2 $default_padding*2;
 
-        .bodydescription-container {}
+        
+        @media screen and (max-width: 472px){
+            width: auto;
+            align-items: center;
+        }
 
         .content-container {
             display: flex;
             flex-direction: row;
 
+            @media screen and (max-width: 991px){
+                flex-direction: column;
+                align-items: center;
+            }
+
             .left-container {
-                width: 25%;
+                width: 40%;
                 height: 100%;
+                @media screen and (max-width: 991px){
+                    width: 100%;
+                    margin-bottom: $default_padding*2;
+                }
 
                 .dataCard-container {
                     .dataCard-body {
@@ -168,7 +181,7 @@
             }
 
             .right-container {
-                width: 70%;
+                width: 60%;
                 height: auto;
                 padding: $default_padding*2;
                 display: flex;
@@ -179,10 +192,29 @@
                 box-shadow: $box_shadow;
                 margin: 0 $default_padding;
                 margin-left: $default_padding*4;
+
+                @media screen and (max-width: 991px){
+                    width: 100%;
+                    margin-bottom: $default_padding*2;
+                    margin: 0;
+                }
+
+                @media screen and (max-width: 472px){
+                    overflow-x: scroll;
+
+                }
+
                 .rightData-container {
-                    width: 70%;
-                    .chartjs-render-monitor {
-                        font-family: $primary_font_family;
+                    width: 100%;
+                    .canvas-container {
+                        position: relative;
+                        width:100%;
+                        min-width: 472px;
+
+                            .chartjs-render-monitor {
+                                height: 100%;
+                                font-family: $primary_font_family;
+                            }
                     }
                 }
             }

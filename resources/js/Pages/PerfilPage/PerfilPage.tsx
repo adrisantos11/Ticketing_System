@@ -194,7 +194,9 @@ const PerfilPage = () => {
                         </div>
                         <div className="right-container">
                             <div className="rightData-container">
-                                <Bar data={data} options={options}/>    
+                                <div className="canvas-container">
+                                        <Bar data={data} options={options}/>
+                                </div>
                             </div>
                         </div>
                     </div>
