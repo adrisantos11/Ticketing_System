@@ -54,6 +54,7 @@ const IncidenciaViewPage = () => {
     const [tabsOptions, setTabsOptions] = React.useState<TabsModel>({
         idList: ['editar-incidencia', 'comentarios','eliminar-incidencia'],
         valuesList: ['Editar incidencia', 'Comentarios', 'Eliminar incidencia'],
+        iconList: [],
         color: ['primary','primary', 'red'],
         enabledList: [],
         itemActive: tabSelected

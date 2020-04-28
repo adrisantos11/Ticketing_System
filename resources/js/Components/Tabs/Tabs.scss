@@ -14,7 +14,6 @@
                 @extend .btn;
                 border-top-right-radius: 0;
                 border-top-left-radius: $default_padding*2;
-
             }
 
             &--primary {
@@ -23,6 +22,10 @@
                 color: $primary_color;
                 border: none;
                 box-shadow: none;
+                .icon-span {
+                    color: $primary_color;
+                    font-size: $font_size*1.2;
+                }
             }
             &--primary:hover {
                 background-color: $grey_color_226;
@@ -34,6 +37,10 @@
                 color: $red_color;
                 //border-color: $primary_color;
                 border-bottom: none;
+                .icon-span {
+                    color: $red_color;
+                    font-size: $font_size*1.2;
+                }
             }
 
             &--red:hover {
@@ -47,10 +54,18 @@
                 // border-color: $primary_color;
                 border-bottom: none;
                 box-shadow: inset -8px -70px 50px -90px rgba(0, 0, 0, 0.75);
+                .icon-span {
+                    color: $white_color;
+                    font-size: $font_size*1.2;
+                }
             }
 
             &--grey:hover {
                 background-color: $secondary_color;
+                .icon-span {
+                    color: $white_color;
+                    font-size: $font_size*1.2;
+                }
             }
 
         }
@@ -61,6 +76,11 @@
             font-weight: bold;
             box-shadow: none;
 
+            .icon-span {
+                color: $primary_color;
+                font-size: $font_size*1.2;
+            }
+
         }
 
         .btn--red.active {
@@ -68,6 +88,10 @@
             background-color: $red_color;
             font-weight: bold;
             box-shadow: none;
+            .icon-span {
+                color: $white_color;
+                font-size: $font_size*1.2;
+            }
 
             &:hover {
                 background-color: $red_light_color;
@@ -82,6 +106,11 @@
             font-weight: bold;
             border-color: $grey_color_226;
             box-shadow: none;
+
+            .icon-span {
+                color: $primary_color;
+                font-size: $font_size*1.2;
+            }
         }
     }
 }

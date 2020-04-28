@@ -2,43 +2,38 @@
 
 .incidenciasList-container {
     // padding-left: $default_padding*2;
-    height: 100%;
+    height: auto;
+
     .header-container {
         background-color: $grey_color_250;
         padding: $default_padding*2 $default_padding*2;
-        padding-bottom: 0;
-        height: 30%;
+        height: auto;
+
         .filtrar-container {
-            height: 40px;
+            height: auto;
             display: flex;
             flex-direction: row;
             align-content: center;
             align-items: center;
             margin-bottom: $default_padding*2;
+            flex-wrap: wrap;
+
             .dropdown {
-                margin-left: $default_padding;
-                padding-right: $default_padding*3;
+                margin: 0 $default_padding;
+                margin-right: $default_padding*2;
             }
-    
+
             .selectboxes-container {
                 display: flex;
                 flex-direction: row;
                 align-content: center;
                 align-items: center;
-                margin-left: $default_padding*3;
-    
+
                 .btn-group {
                     margin: 0 $default_padding;
                 }
             }
-    
-            .vertical-separator {
-                height: 50%;
-                border: solid;
-                border-width: 1px;
-                border-color: $grey_color_127;
-                width: 1px;
-            }
+
         }
 
         .horizontal-separator {
@@ -50,8 +45,8 @@
             margin: $default_padding*2 0;
         }
 
-        
-    
+
+
         .footer-container {
             height: auto;
             display: flex;
@@ -62,213 +57,87 @@
             background-color: $white_color;
             padding: $default_padding*2;
             // box-shadow: inset 0px 0px 15px -8px rgba(0,0,0,0.75);
-            box-shadow: inset 0px 0px 5px -2px rgba(0,0,0,0.75);
+            box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);
             // justify-content: space-between;
             border-radius: 4px;
-            .vertical-separator {
-                height: 50%;
-                border: solid;
-                border-width: 1px;
-                border-color: $grey_color_127;
-                width: 1px;
-                margin: 0 $default_padding*4;
+
+            @media screen and (max-wight: 769px) {
+                justify-content: space-between;
             }
-    
+
             .dataSelection-container {
-    
+                margin: 0 $default_padding*2;
+
                 &--filter {
                     @extend .dataSelection-container;
-    
+
                     .span {
                         font-weight: bold;
-    
+
                         &--primary {
                             @extend .span;
                             color: $primary_color;
                         }
-    
+
                         &--orange {
                             @extend .span;
                             color: $orange_color;
-    
+
                         }
-    
+
                         &--red {
                             @extend .span;
                             color: $red_color;
-    
+
                         }
-    
+
                         &--green {
                             @extend .span;
                             color: $green_color;
-    
+
                         }
                     }
                 }
             }
-        }
-    
-        .tableHeaders-container {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            padding: $default_padding $default_padding*3 0 0;
-            background-color: $grey_color_250;
-            .vertical-separator2 {
-                height: 50px;
-                border: solid;
-                border-width: 0.5px;
-                border-color: $grey_color_127;
-                width: 1px;
-            }
-    
-            .header {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                font-weight: bold;
-                &--id_Supervisor {
-                    @extend .header;
-                    // padding: $default_padding*1.5;
-                    width: 4%;
-                }
-        
-                &--name_Supervisor {
-                    @extend .header;
-                    
-                    width: 14%;
-                    
-                }
-        
-                &--description_Supervisor {
-                    @extend .header;
-        
-                    width: 20%;
-        
-                }
-        
-                &--category_Supervisor {
-                    @extend .header;
-        
-                    width: 9%;
-        
-                }
-        
-                &--priority_Supervisor {
-                    @extend .header;
-        
-                    width: 7%;
-        
-                }
-        
-                &--state_Supervisor {
-                    @extend .header;
-        
-                    width: 9%;
-        
-                }
-        
-                &--limitDate_Supervisor {
-                    @extend .header;
-        
-                    width: 13%;
-                    
-                }
-        
-                &--assigned_Supervisor {
-                    @extend .header;
-                    width: 7%;
-        
-                }
-        
-                &--creationTime_Supervisor {
-                    @extend .header;
-                    padding: 0 $default_padding*2;
-                    width: 17%;
-        
-                }
-    
-                &--id_Technical {
-                    @extend .header;
-                    padding: $default_padding*1.5;
-                    width: 4%;
-                }
-        
-                &--name_Technical {
-                    @extend .header;
-                    
-                    width: 15%;
-                    
-                }
-        
-                &--description_Technical {
-                    @extend .header;
-        
-                    width: 21%;
-        
-                }
-        
-                &--category_Technical {
-                    @extend .header;
-        
-                    width: 10%;
-        
-                }
-        
-                &--priority_Technical {
-                    @extend .header;
-        
-                    width: 8%;
-        
-                }
-        
-                &--state_Technical {
-                    @extend .header;
-        
-                    width: 10%;
-        
-                }
-        
-                &--limitDate_Technical {
-                    @extend .header;
-        
-                    width: 14%;
-                    
-                }
-        
-        
-                &--creationTime_Technical {
-                    @extend .header;
-                    padding: 0 $default_padding*2;
-                    width: 18%;
-        
-                }
-            }
-    
         }
     }
 
 
     .table-container {
-        height: auto;
-        max-height: 70%;
+        max-height: 600px;
         overflow-y: scroll;
-        box-shadow: inset -15px 0 15px -8px rgba(0, 0, 0, 0.75);
-        padding: $default_padding;
+        border-top: solid;
+        border-top-color: $grey_color_184;
+        border-top-width: 2px;
+
         // responsice 1018px w
         .table {
             height: 100%;
             width: 100%;
+            position: relative;
+            min-width: 1300px;
+
+            @media screen and (max-wight: 1300px) {
+                overflow-x: scroll;
+            }
+
+            thead {
+                th {
+                    border-top: none;
+                    text-align: center;
+                    background-color: $grey_color_226;
+                    vertical-align: middle;
+                    // border-bottom: solid;
+                    // border-bottom-width: 2px;
+                    // border-bottom-color: $grey_color_184;
+                    top: 0;
+                    position: sticky;
+                }
+            }
+
             tbody {
                 tr {
                     width: 100%;
-
-                    th {
-                        text-align: center;
-                        vertical-align: middle;
-                    }
 
                     td {
                         text-align: center;
@@ -280,22 +149,24 @@
                         width: 4%;
 
                         &--technical {
-                           @extend .id-column;
-                           width: 4%;
+                            @extend .id-column;
+                            width: 4%;
 
                         }
                     }
 
                     .name-column {
                         width: 14%;
+
                         &--technical {
                             @extend .name-column;
                             width: 15%;
-                        }                        
+                        }
                     }
 
                     .description-column {
                         width: 20%;
+
                         &--technical {
                             @extend .description-column;
                             width: 21%;
@@ -304,6 +175,7 @@
 
                     .category-column {
                         width: 9%;
+
                         &--technical {
                             @extend .category-column;
                             width: 10%;
@@ -312,6 +184,7 @@
 
                     .priority-column {
                         width: 7%;
+
                         &--technical {
                             @extend .priority-column;
                             width: 8%;
@@ -320,6 +193,7 @@
 
                     .state-column {
                         width: 9%;
+
                         &--technical {
                             @extend .state-column;
                             width: 10%;
@@ -328,11 +202,13 @@
 
                     .limitDate-column {
                         width: 13%;
+
                         &--red {
                             @extend .limitDate-column;
                             color: $red_color;
                             font-weight: bold;
                         }
+
                         &--technical {
                             @extend .limitDate-column;
                             width: 14%;
@@ -340,11 +216,12 @@
                     }
 
                     .assigned-column {
-                        width: 7%;
+                        width: 4%;
                     }
 
                     .creationTime-column {
                         width: 17%;
+
                         &--technical {
                             @extend .creationTime-column;
                             width: 18;

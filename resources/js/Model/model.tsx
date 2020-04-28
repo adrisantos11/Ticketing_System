@@ -51,6 +51,7 @@ export interface DropdownModel {
 export interface TabsModel {
     idList: Array<string>;
     valuesList: Array<string>;
+    iconList: Array<string>;
     color: Array<string>;
     enabledList: Array<boolean>;
     itemActive: any;

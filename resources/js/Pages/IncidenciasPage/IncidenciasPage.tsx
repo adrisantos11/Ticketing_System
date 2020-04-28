@@ -12,6 +12,7 @@ import TechnicalGroupsPage from './TabOptions/TechnicalGroupsPage/TechnicalGroup
 const IncidenciasPage = () => {
     const history = useHistory();
     const userRol = localStorage.userRol;
+    const sreenWidth = screen.width;
 
     let tabSelected;
     if (history.location.pathname.includes('show')) {
@@ -32,8 +33,10 @@ const IncidenciasPage = () => {
     let idListTabs = ['mostrarIncidencias','crearIncidencia'];
     let valuesListTabs = ['Mis incidencias', 'Crear nueva incidencia'];
     let colorListTabs = ['grey', 'grey'];
+    let iconList = [];
 
     if (userRol == 'supervisor') {
+        
         titlePage = 'Gestor de incidencias - Supervisor';
         idListTabs.push('technicalGroups');
         valuesListTabs.push('Mis grupos de ténicos');
@@ -45,7 +48,12 @@ const IncidenciasPage = () => {
             <li><b>Editar</b> o <b>eliminar</b> cualquier incidencia una vez se ha accedido a sus datos.</li>
             <li><b>Visualizar</b> y <b>añadir</b> comentarios a la incidencia.</li>
         </ul></>
+        if (sreenWidth <= 550) {
+            iconList.push('fas fa-list', 'fas fa-plus-circle', 'fas fa-users');
+            valuesListTabs = []
+        }
     } else  if (userRol == 'technical'){
+        
         titlePage = 'Gestor de incidencias - Técnico';
         enableTehnicalGroups = false;
         optionsList = <><p>En este apartado podrá:</p><ul>
@@ -55,11 +63,19 @@ const IncidenciasPage = () => {
         <li>Acceder a los <b>datos de una incidencia específica</b>.</li>
         <li><b>Visualizar</b> y <b>añadir</b> comentarios a la incidencia.</li>
     </ul></>
+
+        if (sreenWidth <= 550) {
+            iconList.push('fas fa-list', 'fas fa-plus-circle');
+            valuesListTabs = []
+        }
     }
+
+    
     
     const [tabsOptions, setTabsOptions] = React.useState<TabsModel>({
         idList: idListTabs,
         valuesList: valuesListTabs,
+        iconList: iconList,
         color: colorListTabs,
         enabledList: [true, true, enableTehnicalGroups],
         itemActive: tabSelected

@@ -199,7 +199,7 @@
                     margin: 0;
                 }
 
-                @media screen and (max-width: 472px){
+                @media screen and (max-width: 474px){
                     overflow-x: scroll;
 
                 }
@@ -209,7 +209,7 @@
                     .canvas-container {
                         position: relative;
                         width:100%;
-                        min-width: 472px;
+                        min-width: 474px;
 
                             .chartjs-render-monitor {
                                 height: 100%;

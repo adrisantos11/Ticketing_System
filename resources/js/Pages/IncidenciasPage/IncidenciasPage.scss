@@ -5,7 +5,7 @@
     height: 100%;
 
     .title-container {
-        height: $default_padding*29;
+        height: auto;
         padding: $default_padding $default_padding*2;
         p {
             margin: 0;
@@ -14,11 +14,19 @@
             font-size: $font_size*2.5;
             color: $primary_color;
             font-weight: bold;
+
+            @media screen and (max-wight: 769px){
+                text-align: center;
+            }
+        }
+
+        .descripcion {
+            height: auto;
         }
     }
 
     .data-container {
-        height: 75%;
+        height: auto;
         // padding-top: $default_padding*1;
         .tabs-container {
             display: flex;

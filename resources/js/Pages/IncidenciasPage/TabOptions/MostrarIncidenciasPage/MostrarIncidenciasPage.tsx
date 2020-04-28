@@ -18,7 +18,9 @@ const MostrarIncidenciasPage = () => {
     const [incidencias, setIncidencias] = React.useState([]);
     const userRol = localStorage.userRol;
     const [orderBy, setOrderBy] = React.useState('');
-    const headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad','Estado','Fecha límite', '¿Asignada?', 'Tiempo transcurrido desde su creación']
+    const headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad','Estado','Fecha límite', '¿Asignada?', 'TTC']
+
+
 
     let date = new Date();
     let hoursMinutesSeconds = date.toLocaleString().split(' ');
@@ -27,7 +29,7 @@ const MostrarIncidenciasPage = () => {
     const user = {
         id: localStorage.userId
     }
-
+    
     let dropdownItems = ['Prioridad', 'Fecha límite', 'Estado', 'Categoría', 'ID', 'Creadas por mi'];
     let dropdownIds = ['priority', 'limit_date', 'state', 'category', 'id', 'created_by_me'];
     if (userRol == 'supervisor') {
@@ -37,6 +39,7 @@ const MostrarIncidenciasPage = () => {
         dropdownItems.splice(0,0,'Mis incidencias', 'Incidencias grupales');
         dropdownIds.splice(0,0,'my_incidencias', 'group_incidencias');
     }
+    
 
     // Datos con los que se va a cargar el dropdown con las opción de ordenación de las incidencias.
     const [orderByDropdown, setOrderByDropdown] = React.useState<DropdownModel>({
@@ -83,7 +86,7 @@ const MostrarIncidenciasPage = () => {
             helperList.map((value, index) => {
                 setDivSelectedData(divSelectedData => [
                     ...divSelectedData,
-                    <React.Fragment key={index}><div className="vertical-separator"></div><div className='dataSelection-container--filter'><b>{`${value.value
+                    <React.Fragment key={index}><div className='dataSelection-container--filter'><b>{`${value.value
                         }: `}</b><span className={`span--${colorsList[index]}`}>{value.count}</span></div></React.Fragment>
                     ]);
 
@@ -270,7 +273,6 @@ const MostrarIncidenciasPage = () => {
                     <div className="filtrar-container">
                         Ordenar por:
                         <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
-                        <div className="vertical-separator"></div>
                         <div className="selectboxes-container">
                             Filtrar por:
                             {
@@ -291,28 +293,22 @@ const MostrarIncidenciasPage = () => {
                             divSelectedData
                         }
                     </div>
-                    <div className="tableHeaders-container">
-                        <div className="header--id_Supervisor">{headerList[0]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--name_Supervisor">{headerList[1]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--description_Supervisor">{headerList[2]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--category_Supervisor">{headerList[3]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--priority_Supervisor">{headerList[4]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--state_Supervisor">{headerList[5]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--limitDate_Supervisor">{headerList[6]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--assigned_Supervisor">{headerList[7]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--creationTime_Supervisor">{headerList[8]}</div>
-                    </div>
                 </div>
                 <div className="table-container">
                     <table className="table" id='dataTable'>
+                        <thead>
+                            <tr>
+                            <th scope="col">{headerList[0]}</th>
+                            <th scope="col">{headerList[1]}</th>
+                            <th scope="col">{headerList[2]}</th>
+                            <th scope="col">{headerList[3]}</th>
+                            <th scope="col">{headerList[4]}</th>
+                            <th scope="col">{headerList[5]}</th>
+                            <th scope="col">{headerList[6]}</th>
+                            <th scope="col">{headerList[7]}</th>
+                            <th scope="col">{headerList[8]}</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             {
                                 incidencias.map((element, index) => {
@@ -372,7 +368,7 @@ const MostrarIncidenciasPage = () => {
                                     // let timeOpen = actualDate.getDate()-incidenciaLimitDate.getDate();
                                     return(
                                     <tr key={index}>
-                                        <th scope="row" className='id-column'>{`#${element.id}`}</th>
+                                        <td scope="row" className='id-column'>{`#${element.id}`}</td>
                                         <td className='name-column'><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
                                         <td className='description-column'>{description}</td>
                                         <td className='category-column'>{element.category}</td>
@@ -418,26 +414,22 @@ const MostrarIncidenciasPage = () => {
                                 divSelectedData
                             }
                         </div>
-                    <div className="tableHeaders-container">
-                        <div className="header--id_Technical">{headerList[0]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--name_Technical">{headerList[1]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--description_Technical">{headerList[2]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--category_Technical">{headerList[3]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--priority_Technical">{headerList[4]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--state_Technical">{headerList[5]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--limitDate_Technical">{headerList[6]}</div>
-                        <div className="vertical-separator2"></div>
-                        <div className="header--creationTime_Technical">{headerList[8]}</div>
-                    </div>
                     </div>
                     <div className="table-container">
                         <table className="table" id='dataTable'>
+                        <thead>
+                            <tr>
+                                <th scope="col">{headerList[0]}</th>
+                                <th scope="col">{headerList[1]}</th>
+                                <th scope="col">{headerList[2]}</th>
+                                <th scope="col">{headerList[3]}</th>
+                                <th scope="col">{headerList[4]}</th>
+                                <th scope="col">{headerList[5]}</th>
+                                <th scope="col">{headerList[6]}</th>
+                                <th scope="col">{headerList[8]}</th>
+                            </tr>
+                        </thead>
+
                             <tbody>
                                 {
                                     incidencias.map((element, index) => {
@@ -485,7 +477,7 @@ const MostrarIncidenciasPage = () => {
 
                                         return(
                                         <tr key={index}>
-                                            <th scope="row" className='id-column--technical'>{`#${element.id}`}</th>
+                                            <td scope="row" className='id-column--technical'>{`#${element.id}`}</td>
                                             <td className='name-column--technical'><Link to={`/home/incidencia-view/${element.id}/comments`} data-toogle="tooltip" data-placement="top" title={`Incidencia ${element.id}`}><b>{element.title}</b></Link></td>
                                             <td className='description-column--technical'>{description}</td>
                                             <td className='category-column--technical'>{element.category}</td>

@@ -546,6 +546,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         const [tabsOptions] = React.useState<TabsModel>({
             idList: ['group','technical'],
             valuesList: ['Grupo de técnicos', 'Técnico'],
+            iconList: [],
             color: ['primary', 'primary'],
             enabledList: [true, true],
             itemActive: null
