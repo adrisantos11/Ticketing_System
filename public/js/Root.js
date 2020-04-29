@@ -18278,7 +18278,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n  z-index: 999;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #f1f1f1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n}\n.navbar-container .options-container .span-container a i, .navbar-container .options-container .span-container a:hover i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #f1f1f1;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container a.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container a:hover {\n  text-decoration: none;\n  background-color: rgba(241, 241, 241, 0.16);\n}\n.navbar-container .options-container .span-container a:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .buttonContainer {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  background-color: rgba(241, 241, 241, 0.2);\n  text-align: center;\n  padding: 1rem;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.2rem;\n  font-family: \"Black Han Sans\", sans-serif;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
+exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n  z-index: 998;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #f1f1f1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n}\n.navbar-container .options-container .span-container a i, .navbar-container .options-container .span-container a:hover i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #f1f1f1;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container a.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container a:hover {\n  text-decoration: none;\n  background-color: rgba(241, 241, 241, 0.16);\n}\n.navbar-container .options-container .span-container a:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container a:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .buttonContainer {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  background-color: rgba(241, 241, 241, 0.2);\n  text-align: center;\n  padding: 1rem;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.2rem;\n  font-family: \"Black Han Sans\", sans-serif;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container a:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
 
 // exports
 
@@ -18525,7 +18525,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n  padding-top: 0;\n  width: 100%;\n  height: 100vh;\n  max-height: 100vh;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .mainpage-container {\n    flex-direction: column;\n    padding-left: 0;\n  }\n  .mainpage-container .body-container {\n    padding-top: 56px;\n  }\n}\n.mainpage-container .toast-container {\n  position: absolute;\n  top: 20px;\n  right: 20px;\n}\n.mainpage-container .toast-container .toast {\n  margin: 0.5rem;\n  display: none;\n}", ""]);
+exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n  padding-top: 0;\n  width: 100%;\n  height: 100vh;\n  max-height: 100vh;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .mainpage-container {\n    flex-direction: column;\n    padding-left: 0;\n  }\n  .mainpage-container .body-container {\n    padding-top: 56px;\n  }\n}\n.mainpage-container .toast-container {\n  position: absolute;\n  top: 20px;\n  right: 20px;\n  z-index: 999;\n}\n.mainpage-container .toast-container .toast {\n  margin: 0.5rem;\n  display: none;\n}", ""]);
 
 // exports
 
@@ -75217,14 +75217,9 @@ __webpack_require__(/*! ./Input.scss */ "./resources/js/Components/Input/Input.s
 exports.Input = function (props) {
     var inputColorProp = props.inputInfo.color;
     var labelColorProp = props.inputInfo.labelColor;
-    var _a = React.useState(props.inputInfo.value), value = _a[0], setValue = _a[1];
     var inputColor, mostrar, labelColor = '';
     var input;
-    React.useEffect(function () {
-        setValue(props.inputInfo.value);
-    }, [props.inputInfo.value]);
     var handleChange = function (event) {
-        setValue(event.target.value);
         if (String(event.target.value).length == 1) {
             props.handleChangeInput(String(event.target.value).toUpperCase(), event.target.id);
         }
@@ -75257,18 +75252,18 @@ exports.Input = function (props) {
     }
     if (!props.inputInfo.isTextArea) {
         if (!props.inputInfo.enabled) {
-            input = (React.createElement("input", { id: "input-" + props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, disabled: true }));
+            input = (React.createElement("input", { id: "input-" + props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: props.inputInfo.value, disabled: true }));
         }
         else {
-            input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value }));
+            input = (React.createElement("input", { id: props.inputInfo.id.toString(), type: props.inputInfo.type, className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: props.inputInfo.value }));
         }
     }
     else {
         if (!props.inputInfo.enabled) {
-            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, rows: 4, disabled: true }));
+            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: props.inputInfo.value, rows: 4, disabled: true }));
         }
         else {
-            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: value, rows: 4 }));
+            input = (React.createElement("textarea", { id: props.inputInfo.id.toString(), className: "form-control input_class" + inputColor + " text-" + inputColor, placeholder: props.inputInfo.placeholder, onChange: handleChange, value: props.inputInfo.value, rows: 4 }));
         }
     }
     return (React.createElement(React.Fragment, null,
@@ -75954,7 +75949,7 @@ var CommentsPage = function (props) {
         error_control_text: '',
         enabled: true,
         inputSize: '',
-        isTextArea: false
+        isTextArea: true
     }), messageInput = _e[0], setMessageInput = _e[1];
     var getIncidenciaComments = function () {
         var helperList = [];
@@ -75994,6 +75989,7 @@ var CommentsPage = function (props) {
     }, []);
     var _f = React.useState(''), textComment = _f[0], setTextComment = _f[1];
     var handleChangeInput = function (value) {
+        setMessageInput(__assign(__assign({}, messageInput), { value: value }));
         setTextComment(value);
     };
     var enviarComentario = function () {
@@ -76083,11 +76079,16 @@ var FormularioIncidencia_1 = __webpack_require__(/*! ../../../Widgets/Formulario
 var Modal_1 = __webpack_require__(/*! ../../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
 var Dropdown_1 = __webpack_require__(/*! ../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var CommentsPage_1 = __webpack_require__(/*! ../CommentsPage/CommentsPage */ "./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.tsx");
+var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
+var IncidenciaStateLogsUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/IncidenciaStateLogsUtilities */ "./resources/js/Utilities/Incidencias/IncidenciaStateLogsUtilities.tsx");
 var IncidenciaViewPage = function () {
     var idIncidencia = react_router_1.useParams().idIncidencia;
     var userRol = localStorage.userRol;
     var userId = localStorage.userId;
     var history = react_router_dom_2.useHistory();
+    var date = new Date();
+    var hoursMinutesSeconds = date.toLocaleString().split(' ');
+    var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
     var tabSelected = 1;
     if (history.location.pathname.endsWith('comments'))
         tabSelected = 1;
@@ -76152,6 +76153,15 @@ var IncidenciaViewPage = function () {
         target_modal: 'deleteIncidenciaModal',
         extraClass: ''
     })[0];
+    var changeIncidenciaStateButton = React.useState({
+        id: 1,
+        texto: 'Cambiar estado',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal: 'changeIncidenciaStateModal',
+        extraClass: ''
+    })[0];
     var modalDeleteIncidencia = React.useState({
         id: 'deleteIncidenciaModal',
         title: 'Confimar acción',
@@ -76159,6 +76169,26 @@ var IncidenciaViewPage = function () {
         enableCloseButton: true,
         infoModel: false
     })[0];
+    var modalChangeIncidenciaState = React.useState({
+        id: 'changeIncidenciaStateModal',
+        title: '¿Cambiar estado?',
+        buttonProps: changeIncidenciaStateButton,
+        enableCloseButton: true,
+        infoModel: false
+    })[0];
+    var _h = React.useState({
+        id: 34,
+        value: '',
+        label: 'Comentario',
+        labelColor: 'primary',
+        placeholder: 'Escriba aquí su comentario...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: true
+    }), stateCommentInput = _h[0], setStateCommentInput = _h[1];
     React.useEffect(function () {
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
             var stateAux;
@@ -76235,8 +76265,10 @@ var IncidenciaViewPage = function () {
         $('#toastDelete').show();
         $('#toastDelete').toast('show');
     };
-    var handleClickItemDD = function (idItem, idDropdown) {
-        switch (idItem) {
+    var _j = React.useState(''), incidenciaStateChanged = _j[0], setIncidenciaStateChanged = _j[1];
+    var _k = React.useState(''), commentChangedState = _k[0], setCommentChangedState = _k[1];
+    var saveIncidenciaState = function () {
+        switch (incidenciaStateChanged) {
             case 'todo':
                 setIncidenciaState('Pendiente');
                 setIncidenciaStateColor('--blue');
@@ -76254,7 +76286,30 @@ var IncidenciaViewPage = function () {
                 setIncidenciaStateColor('--green');
                 break;
         }
-        IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, idItem);
+        var stateLog = {
+            incidenciaId: incidencia.id,
+            userId: localStorage.userId,
+            state: incidenciaStateChanged,
+            comment: commentChangedState,
+            date: currentDate
+        };
+        IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged);
+        IncidenciaStateLogsUtilities_1.createStateLog(stateLog);
+        $('#' + modalChangeIncidenciaState.id).modal('hide');
+        $('#toastIncidenciaStateChanged').show();
+        $('#toastIncidenciaStateChanged').toast('show');
+    };
+    var handleClickItemDD = function (idItem) {
+        console.log(idItem);
+        setIncidenciaStateChanged(idItem);
+        $('#' + modalChangeIncidenciaState.id).modal('show');
+        // updateStateIncidencia(incidencia.id, idItem);
+    };
+    var handleChangeCommentInput = function (value, id) {
+        if (id == 34) {
+            setStateCommentInput(__assign(__assign({}, stateCommentInput), { value: value }));
+            setCommentChangedState(value);
+        }
     };
     if (incidenciaLoaded) {
         return (React.createElement("div", { className: "incidenciaview1-container" },
@@ -76335,7 +76390,13 @@ var IncidenciaViewPage = function () {
                     "Pulse el bot\u00F3n de ",
                     React.createElement("b", null, "'Confirmar'"),
                     " para eliminar la incidencia ",
-                    React.createElement("b", null, "PERMANENTEMENTE")))));
+                    React.createElement("b", null, "PERMANENTEMENTE"))),
+            React.createElement(Modal_1.default, { modalProps: modalChangeIncidenciaState, onClick: saveIncidenciaState },
+                React.createElement("p", null,
+                    "Cambiar a estado: ",
+                    React.createElement("b", null, incidenciaStateChanged)),
+                React.createElement("p", null, "Introduzca un comentario si lo ve necesario."),
+                React.createElement(Input_1.Input, { inputInfo: stateCommentInput, handleChangeInput: handleChangeCommentInput }))));
     }
     else {
         return (React.createElement("div", null,
@@ -77130,6 +77191,17 @@ if(false) {}
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./TechnicalGroupsPage.scss */ "./resources/js/Pages/IncidenciasPage/TabOptions/TechnicalGroupsPage/TechnicalGroupsPage.scss");
@@ -77197,7 +77269,7 @@ var TechnicalGroupsPage = function () {
         extraClass: ''
     })[0];
     var _d = React.useState({
-        id: 1,
+        id: 32,
         value: '',
         label: 'Nombre del grupo',
         labelColor: 'primary',
@@ -77210,7 +77282,7 @@ var TechnicalGroupsPage = function () {
         isTextArea: false
     }), titleInput = _d[0], setTitleInput = _d[1];
     var _e = React.useState({
-        id: 1,
+        id: 33,
         value: '',
         label: 'Descripción',
         labelColor: 'primary',
@@ -77322,11 +77394,15 @@ var TechnicalGroupsPage = function () {
         SupervisorUtilities_1.createGroup(group);
         setTechnicalGroups();
     };
-    var handleChangeName = function (value, id) {
-        setGroupName(value);
-    };
-    var handleChangeDescription = function (value, id) {
-        setGroupDescription(value);
+    var handleChangeInputs = function (value, id) {
+        if (id == 32) {
+            setGroupName(value);
+            setTitleInput(__assign(__assign({}, titleInput), { value: value }));
+        }
+        else if (id == 33) {
+            setGroupDescription(value);
+            setDescriptionInput(__assign(__assign({}, descriptionInput), { value: value }));
+        }
     };
     var handleClickItemDD = function (idItem, idDropdown) {
         setGroupCategory(idItem);
@@ -77391,8 +77467,8 @@ var TechnicalGroupsPage = function () {
         React.createElement("div", { className: "bottom-container" },
             React.createElement("p", { className: "bottom-title" }, "Crear nuevo grupo de incidencias"),
             React.createElement("div", { className: "bottom-content" },
-                React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeName }),
-                React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeDescription }),
+                React.createElement(Input_1.Input, { inputInfo: titleInput, handleChangeInput: handleChangeInputs }),
+                React.createElement(Input_1.Input, { inputInfo: descriptionInput, handleChangeInput: handleChangeInputs }),
                 React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD }),
                 React.createElement(Button_1.default, { buttonInfo: createTechnicalGroupButton, handleClick: handleClickCreateTeam }))),
         React.createElement(Modal_1.default, { modalProps: modalDeleteTechnical, onClick: handleClickDeleteTechncial },
@@ -77549,9 +77625,11 @@ var Login = function () {
     };
     var handleChangeInput = function (value, id) {
         if (id == 1) {
+            setInputUser(__assign(__assign({}, inputUser), { value: value }));
             setUserData(__assign(__assign({}, userData), { exp: value }));
         }
         else if (id == 2) {
+            setInputPassword(__assign(__assign({}, inputPassword), { value: value }));
             setUserData(__assign(__assign({}, userData), { password: value }));
         }
     };
@@ -77691,6 +77769,13 @@ var MainPage = function () {
         circleColor: '--blue',
         delay: 4000
     })[0];
+    var toastIncidenciaChangeState = React.useState({
+        id: 'toastIncidenciaStateChanged',
+        title: 'Estado actualizado',
+        description: 'El estado de la incidencia se ha cambiado y guardado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    })[0];
     React.useEffect(function () {
         Authentication_1.getProfile().then(function (res) {
             try {
@@ -77722,7 +77807,8 @@ var MainPage = function () {
                         React.createElement(react_router_dom_1.Route, { path: "/home/incidencia-view/:idIncidencia", component: IncidenciaViewPage_1.default }))),
                 React.createElement("div", { className: "toast-container" },
                     React.createElement(Toast_1.default, { toastProps: toastDeleteIncidencia }),
-                    React.createElement(Toast_1.default, { toastProps: toastCreateIncidencia })))));
+                    React.createElement(Toast_1.default, { toastProps: toastCreateIncidencia }),
+                    React.createElement(Toast_1.default, { toastProps: toastIncidenciaChangeState })))));
     }
     else {
         return (React.createElement(React.Fragment, null,
@@ -78075,6 +78161,37 @@ exports.getFilteredUsers = function (data) {
     })
         .then(function (res) {
         return res.data;
+    })
+        .catch(function (err) {
+        console.log(err);
+    });
+};
+
+
+/***/ }),
+
+/***/ "./resources/js/Utilities/Incidencias/IncidenciaStateLogsUtilities.tsx":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Utilities/Incidencias/IncidenciaStateLogsUtilities.tsx ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+exports.createStateLog = function (newStateLog) {
+    console.log(newStateLog);
+    return axios_1.default
+        .post('api/incidencias/createStateLog', {
+        incidenciaId: newStateLog.incidenciaId,
+        userId: newStateLog.userId,
+        state: newStateLog.state,
+        comment: newStateLog.comment,
+        date: newStateLog.date,
+    }, {
+        headers: { 'Content-Type': 'application/json' }
     })
         .catch(function (err) {
         console.log(err);
@@ -78802,9 +78919,11 @@ var FormularioIncidencia = function (props) {
     var handleChangeInput = function (value, id) {
         if (id == 1) {
             setTitle(value);
+            setTitleInput(__assign(__assign({}, titleInput), { value: value }));
         }
         else if (id == 2) {
             setDescription(value);
+            setDescriptionInput(__assign(__assign({}, descriptionInput), { value: value }));
         }
     };
     var piso0_B = {

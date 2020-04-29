@@ -92,11 +92,19 @@ const Login = () => {
 
     const handleChangeInput = (value: string, id: number) => {
         if (id == 1) {
+            setInputUser({
+                ...inputUser,
+                value: value
+            })
             setUserData({
                 ...userData,
                 exp: value
             })
         } else if (id == 2) {
+            setInputPassword({
+                ...inputPassword,
+                value: value
+            })
             setUserData({
                 ...userData,
                 password: value

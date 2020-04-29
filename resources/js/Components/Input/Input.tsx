@@ -10,17 +10,10 @@ interface Props {
 export const Input: React.FunctionComponent<Props> = (props: Props) => {
     const inputColorProp = props.inputInfo.color;
     const labelColorProp = props.inputInfo.labelColor;
-    const [value, setValue] = React.useState(props.inputInfo.value);
     let inputColor ,mostrar, labelColor = '';
     let input;
 
-
-    React.useEffect(()=> {
-        setValue(props.inputInfo.value);
-    }, [props.inputInfo.value]);
-
     const handleChange = (event: any) => {
-        setValue(event.target.value);
         if (String(event.target.value).length == 1) {   
             props.handleChangeInput(String(event.target.value).toUpperCase( ), event.target.id);
         } else {
@@ -58,7 +51,7 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
                 className={`form-control input_class${inputColor} text-${inputColor}`} 
                 placeholder={props.inputInfo.placeholder}
                 onChange={handleChange}
-                value={value}
+                value={props.inputInfo.value}
                 disabled/>)
         } else {
             input = (<input 
@@ -67,7 +60,7 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
                 className={`form-control input_class${inputColor} text-${inputColor}`} 
                 placeholder={props.inputInfo.placeholder}
                 onChange={handleChange}
-                value={value}/>)
+                value={props.inputInfo.value}/>)
         }
     } else {
         if (!props.inputInfo.enabled) {
@@ -76,7 +69,7 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
                 className={`form-control input_class${inputColor} text-${inputColor}`} 
                 placeholder={props.inputInfo.placeholder}
                 onChange={handleChange} 
-                value={value} 
+                value={props.inputInfo.value} 
                 rows={4}
                 disabled/>)
         } else {
@@ -85,7 +78,7 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
                 className={`form-control input_class${inputColor} text-${inputColor}`} 
                 placeholder={props.inputInfo.placeholder}
                 onChange={handleChange}
-                value={value}
+                value={props.inputInfo.value}
                 rows={4}/>)
         }
     }

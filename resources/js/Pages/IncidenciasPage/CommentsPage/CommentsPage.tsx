@@ -46,7 +46,7 @@ const CommentsPage = (props: any) => {
         error_control_text: '',
         enabled: true,
         inputSize: '',
-        isTextArea: false
+        isTextArea: true
     });
 
     const getIncidenciaComments = () => {
@@ -89,6 +89,10 @@ const CommentsPage = (props: any) => {
 
     const [textComment, setTextComment] = React.useState('');
     const handleChangeInput = (value: string) => {
+        setMessageInput({
+            ...messageInput,
+            value: value
+        })
         setTextComment(value);
     }
 

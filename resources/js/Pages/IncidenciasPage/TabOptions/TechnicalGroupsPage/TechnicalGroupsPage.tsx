@@ -76,7 +76,7 @@ const TechnicalGroupsPage = () => {
     });
 
     const [titleInput, setTitleInput] = React.useState<InputModel>({
-        id: 1,
+        id: 32,
         value: '',
         label: 'Nombre del grupo',
         labelColor: 'primary',
@@ -90,7 +90,7 @@ const TechnicalGroupsPage = () => {
     });
 
     const [descriptionInput, setDescriptionInput] = React.useState<InputModel>({
-        id: 1,
+        id: 33,
         value: '',
         label: 'Descripción',
         labelColor: 'primary',
@@ -219,13 +219,20 @@ const TechnicalGroupsPage = () => {
     }
 
 
-    const handleChangeName = (value: string, id: number) => {
-        setGroupName(value);
-    }
-    
-
-    const handleChangeDescription = (value: string, id: number) => {
-        setGroupDescription(value);
+    const handleChangeInputs = (value: string, id: number) => {
+        if (id == 32) {
+            setGroupName(value);  
+            setTitleInput({
+                ...titleInput,
+                value: value
+            })
+        } else if (id == 33) {
+            setGroupDescription(value);  
+            setDescriptionInput({
+                ...descriptionInput,
+                value: value
+            })     
+        }
     }
 
     const handleClickItemDD = (idItem: string, idDropdown: number) => { 
@@ -319,8 +326,8 @@ const TechnicalGroupsPage = () => {
             <div className="bottom-container">
                 <p className="bottom-title">Crear nuevo grupo de incidencias</p>
                 <div className="bottom-content">
-                    <Input inputInfo={titleInput} handleChangeInput={handleChangeName}></Input>
-                    <Input inputInfo={descriptionInput} handleChangeInput={handleChangeDescription}></Input>
+                    <Input inputInfo={titleInput} handleChangeInput={handleChangeInputs}></Input>
+                    <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInputs}></Input>
                     <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
                     <Button buttonInfo={createTechnicalGroupButton} handleClick={handleClickCreateTeam}></Button>
                 </div>

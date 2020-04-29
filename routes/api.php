@@ -39,6 +39,11 @@ Route::namespace('Pages')->group(function () {
 
 });
 
+Route::namespace('Incidencias')->group(function () { 
+    Route::post('incidencias/createStateLog', 'IncidenciaStateLogsController@saveStateLogIncidencia');
+    
+});
+
 Route::namespace('Users')->group(function () {
     // -------- Controlador Técnico --------
     Route::post('incidencias/technical/getIncidencias/{orderBy}', 'TechnicalController@getTechnicalIncidencias');

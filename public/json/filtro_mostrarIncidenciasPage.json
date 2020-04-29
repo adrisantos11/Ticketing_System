@@ -41,7 +41,7 @@
         {
             "active": false,
             "name": "Solucionado",
-            "id": "blocked_selection",
+            "id": "done_selection",
             "color": "green"
         }
     ],

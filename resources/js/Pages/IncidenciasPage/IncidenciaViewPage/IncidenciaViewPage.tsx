@@ -1,7 +1,7 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './IncidenciaViewPage.scss'
-import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel, DropdownModel } from '../../../Model/model'
+import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel, DropdownModel, InputModel, IncidenciaStateLog } from '../../../Model/model'
 import { createIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -12,12 +12,18 @@ import FormularioIncidencia from '../../../Widgets/FormularioIncidencia/Formular
 import Modal from '../../../Components/Modal/Modal';
 import Dropdown from '../../../Components/Dropdown/Dropdown';
 import CommentsPage from '../CommentsPage/CommentsPage';
+import { Input } from '../../../Components/Input/Input';
+import { createStateLog } from '../../../Utilities/Incidencias/IncidenciaStateLogsUtilities';
 
 const IncidenciaViewPage = () => {
     let {idIncidencia} = useParams();
     const userRol = localStorage.userRol;
     const userId = localStorage.userId;
     const history = useHistory();
+
+    let date = new Date();
+    let hoursMinutesSeconds = date.toLocaleString().split(' ');
+    const currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
 
     let tabSelected = 1;
     if (history.location.pathname.endsWith('comments'))
@@ -74,7 +80,6 @@ const IncidenciaViewPage = () => {
 
     const [incidenciaState, setIncidenciaState] = React.useState('');
     const [incidenciaStateColor, setIncidenciaStateColor] = React.useState('');
-
     const [incidenciaLoaded, setIncidenciaLoaded] = React.useState(false);
         
     const [formularioIncidencia, setFormularioIncidencia] = React.useState<FormularioIncidenciaModel>({
@@ -94,6 +99,16 @@ const IncidenciaViewPage = () => {
         extraClass: ''
     });
 
+    const [changeIncidenciaStateButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Cambiar estado',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'changeIncidenciaStateModal',  
+        extraClass: ''
+    });
+
     const [modalDeleteIncidencia] = React.useState<ModalModel>({
         id: 'deleteIncidenciaModal',
         title: 'Confimar acción',
@@ -101,7 +116,28 @@ const IncidenciaViewPage = () => {
         enableCloseButton: true,
         infoModel: false
     })
+    
+    const [modalChangeIncidenciaState] = React.useState<ModalModel>({
+        id: 'changeIncidenciaStateModal',
+        title: '¿Cambiar estado?',
+        buttonProps: changeIncidenciaStateButton,
+        enableCloseButton: true,
+        infoModel: false
+    })
 
+    const [stateCommentInput, setStateCommentInput] = React.useState<InputModel>({
+        id: 34,
+        value: '',
+        label: 'Comentario',
+        labelColor: 'primary',
+        placeholder: 'Escriba aquí su comentario...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: true
+    });
 
     React.useEffect(() => {
         getIncideniciaUnique(Number(idIncidencia)).then(result => {
@@ -231,8 +267,12 @@ const IncidenciaViewPage = () => {
 
     }
 
-    const handleClickItemDD = (idItem: string, idDropdown: number) => {
-        switch (idItem) {
+
+    const [incidenciaStateChanged, setIncidenciaStateChanged] = React.useState(''); 
+    const [commentChangedState, setCommentChangedState] = React.useState('');
+
+    const saveIncidenciaState = () => {
+        switch (incidenciaStateChanged) {
             case 'todo':
                 setIncidenciaState('Pendiente');
                 setIncidenciaStateColor('--blue');
@@ -253,7 +293,39 @@ const IncidenciaViewPage = () => {
     
                 break;
         }
-        updateStateIncidencia(incidencia.id, idItem);
+
+        const stateLog: IncidenciaStateLog = {
+            incidenciaId: incidencia.id,
+            userId: localStorage.userId,
+            state: incidenciaStateChanged,
+            comment: commentChangedState,
+            date: currentDate
+        }
+
+        updateStateIncidencia(incidencia.id, incidenciaStateChanged);
+        createStateLog(stateLog);
+        $('#'+modalChangeIncidenciaState.id).modal('hide');
+        $('#toastIncidenciaStateChanged').show();
+        $('#toastIncidenciaStateChanged').toast('show');
+
+    }
+
+    const handleClickItemDD = (idItem: string) => {
+        console.log(idItem);
+        setIncidenciaStateChanged(idItem);
+        $('#'+modalChangeIncidenciaState.id).modal('show');
+
+        // updateStateIncidencia(incidencia.id, idItem);
+    }
+
+    const handleChangeCommentInput = (value: string, id: number) => {
+        if(id == 34){
+            setStateCommentInput({
+                ...stateCommentInput,
+                value: value
+            })
+            setCommentChangedState(value);
+        }
     }
 
     if (incidenciaLoaded) {
@@ -396,6 +468,13 @@ const IncidenciaViewPage = () => {
                 <Modal modalProps={modalDeleteIncidencia} onClick={handleClickDeleteIncidencia}>
                     <div>Pulse el botón de <b>'Confirmar'</b> para eliminar la incidencia <b>PERMANENTEMENTE</b></div>
                 </Modal>
+
+                <Modal modalProps={modalChangeIncidenciaState} onClick={saveIncidenciaState}>
+                    <p>Cambiar a estado: <b>{incidenciaStateChanged}</b></p>
+                    <p>Introduzca un comentario si lo ve necesario.</p>
+                    <Input inputInfo={stateCommentInput} handleChangeInput={handleChangeCommentInput}></Input>
+                </Modal>
+
             </div>
         )
         

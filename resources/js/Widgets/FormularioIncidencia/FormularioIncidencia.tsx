@@ -213,8 +213,16 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     const handleChangeInput = (value: string, id: number) => {
         if(id == 1){
             setTitle(value);
+            setTitleInput({
+                ...titleInput,
+                value: value
+            })
         } else if (id == 2) {
             setDescription(value);
+            setDescriptionInput({
+                ...descriptionInput,
+                value: value
+            })
         }
     }
 

@@ -14,6 +14,14 @@ export interface TeamModel {
     id_supervisor: number
 }
 
+export interface IncidenciaStateLog {
+    incidenciaId: number,
+    userId: number,
+    state: string,
+    comment: string,
+    date: string
+}
+
 export interface ButtonModel {
     id: number;
     texto: string;
