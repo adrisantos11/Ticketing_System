@@ -35,13 +35,13 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                             if (props.tabsInfo.enabledList[index]) {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color[index]} active`} key={index}>
-                                        <input type="radio" name="options" id={id} checked onClick={handleClickTab}/> {valueTab}{iconHTML} 
+                                        <input type="radio" name="options" id={id} checked onClick={handleClickTab}/><span className='value-tab'>{valueTab}</span>{iconHTML} 
                                     </label>
                                 )     
                             } else {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color[index]} active disabled`} key={index}>
-                                        <input type="radio" name="options" id={id} checked onClick={handleClickTab}/> {valueTab}{iconHTML}
+                                        <input type="radio" name="options" id={id} checked onClick={handleClickTab}/> <span className='value-tab'>{valueTab}</span>{iconHTML}
                                     </label>
                                 )
                             }
@@ -49,13 +49,13 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                             if (props.tabsInfo.enabledList[index]) {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color[index]}`} key={index}>
-                                        <input type="radio" name="options" id={id} onClick={handleClickTab}/> {valueTab}{iconHTML}
+                                        <input type="radio" name="options" id={id} onClick={handleClickTab}/><span className='value-tab'>{valueTab}</span>{iconHTML}
                                     </label>
                                 )
                             } else {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color[index]} disabled`} key={index}>
-                                        <input type="radio" name="options" id={id} onClick={handleClickTab}/> {valueTab}{iconHTML}
+                                        <input type="radio" name="options" id={id} onClick={handleClickTab}/><span className='value-tab'>{valueTab}</span>{iconHTML}
                                     </label>
                                 )
                             }

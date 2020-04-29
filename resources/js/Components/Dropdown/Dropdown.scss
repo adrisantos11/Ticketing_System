@@ -9,12 +9,14 @@
             @extend .btn;
             color: $primary_color;
             border-color: $primary_color;
+            background-color: $white_color;
         }
 
         &--red {
             @extend .btn;
             color: $red_color;
             border-color: $red_color;
+            background-color: $white_color;
         }
 
         &:hover {

@@ -16,12 +16,25 @@
         box-shadow: $box_shadow;
         width: 100%;
 
+        
+        
         .dropdowns-container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
+            
+            @media screen and (max-width: 1682px){
+                flex-direction: column;
+                
+                .category-container {
+                    margin: $default_padding 0;
+                }
 
+                .priority-container {
+                    margin: $default_padding 0;
+                }
+            }
             .category-container {
                 display: flex;
                 flex-direction: row;
@@ -61,6 +74,11 @@
             padding: 0;
             border: none;
             box-shadow: none;
+
+            @media screen and (max-width: 1452px){
+                flex-direction: column;
+            }
+
             .title-container {
                 width: 70%;
                 padding: 0;
@@ -74,6 +92,10 @@
                 padding: $default_padding*2 $default_padding*2;
                 box-shadow: $box_shadow;
                 
+                @media screen and (max-width: 1452px){
+                    margin-bottom: $default_padding*2;
+                    width: 100%;
+                }
                 .p-title {
                     font-size: $font_size*1.5;
                     color: $text_color;
@@ -109,6 +131,18 @@
                 border-radius: 4px;  
                 background-color: $white_color;
                 box-shadow: $box_shadow;
+
+                @media screen and (max-width: 1452px){
+                    width: 100%;
+
+                    .category-container {
+                        margin: $default_padding 0;
+                    }
+
+                    .priority-container {
+                        margin: $default_padding 0;
+                    }
+                }
 
                 .p-title {
                     font-size: $font_size*1.5;
@@ -167,11 +201,13 @@
             .assign-container {
                 display: flex;
                 flex-direction: row;
-                align-items: flex-start;
+                // align-items: flex-start;
+                align-items: center;
                 margin: $default_padding*3 0;
                 width: 50%;
 
                 span {
+                    width: 85px;
                     margin-right: $default_padding*2;
                 }
 

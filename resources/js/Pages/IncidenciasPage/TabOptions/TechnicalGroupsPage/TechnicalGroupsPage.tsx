@@ -255,6 +255,7 @@ const TechnicalGroupsPage = () => {
             <div className="top-container">
                 <div className="left-container">
                     <p className='title-page'>Lista de los grupos asociados</p>
+                    Crear nuevo grupo...
                     <div className="list-group" id="list-tab" role="tablist">
                         {
                             groups.map((data, index) => {
@@ -273,7 +274,6 @@ const TechnicalGroupsPage = () => {
                         <span className="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" role="tab" aria-controls="messages">Messages</span>
                         <span className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings">Settings</span> */}
                     </div>
-                    Crear nuevo grupo...
                 </div>
                 <div className="right-container">
                     <div className="nameGroup-container">

@@ -20,6 +20,7 @@ const IncidenciaViewPage = () => {
     const userRol = localStorage.userRol;
     const userId = localStorage.userId;
     const history = useHistory();
+    const sreenWidth = screen.width;
 
     let date = new Date();
     let hoursMinutesSeconds = date.toLocaleString().split(' ');
@@ -55,12 +56,15 @@ const IncidenciaViewPage = () => {
         state: null
     });
 
-    
-
+    const iconList = ['fas fa-edit','fas fa-comments', 'fas fa-trash'];
+    let valuesListTabs = ['Editar incidencia', 'Comentarios', 'Eliminar incidencia'];
+    if (sreenWidth <= 550) {
+        valuesListTabs = [];
+    }
     const [tabsOptions, setTabsOptions] = React.useState<TabsModel>({
         idList: ['editar-incidencia', 'comentarios','eliminar-incidencia'],
-        valuesList: ['Editar incidencia', 'Comentarios', 'Eliminar incidencia'],
-        iconList: [],
+        valuesList: valuesListTabs,
+        iconList: iconList,
         color: ['primary','primary', 'red'],
         enabledList: [],
         itemActive: tabSelected
@@ -331,18 +335,17 @@ const IncidenciaViewPage = () => {
     if (incidenciaLoaded) {
         return(
             <div className="incidenciaview1-container">
-                        <div className="titleincidencia-container">
-                            <p><b>{`Incidencia #${idIncidencia} - ${incidencia.title}`}</b></p>
-                            <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
-                        </div>
-
+                <div className="titleincidencia-container">
+                    <p className='page-title'><b>{`Incidencia #${idIncidencia} - ${incidencia.title}`}</b></p>
+                    <div className="state-container">
+                        <p className={`incidencia-state${incidenciaStateColor}`}>{incidenciaState}</p>
+                        <p>¿Desea cambiar el estado de la incidencia?</p>
+                        <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
+                    </div>
+                    <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
+                </div>
                 <div className='incidenciaview2-container'>
                     <div className="incidenciaData-container">
-                        <div className="state-container">
-                            <p className={`incidencia-state${incidenciaStateColor}`}>{incidenciaState}</p>
-                            <p>¿Desea cambiar el estado de la incidencia?</p>
-                            <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
-                        </div>
                         <div className="info-container">
                             <p className="p-left">Grupo de incidencia</p>
                             {

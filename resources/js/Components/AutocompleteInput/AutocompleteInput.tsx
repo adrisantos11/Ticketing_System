@@ -27,8 +27,12 @@ const AutocompleteInput: React.FunctionComponent<Props> = (props: Props) => {
     const [userList, setUserList] = React.useState([])
     const [dataDivState, setDataDivState] = React.useState('')
     const [scrollAttribute, setScrollAttribute] = React.useState('');
-    const handleChangeInput = (event: any) => {
+    const handleChangeInput = (event: string) => {
         setUserList([]);
+        setInput({
+            ...input,
+            value: event
+        })
         if(event.length >= 2) {
             setDataDivState('--show');
             setScrollAttribute('');

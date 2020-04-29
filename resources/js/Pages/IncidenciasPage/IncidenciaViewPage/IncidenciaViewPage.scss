@@ -11,12 +11,12 @@
         align-items: center;
         justify-content: center;
         height: auto;
-        color: $primary_color;
-        font-size: $font_size*2;
-        margin: 0 auto; 
+        margin: 0 auto;
         padding-top: $default_padding*3;
-
-        p {
+        
+        .page-title{
+            color: $primary_color;
+            font-size: $font_size*2;
             margin: 0;
         }
 
@@ -42,6 +42,72 @@
                 }
             }
         }
+
+        .state-container {
+            display: flex;
+            flex-direction: column;
+            padding: $default_padding*2;
+            margin: $default_padding 0;
+            justify-content: center;
+            align-items: center;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $grey_color_226;
+            border-radius: 4px;  
+            background-color: $white_color;
+            box-shadow: $box_shadow;
+            background-color: $grey_color_184;
+
+            p {
+                margin: 0;
+            }
+
+            .incidencia-state {
+                font-size: $font_size*1.5;
+                font-weight: bold;
+                width: 100%;
+                text-align: center;
+                margin: 0 $default_padding*4;
+                margin-bottom: $default_padding*3;
+                padding: $default_padding;
+                border: dashed;
+                border-width: 1.5px;
+
+                &--blue {
+                    @extend .incidencia-state;
+                    border-color: $primary_color;
+                    background-color: $primary_light_color;
+                    color: $primary_color;
+                }
+
+                &--orange {
+                    @extend .incidencia-state;
+                    border-color: $orange_color;
+                    background-color: $orange_light_color;
+                    color: $orange_color;
+                }
+
+                &--red {
+                    @extend .incidencia-state;
+                    border-color: $red_color;
+                    background-color: $red_light_color2;
+                    color: $red_color;
+                }
+
+                &--green {
+                    @extend .incidencia-state;
+                    border-color: $green_color;
+                    background-color: $green_light_color;
+                    color: $green_color;
+                }
+            }
+
+            .dropdown {
+                margin: $default_padding 0;
+            }
+
+        }
+
     }
 
 
@@ -51,6 +117,12 @@
         min-height: 100%;
         display: flex;
         flex-direction: row;
+        
+        @media screen and (max-width: 1350px){
+            flex-direction: column;
+            align-items: center;
+        }
+
         // align-items: center;
         .incidenciaData-container {
             width: 40%;
@@ -60,57 +132,10 @@
             justify-content: flex-start;
             margin: $default_padding*2 $default_padding*3;
             padding: 0 $default_padding*5;
-
-            .state-container {
-                display: flex;
-                flex-direction: column;
-                padding-bottom: $default_padding*3;
-                justify-content: center;
-                align-items: center;
-                    p {
-                        margin: 0; 
-                    }
-                    .incidencia-state {
-                        font-size: $font_size*1.5;
-                        font-weight: bold;
-                        width: 100%;
-                        text-align: center;
-                        margin: 0 $default_padding*4;
-                        margin-bottom: $default_padding*3;
-                        padding: $default_padding;
-                        border: dashed;
-                        border-width: 1.5px;
-                        
-                        &--blue {
-                            @extend .incidencia-state;
-                            border-color: $primary_color;
-                            background-color: rgba($color: $primary_color, $alpha: 0.15);
-                            color: $primary_color;
-                        }
-                        &--orange {
-                            @extend .incidencia-state;
-                            border-color: $orange_color;
-                            background-color: rgba($color: $orange_color, $alpha: 0.15);
-                            color: $orange_color;
-                        }
-                        &--red {
-                            @extend .incidencia-state;
-                            border-color: $red_color;
-                            background-color: rgba($color: $red_color, $alpha: 0.15);
-                            color: $red_color;
-                        }
-                        &--green {
-                            @extend .incidencia-state;
-                            border-color: $green_color;
-                            background-color: rgba($color: $green_color, $alpha: 0.15);
-                            color: $green_color;
-                        }
-                    }
-
-                    .dropdown {
-                        margin: $default_padding 0;
-                    }
-                
+            @media screen and (max-width: 1350px){
+                width: 70%;
+                padding: 0;
+                margin: 0;
             }
             .info-container {
                 display: flex;
@@ -155,7 +180,7 @@
             .footer-container {
                 text-align: center;
                 padding: $default_padding*2 0;
-                
+
             }
         }
 
@@ -170,12 +195,19 @@
             margin: $default_padding*2 0;
             margin-right: $default_padding*4;
             border-radius: 4px;
+
+            @media screen and (max-width: 1350px){
+                width: 70%;
+                padding: 0;
+                margin-bottom: $default_padding*3;
+            }
             .edit-container {
                 padding: $default_padding*3 $default_padding*5;
+
                 .createIncidencia-container {
                     width: 100%;
                     padding: 0;
-    
+
                     .data-container {
                         .asignacion-container {
                             .assign-container {
