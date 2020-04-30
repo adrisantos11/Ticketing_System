@@ -6,9 +6,10 @@ import { DataCardModel } from '../../Model/model';
 import { getUserLogged } from '../../Utilities/Authentication'; 
 import { Line, Bar } from 'react-chartjs-2';
 import { defaults } from 'react-chartjs-2';
+import { getTotalIncidencias } from '../../Utilities/Graphics/TechnicalDataGraphs';
 
 const PerfilPage = () => {
-
+    const userId = localStorage.userId;
     // Estilo de letra de la gráfica ---> https://www.chartjs.org/docs/latest/configuration/elements.html
     defaults.global.defaultFontFamily = 'Sen, sans-serif';
     defaults.global.legend.position = 'bottom';
@@ -27,7 +28,7 @@ const PerfilPage = () => {
     })
 
     const [userLogged, setUserLogged] = React.useState({
-        id: localStorage.userId,
+        id: userId,
         name: '',
         surname1: '',
         surname2: '',
@@ -38,11 +39,18 @@ const PerfilPage = () => {
         image_url: ''
     });
 
+    const [totalListIncidencias, setTotalListIncidencias] = React.useState([]);
+    const [totalIncidencias, setTotalIncidencias] = React.useState(0);
+    const getTotalIncidenciasTechnical = () => {
+        getTotalIncidencias(userId).then(res => {
+            setTotalListIncidencias([res[0].total,res[1].total,res[2].total,res[3].total])
+            setTotalIncidencias(res[0].total+res[1].total+res[2].total+res[3].total)
+        })
+    }
    
     React.useEffect(() => {
-        getUserLogged(localStorage.userId).then(res => {
+        getUserLogged(userId).then(res => {
             try {
-                console.log(res);
                 let rol;
                 if (res[0].role == 'technical') {
                     rol = 'Técnico'
@@ -64,7 +72,13 @@ const PerfilPage = () => {
                 console.log(error);
             }
         });
+        if (localStorage.userRol == 'technical') {
+            getTotalIncidenciasTechnical()
+        } else if (localStorage.userRol == 'supervisor') {
+            console.log('Hola');
+        }
     }, []);
+    
 
     let data = {
         labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Solucionadas'],
@@ -92,7 +106,7 @@ const PerfilPage = () => {
             // pointHoverBorderWidth: 2,
             // pointRadius: 1,
             // pointHitRadius: 10,
-            data: [6, 14, 4, 7]
+            data: totalListIncidencias
           }
         ]
       };
@@ -105,7 +119,7 @@ const PerfilPage = () => {
             },
             title: {
                 display: true,
-                text: 'Historial de incidencias (Total: 31)',
+                text: 'Historial de incidencias (Total: '+totalIncidencias+')',
                 fontSize: 20,
                 fontColor: '#636b6f'
             },

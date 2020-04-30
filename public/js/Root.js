@@ -77882,7 +77882,9 @@ var DataCard_1 = __webpack_require__(/*! ../../Components/DataCard/DataCard */ "
 var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
 var react_chartjs_2_1 = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/es/index.js");
 var react_chartjs_2_2 = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/es/index.js");
+var TechnicalDataGraphs_1 = __webpack_require__(/*! ../../Utilities/Graphics/TechnicalDataGraphs */ "./resources/js/Utilities/Graphics/TechnicalDataGraphs.tsx");
 var PerfilPage = function () {
+    var userId = localStorage.userId;
     // Estilo de letra de la gráfica ---> https://www.chartjs.org/docs/latest/configuration/elements.html
     react_chartjs_2_2.defaults.global.defaultFontFamily = 'Sen, sans-serif';
     react_chartjs_2_2.defaults.global.legend.position = 'bottom';
@@ -77898,7 +77900,7 @@ var PerfilPage = function () {
         popoverText: 'En este apartado se muestran todos los datos de su perfil.'
     }), perfilDC = _a[0], setperfilDC = _a[1];
     var _b = React.useState({
-        id: localStorage.userId,
+        id: userId,
         name: '',
         surname1: '',
         surname2: '',
@@ -77908,10 +77910,17 @@ var PerfilPage = function () {
         phone: '',
         image_url: ''
     }), userLogged = _b[0], setUserLogged = _b[1];
+    var _c = React.useState([]), totalListIncidencias = _c[0], setTotalListIncidencias = _c[1];
+    var _d = React.useState(0), totalIncidencias = _d[0], setTotalIncidencias = _d[1];
+    var getTotalIncidenciasTechnical = function () {
+        TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
+            setTotalListIncidencias([res[0].total, res[1].total, res[2].total, res[3].total]);
+            setTotalIncidencias(res[0].total + res[1].total + res[2].total + res[3].total);
+        });
+    };
     React.useEffect(function () {
-        Authentication_1.getUserLogged(localStorage.userId).then(function (res) {
+        Authentication_1.getUserLogged(userId).then(function (res) {
             try {
-                console.log(res);
                 var rol = void 0;
                 if (res[0].role == 'technical') {
                     rol = 'Técnico';
@@ -77925,6 +77934,12 @@ var PerfilPage = function () {
                 console.log(error);
             }
         });
+        if (localStorage.userRol == 'technical') {
+            getTotalIncidenciasTechnical();
+        }
+        else if (localStorage.userRol == 'supervisor') {
+            console.log('Hola');
+        }
     }, []);
     var data = {
         labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Solucionadas'],
@@ -77952,7 +77967,7 @@ var PerfilPage = function () {
                 // pointHoverBorderWidth: 2,
                 // pointRadius: 1,
                 // pointHitRadius: 10,
-                data: [6, 14, 4, 7]
+                data: totalListIncidencias
             }
         ]
     };
@@ -77964,7 +77979,7 @@ var PerfilPage = function () {
         },
         title: {
             display: true,
-            text: 'Historial de incidencias (Total: 31)',
+            text: 'Historial de incidencias (Total: ' + totalIncidencias + ')',
             fontSize: 20,
             fontColor: '#636b6f'
         },
@@ -78168,6 +78183,43 @@ exports.getFilteredUsers = function (data) {
     })
         .catch(function (err) {
         console.log(err);
+    });
+};
+
+
+/***/ }),
+
+/***/ "./resources/js/Utilities/Graphics/TechnicalDataGraphs.tsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Utilities/Graphics/TechnicalDataGraphs.tsx ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+exports.getTotalIncidencias = function (idUser) {
+    return axios_1.default
+        .post('api/dataGraphs/technical/getTotal', {
+        idUser: idUser
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
     });
 };
 

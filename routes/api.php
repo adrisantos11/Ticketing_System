@@ -63,6 +63,10 @@ Route::namespace('Users')->group(function () {
 
 });
 
+Route::namespace('DataGraphs')->group(function () {
+    Route::post('dataGraphs/technical/getTotal', 'TechnicalDataGraphsController@getTotal');
+});
+
 Route::namespace('Utilidades')->group(function () {
     Route::post('getFilteredUsers', 'AutocompleteController@filterUsers');
 

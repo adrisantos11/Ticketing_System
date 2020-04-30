@@ -38,7 +38,7 @@ class SupervisorController extends Controller
         $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->join('teams', 'incidencias.id_team', '=', 'teams.id')->where('teams.id_supervisor',$id_user)->union($first_union_1)->union($second_union_1)->orderBy($orderBy, $orderDirection)->orderBy('limit_date', 'asc');
 
         return $hole_union;
-}
+    }
 
     public function getSupervisorIncidencias(Request $request, $orderBy) {
         $id_user = $request->id;
