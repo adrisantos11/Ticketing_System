@@ -75630,13 +75630,13 @@ var Tabs = function (props) {
             }
             if (props.tabsInfo.itemActive == index) {
                 if (props.tabsInfo.enabledList[index]) {
-                    return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " active", key: index },
+                    return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " active", "data-toogle": "tooltip", "data-placement": "top", title: valueTab, key: index },
                         React.createElement("input", { type: "radio", name: "options", id: id, checked: true, onClick: handleClickTab }),
                         React.createElement("span", { className: 'value-tab' }, valueTab),
                         iconHTML));
                 }
                 else {
-                    return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " active disabled", key: index },
+                    return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " active disabled", "data-toogle": "tooltip", "data-placement": "top", title: valueTab, key: index },
                         React.createElement("input", { type: "radio", name: "options", id: id, checked: true, onClick: handleClickTab }),
                         " ",
                         React.createElement("span", { className: 'value-tab' }, valueTab),
@@ -75645,13 +75645,13 @@ var Tabs = function (props) {
             }
             else {
                 if (props.tabsInfo.enabledList[index]) {
-                    return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index], key: index },
+                    return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index], "data-toogle": "tooltip", "data-placement": "top", title: valueTab, key: index },
                         React.createElement("input", { type: "radio", name: "options", id: id, onClick: handleClickTab }),
                         React.createElement("span", { className: 'value-tab' }, valueTab),
                         iconHTML));
                 }
                 else {
-                    return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " disabled", key: index },
+                    return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " disabled", "data-toogle": "tooltip", "data-placement": "top", title: valueTab, key: index },
                         React.createElement("input", { type: "radio", name: "options", id: id, onClick: handleClickTab }),
                         React.createElement("span", { className: 'value-tab' }, valueTab),
                         iconHTML));

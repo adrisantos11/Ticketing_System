@@ -33,13 +33,13 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                         if (props.tabsInfo.itemActive == index) {
                             if (props.tabsInfo.enabledList[index]) {
                                 return(
-                                    <label className={`btn btn--${props.tabsInfo.color[index]} active`} key={index}>
+                                    <label className={`btn btn--${props.tabsInfo.color[index]} active`} data-toogle="tooltip" data-placement="top" title={valueTab} key={index}>
                                         <input type="radio" name="options" id={id} checked onClick={handleClickTab}/><span className='value-tab'>{valueTab}</span>{iconHTML} 
                                     </label>
                                 )     
                             } else {
                                 return(
-                                    <label className={`btn btn--${props.tabsInfo.color[index]} active disabled`} key={index}>
+                                    <label className={`btn btn--${props.tabsInfo.color[index]} active disabled`}  data-toogle="tooltip" data-placement="top" title={valueTab} key={index}>
                                         <input type="radio" name="options" id={id} checked onClick={handleClickTab}/> <span className='value-tab'>{valueTab}</span>{iconHTML}
                                     </label>
                                 )
@@ -47,13 +47,13 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                         } else {
                             if (props.tabsInfo.enabledList[index]) {
                                 return(
-                                    <label className={`btn btn--${props.tabsInfo.color[index]}`} key={index}>
+                                    <label className={`btn btn--${props.tabsInfo.color[index]}`} data-toogle="tooltip" data-placement="top" title={valueTab} key={index}>
                                         <input type="radio" name="options" id={id} onClick={handleClickTab}/><span className='value-tab'>{valueTab}</span>{iconHTML}
                                     </label>
                                 )
                             } else {
                                 return(
-                                    <label className={`btn btn--${props.tabsInfo.color[index]} disabled`} key={index}>
+                                    <label className={`btn btn--${props.tabsInfo.color[index]} disabled`} data-toogle="tooltip" data-placement="top" title={valueTab} key={index}>
                                         <input type="radio" name="options" id={id} onClick={handleClickTab}/><span className='value-tab'>{valueTab}</span>{iconHTML}
                                     </label>
                                 )

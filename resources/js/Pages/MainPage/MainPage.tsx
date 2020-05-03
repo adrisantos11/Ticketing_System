@@ -132,7 +132,6 @@ const MainPage = () => {
                     <Toast toastProps={toastCreateIncidencia}></Toast>
                     <Toast toastProps={toastIncidenciaChangeState}></Toast>
                     <Toast toastProps={toastEditIncidencia}></Toast>
-
                 </div>
             </div>
             </>
