@@ -55,6 +55,9 @@ const IncidenciaViewPage = () => {
         priority: null,
         state: null
     });
+    const [reporterName, setReporterName] = React.useState('');
+    const [assignedName, setAssignedName] = React.useState('');
+    const [assignedTeam, setAssignedTeam] = React.useState('');
 
     const iconList = ['fas fa-edit','fas fa-comments', 'fas fa-trash'];
     let valuesListTabs = ['Editar incidencia', 'Comentarios', 'Eliminar incidencia'];
@@ -145,8 +148,9 @@ const IncidenciaViewPage = () => {
 
     React.useEffect(() => {
         getIncideniciaUnique(Number(idIncidencia)).then(result => {
+            console.log(result);
             let stateAux;   
-            switch (result.state) {
+            switch (result.incidencia[0].state) {
                 case 'todo':
                     stateAux = 'Pendiente de solucionar'
                     setIncidenciaState('Pendiente');
@@ -173,24 +177,28 @@ const IncidenciaViewPage = () => {
             }
             setIncidencia({
                 ...incidencia,
-                group_id: result.group_id,
-                id_reporter: result.id_reporter,
-                id_assigned: result.id_assigned,
-                id_team: result.id_team,
-                title: result.title,
-                description: result.description,
-                category: result.category,
-                build: result.build,
-                floor: result.floor,
-                class: result.class,
-                url_data: result.url_data,
-                creation_date: result.creation_date,
-                limit_date: result.limit_date,
-                assigned_date: result.assigned_date,
-                resolution_date: result.resolution_date,
-                priority: result.priority,
+                group_id: result.incidencia[0].group_id,
+                id_reporter: result.incidencia[0].id_reporter,
+                id_assigned: result.incidencia[0].id_assigned,
+                id_team: result.incidencia[0].id_team,
+                title: result.incidencia[0].title,
+                description: result.incidencia[0].description,
+                category: result.incidencia[0].category,
+                build: result.incidencia[0].build,
+                floor: result.incidencia[0].floor,
+                class: result.incidencia[0].class,
+                url_data: result.incidencia[0].url_data,
+                creation_date: result.incidencia[0].creation_date,
+                limit_date: result.incidencia[0].limit_date,
+                assigned_date: result.incidencia[0].assigned_date,
+                resolution_date: result.incidencia[0].resolution_date,
+                priority: result.incidencia[0].priority,
                 state: stateAux
             });
+
+            setReporterName(result.names.name_reporter);
+            setAssignedName(result.names.name_assigned);
+            setAssignedTeam(result.names.name_group);
         });
 
         setFormularioIncidencia({
@@ -347,27 +355,21 @@ const IncidenciaViewPage = () => {
                 <div className='incidenciaview2-container'>
                     <div className="incidenciaData-container">
                         <div className="info-container">
-                            <p className="p-left">Grupo de incidencia</p>
+                            <p className="p-left">Reporter</p>
                             {
-                            isDataNull(incidencia.group_id)
-                            }
-                        </div>
-                        <div className="info-container">
-                            <p className="p-left">Reporter (ID)</p>
-                            {
-                            isDataNull(incidencia.id_reporter)
-                            }
-                        </div>
-                        <div className="info-container">
-                            <p className="p-left">Equipo asignado</p>
-                            {
-                            isDataNull(incidencia.id_team)
+                            isDataNull(reporterName)
                             }
                         </div>
                         <div className="info-container">
                             <p className="p-left">Técnico asignado (ID)</p>
                             {
-                            isDataNull(incidencia.id_assigned)
+                            isDataNull(assignedName)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Equipo asignado</p>
+                            {
+                            isDataNull(assignedTeam)
                             }
                         </div>
                         <div className="info-container">

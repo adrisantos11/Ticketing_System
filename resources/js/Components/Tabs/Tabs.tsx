@@ -22,7 +22,6 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                         let valueTab = '';
                         if (props.tabsInfo.iconList.length != 0) {
                             iconHTML = <span className="icon-span"><i className={props.tabsInfo.iconList[index]}></i></span>
-                            console.log(iconHTML);
                         } else {
                             iconHTML=null;
                         }

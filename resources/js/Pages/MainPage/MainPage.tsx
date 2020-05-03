@@ -77,6 +77,15 @@ const MainPage = () => {
         delay: 4000
     });
 
+
+    const [toastEditIncidencia] = React.useState<ToastModel>({
+        id: 'toastIncidenciaEditted',
+        title: '¡Incidencia editada!',
+        description: 'Los cambios realizados se han guardado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    });
+
     React.useEffect(() => {
         getProfile().then(res => {
             try {
@@ -122,6 +131,8 @@ const MainPage = () => {
                     <Toast toastProps={toastDeleteIncidencia}></Toast>
                     <Toast toastProps={toastCreateIncidencia}></Toast>
                     <Toast toastProps={toastIncidenciaChangeState}></Toast>
+                    <Toast toastProps={toastEditIncidencia}></Toast>
+
                 </div>
             </div>
             </>

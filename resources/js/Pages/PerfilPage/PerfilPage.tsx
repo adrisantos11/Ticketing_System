@@ -40,11 +40,12 @@ const PerfilPage = () => {
     });
 
     const [totalListIncidencias, setTotalListIncidencias] = React.useState([]);
-    const [totalIncidencias, setTotalIncidencias] = React.useState(0);
+    const [graphTitle, setGraphTitle] = React.useState('');
     const getTotalIncidenciasTechnical = () => {
         getTotalIncidencias(userId).then(res => {
-            setTotalListIncidencias([res[0].total,res[1].total,res[2].total,res[3].total])
-            setTotalIncidencias(res[0].total+res[1].total+res[2].total+res[3].total)
+            setTotalListIncidencias([res[0].total,res[1].total,res[2].total])
+            const sum = res[0].total+res[1].total+res[2].total;
+            setGraphTitle('Historial de incidencias (Total: '+sum+')')
         })
     }
    
@@ -81,7 +82,7 @@ const PerfilPage = () => {
     
 
     let data = {
-        labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Solucionadas'],
+        labels: ['Pendientes', 'En proceso', 'Bloqueadas'],
         datasets: [
           {
             label: 'Mis incidencias',
@@ -91,7 +92,7 @@ const PerfilPage = () => {
                 "#3685EC",
                 "#e78738",
                 "#dc3545",
-                "#07a744",
+                // "#07a744",
             ],
             borderColor: 'rgba(75,192,192,1)',
             borderCapStyle: 'butt',
@@ -119,7 +120,7 @@ const PerfilPage = () => {
             },
             title: {
                 display: true,
-                text: 'Historial de incidencias (Total: '+totalIncidencias+')',
+                text: graphTitle,
                 fontSize: 20,
                 fontColor: '#636b6f'
             },

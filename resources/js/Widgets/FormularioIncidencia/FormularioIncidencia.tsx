@@ -207,7 +207,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         title: '¿Seguro?',
         buttonProps: confirmButton,
         enableCloseButton: true,
-        infoModel: true
+        infoModel: false
     })
 
     const handleChangeInput = (value: string, id: number) => {
@@ -540,10 +540,11 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 priority: priority,
                 state: 'todo'
             }
-            console.log('Editar....');
             editIncidencia(incidencia);
             $('#'+modalCreateIncidencia.id).modal('hide'); 
-            history.push('/home/incidencia-view/'+props.formularioProps.incidenciaData.id+'/comments');
+            $('#toastIncidenciaEditted').show();
+            $('#toastIncidenciaEditted').toast('show');
+            //history.push('/home/incidencia-view/'+props.formularioProps.incidenciaData.id+'/comments');
    
         }
     }

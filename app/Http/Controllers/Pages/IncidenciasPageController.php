@@ -104,7 +104,7 @@ class IncidenciasPageController extends Controller
     public function deleteIncidencia(Request $request) 
     {
         $id_incidencia = $request->id; 
-        DB:table('incidencias')->where('id', $id_incidencia)->delete();
+        DB::table('incidencias')->where('id', $id_incidencia)->delete();
     }
 
     public function editIncidencia(Request $request) {
@@ -131,11 +131,41 @@ class IncidenciasPageController extends Controller
         DB::delete('delete from incidencias where incidencias.id = ?', [$id_incidencia]);
     }
 
+    public function getAssignedNamesIncidencia($id_reporter, $id_assigned, $id_team){
+        $name_reporter = null;
+        $name_assigned = null;
+        $name_group = null;
+
+        if ($id_reporter != null) {
+            $name_reporter = DB::table('users')->select('users.name', 'users.surname1', 'users.surname2')->distinct('users.id')->where('users.id', $id_reporter)->get();
+            $name_reporter = $name_reporter[0]->name.' '.$name_reporter[0]->surname1.' '.$name_reporter[0]->surname2;
+        }
+
+        if ($id_assigned != null) {
+            $name_assigned = DB::table('users')->select('users.name', 'users.surname1', 'users.surname2')->distinct('users.id')->where('users.id', $id_assigned)->get();
+            $name_assigned = $name_assigned[0]->name.' '.$name_assigned[0]->surname1.' '.$name_repname_assignedorter[0]->surname2;
+        }
+
+        if ($id_team != null) {
+            $name_group = DB::table('teams')->select('teams.name')->distinct('teams.id')->where('teams.id', $id_team)->get();
+            $name_group = $name_group[0]->name;
+        }
+        $data_json = array('name_reporter' => $name_reporter, 'name_assigned' => $name_assigned, 'name_group' => $name_group);
+        json_encode($data_json);
+
+        return $data_json; 
+    }
+
     public function getIncidenciaUnique(Request $request) {
         $id_incidencia = $request->id;
-        $incidencia = DB::table('incidencias')->where('id', $id_incidencia)->first();
-        return response()->json($incidencia);
+        $incidencia = DB::table('incidencias')->distinct('incidencia.id')->where('id', $id_incidencia)->get();
+        $names = $this->getAssignedNamesIncidencia($incidencia[0]->id_reporter, $incidencia[0]->id_assigned, $incidencia[0]->id_team);
+
+        $data_json = array('incidencia' => $incidencia, 'names' => $names);
+        json_encode($data_json);
+        return $data_json;
     }
+
 
     public function updateStateIncidencia(Request $request) {
         $id_incidencia = $request->id;

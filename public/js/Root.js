@@ -18525,7 +18525,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n  padding-top: 0;\n  width: 100%;\n  height: 100vh;\n  max-height: 100vh;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .mainpage-container {\n    flex-direction: column;\n    padding-left: 0;\n  }\n  .mainpage-container .body-container {\n    padding-top: 56px;\n  }\n}\n.mainpage-container .toast-container {\n  position: absolute;\n  top: 20px;\n  right: 20px;\n  z-index: 999;\n}\n.mainpage-container .toast-container .toast {\n  margin: 0.5rem;\n  display: none;\n}", ""]);
+exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n  padding-left: 60px;\n}\n.mainpage-container .body-container {\n  margin-left: 0px;\n  transition: 0.5s;\n  padding-top: 0;\n  width: 100%;\n  height: 100vh;\n  max-height: 100vh;\n}\n.mainpage-container .body-container #body {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .mainpage-container {\n    flex-direction: column;\n    padding-left: 0;\n  }\n  .mainpage-container .body-container {\n    padding-top: 56px;\n  }\n}\n.mainpage-container .toast-container {\n  position: fixed;\n  top: 20px;\n  right: 20px;\n  z-index: 999;\n}\n.mainpage-container .toast-container .toast {\n  margin: 0.5rem;\n  display: none;\n}", ""]);
 
 // exports
 
@@ -75621,7 +75621,6 @@ var Tabs = function (props) {
             if (props.tabsInfo.iconList.length != 0) {
                 iconHTML = React.createElement("span", { className: "icon-span" },
                     React.createElement("i", { className: props.tabsInfo.iconList[index] }));
-                console.log(iconHTML);
             }
             else {
                 iconHTML = null;
@@ -76115,22 +76114,25 @@ var IncidenciaViewPage = function () {
         priority: null,
         state: null
     }), incidencia = _a[0], setIncidencia = _a[1];
+    var _b = React.useState(''), reporterName = _b[0], setReporterName = _b[1];
+    var _c = React.useState(''), assignedName = _c[0], setAssignedName = _c[1];
+    var _d = React.useState(''), assignedTeam = _d[0], setAssignedTeam = _d[1];
     var iconList = ['fas fa-edit', 'fas fa-comments', 'fas fa-trash'];
     var valuesListTabs = ['Editar incidencia', 'Comentarios', 'Eliminar incidencia'];
     if (sreenWidth <= 550) {
         valuesListTabs = [];
     }
-    var _b = React.useState({
+    var _e = React.useState({
         idList: ['editar-incidencia', 'comentarios', 'eliminar-incidencia'],
         valuesList: valuesListTabs,
         iconList: iconList,
         color: ['primary', 'primary', 'red'],
         enabledList: [],
         itemActive: tabSelected
-    }), tabsOptions = _b[0], setTabsOptions = _b[1];
+    }), tabsOptions = _e[0], setTabsOptions = _e[1];
     var dropdownItems = ['Pendiente', 'En proceso', 'Bloqueado', 'Solucionado'];
     var dropdownIds = ['todo', 'doing', 'blocked', 'done'];
-    var _c = React.useState({
+    var _f = React.useState({
         id: 1,
         groupName: "Seleccionar...",
         groupItems: dropdownItems,
@@ -76138,16 +76140,16 @@ var IncidenciaViewPage = function () {
         color: 'primary',
         enabled: false,
         extraClass: '',
-    }), orderByDropdown = _c[0], setOrderByDropdown = _c[1];
-    var _d = React.useState(''), incidenciaState = _d[0], setIncidenciaState = _d[1];
-    var _e = React.useState(''), incidenciaStateColor = _e[0], setIncidenciaStateColor = _e[1];
-    var _f = React.useState(false), incidenciaLoaded = _f[0], setIncidenciaLoaded = _f[1];
-    var _g = React.useState({
+    }), orderByDropdown = _f[0], setOrderByDropdown = _f[1];
+    var _g = React.useState(''), incidenciaState = _g[0], setIncidenciaState = _g[1];
+    var _h = React.useState(''), incidenciaStateColor = _h[0], setIncidenciaStateColor = _h[1];
+    var _j = React.useState(false), incidenciaLoaded = _j[0], setIncidenciaLoaded = _j[1];
+    var _k = React.useState({
         widgetType: 'edit',
         userRol: localStorage.userRol,
         urlGeneral: "/home/incidencia-view/" + idIncidencia,
         incidenciaData: incidencia
-    }), formularioIncidencia = _g[0], setFormularioIncidencia = _g[1];
+    }), formularioIncidencia = _k[0], setFormularioIncidencia = _k[1];
     var confirmButton = React.useState({
         id: 1,
         texto: 'Confirmar',
@@ -76180,7 +76182,7 @@ var IncidenciaViewPage = function () {
         enableCloseButton: true,
         infoModel: false
     })[0];
-    var _h = React.useState({
+    var _l = React.useState({
         id: 34,
         value: '',
         label: 'Comentario',
@@ -76192,11 +76194,12 @@ var IncidenciaViewPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), stateCommentInput = _h[0], setStateCommentInput = _h[1];
+    }), stateCommentInput = _l[0], setStateCommentInput = _l[1];
     React.useEffect(function () {
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
+            console.log(result);
             var stateAux;
-            switch (result.state) {
+            switch (result.incidencia[0].state) {
                 case 'todo':
                     stateAux = 'Pendiente de solucionar';
                     setIncidenciaState('Pendiente');
@@ -76218,7 +76221,10 @@ var IncidenciaViewPage = function () {
                     setIncidenciaStateColor('--green');
                     break;
             }
-            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.group_id, id_reporter: result.id_reporter, id_assigned: result.id_assigned, id_team: result.id_team, title: result.title, description: result.description, category: result.category, build: result.build, floor: result.floor, class: result.class, url_data: result.url_data, creation_date: result.creation_date, limit_date: result.limit_date, assigned_date: result.assigned_date, resolution_date: result.resolution_date, priority: result.priority, state: stateAux }));
+            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.incidencia[0].group_id, id_reporter: result.incidencia[0].id_reporter, id_assigned: result.incidencia[0].id_assigned, id_team: result.incidencia[0].id_team, title: result.incidencia[0].title, description: result.incidencia[0].description, category: result.incidencia[0].category, build: result.incidencia[0].build, floor: result.incidencia[0].floor, class: result.incidencia[0].class, url_data: result.incidencia[0].url_data, creation_date: result.incidencia[0].creation_date, limit_date: result.incidencia[0].limit_date, assigned_date: result.incidencia[0].assigned_date, resolution_date: result.incidencia[0].resolution_date, priority: result.incidencia[0].priority, state: stateAux }));
+            setReporterName(result.names.name_reporter);
+            setAssignedName(result.names.name_assigned);
+            setAssignedTeam(result.names.name_group);
         });
         setFormularioIncidencia(__assign(__assign({}, formularioIncidencia), { incidenciaData: incidencia }));
         setIncidenciaLoaded(true);
@@ -76269,8 +76275,8 @@ var IncidenciaViewPage = function () {
         $('#toastDelete').show();
         $('#toastDelete').toast('show');
     };
-    var _j = React.useState(''), incidenciaStateChanged = _j[0], setIncidenciaStateChanged = _j[1];
-    var _k = React.useState(''), commentChangedState = _k[0], setCommentChangedState = _k[1];
+    var _m = React.useState(''), incidenciaStateChanged = _m[0], setIncidenciaStateChanged = _m[1];
+    var _o = React.useState(''), commentChangedState = _o[0], setCommentChangedState = _o[1];
     var saveIncidenciaState = function () {
         switch (incidenciaStateChanged) {
             case 'todo':
@@ -76328,17 +76334,14 @@ var IncidenciaViewPage = function () {
             React.createElement("div", { className: 'incidenciaview2-container' },
                 React.createElement("div", { className: "incidenciaData-container" },
                     React.createElement("div", { className: "info-container" },
-                        React.createElement("p", { className: "p-left" }, "Grupo de incidencia"),
-                        isDataNull(incidencia.group_id)),
-                    React.createElement("div", { className: "info-container" },
-                        React.createElement("p", { className: "p-left" }, "Reporter (ID)"),
-                        isDataNull(incidencia.id_reporter)),
-                    React.createElement("div", { className: "info-container" },
-                        React.createElement("p", { className: "p-left" }, "Equipo asignado"),
-                        isDataNull(incidencia.id_team)),
+                        React.createElement("p", { className: "p-left" }, "Reporter"),
+                        isDataNull(reporterName)),
                     React.createElement("div", { className: "info-container" },
                         React.createElement("p", { className: "p-left" }, "T\u00E9cnico asignado (ID)"),
-                        isDataNull(incidencia.id_assigned)),
+                        isDataNull(assignedName)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Equipo asignado"),
+                        isDataNull(assignedTeam)),
                     React.createElement("div", { className: "info-container" },
                         React.createElement("p", { className: "p-left" }, "T\u00EDtulo"),
                         isDataNull(incidencia.title, true)),
@@ -77424,7 +77427,6 @@ var TechnicalGroupsPage = function () {
         React.createElement("div", { className: "top-container" },
             React.createElement("div", { className: "left-container" },
                 React.createElement("p", { className: 'title-page' }, "Lista de los grupos asociados"),
-                "Crear nuevo grupo...",
                 React.createElement("div", { className: "list-group", id: "list-tab", role: "tablist" }, groups.map(function (data, index) {
                     if (index == 0) {
                         return (React.createElement("span", { key: index, className: "list-group-item list-group-item-action active", id: String(index), "data-toggle": "list", role: "tab", "aria-controls": "home", onClick: handleSpanClick }, data.name));
@@ -77780,6 +77782,13 @@ var MainPage = function () {
         circleColor: '--blue',
         delay: 4000
     })[0];
+    var toastEditIncidencia = React.useState({
+        id: 'toastIncidenciaEditted',
+        title: '¡Incidencia editada!',
+        description: 'Los cambios realizados se han guardado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    })[0];
     React.useEffect(function () {
         Authentication_1.getProfile().then(function (res) {
             try {
@@ -77812,7 +77821,8 @@ var MainPage = function () {
                 React.createElement("div", { className: "toast-container" },
                     React.createElement(Toast_1.default, { toastProps: toastDeleteIncidencia }),
                     React.createElement(Toast_1.default, { toastProps: toastCreateIncidencia }),
-                    React.createElement(Toast_1.default, { toastProps: toastIncidenciaChangeState })))));
+                    React.createElement(Toast_1.default, { toastProps: toastIncidenciaChangeState }),
+                    React.createElement(Toast_1.default, { toastProps: toastEditIncidencia })))));
     }
     else {
         return (React.createElement(React.Fragment, null,
@@ -77911,11 +77921,12 @@ var PerfilPage = function () {
         image_url: ''
     }), userLogged = _b[0], setUserLogged = _b[1];
     var _c = React.useState([]), totalListIncidencias = _c[0], setTotalListIncidencias = _c[1];
-    var _d = React.useState(0), totalIncidencias = _d[0], setTotalIncidencias = _d[1];
+    var _d = React.useState(''), graphTitle = _d[0], setGraphTitle = _d[1];
     var getTotalIncidenciasTechnical = function () {
         TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
-            setTotalListIncidencias([res[0].total, res[1].total, res[2].total, res[3].total]);
-            setTotalIncidencias(res[0].total + res[1].total + res[2].total + res[3].total);
+            setTotalListIncidencias([res[0].total, res[1].total, res[2].total]);
+            var sum = res[0].total + res[1].total + res[2].total;
+            setGraphTitle('Historial de incidencias (Total: ' + sum + ')');
         });
     };
     React.useEffect(function () {
@@ -77942,7 +77953,7 @@ var PerfilPage = function () {
         }
     }, []);
     var data = {
-        labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Solucionadas'],
+        labels: ['Pendientes', 'En proceso', 'Bloqueadas'],
         datasets: [
             {
                 label: 'Mis incidencias',
@@ -77952,7 +77963,6 @@ var PerfilPage = function () {
                     "#3685EC",
                     "#e78738",
                     "#dc3545",
-                    "#07a744",
                 ],
                 borderColor: 'rgba(75,192,192,1)',
                 borderCapStyle: 'butt',
@@ -77979,7 +77989,7 @@ var PerfilPage = function () {
         },
         title: {
             display: true,
-            text: 'Historial de incidencias (Total: ' + totalIncidencias + ')',
+            text: graphTitle,
             fontSize: 20,
             fontColor: '#636b6f'
         },
@@ -78313,6 +78323,28 @@ exports.getIncidenciasAssignedToUser = function (user) {
 exports.getIncideniciaUnique = function (id) {
     return axios_1.default
         .post('api/incidencias/getIncidencia', {
+        id: id
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.getIncidenciaAssginedNames = function (id) {
+    return axios_1.default
+        .post('api/incidencias/getAssignedNames', {
         id: id
     }, {
         headers: { 'Content-Type': 'application/json' }
@@ -78970,7 +79002,7 @@ var FormularioIncidencia = function (props) {
         title: '¿Seguro?',
         buttonProps: confirmButton,
         enableCloseButton: true,
-        infoModel: true
+        infoModel: false
     })[0];
     var handleChangeInput = function (value, id) {
         if (id == 1) {
@@ -79250,10 +79282,11 @@ var FormularioIncidencia = function (props) {
                 priority: priority,
                 state: 'todo'
             };
-            console.log('Editar....');
             IncidenciasUtilities_1.editIncidencia(incidencia);
             $('#' + modalCreateIncidencia.id).modal('hide');
-            history.push('/home/incidencia-view/' + props.formularioProps.incidenciaData.id + '/comments');
+            $('#toastIncidenciaEditted').show();
+            $('#toastIncidenciaEditted').toast('show');
+            //history.push('/home/incidencia-view/'+props.formularioProps.incidenciaData.id+'/comments');
         }
     };
     var assignUser = function (userRol, url) {

@@ -255,7 +255,6 @@ const TechnicalGroupsPage = () => {
             <div className="top-container">
                 <div className="left-container">
                     <p className='title-page'>Lista de los grupos asociados</p>
-                    Crear nuevo grupo...
                     <div className="list-group" id="list-tab" role="tablist">
                         {
                             groups.map((data, index) => {

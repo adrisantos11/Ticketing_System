@@ -32,6 +32,7 @@ Route::namespace('Pages')->group(function () {
     Route::post('incidencias/doing', 'IncidenciasPageController@getIncidenciasDoing');
     Route::post('incidencias/blocked', 'IncidenciasPageController@getIncidenciasBlocked');
     Route::post('incidencias/getIncidencia', 'IncidenciasPageController@getIncidenciaUnique');
+
     Route::post('incidencias/filtered', 'IncidenciasPageController@getFilteredIncidencias');
     Route::post('incidencias/updateState', 'IncidenciasPageController@updateStateIncidencia');
     Route::post('incidencias/getComments', 'IncidenciasPageController@getComments');
