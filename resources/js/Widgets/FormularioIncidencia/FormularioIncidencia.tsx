@@ -381,7 +381,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         } else {
             setTitleInput({
                 ...titleInput,
-                error_control_text: 'No se ha introducido nningún dato.',
+                error_control_text: 'No se ha introducido ningún dato.',
                 color: 'red'
             })
             validation = false;

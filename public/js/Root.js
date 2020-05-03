@@ -77337,6 +77337,15 @@ var TechnicalGroupsPage = function () {
         target_modal: 'addTechnicalModal',
         extraClass: ''
     })[0];
+    var confirmCreateTehcnicalGroupButton = React.useState({
+        id: 1,
+        texto: 'Crear grupo',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal: 'createTechnicalGroupModal',
+        extraClass: ''
+    })[0];
     var modalDeleteTechnical = React.useState({
         id: 'deleteTechnicalModal',
         title: '¿Está seguro de elimnar el técnico?',
@@ -77344,7 +77353,7 @@ var TechnicalGroupsPage = function () {
         enableCloseButton: false,
         infoModel: false
     })[0];
-    var modalAddTechncial = React.useState({
+    var modalAddTechnical = React.useState({
         id: 'addTechnicalModal',
         title: '¿Añadir técnico?',
         buttonProps: confirmAddTechnicalButton,
@@ -77357,6 +77366,13 @@ var TechnicalGroupsPage = function () {
         buttonProps: confirmAddTechnicalButton,
         enableCloseButton: false,
         infoModel: true
+    })[0];
+    var modalCreateTechnicalGroup = React.useState({
+        id: 'createTechnicalGroupModal',
+        title: '¿Crear grupo de técnicos?',
+        buttonProps: confirmCreateTehcnicalGroupButton,
+        enableCloseButton: true,
+        infoModel: false
     })[0];
     var _g = React.useState({
         id: 0,
@@ -77373,7 +77389,7 @@ var TechnicalGroupsPage = function () {
         var technicalFound = technicalsList.findIndex(function (x) { return x.id === technicalSelected.id; });
         console.log(technicalFound);
         if (technicalFound == -1 && technicalSelected.role == 'technical') {
-            $('#' + modalAddTechncial.id).modal('show');
+            $('#' + modalAddTechnical.id).modal('show');
         }
         else {
             $('#' + modalTechnicalIsAlreadyAdded.id).modal('show');
@@ -77382,7 +77398,7 @@ var TechnicalGroupsPage = function () {
     var _h = React.useState(''), groupName = _h[0], setGroupName = _h[1];
     var _j = React.useState(''), groupDescription = _j[0], setGroupDescription = _j[1];
     var _k = React.useState(''), groupCategory = _k[0], setGroupCategory = _k[1];
-    var handleClickAddTechncialModal = function () {
+    var handleClickAddTechnicalModal = function () {
         SupervisorUtilities_1.addTechnicalToGroup(technicalSelected.id, selectedGroup.id);
         getTechnicals(Number(selectedGroup.id));
     };
@@ -77390,16 +77406,6 @@ var TechnicalGroupsPage = function () {
         var groupSelected = groups[e.target.id];
         setSelectedGroup(groupSelected);
         getTechnicals(groupSelected.id);
-    };
-    var handleClickCreateTeam = function () {
-        var group = {
-            name: groupName,
-            description: groupDescription,
-            category: groupCategory,
-            id_supervisor: localStorage.userId
-        };
-        SupervisorUtilities_1.createGroup(group);
-        setTechnicalGroups();
     };
     var handleChangeInputs = function (value, id) {
         if (id == 32) {
@@ -77422,6 +77428,46 @@ var TechnicalGroupsPage = function () {
         console.log('El usuario a eliminar tiene le id: ' + technicalSelected);
         SupervisorUtilities_1.deleteTechnicalAssign(Number(technicalSelected.id), Number(selectedGroup.id));
         getTechnicals(Number(selectedGroup.id));
+    };
+    var fieldsValidation = function (groupName, groupDescription, groupCategory) {
+        var validated = true;
+        if (groupName == '') {
+            validated = false;
+            setTitleInput(__assign(__assign({}, titleInput), { color: 'red', error_control_text: 'No se ha introducido ningún dato.' }));
+        }
+        else {
+            setTitleInput(__assign(__assign({}, titleInput), { color: 'primary', error_control_text: '' }));
+        }
+        if (groupDescription == '') {
+            validated = false;
+            setDescriptionInput(__assign(__assign({}, descriptionInput), { color: 'red', error_control_text: 'No se ha introducido ningún dato.' }));
+        }
+        else {
+            setDescriptionInput(__assign(__assign({}, descriptionInput), { color: 'primary', error_control_text: '' }));
+        }
+        if (groupCategory == '') {
+            validated = false;
+            setClassDropdown(__assign(__assign({}, classDropdown), { color: 'red' }));
+        }
+        else {
+            setClassDropdown(__assign(__assign({}, classDropdown), { color: 'primary' }));
+        }
+        return validated;
+    };
+    var handleClickCreateTeam = function () {
+        if (fieldsValidation(groupName, groupDescription, groupCategory)) {
+            $('#' + modalCreateTechnicalGroup.id).modal('show');
+        }
+    };
+    var handleClickCreateTechnicalGroupModal = function () {
+        var group = {
+            name: groupName,
+            description: groupDescription,
+            category: groupCategory,
+            id_supervisor: localStorage.userId
+        };
+        SupervisorUtilities_1.createGroup(group);
+        setTechnicalGroups();
     };
     return (React.createElement("div", { className: "technicalGroups-container" },
         React.createElement("div", { className: "top-container" },
@@ -77490,7 +77536,7 @@ var TechnicalGroupsPage = function () {
                 React.createElement("p", null,
                     "Grupo seleccionado: ",
                     React.createElement("b", null, selectedGroup.name)))),
-        React.createElement(Modal_1.default, { modalProps: modalAddTechncial, onClick: handleClickAddTechncialModal },
+        React.createElement(Modal_1.default, { modalProps: modalAddTechnical, onClick: handleClickAddTechnicalModal },
             React.createElement("p", null,
                 "T\u00E9cnico que se va a a\u00F1adir: ",
                 React.createElement("b", null,
@@ -77503,7 +77549,18 @@ var TechnicalGroupsPage = function () {
                 "Grupo seleccionado: ",
                 React.createElement("b", null, selectedGroup.name))),
         React.createElement(Modal_1.default, { modalProps: modalTechnicalIsAlreadyAdded },
-            React.createElement("div", null, "El usuario ya pertenece al grupo seleccionado."))));
+            React.createElement("div", null, "El usuario ya pertenece al grupo seleccionado.")),
+        React.createElement(Modal_1.default, { modalProps: modalCreateTechnicalGroup, onClick: handleClickCreateTechnicalGroupModal },
+            React.createElement("p", null, "Se va a crear el siguiente grupo de t\u00E9cnicos:"),
+            React.createElement("p", null,
+                "Nombre: ",
+                React.createElement("b", null, "groupName")),
+            React.createElement("p", null,
+                "Descripci\u00F3n: ",
+                React.createElement("b", null, "groupDescription")),
+            React.createElement("p", null,
+                "Categor\u00EDa: ",
+                React.createElement("b", null, "groupCategory")))));
 };
 exports.default = TechnicalGroupsPage;
 
@@ -79163,7 +79220,7 @@ var FormularioIncidencia = function (props) {
             }
         }
         else {
-            setTitleInput(__assign(__assign({}, titleInput), { error_control_text: 'No se ha introducido nningún dato.', color: 'red' }));
+            setTitleInput(__assign(__assign({}, titleInput), { error_control_text: 'No se ha introducido ningún dato.', color: 'red' }));
             validation = false;
         }
         if (description == '') {

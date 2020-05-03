@@ -143,6 +143,16 @@ const TechnicalGroupsPage = () => {
         extraClass: ''
     });
 
+    const [confirmCreateTehcnicalGroupButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Crear grupo',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'createTechnicalGroupModal',  
+        extraClass: ''
+    })
+
     const [modalDeleteTechnical] = React.useState<ModalModel>({
         id: 'deleteTechnicalModal',
         title: '¿Está seguro de elimnar el técnico?',
@@ -152,7 +162,7 @@ const TechnicalGroupsPage = () => {
     })
 
     
-    const [modalAddTechncial] = React.useState<ModalModel>({
+    const [modalAddTechnical] = React.useState<ModalModel>({
         id: 'addTechnicalModal',
         title: '¿Añadir técnico?',
         buttonProps: confirmAddTechnicalButton,
@@ -166,6 +176,14 @@ const TechnicalGroupsPage = () => {
         buttonProps: confirmAddTechnicalButton,
         enableCloseButton: false,
         infoModel: true
+    })
+    
+    const [modalCreateTechnicalGroup] = React.useState<ModalModel>({
+        id: 'createTechnicalGroupModal',
+        title: '¿Crear grupo de técnicos?',
+        buttonProps: confirmCreateTehcnicalGroupButton,
+        enableCloseButton: true,
+        infoModel: false
     })
 
     const [technicalSelected, setTechnicalSelected] = React.useState<BasicUserModel>({
@@ -185,7 +203,7 @@ const TechnicalGroupsPage = () => {
         const technicalFound = technicalsList.findIndex(x => x.id === technicalSelected.id);
         console.log(technicalFound);
         if (technicalFound == -1 && technicalSelected.role == 'technical') {
-            $('#'+modalAddTechncial.id).modal('show'); 
+            $('#'+modalAddTechnical.id).modal('show'); 
         } else {
             $('#'+modalTechnicalIsAlreadyAdded.id).modal('show'); 
         }
@@ -196,7 +214,7 @@ const TechnicalGroupsPage = () => {
     const [groupCategory, setGroupCategory] = React.useState('');
 
 
-    const handleClickAddTechncialModal = () => {
+    const handleClickAddTechnicalModal = () => {
         addTechnicalToGroup(technicalSelected.id,  selectedGroup.id);
         getTechnicals(Number(selectedGroup.id));
     }
@@ -207,16 +225,6 @@ const TechnicalGroupsPage = () => {
         getTechnicals(groupSelected.id);
     }
 
-    const handleClickCreateTeam = () => { 
-        const group: TeamModel = {
-            name: groupName,
-            description: groupDescription,
-            category: groupCategory,
-            id_supervisor: localStorage.userId
-        }
-        createGroup(group);
-        setTechnicalGroups();     
-    }
 
 
     const handleChangeInputs = (value: string, id: number) => {
@@ -238,6 +246,7 @@ const TechnicalGroupsPage = () => {
     const handleClickItemDD = (idItem: string, idDropdown: number) => { 
         setGroupCategory(idItem);
     }
+
     
     const deleteUserFromGroup = (user: any) => {
         setTechnicalSelected(user);
@@ -248,6 +257,71 @@ const TechnicalGroupsPage = () => {
         console.log('El usuario a eliminar tiene le id: ' + technicalSelected);
         deleteTechnicalAssign(Number(technicalSelected.id), Number(selectedGroup.id));
         getTechnicals(Number(selectedGroup.id));
+    }
+
+    const fieldsValidation = (groupName: string, groupDescription: string, groupCategory: string) => {
+        let validated = true;
+        if (groupName == '') {
+            validated = false;
+            setTitleInput({
+                ...titleInput,
+                color: 'red',
+                error_control_text: 'No se ha introducido ningún dato.'
+            })
+        } else {
+            setTitleInput({
+                ...titleInput,
+                color: 'primary',
+                error_control_text: ''
+            })
+        }
+        if (groupDescription == '') {
+            validated = false;
+            setDescriptionInput({
+                ...descriptionInput,
+                color: 'red',
+                error_control_text: 'No se ha introducido ningún dato.'
+            })
+        } else {
+            setDescriptionInput({
+                ...descriptionInput,
+                color: 'primary',
+                error_control_text: ''
+            })
+        }
+
+        if (groupCategory == '') {
+            validated = false;
+            setClassDropdown({
+                ...classDropdown,
+                color: 'red'
+            })
+        } else {
+            setClassDropdown({
+                ...classDropdown,
+                color: 'primary'
+            })
+        }
+        return validated;
+
+    }
+
+    const handleClickCreateTeam = () => { 
+        if (fieldsValidation(groupName, groupDescription, groupCategory)) {
+            $('#'+modalCreateTechnicalGroup.id).modal('show'); 
+        }
+    }
+
+
+    const handleClickCreateTechnicalGroupModal = () => {
+        const group: TeamModel = {
+            name: groupName,
+            description: groupDescription,
+            category: groupCategory,
+            id_supervisor: localStorage.userId
+        }
+        createGroup(group);
+        setTechnicalGroups();       
     }
 
     return(
@@ -342,7 +416,7 @@ const TechnicalGroupsPage = () => {
 
                 </div>
             </Modal>
-            <Modal modalProps={modalAddTechncial} onClick={handleClickAddTechncialModal}>
+            <Modal modalProps={modalAddTechnical} onClick={handleClickAddTechnicalModal}>
                 <p>
                     Técnico que se va a añadir: <b>{technicalSelected.name} {technicalSelected.surname1} {technicalSelected.surname2}</b>
                 </p>
@@ -352,6 +426,15 @@ const TechnicalGroupsPage = () => {
             </Modal>
             <Modal modalProps={modalTechnicalIsAlreadyAdded}>
                 <div>El usuario ya pertenece al grupo seleccionado.</div>
+            </Modal>
+            <Modal modalProps={modalCreateTechnicalGroup} onClick={handleClickCreateTechnicalGroupModal}>
+                <p>
+                    Se va a crear el siguiente grupo de técnicos:
+                </p>
+                <p>Nombre: <b>groupName</b></p>
+                <p>Descripción: <b>groupDescription</b></p>
+                <p>Categoría: <b>groupCategory</b></p>
+
             </Modal>
         </div>
     )
