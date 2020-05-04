@@ -360,7 +360,6 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     }
 
     const fieldsValidation = (title: string, description: string, category: string, build: string, floor: number, classroom: string, priority: string) => {
-        // console.log(floor);
         let validation = false;
         if(title != '') {
             if (title.length > 70) {

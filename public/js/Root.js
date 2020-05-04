@@ -77468,6 +77468,8 @@ var TechnicalGroupsPage = function () {
         };
         SupervisorUtilities_1.createGroup(group);
         setTechnicalGroups();
+        $('#toastCreateTechnicalGroup').show();
+        $('#toastCreateTechnicalGroup').toast('show');
     };
     return (React.createElement("div", { className: "technicalGroups-container" },
         React.createElement("div", { className: "top-container" },
@@ -77820,21 +77822,21 @@ var MainPage = function () {
     }), closeSlidebarButton = _d[0], setCloseSlidebarButton = _d[1];
     var toastDeleteIncidencia = React.useState({
         id: 'toastDelete',
-        title: 'Incidencia eliminada',
+        title: '¡Incidencia eliminada1',
         description: 'La incidencia ha sido eliminada correctamente.',
         circleColor: '--red',
         delay: 4000
     })[0];
     var toastCreateIncidencia = React.useState({
         id: 'toastCreate',
-        title: 'Incidencia creada',
+        title: '¡Incidencia creada!',
         description: 'La incidencia se ha creado correctamente.',
         circleColor: '--blue',
         delay: 4000
     })[0];
     var toastIncidenciaChangeState = React.useState({
         id: 'toastIncidenciaStateChanged',
-        title: 'Estado actualizado',
+        title: '¡Estado actualizado!',
         description: 'El estado de la incidencia se ha cambiado y guardado correctamente.',
         circleColor: '--blue',
         delay: 4000
@@ -77843,6 +77845,13 @@ var MainPage = function () {
         id: 'toastIncidenciaEditted',
         title: '¡Incidencia editada!',
         description: 'Los cambios realizados se han guardado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    })[0];
+    var toastCreateTechnicalGroup = React.useState({
+        id: 'toastCreateTechnicalGroup',
+        title: '¡Grupo creado!',
+        description: 'El grupo de técnicos se ha creado correctamente.',
         circleColor: '--blue',
         delay: 4000
     })[0];
@@ -77879,7 +77888,8 @@ var MainPage = function () {
                     React.createElement(Toast_1.default, { toastProps: toastDeleteIncidencia }),
                     React.createElement(Toast_1.default, { toastProps: toastCreateIncidencia }),
                     React.createElement(Toast_1.default, { toastProps: toastIncidenciaChangeState }),
-                    React.createElement(Toast_1.default, { toastProps: toastEditIncidencia })))));
+                    React.createElement(Toast_1.default, { toastProps: toastEditIncidencia }),
+                    React.createElement(Toast_1.default, { toastProps: toastCreateTechnicalGroup })))));
     }
     else {
         return (React.createElement(React.Fragment, null,
@@ -79207,7 +79217,6 @@ var FormularioIncidencia = function (props) {
         }
     };
     var fieldsValidation = function (title, description, category, build, floor, classroom, priority) {
-        // console.log(floor);
         var validation = false;
         if (title != '') {
             if (title.length > 70) {

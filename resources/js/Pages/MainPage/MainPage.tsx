@@ -54,7 +54,7 @@ const MainPage = () => {
     
     const [toastDeleteIncidencia] = React.useState<ToastModel>({
         id: 'toastDelete',
-        title: 'Incidencia eliminada',
+        title: '¡Incidencia eliminada!',
         description: 'La incidencia ha sido eliminada correctamente.',
         circleColor: '--red',
         delay: 4000
@@ -62,7 +62,7 @@ const MainPage = () => {
 
     const [toastCreateIncidencia] = React.useState<ToastModel>({
         id: 'toastCreate',
-        title: 'Incidencia creada',
+        title: '¡Incidencia creada!',
         description: 'La incidencia se ha creado correctamente.',
         circleColor: '--blue',
         delay: 4000
@@ -71,7 +71,7 @@ const MainPage = () => {
     
     const [toastIncidenciaChangeState] = React.useState<ToastModel>({
         id: 'toastIncidenciaStateChanged',
-        title: 'Estado actualizado',
+        title: '¡Estado actualizado!',
         description: 'El estado de la incidencia se ha cambiado y guardado correctamente.',
         circleColor: '--blue',
         delay: 4000
@@ -86,6 +86,13 @@ const MainPage = () => {
         delay: 4000
     });
 
+    const [toastCreateTechnicalGroup] = React.useState<ToastModel>({
+        id: 'toastCreateTechnicalGroup',
+        title: '¡Grupo creado!',
+        description: 'El grupo de técnicos se ha creado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    });
     React.useEffect(() => {
         getProfile().then(res => {
             try {
@@ -132,6 +139,8 @@ const MainPage = () => {
                     <Toast toastProps={toastCreateIncidencia}></Toast>
                     <Toast toastProps={toastIncidenciaChangeState}></Toast>
                     <Toast toastProps={toastEditIncidencia}></Toast>
+                    <Toast toastProps={toastCreateTechnicalGroup}></Toast>
+
                 </div>
             </div>
             </>

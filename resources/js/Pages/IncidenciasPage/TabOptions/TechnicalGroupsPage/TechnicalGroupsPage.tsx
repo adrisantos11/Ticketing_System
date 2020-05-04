@@ -321,7 +321,10 @@ const TechnicalGroupsPage = () => {
             id_supervisor: localStorage.userId
         }
         createGroup(group);
-        setTechnicalGroups();       
+        setTechnicalGroups();   
+        $('#toastCreateTechnicalGroup').show();
+        $('#toastCreateTechnicalGroup').toast('show');
+
     }
 
     return(
