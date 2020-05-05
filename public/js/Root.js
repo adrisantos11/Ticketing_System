@@ -18532,6 +18532,25 @@ exports.push([module.i, ".mainpage-container {\n  display: flex;\n  flex-directi
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.scss":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.scss ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".graphsPage-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n}\n.graphsPage-container .tabs-container {\n  margin: 0.5rem 0;\n}\n.graphsPage-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.graphsPage-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/PerfilPage/PerfilPage.scss":
 /*!******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/PerfilPage/PerfilPage.scss ***!
@@ -18544,7 +18563,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 4rem;\n  background-color: white;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .headerperfil-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 2rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.5rem;\n  margin: 0;\n  font-style: italic;\n  margin-right: 0.75rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon, .perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  font-size: 1.3rem;\n  color: #3685EC;\n}\n.perfilpage-container .photo-container .photo-container .role-container .settings-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 1rem 1rem;\n}\n@media screen and (max-width: 472px) {\n  .perfilpage-container .bodyperfil-container {\n    width: auto;\n    align-items: center;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container {\n    flex-direction: column;\n    align-items: center;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 40%;\n  height: 100%;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container .left-container {\n    width: 100%;\n    margin-bottom: 1rem;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 60%;\n  height: auto;\n  padding: 1rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  margin: 0 0.5rem;\n  margin-left: 2rem;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container .right-container {\n    width: 100%;\n    margin-bottom: 1rem;\n    margin: 0;\n  }\n}\n@media screen and (max-width: 474px) {\n  .perfilpage-container .bodyperfil-container .content-container .right-container {\n    overflow-x: scroll;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container {\n  width: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .canvas-container {\n  position: relative;\n  width: 100%;\n  min-width: 474px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .canvas-container .chartjs-render-monitor {\n  height: 100%;\n  font-family: \"Sen\", sans-serif;\n}", ""]);
+exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 4rem;\n  background-color: white;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .headerperfil-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 2rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.5rem;\n  margin: 0;\n  font-style: italic;\n  margin: 0 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .options-icon, .perfilpage-container .photo-container .photo-container .role-container .options-icon:hover {\n  font-size: 1.3rem;\n  color: #3685EC;\n  margin: 0 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .options-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 1rem 1rem;\n}\n@media screen and (max-width: 472px) {\n  .perfilpage-container .bodyperfil-container {\n    width: auto;\n    align-items: center;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container {\n    flex-direction: column;\n    align-items: center;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 40%;\n  height: 100%;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container .left-container {\n    width: 100%;\n    margin-bottom: 1rem;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 60%;\n  height: auto;\n  padding: 1rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  margin: 0 0.5rem;\n  margin-left: 2rem;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container .right-container {\n    width: 100%;\n    margin-bottom: 1rem;\n    margin: 0;\n  }\n}\n@media screen and (max-width: 474px) {\n  .perfilpage-container .bodyperfil-container .content-container .right-container {\n    overflow-x: scroll;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container {\n  width: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .canvas-container {\n  position: relative;\n  width: 100%;\n  min-width: 474px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .canvas-container .chartjs-render-monitor {\n  height: 100%;\n  font-family: \"Sen\", sans-serif;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.scss":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.scss ***!
+  \*********************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -18583,6 +18621,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 100%;\n}\n@media screen and (max-width: 1682px) {\n  .formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n    flex-direction: column;\n  }\n  .formularioIncidencia-container .data-container .dropdowns-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container .dropdowns-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container .dropdowns-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .category-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n  display: flex;\n  align-items: center;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .priority-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n  padding: 1rem 1rem;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .title-container {\n    margin-bottom: 1rem;\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container .p-title {\n  font-size: 1.5rem;\n  color: #636b6f;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row .title-container .title-name {\n  width: 100%;\n  height: auto;\n  background-color: #3685EC;\n  padding: 0.5rem 1rem;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.formularioIncidencia-container .data-container--row .title-container .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .dropdowns-container {\n    width: 100%;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .form-group .text_label, .formularioIncidencia-container .data-container--row .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.2rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  width: 85px;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Widgets/Graph/Graph.scss":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Widgets/Graph/Graph.scss ***!
+  \**********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".graphs-container {\n  position: relative;\n  width: 100%;\n  min-width: 474px;\n}\n.graphs-container .chartjs-render-monitor {\n  height: 100%;\n  font-family: \"Sen\", sans-serif;\n}", ""]);
 
 // exports
 
@@ -75409,12 +75466,12 @@ var Navbar = function (props) {
     var userRolLogged = localStorage.userRol;
     var iconProfile;
     if (userRolLogged == 'technical') {
-        iconProfile = (React.createElement(react_router_dom_1.NavLink, { to: "/home/perfil", "data-toogle": "tooltip", "data-placement": "top", title: "Perfil" },
+        iconProfile = (React.createElement(react_router_dom_1.NavLink, { to: "/home/perfil/graphs/summaryIncidencias", "data-toogle": "tooltip", "data-placement": "top", title: "Perfil" },
             React.createElement("b", null, "Perfil"),
             React.createElement("i", { className: "fas fa-user" })));
     }
     else if (userRolLogged == 'supervisor') {
-        iconProfile = (React.createElement(react_router_dom_1.NavLink, { to: "/home/perfil", "data-toogle": "tooltip", "data-placement": "top", title: "Perfil" },
+        iconProfile = (React.createElement(react_router_dom_1.NavLink, { to: "/home/perfil/graphs/summaryIncidencias", "data-toogle": "tooltip", "data-placement": "top", title: "Perfil" },
             React.createElement("b", null, "Perfil"),
             React.createElement("i", { className: "fas fa-user-tie" })));
     }
@@ -77679,7 +77736,7 @@ var Login = function () {
         else {
             Authentication_1.login(user).then(function (result) {
                 if (result) {
-                    history.push('/home/perfil');
+                    history.push('/home/perfil/graphs/summaryIncidencias');
                 }
                 else {
                     setInputUser(__assign(__assign({}, inputUser), { color: 'red' }));
@@ -77822,7 +77879,7 @@ var MainPage = function () {
     }), closeSlidebarButton = _d[0], setCloseSlidebarButton = _d[1];
     var toastDeleteIncidencia = React.useState({
         id: 'toastDelete',
-        title: '¡Incidencia eliminada1',
+        title: '¡Incidencia eliminada!',
         description: 'La incidencia ha sido eliminada correctamente.',
         circleColor: '--red',
         delay: 4000
@@ -77902,6 +77959,126 @@ exports.default = MainPage;
 
 /***/ }),
 
+/***/ "./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.scss":
+/*!******************************************************************!*\
+  !*** ./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.scss ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./GraphsPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.tsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.tsx ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./GraphsPage.scss */ "./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.scss");
+var Graph_1 = __webpack_require__(/*! ../../../Widgets/Graph/Graph */ "./resources/js/Widgets/Graph/Graph.tsx");
+var TechnicalDataGraphs_1 = __webpack_require__(/*! ../../../Utilities/Graphics/TechnicalDataGraphs */ "./resources/js/Utilities/Graphics/TechnicalDataGraphs.tsx");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+var Tabs_1 = __webpack_require__(/*! ../../../Components/Tabs/Tabs */ "./resources/js/Components/Tabs/Tabs.tsx");
+var GraphsPage = function () {
+    var userId = localStorage.userId;
+    var history = react_router_dom_1.useHistory();
+    // let tabSelected = 0;
+    // if (history.location.pathname.endsWith('praphs'))
+    //     tabSelected = 0;
+    // else if (history.location.pathname.endsWith('settings')) 
+    //     tabSelected = 1;
+    var _a = React.useState({
+        idList: ['resumen-incidencias', 'historial-incidencias'],
+        valuesList: ['Resumen incidencias', 'Historial incidencias'],
+        iconList: ["fas fa-info-circle", 'fas fa-history'],
+        color: ['primary', 'primary'],
+        enabledList: [true, true],
+        itemActive: 0
+    }), tabsOptions = _a[0], setTabsOptions = _a[1];
+    var _b = React.useState({
+        title: null,
+        type: 'bar',
+        labels: ['Pendientes', 'Bloqueadas', 'En proceso'],
+        colorsList: [
+            "#3685EC",
+            "#e78738",
+            "#dc3545",
+        ],
+        mainLabel: 'Mis incidencias',
+        graphData: null
+    }), graphBar = _b[0], setGraphBar = _b[1];
+    var getTotalIncidenciasTechnical = function () {
+        TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
+            var sum = res[0].total + res[1].total + res[2].total;
+            setGraphBar(__assign(__assign({}, graphBar), { title: 'Resumen de incidencias (Total: ' + sum + ')', graphData: [res[0].total, res[1].total, res[2].total] }));
+        });
+    };
+    var handleClickTab = function (id) {
+        console.log(id);
+        if (id == 'resumen-incidencias') {
+            history.push("/home/perfil/graphs/summaryIncidencias");
+        }
+        else if (id == 'historial-incidencias') {
+            history.push("/home/perfil/graphs/historyIncidencias");
+        }
+    };
+    React.useEffect(function () {
+        if (localStorage.userRol == 'technical') {
+            getTotalIncidenciasTechnical();
+        }
+        else if (localStorage.userRol == 'supervisor') {
+            console.log('Hola');
+        }
+    }, []);
+    return (React.createElement("div", { className: 'graphsPage-container' },
+        React.createElement(Tabs_1.default, { tabsInfo: tabsOptions, handleClick: handleClickTab }),
+        React.createElement(react_router_dom_1.Switch, null,
+            React.createElement(react_router_dom_1.Route, { path: "/home/perfil/graphs/summaryIncidencias" },
+                React.createElement(Graph_1.default, { graphProps: graphBar })),
+            React.createElement(react_router_dom_1.Route, { path: "/home/perfil/graphs/historyIncidencias" }, "Historial"))));
+};
+exports.default = GraphsPage;
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/PerfilPage/PerfilPage.scss":
 /*!*******************************************************!*\
   !*** ./resources/js/Pages/PerfilPage/PerfilPage.scss ***!
@@ -77958,13 +78135,15 @@ __webpack_require__(/*! ./PerfilPage.scss */ "./resources/js/Pages/PerfilPage/Pe
 var DataCard_1 = __webpack_require__(/*! ../../Components/DataCard/DataCard */ "./resources/js/Components/DataCard/DataCard.tsx");
 var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
 var react_chartjs_2_1 = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/es/index.js");
-var react_chartjs_2_2 = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/es/index.js");
-var TechnicalDataGraphs_1 = __webpack_require__(/*! ../../Utilities/Graphics/TechnicalDataGraphs */ "./resources/js/Utilities/Graphics/TechnicalDataGraphs.tsx");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+var GraphsPage_1 = __webpack_require__(/*! ../../Pages/PerfilPage/GraphsPage/GraphsPage */ "./resources/js/Pages/PerfilPage/GraphsPage/GraphsPage.tsx");
+var SettingsPage_1 = __webpack_require__(/*! ../../Pages/PerfilPage/SettingsPage/SettingsPage */ "./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.tsx");
 var PerfilPage = function () {
     var userId = localStorage.userId;
+    var history = react_router_dom_1.useHistory();
     // Estilo de letra de la gráfica ---> https://www.chartjs.org/docs/latest/configuration/elements.html
-    react_chartjs_2_2.defaults.global.defaultFontFamily = 'Sen, sans-serif';
-    react_chartjs_2_2.defaults.global.legend.position = 'bottom';
+    react_chartjs_2_1.defaults.global.defaultFontFamily = 'Sen, sans-serif';
+    react_chartjs_2_1.defaults.global.legend.position = 'bottom';
     // defaults.global.title.display = true;
     // defaults.global.title.fontColor = '#636b6f';
     // defaults.global.title.fontSize = 20;
@@ -77987,15 +78166,6 @@ var PerfilPage = function () {
         phone: '',
         image_url: ''
     }), userLogged = _b[0], setUserLogged = _b[1];
-    var _c = React.useState([]), totalListIncidencias = _c[0], setTotalListIncidencias = _c[1];
-    var _d = React.useState(''), graphTitle = _d[0], setGraphTitle = _d[1];
-    var getTotalIncidenciasTechnical = function () {
-        TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
-            setTotalListIncidencias([res[0].total, res[1].total, res[2].total]);
-            var sum = res[0].total + res[1].total + res[2].total;
-            setGraphTitle('Historial de incidencias (Total: ' + sum + ')');
-        });
-    };
     React.useEffect(function () {
         Authentication_1.getUserLogged(userId).then(function (res) {
             try {
@@ -78012,60 +78182,13 @@ var PerfilPage = function () {
                 console.log(error);
             }
         });
-        if (localStorage.userRol == 'technical') {
-            getTotalIncidenciasTechnical();
-        }
-        else if (localStorage.userRol == 'supervisor') {
-            console.log('Hola');
-        }
     }, []);
-    var data = {
-        labels: ['Pendientes', 'En proceso', 'Bloqueadas'],
-        datasets: [
-            {
-                label: 'Mis incidencias',
-                fill: false,
-                lineTension: 0.5,
-                backgroundColor: [
-                    "#3685EC",
-                    "#e78738",
-                    "#dc3545",
-                ],
-                borderColor: 'rgba(75,192,192,1)',
-                borderCapStyle: 'butt',
-                borderDashOffset: 0.0,
-                borderJoinStyle: 'miter',
-                // pointBorderColor: 'rgba(75,192,192,1)',
-                // pointBackgroundColor: '#fff',
-                // pointBorderWidth: 1,
-                // pointHoverRadius: 5,
-                // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-                // pointHoverBorderColor: 'rgba(220,220,220,1)',
-                // pointHoverBorderWidth: 2,
-                // pointRadius: 1,
-                // pointHitRadius: 10,
-                data: totalListIncidencias
-            }
-        ]
-    };
-    var options = {
-        legend: {
-            labels: {
-                fontSize: 15
-            }
-        },
-        title: {
-            display: true,
-            text: graphTitle,
-            fontSize: 20,
-            fontColor: '#636b6f'
-        },
-        scales: {
-            yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                    }
-                }]
+    var handleOptionClick = function (id) {
+        if (id == 'settings') {
+            history.push('/home/perfil/settings');
+        }
+        else if (id == 'graphs') {
+            history.push('/home/perfil/graphs/summaryIncidencias');
         }
     };
     return (React.createElement(React.Fragment, null,
@@ -78079,7 +78202,9 @@ var PerfilPage = function () {
                     React.createElement("p", { className: 'p-name' }, userLogged.name + " " + userLogged.surname1 + " " + userLogged.surname2),
                     React.createElement("div", { className: "role-container" },
                         React.createElement("p", { className: 'p-role' }, userLogged.role),
-                        React.createElement("span", { className: 'settings-icon' },
+                        React.createElement("span", { className: 'options-icon', onClick: function () { return handleOptionClick('graphs'); } },
+                            React.createElement("i", { className: "far fa-chart-bar" })),
+                        React.createElement("span", { className: 'options-icon', onClick: function () { return handleOptionClick('settings'); } },
                             React.createElement("i", { className: "fas fa-cog" }))))),
             React.createElement("div", { className: "bodyperfil-container" },
                 React.createElement("div", { className: "bodydescription-container" },
@@ -78118,10 +78243,63 @@ var PerfilPage = function () {
                                         React.createElement("p", null, userLogged.phone)))))),
                     React.createElement("div", { className: "right-container" },
                         React.createElement("div", { className: "rightData-container" },
-                            React.createElement("div", { className: "canvas-container" },
-                                React.createElement(react_chartjs_2_1.Bar, { data: data, options: options })))))))));
+                            React.createElement(react_router_dom_1.Switch, null,
+                                React.createElement(react_router_dom_1.Route, { path: "/home/perfil/graphs/summaryIncidencias" },
+                                    React.createElement(GraphsPage_1.default, null)),
+                                React.createElement(react_router_dom_1.Route, { path: "/home/perfil/settings" },
+                                    React.createElement(SettingsPage_1.default, null))))))))));
 };
 exports.default = PerfilPage;
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.scss":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.scss ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./SettingsPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.tsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.tsx ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./SettingsPage.scss */ "./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.scss");
+var SettingsPage = function () {
+    return (React.createElement("div", null, "SettingsPage"));
+};
+exports.default = SettingsPage;
 
 
 /***/ }),
@@ -79467,6 +79645,108 @@ exports.default = FormularioIncidencia;
 
 /***/ }),
 
+/***/ "./resources/js/Widgets/Graph/Graph.scss":
+/*!***********************************************!*\
+  !*** ./resources/js/Widgets/Graph/Graph.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Graph.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Widgets/Graph/Graph.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Widgets/Graph/Graph.tsx":
+/*!**********************************************!*\
+  !*** ./resources/js/Widgets/Graph/Graph.tsx ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./Graph.scss */ "./resources/js/Widgets/Graph/Graph.scss");
+var react_chartjs_2_1 = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/es/index.js");
+var Graph = function (props) {
+    var graphType = props.graphProps.type;
+    var data = {
+        labels: props.graphProps.labels,
+        datasets: [{
+                label: props.graphProps.mainLabel,
+                fill: false,
+                lineTension: 0.5,
+                backgroundColor: props.graphProps.colorsList,
+                borderColor: 'rgba(75,192,192,1)',
+                borderCapStyle: 'butt',
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                // pointBorderColor: 'rgba(75,192,192,1)',
+                // pointBackgroundColor: '#fff',
+                // pointBorderWidth: 1,
+                // pointHoverRadius: 5,
+                // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                // pointHoverBorderColor: 'rgba(220,220,220,1)',
+                // pointHoverBorderWidth: 2,
+                // pointRadius: 1,
+                // pointHitRadius: 10,
+                data: props.graphProps.graphData
+            }]
+    };
+    var options = {
+        legend: {
+            labels: {
+                fontSize: 15
+            }
+        },
+        title: {
+            display: true,
+            text: props.graphProps.title,
+            fontSize: 20,
+            fontColor: '#636b6f'
+        },
+        scales: {
+            yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+        }
+    };
+    var graph;
+    if (graphType == 'bar') {
+        graph = React.createElement(react_chartjs_2_1.Bar, { data: data, options: options });
+    }
+    else if (graphType == 'line') {
+        graph = React.createElement(react_chartjs_2_1.Line, { data: data, options: options });
+    }
+    return (React.createElement("div", { className: "graphs-container" }, graph));
+};
+exports.default = Graph;
+
+
+/***/ }),
+
 /***/ "./resources/js/root.tsx":
 /*!*******************************!*\
   !*** ./resources/js/root.tsx ***!
@@ -79497,8 +79777,8 @@ __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\adrian.santos.mena\Documents\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\adrian.santos.mena\Documents\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

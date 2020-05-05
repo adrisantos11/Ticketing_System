@@ -1,0 +1,12 @@
+@import '../../../sass/app.scss';
+
+.graphs-container {
+    position: relative;
+    width:100%;
+    min-width: 474px;
+
+        .chartjs-render-monitor {
+            height: 100%;
+            font-family: $primary_font_family;
+        }
+}

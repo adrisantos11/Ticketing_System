@@ -73,15 +73,16 @@
                     font-size: $font_size*1.5;
                     margin: 0;
                     font-style: italic;
-                    margin-right: $default_padding*1.5;
+                    margin: 0 $default_padding;
                 }
 
-                .settings-icon {
+                .options-icon {
                     font-size: $font_size*1.3;
                     color: $primary_color;
+                    margin: 0 $default_padding;
 
                     &:hover {
-                        @extend .settings-icon;
+                        @extend .options-icon;
                         cursor: pointer;
                         color: $dark_color;
                     }

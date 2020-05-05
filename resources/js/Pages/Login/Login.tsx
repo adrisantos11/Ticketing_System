@@ -73,7 +73,7 @@ const Login = () => {
         } else {
             login(user).then(result => {
                 if (result) {
-                    history.push('/home/perfil');
+                    history.push('/home/perfil/graphs/summaryIncidencias');
                 } else {
                     setInputUser({
                         ...inputUser,

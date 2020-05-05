@@ -139,3 +139,12 @@ export interface ChatBoxModel {
     textMessage: string,
     isLoggedUser: boolean
 }
+
+export interface GraphModel {
+    title: string,
+    type: string,
+    labels: string[],
+    colorsList: string[],
+    mainLabel: string,
+    graphData: any[]
+}

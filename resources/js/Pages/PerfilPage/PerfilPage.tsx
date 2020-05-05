@@ -7,9 +7,13 @@ import { getUserLogged } from '../../Utilities/Authentication';
 import { Line, Bar } from 'react-chartjs-2';
 import { defaults } from 'react-chartjs-2';
 import { getTotalIncidencias } from '../../Utilities/Graphics/TechnicalDataGraphs';
+import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
+import GraphsPage from '../../Pages/PerfilPage/GraphsPage/GraphsPage'
+import SettingsPage from '../../Pages/PerfilPage/SettingsPage/SettingsPage'
 
 const PerfilPage = () => {
     const userId = localStorage.userId;
+    const history = useHistory();
     // Estilo de letra de la gráfica ---> https://www.chartjs.org/docs/latest/configuration/elements.html
     defaults.global.defaultFontFamily = 'Sen, sans-serif';
     defaults.global.legend.position = 'bottom';
@@ -38,16 +42,6 @@ const PerfilPage = () => {
         phone: '',
         image_url: ''
     });
-
-    const [totalListIncidencias, setTotalListIncidencias] = React.useState([]);
-    const [graphTitle, setGraphTitle] = React.useState('');
-    const getTotalIncidenciasTechnical = () => {
-        getTotalIncidencias(userId).then(res => {
-            setTotalListIncidencias([res[0].total,res[1].total,res[2].total])
-            const sum = res[0].total+res[1].total+res[2].total;
-            setGraphTitle('Historial de incidencias (Total: '+sum+')')
-        })
-    }
    
     React.useEffect(() => {
         getUserLogged(userId).then(res => {
@@ -73,66 +67,16 @@ const PerfilPage = () => {
                 console.log(error);
             }
         });
-        if (localStorage.userRol == 'technical') {
-            getTotalIncidenciasTechnical()
-        } else if (localStorage.userRol == 'supervisor') {
-            console.log('Hola');
-        }
     }, []);
     
 
-    let data = {
-        labels: ['Pendientes', 'En proceso', 'Bloqueadas'],
-        datasets: [
-          {
-            label: 'Mis incidencias',
-            fill: false,
-            lineTension: 0.5,
-            backgroundColor: [
-                "#3685EC",
-                "#e78738",
-                "#dc3545",
-                // "#07a744",
-            ],
-            borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            // pointBorderColor: 'rgba(75,192,192,1)',
-            // pointBackgroundColor: '#fff',
-            // pointBorderWidth: 1,
-            // pointHoverRadius: 5,
-            // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            // pointHoverBorderColor: 'rgba(220,220,220,1)',
-            // pointHoverBorderWidth: 2,
-            // pointRadius: 1,
-            // pointHitRadius: 10,
-            data: totalListIncidencias
-          }
-        ]
-      };
-
-      let options = {
-            legend: {
-                labels: {
-                    fontSize: 15
-                }
-            },
-            title: {
-                display: true,
-                text: graphTitle,
-                fontSize: 20,
-                fontColor: '#636b6f'
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        // suggestedMax: 15
-                    }
-                }]
-            }
+    const handleOptionClick = (id: string) => {
+        if (id == 'settings') {
+            history.push('/home/perfil/settings');
+        } else if (id == 'graphs') {
+            history.push('/home/perfil/graphs/summaryIncidencias');         
         }
+    }
 
         return (
             <>
@@ -151,7 +95,8 @@ const PerfilPage = () => {
                         <p className='p-name'>{`${userLogged.name} ${userLogged.surname1} ${userLogged.surname2}`}</p>
                         <div className="role-container">
                             <p className='p-role'>{userLogged.role}</p>
-                            <span className='settings-icon'><i className="fas fa-cog"></i></span>
+                            <span className='options-icon' onClick={() => handleOptionClick('graphs')}><i className="far fa-chart-bar"></i></span>
+                            <span className='options-icon' onClick={() => handleOptionClick('settings')}><i className="fas fa-cog"></i></span>
                         </div>
                     </div>
                 </div>
@@ -202,45 +147,20 @@ const PerfilPage = () => {
                                     </div>
                                 </>
                             </DataCard>
-                            {/* <span className="badge">Badge principal<span className="badge">New</span></span>
-                            <span className="badge">New</span>
-                            <span className="badge">New</span>
-                            <span className="badge">New</span> */}
                         </div>
                         <div className="right-container">
                             <div className="rightData-container">
-                                <div className="canvas-container">
-                                        <Bar data={data} options={options}/>
-                                </div>
+                            <Switch>
+                                <Route path="/home/perfil/graphs/summaryIncidencias">
+                                    <GraphsPage></GraphsPage>
+                                </Route>
+                                <Route path="/home/perfil/settings">
+                                    <SettingsPage></SettingsPage>
+                                </Route>
+                            </Switch>     
                             </div>
                         </div>
                     </div>
-                    {/* <table className="table" id='dataTable'>
-                        <thead>
-                            <tr>
-                                <th scope="col">1</th>
-                                <th scope="col">2</th>
-                                <th scope="col">3</th>
-                                <th scope="col">4</th>
-                                <th scope="col">5</th>
-                                <th scope="col">6</th>
-                                <th scope="col">7</th>
-                                <th scope="col">8</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row"></th>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                            </tr>
-                        </tbody>
-                    </table> */}
                 </div>
             </div>
             </>

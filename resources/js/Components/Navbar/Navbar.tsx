@@ -17,9 +17,9 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
     const userRolLogged = localStorage.userRol;
     let iconProfile;
     if (userRolLogged == 'technical') {
-        iconProfile = (<NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user"></i></NavLink>);
+        iconProfile = (<NavLink to="/home/perfil/graphs/summaryIncidencias" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user"></i></NavLink>);
     } else if (userRolLogged == 'supervisor') {
-        iconProfile = (<NavLink to="/home/perfil" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user-tie"></i></NavLink>);
+        iconProfile = (<NavLink to="/home/perfil/graphs/summaryIncidencias" data-toogle="tooltip" data-placement="top" title="Perfil"><b>Perfil</b><i className="fas fa-user-tie"></i></NavLink>);
     }
 
     const [logoutButton] = React.useState<ButtonModel>({
