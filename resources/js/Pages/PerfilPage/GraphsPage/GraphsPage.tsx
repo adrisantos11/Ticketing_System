@@ -30,7 +30,7 @@ const GraphsPage = () => {
     const [graphBar, setGraphBar] = React.useState<GraphModel>({
         title: null,
         type: 'bar',
-        labels: ['Pendientes', 'Bloqueadas', 'En proceso'],
+        labels: ['Pendientes', 'En proceso', 'Bloqueadas'],
         colorsList: [
                 "#3685EC",
                 "#e78738",
@@ -53,11 +53,10 @@ const GraphsPage = () => {
     }
     
     const handleClickTab = (id: string) => {
-        console.log(id);
         if (id=='resumen-incidencias') {
-            history.push(`/home/perfil/graphs/summaryIncidencias`);
+            history.push('/home/perfil/graphs/summaryIncidencias');
         } else if (id=='historial-incidencias') {
-            history.push(`/home/perfil/graphs/historyIncidencias`);
+            history.push('/home/perfil/graphs/historyIncidencias');
         }
     }
 
@@ -71,15 +70,13 @@ const GraphsPage = () => {
 
         return (
            <div className='graphsPage-container'>
-                <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
-                <Switch>
-                    <Route path="/home/perfil/graphs/summaryIncidencias">
-                        <Graph graphProps={graphBar}></Graph>
-                    </Route>
-                    <Route path="/home/perfil/graphs/historyIncidencias">
-                        Historial
-                    </Route>
-                </Switch> 
+                    <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
+                <div className='graphs-container'>
+                    <Switch>
+                        <Route path="/home/perfil/graphs/summaryIncidencias"><Graph graphProps={graphBar}></Graph></Route>
+                        <Route path="/home/perfil/graphs/historyIncidencias">Historial</Route>
+                    </Switch> 
+                </div>
            </div>
         )
 }

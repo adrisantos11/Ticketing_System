@@ -151,12 +151,8 @@ const PerfilPage = () => {
                         <div className="right-container">
                             <div className="rightData-container">
                             <Switch>
-                                <Route path="/home/perfil/graphs/summaryIncidencias">
-                                    <GraphsPage></GraphsPage>
-                                </Route>
-                                <Route path="/home/perfil/settings">
-                                    <SettingsPage></SettingsPage>
-                                </Route>
+                                <Route path="/home/perfil/graphs" component={GraphsPage}></Route>
+                                <Route path="/home/perfil/settings" component={SettingsPage}></Route>
                             </Switch>     
                             </div>
                         </div>
