@@ -31,13 +31,22 @@ const Dropdown: React.FunctionComponent<Props> = (props: Props) => {
 
   return(
       <div className="dropdown">
-      <button className={`btn btn--${props.dropdownInfo.color} btn-secondary dropdown-toggle`} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {dropdownName}
-      </button>
-        {
+          {
+            props.dropdownInfo.enabled ? 
+              <button className={`btn btn--${props.dropdownInfo.color} btn-secondary dropdown-toggle`} type="button"
+              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {dropdownName}
+              </button> 
+            : 
+              <button className={`btn btn--${props.dropdownInfo.color} btn-secondary dropdown-toggle`} type="button"
+              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+              {dropdownName}
+              </button>
+          }
+          {
           getItemsDropdown(props.dropdownInfo.groupItems, props.dropdownInfo.groupIds)
-        }
-    </div>
+          }
+      </div>
   )
 }
 

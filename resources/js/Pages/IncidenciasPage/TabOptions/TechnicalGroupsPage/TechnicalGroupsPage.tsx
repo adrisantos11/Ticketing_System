@@ -6,7 +6,7 @@ import { AutocompleteInputModel, ButtonModel, InputModel, DropdownModel, ModalMo
 import { Input } from '../../../../Components/Input/Input'
 import Dropdown from '../../../../Components/Dropdown/Dropdown'
 
-import {getGroups, getTechnicalsGroup, deleteTechnicalAssign, addTechnicalToGroup, createGroup} from '../../../../Utilities/Incidencias/SupervisorUtilities';
+import {getGroups, getTechnicalsGroup, deleteTechnicalAssign, addTechnicalToGroup, createGroup, getGroupCategories} from '../../../../Utilities/Incidencias/SupervisorUtilities';
 import Modal from '../../../../Components/Modal/Modal'
 
 const TechnicalGroupsPage = () => {
@@ -53,6 +53,7 @@ const TechnicalGroupsPage = () => {
 
     React.useEffect(() => {
         setTechnicalGroups();
+
     }, [])
 
     const [autocompleteInputValues] = React.useState<AutocompleteInputModel>({
@@ -103,14 +104,28 @@ const TechnicalGroupsPage = () => {
         isTextArea: true
     });
 
-    const [classDropdown, setClassDropdown] = React.useState<DropdownModel>({
+    const [categoryDropdown, setCategoryDropdown] = React.useState<DropdownModel>({
         id: 4,
         groupName: 'Categoría',
-        groupItems: ['Software', 'Hardware', 'Redes y conexión wifi'],
-        groupIds: ['Software', 'Hardware', 'Redes y conexión wifi'],
+        groupItems: [],
+        groupIds: [],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
+    });
+
+    const [createCategoryInput, setCreateCategoryInput] = React.useState<InputModel>({
+        id: 23,
+        value: '',
+        label: 'Introducir nueva categoría',
+        labelColor: 'primary',
+        placeholder: '',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
     });
 
 
@@ -195,6 +210,16 @@ const TechnicalGroupsPage = () => {
         userImage: null
     });
 
+    const [updateCategories, setUpdateCategories] = React.useState(false);
+    React.useEffect(() => {
+        getGroupCategories().then(res => {
+            setCategoryDropdown({
+                ...categoryDropdown,
+                groupItems: res,
+                groupIds: res
+            });
+        })
+    }, [updateCategories])
     const handleClickAutocomplete = (user: BasicUserModel) => {
         setTechnicalSelected(user);
     }
@@ -212,7 +237,7 @@ const TechnicalGroupsPage = () => {
     const [groupName, setGroupName] = React.useState('');
     const [groupDescription, setGroupDescription] = React.useState('');
     const [groupCategory, setGroupCategory] = React.useState('');
-
+    const [newCategory, setNewCategory] = React.useState('');
 
     const handleClickAddTechnicalModal = () => {
         addTechnicalToGroup(technicalSelected.id,  selectedGroup.id);
@@ -240,6 +265,23 @@ const TechnicalGroupsPage = () => {
                 ...descriptionInput,
                 value: value
             })     
+        } else if (id == 23) {
+            setCreateCategoryInput({
+                ...createCategoryInput,
+                value: value
+            })
+            if (value != '') {
+                setCategoryDropdown({
+                    ...categoryDropdown,
+                    enabled: false
+                });
+                setNewCategory(value);
+            } else {
+                setCategoryDropdown({
+                    ...categoryDropdown,
+                    enabled: true
+                })
+            }
         }
     }
 
@@ -259,7 +301,7 @@ const TechnicalGroupsPage = () => {
         getTechnicals(Number(selectedGroup.id));
     }
 
-    const fieldsValidation = (groupName: string, groupDescription: string, groupCategory: string) => {
+    const fieldsValidation = (groupName: string, groupDescription: string, groupCategory: string, newCategory: string) => {
         let validated = true;
         if (groupName == '') {
             validated = false;
@@ -290,16 +332,27 @@ const TechnicalGroupsPage = () => {
             })
         }
 
-        if (groupCategory == '') {
+        if (groupCategory == '' && newCategory == '') {
             validated = false;
-            setClassDropdown({
-                ...classDropdown,
+            setCategoryDropdown({
+                ...categoryDropdown,
                 color: 'red'
             })
+
+            setCreateCategoryInput({
+                ...createCategoryInput,
+                color: 'red',
+                error_control_text: 'Seleccione una categoría o cree una nueva.'
+            })
         } else {
-            setClassDropdown({
-                ...classDropdown,
+            setCategoryDropdown({
+                ...categoryDropdown,
                 color: 'primary'
+            });
+            setCreateCategoryInput({
+                ...createCategoryInput,
+                color: 'primary',
+                error_control_text: ''
             })
         }
         return validated;
@@ -307,19 +360,36 @@ const TechnicalGroupsPage = () => {
     }
 
     const handleClickCreateTeam = () => { 
-        if (fieldsValidation(groupName, groupDescription, groupCategory)) {
+        if (fieldsValidation(groupName, groupDescription, groupCategory, newCategory)) {
             $('#'+modalCreateTechnicalGroup.id).modal('show'); 
         }
     }
 
 
     const handleClickCreateTechnicalGroupModal = () => {
+        let category;
+        if (!categoryDropdown.enabled) {
+            category = newCategory;
+        } else {
+            category = groupCategory;
+        }
+
         const group: TeamModel = {
             name: groupName,
             description: groupDescription,
-            category: groupCategory,
+            category: category,
             id_supervisor: localStorage.userId
         }
+        setUpdateCategories(true);
+        setCreateCategoryInput({
+            ...createCategoryInput,
+            value: ''
+        })
+
+        setCategoryDropdown({
+            ...categoryDropdown,
+            enabled: true
+        })
         createGroup(group);
         setTechnicalGroups();   
         $('#toastCreateTechnicalGroup').show();
@@ -341,7 +411,7 @@ const TechnicalGroupsPage = () => {
                                     )  
                                 } else {
                                     return (
-                                        <span className="list-group-item list-group-item-action" id={String(index)} data-toggle="list" role="tab" aria-controls="home" onClick={handleSpanClick}>{data.name}</span>
+                                        <span key={index} className="list-group-item list-group-item-action" id={String(index)} data-toggle="list" role="tab" aria-controls="home" onClick={handleSpanClick}>{data.name}</span>
                                     )  
                                 }
                             })
@@ -404,7 +474,11 @@ const TechnicalGroupsPage = () => {
                 <div className="bottom-content">
                     <Input inputInfo={titleInput} handleChangeInput={handleChangeInputs}></Input>
                     <Input inputInfo={descriptionInput} handleChangeInput={handleChangeInputs}></Input>
-                    <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
+                    <div className="category-container">
+                        <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
+                        <Input inputInfo={createCategoryInput} handleChangeInput={handleChangeInputs}></Input>
+
+                    </div>
                     <Button buttonInfo={createTechnicalGroupButton} handleClick={handleClickCreateTeam}></Button>
                 </div>
             </div>
@@ -434,9 +508,11 @@ const TechnicalGroupsPage = () => {
                 <p>
                     Se va a crear el siguiente grupo de técnicos:
                 </p>
-                <p>Nombre: <b>groupName</b></p>
-                <p>Descripción: <b>groupDescription</b></p>
-                <p>Categoría: <b>groupCategory</b></p>
+                <p>Nombre: <b>{groupName}</b></p>
+                <p>Descripción: <b>{groupDescription}</b></p>
+                {
+                    newCategory != '' ?  <p>Categoría: <b>{newCategory}</b></p> : <p>Categoría: <b>{groupCategory}</b></p>
+                }
 
             </Modal>
         </div>

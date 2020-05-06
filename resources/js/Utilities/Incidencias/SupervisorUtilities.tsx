@@ -113,3 +113,17 @@ export const addTechnicalToGroup = (idUser: number, idTeam: number) => {
         console.log(err);
     })
 }
+
+export const getGroupCategories = () => {
+    return axios
+    .get('api/incidencias/supervisor/groups/getGroupCategories', {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then( res => {
+        return res.data
+    }
+    )
+    .catch(err => {
+        console.log(err);
+    })
+}

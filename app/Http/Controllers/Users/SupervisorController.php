@@ -237,4 +237,13 @@ where teams.id = 1
         }
 
     }
+
+    public function getGroupCategories(){
+        $categories = DB::table('teams')->select('category')->distinct('category')->get();
+        $categories_array = [];
+        for ($i=0; $i < sizeof($categories); $i++) { 
+            array_push($categories_array, $categories[$i]->category);
+        }
+        return $categories_array;
+    }
 }

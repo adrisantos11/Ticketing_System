@@ -61,7 +61,9 @@ Route::namespace('Users')->group(function () {
     Route::post('incidencias/supervisor/groups/getTechnicalsGroup', 'SupervisorController@getGroupUsers');
     Route::post('incidencias/supervisor/groups/deleteTechnicalAssign', 'SupervisorController@deleteTechnicalAssign');
     Route::post('incidencias/supervisor/groups/addTechnicalToGroup', 'SupervisorController@addTechnicalToGroup');
+    Route::get('incidencias/supervisor/groups/getGroupCategories', 'SupervisorController@getGroupCategories');
 
+    
 });
 
 Route::namespace('DataGraphs')->group(function () {

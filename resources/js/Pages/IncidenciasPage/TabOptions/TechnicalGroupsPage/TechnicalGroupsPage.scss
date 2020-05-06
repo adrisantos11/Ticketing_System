@@ -291,6 +291,20 @@
             .buttonContainer {
                 padding-top: $default_padding*2;
             }
+
+            .category-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .form-group {
+                    margin-left: $default_padding*5;
+                    width: 280px;
+                    .text_label--primary {
+                        font-size: $font_size;
+                        color: $text_color;
+                    }
+                }
+            }
         }
 
 
