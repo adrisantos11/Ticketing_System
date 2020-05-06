@@ -166,7 +166,27 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
             'limit_date' => null,
-            'assigned_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
+            'priority' => 'critical',
+            'state' => 'todo'
+        ]);
+
+        DB::table('incidencias')->insert([
+            'group_id' => 1,
+            'id_reporter' => 3,
+            'id_assigned' => 5,
+            'id_team'=> null,
+            'title' => 'Incidencia incidivual 1',
+            'description' => 'Incidencia individual',
+            'category' => 'Wi-Fi',
+            'build' => 'C',
+            'floor' => 3,
+            'class' => 'C307',
+            'url_data' => '',
+            'creation_date' => '2020-05-06 12:29:00',
+            'limit_date' => null,
+            'assigned_date' => '2020-05-06 12:29:00',
             'resolution_date' => '2014-10-25 20:00:00',
             'priority' => 'critical',
             'state' => 'todo'

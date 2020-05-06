@@ -79775,8 +79775,8 @@ __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\adrian.santos.mena\Documents\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\adrian.santos.mena\Documents\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
