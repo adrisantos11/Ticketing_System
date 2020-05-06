@@ -220,11 +220,20 @@
                     }
 
                     .creationTime-column {
-                        width: 17%;
+                        width: 7%;
 
                         &--technical {
                             @extend .creationTime-column;
-                            width: 18;
+                            width: 8%;
+                        }
+                    }
+
+                    .asignationTo-column {
+                        width: 10%;
+
+                        &--technical {
+                            @extend .asignationTo-column;
+                            width: 10%;
                         }
                     }
 
