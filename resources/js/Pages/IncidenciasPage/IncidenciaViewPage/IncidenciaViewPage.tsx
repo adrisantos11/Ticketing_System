@@ -81,7 +81,7 @@ const IncidenciaViewPage = () => {
         groupItems: dropdownItems,
         groupIds: dropdownIds,
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     });
 
@@ -146,7 +146,7 @@ const IncidenciaViewPage = () => {
         isTextArea: true
     });
 
-    React.useEffect(() => {
+    const getIncidenciaData = () => {
         getIncideniciaUnique(Number(idIncidencia)).then(result => {
             console.log(result);
             let stateAux;   
@@ -207,6 +207,10 @@ const IncidenciaViewPage = () => {
         });
 
         setIncidenciaLoaded(true);
+    }
+
+    React.useEffect(() => {
+        getIncidenciaData();
     }, []);
 
     React.useEffect(() => {

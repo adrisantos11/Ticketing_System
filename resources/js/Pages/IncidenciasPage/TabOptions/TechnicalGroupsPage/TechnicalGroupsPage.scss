@@ -242,6 +242,7 @@
                     .addTechnical-container {
                         display: flex;
                         flex-direction: row;
+                        flex-wrap: wrap;
                         margin-top: $default_padding*2;
                         justify-content: space-between;
 

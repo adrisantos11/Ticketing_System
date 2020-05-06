@@ -18487,7 +18487,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".technicalGroups-container {\n  background-color: whitesmoke;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding: 1rem;\n}\n.technicalGroups-container .top-container {\n  display: flex;\n  flex-direction: row;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  padding: 1rem;\n  background-color: #FFFFFF;\n}\n@media screen and (max-width: 884px) {\n  .technicalGroups-container .top-container {\n    flex-direction: column;\n  }\n}\n.technicalGroups-container .top-container .left-container {\n  width: 40%;\n  padding-right: 1rem;\n}\n@media screen and (max-width: 884px) {\n  .technicalGroups-container .top-container .left-container {\n    width: 100%;\n    padding-right: 0;\n  }\n}\n.technicalGroups-container .top-container .left-container .title-page {\n  font-size: 1.5rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .left-container .list-group .list-group-item {\n  color: #636b6f;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .left-container .list-group .active {\n  background-color: #3685EC;\n  border: none;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container {\n  width: 60%;\n  padding: 1rem;\n  padding-right: 0;\n}\n@media screen and (max-width: 884px) {\n  .technicalGroups-container .top-container .right-container {\n    width: 100%;\n    padding-left: 0;\n  }\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  height: 50px;\n  padding: 0 1rem;\n  background-color: #3685EC;\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .name-text {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .options-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container {\n  display: flex;\n  flex-direction: row;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  height: auto;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\n@media screen and (max-width: 472px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container {\n    flex-direction: column;\n  }\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container p {\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container {\n  width: 50%;\n}\n@media screen and (max-width: 472px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container .info-container {\n    width: 100%;\n  }\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container {\n  margin-bottom: 1rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  background-color: #838383;\n  padding: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header .label-text {\n  font-size: 1rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body {\n  background-color: whitesmoke;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  padding: 0.5rem;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body .dataLabel-text {\n  font-size: 1rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .vertical-separator {\n  height: auto;\n  width: 0;\n  border: dashed;\n  border-width: 0.5px;\n  border-color: #c4c4c4;\n  margin: 0 1rem;\n}\n@media screen and (max-width: 472px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container .vertical-separator {\n    height: 0;\n    width: auto;\n    margin: 1rem 0;\n  }\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container {\n  width: 50%;\n}\n@media screen and (max-width: 472px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container .technical-container {\n    width: 100%;\n  }\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-title {\n  font-size: 1.2rem;\n  color: #3685EC;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list {\n  margin-top: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .technical-name {\n  border-top-left-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .delete-technical {\n  border-top-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .technical-name {\n  border-bottom-left-radius: 4px;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .delete-technical {\n  border-bottom-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  background-color: whitesmoke;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .technical-name {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  padding: 0.5rem;\n  padding-left: 1rem;\n  border-bottom: none;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical {\n  width: 45px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #dc3545;\n  padding: 0.5rem;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-bottom-color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical .delete-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container {\n  display: flex;\n  flex-direction: row;\n  margin-top: 1rem;\n  justify-content: space-between;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container .autocompleteInput-container {\n  margin-right: 1rem;\n}\n@media screen and (max-width: 1288px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container {\n    flex-direction: column;\n  }\n}\n.technicalGroups-container .bottom-container {\n  width: 100%;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n.technicalGroups-container .bottom-container .bottom-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.technicalGroups-container .bottom-container .bottom-content {\n  display: flex;\n  flex-direction: column;\n}\n.technicalGroups-container .bottom-container .bottom-content .form-group .text_label {\n  font-weight: 500;\n}\n.technicalGroups-container .bottom-container .bottom-content .buttonContainer {\n  padding-top: 1rem;\n}\n.technicalGroups-container .bottom-container .bottom-content .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.technicalGroups-container .bottom-container .bottom-content .category-container .form-group {\n  margin-left: 2.5rem;\n  width: 280px;\n}\n.technicalGroups-container .bottom-container .bottom-content .category-container .form-group .text_label--primary {\n  font-size: 1rem;\n  color: #636b6f;\n}", ""]);
+exports.push([module.i, ".technicalGroups-container {\n  background-color: whitesmoke;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding: 1rem;\n}\n.technicalGroups-container .top-container {\n  display: flex;\n  flex-direction: row;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  padding: 1rem;\n  background-color: #FFFFFF;\n}\n@media screen and (max-width: 884px) {\n  .technicalGroups-container .top-container {\n    flex-direction: column;\n  }\n}\n.technicalGroups-container .top-container .left-container {\n  width: 40%;\n  padding-right: 1rem;\n}\n@media screen and (max-width: 884px) {\n  .technicalGroups-container .top-container .left-container {\n    width: 100%;\n    padding-right: 0;\n  }\n}\n.technicalGroups-container .top-container .left-container .title-page {\n  font-size: 1.5rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .left-container .list-group .list-group-item {\n  color: #636b6f;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .left-container .list-group .active {\n  background-color: #3685EC;\n  border: none;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container {\n  width: 60%;\n  padding: 1rem;\n  padding-right: 0;\n}\n@media screen and (max-width: 884px) {\n  .technicalGroups-container .top-container .right-container {\n    width: 100%;\n    padding-left: 0;\n  }\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  height: 50px;\n  padding: 0 1rem;\n  background-color: #3685EC;\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .name-text {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .nameGroup-container .options-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container {\n  display: flex;\n  flex-direction: row;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  height: auto;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\n@media screen and (max-width: 472px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container {\n    flex-direction: column;\n  }\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container p {\n  margin: 0;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container {\n  width: 50%;\n}\n@media screen and (max-width: 472px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container .info-container {\n    width: 100%;\n  }\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container {\n  margin-bottom: 1rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  background-color: #838383;\n  padding: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-header .label-text {\n  font-size: 1rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body {\n  background-color: whitesmoke;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n  padding: 0.5rem;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .info-container .feature-container .feature-body .dataLabel-text {\n  font-size: 1rem;\n  color: #636b6f;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .vertical-separator {\n  height: auto;\n  width: 0;\n  border: dashed;\n  border-width: 0.5px;\n  border-color: #c4c4c4;\n  margin: 0 1rem;\n}\n@media screen and (max-width: 472px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container .vertical-separator {\n    height: 0;\n    width: auto;\n    margin: 1rem 0;\n  }\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container {\n  width: 50%;\n}\n@media screen and (max-width: 472px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container .technical-container {\n    width: 100%;\n  }\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-title {\n  font-size: 1.2rem;\n  color: #3685EC;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list {\n  margin-top: 0.5rem;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .technical-name {\n  border-top-left-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:first-child .delete-technical {\n  border-top-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .technical-name {\n  border-bottom-left-radius: 4px;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-color: #e2e2e2;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list div:last-child .delete-technical {\n  border-bottom-right-radius: 4px;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  background-color: whitesmoke;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .technical-name {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  padding: 0.5rem;\n  padding-left: 1rem;\n  border-bottom: none;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical {\n  width: 45px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #dc3545;\n  padding: 0.5rem;\n  border-bottom: solid;\n  border-bottom-width: 1px;\n  border-bottom-color: #FFFFFF;\n  cursor: pointer;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .technical-list .technical-info .delete-technical .delete-icon {\n  font-size: 1.2rem;\n  color: #FFFFFF;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  margin-top: 1rem;\n  justify-content: space-between;\n}\n.technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container .autocompleteInput-container {\n  margin-right: 1rem;\n}\n@media screen and (max-width: 1288px) {\n  .technicalGroups-container .top-container .right-container .dataGroup-container .technical-container .addTechnical-container {\n    flex-direction: column;\n  }\n}\n.technicalGroups-container .bottom-container {\n  width: 100%;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n.technicalGroups-container .bottom-container .bottom-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.technicalGroups-container .bottom-container .bottom-content {\n  display: flex;\n  flex-direction: column;\n}\n.technicalGroups-container .bottom-container .bottom-content .form-group .text_label {\n  font-weight: 500;\n}\n.technicalGroups-container .bottom-container .bottom-content .buttonContainer {\n  padding-top: 1rem;\n}\n.technicalGroups-container .bottom-container .bottom-content .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.technicalGroups-container .bottom-container .bottom-content .category-container .form-group {\n  margin-left: 2.5rem;\n  width: 280px;\n}\n.technicalGroups-container .bottom-container .bottom-content .category-container .form-group .text_label--primary {\n  font-size: 1rem;\n  color: #636b6f;\n}", ""]);
 
 // exports
 
@@ -76198,7 +76198,7 @@ var IncidenciaViewPage = function () {
         groupItems: dropdownItems,
         groupIds: dropdownIds,
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     }), orderByDropdown = _f[0], setOrderByDropdown = _f[1];
     var _g = React.useState(''), incidenciaState = _g[0], setIncidenciaState = _g[1];
@@ -76255,7 +76255,7 @@ var IncidenciaViewPage = function () {
         inputSize: '',
         isTextArea: true
     }), stateCommentInput = _l[0], setStateCommentInput = _l[1];
-    React.useEffect(function () {
+    var getIncidenciaData = function () {
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
             console.log(result);
             var stateAux;
@@ -76288,6 +76288,9 @@ var IncidenciaViewPage = function () {
         });
         setFormularioIncidencia(__assign(__assign({}, formularioIncidencia), { incidenciaData: incidencia }));
         setIncidenciaLoaded(true);
+    };
+    React.useEffect(function () {
+        getIncidenciaData();
     }, []);
     React.useEffect(function () {
         setFormularioIncidencia(__assign(__assign({}, formularioIncidencia), { incidenciaData: incidencia }));
@@ -79143,6 +79146,7 @@ var IncidenciasUtilities_1 = __webpack_require__(/*! ../../Utilities/Incidencias
 var Tabs_1 = __webpack_require__(/*! ../../Components/Tabs/Tabs */ "./resources/js/Components/Tabs/Tabs.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var Modal_1 = __webpack_require__(/*! ../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
+var SupervisorUtilities_1 = __webpack_require__(/*! ../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
 var FormularioIncidencia = function (props) {
     // Propiedades del formulario
     var userRol = props.formularioProps.userRol;
@@ -79251,7 +79255,7 @@ var FormularioIncidencia = function (props) {
         groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
         groupIds: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     }), categoryDropdown = _o[0], setCategoryDropdown = _o[1];
     // groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
@@ -79261,7 +79265,7 @@ var FormularioIncidencia = function (props) {
         groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         groupIds: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     }), buildDropdown = _p[0], setBuildDropdown = _p[1];
     var _q = React.useState({
@@ -79270,7 +79274,7 @@ var FormularioIncidencia = function (props) {
         groupItems: [],
         groupIds: [],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     }), floorDropdown = _q[0], setFloorDropdown = _q[1];
     var _r = React.useState({
@@ -79279,7 +79283,7 @@ var FormularioIncidencia = function (props) {
         groupItems: [],
         groupIds: [],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     }), classDropdown = _r[0], setClassDropdown = _r[1];
     var _s = React.useState({
@@ -79288,7 +79292,7 @@ var FormularioIncidencia = function (props) {
         groupItems: ['Crítica', 'Importante', 'Trivial'],
         groupIds: ['critical', 'important', 'trivial'],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     }), priorityDropdown = _s[0], setPriorityDropdwn = _s[1];
     var createIncidenciaButton = React.useState({
@@ -79546,12 +79550,20 @@ var FormularioIncidencia = function (props) {
             var date = new Date();
             var hoursMinutesSeconds = date.toLocaleString().split(' ');
             var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+            var assignedUser = null;
+            var assignedTeam = null;
+            if (userSelected != null) {
+                assignedUser = userSelected;
+            }
+            else if (groupSelected != null) {
+                assignedTeam = groupSelected;
+            }
             var incidencia = {
                 id: 0,
                 group_id: 0,
                 id_reporter: parseInt(localStorage.userId),
-                id_assigned: userSelected,
-                id_team: groupSelected,
+                id_assigned: assignedUser,
+                id_team: assignedTeam,
                 title: title,
                 description: description,
                 category: category,
@@ -79600,33 +79612,44 @@ var FormularioIncidencia = function (props) {
             //history.push('/home/incidencia-view/'+props.formularioProps.incidenciaData.id+'/comments');
         }
     };
+    var tabsOptions = React.useState({
+        idList: ['group', 'technical'],
+        valuesList: ['Grupo de técnicos', 'Técnico'],
+        iconList: [],
+        color: ['primary', 'primary'],
+        enabledList: [true, true],
+        itemActive: null
+    })[0];
+    var _t = React.useState({
+        id: 1,
+        groupName: 'Elegir grupo',
+        groupItems: [],
+        groupIds: [],
+        color: 'primary',
+        enabled: true,
+        extraClass: '',
+    }), groupsDropdown = _t[0], setGroupsDropdown = _t[1];
+    var _u = React.useState({
+        id: 1,
+        placeholderInput: 'Nombre...',
+        colorInput: 'primary',
+        typeInput: 'text',
+        enabled: true,
+        tableToSearchIn: 'users',
+        matchingWords: ['name', 'surname1', 'surname2']
+    }), autocompleteInputValues = _u[0], setAutocompleteInputValues = _u[1];
+    React.useEffect(function () {
+        var helperListNames = [];
+        var helperListIds = [];
+        SupervisorUtilities_1.getGroups(localStorage.userId).then(function (res) {
+            res.map(function (data) {
+                helperListIds.push(String(data.id));
+                helperListNames.push(data.name);
+            });
+            setGroupsDropdown(__assign(__assign({}, groupsDropdown), { groupIds: helperListIds, groupItems: helperListNames }));
+        });
+    }, []);
     var assignUser = function (userRol, url) {
-        var tabsOptions = React.useState({
-            idList: ['group', 'technical'],
-            valuesList: ['Grupo de técnicos', 'Técnico'],
-            iconList: [],
-            color: ['primary', 'primary'],
-            enabledList: [true, true],
-            itemActive: null
-        })[0];
-        var groupsDropdown = React.useState({
-            id: 1,
-            groupName: 'Elegir grupo',
-            groupItems: ['Cargar', 'datos', 'de', 'base de datos 1'],
-            groupIds: ['Cargar', 'datos', 'de', 'base de datos 1'],
-            color: 'primary',
-            enabled: false,
-            extraClass: '',
-        })[0];
-        var _a = React.useState({
-            id: 1,
-            placeholderInput: 'Nombre...',
-            colorInput: 'primary',
-            typeInput: 'text',
-            enabled: true,
-            tableToSearchIn: 'users',
-            matchingWords: ['name', 'surname1', 'surname2']
-        }), autocompleteInputValues = _a[0], setAutocompleteInputValues = _a[1];
         var handleClickTabsAssign = function (id) {
             if (id == 'group') {
                 history.push(url + "/" + widgetType + "/assignGroup");
@@ -79635,8 +79658,8 @@ var FormularioIncidencia = function (props) {
                 history.push(url + "/" + widgetType + "/assignTechnical");
             }
         };
-        var handleClickDropdowns = function (idItem, idDropdown) {
-            console.log(idItem);
+        var handleClickDropdowns = function (idItem) {
+            setGroupSelected(Number(idItem));
         };
         var handleClickAutocomplete = function (user) {
             console.log(user.id);

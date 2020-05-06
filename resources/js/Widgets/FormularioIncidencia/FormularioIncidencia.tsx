@@ -11,6 +11,7 @@ import { createIncidencia, editIncidencia } from '../../Utilities/Incidencias/In
 import Tabs from '../../Components/Tabs/Tabs'
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 import Modal from '../../Components/Modal/Modal';
+import {getGroups} from '../../Utilities/Incidencias/SupervisorUtilities';
 
 interface Props {
     formularioProps: FormularioIncidenciaModel;
@@ -136,7 +137,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
         groupIds: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     });
 
@@ -147,7 +148,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         groupIds:['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     });
 
@@ -157,7 +158,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         groupItems: [],
         groupIds: [],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     });
 
@@ -167,7 +168,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         groupItems: [],
         groupIds: [],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     });
 
@@ -177,7 +178,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         groupItems: ['Crítica', 'Importante', 'Trivial'],
         groupIds: ['critical', 'important', 'trivial'],
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     });
 
@@ -493,12 +494,19 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             let date = new Date();
             let hoursMinutesSeconds = date.toLocaleString().split(' ');
             let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+            let assignedUser = null;
+            let assignedTeam = null;
+            if (userSelected != null) {
+                assignedUser = userSelected;
+            } else if (groupSelected != null) {
+                assignedTeam = groupSelected;
+            }
             let incidencia: IncidenciaModel = {
                 id: 0,
                 group_id: 0,
                 id_reporter: parseInt(localStorage.userId),
-                id_assigned: userSelected,
-                id_team: groupSelected,
+                id_assigned: assignedUser,
+                id_team: assignedTeam,
                 title: title,
                 description: description,
                 category: category,
@@ -548,38 +556,52 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         }
     }
 
+    const [tabsOptions] = React.useState<TabsModel>({
+        idList: ['group','technical'],
+        valuesList: ['Grupo de técnicos', 'Técnico'],
+        iconList: [],
+        color: ['primary', 'primary'],
+        enabledList: [true, true],
+        itemActive: null
+    });
 
+    const [groupsDropdown, setGroupsDropdown] = React.useState<DropdownModel>({
+        id: 1,
+        groupName: 'Elegir grupo',
+        groupItems: [],
+        groupIds: [],
+        color: 'primary',
+        enabled: true,
+        extraClass: '',
+    });
     
-    const assignUser = (userRol: string, url: string) => {
-        const [tabsOptions] = React.useState<TabsModel>({
-            idList: ['group','technical'],
-            valuesList: ['Grupo de técnicos', 'Técnico'],
-            iconList: [],
-            color: ['primary', 'primary'],
-            enabledList: [true, true],
-            itemActive: null
-        });
+    const [autocompleteInputValues, setAutocompleteInputValues] = React.useState<AutocompleteInputModel>({
+        id: 1,
+        placeholderInput: 'Nombre...',
+        colorInput: 'primary',
+        typeInput: 'text',
+        enabled: true,
+        tableToSearchIn: 'users',
+        matchingWords: ['name', 'surname1', 'surname2']
+    })
 
-        const [groupsDropdown] = React.useState<DropdownModel>({
-            id: 1,
-            groupName: 'Elegir grupo',
-            groupItems: ['Cargar', 'datos', 'de', 'base de datos 1'],
-            groupIds: ['Cargar', 'datos', 'de', 'base de datos 1'],
-            color: 'primary',
-            enabled: false,
-            extraClass: '',
-        });
-
-        const [autocompleteInputValues, setAutocompleteInputValues] = React.useState<AutocompleteInputModel>({
-            id: 1,
-            placeholderInput: 'Nombre...',
-            colorInput: 'primary',
-            typeInput: 'text',
-            enabled: true,
-            tableToSearchIn: 'users',
-            matchingWords: ['name', 'surname1', 'surname2']
+    React.useEffect(() => {
+        const helperListNames: string[] = [];
+        const helperListIds: string[] = [];
+        getGroups(localStorage.userId).then(res => {
+            res.map((data: { id: number; name: string}) => {
+                helperListIds.push(String(data.id));
+                helperListNames.push(data.name);
+            })
+            setGroupsDropdown({
+                ...groupsDropdown,
+                groupIds: helperListIds,
+                groupItems: helperListNames
+            })
         })
+    }, [])
 
+    const assignUser = (userRol: string, url: string) => {
         const handleClickTabsAssign = (id: string) => {
             if (id=='group') {
                 history.push(`${url}/${widgetType}/assignGroup`);
@@ -588,8 +610,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             }
         }
 
-        const handleClickDropdowns = (idItem: string, idDropdown: number) => {
-            console.log(idItem);
+        const handleClickDropdowns = (idItem: string) => {
+            setGroupSelected(Number(idItem));
         }
 
         const handleClickAutocomplete = (user: BasicUserModel) => {
