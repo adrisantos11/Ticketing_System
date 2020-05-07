@@ -13,12 +13,6 @@ $factory->define(Incidencia::class, function (Faker $faker) {
     $randomDate2 = mt_rand(1262055681,1263645342);
     $randomDateCasted2 = date("Y-m-d H:i:s", $randomDate2);
 
-    $randomDate3 = mt_rand(1262055681,1263645342);
-    $randomDateCasted3 = date("Y-m-d H:i:s", $randomDate3);
-
-    $randomDate4 = mt_rand(1262055681,1263645342);
-    $randomDateCasted4 = date("Y-m-d H:i:s", $randomDate4);
-
     $ids_reporter = array(2,3,4,5);
     $id_reporter = array_rand($ids_reporter, 1);
 
@@ -48,8 +42,8 @@ $factory->define(Incidencia::class, function (Faker $faker) {
         "url_data" => "",
         "creation_date" => $randomDateCasted1,
         "limit_date" => $randomDateCasted2,
-        "assigned_date" => $randomDateCasted3,
-        "resolution_date" => $randomDateCasted4,
+        "assigned_date" => null,
+        "resolution_date" => null,
         "priority" => $priorities[$priority],
         "state" => $states[$state]
     ];

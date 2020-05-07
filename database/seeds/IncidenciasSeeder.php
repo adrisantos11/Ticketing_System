@@ -26,8 +26,8 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
             'limit_date' => '2009-12-30 14:34:29',
-            'assigned_date' => '2014-10-25 20:00:00',
-            'resolution_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
             'priority' => 'critical',
             'state' => 'todo'
         ]);
@@ -46,8 +46,8 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
             'limit_date' => '2009-12-30 14:34:29',
-            'assigned_date' => '2014-10-25 20:00:00',
-            'resolution_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
             'priority' => 'critical',
             'state' => 'todo'
         ]);
@@ -66,8 +66,8 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
             'limit_date' => '2009-12-30 14:34:29',
-            'assigned_date' => '2014-10-25 20:00:00',
-            'resolution_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
             'priority' => 'critical',
             'state' => 'todo'
         ]);
@@ -86,8 +86,8 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
             'limit_date' => '2009-12-30 14:34:29',
-            'assigned_date' => '2014-10-25 20:00:00',
-            'resolution_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
             'priority' => 'critical',
             'state' => 'todo'
         ]);
@@ -106,8 +106,8 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
             'limit_date' => '2009-12-30 14:34:29',
-            'assigned_date' => '2014-10-25 20:00:00',
-            'resolution_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
             'priority' => 'critical',
             'state' => 'todo'
         ]);
@@ -126,8 +126,8 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
             'limit_date' => '2009-12-30 14:34:29',
-            'assigned_date' => '2014-10-25 20:00:00',
-            'resolution_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
             'priority' => 'critical',
             'state' => 'todo'
         ]);
@@ -146,8 +146,8 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2014-10-25 20:00:00',
             'limit_date' => '2009-12-30 14:34:29',
-            'assigned_date' => '2014-10-25 20:00:00',
-            'resolution_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
             'priority' => 'critical',
             'state' => 'todo'
         ]);
@@ -186,8 +186,8 @@ class IncidenciasSeeder extends Seeder
             'url_data' => '',
             'creation_date' => '2020-05-06 12:29:00',
             'limit_date' => null,
-            'assigned_date' => '2020-05-06 12:29:00',
-            'resolution_date' => '2014-10-25 20:00:00',
+            'assigned_date' => null,
+            'resolution_date' => null,
             'priority' => 'critical',
             'state' => 'todo'
         ]);

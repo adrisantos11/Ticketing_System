@@ -101,6 +101,7 @@ export const createIncidencia = (newIncidencia: any) => {
 }
 
 export const editIncidencia = (incidencia: any) => {
+    console.log(incidencia);
     return axios
     .post('api/incidencias/edit', incidencia, {
         headers: {'Content-Type': 'application/json'}

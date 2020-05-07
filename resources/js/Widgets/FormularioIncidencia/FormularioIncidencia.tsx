@@ -486,18 +486,24 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             setUserSelected(null);
             setGroupSelected(null);
         }
+
+        let date = new Date();
+        let hoursMinutesSeconds = date.toLocaleString().split(' ');
+        const month = date.getMonth()+1;
+        let currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+
+        let assignedUser = null;
+        let assignedTeam = null;
+        let assignedDate = null;
+        if (userSelected != null) {
+            assignedUser = userSelected;
+            assignedDate = currentDate;
+        } else if (groupSelected != null) {
+            assignedTeam = groupSelected;
+            assignedDate = currentDate;
+        }
+
         if (props.formularioProps.widgetType == 'create') {
-            let date = new Date();
-            let hoursMinutesSeconds = date.toLocaleString().split(' ');
-            const month = date.getMonth()+1;
-            let currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
-            let assignedUser = null;
-            let assignedTeam = null;
-            if (userSelected != null) {
-                assignedUser = userSelected;
-            } else if (groupSelected != null) {
-                assignedTeam = groupSelected;
-            }
             let incidencia: IncidenciaModel = {
                 id: 0,
                 group_id: 0,
@@ -513,7 +519,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 url_data: '',
                 creation_date: currentDate,
                 limit_date: '1263645342',
-                assigned_date: '',
+                assigned_date: assignedDate,
                 resolution_date: '',
                 priority: priority,
                 state: 'todo'
@@ -524,6 +530,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             $('#toastCreate').show();
             $('#toastCreate').toast('show');
         } else {
+            console.log(assignedDate);
             let incidencia: IncidenciaModel = {
                 id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
@@ -539,7 +546,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 url_data: '',
                 creation_date: props.formularioProps.incidenciaData.creation_date,
                 limit_date: '1263645342',
-                assigned_date: props.formularioProps.incidenciaData.assigned_date,
+                assigned_date: assignedDate,
                 resolution_date: props.formularioProps.incidenciaData.resolution_date,
                 priority: priority,
                 state: 'todo'

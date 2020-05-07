@@ -92,13 +92,12 @@ class IncidenciasPageController extends Controller
             'url_data'          => $request->url_data,
             'creation_date'     => $request->creation_date,
             'limit_date'        => date("Y-m-d H:i:s",$request->limit_date),
-            'assigned_date'     => null,
-            'resolution_date'   => null,
+            'assigned_date'     => $request->assigned_date,
+            'resolution_date'   => $request->resolution_date,
             'priority'          => $request->priority,
             'state'             => $request->state    
             ]);
         }
-
     }
 
     public function deleteIncidencia(Request $request) 
@@ -121,6 +120,8 @@ class IncidenciasPageController extends Controller
                 'class' => $request->class,
                 'url_data' => $request->url_data,
                 'limit_date'=> date("Y-m-d H:i:s",$request->limit_date),
+                'assigned_date'     => $request->assigned_date,
+                'resolution_date'   => $request->resolution_date,    
                 'priority'=> $request->priority,
                 'state' => $request->state
             ]);

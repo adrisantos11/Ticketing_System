@@ -78688,6 +78688,7 @@ exports.createIncidencia = function (newIncidencia) {
     });
 };
 exports.editIncidencia = function (incidencia) {
+    console.log(incidencia);
     return axios_1.default
         .post('api/incidencias/edit', incidencia, {
         headers: { 'Content-Type': 'application/json' }
@@ -79554,19 +79555,22 @@ var FormularioIncidencia = function (props) {
             setUserSelected(null);
             setGroupSelected(null);
         }
+        var date = new Date();
+        var hoursMinutesSeconds = date.toLocaleString().split(' ');
+        var month = date.getMonth() + 1;
+        var currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+        var assignedUser = null;
+        var assignedTeam = null;
+        var assignedDate = null;
+        if (userSelected != null) {
+            assignedUser = userSelected;
+            assignedDate = currentDate;
+        }
+        else if (groupSelected != null) {
+            assignedTeam = groupSelected;
+            assignedDate = currentDate;
+        }
         if (props.formularioProps.widgetType == 'create') {
-            var date = new Date();
-            var hoursMinutesSeconds = date.toLocaleString().split(' ');
-            var month = date.getMonth() + 1;
-            var currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
-            var assignedUser = null;
-            var assignedTeam = null;
-            if (userSelected != null) {
-                assignedUser = userSelected;
-            }
-            else if (groupSelected != null) {
-                assignedTeam = groupSelected;
-            }
             var incidencia = {
                 id: 0,
                 group_id: 0,
@@ -79582,7 +79586,7 @@ var FormularioIncidencia = function (props) {
                 url_data: '',
                 creation_date: currentDate,
                 limit_date: '1263645342',
-                assigned_date: '',
+                assigned_date: assignedDate,
                 resolution_date: '',
                 priority: priority,
                 state: 'todo'
@@ -79594,6 +79598,7 @@ var FormularioIncidencia = function (props) {
             $('#toastCreate').toast('show');
         }
         else {
+            console.log(assignedDate);
             var incidencia = {
                 id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
@@ -79609,7 +79614,7 @@ var FormularioIncidencia = function (props) {
                 url_data: '',
                 creation_date: props.formularioProps.incidenciaData.creation_date,
                 limit_date: '1263645342',
-                assigned_date: props.formularioProps.incidenciaData.assigned_date,
+                assigned_date: assignedDate,
                 resolution_date: props.formularioProps.incidenciaData.resolution_date,
                 priority: priority,
                 state: 'todo'
@@ -79874,8 +79879,8 @@ __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\adrian.santos.mena\Documents\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\adrian.santos.mena\Documents\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
