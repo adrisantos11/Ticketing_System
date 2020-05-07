@@ -24,7 +24,8 @@ const IncidenciaViewPage = () => {
 
     let date = new Date();
     let hoursMinutesSeconds = date.toLocaleString().split(' ');
-    const currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+    const month = date.getMonth()+1;
+    const currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
 
     let tabSelected = 1;
     if (history.location.pathname.endsWith('comments'))
@@ -148,7 +149,6 @@ const IncidenciaViewPage = () => {
 
     const getIncidenciaData = () => {
         getIncideniciaUnique(Number(idIncidencia)).then(result => {
-            console.log(result);
             let stateAux;   
             switch (result.incidencia[0].state) {
                 case 'todo':
@@ -175,6 +175,7 @@ const IncidenciaViewPage = () => {
         
                     break;
             }
+            console.log(result.incidencia[0]);
             setIncidencia({
                 ...incidencia,
                 group_id: result.incidencia[0].group_id,
@@ -280,13 +281,13 @@ const IncidenciaViewPage = () => {
         $('#'+modalDeleteIncidencia.id).modal('hide');
         $('#toastDelete').show();
         $('#toastDelete').toast('show');
-
     }
-
-
+    
+    
     const [incidenciaStateChanged, setIncidenciaStateChanged] = React.useState(''); 
     const [commentChangedState, setCommentChangedState] = React.useState('');
-
+    
+    const [updateIncidenciaData, setUpdateIncidenciaData] = React.useState(0);
     const saveIncidenciaState = () => {
         switch (incidenciaStateChanged) {
             case 'todo':
@@ -317,17 +318,25 @@ const IncidenciaViewPage = () => {
             comment: commentChangedState,
             date: currentDate
         }
-
-        updateStateIncidencia(incidencia.id, incidenciaStateChanged);
+        
+        if (incidenciaStateChanged == 'done')
+            updateStateIncidencia(incidencia.id, incidenciaStateChanged, currentDate); 
+        else
+            updateStateIncidencia(incidencia.id, incidenciaStateChanged);
+        
         createStateLog(stateLog);
         $('#'+modalChangeIncidenciaState.id).modal('hide');
         $('#toastIncidenciaStateChanged').show();
         $('#toastIncidenciaStateChanged').toast('show');
-
+        setUpdateIncidenciaData(updateIncidenciaData+1);
     }
 
+    React.useEffect(() => {
+        getIncidenciaData();
+    }, [updateIncidenciaData]);
+
+
     const handleClickItemDD = (idItem: string) => {
-        console.log(idItem);
         setIncidenciaStateChanged(idItem);
         $('#'+modalChangeIncidenciaState.id).modal('show');
 

@@ -34,13 +34,13 @@ const Tabs: React.FunctionComponent<Props> = (props: Props) => {
                             if (props.tabsInfo.enabledList[index]) {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color[index]} active`} data-toogle="tooltip" data-placement="top" title={valueTab} key={index}>
-                                        <input type="radio" name="options" id={id} checked onClick={handleClickTab}/><span className='value-tab'>{valueTab}</span>{iconHTML} 
+                                        <input type="radio" name="options" id={id} onClick={handleClickTab}/><span className='value-tab'>{valueTab}</span>{iconHTML} 
                                     </label>
                                 )     
                             } else {
                                 return(
                                     <label className={`btn btn--${props.tabsInfo.color[index]} active disabled`}  data-toogle="tooltip" data-placement="top" title={valueTab} key={index}>
-                                        <input type="radio" name="options" id={id} checked onClick={handleClickTab}/> <span className='value-tab'>{valueTab}</span>{iconHTML}
+                                        <input type="radio" name="options" id={id} onClick={handleClickTab}/> <span className='value-tab'>{valueTab}</span>{iconHTML}
                                     </label>
                                 )
                             }

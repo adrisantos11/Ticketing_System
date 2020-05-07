@@ -329,7 +329,6 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                     });
                 }
             } else if(build == 'C'){
-                console.log('Piso C seleccionado')
                 if (String(idItem).includes('0') ) {
                     piso0_C.aulas.map(value => {
                         arrayAulas.push(value);
@@ -478,10 +477,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     const handleClickCreateIncidencia = (e: React.MouseEvent) => {
         const validation = fieldsValidation(title, description, category, build, floor, classroom, priority);
         if (validation) {
-            console.log('Todos los elemenos están correctamente introducidos.');
             $('#'+modalCreateIncidencia.id).modal('show');   
-        } else {
-            'Hay errores.'
         }
     }
 
@@ -493,7 +489,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         if (props.formularioProps.widgetType == 'create') {
             let date = new Date();
             let hoursMinutesSeconds = date.toLocaleString().split(' ');
-            let currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+            const month = date.getMonth()+1;
+            let currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
             let assignedUser = null;
             let assignedTeam = null;
             if (userSelected != null) {
@@ -576,7 +573,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     });
     
     const [autocompleteInputValues, setAutocompleteInputValues] = React.useState<AutocompleteInputModel>({
-        id: 1,
+        id: 14,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
         typeInput: 'text',
@@ -615,7 +612,6 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         }
 
         const handleClickAutocomplete = (user: BasicUserModel) => {
-            console.log(user.id);
             setUserSelected(user.id);
             setGroupSelected(null);
         }
@@ -647,7 +643,6 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 </>
             )
         } else if (userRol == 'technical') {
-            console.log(userRol);
             return '';
         }
 

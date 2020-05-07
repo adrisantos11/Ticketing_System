@@ -75,18 +75,18 @@ const AutocompleteInput: React.FunctionComponent<Props> = (props: Props) => {
                     {
                         userList.map((value, index) => {
                             if (index == userList.length-1) {
-                                return (<div className='dropdown-item' data-id={value.id} data-name={value.name} onClick={() => onClickOption(value)}>
+                                return (<div key= {index} className='dropdown-item' data-id={value.id} data-name={value.name} onClick={() => onClickOption(value)}>
                                 <span className='id-data'>{`#${value.id}`}</span>
                                 <span className='value-data'>{`${value.name} ${value.surname1} ${value.surname2}`}</span>
                             </div>)
                             } else {
                                 return(
                                     <>
-                                        <div className='item-autocomplete dropdown-item' onClick={() => onClickOption(value)}>
+                                        <div key= {index} className='item-autocomplete dropdown-item' onClick={() => onClickOption(value)}>
                                             <span className='id-data'>{`#${value.id}`}</span>
                                             <span className='value-data'>{`${value.name} ${value.surname1} ${value.surname2}`}</span>
                                         </div>
-                                        <div className='dropdown-divider'></div>
+                                        <div key= {`divider-${index}`}className='dropdown-divider'></div>
                                     </>
                                 )
                             }

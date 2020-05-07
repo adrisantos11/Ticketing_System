@@ -24,8 +24,8 @@ const MostrarIncidenciasPage = () => {
 
     let date = new Date();
     let hoursMinutesSeconds = date.toLocaleString().split(' ');
-    let actualDate = new Date(date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1]);
-
+    const month = date.getMonth()+1;
+    let actualDate = new Date(date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1]);
     const user = {
         id: localStorage.userId
     }
@@ -48,7 +48,7 @@ const MostrarIncidenciasPage = () => {
         groupItems: dropdownItems,
         groupIds: dropdownIds,
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     });
 
@@ -162,7 +162,6 @@ const MostrarIncidenciasPage = () => {
     const [idSelectboxList, setIdSelectboxList] = React.useState([])
 
     const handleClickItemDD = (idItem: string, idDropdown: number) => {
-        // setIdSelectboxList([]);
         setOrderBy(idItem);
         setSelectboxList([]);
         getFilters().then(res => {
@@ -254,7 +253,7 @@ const MostrarIncidenciasPage = () => {
         } else {
             hours = Math.floor(((date1.getTime()-date2.getTime())/1000)/3600);
             if (hours != 0) {
-                hoursData = <><b>{hours}</b></>
+                hoursData = <><b>{hours}</b> horas</>
                 return (
                     <>{hoursData}</>
                     )

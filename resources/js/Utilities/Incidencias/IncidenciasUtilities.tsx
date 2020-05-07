@@ -180,11 +180,13 @@ export const getFilteredIncidencias = (userId: number, userRol: string, idDropdo
     })
 }
 
-export const updateStateIncidencia = (idIncidencia: number, newState: string) => {
+export const updateStateIncidencia = (idIncidencia: number, newState: string, resolutionDate?: string) => {
+    console.log(resolutionDate);
     return axios
     .post('api/incidencias/updateState', {
         id: idIncidencia,
-        newState: newState
+        newState: newState,
+        resolutionDate: resolutionDate
     }, {
         headers: {'Content-Type': 'application/json'}
     })

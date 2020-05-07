@@ -143,7 +143,7 @@ class IncidenciasPageController extends Controller
 
         if ($id_assigned != null) {
             $name_assigned = DB::table('users')->select('users.name', 'users.surname1', 'users.surname2')->distinct('users.id')->where('users.id', $id_assigned)->get();
-            $name_assigned = $name_assigned[0]->name.' '.$name_assigned[0]->surname1.' '.$name_repname_assignedorter[0]->surname2;
+            $name_assigned = $name_assigned[0]->name.' '.$name_assigned[0]->surname1.' '.$name_assigned[0]->surname2;
         }
 
         if ($id_team != null) {
@@ -169,12 +169,22 @@ class IncidenciasPageController extends Controller
 
     public function updateStateIncidencia(Request $request) {
         $id_incidencia = $request->id;
+        $resolution_date = $request->resolutionDate;
         $state = $request->newState;
-
-        DB::table('incidencias')->where('id', $id_incidencia)
+        if ($resolution_date != '' && $state=='done') {
+            DB::table('incidencias')->where('id', $id_incidencia)
             ->update([
-                'state' => $state
+                'state' => $state,
+                'resolution_date' => $resolution_date
             ]);
+        } else {
+            DB::table('incidencias')->where('id', $id_incidencia)
+                ->update([
+                    'state' => $state,
+                    'resolution_date' => $resolution_date
+                ]);
+        }
+        return $resolution_date;
     }
 
     /**

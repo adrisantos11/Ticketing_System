@@ -36,7 +36,6 @@ const TechnicalGroupsPage = () => {
     const setTechnicalGroups = () => {
         const helperList: React.SetStateAction<any[]> = [];
         getGroups(localStorage.userId).then(res => {
-            console.log(res);
             let index = 0;
             res.map((data: any) => {
                 if (index == 0) {
@@ -226,7 +225,6 @@ const TechnicalGroupsPage = () => {
 
     const handleClickAddTechnical = () => { 
         const technicalFound = technicalsList.findIndex(x => x.id === technicalSelected.id);
-        console.log(technicalFound);
         if (technicalFound == -1 && technicalSelected.role == 'technical') {
             $('#'+modalAddTechnical.id).modal('show'); 
         } else {
@@ -296,7 +294,6 @@ const TechnicalGroupsPage = () => {
     }
     
     const handleClickDeleteTechncial = () => {
-        console.log('El usuario a eliminar tiene le id: ' + technicalSelected);
         deleteTechnicalAssign(Number(technicalSelected.id), Number(selectedGroup.id));
         getTechnicals(Number(selectedGroup.id));
     }

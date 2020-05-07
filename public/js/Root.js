@@ -74994,16 +74994,16 @@ var AutocompleteInput = function (props) {
             React.createElement(Input_1.Input, { inputInfo: input, handleChangeInput: handleChangeInput }),
             React.createElement("div", { className: "dropdown-menu" + dataDivState + scrollAttribute }, userList.map(function (value, index) {
                 if (index == userList.length - 1) {
-                    return (React.createElement("div", { className: 'dropdown-item', "data-id": value.id, "data-name": value.name, onClick: function () { return onClickOption(value); } },
+                    return (React.createElement("div", { key: index, className: 'dropdown-item', "data-id": value.id, "data-name": value.name, onClick: function () { return onClickOption(value); } },
                         React.createElement("span", { className: 'id-data' }, "#" + value.id),
                         React.createElement("span", { className: 'value-data' }, value.name + " " + value.surname1 + " " + value.surname2)));
                 }
                 else {
                     return (React.createElement(React.Fragment, null,
-                        React.createElement("div", { className: 'item-autocomplete dropdown-item', onClick: function () { return onClickOption(value); } },
+                        React.createElement("div", { key: index, className: 'item-autocomplete dropdown-item', onClick: function () { return onClickOption(value); } },
                             React.createElement("span", { className: 'id-data' }, "#" + value.id),
                             React.createElement("span", { className: 'value-data' }, value.name + " " + value.surname1 + " " + value.surname2)),
-                        React.createElement("div", { className: 'dropdown-divider' })));
+                        React.createElement("div", { key: "divider-" + index, className: 'dropdown-divider' })));
                 }
             })))));
 };
@@ -75691,13 +75691,13 @@ var Tabs = function (props) {
             if (props.tabsInfo.itemActive == index) {
                 if (props.tabsInfo.enabledList[index]) {
                     return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " active", "data-toogle": "tooltip", "data-placement": "top", title: valueTab, key: index },
-                        React.createElement("input", { type: "radio", name: "options", id: id, checked: true, onClick: handleClickTab }),
+                        React.createElement("input", { type: "radio", name: "options", id: id, onClick: handleClickTab }),
                         React.createElement("span", { className: 'value-tab' }, valueTab),
                         iconHTML));
                 }
                 else {
                     return (React.createElement("label", { className: "btn btn--" + props.tabsInfo.color[index] + " active disabled", "data-toogle": "tooltip", "data-placement": "top", title: valueTab, key: index },
-                        React.createElement("input", { type: "radio", name: "options", id: id, checked: true, onClick: handleClickTab }),
+                        React.createElement("input", { type: "radio", name: "options", id: id, onClick: handleClickTab }),
                         " ",
                         React.createElement("span", { className: 'value-tab' }, valueTab),
                         iconHTML));
@@ -76146,7 +76146,8 @@ var IncidenciaViewPage = function () {
     var sreenWidth = screen.width;
     var date = new Date();
     var hoursMinutesSeconds = date.toLocaleString().split(' ');
-    var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+    var month = date.getMonth() + 1;
+    var currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
     var tabSelected = 1;
     if (history.location.pathname.endsWith('comments'))
         tabSelected = 1;
@@ -76257,7 +76258,6 @@ var IncidenciaViewPage = function () {
     }), stateCommentInput = _l[0], setStateCommentInput = _l[1];
     var getIncidenciaData = function () {
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
-            console.log(result);
             var stateAux;
             switch (result.incidencia[0].state) {
                 case 'todo':
@@ -76281,6 +76281,7 @@ var IncidenciaViewPage = function () {
                     setIncidenciaStateColor('--green');
                     break;
             }
+            console.log(result.incidencia[0]);
             setIncidencia(__assign(__assign({}, incidencia), { group_id: result.incidencia[0].group_id, id_reporter: result.incidencia[0].id_reporter, id_assigned: result.incidencia[0].id_assigned, id_team: result.incidencia[0].id_team, title: result.incidencia[0].title, description: result.incidencia[0].description, category: result.incidencia[0].category, build: result.incidencia[0].build, floor: result.incidencia[0].floor, class: result.incidencia[0].class, url_data: result.incidencia[0].url_data, creation_date: result.incidencia[0].creation_date, limit_date: result.incidencia[0].limit_date, assigned_date: result.incidencia[0].assigned_date, resolution_date: result.incidencia[0].resolution_date, priority: result.incidencia[0].priority, state: stateAux }));
             setReporterName(result.names.name_reporter);
             setAssignedName(result.names.name_assigned);
@@ -76340,6 +76341,7 @@ var IncidenciaViewPage = function () {
     };
     var _m = React.useState(''), incidenciaStateChanged = _m[0], setIncidenciaStateChanged = _m[1];
     var _o = React.useState(''), commentChangedState = _o[0], setCommentChangedState = _o[1];
+    var _p = React.useState(0), updateIncidenciaData = _p[0], setUpdateIncidenciaData = _p[1];
     var saveIncidenciaState = function () {
         switch (incidenciaStateChanged) {
             case 'todo':
@@ -76366,14 +76368,20 @@ var IncidenciaViewPage = function () {
             comment: commentChangedState,
             date: currentDate
         };
-        IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged);
+        if (incidenciaStateChanged == 'done')
+            IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged, currentDate);
+        else
+            IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged);
         IncidenciaStateLogsUtilities_1.createStateLog(stateLog);
         $('#' + modalChangeIncidenciaState.id).modal('hide');
         $('#toastIncidenciaStateChanged').show();
         $('#toastIncidenciaStateChanged').toast('show');
+        setUpdateIncidenciaData(updateIncidenciaData + 1);
     };
+    React.useEffect(function () {
+        getIncidenciaData();
+    }, [updateIncidenciaData]);
     var handleClickItemDD = function (idItem) {
-        console.log(idItem);
         setIncidenciaStateChanged(idItem);
         $('#' + modalChangeIncidenciaState.id).modal('show');
         // updateStateIncidencia(incidencia.id, idItem);
@@ -76788,7 +76796,8 @@ var MostrarIncidenciasPage = function () {
     var headerList = ['Id', 'Nombre', 'Descripción', 'Categoría', 'Prioridad', 'Estado', 'Fecha límite', '¿Asignada?', 'TTC', 'Asignación'];
     var date = new Date();
     var hoursMinutesSeconds = date.toLocaleString().split(' ');
-    var actualDate = new Date(date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1]);
+    var month = date.getMonth() + 1;
+    var actualDate = new Date(date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1]);
     var user = {
         id: localStorage.userId
     };
@@ -76809,7 +76818,7 @@ var MostrarIncidenciasPage = function () {
         groupItems: dropdownItems,
         groupIds: dropdownIds,
         color: 'primary',
-        enabled: false,
+        enabled: true,
         extraClass: '',
     }), orderByDropdown = _d[0], setOrderByDropdown = _d[1];
     var drawFooter = function (orderBy, sizesList, colorsList) {
@@ -76922,7 +76931,6 @@ var MostrarIncidenciasPage = function () {
     var _g = React.useState([]), divSelectedData = _g[0], setDivSelectedData = _g[1];
     var _h = React.useState([]), idSelectboxList = _h[0], setIdSelectboxList = _h[1];
     var handleClickItemDD = function (idItem, idDropdown) {
-        // setIdSelectboxList([]);
         setOrderBy(idItem);
         setSelectboxList([]);
         IncidenciasUtilities_2.getFilters().then(function (res) {
@@ -77013,7 +77021,8 @@ var MostrarIncidenciasPage = function () {
             hours = Math.floor(((date1.getTime() - date2.getTime()) / 1000) / 3600);
             if (hours != 0) {
                 hoursData = React.createElement(React.Fragment, null,
-                    React.createElement("b", null, hours));
+                    React.createElement("b", null, hours),
+                    " horas");
                 return (React.createElement(React.Fragment, null, hoursData));
             }
             else {
@@ -77312,7 +77321,6 @@ var TechnicalGroupsPage = function () {
     var setTechnicalGroups = function () {
         var helperList = [];
         SupervisorUtilities_1.getGroups(localStorage.userId).then(function (res) {
-            console.log(res);
             var index = 0;
             res.map(function (data) {
                 if (index == 0) {
@@ -77477,7 +77485,6 @@ var TechnicalGroupsPage = function () {
     };
     var handleClickAddTechnical = function () {
         var technicalFound = technicalsList.findIndex(function (x) { return x.id === technicalSelected.id; });
-        console.log(technicalFound);
         if (technicalFound == -1 && technicalSelected.role == 'technical') {
             $('#' + modalAddTechnical.id).modal('show');
         }
@@ -77526,7 +77533,6 @@ var TechnicalGroupsPage = function () {
         $('#' + modalDeleteTechnical.id).modal('show');
     };
     var handleClickDeleteTechncial = function () {
-        console.log('El usuario a eliminar tiene le id: ' + technicalSelected);
         SupervisorUtilities_1.deleteTechnicalAssign(Number(technicalSelected.id), Number(selectedGroup.id));
         getTechnicals(Number(selectedGroup.id));
     };
@@ -78551,13 +78557,18 @@ exports.getTotalIncidencias = function (idUser) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 exports.createStateLog = function (newStateLog) {
-    console.log(newStateLog);
+    console.log(newStateLog.comment);
+    var comment;
+    if (newStateLog.comment != '')
+        comment = newStateLog.comment;
+    else
+        comment = '--';
     return axios_1.default
         .post('api/incidencias/createStateLog', {
         incidenciaId: newStateLog.incidenciaId,
         userId: newStateLog.userId,
         state: newStateLog.state,
-        comment: newStateLog.comment,
+        comment: comment,
         date: newStateLog.date,
     }, {
         headers: { 'Content-Type': 'application/json' }
@@ -78751,11 +78762,13 @@ exports.getFilteredIncidencias = function (userId, userRol, idDropdown, idSelect
             console.log(err);
     });
 };
-exports.updateStateIncidencia = function (idIncidencia, newState) {
+exports.updateStateIncidencia = function (idIncidencia, newState, resolutionDate) {
+    console.log(resolutionDate);
     return axios_1.default
         .post('api/incidencias/updateState', {
         id: idIncidencia,
-        newState: newState
+        newState: newState,
+        resolutionDate: resolutionDate
     }, {
         headers: { 'Content-Type': 'application/json' }
     })
@@ -79434,7 +79447,6 @@ var FormularioIncidencia = function (props) {
                 }
             }
             else if (build == 'C') {
-                console.log('Piso C seleccionado');
                 if (String(idItem).includes('0')) {
                     piso0_C.aulas.map(function (value) {
                         arrayAulas_1.push(value);
@@ -79534,11 +79546,7 @@ var FormularioIncidencia = function (props) {
     var handleClickCreateIncidencia = function (e) {
         var validation = fieldsValidation(title, description, category, build, floor, classroom, priority);
         if (validation) {
-            console.log('Todos los elemenos están correctamente introducidos.');
             $('#' + modalCreateIncidencia.id).modal('show');
-        }
-        else {
-            'Hay errores.';
         }
     };
     var handleClickConfirmIncidencia = function () {
@@ -79549,7 +79557,8 @@ var FormularioIncidencia = function (props) {
         if (props.formularioProps.widgetType == 'create') {
             var date = new Date();
             var hoursMinutesSeconds = date.toLocaleString().split(' ');
-            var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
+            var month = date.getMonth() + 1;
+            var currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
             var assignedUser = null;
             var assignedTeam = null;
             if (userSelected != null) {
@@ -79630,7 +79639,7 @@ var FormularioIncidencia = function (props) {
         extraClass: '',
     }), groupsDropdown = _t[0], setGroupsDropdown = _t[1];
     var _u = React.useState({
-        id: 1,
+        id: 14,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
         typeInput: 'text',
@@ -79662,7 +79671,6 @@ var FormularioIncidencia = function (props) {
             setGroupSelected(Number(idItem));
         };
         var handleClickAutocomplete = function (user) {
-            console.log(user.id);
             setUserSelected(user.id);
             setGroupSelected(null);
         };
@@ -79684,7 +79692,6 @@ var FormularioIncidencia = function (props) {
                                     React.createElement(AutocompleteInput_1.default, { autocompleteInputInfo: autocompleteInputValues, handleClick: handleClickAutocomplete }))))))));
         }
         else if (userRol == 'technical') {
-            console.log(userRol);
             return '';
         }
     };
@@ -79867,8 +79874,8 @@ __webpack_require__(/*! ./Navigation */ "./resources/js/Navigation.tsx");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
-module.exports = __webpack_require__(/*! C:\Users\santo\Documents\Ticketing_System\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\adrian.santos.mena\Documents\Ticketing_System\resources\js\root.tsx */"./resources/js/root.tsx");
+module.exports = __webpack_require__(/*! C:\Users\adrian.santos.mena\Documents\Ticketing_System\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>TicketClass</title>
 
     <!-- Fonts -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet"> -->
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap-4.4.1-dist/css/custom-css-bootstrap-magic-blue-colours.css') }}">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Muli|Overpass|Rubik|Sen:400;700;800|Source+Sans+Pro|Black+Han+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/521c7205fb.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ asset('sass/app.scss')}}">
+    <link rel="stylesheet" href="{{ asset('sass/app.scss')}}" type="text/scss">
 
     <!-- Styles -->
     <style>
