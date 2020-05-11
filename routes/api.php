@@ -75,6 +75,8 @@ Route::namespace('DataGraphs')->group(function () {
 
 Route::namespace('Utilidades')->group(function () {
     Route::post('getFilteredUsers', 'AutocompleteController@filterUsers');
+    Route::post('sendEmail', 'EmailController@sendMail');
+
 
 });
 
