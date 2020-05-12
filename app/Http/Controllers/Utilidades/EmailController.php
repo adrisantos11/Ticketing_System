@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 
 class EmailController extends Controller
 {
-    public function sendMail(Request $request) {
-        $data = array('date' => '23/09/20', 'technical'=>"Adrián Santos Mena");
-        \Mail::send('emails.info', $data, function ($message) {
-            $message->to('santos2menaaa@gmail.com');
+    public function incidenciaStateChangedMail(Request $request) {
+        $id_incidencia = $request->id_incidencia;
+        $url = 'http://127.0.0.1:8000/#/home/incidencia-view/'.$id_incidencia.'/comments';
+        $data = array('id_incidencia' => $request->id_incidencia, 'state'=>$request->state, 'color' => $request->color, 'incidencia_url' => $url);
+        \Mail::send('emails.changeState', $data, function ($message) use ($request){
+            $message->to($request->user_email)->subject('Cambio estado I-'.$request->id_incidencia);
         });
         
-        return('Mensaje enviado correctamente.');
+        return('OK');
     }
 }
