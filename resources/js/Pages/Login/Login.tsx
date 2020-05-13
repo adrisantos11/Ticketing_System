@@ -117,11 +117,11 @@ const Login = () => {
             <div className="login">
                 <div className="centered_container centered_container--description">
                     <p className="login_title">
-                        TICKETCLASS :D
+                        TICKETCLASS
                     </p>
                     <div className="description_text">
-                        <p>¡Bienvenido a <b>"Ticketclass :D"</b>!</p>
-                        <p> Explora y usa esta herramineta para la gestión de las incidencias dentro de tu entorno de trabajo.</p>
+                        <p>¡Bienvenido a <b>TICKETCLASS</b>!</p>
+                        <p> Explora y usa esta herramienta para la gestión de las incidencias dentro de tu entorno de trabajo.</p>
                         <p> Consigue una mayor rapidez de respuesta.</p>
                     </div>
                     <div className="icons-container">

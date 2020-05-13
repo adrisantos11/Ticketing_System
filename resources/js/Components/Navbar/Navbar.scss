@@ -45,16 +45,17 @@
             flex-direction: column;
             margin-top: $default_padding*2;
 
-            a {
+            .navbar-item {
                 line-height: 50px;
                 padding-left: 20px;
                 color: $grey_color_184;
                 display: flex;
-                flex-direction: row;
+                flex-direction: row-reverse;
                 justify-content: space-between;
                 z-index: 0;
                 margin: $default_padding 0rem;
-
+                padding: 0;
+                border-radius: 0;
                 i {
                     line-height: 50px;
                     font-size: 25px;
@@ -84,6 +85,10 @@
                             color: $white_color;
                         }
                     }
+                }
+
+                .option-text {
+                    margin-left: 20px;
                 }
 
             }

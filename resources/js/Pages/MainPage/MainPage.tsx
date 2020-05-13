@@ -129,8 +129,6 @@ const MainPage = () => {
                     <Switch>
                         <Route path="/home/perfil" component={PerfilPage}></Route>
                         <Route path="/home/incidencias" component={IncidenciasPage}></Route>
-                        <Route path="/home/calendario" component={CalendarPage}></Route>
-                        <Route path="/home/disponibilidad-aulas" component={IncidenciasPage}></Route>
                         <Route path="/home/incidencia-view/:idIncidencia" component={IncidenciaViewPage}></Route>
                     </Switch>
                 </div>
