@@ -1,7 +1,7 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './IncidenciaViewPage.scss'
-import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel, DropdownModel, InputModel, IncidenciaStateLog } from '../../../Model/model'
+import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel, DropdownModel, InputModel, IncidenciaLog } from '../../../Model/model'
 import { createIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -311,7 +311,7 @@ const IncidenciaViewPage = () => {
                 break;
         }
 
-        const stateLog: IncidenciaStateLog = {
+        const incidenciaLog: IncidenciaLog = {
             incidenciaId: incidencia.id,
             userId: localStorage.userId,
             state: incidenciaStateChanged,
@@ -324,7 +324,7 @@ const IncidenciaViewPage = () => {
         else
             updateStateIncidencia(incidencia.id, incidenciaStateChanged);
         
-        createStateLog(stateLog);
+        createStateLog(incidenciaLog);
         $('#'+modalChangeIncidenciaState.id).modal('hide');
         $('#toastIncidenciaStateChanged').show();
         $('#toastIncidenciaStateChanged').toast('show');

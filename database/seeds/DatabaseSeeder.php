@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             TeamSeeder::class,
             TeamAssignsSeeder::class,
             CommentsSeeder::class,
-            IncidenciaStateLogsSeeder::class
+            IncidenciaLogsSeeder::class
         ]);
     }
 }

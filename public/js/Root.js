@@ -76291,7 +76291,7 @@ var IncidenciaViewPage = function () {
                 setIncidenciaStateColor('--green');
                 break;
         }
-        var stateLog = {
+        var incidenciaLog = {
             incidenciaId: incidencia.id,
             userId: localStorage.userId,
             state: incidenciaStateChanged,
@@ -76302,7 +76302,7 @@ var IncidenciaViewPage = function () {
             IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged, currentDate);
         else
             IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged);
-        IncidenciaStateLogsUtilities_1.createStateLog(stateLog);
+        IncidenciaStateLogsUtilities_1.createStateLog(incidenciaLog);
         $('#' + modalChangeIncidenciaState.id).modal('hide');
         $('#toastIncidenciaStateChanged').show();
         $('#toastIncidenciaStateChanged').toast('show');
@@ -78491,7 +78491,7 @@ exports.createStateLog = function (newStateLog) {
     else
         comment = '--';
     return axios_1.default
-        .post('api/incidencias/createStateLog', {
+        .post('api/incidencias/createLog', {
         incidenciaId: newStateLog.incidenciaId,
         userId: newStateLog.userId,
         state: newStateLog.state,

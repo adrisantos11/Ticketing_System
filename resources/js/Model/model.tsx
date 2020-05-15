@@ -14,7 +14,7 @@ export interface TeamModel {
     id_supervisor: number
 }
 
-export interface IncidenciaStateLog {
+export interface IncidenciaLog {
     incidenciaId: number,
     userId: number,
     state: string,

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class IncidenciaStateLogs extends Model
+class IncidenciaLogs extends Model
 {
     //
 }

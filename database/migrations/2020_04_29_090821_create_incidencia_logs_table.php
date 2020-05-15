@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIncidenciaStateLogsTable extends Migration
+class CreateIncidenciaLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateIncidenciaStateLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('incidencia_state_logs', function (Blueprint $table) {
+        Schema::create('incidencia_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('incidencia_id');
             $table->integer('user_id');
@@ -30,6 +30,6 @@ class CreateIncidenciaStateLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('incidencia_state_logs');
+        Schema::dropIfExists('incidencia_logs');
     }
 }

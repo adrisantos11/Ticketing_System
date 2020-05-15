@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Incidencia;
 
-class IncidenciaStateLogsController extends Controller
+class IncidenciaLogsController extends Controller
 {
 
     public function saveStateLogIncidencia(Request $request) {
@@ -25,7 +25,7 @@ class IncidenciaStateLogsController extends Controller
         {
             return response()->json($validator->errors()->toJson(), 400);
         } else {
-            DB::table('incidencia_state_logs')->insert([
+            DB::table('incidencia_logs')->insert([
             'incidencia_id' =>  $request->incidenciaId,
             'user_id'       =>  $request->userId,
             'state'         =>  $request->state,

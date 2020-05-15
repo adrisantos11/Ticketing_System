@@ -1,8 +1,8 @@
 
 import axios from 'axios';
-import { IncidenciaStateLog } from '../../Model/model';
+import { IncidenciaLog } from '../../Model/model';
 
-export const createStateLog = (newStateLog: IncidenciaStateLog) => {
+export const createStateLog = (newStateLog: IncidenciaLog) => {
     console.log(newStateLog.comment);
     let comment;
     if (newStateLog.comment != '')
@@ -10,7 +10,7 @@ export const createStateLog = (newStateLog: IncidenciaStateLog) => {
     else
         comment = '--'
     return axios
-    .post('api/incidencias/createStateLog', {
+    .post('api/incidencias/createLog', {
         incidenciaId: newStateLog.incidenciaId,
         userId: newStateLog.userId,
         state: newStateLog.state,

@@ -14,6 +14,7 @@ class CreateTeamAssignsTable extends Migration
     public function up()
     {
         Schema::create('team_assigns', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('id_user');
             $table->integer('id_team');
         });

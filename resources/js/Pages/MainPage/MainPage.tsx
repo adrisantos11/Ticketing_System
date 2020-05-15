@@ -10,7 +10,6 @@ import Navbar from '../../Components/Navbar/Navbar'
 import { getProfile, logout } from '../../Utilities/Authentication'
 import PerfilPage from "../PerfilPage/PerfilPage"
 import IncidenciasPage from "../IncidenciasPage/IncidenciasPage"
-import CalendarPage from "../CalendarPage/CalendarPage"
 import CreateIncidenciaPage from "../IncidenciasPage/TabOptions/CreateIncidenciaPage/CreateIncidenciaPage"
 import IncidenciaViewPage from "../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage"
 import Toast from '../../Components/Toast/Toast';

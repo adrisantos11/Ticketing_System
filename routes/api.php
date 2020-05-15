@@ -41,7 +41,7 @@ Route::namespace('Pages')->group(function () {
 });
 
 Route::namespace('Incidencias')->group(function () { 
-    Route::post('incidencias/createStateLog', 'IncidenciaStateLogsController@saveStateLogIncidencia');
+    Route::post('incidencias/createLog', 'IncidenciaLogsController@saveStateLogIncidencia');
     
 });
 
