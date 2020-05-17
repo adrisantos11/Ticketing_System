@@ -3,7 +3,6 @@ import axios from 'axios';
 import { IncidenciaLog } from '../../Model/model';
 
 export const createStateLog = (newStateLog: IncidenciaLog) => {
-    console.log(newStateLog.comment);
     let comment;
     if (newStateLog.comment != '')
         comment = newStateLog.comment;

@@ -19,6 +19,9 @@ $factory->define(Incidencia::class, function (Faker $faker) {
     $ids_assigned = array(4,5, null);
     $id_assigned = array_rand($ids_assigned, 1);
 
+    $ids_supervisor = array(2,3, null);
+    $id_supervisor = array_rand($ids_supervisor, 1);
+
     $categories = array("Mobiliario", "Wi-Fi", "Red", "Switch", "Hardware", "Software");
     $category = array_rand($categories, 1);
 
@@ -33,6 +36,7 @@ $factory->define(Incidencia::class, function (Faker $faker) {
         "id_reporter" => $ids_reporter[$id_reporter],
         "id_assigned" => $ids_assigned[$id_assigned],
         "id_team" => null,
+        "supervisor"=>$ids_supervisor[$id_supervisor],
         "title" => Str::random(10),
         "description" => Str::random(30),
         "category" => $categories[$category],

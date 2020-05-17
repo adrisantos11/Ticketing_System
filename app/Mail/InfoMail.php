@@ -28,6 +28,6 @@ class InfoMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.info');
+        return $this->markdown('emails.changeState');
     }
 }

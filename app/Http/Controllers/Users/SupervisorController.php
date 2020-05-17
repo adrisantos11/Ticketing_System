@@ -19,7 +19,7 @@ class SupervisorController extends Controller
          * ________________ SQL Query ________________
          *  SELECT * FROM incidencias WHERE incidencias.id_reporter = 3
          */
-        $first_union_1    = DB::table('incidencias')->distinct('incidencia.id')->where('id_reporter',$id_user);
+        $first_union_1    = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->where('id_reporter',$id_user);
 
         /**
          * 2. Se obtienen las que están sin asignar.
@@ -27,7 +27,7 @@ class SupervisorController extends Controller
          * ________________ SQL Query ________________
          * SELECT * FROM incidencias WHERE id_assigned is NULL and id_team is NULL
          */
-        $second_union_1   = DB::table('incidencias')->distinct('incidencia.id')->whereNull('id_assigned')->whereNull('id_team');
+        $second_union_1   = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->whereNull('id_assigned')->whereNull('id_team');
 
         /**
          *  3. Se obtienen las incidencias que están dentro de los grupos asociados al supervisor.

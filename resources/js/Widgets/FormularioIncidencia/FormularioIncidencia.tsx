@@ -482,9 +482,11 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     }
 
     const handleClickConfirmIncidencia = () => {
+        let supervisorId = localStorage.idUser;
         if (userRol == 'technical') {
             setUserSelected(null);
             setGroupSelected(null);
+            supervisorId = null;
         }
 
         let date = new Date();
@@ -510,6 +512,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 id_reporter: parseInt(localStorage.userId),
                 id_assigned: assignedUser,
                 id_team: assignedTeam,
+                supervisor: supervisorId,
                 title: title,
                 description: description,
                 category: category,
@@ -537,6 +540,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 id_reporter: parseInt(localStorage.userId),
                 id_assigned: userSelected,
                 id_team: groupSelected,
+                supervisor: supervisorId,
                 title: title,
                 description: description,
                 category: category,

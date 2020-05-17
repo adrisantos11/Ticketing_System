@@ -1,7 +1,7 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './IncidenciaViewPage.scss'
-import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel, DropdownModel, InputModel, IncidenciaLog } from '../../../Model/model'
+import { TabsModel, IncidenciaModel, FormularioIncidenciaModel, ButtonModel, ModalModel, DropdownModel, InputModel, IncidenciaLog, BasicUserModel } from '../../../Model/model'
 import { createIncidencia } from '../../../Utilities/Incidencias/IncidenciasUtilities'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -14,6 +14,8 @@ import Dropdown from '../../../Components/Dropdown/Dropdown';
 import CommentsPage from '../CommentsPage/CommentsPage';
 import { Input } from '../../../Components/Input/Input';
 import { createStateLog } from '../../../Utilities/Incidencias/IncidenciaStateLogsUtilities';
+import { sendIncidenciaStateChangedMail } from '../../../Utilities/Mails'
+import { getUser } from '../../../Utilities/Authentication'; 
 
 const IncidenciaViewPage = () => {
     let {idIncidencia} = useParams();
@@ -42,6 +44,7 @@ const IncidenciaViewPage = () => {
         id_reporter: null,
         id_assigned: null,
         id_team: null,
+        supervisor: null,
         title: null,
         description: null,
         category: null,
@@ -56,8 +59,34 @@ const IncidenciaViewPage = () => {
         priority: null,
         state: null
     });
-    const [reporterName, setReporterName] = React.useState('');
-    const [assignedName, setAssignedName] = React.useState('');
+    const [reporterUser, setReporterUser] = React.useState<BasicUserModel>({
+        id: null,
+        name: null,
+        surname1: null,
+        surname2: null,
+        email: null,
+        role: null,
+        userImage: null
+    });
+    const [assignedUser, setAssignedUser] = React.useState<BasicUserModel>({
+        id: null,
+        name: null,
+        surname1: null,
+        surname2: null,
+        email: null,
+        role: null,
+        userImage: null
+    });
+
+    const [incidenciaSupervisor, setIncidenciaSupervisor] = React.useState<BasicUserModel>({
+        id: null,
+        name: null,
+        surname1: null,
+        surname2: null,
+        email: null,
+        role: null,
+        userImage: null
+    });
     const [assignedTeam, setAssignedTeam] = React.useState('');
 
     const iconList = ['fas fa-edit','fas fa-comments', 'fas fa-trash'];
@@ -76,7 +105,7 @@ const IncidenciaViewPage = () => {
 
     let dropdownItems = ['Pendiente', 'En proceso', 'Bloqueado', 'Solucionado'];
     let dropdownIds = ['todo', 'doing', 'blocked', 'done'];
-    const [orderByDropdown, setOrderByDropdown] = React.useState<DropdownModel>({
+    const [changeStateDropdown, setChangeStateDropdown] = React.useState<DropdownModel>({
         id: 1,
         groupName: "Seleccionar...",
         groupItems: dropdownItems,
@@ -175,7 +204,6 @@ const IncidenciaViewPage = () => {
         
                     break;
             }
-            console.log(result.incidencia[0]);
             setIncidencia({
                 ...incidencia,
                 group_id: result.incidencia[0].group_id,
@@ -183,6 +211,7 @@ const IncidenciaViewPage = () => {
                 id_assigned: result.incidencia[0].id_assigned,
                 id_team: result.incidencia[0].id_team,
                 title: result.incidencia[0].title,
+                supervisor: result.incidencia[0].supervisor,
                 description: result.incidencia[0].description,
                 category: result.incidencia[0].category,
                 build: result.incidencia[0].build,
@@ -197,9 +226,44 @@ const IncidenciaViewPage = () => {
                 state: stateAux
             });
 
-            setReporterName(result.names.name_reporter);
-            setAssignedName(result.names.name_assigned);
-            setAssignedTeam(result.names.name_group);
+            setReporterUser({
+                ...reporterUser,
+                id: result.moreData.reporter.id,
+                name: result.moreData.reporter.name,
+                surname1: result.moreData.reporter.surname1,
+                surname2: result.moreData.reporter.surname2,
+                email: result.moreData.reporter.email,
+                role: result.moreData.reporter.role,
+                userImage: result.moreData.reporter.userImage
+            });
+            if (result.moreData.assigned != null) {
+                setAssignedUser({
+                    ...assignedUser,
+                    id: result.moreData.assigned.id,
+                    name: result.moreData.assigned.name,
+                    surname1: result.moreData.assigned.surname1,
+                    surname2: result.moreData.assigned.surname2,
+                    email: result.moreData.assigned.email,
+                    role: result.moreData.assigned.role,
+                    userImage: result.moreData.assigned.userImage
+                });  
+            }
+
+            if (result.moreData.supervisor != null) {
+                setIncidenciaSupervisor({
+                    ...incidenciaSupervisor,
+                    id: result.moreData.supervisor.id,
+                    name: result.moreData.supervisor.name,
+                    surname1: result.moreData.supervisor.surname1,
+                    surname2: result.moreData.supervisor.surname2,
+                    email: result.moreData.supervisor.email,
+                    role: result.moreData.supervisor.role,
+                    userImage: result.moreData.supervisor.userImage
+                });  
+            }
+            if (result.moreData.group != null) {
+                setAssignedTeam(result.moreData.group.name);
+            }
         });
 
         setFormularioIncidencia({
@@ -289,25 +353,32 @@ const IncidenciaViewPage = () => {
     
     const [updateIncidenciaData, setUpdateIncidenciaData] = React.useState(0);
     const saveIncidenciaState = () => {
+        let colorMail = '';
+        let stateMail = '';
         switch (incidenciaStateChanged) {
             case 'todo':
                 setIncidenciaState('Pendiente');
+                stateMail = 'Pendiente';
                 setIncidenciaStateColor('--blue');
+                colorMail = '#3685EC';
                 break;
             case 'doing':
                 setIncidenciaState('En proceso');
+                stateMail = 'En proceso';
                 setIncidenciaStateColor('--orange');
-
+                colorMail = '#e78738';
                 break;
             case 'blocked':
                 setIncidenciaState('Bloqueada');
+                stateMail = 'Bloqueada';
                 setIncidenciaStateColor('--red');
-        
+                colorMail = '#dc3545';
                 break;
             case 'done':
                 setIncidenciaState('Solucionada');
+                stateMail = 'Solucionada';
                 setIncidenciaStateColor('--green');
-    
+                colorMail = '#07a744';
                 break;
         }
 
@@ -316,7 +387,8 @@ const IncidenciaViewPage = () => {
             userId: localStorage.userId,
             state: incidenciaStateChanged,
             comment: commentChangedState,
-            date: currentDate
+            date: currentDate,
+            action: 'Cambio de estado'
         }
         
         if (incidenciaStateChanged == 'done')
@@ -325,6 +397,15 @@ const IncidenciaViewPage = () => {
             updateStateIncidencia(incidencia.id, incidenciaStateChanged);
         
         createStateLog(incidenciaLog);
+
+        const usersToMail = [];
+        if (incidenciaSupervisor.id == reporterUser.id) {
+            usersToMail.push(incidenciaSupervisor.email)
+        } else {
+            usersToMail.push(incidenciaSupervisor.email,reporterUser.email);
+        }
+        usersToMail.push(assignedUser.email);
+        sendIncidenciaStateChangedMail(incidencia.id, stateMail, colorMail, usersToMail)
         $('#'+modalChangeIncidenciaState.id).modal('hide');
         $('#toastIncidenciaStateChanged').show();
         $('#toastIncidenciaStateChanged').toast('show');
@@ -339,7 +420,6 @@ const IncidenciaViewPage = () => {
     const handleClickItemDD = (idItem: string) => {
         setIncidenciaStateChanged(idItem);
         $('#'+modalChangeIncidenciaState.id).modal('show');
-
         // updateStateIncidencia(incidencia.id, idItem);
     }
 
@@ -361,7 +441,7 @@ const IncidenciaViewPage = () => {
                     <div className="state-container">
                         <p className={`incidencia-state${incidenciaStateColor}`}>{incidenciaState}</p>
                         <p>¿Desea cambiar el estado de la incidencia?</p>
-                        <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
+                        <Dropdown dropdownInfo={changeStateDropdown} onClick={handleClickItemDD}></Dropdown>
                     </div>
                     <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
                 </div>
@@ -370,19 +450,25 @@ const IncidenciaViewPage = () => {
                         <div className="info-container">
                             <p className="p-left">Reporter</p>
                             {
-                            isDataNull(reporterName)
+                            isDataNull(reporterUser.name+' '+reporterUser.surname1+' '+reporterUser.surname2)
                             }
                         </div>
                         <div className="info-container">
                             <p className="p-left">Técnico asignado (ID)</p>
                             {
-                            isDataNull(assignedName)
+                                assignedUser.name != null ? isDataNull(assignedUser.name + ' '+ assignedUser.surname1 + ' ' + assignedUser.surname2) : isDataNull(null)
                             }
                         </div>
                         <div className="info-container">
                             <p className="p-left">Equipo asignado</p>
                             {
                             isDataNull(assignedTeam)
+                            }
+                        </div>
+                        <div className="info-container">
+                            <p className="p-left">Supervisor</p>
+                            {
+                                assignedUser.name != null ? isDataNull(incidenciaSupervisor.name + ' '+ incidenciaSupervisor.surname1 + ' ' + incidenciaSupervisor.surname2) : isDataNull(null)
                             }
                         </div>
                         <div className="info-container">

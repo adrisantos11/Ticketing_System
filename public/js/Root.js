@@ -18278,7 +18278,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n  z-index: 998;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container .navbar-item {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #f1f1f1;\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n  padding: 0;\n  border-radius: 0;\n}\n.navbar-container .options-container .span-container .navbar-item i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #f1f1f1;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container .navbar-item.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container .navbar-item.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container .navbar-item:hover {\n  text-decoration: none;\n  background-color: rgba(241, 241, 241, 0.16);\n}\n.navbar-container .options-container .span-container .navbar-item:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container .navbar-item:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container .navbar-item .option-text {\n  margin-left: 20px;\n}\n.navbar-container .buttonContainer {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  background-color: rgba(241, 241, 241, 0.2);\n  text-align: center;\n  padding: 1rem;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.2rem;\n  font-family: \"Black Han Sans\", sans-serif;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container .navbar-item:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
+exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n  z-index: 998;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container .navbar-item {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #f1f1f1;\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n  padding: 0;\n  border-radius: 0;\n  cursor: pointer;\n}\n.navbar-container .options-container .span-container .navbar-item i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #f1f1f1;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container .navbar-item.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container .navbar-item.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container .navbar-item:hover {\n  text-decoration: none;\n  background-color: rgba(241, 241, 241, 0.16);\n}\n.navbar-container .options-container .span-container .navbar-item:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container .navbar-item:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container .navbar-item .option-text {\n  margin-left: 20px;\n}\n.navbar-container .buttonContainer {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  background-color: rgba(241, 241, 241, 0.2);\n  text-align: center;\n  padding: 1rem;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.2rem;\n  font-family: \"Black Han Sans\", sans-serif;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container .navbar-item:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
 
 // exports
 
@@ -75905,27 +75905,7 @@ var CommentsPage = function (props) {
     var date = new Date();
     var hoursMinutesSeconds = date.toLocaleString().split(' ');
     var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
-    var user = {
-        id: 1,
-        name: 'prueba',
-        surname1: 'prueba1',
-        surname2: 'surname2',
-        role: 'Technical',
-        userImage: '/images/default-profile-image.jpg'
-    };
     var _c = React.useState({
-        user: user,
-        dateMessage: '11/11/20',
-        textMessage: 'sjudfnfskjdfnkjsdnfgvlijuwserdnfvkmdn owiaeru sdaio vhjsaiodv ijur vhiqujewrnv jiwedf vujkadsf vuiedfv uqerv dsakjf vbnsjhfiuyjlvb adjmch bjsludf hvkjudf vmjhxc bviu rfbvmhx bviuwe yrgbvxcyv bseiduf',
-        isLoggedUser: false
-    }), chatbox1 = _c[0], setChatbox1 = _c[1];
-    var _d = React.useState({
-        user: user,
-        dateMessage: '--',
-        textMessage: '--',
-        isLoggedUser: true
-    }), chatbox2 = _d[0], setChatbox2 = _d[1];
-    var _e = React.useState({
         id: 324,
         value: '',
         label: 'Comentario',
@@ -75937,7 +75917,7 @@ var CommentsPage = function (props) {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), messageInput = _e[0], setMessageInput = _e[1];
+    }), messageInput = _c[0], setMessageInput = _c[1];
     var getIncidenciaComments = function () {
         var helperList = [];
         IncidenciasUtilities_1.getCommentsIncidencia(props.incidenciaId).then(function (res) {
@@ -75954,6 +75934,7 @@ var CommentsPage = function (props) {
                     name: data.user_name,
                     surname1: data.user_surname1,
                     surname2: data.user_surname2,
+                    email: null,
                     role: userRole,
                     userImage: data.user_imageURL
                 };
@@ -75974,7 +75955,7 @@ var CommentsPage = function (props) {
     React.useEffect(function () {
         getIncidenciaComments();
     }, []);
-    var _f = React.useState(''), textComment = _f[0], setTextComment = _f[1];
+    var _d = React.useState(''), textComment = _d[0], setTextComment = _d[1];
     var handleChangeInput = function (value) {
         setMessageInput(__assign(__assign({}, messageInput), { value: value }));
         setTextComment(value);
@@ -76068,6 +76049,7 @@ var Dropdown_1 = __webpack_require__(/*! ../../../Components/Dropdown/Dropdown *
 var CommentsPage_1 = __webpack_require__(/*! ../CommentsPage/CommentsPage */ "./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.tsx");
 var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
 var IncidenciaStateLogsUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/IncidenciaStateLogsUtilities */ "./resources/js/Utilities/Incidencias/IncidenciaStateLogsUtilities.tsx");
+var Mails_1 = __webpack_require__(/*! ../../../Utilities/Mails */ "./resources/js/Utilities/Mails.tsx");
 var IncidenciaViewPage = function () {
     var idIncidencia = react_router_1.useParams().idIncidencia;
     var userRol = localStorage.userRol;
@@ -76091,6 +76073,7 @@ var IncidenciaViewPage = function () {
         id_reporter: null,
         id_assigned: null,
         id_team: null,
+        supervisor: null,
         title: null,
         description: null,
         category: null,
@@ -76105,25 +76088,50 @@ var IncidenciaViewPage = function () {
         priority: null,
         state: null
     }), incidencia = _a[0], setIncidencia = _a[1];
-    var _b = React.useState(''), reporterName = _b[0], setReporterName = _b[1];
-    var _c = React.useState(''), assignedName = _c[0], setAssignedName = _c[1];
-    var _d = React.useState(''), assignedTeam = _d[0], setAssignedTeam = _d[1];
+    var _b = React.useState({
+        id: null,
+        name: null,
+        surname1: null,
+        surname2: null,
+        email: null,
+        role: null,
+        userImage: null
+    }), reporterUser = _b[0], setReporterUser = _b[1];
+    var _c = React.useState({
+        id: null,
+        name: null,
+        surname1: null,
+        surname2: null,
+        email: null,
+        role: null,
+        userImage: null
+    }), assignedUser = _c[0], setAssignedUser = _c[1];
+    var _d = React.useState({
+        id: null,
+        name: null,
+        surname1: null,
+        surname2: null,
+        email: null,
+        role: null,
+        userImage: null
+    }), incidenciaSupervisor = _d[0], setIncidenciaSupervisor = _d[1];
+    var _e = React.useState(''), assignedTeam = _e[0], setAssignedTeam = _e[1];
     var iconList = ['fas fa-edit', 'fas fa-comments', 'fas fa-trash'];
     var valuesListTabs = ['Editar incidencia', 'Comentarios', 'Eliminar incidencia'];
     if (sreenWidth <= 550) {
         valuesListTabs = [];
     }
-    var _e = React.useState({
+    var _f = React.useState({
         idList: ['editar-incidencia', 'comentarios', 'eliminar-incidencia'],
         valuesList: valuesListTabs,
         iconList: iconList,
         color: ['primary', 'primary', 'red'],
         enabledList: [],
         itemActive: tabSelected
-    }), tabsOptions = _e[0], setTabsOptions = _e[1];
+    }), tabsOptions = _f[0], setTabsOptions = _f[1];
     var dropdownItems = ['Pendiente', 'En proceso', 'Bloqueado', 'Solucionado'];
     var dropdownIds = ['todo', 'doing', 'blocked', 'done'];
-    var _f = React.useState({
+    var _g = React.useState({
         id: 1,
         groupName: "Seleccionar...",
         groupItems: dropdownItems,
@@ -76131,16 +76139,16 @@ var IncidenciaViewPage = function () {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), orderByDropdown = _f[0], setOrderByDropdown = _f[1];
-    var _g = React.useState(''), incidenciaState = _g[0], setIncidenciaState = _g[1];
-    var _h = React.useState(''), incidenciaStateColor = _h[0], setIncidenciaStateColor = _h[1];
-    var _j = React.useState(false), incidenciaLoaded = _j[0], setIncidenciaLoaded = _j[1];
-    var _k = React.useState({
+    }), changeStateDropdown = _g[0], setChangeStateDropdown = _g[1];
+    var _h = React.useState(''), incidenciaState = _h[0], setIncidenciaState = _h[1];
+    var _j = React.useState(''), incidenciaStateColor = _j[0], setIncidenciaStateColor = _j[1];
+    var _k = React.useState(false), incidenciaLoaded = _k[0], setIncidenciaLoaded = _k[1];
+    var _l = React.useState({
         widgetType: 'edit',
         userRol: localStorage.userRol,
         urlGeneral: "/home/incidencia-view/" + idIncidencia,
         incidenciaData: incidencia
-    }), formularioIncidencia = _k[0], setFormularioIncidencia = _k[1];
+    }), formularioIncidencia = _l[0], setFormularioIncidencia = _l[1];
     var confirmButton = React.useState({
         id: 1,
         texto: 'Confirmar',
@@ -76173,7 +76181,7 @@ var IncidenciaViewPage = function () {
         enableCloseButton: true,
         infoModel: false
     })[0];
-    var _l = React.useState({
+    var _m = React.useState({
         id: 34,
         value: '',
         label: 'Comentario',
@@ -76185,7 +76193,7 @@ var IncidenciaViewPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), stateCommentInput = _l[0], setStateCommentInput = _l[1];
+    }), stateCommentInput = _m[0], setStateCommentInput = _m[1];
     var getIncidenciaData = function () {
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
             var stateAux;
@@ -76211,11 +76219,17 @@ var IncidenciaViewPage = function () {
                     setIncidenciaStateColor('--green');
                     break;
             }
-            console.log(result.incidencia[0]);
-            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.incidencia[0].group_id, id_reporter: result.incidencia[0].id_reporter, id_assigned: result.incidencia[0].id_assigned, id_team: result.incidencia[0].id_team, title: result.incidencia[0].title, description: result.incidencia[0].description, category: result.incidencia[0].category, build: result.incidencia[0].build, floor: result.incidencia[0].floor, class: result.incidencia[0].class, url_data: result.incidencia[0].url_data, creation_date: result.incidencia[0].creation_date, limit_date: result.incidencia[0].limit_date, assigned_date: result.incidencia[0].assigned_date, resolution_date: result.incidencia[0].resolution_date, priority: result.incidencia[0].priority, state: stateAux }));
-            setReporterName(result.names.name_reporter);
-            setAssignedName(result.names.name_assigned);
-            setAssignedTeam(result.names.name_group);
+            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.incidencia[0].group_id, id_reporter: result.incidencia[0].id_reporter, id_assigned: result.incidencia[0].id_assigned, id_team: result.incidencia[0].id_team, title: result.incidencia[0].title, supervisor: result.incidencia[0].supervisor, description: result.incidencia[0].description, category: result.incidencia[0].category, build: result.incidencia[0].build, floor: result.incidencia[0].floor, class: result.incidencia[0].class, url_data: result.incidencia[0].url_data, creation_date: result.incidencia[0].creation_date, limit_date: result.incidencia[0].limit_date, assigned_date: result.incidencia[0].assigned_date, resolution_date: result.incidencia[0].resolution_date, priority: result.incidencia[0].priority, state: stateAux }));
+            setReporterUser(__assign(__assign({}, reporterUser), { id: result.moreData.reporter.id, name: result.moreData.reporter.name, surname1: result.moreData.reporter.surname1, surname2: result.moreData.reporter.surname2, email: result.moreData.reporter.email, role: result.moreData.reporter.role, userImage: result.moreData.reporter.userImage }));
+            if (result.moreData.assigned != null) {
+                setAssignedUser(__assign(__assign({}, assignedUser), { id: result.moreData.assigned.id, name: result.moreData.assigned.name, surname1: result.moreData.assigned.surname1, surname2: result.moreData.assigned.surname2, email: result.moreData.assigned.email, role: result.moreData.assigned.role, userImage: result.moreData.assigned.userImage }));
+            }
+            if (result.moreData.supervisor != null) {
+                setIncidenciaSupervisor(__assign(__assign({}, incidenciaSupervisor), { id: result.moreData.supervisor.id, name: result.moreData.supervisor.name, surname1: result.moreData.supervisor.surname1, surname2: result.moreData.supervisor.surname2, email: result.moreData.supervisor.email, role: result.moreData.supervisor.role, userImage: result.moreData.supervisor.userImage }));
+            }
+            if (result.moreData.group != null) {
+                setAssignedTeam(result.moreData.group.name);
+            }
         });
         setFormularioIncidencia(__assign(__assign({}, formularioIncidencia), { incidenciaData: incidencia }));
         setIncidenciaLoaded(true);
@@ -76269,26 +76283,36 @@ var IncidenciaViewPage = function () {
         $('#toastDelete').show();
         $('#toastDelete').toast('show');
     };
-    var _m = React.useState(''), incidenciaStateChanged = _m[0], setIncidenciaStateChanged = _m[1];
-    var _o = React.useState(''), commentChangedState = _o[0], setCommentChangedState = _o[1];
-    var _p = React.useState(0), updateIncidenciaData = _p[0], setUpdateIncidenciaData = _p[1];
+    var _o = React.useState(''), incidenciaStateChanged = _o[0], setIncidenciaStateChanged = _o[1];
+    var _p = React.useState(''), commentChangedState = _p[0], setCommentChangedState = _p[1];
+    var _q = React.useState(0), updateIncidenciaData = _q[0], setUpdateIncidenciaData = _q[1];
     var saveIncidenciaState = function () {
+        var colorMail = '';
+        var stateMail = '';
         switch (incidenciaStateChanged) {
             case 'todo':
                 setIncidenciaState('Pendiente');
+                stateMail = 'Pendiente';
                 setIncidenciaStateColor('--blue');
+                colorMail = '#3685EC';
                 break;
             case 'doing':
                 setIncidenciaState('En proceso');
+                stateMail = 'En proceso';
                 setIncidenciaStateColor('--orange');
+                colorMail = '#e78738';
                 break;
             case 'blocked':
                 setIncidenciaState('Bloqueada');
+                stateMail = 'Bloqueada';
                 setIncidenciaStateColor('--red');
+                colorMail = '#dc3545';
                 break;
             case 'done':
                 setIncidenciaState('Solucionada');
+                stateMail = 'Solucionada';
                 setIncidenciaStateColor('--green');
+                colorMail = '#07a744';
                 break;
         }
         var incidenciaLog = {
@@ -76296,13 +76320,23 @@ var IncidenciaViewPage = function () {
             userId: localStorage.userId,
             state: incidenciaStateChanged,
             comment: commentChangedState,
-            date: currentDate
+            date: currentDate,
+            action: 'Cambio de estado'
         };
         if (incidenciaStateChanged == 'done')
             IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged, currentDate);
         else
             IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged);
         IncidenciaStateLogsUtilities_1.createStateLog(incidenciaLog);
+        var usersToMail = [];
+        if (incidenciaSupervisor.id == reporterUser.id) {
+            usersToMail.push(incidenciaSupervisor.email);
+        }
+        else {
+            usersToMail.push(incidenciaSupervisor.email, reporterUser.email);
+        }
+        usersToMail.push(assignedUser.email);
+        Mails_1.sendIncidenciaStateChangedMail(incidencia.id, stateMail, colorMail, usersToMail);
         $('#' + modalChangeIncidenciaState.id).modal('hide');
         $('#toastIncidenciaStateChanged').show();
         $('#toastIncidenciaStateChanged').toast('show');
@@ -76330,19 +76364,22 @@ var IncidenciaViewPage = function () {
                 React.createElement("div", { className: "state-container" },
                     React.createElement("p", { className: "incidencia-state" + incidenciaStateColor }, incidenciaState),
                     React.createElement("p", null, "\u00BFDesea cambiar el estado de la incidencia?"),
-                    React.createElement(Dropdown_1.default, { dropdownInfo: orderByDropdown, onClick: handleClickItemDD })),
+                    React.createElement(Dropdown_1.default, { dropdownInfo: changeStateDropdown, onClick: handleClickItemDD })),
                 React.createElement(Tabs_1.default, { tabsInfo: tabsOptions, handleClick: handleClickTab })),
             React.createElement("div", { className: 'incidenciaview2-container' },
                 React.createElement("div", { className: "incidenciaData-container" },
                     React.createElement("div", { className: "info-container" },
                         React.createElement("p", { className: "p-left" }, "Reporter"),
-                        isDataNull(reporterName)),
+                        isDataNull(reporterUser.name + ' ' + reporterUser.surname1 + ' ' + reporterUser.surname2)),
                     React.createElement("div", { className: "info-container" },
                         React.createElement("p", { className: "p-left" }, "T\u00E9cnico asignado (ID)"),
-                        isDataNull(assignedName)),
+                        assignedUser.name != null ? isDataNull(assignedUser.name + ' ' + assignedUser.surname1 + ' ' + assignedUser.surname2) : isDataNull(null)),
                     React.createElement("div", { className: "info-container" },
                         React.createElement("p", { className: "p-left" }, "Equipo asignado"),
                         isDataNull(assignedTeam)),
+                    React.createElement("div", { className: "info-container" },
+                        React.createElement("p", { className: "p-left" }, "Supervisor"),
+                        assignedUser.name != null ? isDataNull(incidenciaSupervisor.name + ' ' + incidenciaSupervisor.surname1 + ' ' + incidenciaSupervisor.surname2) : isDataNull(null)),
                     React.createElement("div", { className: "info-container" },
                         React.createElement("p", { className: "p-left" }, "T\u00EDtulo"),
                         isDataNull(incidencia.title, true)),
@@ -76805,6 +76842,7 @@ var MostrarIncidenciasPage = function () {
             if (orderBy == '') {
                 IncidenciasUtilities_1.getIncidencias(user, userRol, 'priority').then(function (res) {
                     setIncidenciasSize(res.data.length);
+                    console.log(res.data);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
                 });
@@ -77401,6 +77439,7 @@ var TechnicalGroupsPage = function () {
         name: null,
         surname1: null,
         surname2: null,
+        email: null,
         role: null,
         userImage: null
     }), technicalSelected = _h[0], setTechnicalSelected = _h[1];
@@ -77841,8 +77880,6 @@ var IncidenciasPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciasPa
 var IncidenciaViewPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage */ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.tsx");
 var Toast_1 = __webpack_require__(/*! ../../Components/Toast/Toast */ "./resources/js/Components/Toast/Toast.tsx");
 var MainPage = function () {
-    // $('#toastDelete').toast('hide');
-    // $('#toastCreate').toast('hide');
     var history = react_router_dom_1.useHistory();
     var _a = React.useState(false), isLogged = _a[0], setIsLogged = _a[1];
     var _b = React.useState({
@@ -78160,7 +78197,7 @@ var PerfilPage = function () {
         image_url: ''
     }), userLogged = _b[0], setUserLogged = _b[1];
     React.useEffect(function () {
-        Authentication_1.getUserLogged(userId).then(function (res) {
+        Authentication_1.getUser(userId).then(function (res) {
             try {
                 var rol = void 0;
                 if (res[0].role == 'technical') {
@@ -78348,6 +78385,7 @@ exports.login = function (user) {
         localStorage.setItem('usertoken', res.data.token);
         localStorage.setItem('userId', res.data.user_id);
         localStorage.setItem('userRol', res.data.user_role);
+        localStorage.setItem('userEmail', res.data.email);
         return res;
     })
         .catch(function (err) {
@@ -78389,7 +78427,7 @@ exports.logout = function () {
             console.log(err);
     });
 };
-exports.getUserLogged = function (id) {
+exports.getUser = function (id) {
     return axios_1.default
         .post('api/getUser', {
         id: id
@@ -78484,7 +78522,6 @@ exports.getTotalIncidencias = function (idUser) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 exports.createStateLog = function (newStateLog) {
-    console.log(newStateLog.comment);
     var comment;
     if (newStateLog.comment != '')
         comment = newStateLog.comment;
@@ -78943,6 +78980,46 @@ exports.getGroupIncidencias = function (id_user) {
     })
         .then(function (res) {
         return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+
+
+/***/ }),
+
+/***/ "./resources/js/Utilities/Mails.tsx":
+/*!******************************************!*\
+  !*** ./resources/js/Utilities/Mails.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+exports.sendIncidenciaStateChangedMail = function (id_incidencia, state, color, user_emails) {
+    return axios_1.default
+        .post('api/incidenciaStateChangedMail', {
+        id_incidencia: id_incidencia,
+        state: state,
+        color: color,
+        user_emails: user_emails
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        console.log(res.data);
     })
         .catch(function (err) {
         if (err.response) {
@@ -79478,9 +79555,11 @@ var FormularioIncidencia = function (props) {
         }
     };
     var handleClickConfirmIncidencia = function () {
+        var supervisorId = localStorage.idUser;
         if (userRol == 'technical') {
             setUserSelected(null);
             setGroupSelected(null);
+            supervisorId = null;
         }
         var date = new Date();
         var hoursMinutesSeconds = date.toLocaleString().split(' ');
@@ -79504,6 +79583,7 @@ var FormularioIncidencia = function (props) {
                 id_reporter: parseInt(localStorage.userId),
                 id_assigned: assignedUser,
                 id_team: assignedTeam,
+                supervisor: supervisorId,
                 title: title,
                 description: description,
                 category: category,
@@ -79532,6 +79612,7 @@ var FormularioIncidencia = function (props) {
                 id_reporter: parseInt(localStorage.userId),
                 id_assigned: userSelected,
                 id_team: groupSelected,
+                supervisor: supervisorId,
                 title: title,
                 description: description,
                 category: category,

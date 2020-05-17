@@ -132,26 +132,32 @@ class IncidenciasPageController extends Controller
         DB::delete('delete from incidencias where incidencias.id = ?', [$id_incidencia]);
     }
 
-    public function getAssignedNamesIncidencia($id_reporter, $id_assigned, $id_team){
-        $name_reporter = null;
-        $name_assigned = null;
-        $name_group = null;
+    public function getAssignedNamesIncidencia($id_reporter, $id_assigned, $supervisor_id, $id_team){
+        $reporter = null;
+        $supervisor = null;
+        $assigned = null;
+        $group = null;
 
         if ($id_reporter != null) {
-            $name_reporter = DB::table('users')->select('users.name', 'users.surname1', 'users.surname2')->distinct('users.id')->where('users.id', $id_reporter)->get();
-            $name_reporter = $name_reporter[0]->name.' '.$name_reporter[0]->surname1.' '.$name_reporter[0]->surname2;
+            $reporter = DB::table('users')->distinct('users.id')->where('users.id', $id_reporter)->get();
+            // $name_reporter = $name_reporter[0]->name.' '.$name_reporter[0]->surname1.' '.$name_reporter[0]->surname2;
         }
 
         if ($id_assigned != null) {
-            $name_assigned = DB::table('users')->select('users.name', 'users.surname1', 'users.surname2')->distinct('users.id')->where('users.id', $id_assigned)->get();
-            $name_assigned = $name_assigned[0]->name.' '.$name_assigned[0]->surname1.' '.$name_assigned[0]->surname2;
+            $assigned = DB::table('users')->distinct('users.id')->where('users.id', $id_assigned)->get();
+            // $name_assigned = $name_assigned[0]->name.' '.$name_assigned[0]->surname1.' '.$name_assigned[0]->surname2;
+        }
+
+        if ($supervisor_id != null) {
+            $supervisor = DB::table('users')->distinct('users.id')->where('users.id', $supervisor_id)->get();
+            // $name_assigned = $name_assigned[0]->name.' '.$name_assigned[0]->surname1.' '.$name_assigned[0]->surname2;
         }
 
         if ($id_team != null) {
-            $name_group = DB::table('teams')->select('teams.name')->distinct('teams.id')->where('teams.id', $id_team)->get();
-            $name_group = $name_group[0]->name;
+            $group = DB::table('teams')->distinct('teams.id')->where('teams.id', $id_team)->get();
+            // $name_group = $name_group[0]->name;
         }
-        $data_json = array('name_reporter' => $name_reporter, 'name_assigned' => $name_assigned, 'name_group' => $name_group);
+        $data_json = array('reporter' => $reporter[0], 'assigned' => $assigned[0],'supervisor' => $supervisor[0], 'group' => $group[0]);
         json_encode($data_json);
 
         return $data_json; 
@@ -160,9 +166,9 @@ class IncidenciasPageController extends Controller
     public function getIncidenciaUnique(Request $request) {
         $id_incidencia = $request->id;
         $incidencia = DB::table('incidencias')->distinct('incidencia.id')->where('id', $id_incidencia)->get();
-        $names = $this->getAssignedNamesIncidencia($incidencia[0]->id_reporter, $incidencia[0]->id_assigned, $incidencia[0]->id_team);
+        $moreData = $this->getAssignedNamesIncidencia($incidencia[0]->id_reporter, $incidencia[0]->id_assigned, $incidencia[0]->supervisor, $incidencia[0]->id_team);
 
-        $data_json = array('incidencia' => $incidencia, 'names' => $names);
+        $data_json = array('incidencia' => $incidencia, 'moreData' => $moreData);
         json_encode($data_json);
         return $data_json;
     }

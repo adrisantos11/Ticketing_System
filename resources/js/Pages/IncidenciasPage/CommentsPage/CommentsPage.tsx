@@ -13,28 +13,6 @@ const CommentsPage = (props: any) => {
     let hoursMinutesSeconds = date.toLocaleString().split(' ');
     const currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
 
-    const user: BasicUserModel = {
-        id: 1,
-        name: 'prueba',
-        surname1: 'prueba1',
-        surname2: 'surname2',
-        role: 'Technical',
-        userImage: '/images/default-profile-image.jpg'
-    }
-    const [chatbox1, setChatbox1] = React.useState<ChatBoxModel>({
-        user: user,
-        dateMessage: '11/11/20',
-        textMessage: 'sjudfnfskjdfnkjsdnfgvlijuwserdnfvkmdn owiaeru sdaio vhjsaiodv ijur vhiqujewrnv jiwedf vujkadsf vuiedfv uqerv dsakjf vbnsjhfiuyjlvb adjmch bjsludf hvkjudf vmjhxc bviu rfbvmhx bviuwe yrgbvxcyv bseiduf',
-        isLoggedUser: false
-    })
-
-    const [chatbox2, setChatbox2] = React.useState<ChatBoxModel>({
-        user: user,
-        dateMessage: '--',
-        textMessage: '--',
-        isLoggedUser: true
-    });
-
     const [messageInput, setMessageInput] = React.useState<InputModel>({
         id: 324,
         value: '',
@@ -63,7 +41,8 @@ const CommentsPage = (props: any) => {
                     id: data.user_id,
                     name: data.user_name,
                     surname1: data.user_surname1,
-                    surname2: data.user_surname2,
+                    surname2: data.user_surname2,   
+                    email: null,
                     role: userRole,
                     userImage: data.user_imageURL
                 }

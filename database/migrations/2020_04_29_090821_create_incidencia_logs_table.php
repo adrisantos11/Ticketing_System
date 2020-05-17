@@ -20,6 +20,7 @@ class CreateIncidenciaLogsTable extends Migration
             $table->enum('state', ['todo', 'doing', 'blocked', 'done']);
             $table->text('comment')->nullable();
             $table->dateTime('date');
+            $table->enum('action', ['Nuevo comentario', 'Cambio de estado', 'Editar incidencia'])->default('Cambio de estado');
         });
     }
 

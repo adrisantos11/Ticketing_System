@@ -16,7 +16,7 @@ class TechnicalController extends Controller
         /**
          * Incidencias asignadas al técnico.
          */
-        $first_union = DB::table('incidencias')->distinct('incidencias.id')->where('id_assigned',$id_user);
+        $first_union = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencias.id')->where('id_assigned',$id_user);
         /**
          * Incidencias asignadas a los grupos a los que pertenece el técnico.
          */

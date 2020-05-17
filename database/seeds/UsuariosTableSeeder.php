@@ -63,7 +63,7 @@ class UsuariosTableSeeder extends Seeder
             'surname2'  => 'Caballero',
             'exp'       => '12345678',
             'password'  => Hash::make('123456'),
-            'email'     => 'pabloelias@gmail.com',
+            'email'     => 'pablitoelias.elias@gmail.com',
             'phone'     => '123456789',
             'role'      => 'technical',
             'image_url' => '/images/pablo-elias.jpeg'

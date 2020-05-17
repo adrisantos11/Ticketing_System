@@ -18,6 +18,7 @@ class CreateIncidenciasTable extends Migration
             $table->integer('group_id')->nullable();
             $table->integer('id_reporter');
             $table->integer('id_assigned')->nullable();
+            $table->integer('supervisor')->nullable();
             $table->integer('id_team')->nullable();
             $table->string('title');
             $table->longText('description')->nullable();

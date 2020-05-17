@@ -3,6 +3,7 @@ export interface BasicUserModel {
     name: string,
     surname1: string,
     surname2: string,
+    email: string,
     role: string,
     userImage: string
 }
@@ -19,7 +20,8 @@ export interface IncidenciaLog {
     userId: number,
     state: string,
     comment: string,
-    date: string
+    date: string,
+    action: string
 }
 
 export interface ButtonModel {
@@ -78,6 +80,7 @@ export interface IncidenciaModel {
     id_reporter: number,
     id_assigned: number,
     id_team: number,
+    supervisor: number,
     title: string,
     description: string,
     category: string,

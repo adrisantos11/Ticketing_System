@@ -205,6 +205,7 @@ const TechnicalGroupsPage = () => {
         name: null,
         surname1: null,
         surname2: null,
+        email: null,
         role: null,
         userImage: null
     });

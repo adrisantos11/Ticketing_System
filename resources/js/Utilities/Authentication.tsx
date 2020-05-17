@@ -47,6 +47,7 @@ export const login = (user: any) => {
         localStorage.setItem('usertoken', res.data.token);
         localStorage.setItem('userId', res.data.user_id);
         localStorage.setItem('userRol', res.data.user_role);
+        localStorage.setItem('userEmail', res.data.email);
         return res;
     })
     .catch(err => {
@@ -67,7 +68,6 @@ export const getProfile = () => {
         headers: { Authorization : `Bearer ${localStorage.usertoken}`}
     })
     .then(res => {
-
         return res.data;
     })
     .catch(err => {
@@ -91,7 +91,7 @@ export const logout = () => {
     })
 }
 
-export const getUserLogged = (id: number) => {
+export const getUser = (id: number) => {
     return axios
     .post('api/getUser',{
         id: id

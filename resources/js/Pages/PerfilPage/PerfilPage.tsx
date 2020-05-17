@@ -3,7 +3,7 @@ import * as React from 'react'
 import './PerfilPage.scss'
 import DataCard from '../../Components/DataCard/DataCard';
 import { DataCardModel } from '../../Model/model';
-import { getUserLogged } from '../../Utilities/Authentication'; 
+import { getUser } from '../../Utilities/Authentication'; 
 import { Line, Bar } from 'react-chartjs-2';
 import { defaults } from 'react-chartjs-2';
 import { getTotalIncidencias } from '../../Utilities/Graphics/TechnicalDataGraphs';
@@ -44,7 +44,7 @@ const PerfilPage = () => {
     });
    
     React.useEffect(() => {
-        getUserLogged(userId).then(res => {
+        getUser(userId).then(res => {
             try {
                 let rol;
                 if (res[0].role == 'technical') {

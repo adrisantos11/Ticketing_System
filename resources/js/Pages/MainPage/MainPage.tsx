@@ -15,9 +15,6 @@ import IncidenciaViewPage from "../IncidenciasPage/IncidenciaViewPage/Incidencia
 import Toast from '../../Components/Toast/Toast';
 
 const MainPage = () => {
-    // $('#toastDelete').toast('hide');
-    // $('#toastCreate').toast('hide');
-
     const history = useHistory();
     const [isLogged, setIsLogged] = React.useState(false);
     const [logoutButton, setLogoutButton] = React.useState<ButtonModel>({
