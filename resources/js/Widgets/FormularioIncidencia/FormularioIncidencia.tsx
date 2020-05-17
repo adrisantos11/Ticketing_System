@@ -15,6 +15,7 @@ import {getGroups} from '../../Utilities/Incidencias/SupervisorUtilities';
 
 interface Props {
     formularioProps: FormularioIncidenciaModel;
+    editIncidenciaClick?: (incidencia: IncidenciaModel) => void;
 }
 
 const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
@@ -35,12 +36,12 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
     const history = useHistory();
 
-    
     let titleIncidencia = '';
     let descriptionIncidencia = '';
     let categoryIncidencia = '';
     let userSelectedIncidencia = null;
     let teamSelectedIncidencia = null;
+    let supervisorIncidencia = null;
     let buildIncidencia = '';
     let floorIncidencia = 0;
     let classIncidencia = '';
@@ -72,6 +73,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         categoryIncidencia = props.formularioProps.incidenciaData.category;
         userSelectedIncidencia = props.formularioProps.incidenciaData.id_assigned;
         teamSelectedIncidencia = props.formularioProps.incidenciaData.id_team;
+        supervisorIncidencia = props.formularioProps.incidenciaData.supervisor;
         buildIncidencia = props.formularioProps.incidenciaData.build;
         floorIncidencia = props.formularioProps.incidenciaData.floor;
         classIncidencia = props.formularioProps.incidenciaData.class;
@@ -95,6 +97,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     const [description, setDescription] = React.useState(descriptionIncidencia);
     const [category, setCategory] = React.useState(categoryIncidencia);
     const [userSelected, setUserSelected] = React.useState(userSelectedIncidencia);
+    const [supervisor, setSupervisor] = React.useState(supervisorIncidencia);
+
     const [groupSelected, setGroupSelected] = React.useState(teamSelectedIncidencia);
     const [build, setBuild] = React.useState(buildIncidencia);
     const [floor, setFloor] = React.useState(floorIncidencia);
@@ -485,6 +489,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         if (userRol == 'technical') {
             setUserSelected(null);
             setGroupSelected(null);
+            supervisorId = null;
         }
 
         let date = new Date();
@@ -531,13 +536,17 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             $('#toastCreate').show();
             $('#toastCreate').toast('show');
         } else {
+            let supervisorId = 0;
+            if(userRol == 'supervisor') {
+                supervisorId = parseInt(localStorage.userId);
+            }
             let incidencia: IncidenciaModel = {
                 id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
                 id_reporter: props.formularioProps.incidenciaData.id_reporter,
                 id_assigned: userSelected,
                 id_team: groupSelected,
-                supervisor: supervisorId,
+                supervisor: supervisorId ,
                 title: title,
                 description: description,
                 category: category,
@@ -552,6 +561,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 priority: priority,
                 state: 'todo'
             }
+            props.editIncidenciaClick(incidencia);
             editIncidencia(incidencia);
             $('#'+modalCreateIncidencia.id).modal('hide'); 
             $('#toastIncidenciaEditted').show();

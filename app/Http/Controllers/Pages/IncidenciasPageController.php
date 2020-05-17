@@ -114,6 +114,7 @@ class IncidenciasPageController extends Controller
             ->update([
                 'id_assigned' => $request->id_assigned,
                 'id_team' => $request->id_team,
+                'supervisor' => $request->supervisor,
                 'title' => $request->title,
                 'description' => $request->description,
                 'category' => $request->category,
@@ -231,7 +232,17 @@ class IncidenciasPageController extends Controller
             'url_data'      => $request->urlData,
             ]);
         }
+    }
 
+    /**
+     *  SELECT DISTINCT users.email from users
+        inner JOIN comments on comments.user_id = users.id
+        WHERE comments.incidencia_id = 8
+     */
+    public function getEmailsFromIncidenciaComments(Request $request) {
+        $incidencia_id = $request->idIncidencia;
+        $emails = DB::table('users')->select('email')->distinct('users.email')->join('comments', 'comments.user_id', '=', 'users.id')->where('comments.incidencia_id', $incidencia_id)->get();
+        return $emails;
     }
 
 }

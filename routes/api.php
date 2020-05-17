@@ -37,7 +37,9 @@ Route::namespace('Pages')->group(function () {
     Route::post('incidencias/updateState', 'IncidenciasPageController@updateStateIncidencia');
     Route::post('incidencias/getComments', 'IncidenciasPageController@getComments');
     Route::post('incidencias/createComment', 'IncidenciasPageController@createIncidenciaComment');
+    Route::post('incidencias/getUserEmailsFromIncidenciaComment', 'IncidenciasPageController@getEmailsFromIncidenciaComments');
 
+    
 });
 
 Route::namespace('Incidencias')->group(function () { 
@@ -62,6 +64,7 @@ Route::namespace('Users')->group(function () {
     Route::post('incidencias/supervisor/groups/deleteTechnicalAssign', 'SupervisorController@deleteTechnicalAssign');
     Route::post('incidencias/supervisor/groups/addTechnicalToGroup', 'SupervisorController@addTechnicalToGroup');
     Route::get('incidencias/supervisor/groups/getGroupCategories', 'SupervisorController@getGroupCategories');
+    Route::post('incidencias/supervisor/groups/getTeamEmails', 'SupervisorController@getGroupEmails');
     // getAllTechnicalGroups
     // Route::post('incidencias/supervisor/groups/get', 'SupervisorController@addTechnicalToGroup');
 

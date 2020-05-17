@@ -29,15 +29,7 @@ const IncidenciaViewPage = () => {
     const month = date.getMonth()+1;
     const currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
 
-    let tabSelected = 1;
-    if (history.location.pathname.endsWith('comments'))
-        tabSelected = 1;
-    else if (history.location.pathname.endsWith('delete')) 
-        tabSelected = 2;
-    else if (history.location.pathname.endsWith('edit')) 
-        tabSelected = 0;
-
-
+    const [tabSelected, setTabSelected] = React.useState(1);
     const [incidencia, setIncidencia] = React.useState<IncidenciaModel>({
         id: Number(idIncidencia),
         group_id: null,
@@ -276,6 +268,16 @@ const IncidenciaViewPage = () => {
 
     React.useEffect(() => {
         getIncidenciaData();
+        if (history.location.pathname.endsWith('comments')) {
+            setTabSelected(1);
+        }
+        else if (history.location.pathname.endsWith('delete'))  {
+            setTabSelected(2);
+        }
+        else if (history.location.pathname.endsWith('edit'))  {
+            setTabSelected(0);
+
+        }
     }, []);
 
     React.useEffect(() => {
@@ -433,6 +435,10 @@ const IncidenciaViewPage = () => {
         }
     }
 
+    const updateIncidenciaClick = (incidencia: IncidenciaModel) => {
+        setIncidencia(incidencia);
+    }
+
     if (incidenciaLoaded) {
         return(
             <div className="incidenciaview1-container">
@@ -557,14 +563,14 @@ const IncidenciaViewPage = () => {
                         <Switch>
                             <Route path={`/home/incidencia-view/${idIncidencia}/edit`}>
                                 <div className="edit-container">
-                                    <FormularioIncidencia formularioProps={formularioIncidencia}></FormularioIncidencia>
+                                    <FormularioIncidencia formularioProps={formularioIncidencia} editIncidenciaClick={updateIncidenciaClick}></FormularioIncidencia>
                                 </div>
                             </Route>
                             <Route path={`/home/incidencia-view/${idIncidencia}/delete`}>
                                 <div>Eliminar incidencia</div>
                             </Route>
                             <Route path={`/home/incidencia-view/${idIncidencia}/comments`}>
-                                <CommentsPage incidenciaId={idIncidencia}></CommentsPage>
+                                <CommentsPage assignedEmail={assignedUser.email} supervisorEmail={incidenciaSupervisor.email} teamId={assignedTeam}></CommentsPage>
                             </Route>
                         </Switch>
                     </div>

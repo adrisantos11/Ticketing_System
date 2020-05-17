@@ -18601,7 +18601,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 100%;\n}\n@media screen and (max-width: 1682px) {\n  .formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n    flex-direction: column;\n  }\n  .formularioIncidencia-container .data-container .dropdowns-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container .dropdowns-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container .dropdowns-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .category-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n  display: flex;\n  align-items: center;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .priority-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n  padding: 1rem 1rem;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .title-container {\n    margin-bottom: 1rem;\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container .p-title {\n  font-size: 1.5rem;\n  color: #636b6f;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row .title-container .title-name {\n  width: 100%;\n  height: auto;\n  background-color: #3685EC;\n  padding: 0.5rem 1rem;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.formularioIncidencia-container .data-container--row .title-container .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .dropdowns-container {\n    width: 100%;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .form-group .text_label, .formularioIncidencia-container .data-container--row .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.2rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  width: 85px;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}", ""]);
+exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 100%;\n}\n@media screen and (max-width: 1682px) {\n  .formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n    flex-direction: column;\n  }\n  .formularioIncidencia-container .data-container .dropdowns-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container .dropdowns-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container .dropdowns-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .category-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .category-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n  display: flex;\n  align-items: center;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .priority-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n  padding: 1rem 1rem;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .title-container {\n    margin-bottom: 1rem;\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container .p-title {\n  font-size: 1.5rem;\n  color: #636b6f;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row .title-container .title-name {\n  width: 100%;\n  height: auto;\n  background-color: #3685EC;\n  padding: 0.5rem 1rem;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.formularioIncidencia-container .data-container--row .title-container .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .dropdowns-container {\n    width: 100%;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .form-group .text_label, .formularioIncidencia-container .data-container--row .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.2rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: auto;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  width: 85px;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}", ""]);
 
 // exports
 
@@ -75524,7 +75524,7 @@ var Navbar = function (props) {
                     React.createElement("span", { className: "menu-btn", id: "btn-cerrarMenu", onClick: handleClickCloseSlidebar },
                         React.createElement("i", { className: "fas fa-times" })),
                     React.createElement("div", { className: "btn-group btn-group-toggle span-container", "data-toggle": "buttons" },
-                        React.createElement("label", { className: "btn navbar-item", "data-toogle": "tooltip", "data-placement": "top", title: 'Perfil' },
+                        React.createElement("label", { className: "btn navbar-item active", "data-toogle": "tooltip", "data-placement": "top", title: 'Perfil' },
                             React.createElement("input", { type: "radio", name: "options", id: "perfil-option", onClick: handleClickNavOption }),
                             iconProfile,
                             React.createElement("span", { className: "option-text" }, "Perfil")),
@@ -75895,9 +75895,16 @@ __webpack_require__(/*! ./CommentsPage.scss */ "./resources/js/Pages/Incidencias
 var ChatBox_1 = __webpack_require__(/*! ../../../Widgets/ChatBox/ChatBox */ "./resources/js/Widgets/ChatBox/ChatBox.tsx");
 var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
 var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
+var Mails_1 = __webpack_require__(/*! ../../../Utilities/Mails */ "./resources/js/Utilities/Mails.tsx");
+var Authentication_1 = __webpack_require__(/*! ../../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+var SupervisorUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
 var CommentsPage = function (props) {
     var _a = React.useState([]), commentsList = _a[0], setCommentsList = _a[1];
     var _b = React.useState(true), noComments = _b[0], setNoComments = _b[1];
+    var history = react_router_dom_1.useHistory();
+    var path = history.location.pathname;
+    var incidenciaId = Number(path.match(/view\/(.*?)\/comments/)[1]);
     var date = new Date();
     var hoursMinutesSeconds = date.toLocaleString().split(' ');
     var currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
@@ -75916,7 +75923,7 @@ var CommentsPage = function (props) {
     }), messageInput = _c[0], setMessageInput = _c[1];
     var getIncidenciaComments = function () {
         var helperList = [];
-        IncidenciasUtilities_1.getCommentsIncidencia(props.incidenciaId).then(function (res) {
+        IncidenciasUtilities_1.getCommentsIncidencia(incidenciaId).then(function (res) {
             res.map(function (data) {
                 var userRole = '';
                 if (data.user_role == 'technical') {
@@ -75948,17 +75955,65 @@ var CommentsPage = function (props) {
             setCommentsList(helperList);
         });
     };
+    var _d = React.useState([]), userEmails = _d[0], setUserEmails = _d[1];
+    var _e = React.useState(null), currentUser = _e[0], setCurrentUser = _e[1];
+    var getEmailsUserComments = function () {
+        IncidenciasUtilities_1.getEmailsUsersComments(incidenciaId).then(function (res) {
+            var helperList = [];
+            res.map(function (data) {
+                console.log(data);
+                helperList.push(data.email);
+            });
+            setUserEmails(helperList);
+        });
+    };
+    var getCurrentUser = function () {
+        Authentication_1.getUser(localStorage.userId).then(function (res) {
+            console.log(res);
+            setCurrentUser({
+                id: res[0].name,
+                name: res[0].name,
+                surname1: res[0].surname1,
+                surname2: res[0].surname2,
+                email: res[0].email,
+                role: res[0].role,
+                userImage: res[0].userImage
+            });
+        });
+    };
+    var getTeamAssignEmails = function () {
+        console.log(props.teamId);
+        SupervisorUtilities_1.getTeamEmails(props.teamId).then(function (res) {
+            console.log(res);
+        });
+    };
     React.useEffect(function () {
         getIncidenciaComments();
+        getEmailsUserComments();
+        getCurrentUser();
+        getTeamAssignEmails();
     }, []);
-    var _d = React.useState(''), textComment = _d[0], setTextComment = _d[1];
+    var _f = React.useState(''), textComment = _f[0], setTextComment = _f[1];
     var handleChangeInput = function (value) {
         setMessageInput(__assign(__assign({}, messageInput), { value: value }));
         setTextComment(value);
     };
     var enviarComentario = function () {
         if (textComment != '') {
-            IncidenciasUtilities_1.saveCommentIncidencia(localStorage.userId, props.incidenciaId, textComment, currentDate, '');
+            IncidenciasUtilities_1.saveCommentIncidencia(localStorage.userId, incidenciaId, textComment, currentDate, '');
+            var userFullName = currentUser.name + ' ' + currentUser.surname1 + ' ' + currentUser.surname2;
+            var helperListUsers = userEmails;
+            var currentUserEmailExist = helperListUsers.indexOf(currentUser.email);
+            if (currentUserEmailExist == -1) {
+                helperListUsers.push(currentUser.email);
+            }
+            if (props.assignedEmail != null) {
+                helperListUsers.push(props.assignedEmail);
+            }
+            if (props.supervisorEmail != null) {
+                helperListUsers.push(props.supervisorEmail);
+            }
+            Mails_1.sendIncidenciaNewCommentMail(incidenciaId, textComment, userFullName, userEmails);
             getIncidenciaComments();
             setMessageInput(__assign(__assign({}, messageInput), { color: 'primary', error_control_text: '', value: '' }));
             // document.getElementById('inout-324').reset()
@@ -76056,14 +76111,8 @@ var IncidenciaViewPage = function () {
     var hoursMinutesSeconds = date.toLocaleString().split(' ');
     var month = date.getMonth() + 1;
     var currentDate = date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
-    var tabSelected = 1;
-    if (history.location.pathname.endsWith('comments'))
-        tabSelected = 1;
-    else if (history.location.pathname.endsWith('delete'))
-        tabSelected = 2;
-    else if (history.location.pathname.endsWith('edit'))
-        tabSelected = 0;
-    var _a = React.useState({
+    var _a = React.useState(1), tabSelected = _a[0], setTabSelected = _a[1];
+    var _b = React.useState({
         id: Number(idIncidencia),
         group_id: null,
         id_reporter: null,
@@ -76083,16 +76132,7 @@ var IncidenciaViewPage = function () {
         resolution_date: null,
         priority: null,
         state: null
-    }), incidencia = _a[0], setIncidencia = _a[1];
-    var _b = React.useState({
-        id: null,
-        name: null,
-        surname1: null,
-        surname2: null,
-        email: null,
-        role: null,
-        userImage: null
-    }), reporterUser = _b[0], setReporterUser = _b[1];
+    }), incidencia = _b[0], setIncidencia = _b[1];
     var _c = React.useState({
         id: null,
         name: null,
@@ -76101,7 +76141,7 @@ var IncidenciaViewPage = function () {
         email: null,
         role: null,
         userImage: null
-    }), assignedUser = _c[0], setAssignedUser = _c[1];
+    }), reporterUser = _c[0], setReporterUser = _c[1];
     var _d = React.useState({
         id: null,
         name: null,
@@ -76110,24 +76150,33 @@ var IncidenciaViewPage = function () {
         email: null,
         role: null,
         userImage: null
-    }), incidenciaSupervisor = _d[0], setIncidenciaSupervisor = _d[1];
-    var _e = React.useState(''), assignedTeam = _e[0], setAssignedTeam = _e[1];
+    }), assignedUser = _d[0], setAssignedUser = _d[1];
+    var _e = React.useState({
+        id: null,
+        name: null,
+        surname1: null,
+        surname2: null,
+        email: null,
+        role: null,
+        userImage: null
+    }), incidenciaSupervisor = _e[0], setIncidenciaSupervisor = _e[1];
+    var _f = React.useState(''), assignedTeam = _f[0], setAssignedTeam = _f[1];
     var iconList = ['fas fa-edit', 'fas fa-comments', 'fas fa-trash'];
     var valuesListTabs = ['Editar incidencia', 'Comentarios', 'Eliminar incidencia'];
     if (sreenWidth <= 550) {
         valuesListTabs = [];
     }
-    var _f = React.useState({
+    var _g = React.useState({
         idList: ['editar-incidencia', 'comentarios', 'eliminar-incidencia'],
         valuesList: valuesListTabs,
         iconList: iconList,
         color: ['primary', 'primary', 'red'],
         enabledList: [],
         itemActive: tabSelected
-    }), tabsOptions = _f[0], setTabsOptions = _f[1];
+    }), tabsOptions = _g[0], setTabsOptions = _g[1];
     var dropdownItems = ['Pendiente', 'En proceso', 'Bloqueado', 'Solucionado'];
     var dropdownIds = ['todo', 'doing', 'blocked', 'done'];
-    var _g = React.useState({
+    var _h = React.useState({
         id: 1,
         groupName: "Seleccionar...",
         groupItems: dropdownItems,
@@ -76135,16 +76184,16 @@ var IncidenciaViewPage = function () {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), changeStateDropdown = _g[0], setChangeStateDropdown = _g[1];
-    var _h = React.useState(''), incidenciaState = _h[0], setIncidenciaState = _h[1];
-    var _j = React.useState(''), incidenciaStateColor = _j[0], setIncidenciaStateColor = _j[1];
-    var _k = React.useState(false), incidenciaLoaded = _k[0], setIncidenciaLoaded = _k[1];
-    var _l = React.useState({
+    }), changeStateDropdown = _h[0], setChangeStateDropdown = _h[1];
+    var _j = React.useState(''), incidenciaState = _j[0], setIncidenciaState = _j[1];
+    var _k = React.useState(''), incidenciaStateColor = _k[0], setIncidenciaStateColor = _k[1];
+    var _l = React.useState(false), incidenciaLoaded = _l[0], setIncidenciaLoaded = _l[1];
+    var _m = React.useState({
         widgetType: 'edit',
         userRol: localStorage.userRol,
         urlGeneral: "/home/incidencia-view/" + idIncidencia,
         incidenciaData: incidencia
-    }), formularioIncidencia = _l[0], setFormularioIncidencia = _l[1];
+    }), formularioIncidencia = _m[0], setFormularioIncidencia = _m[1];
     var confirmButton = React.useState({
         id: 1,
         texto: 'Confirmar',
@@ -76177,7 +76226,7 @@ var IncidenciaViewPage = function () {
         enableCloseButton: true,
         infoModel: false
     })[0];
-    var _m = React.useState({
+    var _o = React.useState({
         id: 34,
         value: '',
         label: 'Comentario',
@@ -76189,7 +76238,7 @@ var IncidenciaViewPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), stateCommentInput = _m[0], setStateCommentInput = _m[1];
+    }), stateCommentInput = _o[0], setStateCommentInput = _o[1];
     var getIncidenciaData = function () {
         IncidenciasUtilities_1.getIncideniciaUnique(Number(idIncidencia)).then(function (result) {
             var stateAux;
@@ -76232,6 +76281,15 @@ var IncidenciaViewPage = function () {
     };
     React.useEffect(function () {
         getIncidenciaData();
+        if (history.location.pathname.endsWith('comments')) {
+            setTabSelected(1);
+        }
+        else if (history.location.pathname.endsWith('delete')) {
+            setTabSelected(2);
+        }
+        else if (history.location.pathname.endsWith('edit')) {
+            setTabSelected(0);
+        }
     }, []);
     React.useEffect(function () {
         setFormularioIncidencia(__assign(__assign({}, formularioIncidencia), { incidenciaData: incidencia }));
@@ -76279,9 +76337,9 @@ var IncidenciaViewPage = function () {
         $('#toastDelete').show();
         $('#toastDelete').toast('show');
     };
-    var _o = React.useState(''), incidenciaStateChanged = _o[0], setIncidenciaStateChanged = _o[1];
-    var _p = React.useState(''), commentChangedState = _p[0], setCommentChangedState = _p[1];
-    var _q = React.useState(0), updateIncidenciaData = _q[0], setUpdateIncidenciaData = _q[1];
+    var _p = React.useState(''), incidenciaStateChanged = _p[0], setIncidenciaStateChanged = _p[1];
+    var _q = React.useState(''), commentChangedState = _q[0], setCommentChangedState = _q[1];
+    var _r = React.useState(0), updateIncidenciaData = _r[0], setUpdateIncidenciaData = _r[1];
     var saveIncidenciaState = function () {
         var colorMail = '';
         var stateMail = '';
@@ -76352,6 +76410,9 @@ var IncidenciaViewPage = function () {
             setCommentChangedState(value);
         }
     };
+    var updateIncidenciaClick = function (incidencia) {
+        setIncidencia(incidencia);
+    };
     if (incidenciaLoaded) {
         return (React.createElement("div", { className: "incidenciaview1-container" },
             React.createElement("div", { className: "titleincidencia-container" },
@@ -76421,11 +76482,11 @@ var IncidenciaViewPage = function () {
                     React.createElement(react_router_dom_2.Switch, null,
                         React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/edit" },
                             React.createElement("div", { className: "edit-container" },
-                                React.createElement(FormularioIncidencia_1.default, { formularioProps: formularioIncidencia }))),
+                                React.createElement(FormularioIncidencia_1.default, { formularioProps: formularioIncidencia, editIncidenciaClick: updateIncidenciaClick }))),
                         React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/delete" },
                             React.createElement("div", null, "Eliminar incidencia")),
                         React.createElement(react_router_dom_2.Route, { path: "/home/incidencia-view/" + idIncidencia + "/comments" },
-                            React.createElement(CommentsPage_1.default, { incidenciaId: idIncidencia }))))),
+                            React.createElement(CommentsPage_1.default, { assignedEmail: assignedUser.email, supervisorEmail: incidenciaSupervisor.email, teamId: assignedTeam }))))),
             React.createElement(Modal_1.default, { modalProps: modalDeleteIncidencia, onClick: handleClickDeleteIncidencia },
                 React.createElement("div", null,
                     "Pulse el bot\u00F3n de ",
@@ -76511,16 +76572,7 @@ var IncidenciasPage = function () {
     var history = react_router_dom_1.useHistory();
     var userRol = localStorage.userRol;
     var sreenWidth = screen.width;
-    var tabSelected;
-    if (history.location.pathname.includes('show')) {
-        tabSelected = 0;
-    }
-    else if (history.location.pathname.includes('create')) {
-        tabSelected = 1;
-    }
-    else if (history.location.pathname.includes('technicalGroups')) {
-        tabSelected = 2;
-    }
+    var _a = React.useState(0), tabSelected = _a[0], setTabSelected = _a[1];
     var optionsList;
     var titlePage;
     var enableTehnicalGroups = true;
@@ -76594,14 +76646,25 @@ var IncidenciasPage = function () {
             valuesListTabs = [];
         }
     }
-    var _a = React.useState({
+    var _b = React.useState({
         idList: idListTabs,
         valuesList: valuesListTabs,
         iconList: iconList,
         color: colorListTabs,
         enabledList: [true, true, enableTehnicalGroups],
         itemActive: tabSelected
-    }), tabsOptions = _a[0], setTabsOptions = _a[1];
+    }), tabsOptions = _b[0], setTabsOptions = _b[1];
+    React.useEffect(function () {
+        if (history.location.pathname.includes('show')) {
+            setTabSelected(0);
+        }
+        else if (history.location.pathname.includes('create')) {
+            setTabSelected(1);
+        }
+        else if (history.location.pathname.includes('technicalGroups')) {
+            setTabSelected(2);
+        }
+    });
     var handleClickTab = function (id) {
         if (id == 'crearIncidencia') {
             history.push('/home/incidencias/create');
@@ -78773,6 +78836,28 @@ exports.saveCommentIncidencia = function (userId, incidenciaId, text, date, urlD
         console.log(err);
     });
 };
+exports.getEmailsUsersComments = function (idIncidencia) {
+    return axios_1.default
+        .post('api/incidencias/getUserEmailsFromIncidenciaComment', {
+        idIncidencia: idIncidencia
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
 
 
 /***/ }),
@@ -78906,6 +78991,19 @@ exports.getGroupCategories = function () {
         console.log(err);
     });
 };
+exports.getTeamEmails = function (idTeam) {
+    return axios_1.default
+        .post('api/incidencias/supervisor/groups/getTeamEmails', {
+        id: idTeam
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    }).then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        console.log(err);
+    });
+};
 
 
 /***/ }),
@@ -79028,11 +79126,12 @@ exports.sendIncidenciaStateChangedMail = function (id_incidencia, state, color, 
             console.log(err);
     });
 };
-exports.sendIncidenciaNewCommentMail = function (id_incidencia, comment, user_emails) {
+exports.sendIncidenciaNewCommentMail = function (id_incidencia, comment, user_name, user_emails) {
     return axios_1.default
         .post('api/incidenciaNewCommentMail', {
         id_incidencia: id_incidencia,
         comment: comment,
+        user_name: user_name,
         user_emails: user_emails
     }, {
         headers: { 'Content-Type': 'application/json' }
@@ -79205,6 +79304,7 @@ var FormularioIncidencia = function (props) {
     var categoryIncidencia = '';
     var userSelectedIncidencia = null;
     var teamSelectedIncidencia = null;
+    var supervisorIncidencia = null;
     var buildIncidencia = '';
     var floorIncidencia = 0;
     var classIncidencia = '';
@@ -79233,6 +79333,7 @@ var FormularioIncidencia = function (props) {
         categoryIncidencia = props.formularioProps.incidenciaData.category;
         userSelectedIncidencia = props.formularioProps.incidenciaData.id_assigned;
         teamSelectedIncidencia = props.formularioProps.incidenciaData.id_team;
+        supervisorIncidencia = props.formularioProps.incidenciaData.supervisor;
         buildIncidencia = props.formularioProps.incidenciaData.build;
         floorIncidencia = props.formularioProps.incidenciaData.floor;
         classIncidencia = props.formularioProps.incidenciaData.class;
@@ -79254,13 +79355,14 @@ var FormularioIncidencia = function (props) {
     var _b = React.useState(descriptionIncidencia), description = _b[0], setDescription = _b[1];
     var _c = React.useState(categoryIncidencia), category = _c[0], setCategory = _c[1];
     var _d = React.useState(userSelectedIncidencia), userSelected = _d[0], setUserSelected = _d[1];
-    var _e = React.useState(teamSelectedIncidencia), groupSelected = _e[0], setGroupSelected = _e[1];
-    var _f = React.useState(buildIncidencia), build = _f[0], setBuild = _f[1];
-    var _g = React.useState(floorIncidencia), floor = _g[0], setFloor = _g[1];
-    var _h = React.useState(classIncidencia), classroom = _h[0], setClassroom = _h[1];
-    var _j = React.useState(priorityIncidencia), priority = _j[0], setPriority = _j[1];
-    var _k = React.useState(urlFileIncidencia), urlFile = _k[0], setUrlFile = _k[1];
-    var _l = React.useState({
+    var _e = React.useState(supervisorIncidencia), supervisor = _e[0], setSupervisor = _e[1];
+    var _f = React.useState(teamSelectedIncidencia), groupSelected = _f[0], setGroupSelected = _f[1];
+    var _g = React.useState(buildIncidencia), build = _g[0], setBuild = _g[1];
+    var _h = React.useState(floorIncidencia), floor = _h[0], setFloor = _h[1];
+    var _j = React.useState(classIncidencia), classroom = _j[0], setClassroom = _j[1];
+    var _k = React.useState(priorityIncidencia), priority = _k[0], setPriority = _k[1];
+    var _l = React.useState(urlFileIncidencia), urlFile = _l[0], setUrlFile = _l[1];
+    var _m = React.useState({
         id: 1,
         value: titleInputValue,
         label: 'Título',
@@ -79272,8 +79374,8 @@ var FormularioIncidencia = function (props) {
         enabled: enableInput,
         inputSize: '',
         isTextArea: false
-    }), titleInput = _l[0], setTitleInput = _l[1];
-    var _m = React.useState({
+    }), titleInput = _m[0], setTitleInput = _m[1];
+    var _o = React.useState({
         id: 2,
         value: descriptionInputValue,
         label: 'Descripción',
@@ -79285,8 +79387,8 @@ var FormularioIncidencia = function (props) {
         enabled: enableInput,
         inputSize: '',
         isTextArea: true
-    }), descriptionInput = _m[0], setDescriptionInput = _m[1];
-    var _o = React.useState({
+    }), descriptionInput = _o[0], setDescriptionInput = _o[1];
+    var _p = React.useState({
         id: 1,
         groupName: categoryDropdownName,
         groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
@@ -79294,9 +79396,9 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), categoryDropdown = _o[0], setCategoryDropdown = _o[1];
+    }), categoryDropdown = _p[0], setCategoryDropdown = _p[1];
     // groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
-    var _p = React.useState({
+    var _q = React.useState({
         id: 2,
         groupName: buildDropdownName,
         groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
@@ -79304,8 +79406,8 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), buildDropdown = _p[0], setBuildDropdown = _p[1];
-    var _q = React.useState({
+    }), buildDropdown = _q[0], setBuildDropdown = _q[1];
+    var _r = React.useState({
         id: 3,
         groupName: floorDropdownName,
         groupItems: [],
@@ -79313,8 +79415,8 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), floorDropdown = _q[0], setFloorDropdown = _q[1];
-    var _r = React.useState({
+    }), floorDropdown = _r[0], setFloorDropdown = _r[1];
+    var _s = React.useState({
         id: 4,
         groupName: classDropdownName,
         groupItems: [],
@@ -79322,8 +79424,8 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), classDropdown = _r[0], setClassDropdown = _r[1];
-    var _s = React.useState({
+    }), classDropdown = _s[0], setClassDropdown = _s[1];
+    var _t = React.useState({
         id: 5,
         groupName: priorityDropdownName,
         groupItems: ['Crítica', 'Importante', 'Trivial'],
@@ -79331,7 +79433,7 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), priorityDropdown = _s[0], setPriorityDropdwn = _s[1];
+    }), priorityDropdown = _t[0], setPriorityDropdwn = _t[1];
     var createIncidenciaButton = React.useState({
         id: 1,
         texto: buttonText,
@@ -79578,6 +79680,7 @@ var FormularioIncidencia = function (props) {
         if (userRol == 'technical') {
             setUserSelected(null);
             setGroupSelected(null);
+            supervisorId = null;
         }
         var date = new Date();
         var hoursMinutesSeconds = date.toLocaleString().split(' ');
@@ -79623,13 +79726,17 @@ var FormularioIncidencia = function (props) {
             $('#toastCreate').toast('show');
         }
         else {
+            var supervisorId_1 = 0;
+            if (userRol == 'supervisor') {
+                supervisorId_1 = parseInt(localStorage.userId);
+            }
             var incidencia = {
                 id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
                 id_reporter: props.formularioProps.incidenciaData.id_reporter,
                 id_assigned: userSelected,
                 id_team: groupSelected,
-                supervisor: supervisorId,
+                supervisor: supervisorId_1,
                 title: title,
                 description: description,
                 category: category,
@@ -79644,6 +79751,7 @@ var FormularioIncidencia = function (props) {
                 priority: priority,
                 state: 'todo'
             };
+            props.editIncidenciaClick(incidencia);
             IncidenciasUtilities_1.editIncidencia(incidencia);
             $('#' + modalCreateIncidencia.id).modal('hide');
             $('#toastIncidenciaEditted').show();
@@ -79659,7 +79767,7 @@ var FormularioIncidencia = function (props) {
         enabledList: [true, true],
         itemActive: null
     })[0];
-    var _t = React.useState({
+    var _u = React.useState({
         id: 1,
         groupName: 'Elegir grupo',
         groupItems: [],
@@ -79667,8 +79775,8 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), groupsDropdown = _t[0], setGroupsDropdown = _t[1];
-    var _u = React.useState({
+    }), groupsDropdown = _u[0], setGroupsDropdown = _u[1];
+    var _v = React.useState({
         id: 14,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
@@ -79676,7 +79784,7 @@ var FormularioIncidencia = function (props) {
         enabled: true,
         tableToSearchIn: 'users',
         matchingWords: ['name', 'surname1', 'surname2']
-    }), autocompleteInputValues = _u[0], setAutocompleteInputValues = _u[1];
+    }), autocompleteInputValues = _v[0], setAutocompleteInputValues = _v[1];
     React.useEffect(function () {
         var helperListNames = [];
         var helperListIds = [];

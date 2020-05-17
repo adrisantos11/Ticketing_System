@@ -127,3 +127,17 @@ export const getGroupCategories = () => {
         console.log(err);
     })
 }
+
+export const getTeamEmails = (idTeam: number) => {
+    return axios
+    .post('api/incidencias/supervisor/groups/getTeamEmails', {
+        id: idTeam
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => {
+        return res.data;
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}

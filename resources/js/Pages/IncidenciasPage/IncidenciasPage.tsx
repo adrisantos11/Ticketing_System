@@ -12,19 +12,9 @@ import TechnicalGroupsPage from './TabOptions/TechnicalGroupsPage/TechnicalGroup
 const IncidenciasPage = () => {
     const history = useHistory();
     const userRol = localStorage.userRol;
-    const sreenWidth = screen.width;
-
-    let tabSelected;
-    if (history.location.pathname.includes('show')) {
-        tabSelected = 0;
-    }
-    else if (history.location.pathname.includes('create')) {
-        tabSelected = 1;
-    }
-    else if (history.location.pathname.includes('technicalGroups')) {
-        tabSelected = 2;
-    }
-
+    const sreenWidth = screen.width; 
+    
+    const [tabSelected, setTabSelected] = React.useState(0);
     
     let optionsList;
     let titlePage;
@@ -80,7 +70,18 @@ const IncidenciasPage = () => {
         enabledList: [true, true, enableTehnicalGroups],
         itemActive: tabSelected
     });
-    
+
+    React.useEffect(() => {
+        if (history.location.pathname.includes('show')) {
+            setTabSelected(0);
+        }
+        else if (history.location.pathname.includes('create')) {
+            setTabSelected(1);
+        }
+        else if (history.location.pathname.includes('technicalGroups')) {
+            setTabSelected(2);
+        }
+    })
 
     const handleClickTab = (id: string) => {
         if (id=='crearIncidencia') {

@@ -27,12 +27,13 @@ export const sendIncidenciaStateChangedMail = (id_incidencia: number, state: str
     })
 }
 
-export const sendIncidenciaNewCommentMail = (id_incidencia: number, comment: string, user_emails:string[]) => {
+export const sendIncidenciaNewCommentMail = (id_incidencia: number, comment: string, user_name: string, user_emails:string[]) => {
     return axios
     .post('api/incidenciaNewCommentMail',
     {
         id_incidencia: id_incidencia,
         comment: comment,
+        user_name: user_name,
         user_emails: user_emails
     },
     {

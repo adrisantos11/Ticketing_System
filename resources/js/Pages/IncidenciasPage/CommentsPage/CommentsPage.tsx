@@ -4,11 +4,18 @@ import './CommentsPage.scss';
 import ChatBox from '../../../Widgets/ChatBox/ChatBox'
 import {ChatBoxModel, BasicUserModel, InputModel} from '../../../Model/model';
 import { Input } from '../../../Components/Input/Input'
-import {getCommentsIncidencia, saveCommentIncidencia} from '../../../Utilities/Incidencias/IncidenciasUtilities'
+import { getCommentsIncidencia, saveCommentIncidencia, getEmailsUsersComments} from '../../../Utilities/Incidencias/IncidenciasUtilities'
+import { sendIncidenciaNewCommentMail } from '../../../Utilities/Mails';
+import { getUser } from '../../../Utilities/Authentication';
+import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
+import { getTeamEmails } from '../../../Utilities/Incidencias/SupervisorUtilities';
 
 const CommentsPage = (props: any) => {
     const [commentsList, setCommentsList] = React.useState([]);
     const [noComments, setNoComments] = React.useState(true);
+    const history = useHistory();
+    const path = history.location.pathname;
+    let incidenciaId = Number(path.match(/view\/(.*?)\/comments/)[1]);
     let date = new Date();
     let hoursMinutesSeconds = date.toLocaleString().split(' ');
     const currentDate = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + hoursMinutesSeconds[1];
@@ -29,7 +36,7 @@ const CommentsPage = (props: any) => {
 
     const getIncidenciaComments = () => {
         const helperList: React.SetStateAction<any[]> = [];
-        getCommentsIncidencia(props.incidenciaId).then(res => {
+        getCommentsIncidencia(incidenciaId).then(res => {
             res.map((data: any) => {
                 let userRole = '';
                 if (data.user_role == 'technical') {
@@ -61,9 +68,47 @@ const CommentsPage = (props: any) => {
             setCommentsList(helperList)
         })
     }
+    const [userEmails, setUserEmails] = React.useState([]);
+    const [currentUser, setCurrentUser] =  React.useState<BasicUserModel>(null);
+    const getEmailsUserComments = () => {
+        getEmailsUsersComments(incidenciaId).then(res => {
+            const helperList: React.SetStateAction<any[]> = [];
+            res.map((data: any) => {
+                console.log(data);
+                helperList.push(data.email);
+            })
+            setUserEmails(helperList);
+        })
+    }
+
+    const getCurrentUser = () => {
+        getUser(localStorage.userId).then(res => {
+            console.log(res);
+            setCurrentUser({
+                id: res[0].name,
+                name: res[0].name,
+                surname1: res[0].surname1,
+                surname2: res[0].surname2,
+                email: res[0].email,
+                role: res[0].role,
+                userImage: res[0].userImage
+            }
+            );
+        })
+    }
+
+    const getTeamAssignEmails = () => {
+        console.log(props.teamId);
+        getTeamEmails(props.teamId).then(res => {
+            console.log(res);
+        })
+    }
 
     React.useEffect(() => {
         getIncidenciaComments()
+        getEmailsUserComments();
+        getCurrentUser();
+        getTeamAssignEmails();
     }, [])
 
     const [textComment, setTextComment] = React.useState('');
@@ -77,7 +122,21 @@ const CommentsPage = (props: any) => {
 
     const enviarComentario = () => {
         if (textComment != '') {
-            saveCommentIncidencia(localStorage.userId, props.incidenciaId, textComment, currentDate, '');
+            saveCommentIncidencia(localStorage.userId, incidenciaId, textComment, currentDate, '');
+            const userFullName = currentUser.name+' '+ currentUser.surname1 + ' ' +  currentUser.surname2;
+            const helperListUsers = userEmails;
+            const currentUserEmailExist = helperListUsers.indexOf(currentUser.email);
+            if (currentUserEmailExist == -1) {
+                helperListUsers.push(currentUser.email);      
+            }
+            if (props.assignedEmail != null) {
+                helperListUsers.push(props.assignedEmail);
+            }
+            if (props.supervisorEmail != null) {
+                helperListUsers.push(props.supervisorEmail)   
+            }
+
+            sendIncidenciaNewCommentMail(incidenciaId, textComment, userFullName, userEmails)
             getIncidenciaComments();
             setMessageInput({
                 ...messageInput,

@@ -100,7 +100,7 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
                         <span className="menu-btn" id="btn-abrirMenu" onClick={handleClickOpenSlidebar}><i className="fas fa-bars"></i></span>
                         <span className="menu-btn" id="btn-cerrarMenu" onClick={handleClickCloseSlidebar}><i className="fas fa-times"></i></span>
                         <div className="btn-group btn-group-toggle span-container" data-toggle="buttons">
-                            <label className="btn navbar-item" data-toogle="tooltip" data-placement="top" title='Perfil'>
+                            <label className="btn navbar-item active" data-toogle="tooltip" data-placement="top" title='Perfil'>
                                 <input type="radio" name="options" id="perfil-option" onClick={handleClickNavOption}/>{iconProfile}
                                 <span className="option-text">Perfil</span>
                             </label>

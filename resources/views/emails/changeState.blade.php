@@ -18,10 +18,7 @@
             color: #3685EC;
             margin: 0;
         }
-        div .body {
-            padding: 1rem;
-            padding-top: 0;
-        }
+
         div .separator {
             height: 1px;
             background-color: rgb(102, 102, 102);

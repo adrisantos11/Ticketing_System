@@ -29,13 +29,14 @@ class SupervisorController extends Controller
          */
         $second_union_1   = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->whereNull('id_assigned')->whereNull('id_team');
 
+        $third_union_1 = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->where('supervisor', $id_user);
         /**
          *  3. Se obtienen las incidencias que están dentro de los grupos asociados al supervisor.
          * 
          * ________________ SQL Query ________________
          *  SELECT * from incidencias INNER JOIN teams ON incidencias.id_team = teams.id WHERE teams.id_supervisor = 3
          */
-        $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->join('teams', 'incidencias.id_team', '=', 'teams.id')->where('teams.id_supervisor',$id_user)->union($first_union_1)->union($second_union_1)->orderBy($orderBy, $orderDirection)->orderBy('limit_date', 'asc');
+        $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->join('teams', 'incidencias.id_team', '=', 'teams.id')->where('teams.id_supervisor',$id_user)->union($first_union_1)->union($second_union_1)->union($third_union_1)->orderBy($orderBy, $orderDirection)->orderBy('limit_date', 'asc');
 
         return $hole_union;
     }
@@ -245,5 +246,17 @@ where teams.id = 1
             array_push($categories_array, $categories[$i]->category);
         }
         return $categories_array;
+    }
+
+    /**
+     * SELECT users.email FROM `users`
+        INNER JOIN team_assigns on team_assigns.id_user = users.id
+        INNER JOIN teams on teams.id = team_assigns.id_team
+        WHERE teams.id = 2
+     */
+    public function getGroupEmails(Request $request) {
+        $id_team = $request->id;
+        $emails = DB::table('users')->select('users.email')->distinct('users.email')->join('team_assigns', 'team_assigns.id_user', '=', 'users.id')->join('teams', 'teams.id', '=', 'team_assigns.id_team')->where('teams.id', $id_team)->get();
+        return $emails;
     }
 }
