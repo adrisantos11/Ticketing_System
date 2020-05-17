@@ -74960,10 +74960,6 @@ var AutocompleteInput = function (props) {
             setScrollAttribute('');
         }
     };
-    React.useEffect(function () {
-        console.log('Recargamos lista.');
-        console.log(userList);
-    }, []);
     var onClickOption = function (user) {
         setInput(__assign(__assign({}, input), { value: user.name + ' ' + user.surname1 + ' ' + user.surname2 }));
         setDataDivState('');
@@ -76379,7 +76375,7 @@ var IncidenciaViewPage = function () {
                         isDataNull(assignedTeam)),
                     React.createElement("div", { className: "info-container" },
                         React.createElement("p", { className: "p-left" }, "Supervisor"),
-                        assignedUser.name != null ? isDataNull(incidenciaSupervisor.name + ' ' + incidenciaSupervisor.surname1 + ' ' + incidenciaSupervisor.surname2) : isDataNull(null)),
+                        incidenciaSupervisor.name != null ? isDataNull(incidenciaSupervisor.name + ' ' + incidenciaSupervisor.surname1 + ' ' + incidenciaSupervisor.surname2) : isDataNull(null)),
                     React.createElement("div", { className: "info-container" },
                         React.createElement("p", { className: "p-left" }, "T\u00EDtulo"),
                         isDataNull(incidencia.title, true)),
@@ -78458,7 +78454,6 @@ exports.getUser = function (id) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 exports.getFilteredUsers = function (data) {
-    console.log(data);
     return axios_1.default
         .post('api/getFilteredUsers', { data: data }, { headers: { 'Content-Type': 'application/json' }
     })
@@ -79033,6 +79028,30 @@ exports.sendIncidenciaStateChangedMail = function (id_incidencia, state, color, 
             console.log(err);
     });
 };
+exports.sendIncidenciaNewCommentMail = function (id_incidencia, comment, user_emails) {
+    return axios_1.default
+        .post('api/incidenciaNewCommentMail', {
+        id_incidencia: id_incidencia,
+        comment: comment,
+        user_emails: user_emails
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        console.log(res.data);
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
 
 
 /***/ }),
@@ -79555,11 +79574,10 @@ var FormularioIncidencia = function (props) {
         }
     };
     var handleClickConfirmIncidencia = function () {
-        var supervisorId = localStorage.idUser;
+        var supervisorId = parseInt(localStorage.userId);
         if (userRol == 'technical') {
             setUserSelected(null);
             setGroupSelected(null);
-            supervisorId = null;
         }
         var date = new Date();
         var hoursMinutesSeconds = date.toLocaleString().split(' ');
@@ -79605,11 +79623,10 @@ var FormularioIncidencia = function (props) {
             $('#toastCreate').toast('show');
         }
         else {
-            console.log(assignedDate);
             var incidencia = {
                 id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
-                id_reporter: parseInt(localStorage.userId),
+                id_reporter: props.formularioProps.incidenciaData.id_reporter,
                 id_assigned: userSelected,
                 id_team: groupSelected,
                 supervisor: supervisorId,

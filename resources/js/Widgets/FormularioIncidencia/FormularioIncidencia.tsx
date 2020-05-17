@@ -22,7 +22,6 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     const userRol = props.formularioProps.userRol;
     const widgetType = props.formularioProps.widgetType;
     const urlGeneral = props.formularioProps.urlGeneral;
-
     // Variables que sirven para rellenar los parámtros de los elementos del componente.
     let titleInputValue = '';
     let descriptionInputValue = '';
@@ -482,11 +481,10 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     }
 
     const handleClickConfirmIncidencia = () => {
-        let supervisorId = localStorage.idUser;
+        let supervisorId = parseInt(localStorage.userId);
         if (userRol == 'technical') {
             setUserSelected(null);
             setGroupSelected(null);
-            supervisorId = null;
         }
 
         let date = new Date();
@@ -533,11 +531,10 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             $('#toastCreate').show();
             $('#toastCreate').toast('show');
         } else {
-            console.log(assignedDate);
             let incidencia: IncidenciaModel = {
                 id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
-                id_reporter: parseInt(localStorage.userId),
+                id_reporter: props.formularioProps.incidenciaData.id_reporter,
                 id_assigned: userSelected,
                 id_team: groupSelected,
                 supervisor: supervisorId,

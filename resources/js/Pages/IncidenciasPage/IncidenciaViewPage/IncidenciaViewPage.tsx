@@ -402,7 +402,7 @@ const IncidenciaViewPage = () => {
         if (incidenciaSupervisor.id == reporterUser.id) {
             usersToMail.push(incidenciaSupervisor.email)
         } else {
-            usersToMail.push(incidenciaSupervisor.email,reporterUser.email);
+            usersToMail.push(incidenciaSupervisor.email, reporterUser.email);
         }
         usersToMail.push(assignedUser.email);
         sendIncidenciaStateChangedMail(incidencia.id, stateMail, colorMail, usersToMail)
@@ -468,7 +468,7 @@ const IncidenciaViewPage = () => {
                         <div className="info-container">
                             <p className="p-left">Supervisor</p>
                             {
-                                assignedUser.name != null ? isDataNull(incidenciaSupervisor.name + ' '+ incidenciaSupervisor.surname1 + ' ' + incidenciaSupervisor.surname2) : isDataNull(null)
+                                incidenciaSupervisor.name != null ? isDataNull(incidenciaSupervisor.name + ' '+ incidenciaSupervisor.surname1 + ' ' + incidenciaSupervisor.surname2) : isDataNull(null)
                             }
                         </div>
                         <div className="info-container">

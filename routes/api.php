@@ -76,7 +76,7 @@ Route::namespace('DataGraphs')->group(function () {
 Route::namespace('Utilidades')->group(function () {
     Route::post('getFilteredUsers', 'AutocompleteController@filterUsers');
     Route::post('incidenciaStateChangedMail', 'EmailController@incidenciaStateChangedMail');
-
+    Route::post('incidenciaNewCommentMail', 'EmailController@newCommentMail');
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

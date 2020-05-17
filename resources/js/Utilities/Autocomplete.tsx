@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const getFilteredUsers = (data: string) => {
-    console.log(data);
     return axios
     .post('api/getFilteredUsers', 
         { data: data }, 

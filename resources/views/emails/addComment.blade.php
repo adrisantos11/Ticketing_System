@@ -14,18 +14,17 @@
         div .header {
             font-size: 1.5rem;
             font-weight: bold;
-            width: 96%;
+            width: 50%;
             color: #3685EC;
             margin: 0;
         }
         div .body {
             padding: 1rem;
-            padding-top: 0;
         }
         div .separator {
             height: 1px;
             background-color: rgb(102, 102, 102);
-            width: 96%;
+            width: 50%;
         }
         div .footer {
             font-size: 1rem;
@@ -38,8 +37,10 @@
     <div class="mail-body">
         <div class='header' style="font-family: Sen, sans-serif">TICKETCLASS</div>
         <div class="body">
-            <p>Nuevo cambio en el estado de la incidencia <span><a style="font-size: 16px;" href={{ $incidencia_url }}><b>I-{{ $id_incidencia }} </b></a></span></p>
-            <p>ESTADO: <span style="color: {{$color}}; font-size: 16px;"><b>{{ $state }} </b></span></p>
+            <p>Se ha añadido un nuevo comentario en la incidencia <b>{{ $id_incidencia }}</b></p>
+            <p>Enviado por: <b>{{ $user_name }}</b></p>
+            <p>Contenido: <span><b>"{{ $comment }}"</b></span></p>
+            <a style="font-size: 16px;" href={{ $incidencia_url }}>Ver comentarios</a>
         </div>
         <div class="separator"></div>
         <div class="footer">

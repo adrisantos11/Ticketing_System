@@ -52,11 +52,6 @@ const AutocompleteInput: React.FunctionComponent<Props> = (props: Props) => {
         }
     }
 
-    React.useEffect(()=> {
-        console.log('Recargamos lista.')
-        console.log(userList);
-    }, []);
-
     const onClickOption = (user: BasicUserModel) => {
         setInput({
             ...input,
