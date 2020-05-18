@@ -18,7 +18,13 @@
             color: $primary_color;
             font-size: $font_size*2;
             margin: 0;
+
+            @media screen and (max-width: 1350px){
+                text-align: center;
+            }
         }
+
+
 
         .tabs-container {
             height: $default_padding*6.5;
@@ -133,7 +139,7 @@
             margin: $default_padding*2 $default_padding*3;
             padding: 0 $default_padding*5;
             @media screen and (max-width: 1350px){
-                width: 70%;
+                width: 100%;
                 padding: 0;
                 margin: 0;
             }
@@ -197,12 +203,16 @@
             border-radius: 4px;
 
             @media screen and (max-width: 1350px){
-                width: 70%;
+                width: 100%;
                 padding: 0;
+                margin: 0;
                 margin-bottom: $default_padding*3;
             }
             .edit-container {
                 padding: $default_padding*3 $default_padding*5;
+                @media screen and (max-width: 1452px){
+                    padding: 0;
+                }
 
                 .createIncidencia-container {
                     width: 100%;
@@ -221,4 +231,7 @@
         }
 
     }
+    @media screen and (max-width: 1452px){
+        padding: 0 $default_padding*2;
+    } 
 }
