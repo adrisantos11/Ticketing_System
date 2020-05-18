@@ -24,7 +24,7 @@ const Login = () => {
     const [inputUser, setInputUser] = React.useState<InputModel>({
         id: 1,
         value: '',
-        label: 'Expediente',
+        label: 'ID',
         labelColor: 'white',
         placeholder: 'Ej: 25342783',
         color: 'primary',

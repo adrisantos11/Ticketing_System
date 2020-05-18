@@ -77325,16 +77325,19 @@ var Input_1 = __webpack_require__(/*! ../../../../Components/Input/Input */ "./r
 var Dropdown_1 = __webpack_require__(/*! ../../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var SupervisorUtilities_1 = __webpack_require__(/*! ../../../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
 var Modal_1 = __webpack_require__(/*! ../../../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
+var Mails_1 = __webpack_require__(/*! ../../../../Utilities/Mails */ "./resources/js/Utilities/Mails.tsx");
+var Authentication_1 = __webpack_require__(/*! ../../../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
 var TechnicalGroupsPage = function () {
     var _a = React.useState([]), groups = _a[0], setGroups = _a[1];
-    var _b = React.useState({
+    var _b = React.useState(null), supervisor = _b[0], setSupervisor = _b[1];
+    var _c = React.useState({
         id: 0,
         name: null,
         description: null,
         category: null,
         id_supervisor: 0
-    }), selectedGroup = _b[0], setSelectedGroup = _b[1];
-    var _c = React.useState([]), technicalsList = _c[0], setTechnicalsList = _c[1];
+    }), selectedGroup = _c[0], setSelectedGroup = _c[1];
+    var _d = React.useState([]), technicalsList = _d[0], setTechnicalsList = _d[1];
     var getTechnicals = function (idGroup) {
         var helperList = [];
         SupervisorUtilities_1.getTechnicalsGroup(idGroup).then(function (res) {
@@ -77362,6 +77365,17 @@ var TechnicalGroupsPage = function () {
     };
     React.useEffect(function () {
         setTechnicalGroups();
+        Authentication_1.getUser(localStorage.userId).then(function (res) {
+            setSupervisor({
+                id: res[0].id,
+                name: res[0].name,
+                role: res[0].role,
+                surname1: res[0].surname1,
+                surname2: res[0].surname2,
+                email: res[0].email,
+                userImage: res[0].iamge_url
+            });
+        });
     }, []);
     var autocompleteInputValues = React.useState({
         id: 1,
@@ -77381,7 +77395,7 @@ var TechnicalGroupsPage = function () {
         target_modal: '',
         extraClass: ''
     })[0];
-    var _d = React.useState({
+    var _e = React.useState({
         id: 32,
         value: '',
         label: 'Nombre del grupo',
@@ -77393,8 +77407,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: false
-    }), titleInput = _d[0], setTitleInput = _d[1];
-    var _e = React.useState({
+    }), titleInput = _e[0], setTitleInput = _e[1];
+    var _f = React.useState({
         id: 33,
         value: '',
         label: 'Descripción',
@@ -77406,8 +77420,8 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: true
-    }), descriptionInput = _e[0], setDescriptionInput = _e[1];
-    var _f = React.useState({
+    }), descriptionInput = _f[0], setDescriptionInput = _f[1];
+    var _g = React.useState({
         id: 4,
         groupName: 'Categoría',
         groupItems: [],
@@ -77415,8 +77429,8 @@ var TechnicalGroupsPage = function () {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), categoryDropdown = _f[0], setCategoryDropdown = _f[1];
-    var _g = React.useState({
+    }), categoryDropdown = _g[0], setCategoryDropdown = _g[1];
+    var _h = React.useState({
         id: 23,
         value: '',
         label: 'Introducir nueva categoría',
@@ -77428,7 +77442,7 @@ var TechnicalGroupsPage = function () {
         enabled: true,
         inputSize: '',
         isTextArea: false
-    }), createCategoryInput = _g[0], setCreateCategoryInput = _g[1];
+    }), createCategoryInput = _h[0], setCreateCategoryInput = _h[1];
     var createTechnicalGroupButton = React.useState({
         id: 1,
         texto: 'Crear grupo',
@@ -77493,7 +77507,7 @@ var TechnicalGroupsPage = function () {
         enableCloseButton: true,
         infoModel: false
     })[0];
-    var _h = React.useState({
+    var _j = React.useState({
         id: 0,
         name: null,
         surname1: null,
@@ -77501,8 +77515,8 @@ var TechnicalGroupsPage = function () {
         email: null,
         role: null,
         userImage: null
-    }), technicalSelected = _h[0], setTechnicalSelected = _h[1];
-    var _j = React.useState(false), updateCategories = _j[0], setUpdateCategories = _j[1];
+    }), technicalSelected = _j[0], setTechnicalSelected = _j[1];
+    var _k = React.useState(false), updateCategories = _k[0], setUpdateCategories = _k[1];
     React.useEffect(function () {
         SupervisorUtilities_1.getGroupCategories().then(function (res) {
             setCategoryDropdown(__assign(__assign({}, categoryDropdown), { groupItems: res, groupIds: res }));
@@ -77520,12 +77534,15 @@ var TechnicalGroupsPage = function () {
             $('#' + modalTechnicalIsAlreadyAdded.id).modal('show');
         }
     };
-    var _k = React.useState(''), groupName = _k[0], setGroupName = _k[1];
-    var _l = React.useState(''), groupDescription = _l[0], setGroupDescription = _l[1];
-    var _m = React.useState(''), groupCategory = _m[0], setGroupCategory = _m[1];
-    var _o = React.useState(''), newCategory = _o[0], setNewCategory = _o[1];
+    var _l = React.useState(''), groupName = _l[0], setGroupName = _l[1];
+    var _m = React.useState(''), groupDescription = _m[0], setGroupDescription = _m[1];
+    var _o = React.useState(''), groupCategory = _o[0], setGroupCategory = _o[1];
+    var _p = React.useState(''), newCategory = _p[0], setNewCategory = _p[1];
     var handleClickAddTechnicalModal = function () {
         SupervisorUtilities_1.addTechnicalToGroup(technicalSelected.id, selectedGroup.id);
+        var userSelected = technicalSelected.name + ' ' + technicalSelected.surname1 + ' ' + technicalSelected.surname2;
+        var supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
+        Mails_1.sendNewInTeamMail(userSelected, selectedGroup.name, selectedGroup.description, localStorage.userEmail, supervisorName, technicalSelected.email);
         getTechnicals(Number(selectedGroup.id));
     };
     var handleSpanClick = function (e) {
@@ -77791,7 +77808,7 @@ var Login = function () {
     var _a = React.useState({
         id: 1,
         value: '',
-        label: 'Expediente',
+        label: 'ID',
         labelColor: 'white',
         placeholder: 'Ej: 25342783',
         color: 'primary',
@@ -78107,22 +78124,36 @@ var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_mod
 var Tabs_1 = __webpack_require__(/*! ../../../Components/Tabs/Tabs */ "./resources/js/Components/Tabs/Tabs.tsx");
 var GraphsPage = function () {
     var userId = localStorage.userId;
+    var userRol = localStorage.userRol;
     var history = react_router_dom_1.useHistory();
     // let tabSelected = 0;
     // if (history.location.pathname.endsWith('praphs'))
     //     tabSelected = 0;
     // else if (history.location.pathname.endsWith('settings')) 
     //     tabSelected = 1;
+    var idList = [];
+    var valuesList = [];
+    var iconList = [];
+    if (userRol == 'supervisor') {
+        idList.push('estado-actual-incidencias', 'evolucion-incidencias');
+        valuesList.push('Estado actual', 'Evolución incidencias');
+        iconList.push('fas fa-info-circle', 'fas fa-chart-line');
+    }
+    else if (userRol == 'technical') {
+        idList.push('resumen-incidencias', 'historial-incidencias');
+        valuesList.push('Resumen incidencias', 'Historial incidencias');
+        iconList.push("fas fa-info-circle", 'fas fa-history');
+    }
     var _a = React.useState({
-        idList: ['resumen-incidencias', 'historial-incidencias'],
-        valuesList: ['Resumen incidencias', 'Historial incidencias'],
-        iconList: ["fas fa-info-circle", 'fas fa-history'],
+        idList: idList,
+        valuesList: valuesList,
+        iconList: iconList,
         color: ['primary', 'primary'],
         enabledList: [true, true],
         itemActive: 0
     }), tabsOptions = _a[0], setTabsOptions = _a[1];
     var _b = React.useState({
-        title: null,
+        title: 'Cargando incidencias',
         type: 'bar',
         labels: ['Pendientes', 'En proceso', 'Bloqueadas'],
         colorsList: [
@@ -78133,13 +78164,20 @@ var GraphsPage = function () {
         mainLabel: 'Mis incidencias',
         graphData: null
     }), graphBar = _b[0], setGraphBar = _b[1];
-    var getTotalIncidenciasTechnical = function () {
-        TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
-            var sum = res[0].total + res[1].total + res[2].total;
-            setGraphBar(__assign(__assign({}, graphBar), { title: 'Resumen de incidencias (Total: ' + sum + ')', graphData: [res[0].total, res[1].total, res[2].total] }));
-        });
+    var getGraphData = function (id) {
+        if (userRol == 'supervisor') {
+        }
+        else if (userRol == 'technical') {
+            if (id == 'resumen-incidencias') {
+                TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
+                    var sum = res[0].total + res[1].total + res[2].total;
+                    setGraphBar(__assign(__assign({}, graphBar), { title: 'Resumen de incidencias (Total: ' + sum + ')', graphData: [res[0].total, res[1].total, res[2].total] }));
+                });
+            }
+        }
     };
     var handleClickTab = function (id) {
+        getGraphData(id);
         if (id == 'resumen-incidencias') {
             history.push('/home/perfil/graphs/summaryIncidencias');
         }
@@ -78149,7 +78187,7 @@ var GraphsPage = function () {
     };
     React.useEffect(function () {
         if (localStorage.userRol == 'technical') {
-            getTotalIncidenciasTechnical();
+            getGraphData('resumen-incidencias');
         }
         else if (localStorage.userRol == 'supervisor') {
             console.log('Hola');
@@ -79133,6 +79171,38 @@ exports.sendIncidenciaNewCommentMail = function (id_incidencia, comment, user_na
         comment: comment,
         user_name: user_name,
         user_emails: user_emails
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        console.log(res.data);
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.sendNewInTeamMail = function (name_user, team_name, team_description, supervisor_email, supervisor_name, user_email) {
+    console.log(name_user);
+    console.log(team_name);
+    console.log(supervisor_email);
+    console.log(supervisor_name);
+    console.log(user_email);
+    return axios_1.default
+        .post('api/newTechnicalMail', {
+        name_user: name_user,
+        team_name: team_name,
+        team_description: team_description,
+        supervisor_email: supervisor_email,
+        supervisor_name: supervisor_name,
+        user_email: user_email
     }, {
         headers: { 'Content-Type': 'application/json' }
     })

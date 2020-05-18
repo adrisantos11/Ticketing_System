@@ -53,3 +53,38 @@ export const sendIncidenciaNewCommentMail = (id_incidencia: number, comment: str
             console.log(err);
     })
 }
+
+export const sendNewInTeamMail = (name_user: string, team_name: string, team_description: string, supervisor_email: string, supervisor_name: string, user_email:string) => {
+    console.log(name_user);
+    console.log(team_name);
+    console.log(supervisor_email);
+    console.log(supervisor_name);
+    console.log(user_email);
+
+    return axios
+    .post('api/newTechnicalMail',
+    {
+        name_user: name_user,
+        team_name: team_name,
+        team_description:team_description,
+        supervisor_email: supervisor_email,
+        supervisor_name: supervisor_name,
+        user_email: user_email
+    },
+    {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => { 
+        console.log(res.data);
+    })
+    .catch(err => {
+        if(err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        } else if (err.request) {
+            console.log(err.request);
+            
+        } else
+            console.log(err);
+    })
+}

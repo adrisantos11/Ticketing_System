@@ -22,7 +22,7 @@ class AutocompleteController extends Controller
         $query = DB::table('users')->where('users.name', 'LIKE', '%'.$data.'%')->orWhere('users.surname1', 'LIKE', '%'.$data.'%')->orWhere('users.surname2', 'LIKE', '%'.$data.'%')->get();
         $json_array = array();
         foreach($query as $value) {
-            $object =  array("id"=> $value->id, "name" => $value->name, "surname1" => $value->surname1, "surname2" => $value->surname2, "role" => $value->role);
+            $object =  array("id"=> $value->id, "name" => $value->name, "surname1" => $value->surname1, "surname2" => $value->surname2, "role" => $value->role, "email" => $value->email);
             array_push($json_array, $object);
         }
         return json_encode($json_array);

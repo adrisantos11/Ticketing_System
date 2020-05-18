@@ -28,4 +28,15 @@ class EmailController extends Controller
         
         return('OK');
     }
+
+    public function addedToTeamMail(Request $request) {
+        $id_incidencia = $request->id_incidencia;
+        $url = 'http://127.0.0.1:8000/#/home/incidencia-view/'.$id_incidencia.'/comments';
+        $data = array('name_user' => $request->name_user, 'team_name'=> $request->team_name, 'team_description' => $request->team_description, 'supervisor_email' => $request->supervisor_email, 'supervisor_name' => $request->supervisor_name);
+        \Mail::send('emails.addToGroup', $data, function ($message) use ($request){
+            $message->to($request->user_email)->subject('¡Añadido a nuevo equipo!');
+        });
+        
+        return('OK');
+    }
 }

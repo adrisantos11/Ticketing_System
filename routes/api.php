@@ -65,6 +65,7 @@ Route::namespace('Users')->group(function () {
     Route::post('incidencias/supervisor/groups/addTechnicalToGroup', 'SupervisorController@addTechnicalToGroup');
     Route::get('incidencias/supervisor/groups/getGroupCategories', 'SupervisorController@getGroupCategories');
     Route::post('incidencias/supervisor/groups/getTeamEmails', 'SupervisorController@getGroupEmails');
+
     // getAllTechnicalGroups
     // Route::post('incidencias/supervisor/groups/get', 'SupervisorController@addTechnicalToGroup');
 
@@ -80,6 +81,7 @@ Route::namespace('Utilidades')->group(function () {
     Route::post('getFilteredUsers', 'AutocompleteController@filterUsers');
     Route::post('incidenciaStateChangedMail', 'EmailController@incidenciaStateChangedMail');
     Route::post('incidenciaNewCommentMail', 'EmailController@newCommentMail');
+    Route::post('newTechnicalMail', 'EmailController@addedToTeamMail');
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

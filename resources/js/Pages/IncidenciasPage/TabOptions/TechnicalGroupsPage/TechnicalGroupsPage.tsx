@@ -8,10 +8,14 @@ import Dropdown from '../../../../Components/Dropdown/Dropdown'
 
 import {getGroups, getTechnicalsGroup, deleteTechnicalAssign, addTechnicalToGroup, createGroup, getGroupCategories} from '../../../../Utilities/Incidencias/SupervisorUtilities';
 import Modal from '../../../../Components/Modal/Modal'
+import { sendNewInTeamMail } from '../../../../Utilities/Mails';
+import { getUser } from '../../../../Utilities/Authentication'
 
 const TechnicalGroupsPage = () => {
 
     const [groups, setGroups] = React.useState([]);
+    const [supervisor, setSupervisor] = React.useState<BasicUserModel>(null);
+
     const [selectedGroup, setSelectedGroup] = React.useState({
         id: 0,
         name: null,
@@ -52,7 +56,17 @@ const TechnicalGroupsPage = () => {
 
     React.useEffect(() => {
         setTechnicalGroups();
-
+        getUser(localStorage.userId).then(res => {
+            setSupervisor({
+                id: res[0].id,
+                name: res[0].name,
+                role: res[0].role,
+                surname1: res[0].surname1,
+                surname2: res[0].surname2,
+                email: res[0].email,
+                userImage: res[0].iamge_url
+            })
+        })
     }, [])
 
     const [autocompleteInputValues] = React.useState<AutocompleteInputModel>({
@@ -237,9 +251,11 @@ const TechnicalGroupsPage = () => {
     const [groupDescription, setGroupDescription] = React.useState('');
     const [groupCategory, setGroupCategory] = React.useState('');
     const [newCategory, setNewCategory] = React.useState('');
-
     const handleClickAddTechnicalModal = () => {
         addTechnicalToGroup(technicalSelected.id,  selectedGroup.id);
+        const userSelected = technicalSelected.name + ' ' + technicalSelected.surname1 + ' ' + technicalSelected.surname2;
+        const supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
+        sendNewInTeamMail(userSelected, selectedGroup.name, selectedGroup.description, localStorage.userEmail, supervisorName, technicalSelected.email);
         getTechnicals(Number(selectedGroup.id));
     }
 
