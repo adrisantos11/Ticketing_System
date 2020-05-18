@@ -37,7 +37,7 @@
         <div class='header' style="font-family: Sen, sans-serif">TICKETCLASS</div>
         <div class="body">
             <p>Hola <span><b>{{ $name_user }}</b>!</span></p>
-            <p>Se te ha añadido al grupo de <b  style="font-size: 16px; color: #3685EC;">{{ $team_name }}</b>.</p>
+            <p>Se te ha añadido al equipo de <b  style="font-size: 16px; color: #3685EC;">{{ $team_name }}</b>.</p>
             <p><b>Descripción:</b> {{ $team_description }}</p>
             <p><b>Supervisor:</b> {{ $supervisor_name }} (<b>{{ $supervisor_email }}</b>).</p>
         </div>

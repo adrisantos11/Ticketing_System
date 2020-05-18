@@ -21,39 +21,36 @@
         .dropdowns-container {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            // justify-content: space-between;
             width: 100%;
             
             @media screen and (max-width: 1682px){
                 flex-direction: column;
-                
+            }
+            .type-container {
                 .category-container {
-                    margin: $default_padding 0;
-                }
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin: $default_padding*2 0;
 
+                    p {
+                        margin: 0;
+                        font-size: $font_size*1.2;
+                        margin-right: $default_padding;
+                    }
+                }
+    
                 .priority-container {
-                    margin: $default_padding 0;
-                }
-            }
-            .category-container {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                p {
-                    margin: 0;
-                    font-size: $font_size*1.2;
-                    margin-right: $default_padding;
-                }
-            }
-
-            .priority-container {
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                p {
-                    margin: 0;
-                    font-size: $font_size*1.2;
-                    margin-right: $default_padding;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    margin: $default_padding*2 0;
+                    p {
+                        margin: 0;
+                        font-size: $font_size*1.2;
+                        margin-right: $default_padding;
+                    }
                 }
             }
             
@@ -168,6 +165,14 @@
             flex-direction: row;
             justify-content: space-between;
 
+            @media screen and (max-width: 1452px){
+                flex-direction: column;
+                .dropdown-container {
+                    margin-top: $default_padding;
+                    align-items: center;
+                }
+            }
+
             //background-color: rgba($primary_color,0.1);
             .dropdown-container {
                 display: flex;
@@ -197,7 +202,13 @@
         .asignacion-container {
             display: flex;
             flex-direction: row;
-
+            @media screen and (max-width: 1452px){
+                flex-direction: column;
+                align-items: center;
+                .assignTo-span {
+                    display: none;
+                }
+            }
             .assign-container {
                 display: flex;
                 flex-direction: row;
@@ -205,6 +216,7 @@
                 align-items: center;
                 margin: $default_padding*3 0;
                 width: 50%;
+
 
                 span {
                     width: 85px;
@@ -240,9 +252,33 @@
                         }
                     }
                 }
+                @media screen and (max-width: 1452px){
+                    margin: $default_padding*2 0;
+                    width: 100%;
+                    align-items: center;
+                    .tabs-container {
+                        width: 100%;
+                    }
+                }
+                
             }
+                    .dropdown-container {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        @media screen and (max-width: 1452px){
+                            align-items: center;
+    
+                        }
+                    }
 
         }
+    }
+
+    .buttonContainer {
+        @media screen and (max-width: 1452px){
+            text-align: center;
+        } 
     }
 
 }

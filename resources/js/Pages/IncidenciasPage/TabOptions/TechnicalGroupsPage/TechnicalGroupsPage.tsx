@@ -255,8 +255,8 @@ const TechnicalGroupsPage = () => {
         addTechnicalToGroup(technicalSelected.id,  selectedGroup.id);
         const userSelected = technicalSelected.name + ' ' + technicalSelected.surname1 + ' ' + technicalSelected.surname2;
         const supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
-        sendNewInTeamMail(userSelected, selectedGroup.name, selectedGroup.description, localStorage.userEmail, supervisorName, technicalSelected.email);
         getTechnicals(Number(selectedGroup.id));
+        sendNewInTeamMail(userSelected, selectedGroup.name, selectedGroup.description, localStorage.userEmail, supervisorName, technicalSelected.email);
     }
 
     const handleSpanClick = (e: any) => {

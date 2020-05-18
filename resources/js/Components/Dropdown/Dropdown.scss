@@ -26,7 +26,8 @@
     }
 
     .dropdown-menu {
-
+        min-width: 100%;
+        width: auto;
         .dropdown-item {
             &:hover {
                 @extend .dropdown-item;

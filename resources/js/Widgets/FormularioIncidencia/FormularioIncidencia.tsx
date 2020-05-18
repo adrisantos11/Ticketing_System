@@ -641,7 +641,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                         <p className="p-title">¿A quién se asigna la incidencia?</p>
                         <div className="asignacion-container">
                             <div className="assign-container">
-                                <span>Asignar a</span>
+                                <span className='assignTo-span'>Asignar a</span>
                                 <Tabs tabsInfo={tabsOptions} handleClick={handleClickTabsAssign}></Tabs>
                             </div>
                             <div className="dropdown-container">
@@ -679,15 +679,17 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 </div>
                 <div className="dropdowns-container">
                     {title3}
-                    <div className="category-container">
-                        <p>Categoría: </p>
-                        <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
+                    <div className="type-container">
+                        <div className="category-container">
+                            <p>Categoría: </p>
+                            <Dropdown dropdownInfo={categoryDropdown} onClick={handleClickItemDD}></Dropdown>
+                        </div>
+                        <div className="priority-container">
+                            <p>Prioridad: </p>
+                            <Dropdown dropdownInfo={priorityDropdown} onClick={handleClickItemDD}></Dropdown>
+                        </div>
                     </div>
-                    <div className="priority-container">
-                        <p>Prioridad: </p>
-                        <Dropdown dropdownInfo={priorityDropdown} onClick={handleClickItemDD}></Dropdown>
-                    </div>
-                    <UploadFile></UploadFile>
+                    {/* <UploadFile></UploadFile> */}
                 </div>
             </div>
             <div className="data-container">
