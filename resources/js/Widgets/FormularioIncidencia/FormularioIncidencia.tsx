@@ -2,7 +2,7 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './FormularioIncidencia.scss'
 import { Input } from '../../Components/Input/Input';
-import { ButtonModel, InputModel, AutocompleteInputModel , DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel, ModalModel, BasicUserModel } from '../../Model/model'
+import { ButtonModel, InputModel, AutocompleteInputModel , DropdownModel, IncidenciaModel, TabsModel, FormularioIncidenciaModel, ModalModel, BasicUserModel, IncidenciaLog } from '../../Model/model'
 import Dropdown from '../../Components/Dropdown/Dropdown';
 import Button from '../../Components/Button/Button';
 import AutocompleteInput from '../../Components/AutocompleteInput/AutocompleteInput'
@@ -12,7 +12,9 @@ import Tabs from '../../Components/Tabs/Tabs'
 import { HashRouter, useHistory, Switch, Route } from "react-router-dom";
 import Modal from '../../Components/Modal/Modal';
 import {getGroups} from '../../Utilities/Incidencias/SupervisorUtilities';
-
+import  { getLastIncidenciaID, createStateLog } from '../../Utilities/Incidencias/IncidenciaLogsUtilities';
+import { getUser } from '../../Utilities/Authentication';
+import { assignedToIncidenciaMail } from '../../Utilities/Mails';
 interface Props {
     formularioProps: FormularioIncidenciaModel;
     editIncidenciaClick?: (incidencia: IncidenciaModel) => void;
@@ -23,6 +25,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     const userRol = props.formularioProps.userRol;
     const widgetType = props.formularioProps.widgetType;
     const urlGeneral = props.formularioProps.urlGeneral;
+    const [lastIncidenciaID, setLastIncidenciaID] = React.useState(0);
     // Variables que sirven para rellenar los parámtros de los elementos del componente.
     let titleInputValue = '';
     let descriptionInputValue = '';
@@ -41,7 +44,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     let categoryIncidencia = '';
     let userSelectedIncidencia = null;
     let teamSelectedIncidencia = null;
-    let supervisorIncidencia = null;
+    let supervisorIncidencia = 0;
     let buildIncidencia = '';
     let floorIncidencia = 0;
     let classIncidencia = '';
@@ -97,7 +100,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     const [description, setDescription] = React.useState(descriptionIncidencia);
     const [category, setCategory] = React.useState(categoryIncidencia);
     const [userSelected, setUserSelected] = React.useState(userSelectedIncidencia);
-    const [supervisor, setSupervisor] = React.useState(supervisorIncidencia);
+    const [supervisor, setSupervisor] = React.useState<BasicUserModel>(null);
 
     const [groupSelected, setGroupSelected] = React.useState(teamSelectedIncidencia);
     const [build, setBuild] = React.useState(buildIncidencia);
@@ -530,7 +533,28 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 priority: priority,
                 state: 'todo'
             }
+
+            const createIncidenciaLog: IncidenciaLog = {
+                incidenciaId: lastIncidenciaID+1,
+                userId: localStorage.userId,
+                state: 'todo',
+                comment: '',
+                date: currentDate,
+                action: 'Crear incidencia'
+            }
+
+            if (userSelected != null) {
+                getUser(userSelected).then(res => {
+                    console.log(res[0]);
+                    console.log(supervisor);
+                    const userName = res[0].name + ' ' + res[0].surname1 + ' ' + res[0].surname2;
+                    const supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
+                    assignedToIncidenciaMail(lastIncidenciaID+1, userName, '--', title, description, category, '',  supervisorName, res[0].email, 'creado');
+                })
+            }
+
             createIncidencia(incidencia);    
+            createStateLog(createIncidenciaLog);
             $('#'+modalCreateIncidencia.id).modal('hide'); 
             history.push('/home/incidencias/show');
             $('#toastCreate').show();
@@ -561,8 +585,26 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 priority: priority,
                 state: 'todo'
             }
+            const createIncidenciaLog: IncidenciaLog = {
+                incidenciaId: props.formularioProps.incidenciaData.id,
+                userId: localStorage.userId,
+                state: props.formularioProps.incidenciaData.state,
+                comment: '',
+                date: currentDate,
+                action: 'Editar incidencia'
+            }
+            if (userSelected != null) {
+                getUser(userSelected).then(res => {
+                    console.log(res[0]);
+                    console.log(supervisor);
+                    const userName = res[0].name + ' ' + res[0].surname1 + ' ' + res[0].surname2;
+                    const supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
+                    assignedToIncidenciaMail(props.formularioProps.incidenciaData.id, userName, '--', title, description, category, '',  supervisorName, res[0].email, 'editado');
+                })
+            }
             props.editIncidenciaClick(incidencia);
             editIncidencia(incidencia);
+            createStateLog(createIncidenciaLog);
             $('#'+modalCreateIncidencia.id).modal('hide'); 
             $('#toastIncidenciaEditted').show();
             $('#toastIncidenciaEditted').toast('show');
@@ -614,6 +656,36 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 groupItems: helperListNames
             })
         })
+
+        getLastIncidenciaID().then(res => {
+            setLastIncidenciaID(res++);
+        })
+        if (props.formularioProps.widgetType == 'edit') {
+            getUser(props.formularioProps.incidenciaData.supervisor).then(res => {
+                setSupervisor({
+                    id: res[0].id,
+                    name: res[0].name,
+                    surname1: res[0].surname1,
+                    surname2: res[0].surname2,
+                    email: res[0].email,
+                    role: res[0].role,
+                    userImage: res[0].image_url
+                })
+            })
+            
+        } else {
+            getUser(localStorage.userId).then(res => {
+                setSupervisor({
+                    id: res[0].id,
+                    name: res[0].name,
+                    surname1: res[0].surname1,
+                    surname2: res[0].surname2,
+                    email: res[0].email,
+                    role: res[0].role,
+                    userImage: res[0].image_url
+                })
+            })
+        }
     }, [])
 
     const assignUser = (userRol: string, url: string) => {

@@ -39,4 +39,15 @@ class EmailController extends Controller
         
         return('OK');
     }
+
+    public function assignedToIncidenciaMail(Request $request) {
+        $id_incidencia = $request->id_incidencia;
+        $url = 'http://127.0.0.1:8000/#/home/incidencia-view/'.$id_incidencia.'/comments';
+        $data = array('id_incidencia' => $request->id_incidencia, 'name_user' => $request->name_user, 'incidencia_url'=> $url, 'incidencia_name' => $request->incidencia_name, 'incidencia_description' => $request->incidencia_description, 'incidencia_category' => $request->incidencia_category, 'incidencia_limit_date' => $request->incidencia_limit_date, 'supervisor_name' => $request->supervisor_name, 'team_name' => $request->team_name);
+        \Mail::send('emails.assignedToIncidencia', $data, function ($message) use ($request){
+            $message->to($request->user_email)->subject('¡Se te ha asignado una incidencia!');
+        });
+        
+        return('OK');
+    }
 }

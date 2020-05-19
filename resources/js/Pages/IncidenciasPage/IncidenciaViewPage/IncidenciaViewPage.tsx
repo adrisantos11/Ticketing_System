@@ -13,9 +13,8 @@ import Modal from '../../../Components/Modal/Modal';
 import Dropdown from '../../../Components/Dropdown/Dropdown';
 import CommentsPage from '../CommentsPage/CommentsPage';
 import { Input } from '../../../Components/Input/Input';
-import { createStateLog } from '../../../Utilities/Incidencias/IncidenciaStateLogsUtilities';
+import { createStateLog } from '../../../Utilities/Incidencias/IncidenciaLogsUtilities';
 import { sendIncidenciaStateChangedMail } from '../../../Utilities/Mails'
-import { getUser } from '../../../Utilities/Authentication'; 
 
 const IncidenciaViewPage = () => {
     let {idIncidencia} = useParams();
@@ -215,7 +214,7 @@ const IncidenciaViewPage = () => {
                 assigned_date: result.incidencia[0].assigned_date,
                 resolution_date: result.incidencia[0].resolution_date,
                 priority: result.incidencia[0].priority,
-                state: stateAux
+                state: result.incidencia[0].state
             });
 
             setReporterUser({

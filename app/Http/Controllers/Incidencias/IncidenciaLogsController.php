@@ -30,10 +30,16 @@ class IncidenciaLogsController extends Controller
             'user_id'       =>  $request->userId,
             'state'         =>  $request->state,
             'comment'       =>  $request->comment,
-            'date'          =>  $request->date
-            ]);
+            'date'          =>  $request->date,
+            'action'        =>  $request->action
+            ]); 
         }
 
+    }
+
+    function getLastIncidenciaID() {
+        $id = DB::table('incidencias')->where('id', \DB::raw("(select max(`id`) from incidencias)"))->get();
+        return $id[0]->id;
     }
 
     /**

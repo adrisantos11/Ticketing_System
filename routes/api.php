@@ -44,7 +44,7 @@ Route::namespace('Pages')->group(function () {
 
 Route::namespace('Incidencias')->group(function () { 
     Route::post('incidencias/createLog', 'IncidenciaLogsController@saveStateLogIncidencia');
-    
+    Route::get('incidencias/getLastIncidenciaID', 'IncidenciaLogsController@getLastIncidenciaID');
 });
 
 Route::namespace('Users')->group(function () {
@@ -82,6 +82,7 @@ Route::namespace('Utilidades')->group(function () {
     Route::post('incidenciaStateChangedMail', 'EmailController@incidenciaStateChangedMail');
     Route::post('incidenciaNewCommentMail', 'EmailController@newCommentMail');
     Route::post('newTechnicalMail', 'EmailController@addedToTeamMail');
+    Route::post('assignedToIncidenciaMail', 'EmailController@assignedToIncidenciaMail');   
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

@@ -76027,7 +76027,7 @@ var Modal_1 = __webpack_require__(/*! ../../../Components/Modal/Modal */ "./reso
 var Dropdown_1 = __webpack_require__(/*! ../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var CommentsPage_1 = __webpack_require__(/*! ../CommentsPage/CommentsPage */ "./resources/js/Pages/IncidenciasPage/CommentsPage/CommentsPage.tsx");
 var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
-var IncidenciaStateLogsUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/IncidenciaStateLogsUtilities */ "./resources/js/Utilities/Incidencias/IncidenciaStateLogsUtilities.tsx");
+var IncidenciaLogsUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/IncidenciaLogsUtilities */ "./resources/js/Utilities/Incidencias/IncidenciaLogsUtilities.tsx");
 var Mails_1 = __webpack_require__(/*! ../../../Utilities/Mails */ "./resources/js/Utilities/Mails.tsx");
 var IncidenciaViewPage = function () {
     var idIncidencia = react_router_1.useParams().idIncidencia;
@@ -76192,7 +76192,7 @@ var IncidenciaViewPage = function () {
                     setIncidenciaStateColor('--green');
                     break;
             }
-            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.incidencia[0].group_id, id_reporter: result.incidencia[0].id_reporter, id_assigned: result.incidencia[0].id_assigned, id_team: result.incidencia[0].id_team, title: result.incidencia[0].title, supervisor: result.incidencia[0].supervisor, description: result.incidencia[0].description, category: result.incidencia[0].category, build: result.incidencia[0].build, floor: result.incidencia[0].floor, class: result.incidencia[0].class, url_data: result.incidencia[0].url_data, creation_date: result.incidencia[0].creation_date, limit_date: result.incidencia[0].limit_date, assigned_date: result.incidencia[0].assigned_date, resolution_date: result.incidencia[0].resolution_date, priority: result.incidencia[0].priority, state: stateAux }));
+            setIncidencia(__assign(__assign({}, incidencia), { group_id: result.incidencia[0].group_id, id_reporter: result.incidencia[0].id_reporter, id_assigned: result.incidencia[0].id_assigned, id_team: result.incidencia[0].id_team, title: result.incidencia[0].title, supervisor: result.incidencia[0].supervisor, description: result.incidencia[0].description, category: result.incidencia[0].category, build: result.incidencia[0].build, floor: result.incidencia[0].floor, class: result.incidencia[0].class, url_data: result.incidencia[0].url_data, creation_date: result.incidencia[0].creation_date, limit_date: result.incidencia[0].limit_date, assigned_date: result.incidencia[0].assigned_date, resolution_date: result.incidencia[0].resolution_date, priority: result.incidencia[0].priority, state: result.incidencia[0].state }));
             setReporterUser(__assign(__assign({}, reporterUser), { id: result.moreData.reporter.id, name: result.moreData.reporter.name, surname1: result.moreData.reporter.surname1, surname2: result.moreData.reporter.surname2, email: result.moreData.reporter.email, role: result.moreData.reporter.role, userImage: result.moreData.reporter.userImage }));
             if (result.moreData.assigned != null) {
                 setAssignedUser(__assign(__assign({}, assignedUser), { id: result.moreData.assigned.id, name: result.moreData.assigned.name, surname1: result.moreData.assigned.surname1, surname2: result.moreData.assigned.surname2, email: result.moreData.assigned.email, role: result.moreData.assigned.role, userImage: result.moreData.assigned.userImage }));
@@ -76309,7 +76309,7 @@ var IncidenciaViewPage = function () {
             IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged, currentDate);
         else
             IncidenciasUtilities_1.updateStateIncidencia(incidencia.id, incidenciaStateChanged);
-        IncidenciaStateLogsUtilities_1.createStateLog(incidenciaLog);
+        IncidenciaLogsUtilities_1.createStateLog(incidenciaLog);
         var usersToMail = [];
         if (incidenciaSupervisor.id == reporterUser.id) {
             usersToMail.push(incidenciaSupervisor.email);
@@ -78591,10 +78591,10 @@ exports.getTotalIncidencias = function (idUser) {
 
 /***/ }),
 
-/***/ "./resources/js/Utilities/Incidencias/IncidenciaStateLogsUtilities.tsx":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/Utilities/Incidencias/IncidenciaStateLogsUtilities.tsx ***!
-  \*****************************************************************************/
+/***/ "./resources/js/Utilities/Incidencias/IncidenciaLogsUtilities.tsx":
+/*!************************************************************************!*\
+  !*** ./resources/js/Utilities/Incidencias/IncidenciaLogsUtilities.tsx ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -78615,11 +78615,32 @@ exports.createStateLog = function (newStateLog) {
         state: newStateLog.state,
         comment: comment,
         date: newStateLog.date,
+        action: newStateLog.action
     }, {
         headers: { 'Content-Type': 'application/json' }
     })
         .catch(function (err) {
         console.log(err);
+    });
+};
+exports.getLastIncidenciaID = function () {
+    return axios_1.default
+        .get('api/incidencias/getLastIncidenciaID', {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        return res.data;
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
     });
 };
 
@@ -79175,11 +79196,6 @@ exports.sendIncidenciaNewCommentMail = function (id_incidencia, comment, user_na
     });
 };
 exports.sendNewInTeamMail = function (name_user, team_name, team_description, supervisor_email, supervisor_name, user_email) {
-    console.log(name_user);
-    console.log(team_name);
-    console.log(supervisor_email);
-    console.log(supervisor_name);
-    console.log(user_email);
     return axios_1.default
         .post('api/newTechnicalMail', {
         name_user: name_user,
@@ -79188,6 +79204,35 @@ exports.sendNewInTeamMail = function (name_user, team_name, team_description, su
         supervisor_email: supervisor_email,
         supervisor_name: supervisor_name,
         user_email: user_email
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (res) {
+        console.log(res.data);
+    })
+        .catch(function (err) {
+        if (err.response) {
+            console.log(err.response.data.error);
+            console.log(err.response.status);
+        }
+        else if (err.request) {
+            console.log(err.request);
+        }
+        else
+            console.log(err);
+    });
+};
+exports.assignedToIncidenciaMail = function (id_incidencia, name_user, team_name, incidencia_name, incidencia_description, incidencia_category, incidencia_limit_date, supervisor_name, user_email) {
+    return axios_1.default
+        .post('api/assignedToIncidenciaMail', {
+        id_incidencia: id_incidencia,
+        name_user: name_user,
+        incidencia_name: incidencia_name,
+        incidencia_description: incidencia_description,
+        incidencia_category: incidencia_category,
+        incidencia_limit_date: incidencia_limit_date,
+        supervisor_name: supervisor_name,
+        team_name: team_name
     }, {
         headers: { 'Content-Type': 'application/json' }
     })
@@ -79337,11 +79382,15 @@ var Tabs_1 = __webpack_require__(/*! ../../Components/Tabs/Tabs */ "./resources/
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var Modal_1 = __webpack_require__(/*! ../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
 var SupervisorUtilities_1 = __webpack_require__(/*! ../../Utilities/Incidencias/SupervisorUtilities */ "./resources/js/Utilities/Incidencias/SupervisorUtilities.tsx");
+var IncidenciaLogsUtilities_1 = __webpack_require__(/*! ../../Utilities/Incidencias/IncidenciaLogsUtilities */ "./resources/js/Utilities/Incidencias/IncidenciaLogsUtilities.tsx");
+var Authentication_1 = __webpack_require__(/*! ../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
+var Mails_1 = __webpack_require__(/*! ../../Utilities/Mails */ "./resources/js/Utilities/Mails.tsx");
 var FormularioIncidencia = function (props) {
     // Propiedades del formulario
     var userRol = props.formularioProps.userRol;
     var widgetType = props.formularioProps.widgetType;
     var urlGeneral = props.formularioProps.urlGeneral;
+    var _a = React.useState(0), lastIncidenciaID = _a[0], setLastIncidenciaID = _a[1];
     // Variables que sirven para rellenar los parámtros de los elementos del componente.
     var titleInputValue = '';
     var descriptionInputValue = '';
@@ -79358,7 +79407,7 @@ var FormularioIncidencia = function (props) {
     var categoryIncidencia = '';
     var userSelectedIncidencia = null;
     var teamSelectedIncidencia = null;
-    var supervisorIncidencia = null;
+    var supervisorIncidencia = 0;
     var buildIncidencia = '';
     var floorIncidencia = 0;
     var classIncidencia = '';
@@ -79405,18 +79454,18 @@ var FormularioIncidencia = function (props) {
         buttonText = 'Editar incidencia';
     }
     // Hooks en los que se van a guardar los datos de la incidencia.
-    var _a = React.useState(titleIncidencia), title = _a[0], setTitle = _a[1];
-    var _b = React.useState(descriptionIncidencia), description = _b[0], setDescription = _b[1];
-    var _c = React.useState(categoryIncidencia), category = _c[0], setCategory = _c[1];
-    var _d = React.useState(userSelectedIncidencia), userSelected = _d[0], setUserSelected = _d[1];
-    var _e = React.useState(supervisorIncidencia), supervisor = _e[0], setSupervisor = _e[1];
-    var _f = React.useState(teamSelectedIncidencia), groupSelected = _f[0], setGroupSelected = _f[1];
-    var _g = React.useState(buildIncidencia), build = _g[0], setBuild = _g[1];
-    var _h = React.useState(floorIncidencia), floor = _h[0], setFloor = _h[1];
-    var _j = React.useState(classIncidencia), classroom = _j[0], setClassroom = _j[1];
-    var _k = React.useState(priorityIncidencia), priority = _k[0], setPriority = _k[1];
-    var _l = React.useState(urlFileIncidencia), urlFile = _l[0], setUrlFile = _l[1];
-    var _m = React.useState({
+    var _b = React.useState(titleIncidencia), title = _b[0], setTitle = _b[1];
+    var _c = React.useState(descriptionIncidencia), description = _c[0], setDescription = _c[1];
+    var _d = React.useState(categoryIncidencia), category = _d[0], setCategory = _d[1];
+    var _e = React.useState(userSelectedIncidencia), userSelected = _e[0], setUserSelected = _e[1];
+    var _f = React.useState(null), supervisor = _f[0], setSupervisor = _f[1];
+    var _g = React.useState(teamSelectedIncidencia), groupSelected = _g[0], setGroupSelected = _g[1];
+    var _h = React.useState(buildIncidencia), build = _h[0], setBuild = _h[1];
+    var _j = React.useState(floorIncidencia), floor = _j[0], setFloor = _j[1];
+    var _k = React.useState(classIncidencia), classroom = _k[0], setClassroom = _k[1];
+    var _l = React.useState(priorityIncidencia), priority = _l[0], setPriority = _l[1];
+    var _m = React.useState(urlFileIncidencia), urlFile = _m[0], setUrlFile = _m[1];
+    var _o = React.useState({
         id: 1,
         value: titleInputValue,
         label: 'Título',
@@ -79428,8 +79477,8 @@ var FormularioIncidencia = function (props) {
         enabled: enableInput,
         inputSize: '',
         isTextArea: false
-    }), titleInput = _m[0], setTitleInput = _m[1];
-    var _o = React.useState({
+    }), titleInput = _o[0], setTitleInput = _o[1];
+    var _p = React.useState({
         id: 2,
         value: descriptionInputValue,
         label: 'Descripción',
@@ -79441,8 +79490,8 @@ var FormularioIncidencia = function (props) {
         enabled: enableInput,
         inputSize: '',
         isTextArea: true
-    }), descriptionInput = _o[0], setDescriptionInput = _o[1];
-    var _p = React.useState({
+    }), descriptionInput = _p[0], setDescriptionInput = _p[1];
+    var _q = React.useState({
         id: 1,
         groupName: categoryDropdownName,
         groupItems: ['Mobiliario', 'Wi-Fi', 'Red', 'Switch', 'Hardware', 'Software'],
@@ -79450,9 +79499,9 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), categoryDropdown = _p[0], setCategoryDropdown = _p[1];
+    }), categoryDropdown = _q[0], setCategoryDropdown = _q[1];
     // groupItems: ['Edificio A (Salud)', 'Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)', 'Polideportivo (Deporte)','Edificio E (Business)'],
-    var _q = React.useState({
+    var _r = React.useState({
         id: 2,
         groupName: buildDropdownName,
         groupItems: ['Edificio B (Sociales)', 'Edificio C (Ingeniería y Diseño)'],
@@ -79460,8 +79509,8 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), buildDropdown = _q[0], setBuildDropdown = _q[1];
-    var _r = React.useState({
+    }), buildDropdown = _r[0], setBuildDropdown = _r[1];
+    var _s = React.useState({
         id: 3,
         groupName: floorDropdownName,
         groupItems: [],
@@ -79469,8 +79518,8 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), floorDropdown = _r[0], setFloorDropdown = _r[1];
-    var _s = React.useState({
+    }), floorDropdown = _s[0], setFloorDropdown = _s[1];
+    var _t = React.useState({
         id: 4,
         groupName: classDropdownName,
         groupItems: [],
@@ -79478,8 +79527,8 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), classDropdown = _s[0], setClassDropdown = _s[1];
-    var _t = React.useState({
+    }), classDropdown = _t[0], setClassDropdown = _t[1];
+    var _u = React.useState({
         id: 5,
         groupName: priorityDropdownName,
         groupItems: ['Crítica', 'Importante', 'Trivial'],
@@ -79487,7 +79536,7 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), priorityDropdown = _t[0], setPriorityDropdwn = _t[1];
+    }), priorityDropdown = _u[0], setPriorityDropdwn = _u[1];
     var createIncidenciaButton = React.useState({
         id: 1,
         texto: buttonText,
@@ -79773,7 +79822,25 @@ var FormularioIncidencia = function (props) {
                 priority: priority,
                 state: 'todo'
             };
+            var createIncidenciaLog = {
+                incidenciaId: lastIncidenciaID + 1,
+                userId: localStorage.userId,
+                state: 'todo',
+                comment: '',
+                date: currentDate,
+                action: 'Crear incidencia'
+            };
+            if (userSelected != null) {
+                Authentication_1.getUser(userSelected).then(function (res) {
+                    console.log(res[0]);
+                    console.log(supervisor);
+                    var userName = res[0].name + ' ' + res[0].surname1 + ' ' + res[0].surname2;
+                    var supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
+                    Mails_1.assignedToIncidenciaMail(lastIncidenciaID + 1, userName, '--', title, description, category, '', supervisorName, res[0].email, 'creado');
+                });
+            }
             IncidenciasUtilities_1.createIncidencia(incidencia);
+            IncidenciaLogsUtilities_1.createStateLog(createIncidenciaLog);
             $('#' + modalCreateIncidencia.id).modal('hide');
             history.push('/home/incidencias/show');
             $('#toastCreate').show();
@@ -79805,8 +79872,26 @@ var FormularioIncidencia = function (props) {
                 priority: priority,
                 state: 'todo'
             };
+            var createIncidenciaLog = {
+                incidenciaId: props.formularioProps.incidenciaData.id,
+                userId: localStorage.userId,
+                state: props.formularioProps.incidenciaData.state,
+                comment: '',
+                date: currentDate,
+                action: 'Editar incidencia'
+            };
+            if (userSelected != null) {
+                Authentication_1.getUser(userSelected).then(function (res) {
+                    console.log(res[0]);
+                    console.log(supervisor);
+                    var userName = res[0].name + ' ' + res[0].surname1 + ' ' + res[0].surname2;
+                    var supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
+                    Mails_1.assignedToIncidenciaMail(props.formularioProps.incidenciaData.id, userName, '--', title, description, category, '', supervisorName, res[0].email, 'editado');
+                });
+            }
             props.editIncidenciaClick(incidencia);
             IncidenciasUtilities_1.editIncidencia(incidencia);
+            IncidenciaLogsUtilities_1.createStateLog(createIncidenciaLog);
             $('#' + modalCreateIncidencia.id).modal('hide');
             $('#toastIncidenciaEditted').show();
             $('#toastIncidenciaEditted').toast('show');
@@ -79821,7 +79906,7 @@ var FormularioIncidencia = function (props) {
         enabledList: [true, true],
         itemActive: null
     })[0];
-    var _u = React.useState({
+    var _v = React.useState({
         id: 1,
         groupName: 'Elegir grupo',
         groupItems: [],
@@ -79829,8 +79914,8 @@ var FormularioIncidencia = function (props) {
         color: 'primary',
         enabled: true,
         extraClass: '',
-    }), groupsDropdown = _u[0], setGroupsDropdown = _u[1];
-    var _v = React.useState({
+    }), groupsDropdown = _v[0], setGroupsDropdown = _v[1];
+    var _w = React.useState({
         id: 14,
         placeholderInput: 'Nombre...',
         colorInput: 'primary',
@@ -79838,7 +79923,7 @@ var FormularioIncidencia = function (props) {
         enabled: true,
         tableToSearchIn: 'users',
         matchingWords: ['name', 'surname1', 'surname2']
-    }), autocompleteInputValues = _v[0], setAutocompleteInputValues = _v[1];
+    }), autocompleteInputValues = _w[0], setAutocompleteInputValues = _w[1];
     React.useEffect(function () {
         var helperListNames = [];
         var helperListIds = [];
@@ -79849,6 +79934,35 @@ var FormularioIncidencia = function (props) {
             });
             setGroupsDropdown(__assign(__assign({}, groupsDropdown), { groupIds: helperListIds, groupItems: helperListNames }));
         });
+        IncidenciaLogsUtilities_1.getLastIncidenciaID().then(function (res) {
+            setLastIncidenciaID(res++);
+        });
+        if (props.formularioProps.widgetType == 'edit') {
+            Authentication_1.getUser(props.formularioProps.incidenciaData.supervisor).then(function (res) {
+                setSupervisor({
+                    id: res[0].id,
+                    name: res[0].name,
+                    surname1: res[0].surname1,
+                    surname2: res[0].surname2,
+                    email: res[0].email,
+                    role: res[0].role,
+                    userImage: res[0].image_url
+                });
+            });
+        }
+        else {
+            Authentication_1.getUser(localStorage.userId).then(function (res) {
+                setSupervisor({
+                    id: res[0].id,
+                    name: res[0].name,
+                    surname1: res[0].surname1,
+                    surname2: res[0].surname2,
+                    email: res[0].email,
+                    role: res[0].role,
+                    userImage: res[0].image_url
+                });
+            });
+        }
     }, []);
     var assignUser = function (userRol, url) {
         var handleClickTabsAssign = function (id) {
