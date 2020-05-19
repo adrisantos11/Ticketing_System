@@ -290,7 +290,7 @@ const MostrarIncidenciasPage = () => {
                     </div>
                     {/* <div className="horizontal-separator"></div> */}
                     <div className='footer-container'>
-                        <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
+                        <div className="dataSelection-container"><span >Incidencias filtradas: <b>{incidenciasSize}</b></span></div>
                         {
                             divSelectedData
                         }
@@ -411,7 +411,7 @@ const MostrarIncidenciasPage = () => {
                         </div>
                         <div className="horizontal-separator"></div>
                         <div className='footer-container'>
-                            <div className="dataSelection-container"><span >Nº total de incidencias filtradas: <b>{incidenciasSize}</b></span></div>
+                            <div className="dataSelection-container"><span >Incidencias filtradas: <b>{incidenciasSize}</b></span></div>
                             {
                                 divSelectedData
                             }

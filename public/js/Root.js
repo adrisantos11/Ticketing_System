@@ -77003,7 +77003,7 @@ var MostrarIncidenciasPage = function () {
                     React.createElement("div", { className: 'footer-container' },
                         React.createElement("div", { className: "dataSelection-container" },
                             React.createElement("span", null,
-                                "N\u00BA total de incidencias filtradas: ",
+                                "Incidencias filtradas: ",
                                 React.createElement("b", null, incidenciasSize))),
                         divSelectedData)),
                 React.createElement("div", { className: "table-container" },
@@ -77104,7 +77104,7 @@ var MostrarIncidenciasPage = function () {
                     React.createElement("div", { className: 'footer-container' },
                         React.createElement("div", { className: "dataSelection-container" },
                             React.createElement("span", null,
-                                "N\u00BA total de incidencias filtradas: ",
+                                "Incidencias filtradas: ",
                                 React.createElement("b", null, incidenciasSize))),
                         divSelectedData)),
                 React.createElement("div", { className: "table-container" },
@@ -78050,10 +78050,15 @@ var Graph_1 = __webpack_require__(/*! ../../../Widgets/Graph/Graph */ "./resourc
 var TechnicalDataGraphs_1 = __webpack_require__(/*! ../../../Utilities/Graphics/TechnicalDataGraphs */ "./resources/js/Utilities/Graphics/TechnicalDataGraphs.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var Tabs_1 = __webpack_require__(/*! ../../../Components/Tabs/Tabs */ "./resources/js/Components/Tabs/Tabs.tsx");
+var IncidenciasUtilities_1 = __webpack_require__(/*! ../../../Utilities/Incidencias/IncidenciasUtilities */ "./resources/js/Utilities/Incidencias/IncidenciasUtilities.tsx");
 var GraphsPage = function () {
     var userId = localStorage.userId;
     var userRol = localStorage.userRol;
     var history = react_router_dom_1.useHistory();
+    var todoCount = 0;
+    var doingCount = 0;
+    var blockedCount = 0;
+    var doneCount = 0;
     // let tabSelected = 0;
     // if (history.location.pathname.endsWith('praphs'))
     //     tabSelected = 0;
@@ -78083,23 +78088,75 @@ var GraphsPage = function () {
     var _b = React.useState({
         title: 'Cargando incidencias',
         type: 'bar',
-        labels: ['Pendientes', 'En proceso', 'Bloqueadas'],
-        colorsList: [
-            "#3685EC",
-            "#e78738",
-            "#dc3545",
-        ],
+        labels: [],
+        colorsList: [],
         mainLabel: 'Mis incidencias',
         graphData: null
     }), graphBar = _b[0], setGraphBar = _b[1];
+    var getEstadoActualSupervisor = function () {
+        console.log('Hola');
+        todoCount = 0;
+        doingCount = 0;
+        blockedCount = 0;
+        doneCount = 0;
+        IncidenciasUtilities_1.getIncidencias(userId, userRol, 'state').then(function (res) {
+            res.data.map(function (data) {
+                switch (data.state) {
+                    case 'todo':
+                        todoCount++;
+                        break;
+                    case 'doing':
+                        doingCount++;
+                        break;
+                    case 'blocked':
+                        blockedCount++;
+                        break;
+                    case 'done':
+                        doneCount++;
+                        break;
+                    default:
+                        break;
+                }
+            });
+            var sum = todoCount + doingCount + blockedCount + doneCount;
+            console.log();
+            setGraphBar(__assign(__assign({}, graphBar), { title: 'Estado actual (Total: ' + sum + ')', graphData: [todoCount, doingCount, blockedCount, doneCount], labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas'], colorsList: [
+                    "#3685EC",
+                    "#e78738",
+                    "#dc3545",
+                    '#07a744'
+                ] }));
+        });
+    };
+    React.useEffect(function () {
+        if (userRol == 'supervisor') {
+            console.log(34253);
+            getEstadoActualSupervisor();
+        }
+        else if (userRol == 'technical') {
+            setGraphBar(__assign(__assign({}, graphBar), { labels: ['Pendientes', 'En proceso', 'Bloqueadas',] }));
+        }
+    }, []);
     var getGraphData = function (id) {
         if (userRol == 'supervisor') {
+            if (id == 'estado-actual-incidencias') {
+                setGraphBar(__assign(__assign({}, graphBar), { labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas'], colorsList: [
+                        "#3685EC",
+                        "#e78738",
+                        "#dc3545",
+                        '#07a744'
+                    ] }));
+            }
         }
         else if (userRol == 'technical') {
             if (id == 'resumen-incidencias') {
                 TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
                     var sum = res[0].total + res[1].total + res[2].total;
-                    setGraphBar(__assign(__assign({}, graphBar), { title: 'Resumen de incidencias (Total: ' + sum + ')', graphData: [res[0].total, res[1].total, res[2].total] }));
+                    setGraphBar(__assign(__assign({}, graphBar), { title: 'Resumen de incidencias (Total: ' + sum + ')', graphData: [res[0].total, res[1].total, res[2].total], colorsList: [
+                            "#3685EC",
+                            "#e78738",
+                            "#dc3545",
+                        ] }));
                 });
             }
         }
