@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: $default_padding*2;
 
     .tabs-container {
         margin: $default_padding 0;
@@ -25,5 +26,10 @@
 
     .graphs-container {
         width: 100%;
+
+        .p-info {
+            font-size: $font_size*0.8;
+            margin: $default_padding 0;
+        }
     }
 }

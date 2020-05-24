@@ -18506,7 +18506,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".graphsPage-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}\n.graphsPage-container .tabs-container {\n  margin: 0.5rem 0;\n}\n.graphsPage-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.graphsPage-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.graphsPage-container .graphs-container {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".graphsPage-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  padding: 1rem;\n}\n.graphsPage-container .tabs-container {\n  margin: 0.5rem 0;\n}\n.graphsPage-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.graphsPage-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.graphsPage-container .graphs-container {\n  width: 100%;\n}\n.graphsPage-container .graphs-container .p-info {\n  font-size: 0.8rem;\n  margin: 0.5rem 0;\n}", ""]);
 
 // exports
 
@@ -18525,7 +18525,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 4rem;\n  background-color: white;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .headerperfil-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 2rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.5rem;\n  margin: 0;\n  font-style: italic;\n  margin: 0 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .options-icon, .perfilpage-container .photo-container .photo-container .role-container .options-icon:hover {\n  font-size: 1.3rem;\n  color: #3685EC;\n  margin: 0 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .options-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 1rem 1rem;\n}\n@media screen and (max-width: 472px) {\n  .perfilpage-container .bodyperfil-container {\n    width: auto;\n    align-items: center;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container {\n    flex-direction: column;\n    align-items: center;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 40%;\n  height: 100%;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container .left-container {\n    width: 100%;\n    margin-bottom: 1rem;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 60%;\n  height: auto;\n  padding: 1rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  margin: 0 0.5rem;\n  margin-left: 2rem;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container .right-container {\n    width: 100%;\n    margin-bottom: 1rem;\n    margin: 0;\n  }\n}\n@media screen and (max-width: 474px) {\n  .perfilpage-container .bodyperfil-container .content-container .right-container {\n    overflow-x: scroll;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container {\n  width: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .canvas-container {\n  position: relative;\n  width: 100%;\n  min-width: 474px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .canvas-container .chartjs-render-monitor {\n  height: 100%;\n  font-family: \"Sen\", sans-serif;\n}", ""]);
+exports.push([module.i, ".perfilpage-container {\n  height: 100%;\n  width: 100%;\n}\n.perfilpage-container .headerperfil-container {\n  height: 4rem;\n  background-color: white;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .headerperfil-container .title {\n  font-size: 2.5rem;\n  color: #3685EC;\n  font-weight: bold;\n  margin: 0;\n}\n.perfilpage-container .photo-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  align-items: center;\n  top: 112px;\n  width: 100%;\n  height: auto;\n  background: linear-gradient(to bottom, white 0%, #8a8a8a 50%, white 50%, white 71%, white 100%);\n}\n.perfilpage-container .photo-container .photo-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .photo {\n  height: 9.5rem;\n  width: 9.5rem;\n  border: solid;\n  border-radius: 50%;\n  border-color: #838383;\n  border-width: 3px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  display: flex;\n  background-color: white;\n}\n.perfilpage-container .photo-container .photo-container .photo img {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n}\n.perfilpage-container .photo-container .photo-container .p-name {\n  font-size: 2rem;\n  font-weight: bold;\n  margin: 0;\n  margin-top: 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.perfilpage-container .photo-container .photo-container .role-container .p-role {\n  font-size: 1.5rem;\n  margin: 0;\n  font-style: italic;\n  margin: 0 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .options-icon, .perfilpage-container .photo-container .photo-container .role-container .options-icon:hover {\n  font-size: 1.3rem;\n  color: #3685EC;\n  margin: 0 0.5rem;\n}\n.perfilpage-container .photo-container .photo-container .role-container .options-icon:hover {\n  cursor: pointer;\n  color: #00254E;\n}\n.perfilpage-container .photo-container .settings-container {\n  position: relative;\n  bottom: 5px;\n  right: 5px;\n}\n.perfilpage-container .bodyperfil-container {\n  height: auto;\n  background-color: white;\n  padding: 1rem 1rem;\n}\n@media screen and (max-width: 472px) {\n  .perfilpage-container .bodyperfil-container {\n    width: auto;\n    align-items: center;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container {\n    flex-direction: column;\n    align-items: center;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container {\n  width: 40%;\n  height: 100%;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container .left-container {\n    width: 100%;\n    margin-bottom: 1rem;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  border: solid;\n  border-color: #e2e2e2;\n  border-top: none;\n  border-width: 2px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n  padding: 0.5rem 0.5rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  padding: 0.5rem 1rem;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row p {\n  margin: 0;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .data-row .static-text {\n  width: 50%;\n  font-weight: bold;\n}\n.perfilpage-container .bodyperfil-container .content-container .left-container .dataCard-container .dataCard-body .inner-body .horizontal-separator {\n  width: 92%;\n  border: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  height: 0.5px;\n  margin: 0 4%;\n}\n.perfilpage-container .bodyperfil-container .content-container .vertical-divider {\n  height: 100%;\n  border: solid;\n  border-width: 2px;\n  border-color: #e2e2e2;\n  width: 1px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container {\n  width: 60%;\n  height: auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  margin: 0 0.5rem;\n  margin-left: 2rem;\n}\n@media screen and (max-width: 991px) {\n  .perfilpage-container .bodyperfil-container .content-container .right-container {\n    width: 100%;\n    margin-bottom: 1rem;\n    margin: 0;\n  }\n}\n@media screen and (max-width: 474px) {\n  .perfilpage-container .bodyperfil-container .content-container .right-container {\n    overflow-x: scroll;\n  }\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container {\n  width: 100%;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .canvas-container {\n  position: relative;\n  width: 100%;\n  min-width: 474px;\n}\n.perfilpage-container .bodyperfil-container .content-container .right-container .rightData-container .canvas-container .chartjs-render-monitor {\n  height: 100%;\n  font-family: \"Sen\", sans-serif;\n}", ""]);
 
 // exports
 
@@ -18544,7 +18544,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".settings-container .title-edit {\n  font-size: 2rem;\n  margin: 1rem 1.5rem;\n}\n.settings-container .title-section {\n  font-size: 1.4rem;\n  font-style: italic;\n}\n.settings-container .name-section {\n  padding: 1rem;\n}\n.settings-container .name-section .edit-name {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 768px) {\n  .settings-container .name-section .edit-name {\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n  }\n}\n.settings-container .name-section .edit-name div:first-child {\n  margin-left: 0;\n}\n.settings-container .name-section .edit-name div:last-child {\n  margin-right: 0;\n}\n.settings-container .name-section .edit-name .form-group {\n  margin: 0.5rem;\n  margin-top: 0;\n}\n@media screen and (max-width: 768px) {\n  .settings-container .name-section .edit-name .form-group {\n    margin: 0;\n    margin-bottom: 0.5rem;\n  }\n}\n.settings-container .email-section {\n  padding: 1rem;\n}\n.settings-container .password-section {\n  padding: 1rem;\n}\n.settings-container .password-section .edit-password {\n  display: flex;\n  flex-direction: row;\n  margin-top: 0.5rem 0;\n  align-items: flex-end;\n}\n@media screen and (max-width: 561px) {\n  .settings-container .password-section .edit-password {\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n    align-items: flex-start;\n  }\n}\n.settings-container .password-section .edit-password div:first-child {\n  margin-left: 0;\n}\n.settings-container .password-section .edit-password div:last-child {\n  margin-right: 0;\n}\n.settings-container .password-section .edit-password .form-group {\n  margin: 0.5rem;\n  margin-top: 0;\n}\n@media screen and (max-width: 561px) {\n  .settings-container .password-section .edit-password .form-group {\n    margin: 0;\n    margin-bottom: 0.5rem;\n  }\n}\n.settings-container .buttonContainer {\n  margin-top: 0.5rem;\n}", ""]);
 
 // exports
 
@@ -75263,7 +75263,7 @@ exports.Input = function (props) {
         labelColor = '--white';
     }
     var labelTitle;
-    if (props.inputInfo.label != '') {
+    if (props.inputInfo.label != '' && props.inputInfo.label != null) {
         labelTitle = React.createElement("label", { htmlFor: "", className: "text_label" + labelColor }, props.inputInfo.label);
     }
     else {
@@ -78079,22 +78079,23 @@ var GraphsPage = function () {
         valuesList.push('Resumen incidencias', 'Historial incidencias');
         iconList.push("fas fa-info-circle", 'fas fa-history');
     }
-    var _a = React.useState({
+    var _a = React.useState(''), info = _a[0], setInfo = _a[1];
+    var _b = React.useState({
         idList: idList,
         valuesList: valuesList,
         iconList: iconList,
         color: ['primary', 'primary'],
         enabledList: [true, true],
         itemActive: 0
-    }), tabsOptions = _a[0], setTabsOptions = _a[1];
-    var _b = React.useState({
+    }), tabsOptions = _b[0], setTabsOptions = _b[1];
+    var _c = React.useState({
         title: 'Cargando incidencias',
         type: 'bar',
         labels: [],
         colorsList: [],
         mainLabel: 'Mis incidencias',
         graphData: null
-    }), graphBar = _b[0], setGraphBar = _b[1];
+    }), graphBar = _c[0], setGraphBar = _c[1];
     var getEstadoActualSupervisor = function () {
         todoCount = 0;
         doingCount = 0;
@@ -78124,7 +78125,6 @@ var GraphsPage = function () {
                 }
             });
             var sum = todoCount + doingCount + blockedCount + doneCount;
-            setGraphBar(__assign(__assign({}, graphBar), { title: 'Estado actual (Total: ' + sum + ')' }));
             graphData.push(todoCount, doingCount, blockedCount, doneCount);
             labels.push('Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas');
             colorsList.push("#3685EC", "#e78738", "#dc3545", '#07a744');
@@ -78132,8 +78132,9 @@ var GraphsPage = function () {
                 graphData.push(res.length);
                 labels.push('Sin asgnar');
                 colorsList.push('#e2e2e2');
-                setGraphBar(__assign(__assign({}, graphBar), { graphData: graphData, labels: labels, colorsList: colorsList }));
+                setGraphBar(__assign(__assign({}, graphBar), { title: 'Estado actual (Total: ' + sum + ')', graphData: graphData, labels: labels, colorsList: colorsList }));
             });
+            setInfo('* TOTAL = Pendientes + En proceso + Bloqueadas + Solucionadas');
         });
     };
     React.useEffect(function () {
@@ -78147,12 +78148,7 @@ var GraphsPage = function () {
     var getGraphData = function (id) {
         if (userRol == 'supervisor') {
             if (id == 'estado-actual-incidencias') {
-                setGraphBar(__assign(__assign({}, graphBar), { labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas'], colorsList: [
-                        "#3685EC",
-                        "#e78738",
-                        "#dc3545",
-                        '#07a744'
-                    ] }));
+                getEstadoActualSupervisor();
             }
         }
         else if (userRol == 'technical') {
@@ -78191,7 +78187,8 @@ var GraphsPage = function () {
             React.createElement(react_router_dom_1.Switch, null,
                 React.createElement(react_router_dom_1.Route, { path: "/home/perfil/graphs/summaryIncidencias" },
                     React.createElement(Graph_1.default, { graphProps: graphBar })),
-                React.createElement(react_router_dom_1.Route, { path: "/home/perfil/graphs/historyIncidencias" }, "Historial")))));
+                React.createElement(react_router_dom_1.Route, { path: "/home/perfil/graphs/historyIncidencias" }, "Historial")),
+            React.createElement("p", { className: 'p-info' }, info))));
 };
 exports.default = GraphsPage;
 
@@ -78310,6 +78307,14 @@ var PerfilPage = function () {
             history.push('/home/perfil/graphs/summaryIncidencias');
         }
     };
+    var changeUserValues = function (id, firstParam, secondParam, thirdParam) {
+        if (id == 1) {
+            setUserLogged(__assign(__assign({}, userLogged), { name: firstParam, surname1: secondParam, surname2: thirdParam }));
+        }
+        else if (id == 2) {
+            setUserLogged(__assign(__assign({}, userLogged), { email: firstParam }));
+        }
+    };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: "perfilpage-container" },
             React.createElement("div", { className: 'headerperfil-container' },
@@ -78364,7 +78369,8 @@ var PerfilPage = function () {
                         React.createElement("div", { className: "rightData-container" },
                             React.createElement(react_router_dom_1.Switch, null,
                                 React.createElement(react_router_dom_1.Route, { path: "/home/perfil/graphs", component: GraphsPage_1.default }),
-                                React.createElement(react_router_dom_1.Route, { path: "/home/perfil/settings", component: SettingsPage_1.default })))))))));
+                                React.createElement(react_router_dom_1.Route, { path: "/home/perfil/settings" },
+                                    React.createElement(SettingsPage_1.default, { changeUserValues: changeUserValues }))))))))));
 };
 exports.default = PerfilPage;
 
@@ -78410,11 +78416,186 @@ if(false) {}
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./SettingsPage.scss */ "./resources/js/Pages/PerfilPage/SettingsPage/SettingsPage.scss");
-var SettingsPage = function () {
-    return (React.createElement("div", null, "SettingsPage"));
+var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
+var Button_1 = __webpack_require__(/*! ../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var Authentication_1 = __webpack_require__(/*! ../../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
+var SettingsPage = function (props) {
+    var userId = localStorage.userId;
+    var userRol = localStorage.userRol;
+    var _a = React.useState({
+        id: 1,
+        value: null,
+        label: 'Nombre',
+        labelColor: 'primary',
+        placeholder: 'Introducir el nuevo nombre',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputName = _a[0], setInputName = _a[1];
+    var _b = React.useState({
+        id: 2,
+        value: null,
+        label: 'Primer apellido',
+        labelColor: 'primary',
+        placeholder: 'Introducir primer apellido',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputSurname1 = _b[0], setInputSurname1 = _b[1];
+    var _c = React.useState({
+        id: 3,
+        value: null,
+        label: 'Segundo apellido',
+        labelColor: 'primary',
+        placeholder: 'Introducir segundo apellido',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputSurname2 = _c[0], setInputSurname2 = _c[1];
+    var _d = React.useState({
+        id: 4,
+        value: null,
+        label: 'E-mail',
+        labelColor: 'primary',
+        placeholder: 'Introducir nuevo e-mail',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputEmail = _d[0], setInputEmail = _d[1];
+    var _e = React.useState({
+        id: 5,
+        value: null,
+        label: 'Contraseña',
+        labelColor: 'primary',
+        placeholder: 'Introducir nueva contraseña',
+        color: 'primary',
+        type: 'password',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), passwordInput = _e[0], setPasswordInput = _e[1];
+    var _f = React.useState({
+        id: 6,
+        value: null,
+        label: '',
+        labelColor: 'primary',
+        placeholder: 'Confirmar nueva contraseña',
+        color: 'primary',
+        type: 'password',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), confirmPasswordInput = _f[0], setConfirmPasswordInput = _f[1];
+    // fas fa-user-edit
+    var _g = React.useState({
+        id: 7,
+        texto: 'Guardar nombre',
+        color: 'primary',
+        type: 'outline-primary',
+        icon: '',
+        target_modal: null,
+        extraClass: null
+    }), saveNameButton = _g[0], setSaveNameButton = _g[1];
+    var _h = React.useState({
+        id: 8,
+        texto: 'Guardar e-mail',
+        color: 'primary',
+        type: 'outline-primary',
+        icon: '',
+        target_modal: null,
+        extraClass: null
+    }), saveEmailButton = _h[0], setSaveEmailButton = _h[1];
+    var _j = React.useState({
+        id: 9,
+        texto: 'Guardar constraseña',
+        color: 'primary',
+        type: 'outline-primary',
+        icon: '',
+        target_modal: null,
+        extraClass: null
+    }), savePasswordButton = _j[0], setSavePasswordButton = _j[1];
+    var handleChangeInput = function (value, id) {
+        if (id == 1) {
+            setInputName(__assign(__assign({}, inputName), { value: value }));
+        }
+        else if (id == 2) {
+            setInputSurname1(__assign(__assign({}, inputSurname1), { value: value }));
+        }
+        else if (id == 3) {
+            setInputSurname2(__assign(__assign({}, inputSurname2), { value: value }));
+        }
+        else if (id == 4) {
+            setInputEmail(__assign(__assign({}, inputEmail), { value: value }));
+        }
+        else if (id == 5) {
+            setPasswordInput(__assign(__assign({}, passwordInput), { value: value }));
+        }
+        else if (id == 6) {
+            setConfirmPasswordInput(__assign(__assign({}, confirmPasswordInput), { value: value }));
+        }
+    };
+    var handleClickSaveChanges = function (e, id) {
+        if (id == 7) {
+            Authentication_1.saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
+            props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value);
+        }
+        else if (id == 8) {
+            Authentication_1.saveNewMail(userId, inputEmail.value);
+            props.changeUserValues(2, inputEmail.value);
+        }
+        else if (id == 9) {
+            Authentication_1.saveNewPassword(userId, passwordInput.value);
+        }
+    };
+    return (React.createElement("div", { className: "settings-container" },
+        React.createElement("p", { className: "title-edit" },
+            React.createElement("b", null, "Editar perfil")),
+        React.createElement("div", { className: "name-section" },
+            React.createElement("p", { className: 'title-section' }, "Editar nombre"),
+            React.createElement("div", { className: "edit-name" },
+                React.createElement(Input_1.Input, { inputInfo: inputName, handleChangeInput: handleChangeInput }),
+                React.createElement(Input_1.Input, { inputInfo: inputSurname1, handleChangeInput: handleChangeInput }),
+                React.createElement(Input_1.Input, { inputInfo: inputSurname2, handleChangeInput: handleChangeInput })),
+            React.createElement(Button_1.default, { buttonInfo: saveNameButton, handleClick: handleClickSaveChanges })),
+        React.createElement("div", { className: "email-section" },
+            React.createElement("p", { className: 'title-section' }, "Editar e-mail"),
+            React.createElement("div", { className: "edit-password" },
+                React.createElement(Input_1.Input, { inputInfo: inputEmail, handleChangeInput: handleChangeInput })),
+            React.createElement(Button_1.default, { buttonInfo: saveEmailButton, handleClick: handleClickSaveChanges })),
+        React.createElement("div", { className: "password-section" },
+            React.createElement("p", { className: 'title-section' }, "Editar constrase\u00F1a"),
+            React.createElement("div", { className: "edit-password" },
+                React.createElement(Input_1.Input, { inputInfo: passwordInput, handleChangeInput: handleChangeInput }),
+                React.createElement(Input_1.Input, { inputInfo: confirmPasswordInput, handleChangeInput: handleChangeInput })),
+            React.createElement(Button_1.default, { buttonInfo: savePasswordButton, handleClick: handleClickSaveChanges }))));
 };
 exports.default = SettingsPage;
 
@@ -78527,6 +78708,44 @@ exports.getUser = function (id) {
         return res.data;
     })
         .catch(function (err) {
+        if (err)
+            console.log(err);
+    });
+};
+exports.saveNewName = function (id, name, surname1, surname2) {
+    return axios_1.default
+        .post('api/changeName', {
+        id: id,
+        name: name,
+        surname1: surname1,
+        surname2: surname2
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    }).catch(function (err) {
+        if (err)
+            console.log(err);
+    });
+};
+exports.saveNewMail = function (id, email) {
+    return axios_1.default
+        .post('api/changeEmail', {
+        id: id,
+        email: email
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    }).catch(function (err) {
+        if (err)
+            console.log(err);
+    });
+};
+exports.saveNewPassword = function (id, password) {
+    return axios_1.default
+        .post('api/changePassword', {
+        id: id,
+        password: password
+    }, {
+        headers: { 'Content-Type': 'application/json' }
+    }).catch(function (err) {
         if (err)
             console.log(err);
     });

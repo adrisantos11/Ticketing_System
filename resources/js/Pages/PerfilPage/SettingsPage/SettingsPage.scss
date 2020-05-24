@@ -1,1 +1,92 @@
 @import '../../../../sass/app.scss';
+
+.settings-container {
+    .title-edit {
+        font-size: $font_size*2;
+        margin: $default_padding*2 $default_padding*3;
+    }
+
+    .title-section {
+        font-size: $font_size*1.4;
+        font-style: italic;
+    }
+
+    .name-section {
+        padding: $default_padding*2;
+
+        .edit-name {
+            display: flex;
+            flex-direction: row;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+
+            }
+
+            div:first-child {
+                margin-left: 0;
+            }
+
+            div:last-child {
+                margin-right: 0;
+            }
+
+            .form-group {
+                margin: $default_padding;
+                margin-top: 0;
+
+                @media screen and (max-width: 768px) {
+                    margin: 0;
+                    margin-bottom: $default_padding;
+                }
+            }
+        }
+    }
+
+    .email-section {
+        padding: $default_padding*2;
+    }
+
+
+    .password-section {
+        padding: $default_padding*2;
+        .edit-password {
+            display: flex;
+            flex-direction: row;
+            margin-top: $default_padding 0;
+            align-items: flex-end;
+    
+            @media screen and (max-width: 561px) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                align-items: flex-start;
+    
+            }
+    
+            div:first-child {
+                margin-left: 0;
+            }
+    
+            div:last-child {
+                margin-right: 0;
+            }
+    
+            .form-group {
+                margin: $default_padding;
+                margin-top: 0;
+    
+                @media screen and (max-width: 561px) {
+                    margin: 0;
+                    margin-bottom: $default_padding;
+                }
+            }
+        }   
+    }
+
+    .buttonContainer {
+        margin-top: $default_padding;
+    }
+}

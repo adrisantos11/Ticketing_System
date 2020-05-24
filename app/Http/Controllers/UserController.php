@@ -125,4 +125,27 @@ class UserController extends Controller
         $user    = DB::table('users')->select('id', 'name', 'surname1', 'surname2', 'exp', 'email', 'role', 'phone', 'image_url')->where('id', $user_id)->get();
         return $user;
     }
+
+    public function saveNewName(Request $request) {
+        DB::table('users')->where('id', $request->id)
+            ->update([
+                'name' => $request->name,
+                'surname1' => $request->surname1,
+                'surname2' => $request->surname2,
+        ]);
+    }
+
+    public function saveNewEmail(Request $request) {
+        DB::table('users')->where('id', $request->id)
+            ->update([
+                'email' => $request->email
+        ]);
+    }
+
+    public function saveNewPassword(Request $request) {
+        DB::table('users')->where('id', $request->id)
+            ->update([
+                'password' => Hash::make($request->password)
+        ]);
+    }
 }

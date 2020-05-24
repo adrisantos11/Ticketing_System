@@ -106,3 +106,44 @@ export const getUser = (id: number) => {
             console.log(err);
     })
 }
+
+export const saveNewName = (id: number, name: string, surname1: string, surname2: string) => {
+    return axios
+    .post('api/changeName',{
+        id: id,
+        name: name,
+        surname1: surname1,
+        surname2: surname2
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    }).catch(err => {
+        if(err)
+            console.log(err);
+    })
+}
+
+export const saveNewMail = (id: number, email: string) => {
+    return axios
+    .post('api/changeEmail',{
+        id: id,
+        email: email
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    }).catch(err => {
+        if(err)
+            console.log(err);
+    })
+}
+
+export const saveNewPassword = (id: number, password: string) => {
+    return axios
+    .post('api/changePassword',{
+        id: id,
+        password: password
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    }).catch(err => {
+        if(err)
+            console.log(err);
+    })
+}

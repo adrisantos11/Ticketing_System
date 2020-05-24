@@ -37,6 +37,8 @@ const GraphsPage = () => {
         valuesList.push('Resumen incidencias', 'Historial incidencias');
         iconList.push("fas fa-info-circle", 'fas fa-history');
     }
+
+    const [info, setInfo] = React.useState('');
     const [tabsOptions, setTabsOptions] = React.useState<TabsModel>({
         idList: idList,
         valuesList: valuesList,
@@ -85,10 +87,7 @@ const GraphsPage = () => {
 
             })
             const sum = todoCount+doingCount+blockedCount+doneCount;
-            setGraphBar({
-                ...graphBar,
-                title: 'Estado actual (Total: ' + sum + ')'
-            })
+            
             graphData.push(todoCount ,doingCount, blockedCount, doneCount);
             labels.push('Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas');
             colorsList.push("#3685EC", "#e78738", "#dc3545", '#07a744');
@@ -99,11 +98,13 @@ const GraphsPage = () => {
                 colorsList.push('#e2e2e2')
                 setGraphBar({
                     ...graphBar,
+                    title: 'Estado actual (Total: ' + sum + ')',
                     graphData: graphData,
                     labels: labels,
                     colorsList: colorsList
                 })
             })
+            setInfo('* TOTAL = Pendientes + En proceso + Bloqueadas + Solucionadas');
         });
 
 
@@ -124,17 +125,7 @@ const GraphsPage = () => {
     const getGraphData = (id: string) => {
         if (userRol == 'supervisor') {
             if(id == 'estado-actual-incidencias') {
-                setGraphBar({
-                    ...graphBar,
-                    labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas'],
-                    colorsList: [
-                        "#3685EC",
-                        "#e78738",
-                        "#dc3545",
-                        '#07a744'
-                    ]
-                })
-                
+                getEstadoActualSupervisor();   
             }
         } else if (userRol == 'technical') {
             if (id == 'resumen-incidencias') {
@@ -181,6 +172,7 @@ const GraphsPage = () => {
                         <Route path="/home/perfil/graphs/summaryIncidencias"><Graph graphProps={graphBar}></Graph></Route>
                         <Route path="/home/perfil/graphs/historyIncidencias">Historial</Route>
                     </Switch> 
+                    <p className='p-info'>{info}</p>
                 </div>
            </div>
         )

@@ -37,7 +37,7 @@ export const Input: React.FunctionComponent<Props> = (props: Props) => {
     }
 
     let labelTitle;
-    if (props.inputInfo.label != '') {
+    if (props.inputInfo.label != '' && props.inputInfo.label != null) {
         labelTitle = <label htmlFor="" className={`text_label${labelColor}`}>{props.inputInfo.label}</label>;
     } else {
         labelTitle = '';

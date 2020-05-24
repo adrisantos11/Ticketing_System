@@ -19,6 +19,10 @@ Route::post('register', 'UserController@register');
 Route::get('home', 'UserController@getAuthenticatedUser');
 Route::post('logout', 'UserController@logout');
 Route::post('getUser', 'UserController@getUserLogged');
+Route::post('changeName', 'UserController@saveNewName');
+Route::post('changeEmail', 'UserController@saveNewEmail');
+Route::post('changePassword', 'UserController@saveNewPassword');
+
 
 Route::namespace('Pages')->group(function () {
     Route::get('incidencias', 'IncidenciasPageController@getTodasIncidencias');

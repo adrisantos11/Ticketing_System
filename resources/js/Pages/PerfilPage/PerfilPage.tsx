@@ -78,6 +78,22 @@ const PerfilPage = () => {
         }
     }
 
+    const changeUserValues = (id: number, firstParam: string, secondParam: string, thirdParam: string) => {
+        if (id == 1) {
+            setUserLogged({
+                ...userLogged,
+                name: firstParam,
+                surname1: secondParam,
+                surname2: thirdParam
+            })
+        } else if (id == 2) {
+            setUserLogged({
+                ...userLogged,
+                email: firstParam
+            })
+        }
+    }
+
         return (
             <>
             <div className="perfilpage-container">     
@@ -152,7 +168,9 @@ const PerfilPage = () => {
                             <div className="rightData-container">
                             <Switch>
                                 <Route path="/home/perfil/graphs" component={GraphsPage}></Route>
-                                <Route path="/home/perfil/settings" component={SettingsPage}></Route>
+                                <Route path="/home/perfil/settings">
+                                    <SettingsPage changeUserValues={changeUserValues}></SettingsPage>
+                                </Route>
                             </Switch>     
                             </div>
                         </div>
