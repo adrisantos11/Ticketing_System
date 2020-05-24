@@ -1,11 +1,9 @@
 import axios from 'axios';
 import { TeamModel } from '../../Model/model' 
 
-export const getNoAssignedIncidencias = (userId: number) => {
+export const getNoAssignedIncidencias = () => {
     return axios
-    .post('api/incidencias/supervisor/noAssigned', {
-        userId: userId
-    },
+    .get('api/incidencias/supervisor/noAssigned',
     {
         headers: {'Content-Type': 'application/json'}
     })

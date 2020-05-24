@@ -166,15 +166,9 @@ class SupervisorController extends Controller
         return $filtered_query;
     }
 
-    public function getWithoutAssignIncidencias(Request $request) {
-        $id_user = $request->id;
-        $first_union_1    = DB::table('incidencias')->distinct('incidencia.id')->where('id_reporter',$id_user)->whereNull('id_assigned')->whereNull('id_team');
-
-        $second_union_1   = DB::table('incidencias')->distinct('incidencia.id')->whereNull('id_assigned')->whereNull('id_team');
-
-        $hole_union     = DB::table('incidencias')->select('incidencias.id', 'incidencias.group_id', 'incidencias.id_reporter', 'incidencias.id_assigned', 'incidencias.id_team', 'incidencias.title', 'incidencias.description', 'incidencias.category', 'incidencias.build', 'incidencias.floor', 'incidencias.class', 'incidencias.url_data', 'incidencias.creation_date', 'incidencias.limit_date', 'incidencias.assigned_date', 'incidencias.resolution_date', 'incidencias.priority', 'incidencias.state')->distinct('incidencia.id')->join('teams', 'incidencias.id_team', '=', 'teams.id')->where('teams.id_supervisor',$id_user)->whereNull('id_assigned')->whereNull('id_team')->union($first_union_1)->union($second_union_1)->orderBy('limit_date', 'asc')->get();
-
-        return $hole_union; 
+    public function getWithoutAssignIncidencias() {
+        $incidencias   = DB::table('incidencias')->distinct('incidencia.id')->whereNull('id_assigned')->whereNull('id_team')->get();
+        return $incidencias; 
     }
 
 

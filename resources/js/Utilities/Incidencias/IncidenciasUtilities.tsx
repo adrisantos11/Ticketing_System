@@ -133,10 +133,12 @@ export const getFilters = () => {
     });
 }
 
-export const getIncidencias = (user: any,userRol: string, orderBy: string) => {
+export const getIncidencias = (id_user: number, userRol: string, orderBy: string) => {
+    console.log('api/incidencias/'+userRol+'/getIncidencias/'+ orderBy);
+    console.log('User ID: ' + id_user)
     return axios
     .post('api/incidencias/'+userRol+'/getIncidencias/'+ orderBy,{
-        id: user.id
+        id: id_user
     },
     {
         headers: {'Content-Type': 'application/json'}

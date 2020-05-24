@@ -8,6 +8,7 @@ import { getTotalIncidencias } from '../../../Utilities/Graphics/TechnicalDataGr
 import { useHistory, Switch, Route } from "react-router-dom";
 import Tabs from '../../../Components/Tabs/Tabs';
 import { getIncidencias } from '../../../Utilities/Incidencias/IncidenciasUtilities';
+import { getNoAssignedIncidencias } from '../../../Utilities/Incidencias/SupervisorUtilities';
 
 const GraphsPage = () => {
     const userId = localStorage.userId;
@@ -55,12 +56,15 @@ const GraphsPage = () => {
     });
 
     const getEstadoActualSupervisor = () => {
-        console.log('Hola');
         todoCount = 0;
         doingCount = 0;
         blockedCount = 0;
         doneCount = 0;
-        getIncidencias(userId, userRol, 'state').then(res => {
+        const graphData: number[] = [];
+        const labels: string[] = [];
+        const colorsList: string[] = [];
+        getIncidencias(userId, userRol, 'priority').then(res => {
+            console.log(res.data.length);
             res.data.map((data: { state: any; }) => {
                 switch (data.state) {
                     case 'todo':
@@ -81,26 +85,33 @@ const GraphsPage = () => {
 
             })
             const sum = todoCount+doingCount+blockedCount+doneCount;
-            console.log()
             setGraphBar({
                 ...graphBar,
-                title: 'Estado actual (Total: '+sum+')',
-                graphData: [todoCount ,doingCount, blockedCount, doneCount],
-                labels: ['Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas'],
-                colorsList: [
-                    "#3685EC",
-                    "#e78738",
-                    "#dc3545",
-                    '#07a744'
-                ]
+                title: 'Estado actual (Total: ' + sum + ')'
             })
-        })
+            graphData.push(todoCount ,doingCount, blockedCount, doneCount);
+            labels.push('Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas');
+            colorsList.push("#3685EC", "#e78738", "#dc3545", '#07a744');
+
+            getNoAssignedIncidencias().then(res => {
+                graphData.push(res.length);
+                labels.push('Sin asgnar');
+                colorsList.push('#e2e2e2')
+                setGraphBar({
+                    ...graphBar,
+                    graphData: graphData,
+                    labels: labels,
+                    colorsList: colorsList
+                })
+            })
+        });
+
+
 
     }
 
     React.useEffect(() => {
         if (userRol == 'supervisor') {
-            console.log(34253);
             getEstadoActualSupervisor();
         } else if (userRol == 'technical'){
             setGraphBar({

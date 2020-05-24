@@ -83,18 +83,21 @@ export const sendNewInTeamMail = (name_user: string, team_name: string, team_des
     })
 }
 
-export const assignedToIncidenciaMail = (id_incidencia: number, name_user: string, team_name: string, incidencia_name: string, incidencia_description: string, incidencia_category: string, incidencia_limit_date: string, supervisor_name: string, user_email: string) => {
+export const assignedToIncidenciaMail = (id_incidencia: number, name_user: string, team_name: string, incidencia_name: string, incidencia_description: string, incidencia_category: string, incidencia_limit_date: string, supervisor_name: string, user_email: string, mail_type: string) => {
     return axios
     .post('api/assignedToIncidenciaMail',
     {
         id_incidencia: id_incidencia,
         name_user: name_user,
+        team_name: team_name,
         incidencia_name: incidencia_name,
         incidencia_description:incidencia_description,
         incidencia_category: incidencia_category,
         incidencia_limit_date: incidencia_limit_date,
         supervisor_name: supervisor_name,
-        team_name: team_name
+        user_mail: user_email,
+        mail_type: mail_type
+    },
     {
         headers: {'Content-Type': 'application/json'}
     })

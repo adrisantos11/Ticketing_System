@@ -101,29 +101,29 @@ const MostrarIncidenciasPage = () => {
      * @param user objeto que contiene el id del usuario.
      * @param orderBy String que indentifica en qué orden se tiene que extraer las incidencias de la BBDD.
      */
-    const getIncidenciasUser = (user: any, orderBy: string) => {
+    const getIncidenciasUser = (user_id: number, orderBy: string) => {
         setDivSelectedData([]);
         if (userRol == 'technical') {
             // En el caso en el que orderBy esté vacío, mandamos que se obtengan las incidencias ordenads por 'Prioridadd'
             if(orderBy == '') {
-                getIncidencias(user, userRol, 'priority').then(res => {
+                getIncidencias(user_id, userRol, 'priority').then(res => {
                     setIncidenciasSize(res.data.length);
                     console.log(res.data);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
                 });
             } else if (orderBy == 'my_incidencias') {
-                getAssignedIncidencias(user.id).then(res => {
+                getAssignedIncidencias(user_id).then(res => {
                     setIncidenciasSize(res.length);
                     setIncidencias(res);
                 });
             } else if (orderBy == 'group_incidencias') {
-                    getGroupIncidencias(user.id).then(res => {
+                    getGroupIncidencias(user_id).then(res => {
                     setIncidenciasSize(res.length);
                     setIncidencias(res);
                 });
             } else {
-                getIncidencias(user, userRol, orderBy).then(res => {
+                getIncidencias(user_id, userRol, orderBy).then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter(orderBy, res.sizes, res.colors);
@@ -132,18 +132,19 @@ const MostrarIncidenciasPage = () => {
         } else if (userRol == 'supervisor'){
             // En el caso en el que orderBy esté vacío, se manda obtener las incidencias ordenads por 'Prioridadd'
             if(orderBy == '') {
-                getIncidencias(user, userRol, 'priority').then(res => {
+                getIncidencias(user_id, userRol, 'priority').then(res => {
+                    console.log(res.data.length);
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
                 });
             } else if (orderBy == 'no_assigned') {
-                getNoAssignedIncidencias(user).then(res => {
+                getNoAssignedIncidencias().then(res => {
                     setIncidenciasSize(res.length);
                     setIncidencias(res);
                 });
             } else {
-                getIncidencias(user, userRol, orderBy).then(res => {
+                getIncidencias(user_id, userRol, orderBy).then(res => {
                     setIncidenciasSize(res.data.length);
                     setIncidencias(res.data);
                     drawFooter(orderBy, res.sizes,res.colors);
@@ -154,7 +155,7 @@ const MostrarIncidenciasPage = () => {
     }
 
     React.useEffect(() => {
-        getIncidenciasUser(user, orderBy);
+        getIncidenciasUser(user.id, orderBy);
         setIncidenciasLoaded(true);
     }, [orderBy]);
 
@@ -230,7 +231,7 @@ const MostrarIncidenciasPage = () => {
                 setIncidencias(res);
             })
         } else {
-            getIncidencias(user, userRol, orderBy).then(res => {
+            getIncidencias(user.id, userRol, orderBy).then(res => {
                 setIncidenciasSize(res.length);
                 setIncidencias(res.data);
             })
