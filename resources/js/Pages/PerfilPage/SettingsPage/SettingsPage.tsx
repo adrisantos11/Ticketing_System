@@ -353,11 +353,10 @@ const SettingsPage = (props: any) => {
             props.changeUserValues(2, inputEmail.value)
         } else if (saveIndicator == 2) {
             saveNewPassword(userId, passwordInput.value);
-
         }
         $('#'+modalSaveChanges.id).modal('hide');
-        // $('#toastDelete').show();
-        // $('#toastDelete').toast('show');
+        $('#toastSaveProfileChanges').show();
+        $('#toastSaveProfileChanges').toast('show');
     }
     
     return (

@@ -77895,18 +77895,8 @@ var IncidenciasPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciasPa
 var IncidenciaViewPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage */ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.tsx");
 var Toast_1 = __webpack_require__(/*! ../../Components/Toast/Toast */ "./resources/js/Components/Toast/Toast.tsx");
 var MainPage = function () {
-    var history = react_router_dom_1.useHistory();
     var _a = React.useState(false), isLogged = _a[0], setIsLogged = _a[1];
     var _b = React.useState({
-        id: 1,
-        texto: 'Cerrar Sesión',
-        color: 'red',
-        type: 'outline-secondary',
-        icon: '',
-        target_modal: '',
-        extraClass: ''
-    }), logoutButton = _b[0], setLogoutButton = _b[1];
-    var _c = React.useState({
         name: '',
         surname1: '',
         surname2: '',
@@ -77914,16 +77904,7 @@ var MainPage = function () {
         email: '',
         phone: '',
         role: ''
-    }), userLogged = _c[0], setUserLogged = _c[1];
-    var _d = React.useState({
-        id: 1,
-        texto: '',
-        color: 'primary',
-        type: 'outline-secondary',
-        icon: 'fas fa-bars',
-        target_modal: '',
-        extraClass: ''
-    }), closeSlidebarButton = _d[0], setCloseSlidebarButton = _d[1];
+    }), userLogged = _b[0], setUserLogged = _b[1];
     var toastDeleteIncidencia = React.useState({
         id: 'toastDelete',
         title: '¡Incidencia eliminada!',
@@ -77959,6 +77940,13 @@ var MainPage = function () {
         circleColor: '--blue',
         delay: 4000
     })[0];
+    var toastSaveProfileChanges = React.useState({
+        id: 'toastSaveProfileChanges',
+        title: '¡Cambios guardados!',
+        description: 'El perfil se ha modificado y guardado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    })[0];
     React.useEffect(function () {
         Authentication_1.getProfile().then(function (res) {
             try {
@@ -77991,7 +77979,8 @@ var MainPage = function () {
                     React.createElement(Toast_1.default, { toastProps: toastCreateIncidencia }),
                     React.createElement(Toast_1.default, { toastProps: toastIncidenciaChangeState }),
                     React.createElement(Toast_1.default, { toastProps: toastEditIncidencia }),
-                    React.createElement(Toast_1.default, { toastProps: toastCreateTechnicalGroup })))));
+                    React.createElement(Toast_1.default, { toastProps: toastCreateTechnicalGroup }),
+                    React.createElement(Toast_1.default, { toastProps: toastSaveProfileChanges })))));
     }
     else {
         return (React.createElement(React.Fragment, null,
@@ -78679,8 +78668,8 @@ var SettingsPage = function (props) {
             Authentication_1.saveNewPassword(userId, passwordInput.value);
         }
         $('#' + modalSaveChanges.id).modal('hide');
-        // $('#toastDelete').show();
-        // $('#toastDelete').toast('show');
+        $('#toastSaveProfileChanges').show();
+        $('#toastSaveProfileChanges').toast('show');
     };
     return (React.createElement("div", { className: "settings-container" },
         React.createElement("p", { className: "title-edit" },

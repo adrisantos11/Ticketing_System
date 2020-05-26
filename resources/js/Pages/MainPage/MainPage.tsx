@@ -15,17 +15,7 @@ import IncidenciaViewPage from "../IncidenciasPage/IncidenciaViewPage/Incidencia
 import Toast from '../../Components/Toast/Toast';
 
 const MainPage = () => {
-    const history = useHistory();
     const [isLogged, setIsLogged] = React.useState(false);
-    const [logoutButton, setLogoutButton] = React.useState<ButtonModel>({
-        id: 1,
-        texto: 'Cerrar Sesión',
-        color: 'red',
-        type: 'outline-secondary',
-        icon: '',
-        target_modal:'',
-        extraClass: ''
-    });
 
     const [userLogged, setUserLogged] = React.useState({
         name: '',
@@ -36,17 +26,6 @@ const MainPage = () => {
         phone: '',
         role: ''
     });
-
-    const [closeSlidebarButton, setCloseSlidebarButton] = React.useState<ButtonModel>({
-        id: 1,
-        texto: '',
-        color: 'primary',
-        type: 'outline-secondary',
-        icon: 'fas fa-bars',
-        target_modal:'',
-        extraClass: ''
-    });
-
     
     const [toastDeleteIncidencia] = React.useState<ToastModel>({
         id: 'toastDelete',
@@ -89,6 +68,15 @@ const MainPage = () => {
         circleColor: '--blue',
         delay: 4000
     });
+
+    const [toastSaveProfileChanges] = React.useState<ToastModel>({
+        id: 'toastSaveProfileChanges',
+        title: '¡Cambios guardados!',
+        description: 'El perfil se ha modificado y guardado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    });
+
     React.useEffect(() => {
         getProfile().then(res => {
             try {
@@ -134,6 +122,7 @@ const MainPage = () => {
                     <Toast toastProps={toastIncidenciaChangeState}></Toast>
                     <Toast toastProps={toastEditIncidencia}></Toast>
                     <Toast toastProps={toastCreateTechnicalGroup}></Toast>
+                    <Toast toastProps={toastSaveProfileChanges}></Toast>
 
                 </div>
             </div>
