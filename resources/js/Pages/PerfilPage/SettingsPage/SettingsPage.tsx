@@ -2,9 +2,10 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react'
 import './SettingsPage.scss'
 import { Input } from '../../../Components/Input/Input'
-import { InputModel, ButtonModel } from '../../../Model/model';
+import { InputModel, ButtonModel, ModalModel } from '../../../Model/model';
 import Button from '../../../Components/Button/Button';
 import { saveNewName, saveNewMail, saveNewPassword } from '../../../Utilities/Authentication';
+import Modal from '../../../Components/Modal/Modal';
 
 const SettingsPage = (props: any) => {
     const userId = localStorage.userId;
@@ -125,6 +126,27 @@ const SettingsPage = (props: any) => {
         extraClass: null
     })
 
+    const [changeIncidenciaStateButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Guardar cambios',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'saveChangesModal',  
+        extraClass: ''
+    });
+
+    const [modalSaveChanges] = React.useState<ModalModel>({
+        id: 'saveChangesModal',
+        title: '¿Guardar los cambios?',
+        buttonProps: changeIncidenciaStateButton,
+        enableCloseButton: true,
+        infoModel: false
+    })
+
+    const [modalBody, setModalBody] = React.useState(null);
+    const [saveIndicator, setSaveIndicator] = React.useState(0)
+
     const handleChangeInput = (value: string, id: number): void => {
         if (id == 1) {
             setInputName({
@@ -206,8 +228,15 @@ const SettingsPage = (props: any) => {
                 })
             }
             if (isValid) {
-                saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
-                props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value)    
+                $('#'+modalSaveChanges.id).modal('show');
+                setModalBody(
+                    <>
+                        <p>Nombre: <b>{inputName.value}</b></p>
+                        <p>Primer apellido: <b>{inputSurname1.value}</b></p>
+                        <p>Segundo apellido: <b>{inputSurname2.value}</b></p>
+                    </>
+                );
+                setSaveIndicator(0);
             }    
         } else if(id == 8) {
             if (inputEmail.value == '' || inputEmail.value == null) {     
@@ -225,8 +254,13 @@ const SettingsPage = (props: any) => {
                 })
             }
             if (isValid) {
-                saveNewMail(userId, inputEmail.value);
-                props.changeUserValues(2, inputEmail.value)
+                $('#'+modalSaveChanges.id).modal('show');
+                setModalBody(
+                    <>
+                        <p>E-mail: <b>{inputEmail.value}</b></p>
+                    </>
+                );
+                setSaveIndicator(1);
             }
         } else if(id == 9) {
             if (passwordInput.value == '' || passwordInput.value == null) {     
@@ -285,7 +319,15 @@ const SettingsPage = (props: any) => {
             }
 
             if (isValid) {
-                saveNewPassword(userId, passwordInput.value);
+                $('#'+modalSaveChanges.id).modal('show');
+                setModalBody(
+                    <>
+                        <p>Esta herramienta no posee ninguna opción de recuperación de contraseña.</p>
+                        <p>Las dos contraseñas introducidas coinciden y se va a modificar.</p>
+                        <p>¿Está seguro?</p>
+                    </>
+                );
+                setSaveIndicator(2);
             } else {
                 setPasswordInput({
                     ...passwordInput,
@@ -300,6 +342,22 @@ const SettingsPage = (props: any) => {
                 isValid = false;
             }
         }
+    }
+
+    const saveChanges = () => {
+        if (saveIndicator == 0) {
+            saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
+            props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value)    
+        } else if (saveIndicator == 1) {
+            saveNewMail(userId, inputEmail.value);
+            props.changeUserValues(2, inputEmail.value)
+        } else if (saveIndicator == 2) {
+            saveNewPassword(userId, passwordInput.value);
+
+        }
+        $('#'+modalSaveChanges.id).modal('hide');
+        // $('#toastDelete').show();
+        // $('#toastDelete').toast('show');
     }
     
     return (
@@ -329,6 +387,9 @@ const SettingsPage = (props: any) => {
                 </div>
                 <Button buttonInfo={savePasswordButton} handleClick= {handleClickSaveChanges}></Button>
             </div>
+            <Modal modalProps={modalSaveChanges} onClick={saveChanges}>
+                {modalBody}
+            </Modal>
         </div>
     )
 }

@@ -78423,6 +78423,7 @@ __webpack_require__(/*! ./SettingsPage.scss */ "./resources/js/Pages/PerfilPage/
 var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
 var Button_1 = __webpack_require__(/*! ../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
 var Authentication_1 = __webpack_require__(/*! ../../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
+var Modal_1 = __webpack_require__(/*! ../../../Components/Modal/Modal */ "./resources/js/Components/Modal/Modal.tsx");
 var SettingsPage = function (props) {
     var userId = localStorage.userId;
     var userRol = localStorage.userRol;
@@ -78532,6 +78533,24 @@ var SettingsPage = function (props) {
         target_modal: null,
         extraClass: null
     }), savePasswordButton = _j[0], setSavePasswordButton = _j[1];
+    var changeIncidenciaStateButton = React.useState({
+        id: 1,
+        texto: 'Guardar cambios',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal: 'saveChangesModal',
+        extraClass: ''
+    })[0];
+    var modalSaveChanges = React.useState({
+        id: 'saveChangesModal',
+        title: '¿Guardar los cambios?',
+        buttonProps: changeIncidenciaStateButton,
+        enableCloseButton: true,
+        infoModel: false
+    })[0];
+    var _k = React.useState(null), modalBody = _k[0], setModalBody = _k[1];
+    var _l = React.useState(0), saveIndicator = _l[0], setSaveIndicator = _l[1];
     var handleChangeInput = function (value, id) {
         if (id == 1) {
             setInputName(__assign(__assign({}, inputName), { value: value }));
@@ -78577,8 +78596,18 @@ var SettingsPage = function (props) {
                 setInputSurname2(__assign(__assign({}, inputSurname2), { color: 'primary', error_control_text: '' }));
             }
             if (isValid) {
-                Authentication_1.saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
-                props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value);
+                $('#' + modalSaveChanges.id).modal('show');
+                setModalBody(React.createElement(React.Fragment, null,
+                    React.createElement("p", null,
+                        "Nombre: ",
+                        React.createElement("b", null, inputName.value)),
+                    React.createElement("p", null,
+                        "Primer apellido: ",
+                        React.createElement("b", null, inputSurname1.value)),
+                    React.createElement("p", null,
+                        "Segundo apellido: ",
+                        React.createElement("b", null, inputSurname2.value))));
+                setSaveIndicator(0);
             }
         }
         else if (id == 8) {
@@ -78590,8 +78619,12 @@ var SettingsPage = function (props) {
                 setInputEmail(__assign(__assign({}, inputEmail), { color: 'primary', error_control_text: '' }));
             }
             if (isValid) {
-                Authentication_1.saveNewMail(userId, inputEmail.value);
-                props.changeUserValues(2, inputEmail.value);
+                $('#' + modalSaveChanges.id).modal('show');
+                setModalBody(React.createElement(React.Fragment, null,
+                    React.createElement("p", null,
+                        "E-mail: ",
+                        React.createElement("b", null, inputEmail.value))));
+                setSaveIndicator(1);
             }
         }
         else if (id == 9) {
@@ -78619,7 +78652,12 @@ var SettingsPage = function (props) {
                 setPasswordInput(__assign(__assign({}, passwordInput), { color: 'primary', error_control_text: '' }));
             }
             if (isValid) {
-                Authentication_1.saveNewPassword(userId, passwordInput.value);
+                $('#' + modalSaveChanges.id).modal('show');
+                setModalBody(React.createElement(React.Fragment, null,
+                    React.createElement("p", null, "Esta herramienta no posee ninguna opci\u00F3n de recuperaci\u00F3n de contrase\u00F1a."),
+                    React.createElement("p", null, "Las dos contrase\u00F1as introducidas coinciden y se va a modificar."),
+                    React.createElement("p", null, "\u00BFEst\u00E1 seguro?")));
+                setSaveIndicator(2);
             }
             else {
                 setPasswordInput(__assign(__assign({}, passwordInput), { color: 'red', error_control_text: 'Los campos están vacíos' }));
@@ -78627,6 +78665,22 @@ var SettingsPage = function (props) {
                 isValid = false;
             }
         }
+    };
+    var saveChanges = function () {
+        if (saveIndicator == 0) {
+            Authentication_1.saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
+            props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value);
+        }
+        else if (saveIndicator == 1) {
+            Authentication_1.saveNewMail(userId, inputEmail.value);
+            props.changeUserValues(2, inputEmail.value);
+        }
+        else if (saveIndicator == 2) {
+            Authentication_1.saveNewPassword(userId, passwordInput.value);
+        }
+        $('#' + modalSaveChanges.id).modal('hide');
+        // $('#toastDelete').show();
+        // $('#toastDelete').toast('show');
     };
     return (React.createElement("div", { className: "settings-container" },
         React.createElement("p", { className: "title-edit" },
@@ -78648,7 +78702,8 @@ var SettingsPage = function (props) {
             React.createElement("div", { className: "edit-password" },
                 React.createElement(Input_1.Input, { inputInfo: passwordInput, handleChangeInput: handleChangeInput }),
                 React.createElement(Input_1.Input, { inputInfo: confirmPasswordInput, handleChangeInput: handleChangeInput })),
-            React.createElement(Button_1.default, { buttonInfo: savePasswordButton, handleClick: handleClickSaveChanges }))));
+            React.createElement(Button_1.default, { buttonInfo: savePasswordButton, handleClick: handleClickSaveChanges })),
+        React.createElement(Modal_1.default, { modalProps: modalSaveChanges, onClick: saveChanges }, modalBody)));
 };
 exports.default = SettingsPage;
 

@@ -80,7 +80,6 @@ const GraphsPage = () => {
                     default:
                         break;
                 }
-
             })
             const sum = todoCount+doingCount+blockedCount+doneCount;
             
