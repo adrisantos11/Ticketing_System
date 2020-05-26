@@ -56,6 +56,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     let title1; // Título del recuadro para poner título y descripción a la incidencia.
     let title2; // Título del recuadro en el que se va a elegir dónde se produce la incidenciaº.
     let title3; // Título del recuadro en el que se va a elegir el tipo de incidencia.
+    let title4; // Título del recuadro en el que se va a elegir el cuando es el límite de incidencia.
     let titleContainerType = '--row'; // Tipo de container: --row o nada.
     let valueBuildDropdown = '';
 
@@ -65,6 +66,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         title1 = <p className="p-title">¿Cuál es la incidencia?</p>;
         title2 = <p className="p-title">¿Dónde se produce la incidencia?</p>;
         title3 = <p className="p-title">¿De qué tipo es la incidencia?</p>;
+        title4 = <p className="p-title">¿Límite de realización de la incidencia?</p>;
     } else if (widgetType == 'edit') {
         title1 = '';
         title2 = '';
@@ -495,6 +497,10 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             supervisorId = null;
         }
 
+        const datePickerID = $( "#limitDate" ).val();
+        const timePickerID = $( "#limitTime" ).val();
+
+        let fullDate = datePickerID + ' ' + timePickerID;
         let date = new Date();
         let hoursMinutesSeconds = date.toLocaleString().split(' ');
         const month = date.getMonth()+1;
@@ -527,7 +533,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 class: classroom,
                 url_data: '',
                 creation_date: currentDate,
-                limit_date: '1263645342',
+                limit_date: fullDate,
                 assigned_date: assignedDate,
                 resolution_date: '',
                 priority: priority,
@@ -545,11 +551,10 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
             if (userSelected != null) {
                 getUser(userSelected).then(res => {
-                    console.log(res[0]);
-                    console.log(supervisor);
                     const userName = res[0].name + ' ' + res[0].surname1 + ' ' + res[0].surname2;
                     const supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
-                    assignedToIncidenciaMail(lastIncidenciaID+1, userName, '--', title, description, category, '',  supervisorName, res[0].email, 'creado');
+                    console.log(supervisorName);
+                    assignedToIncidenciaMail(lastIncidenciaID+1, userName, '--', title, description, category, fullDate,  supervisorName, res[0].email, 'creado');
                 })
             }
 
@@ -564,6 +569,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             if(userRol == 'supervisor') {
                 supervisorId = parseInt(localStorage.userId);
             }
+            
             let incidencia: IncidenciaModel = {
                 id: props.formularioProps.incidenciaData.id,
                 group_id: 0,
@@ -595,8 +601,6 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             }
             if (userSelected != null) {
                 getUser(userSelected).then(res => {
-                    console.log(res[0]);
-                    console.log(supervisor);
                     const userName = res[0].name + ' ' + res[0].surname1 + ' ' + res[0].surname2;
                     const supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
                     assignedToIncidenciaMail(props.formularioProps.incidenciaData.id, userName, '--', title, description, category, '',  supervisorName, res[0].email, 'editado');
@@ -780,6 +784,11 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                         <Dropdown dropdownInfo={classDropdown} onClick={handleClickItemDD}></Dropdown>
                     </div>
                 </div>
+            </div>
+            <div className="data-container">
+                {title4}
+                <input className="datepicker-input" type="date" id="limitDate" name="limitDate"></input>
+                <input className="timepicker-input" type="time" id="limitTime" name="limitTime" min="09:00" max="20:00" required></input>
             </div>
             {
                 assignUser(userRol, urlGeneral)

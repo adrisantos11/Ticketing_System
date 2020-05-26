@@ -13,7 +13,7 @@ const SettingsPage = (props: any) => {
     const [inputName, setInputName] = React.useState<InputModel>({
         id: 1,
         value: null,
-        label: 'Nombre',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir el nuevo nombre',
         color: 'primary',
@@ -27,7 +27,7 @@ const SettingsPage = (props: any) => {
     const [inputSurname1, setInputSurname1] = React.useState<InputModel>({
         id: 2,
         value: null,
-        label: 'Primer apellido',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir primer apellido',
         color: 'primary',
@@ -41,7 +41,7 @@ const SettingsPage = (props: any) => {
     const [inputSurname2, setInputSurname2] = React.useState<InputModel>({
         id: 3,
         value: null,
-        label: 'Segundo apellido',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir segundo apellido',
         color: 'primary',
@@ -55,7 +55,7 @@ const SettingsPage = (props: any) => {
     const [inputEmail, setInputEmail] = React.useState<InputModel>({
         id: 4,
         value: null,
-        label: 'E-mail',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir nuevo e-mail',
         color: 'primary',
@@ -69,7 +69,7 @@ const SettingsPage = (props: any) => {
     const [passwordInput, setPasswordInput] = React.useState<InputModel>({
         id: 5,
         value: null,
-        label: 'Contraseña',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir nueva contraseña',
         color: 'primary',
@@ -160,14 +160,145 @@ const SettingsPage = (props: any) => {
     }
 
     const handleClickSaveChanges = (e: any, id: number) => {
+        let isValid = true;
         if (id == 7) {
-            saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
-            props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value)
+            if (inputName.value == '' || inputName.value == null) {
+                setInputName({
+                    ...inputName,
+                    color: 'red',
+                    error_control_text: 'El campo está vacío'
+                })
+                isValid = false;
+            } else {
+                setInputName({
+                    ...inputName,
+                    color: 'primary',
+                    error_control_text: ''
+                })
+
+            }
+            if (inputSurname1.value == '' || inputSurname1.value == null) {
+                setInputSurname1({
+                    ...inputSurname1,
+                    color: 'red',
+                    error_control_text: 'El campo está vacío'
+                })
+                isValid = false;
+            } else {
+                setInputSurname1({
+                    ...inputSurname1,
+                    color: 'primary',
+                    error_control_text: ''
+                })
+            }
+            if (inputSurname2.value == '' || inputSurname2.value == null) {     
+                setInputSurname2({
+                    ...inputSurname2,
+                    color: 'red',
+                    error_control_text: 'El campo está vacío'
+                })
+                isValid = false;
+            } else {
+                setInputSurname2({
+                    ...inputSurname2,
+                    color: 'primary',
+                    error_control_text: ''
+                })
+            }
+            if (isValid) {
+                saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
+                props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value)    
+            }    
         } else if(id == 8) {
-            saveNewMail(userId, inputEmail.value);
-            props.changeUserValues(2, inputEmail.value)
+            if (inputEmail.value == '' || inputEmail.value == null) {     
+                setInputEmail({
+                    ...inputEmail,
+                    color: 'red',
+                    error_control_text: 'El campo está vacío'
+                })
+                isValid = false;
+            } else {
+                setInputEmail({
+                    ...inputEmail,
+                    color: 'primary',
+                    error_control_text: ''
+                })
+            }
+            if (isValid) {
+                saveNewMail(userId, inputEmail.value);
+                props.changeUserValues(2, inputEmail.value)
+            }
         } else if(id == 9) {
-            saveNewPassword(userId, passwordInput.value);
+            if (passwordInput.value == '' || passwordInput.value == null) {     
+                setPasswordInput({
+                    ...passwordInput,
+                    color: 'red',
+                    error_control_text: 'El campo está vacío'
+                })
+                isValid = false;
+            } else {
+                setPasswordInput({
+                    ...passwordInput,
+                    color: 'primary',
+                    error_control_text: ''
+                })
+            }
+
+            if (confirmPasswordInput.value == '' || confirmPasswordInput.value == null) {     
+                setConfirmPasswordInput({
+                    ...confirmPasswordInput,
+                    color: 'red',
+                    error_control_text: 'El campo está vacío'
+                })
+                isValid = false;
+            } else {
+                setConfirmPasswordInput({
+                    ...confirmPasswordInput,
+                    color: 'primary',
+                    error_control_text: ''
+                })
+            }
+
+            if (confirmPasswordInput.value != passwordInput.value) {
+                setPasswordInput({
+                    ...passwordInput,
+                    color: 'red',
+                    error_control_text: 'Las contraseñas no coinciden'
+                })
+                setConfirmPasswordInput({
+                    ...confirmPasswordInput,
+                    color: 'red',
+                    error_control_text: ''
+                })
+                isValid = false;
+            } else {
+                setConfirmPasswordInput({
+                    ...confirmPasswordInput,
+                    color: 'primary',
+                    error_control_text: ''
+                })
+                setPasswordInput({
+                    ...passwordInput,
+                    color: 'primary',
+                    error_control_text: ''
+                })
+            }
+
+            if (isValid) {
+                saveNewPassword(userId, passwordInput.value);
+            } else {
+                setPasswordInput({
+                    ...passwordInput,
+                    color: 'red',
+                    error_control_text: 'Los campos están vacíos'
+                })
+                setConfirmPasswordInput({
+                    ...confirmPasswordInput,
+                    color: 'red',
+                    error_control_text: ''
+                })
+                isValid = false;
+            }
         }
     }
     

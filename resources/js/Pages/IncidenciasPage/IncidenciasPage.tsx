@@ -15,7 +15,18 @@ const IncidenciasPage = () => {
     const sreenWidth = screen.width; 
     
     const [tabSelected, setTabSelected] = React.useState(0);
-    
+
+    let optionSelected = 0;
+    if (history.location.pathname.includes('show')) {
+        optionSelected=0;
+    }
+    else if (history.location.pathname.includes('create')) {
+        optionSelected=1;
+    }
+    else if (history.location.pathname.includes('technicalGroups')) {
+        optionSelected=2;
+    }
+
     let optionsList;
     let titlePage;
     let enableTehnicalGroups = true;
@@ -68,20 +79,29 @@ const IncidenciasPage = () => {
         iconList: iconList,
         color: colorListTabs,
         enabledList: [true, true, enableTehnicalGroups],
-        itemActive: tabSelected
+        itemActive: optionSelected
     });
 
     React.useEffect(() => {
         if (history.location.pathname.includes('show')) {
-            setTabSelected(0);
+            setTabsOptions({
+                ...tabsOptions,
+                itemActive: 0
+            })
         }
         else if (history.location.pathname.includes('create')) {
-            setTabSelected(1);
+            setTabsOptions({
+                ...tabsOptions,
+                itemActive: 1
+            })        
         }
         else if (history.location.pathname.includes('technicalGroups')) {
-            setTabSelected(2);
+            setTabsOptions({
+                ...tabsOptions,
+                itemActive: 2
+            })
         }
-    })
+    }, []);
 
     const handleClickTab = (id: string) => {
         if (id=='crearIncidencia') {

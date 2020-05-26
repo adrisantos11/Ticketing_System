@@ -17,7 +17,15 @@
         width: 100%;
 
         
-        
+        .datepicker-input {
+            font-family: $primary_font_family;
+            margin-right: $default_padding;
+        }
+
+        .timepicker-input {
+            font-family: $primary_font_family;
+            margin-left: $default_padding;
+        }
         .dropdowns-container {
             display: flex;
             flex-direction: row;

@@ -19,12 +19,11 @@ const GraphsPage = () => {
     let blockedCount = 0;
     let doneCount = 0;
 
+    const graphData: number[] = [];
+    const labels: string[] = [];
+    const colorsList: string[] = [];
 
-    // let tabSelected = 0;
-    // if (history.location.pathname.endsWith('praphs'))
-    //     tabSelected = 0;
-    // else if (history.location.pathname.endsWith('settings')) 
-    //     tabSelected = 1;
+
     const idList = [];
     const valuesList = [];
     const iconList = [];
@@ -62,9 +61,6 @@ const GraphsPage = () => {
         doingCount = 0;
         blockedCount = 0;
         doneCount = 0;
-        const graphData: number[] = [];
-        const labels: string[] = [];
-        const colorsList: string[] = [];
         getIncidencias(userId, userRol, 'priority').then(res => {
             console.log(res.data.length);
             res.data.map((data: { state: any; }) => {
@@ -111,58 +107,44 @@ const GraphsPage = () => {
 
     }
 
-    React.useEffect(() => {
-        if (userRol == 'supervisor') {
-            getEstadoActualSupervisor();
-        } else if (userRol == 'technical'){
+    const getResumeTechnical = () => {
+        getTotalIncidencias(userId).then(res => {
+            console.log(res);
+            const sum = res[0].total+res[1].total+res[2].total;
+            console.log(sum);
+
+            graphData.push(res[0].total ,res[1].total, res[2].total);
+            labels.push('Pendientes', 'En proceso', 'Bloqueadas');
+            colorsList.push("#3685EC", "#e78738", "#dc3545");
+
             setGraphBar({
                 ...graphBar,
-                labels: ['Pendientes', 'En proceso', 'Bloqueadas',]
+                title: 'Resumen de incidencias (Total: '+sum+')',
+                graphData: graphData,
+                colorsList: colorsList,
+                labels: labels
             })
+        })         
+    }
+
+    React.useEffect(() => {
+        if (userRol == 'supervisor') {
+            console.log('Supervisor');
+            getEstadoActualSupervisor();
+        } else if (userRol == 'technical'){
+            console.log('Técnico');
+            getResumeTechnical()
         }
     }, []);
 
-    const getGraphData = (id: string) => {
-        if (userRol == 'supervisor') {
-            if(id == 'estado-actual-incidencias') {
-                getEstadoActualSupervisor();   
-            }
-        } else if (userRol == 'technical') {
-            if (id == 'resumen-incidencias') {
-                getTotalIncidencias(userId).then(res => {
-                    const sum = res[0].total+res[1].total+res[2].total;
-                    setGraphBar({
-                        ...graphBar,
-                        title: 'Resumen de incidencias (Total: '+sum+')',
-                        graphData: [res[0].total,res[1].total,res[2].total],
-                        colorsList: [
-                            "#3685EC",
-                            "#e78738",
-                            "#dc3545",
-                        ]
-                    })
-                })         
-            } 
-        }
-
-    }
     
     const handleClickTab = (id: string) => {
-        getGraphData(id);
         if (id=='resumen-incidencias') {
             history.push('/home/perfil/graphs/summaryIncidencias');
         } else if (id=='historial-incidencias') {
             history.push('/home/perfil/graphs/historyIncidencias');
         }
     }
-
-    React.useEffect(() => {
-        if (localStorage.userRol == 'technical') {
-            getGraphData('resumen-incidencias')
-        } else if (localStorage.userRol == 'supervisor') {
-            console.log('Hola');
-        }
-    }, []);
 
         return (
            <div className='graphsPage-container'>

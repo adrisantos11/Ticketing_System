@@ -18544,7 +18544,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".settings-container .title-edit {\n  font-size: 2rem;\n  margin: 1rem 1.5rem;\n}\n.settings-container .title-section {\n  font-size: 1.4rem;\n  font-style: italic;\n}\n.settings-container .name-section {\n  padding: 1rem;\n}\n.settings-container .name-section .edit-name {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 768px) {\n  .settings-container .name-section .edit-name {\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n  }\n}\n.settings-container .name-section .edit-name div:first-child {\n  margin-left: 0;\n}\n.settings-container .name-section .edit-name div:last-child {\n  margin-right: 0;\n}\n.settings-container .name-section .edit-name .form-group {\n  margin: 0.5rem;\n  margin-top: 0;\n}\n@media screen and (max-width: 768px) {\n  .settings-container .name-section .edit-name .form-group {\n    margin: 0;\n    margin-bottom: 0.5rem;\n  }\n}\n.settings-container .email-section {\n  padding: 1rem;\n}\n.settings-container .password-section {\n  padding: 1rem;\n}\n.settings-container .password-section .edit-password {\n  display: flex;\n  flex-direction: row;\n  margin-top: 0.5rem 0;\n  align-items: flex-end;\n}\n@media screen and (max-width: 561px) {\n  .settings-container .password-section .edit-password {\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n    align-items: flex-start;\n  }\n}\n.settings-container .password-section .edit-password div:first-child {\n  margin-left: 0;\n}\n.settings-container .password-section .edit-password div:last-child {\n  margin-right: 0;\n}\n.settings-container .password-section .edit-password .form-group {\n  margin: 0.5rem;\n  margin-top: 0;\n}\n@media screen and (max-width: 561px) {\n  .settings-container .password-section .edit-password .form-group {\n    margin: 0;\n    margin-bottom: 0.5rem;\n  }\n}\n.settings-container .buttonContainer {\n  margin-top: 0.5rem;\n}", ""]);
+exports.push([module.i, ".settings-container .title-edit {\n  font-size: 2rem;\n  margin: 1rem 1.5rem;\n}\n.settings-container .title-section {\n  font-size: 1.4rem;\n  font-style: italic;\n}\n.settings-container .name-section {\n  padding: 1rem;\n}\n.settings-container .name-section .edit-name {\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n}\n@media screen and (max-width: 768px) {\n  .settings-container .name-section .edit-name {\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n  }\n}\n.settings-container .name-section .edit-name div:first-child {\n  margin-left: 0;\n}\n.settings-container .name-section .edit-name div:last-child {\n  margin-right: 0;\n}\n.settings-container .name-section .edit-name .form-group {\n  margin: 0.5rem;\n  margin-top: 0;\n}\n@media screen and (max-width: 768px) {\n  .settings-container .name-section .edit-name .form-group {\n    margin: 0;\n    margin-bottom: 0.5rem;\n  }\n}\n.settings-container .email-section {\n  padding: 1rem;\n}\n.settings-container .password-section {\n  padding: 1rem;\n}\n.settings-container .password-section .edit-password {\n  display: flex;\n  flex-direction: row;\n  margin-top: 0.5rem 0;\n  align-items: flex-start;\n}\n@media screen and (max-width: 561px) {\n  .settings-container .password-section .edit-password {\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n    align-items: flex-start;\n  }\n}\n.settings-container .password-section .edit-password div:first-child {\n  margin-left: 0;\n}\n.settings-container .password-section .edit-password div:last-child {\n  margin-right: 0;\n}\n.settings-container .password-section .edit-password .form-group {\n  margin: 0.5rem;\n  margin-top: 0;\n}\n@media screen and (max-width: 561px) {\n  .settings-container .password-section .edit-password .form-group {\n    margin: 0;\n    margin-bottom: 0.5rem;\n  }\n}\n.settings-container .buttonContainer {\n  margin-top: 0.5rem;\n}", ""]);
 
 // exports
 
@@ -18582,7 +18582,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n}\n@media screen and (max-width: 1682px) {\n  .formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1rem 0;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .category-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .category-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .priority-container {\n  display: flex;\n  align-items: center;\n  flex-direction: row;\n  margin: 1rem 0;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .priority-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .priority-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n  padding: 1rem 1rem;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .title-container {\n    margin-bottom: 1rem;\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container .p-title {\n  font-size: 1.5rem;\n  color: #636b6f;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row .title-container .title-name {\n  width: 100%;\n  height: auto;\n  background-color: #3685EC;\n  padding: 0.5rem 1rem;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.formularioIncidencia-container .data-container--row .title-container .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .dropdowns-container {\n    width: 100%;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .form-group .text_label, .formularioIncidencia-container .data-container--row .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n    flex-direction: column;\n  }\n  .formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n    margin-top: 0.5rem;\n    align-items: center;\n  }\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.2rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: auto;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n    flex-direction: column;\n    align-items: center;\n  }\n  .formularioIncidencia-container .data-container .asignacion-container .assignTo-span, .formularioIncidencia-container .data-container--row .asignacion-container .assignTo-span {\n    display: none;\n  }\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  width: 85px;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n    margin: 1rem 0;\n    width: 100%;\n    align-items: center;\n  }\n  .formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container {\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container .asignacion-container .dropdown-container, .formularioIncidencia-container .data-container--row .asignacion-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container .dropdown-container, .formularioIncidencia-container .data-container--row .asignacion-container .dropdown-container {\n    align-items: center;\n  }\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .buttonContainer {\n    text-align: center;\n  }\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container {\n    padding: 0.5rem;\n  }\n}", ""]);
+exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .datepicker-input, .formularioIncidencia-container .data-container--row .datepicker-input {\n  font-family: \"Sen\", sans-serif;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .timepicker-input, .formularioIncidencia-container .data-container--row .timepicker-input {\n  font-family: \"Sen\", sans-serif;\n  margin-left: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n}\n@media screen and (max-width: 1682px) {\n  .formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1rem 0;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .category-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .category-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .priority-container {\n  display: flex;\n  align-items: center;\n  flex-direction: row;\n  margin: 1rem 0;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .priority-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .priority-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n  padding: 1rem 1rem;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .title-container {\n    margin-bottom: 1rem;\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container .p-title {\n  font-size: 1.5rem;\n  color: #636b6f;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row .title-container .title-name {\n  width: 100%;\n  height: auto;\n  background-color: #3685EC;\n  padding: 0.5rem 1rem;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.formularioIncidencia-container .data-container--row .title-container .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .dropdowns-container {\n    width: 100%;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .form-group .text_label, .formularioIncidencia-container .data-container--row .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n    flex-direction: column;\n  }\n  .formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n    margin-top: 0.5rem;\n    align-items: center;\n  }\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.2rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: auto;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n    flex-direction: column;\n    align-items: center;\n  }\n  .formularioIncidencia-container .data-container .asignacion-container .assignTo-span, .formularioIncidencia-container .data-container--row .asignacion-container .assignTo-span {\n    display: none;\n  }\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  width: 85px;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n    margin: 1rem 0;\n    width: 100%;\n    align-items: center;\n  }\n  .formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container {\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container .asignacion-container .dropdown-container, .formularioIncidencia-container .data-container--row .asignacion-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container .dropdown-container, .formularioIncidencia-container .data-container--row .asignacion-container .dropdown-container {\n    align-items: center;\n  }\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .buttonContainer {\n    text-align: center;\n  }\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container {\n    padding: 0.5rem;\n  }\n}", ""]);
 
 // exports
 
@@ -76501,6 +76501,16 @@ var IncidenciasPage = function () {
     var userRol = localStorage.userRol;
     var sreenWidth = screen.width;
     var _a = React.useState(0), tabSelected = _a[0], setTabSelected = _a[1];
+    var optionSelected = 0;
+    if (history.location.pathname.includes('show')) {
+        optionSelected = 0;
+    }
+    else if (history.location.pathname.includes('create')) {
+        optionSelected = 1;
+    }
+    else if (history.location.pathname.includes('technicalGroups')) {
+        optionSelected = 2;
+    }
     var optionsList;
     var titlePage;
     var enableTehnicalGroups = true;
@@ -76580,19 +76590,19 @@ var IncidenciasPage = function () {
         iconList: iconList,
         color: colorListTabs,
         enabledList: [true, true, enableTehnicalGroups],
-        itemActive: tabSelected
+        itemActive: optionSelected
     }), tabsOptions = _b[0], setTabsOptions = _b[1];
     React.useEffect(function () {
         if (history.location.pathname.includes('show')) {
-            setTabSelected(0);
+            setTabsOptions(__assign(__assign({}, tabsOptions), { itemActive: 0 }));
         }
         else if (history.location.pathname.includes('create')) {
-            setTabSelected(1);
+            setTabsOptions(__assign(__assign({}, tabsOptions), { itemActive: 1 }));
         }
         else if (history.location.pathname.includes('technicalGroups')) {
-            setTabSelected(2);
+            setTabsOptions(__assign(__assign({}, tabsOptions), { itemActive: 2 }));
         }
-    });
+    }, []);
     var handleClickTab = function (id) {
         if (id == 'crearIncidencia') {
             history.push('/home/incidencias/create');
@@ -78061,11 +78071,9 @@ var GraphsPage = function () {
     var doingCount = 0;
     var blockedCount = 0;
     var doneCount = 0;
-    // let tabSelected = 0;
-    // if (history.location.pathname.endsWith('praphs'))
-    //     tabSelected = 0;
-    // else if (history.location.pathname.endsWith('settings')) 
-    //     tabSelected = 1;
+    var graphData = [];
+    var labels = [];
+    var colorsList = [];
     var idList = [];
     var valuesList = [];
     var iconList = [];
@@ -78101,9 +78109,6 @@ var GraphsPage = function () {
         doingCount = 0;
         blockedCount = 0;
         doneCount = 0;
-        var graphData = [];
-        var labels = [];
-        var colorsList = [];
         IncidenciasUtilities_1.getIncidencias(userId, userRol, 'priority').then(function (res) {
             console.log(res.data.length);
             res.data.map(function (data) {
@@ -78137,35 +78142,28 @@ var GraphsPage = function () {
             setInfo('* TOTAL = Pendientes + En proceso + Bloqueadas + Solucionadas');
         });
     };
+    var getResumeTechnical = function () {
+        TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
+            console.log(res);
+            var sum = res[0].total + res[1].total + res[2].total;
+            console.log(sum);
+            graphData.push(res[0].total, res[1].total, res[2].total);
+            labels.push('Pendientes', 'En proceso', 'Bloqueadas');
+            colorsList.push("#3685EC", "#e78738", "#dc3545");
+            setGraphBar(__assign(__assign({}, graphBar), { title: 'Resumen de incidencias (Total: ' + sum + ')', graphData: graphData, colorsList: colorsList, labels: labels }));
+        });
+    };
     React.useEffect(function () {
         if (userRol == 'supervisor') {
+            console.log('Supervisor');
             getEstadoActualSupervisor();
         }
         else if (userRol == 'technical') {
-            setGraphBar(__assign(__assign({}, graphBar), { labels: ['Pendientes', 'En proceso', 'Bloqueadas',] }));
+            console.log('Técnico');
+            getResumeTechnical();
         }
     }, []);
-    var getGraphData = function (id) {
-        if (userRol == 'supervisor') {
-            if (id == 'estado-actual-incidencias') {
-                getEstadoActualSupervisor();
-            }
-        }
-        else if (userRol == 'technical') {
-            if (id == 'resumen-incidencias') {
-                TechnicalDataGraphs_1.getTotalIncidencias(userId).then(function (res) {
-                    var sum = res[0].total + res[1].total + res[2].total;
-                    setGraphBar(__assign(__assign({}, graphBar), { title: 'Resumen de incidencias (Total: ' + sum + ')', graphData: [res[0].total, res[1].total, res[2].total], colorsList: [
-                            "#3685EC",
-                            "#e78738",
-                            "#dc3545",
-                        ] }));
-                });
-            }
-        }
-    };
     var handleClickTab = function (id) {
-        getGraphData(id);
         if (id == 'resumen-incidencias') {
             history.push('/home/perfil/graphs/summaryIncidencias');
         }
@@ -78173,14 +78171,6 @@ var GraphsPage = function () {
             history.push('/home/perfil/graphs/historyIncidencias');
         }
     };
-    React.useEffect(function () {
-        if (localStorage.userRol == 'technical') {
-            getGraphData('resumen-incidencias');
-        }
-        else if (localStorage.userRol == 'supervisor') {
-            console.log('Hola');
-        }
-    }, []);
     return (React.createElement("div", { className: 'graphsPage-container' },
         React.createElement(Tabs_1.default, { tabsInfo: tabsOptions, handleClick: handleClickTab }),
         React.createElement("div", { className: 'graphs-container' },
@@ -78439,7 +78429,7 @@ var SettingsPage = function (props) {
     var _a = React.useState({
         id: 1,
         value: null,
-        label: 'Nombre',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir el nuevo nombre',
         color: 'primary',
@@ -78452,7 +78442,7 @@ var SettingsPage = function (props) {
     var _b = React.useState({
         id: 2,
         value: null,
-        label: 'Primer apellido',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir primer apellido',
         color: 'primary',
@@ -78465,7 +78455,7 @@ var SettingsPage = function (props) {
     var _c = React.useState({
         id: 3,
         value: null,
-        label: 'Segundo apellido',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir segundo apellido',
         color: 'primary',
@@ -78478,7 +78468,7 @@ var SettingsPage = function (props) {
     var _d = React.useState({
         id: 4,
         value: null,
-        label: 'E-mail',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir nuevo e-mail',
         color: 'primary',
@@ -78491,7 +78481,7 @@ var SettingsPage = function (props) {
     var _e = React.useState({
         id: 5,
         value: null,
-        label: 'Contraseña',
+        label: '',
         labelColor: 'primary',
         placeholder: 'Introducir nueva contraseña',
         color: 'primary',
@@ -78563,16 +78553,79 @@ var SettingsPage = function (props) {
         }
     };
     var handleClickSaveChanges = function (e, id) {
+        var isValid = true;
         if (id == 7) {
-            Authentication_1.saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
-            props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value);
+            if (inputName.value == '' || inputName.value == null) {
+                setInputName(__assign(__assign({}, inputName), { color: 'red', error_control_text: 'El campo está vacío' }));
+                isValid = false;
+            }
+            else {
+                setInputName(__assign(__assign({}, inputName), { color: 'primary', error_control_text: '' }));
+            }
+            if (inputSurname1.value == '' || inputSurname1.value == null) {
+                setInputSurname1(__assign(__assign({}, inputSurname1), { color: 'red', error_control_text: 'El campo está vacío' }));
+                isValid = false;
+            }
+            else {
+                setInputSurname1(__assign(__assign({}, inputSurname1), { color: 'primary', error_control_text: '' }));
+            }
+            if (inputSurname2.value == '' || inputSurname2.value == null) {
+                setInputSurname2(__assign(__assign({}, inputSurname2), { color: 'red', error_control_text: 'El campo está vacío' }));
+                isValid = false;
+            }
+            else {
+                setInputSurname2(__assign(__assign({}, inputSurname2), { color: 'primary', error_control_text: '' }));
+            }
+            if (isValid) {
+                Authentication_1.saveNewName(userId, inputName.value, inputSurname1.value, inputSurname2.value);
+                props.changeUserValues(1, inputName.value, inputSurname1.value, inputSurname2.value);
+            }
         }
         else if (id == 8) {
-            Authentication_1.saveNewMail(userId, inputEmail.value);
-            props.changeUserValues(2, inputEmail.value);
+            if (inputEmail.value == '' || inputEmail.value == null) {
+                setInputEmail(__assign(__assign({}, inputEmail), { color: 'red', error_control_text: 'El campo está vacío' }));
+                isValid = false;
+            }
+            else {
+                setInputEmail(__assign(__assign({}, inputEmail), { color: 'primary', error_control_text: '' }));
+            }
+            if (isValid) {
+                Authentication_1.saveNewMail(userId, inputEmail.value);
+                props.changeUserValues(2, inputEmail.value);
+            }
         }
         else if (id == 9) {
-            Authentication_1.saveNewPassword(userId, passwordInput.value);
+            if (passwordInput.value == '' || passwordInput.value == null) {
+                setPasswordInput(__assign(__assign({}, passwordInput), { color: 'red', error_control_text: 'El campo está vacío' }));
+                isValid = false;
+            }
+            else {
+                setPasswordInput(__assign(__assign({}, passwordInput), { color: 'primary', error_control_text: '' }));
+            }
+            if (confirmPasswordInput.value == '' || confirmPasswordInput.value == null) {
+                setConfirmPasswordInput(__assign(__assign({}, confirmPasswordInput), { color: 'red', error_control_text: 'El campo está vacío' }));
+                isValid = false;
+            }
+            else {
+                setConfirmPasswordInput(__assign(__assign({}, confirmPasswordInput), { color: 'primary', error_control_text: '' }));
+            }
+            if (confirmPasswordInput.value != passwordInput.value) {
+                setPasswordInput(__assign(__assign({}, passwordInput), { color: 'red', error_control_text: 'Las contraseñas no coinciden' }));
+                setConfirmPasswordInput(__assign(__assign({}, confirmPasswordInput), { color: 'red', error_control_text: '' }));
+                isValid = false;
+            }
+            else {
+                setConfirmPasswordInput(__assign(__assign({}, confirmPasswordInput), { color: 'primary', error_control_text: '' }));
+                setPasswordInput(__assign(__assign({}, passwordInput), { color: 'primary', error_control_text: '' }));
+            }
+            if (isValid) {
+                Authentication_1.saveNewPassword(userId, passwordInput.value);
+            }
+            else {
+                setPasswordInput(__assign(__assign({}, passwordInput), { color: 'red', error_control_text: 'Los campos están vacíos' }));
+                setConfirmPasswordInput(__assign(__assign({}, confirmPasswordInput), { color: 'red', error_control_text: '' }));
+                isValid = false;
+            }
         }
     };
     return (React.createElement("div", { className: "settings-container" },
@@ -79449,6 +79502,16 @@ exports.sendNewInTeamMail = function (name_user, team_name, team_description, su
     });
 };
 exports.assignedToIncidenciaMail = function (id_incidencia, name_user, team_name, incidencia_name, incidencia_description, incidencia_category, incidencia_limit_date, supervisor_name, user_email, mail_type) {
+    console.log(id_incidencia);
+    console.log(name_user);
+    console.log(team_name);
+    console.log(incidencia_name);
+    console.log(incidencia_description);
+    console.log(incidencia_category);
+    console.log(incidencia_limit_date);
+    console.log(supervisor_name);
+    console.log(user_email);
+    console.log(mail_type);
     return axios_1.default
         .post('api/assignedToIncidenciaMail', {
         id_incidencia: id_incidencia,
@@ -79459,7 +79522,7 @@ exports.assignedToIncidenciaMail = function (id_incidencia, name_user, team_name
         incidencia_category: incidencia_category,
         incidencia_limit_date: incidencia_limit_date,
         supervisor_name: supervisor_name,
-        user_mail: user_email,
+        user_email: user_email,
         mail_type: mail_type
     }, {
         headers: { 'Content-Type': 'application/json' }
@@ -79646,6 +79709,7 @@ var FormularioIncidencia = function (props) {
     var title1; // Título del recuadro para poner título y descripción a la incidencia.
     var title2; // Título del recuadro en el que se va a elegir dónde se produce la incidenciaº.
     var title3; // Título del recuadro en el que se va a elegir el tipo de incidencia.
+    var title4; // Título del recuadro en el que se va a elegir el cuando es el límite de incidencia.
     var titleContainerType = '--row'; // Tipo de container: --row o nada.
     var valueBuildDropdown = '';
     var buttonText = 'Crear incidencia'; // Texto del botón, cambiará dependiendo del tipo de componente que se esté creando: 'create' o 'edit'
@@ -79653,6 +79717,7 @@ var FormularioIncidencia = function (props) {
         title1 = React.createElement("p", { className: "p-title" }, "\u00BFCu\u00E1l es la incidencia?");
         title2 = React.createElement("p", { className: "p-title" }, "\u00BFD\u00F3nde se produce la incidencia?");
         title3 = React.createElement("p", { className: "p-title" }, "\u00BFDe qu\u00E9 tipo es la incidencia?");
+        title4 = React.createElement("p", { className: "p-title" }, "\u00BFL\u00EDmite de realizaci\u00F3n de la incidencia?");
     }
     else if (widgetType == 'edit') {
         title1 = '';
@@ -80013,6 +80078,9 @@ var FormularioIncidencia = function (props) {
             setGroupSelected(null);
             supervisorId = null;
         }
+        var datePickerID = $("#limitDate").val();
+        var timePickerID = $("#limitTime").val();
+        var fullDate = datePickerID + ' ' + timePickerID;
         var date = new Date();
         var hoursMinutesSeconds = date.toLocaleString().split(' ');
         var month = date.getMonth() + 1;
@@ -80044,7 +80112,7 @@ var FormularioIncidencia = function (props) {
                 class: classroom,
                 url_data: '',
                 creation_date: currentDate,
-                limit_date: '1263645342',
+                limit_date: fullDate,
                 assigned_date: assignedDate,
                 resolution_date: '',
                 priority: priority,
@@ -80060,11 +80128,10 @@ var FormularioIncidencia = function (props) {
             };
             if (userSelected != null) {
                 Authentication_1.getUser(userSelected).then(function (res) {
-                    console.log(res[0]);
-                    console.log(supervisor);
                     var userName = res[0].name + ' ' + res[0].surname1 + ' ' + res[0].surname2;
                     var supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
-                    Mails_1.assignedToIncidenciaMail(lastIncidenciaID + 1, userName, '--', title, description, category, '', supervisorName, res[0].email, 'creado');
+                    console.log(supervisorName);
+                    Mails_1.assignedToIncidenciaMail(lastIncidenciaID + 1, userName, '--', title, description, category, fullDate, supervisorName, res[0].email, 'creado');
                 });
             }
             IncidenciasUtilities_1.createIncidencia(incidencia);
@@ -80110,8 +80177,6 @@ var FormularioIncidencia = function (props) {
             };
             if (userSelected != null) {
                 Authentication_1.getUser(userSelected).then(function (res) {
-                    console.log(res[0]);
-                    console.log(supervisor);
                     var userName = res[0].name + ' ' + res[0].surname1 + ' ' + res[0].surname2;
                     var supervisorName = supervisor.name + ' ' + supervisor.surname1 + ' ' + supervisor.surname2;
                     Mails_1.assignedToIncidenciaMail(props.formularioProps.incidenciaData.id, userName, '--', title, description, category, '', supervisorName, res[0].email, 'editado');
@@ -80263,6 +80328,10 @@ var FormularioIncidencia = function (props) {
                             "Aula: ",
                             React.createElement("b", null, classroom)),
                         React.createElement(Dropdown_1.default, { dropdownInfo: classDropdown, onClick: handleClickItemDD })))),
+            React.createElement("div", { className: "data-container" },
+                title4,
+                React.createElement("input", { className: "datepicker-input", type: "date", id: "limitDate", name: "limitDate" }),
+                React.createElement("input", { className: "timepicker-input", type: "time", id: "limitTime", name: "limitTime", min: "09:00", max: "20:00", required: true })),
             assignUser(userRol, urlGeneral),
             React.createElement(Modal_1.default, { modalProps: modalCreateIncidencia, onClick: handleClickConfirmIncidencia },
                 React.createElement("div", null,
