@@ -14,7 +14,7 @@ const VisitorPage = () => {
     });
     
     return(
-        <div className="adminpage-container">
+        <div className="visitorpage-container">
             <p className="title1"><b><i className="fas fa-plus"></i>  CREAR INCIDENCIA</b></p>
             <p className="description">Genera una incidencia para que sea resuelta lo más rápido posible. Para ello indica:</p>
             <ul>

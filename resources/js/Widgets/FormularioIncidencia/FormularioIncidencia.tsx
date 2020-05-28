@@ -489,8 +489,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             supervisorId = null;
         }
 
-        const datePickerID = $( "#limitDate" ).val();
-        const timePickerID = $( "#limitTime" ).val();
+        const datePickerID = $("#limitDate" ).val();
+        const timePickerID = $("#limitTime" ).val();
 
         let fullDate = datePickerID + ' ' + timePickerID;
         let date = new Date();

@@ -74,7 +74,7 @@ const Login = () => {
                     if (role == 'technical' || role == 'supervisor') {
                         history.push('/home/incidencias/show');
                     } else if (role == 'admin') {
-                        console.log('Admin')
+                        history.push('home/admin');
                     } else if (role == 'visitor') {
                         history.push('home/visitor');
                     }

@@ -18551,6 +18551,25 @@ exports.push([module.i, ".settings-container .title-edit {\n  font-size: 2rem;\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/UserPages/AdminPage/AdminPage.scss":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/UserPages/AdminPage/AdminPage.scss ***!
+  \**************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".adminpage-container {\n  height: 100%;\n  width: 100%;\n  background-color: #f1f1f1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding: 2rem;\n}\n.adminpage-container .title1 {\n  font-size: 2rem;\n  color: #3685EC;\n}\n.adminpage-container .formulario-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n.adminpage-container .formulario-container .h-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 0.5rem;\n}\n.adminpage-container .formulario-container .h-container .form-group {\n  margin: 0 0.5rem;\n}\n.adminpage-container .formulario-container .h-container div:first-child {\n  margin-left: 0;\n}\n.adminpage-container .formulario-container .h-container div:last-child {\n  margin-right: 0;\n}\n.adminpage-container .formulario-container .h-container--2 {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  margin-bottom: 0.5rem;\n}\n.adminpage-container .formulario-container .h-container--2 .form-group {\n  margin-right: 1rem;\n}\n.adminpage-container .formulario-container .h-container--2 .dropdown {\n  width: 30%;\n  margin-top: 36px;\n}\n.adminpage-container .formulario-container .h-container--2 .dropdown .btn {\n  width: 100%;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss":
 /*!******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss ***!
@@ -18563,7 +18582,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".adminpage-container {\n  height: 100%;\n  width: 100%;\n  background-color: #f1f1f1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding: 2rem;\n}\n.adminpage-container .title1 {\n  font-size: 2rem;\n  color: #3685EC;\n}", ""]);
+exports.push([module.i, ".visitorpage-container {\n  height: 100%;\n  width: 100%;\n  background-color: #f1f1f1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding: 2rem;\n}\n.visitorpage-container .title1 {\n  font-size: 2rem;\n  color: #3685EC;\n}", ""]);
 
 // exports
 
@@ -77833,7 +77852,7 @@ var Login = function () {
                         history.push('/home/incidencias/show');
                     }
                     else if (role == 'admin') {
-                        console.log('Admin');
+                        history.push('home/admin');
                     }
                     else if (role == 'visitor') {
                         history.push('home/visitor');
@@ -77967,6 +77986,7 @@ var IncidenciasPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciasPa
 var IncidenciaViewPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage */ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.tsx");
 var Toast_1 = __webpack_require__(/*! ../../Components/Toast/Toast */ "./resources/js/Components/Toast/Toast.tsx");
 var VisitorPage_1 = __webpack_require__(/*! ../UserPages/VisitorPage/VisitorPage */ "./resources/js/Pages/UserPages/VisitorPage/VisitorPage.tsx");
+var AdminPage_1 = __webpack_require__(/*! ../UserPages/AdminPage/AdminPage */ "./resources/js/Pages/UserPages/AdminPage/AdminPage.tsx");
 var MainPage = function () {
     var _a = React.useState(false), isLogged = _a[0], setIsLogged = _a[1];
     var _b = React.useState({
@@ -78047,7 +78067,8 @@ var MainPage = function () {
                         React.createElement(react_router_dom_1.Route, { path: "/home/perfil", component: PerfilPage_1.default }),
                         React.createElement(react_router_dom_1.Route, { path: "/home/incidencias", component: IncidenciasPage_1.default }),
                         React.createElement(react_router_dom_1.Route, { path: "/home/incidencia-view/:idIncidencia", component: IncidenciaViewPage_1.default }),
-                        React.createElement(react_router_dom_1.Route, { path: "/home/visitor", component: VisitorPage_1.default }))),
+                        React.createElement(react_router_dom_1.Route, { path: "/home/visitor", component: VisitorPage_1.default }),
+                        React.createElement(react_router_dom_1.Route, { path: "/home/admin", component: AdminPage_1.default }))),
                 React.createElement("div", { className: "toast-container" },
                     React.createElement(Toast_1.default, { toastProps: toastDeleteIncidencia }),
                     React.createElement(Toast_1.default, { toastProps: toastCreateIncidencia }),
@@ -78773,6 +78794,205 @@ exports.default = SettingsPage;
 
 /***/ }),
 
+/***/ "./resources/js/Pages/UserPages/AdminPage/AdminPage.scss":
+/*!***************************************************************!*\
+  !*** ./resources/js/Pages/UserPages/AdminPage/AdminPage.scss ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./AdminPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/UserPages/AdminPage/AdminPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/UserPages/AdminPage/AdminPage.tsx":
+/*!**************************************************************!*\
+  !*** ./resources/js/Pages/UserPages/AdminPage/AdminPage.tsx ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./AdminPage.scss */ "./resources/js/Pages/UserPages/AdminPage/AdminPage.scss");
+var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
+var Dropdown_1 = __webpack_require__(/*! ../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
+var Button_1 = __webpack_require__(/*! ../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var AdminPage = function () {
+    var _a = React.useState({
+        id: 1,
+        value: '',
+        label: 'Nombre',
+        labelColor: 'primary',
+        placeholder: 'Introducir nombre...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputName = _a[0], setInputName = _a[1];
+    var _b = React.useState({
+        id: 2,
+        value: '',
+        label: 'Primer apellido',
+        labelColor: 'primary',
+        placeholder: 'Introducir primer apellido...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputSurname1 = _b[0], setInputSurname1 = _b[1];
+    var _c = React.useState({
+        id: 3,
+        value: '',
+        label: 'Segundo apellido',
+        labelColor: 'primary',
+        placeholder: 'Introducir segundo apellido...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputSurname2 = _c[0], setInputSurname2 = _c[1];
+    var _d = React.useState({
+        id: 4,
+        value: '',
+        label: 'ID o Expediente',
+        labelColor: 'primary',
+        placeholder: 'Introducir ID o expediente...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputExp = _d[0], setInputExp = _d[1];
+    var _e = React.useState({
+        id: 5,
+        value: '',
+        label: 'Constraseña',
+        labelColor: 'primary',
+        placeholder: 'Introducir constraseña...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputPassword = _e[0], setInputPassword = _e[1];
+    var _f = React.useState({
+        id: 6,
+        value: '',
+        label: 'Confirmar contraseña',
+        labelColor: 'primary',
+        placeholder: 'Confirmar contraseña...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputConfirmPassword = _f[0], setInputConfirmPassword = _f[1];
+    var _g = React.useState({
+        id: 7,
+        value: '',
+        label: 'E-mail',
+        labelColor: 'primary',
+        placeholder: 'Introducir e-mail...',
+        color: 'primary',
+        type: 'text',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputEmail = _g[0], setInputEmail = _g[1];
+    var _h = React.useState({
+        id: 8,
+        value: '',
+        label: 'Teléfono de contacto',
+        labelColor: 'primary',
+        placeholder: 'Introducir teléfono...',
+        color: 'primary',
+        type: 'number',
+        error_control_text: '',
+        enabled: true,
+        inputSize: '',
+        isTextArea: false
+    }), inputTlfn = _h[0], setInputTlfn = _h[1];
+    var _j = React.useState({
+        id: 1,
+        groupName: 'Rol',
+        groupItems: ['Admin', 'Supervisor', 'Técnico', 'Visitante'],
+        groupIds: ['admin', 'supervisor', 'technical', 'visitor'],
+        color: 'primary',
+        enabled: true,
+        extraClass: '',
+    }), rolDropdown = _j[0], setRolDropdown = _j[1];
+    var createIncidenciaButton = React.useState({
+        id: 1,
+        texto: 'Crear usuario',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal: '',
+        extraClass: ''
+    })[0];
+    var handleChangeInput = function (value, id) {
+    };
+    var handleClickItemDD = function (idItem, idDropdown) {
+    };
+    var handleClickCreateUser = function () {
+    };
+    return (React.createElement("div", { className: "adminpage-container" },
+        React.createElement("p", { className: "title1" },
+            React.createElement("i", { className: "fas fa-user-plus" }),
+            React.createElement("b", null, "  Crear nuevo usuario")),
+        "Admin page",
+        React.createElement("div", { className: "formulario-container" },
+            React.createElement("div", { className: "h-container" },
+                React.createElement(Input_1.Input, { inputInfo: inputName, handleChangeInput: handleChangeInput }),
+                React.createElement(Input_1.Input, { inputInfo: inputSurname1, handleChangeInput: handleChangeInput }),
+                React.createElement(Input_1.Input, { inputInfo: inputSurname2, handleChangeInput: handleChangeInput })),
+            React.createElement(Input_1.Input, { inputInfo: inputExp, handleChangeInput: handleChangeInput }),
+            React.createElement("div", { className: "h-container" },
+                React.createElement(Input_1.Input, { inputInfo: inputPassword, handleChangeInput: handleChangeInput }),
+                React.createElement(Input_1.Input, { inputInfo: inputConfirmPassword, handleChangeInput: handleChangeInput })),
+            React.createElement(Input_1.Input, { inputInfo: inputEmail, handleChangeInput: handleChangeInput }),
+            React.createElement("div", { className: "h-container--2" },
+                React.createElement(Input_1.Input, { inputInfo: inputTlfn, handleChangeInput: handleChangeInput }),
+                React.createElement(Dropdown_1.default, { dropdownInfo: rolDropdown, onClick: handleClickItemDD })),
+            React.createElement(Button_1.default, { buttonInfo: createIncidenciaButton, handleClick: handleClickCreateUser }))));
+};
+exports.default = AdminPage;
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss":
 /*!*******************************************************************!*\
   !*** ./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss ***!
@@ -78823,7 +79043,7 @@ var VisitorPage = function () {
         urlGeneral: "/home/incidencias",
         incidenciaData: null
     }), formularioIncidencia = _a[0], setFormularioIncidencia = _a[1];
-    return (React.createElement("div", { className: "adminpage-container" },
+    return (React.createElement("div", { className: "visitorpage-container" },
         React.createElement("p", { className: "title1" },
             React.createElement("b", null,
                 React.createElement("i", { className: "fas fa-plus" }),

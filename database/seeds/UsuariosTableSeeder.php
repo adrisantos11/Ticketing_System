@@ -91,7 +91,7 @@ class UsuariosTableSeeder extends Seeder
             'password'  => Hash::make('123456'),
             'email'     => 'ejemplo@gmail.com',
             'phone'     => '000000000',
-            'role'      => 'visitor',
+            'role'      => 'admin',
             'image_url' => '/images/default-profile-image.jpg'
         ]);
     }
