@@ -53,24 +53,16 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
     // Datos que variarán dependiendo de qué tipo de componente se va a pintar.
     let enableInput = true;
-    let title1; // Título del recuadro para poner título y descripción a la incidencia.
-    let title2; // Título del recuadro en el que se va a elegir dónde se produce la incidenciaº.
-    let title3; // Título del recuadro en el que se va a elegir el tipo de incidencia.
-    let title4; // Título del recuadro en el que se va a elegir el cuando es el límite de incidencia.
+    let title1 = <p className="p-title">¿Cuál es la incidencia?</p>; // Título del recuadro para poner título y descripción a la incidencia.
+    let title2 = <p className="p-title">¿Dónde se produce la incidencia?</p>; // Título del recuadro en el que se va a elegir dónde se produce la incidenciaº.
+    let title3 = <p className="p-title">¿De qué tipo es la incidencia?</p>; // Título del recuadro en el que se va a elegir el tipo de incidencia.
+    let title4 = <p className="p-title">¿Límite de realización de la incidencia?</p>; // Título del recuadro en el que se va a elegir el cuando es el límite de incidencia.
     let titleContainerType = '--row'; // Tipo de container: --row o nada.
     let valueBuildDropdown = '';
 
     let buttonText = 'Crear incidencia'; // Texto del botón, cambiará dependiendo del tipo de componente que se esté creando: 'create' o 'edit'
 
-    if (widgetType == 'create') {
-        title1 = <p className="p-title">¿Cuál es la incidencia?</p>;
-        title2 = <p className="p-title">¿Dónde se produce la incidencia?</p>;
-        title3 = <p className="p-title">¿De qué tipo es la incidencia?</p>;
-        title4 = <p className="p-title">¿Límite de realización de la incidencia?</p>;
-    } else if (widgetType == 'edit') {
-        title1 = '';
-        title2 = '';
-        title3 = '';
+    if (widgetType == 'edit') {
         titleContainerType = ''
 
         titleIncidencia = props.formularioProps.incidenciaData.title;
@@ -367,10 +359,10 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         }
     }
 
-    const fieldsValidation = (title: string, description: string, category: string, build: string, floor: number, classroom: string, priority: string) => {
+    const fieldsValidation = (category: string, build: string, floor: number, classroom: string, priority: string) => {
         let validation = false;
-        if(title != '') {
-            if (title.length > 70) {
+        if(titleInput.value != '') {
+            if (titleInput.value.length > 70) {
                 setTitleInput({
                     ...titleInput,
                     error_control_text: 'El texto introducido excede los 70 caracteres. Tiene '+title.length+' caracteres.',
@@ -394,7 +386,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             validation = false;
         }
 
-        if (description == '') {
+        if (descriptionInput.value == '') {
             setDescriptionInput({
                 ...descriptionInput,
                 error_control_text: 'No se ha introducido ningún dato.',
@@ -483,7 +475,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
     }
 
     const handleClickCreateIncidencia = (e: React.MouseEvent) => {
-        const validation = fieldsValidation(title, description, category, build, floor, classroom, priority);
+        const validation = fieldsValidation(category, build, floor, classroom, priority);
         if (validation) {
             $('#'+modalCreateIncidencia.id).modal('show');   
         }
@@ -491,7 +483,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
 
     const handleClickConfirmIncidencia = () => {
         let supervisorId = parseInt(localStorage.userId);
-        if (userRol == 'technical') {
+        if (userRol == 'technical' || userRol == 'visitor') {
             setUserSelected(null);
             setGroupSelected(null);
             supervisorId = null;
@@ -561,7 +553,19 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             createIncidencia(incidencia);    
             createStateLog(createIncidenciaLog);
             $('#'+modalCreateIncidencia.id).modal('hide'); 
-            history.push('/home/incidencias/show');
+            if (userRol != 'visitor') {  
+                history.push('/home/incidencias/show');
+            } else {
+                setTitleInput({
+                    ...titleInput,
+                    value: ''
+                })
+
+                setDescriptionInput({
+                    ...descriptionInput,
+                    value: ''
+                })
+            }
             $('#toastCreate').show();
             $('#toastCreate').toast('show');
         } else {
@@ -585,7 +589,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
                 class: classroom,
                 url_data: '',
                 creation_date: props.formularioProps.incidenciaData.creation_date,
-                limit_date: '1263645342',
+                limit_date: props.formularioProps.incidenciaData.limit_date,
                 assigned_date: assignedDate,
                 resolution_date: props.formularioProps.incidenciaData.resolution_date,
                 priority: priority,

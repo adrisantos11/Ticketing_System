@@ -13,6 +13,7 @@ import IncidenciasPage from "../IncidenciasPage/IncidenciasPage"
 import CreateIncidenciaPage from "../IncidenciasPage/TabOptions/CreateIncidenciaPage/CreateIncidenciaPage"
 import IncidenciaViewPage from "../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage"
 import Toast from '../../Components/Toast/Toast';
+import VisitorPage from '../UserPages/VisitorPage/VisitorPage'
 
 const MainPage = () => {
     const [isLogged, setIsLogged] = React.useState(false);
@@ -114,6 +115,7 @@ const MainPage = () => {
                         <Route path="/home/perfil" component={PerfilPage}></Route>
                         <Route path="/home/incidencias" component={IncidenciasPage}></Route>
                         <Route path="/home/incidencia-view/:idIncidencia" component={IncidenciaViewPage}></Route>
+                        <Route path="/home/visitor" component={VisitorPage}></Route>
                     </Switch>
                 </div>
                 <div className="toast-container">

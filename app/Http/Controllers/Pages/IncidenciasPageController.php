@@ -122,7 +122,7 @@ class IncidenciasPageController extends Controller
                 'floor' => $request->floor,
                 'class' => $request->class,
                 'url_data' => $request->url_data,
-                'limit_date'=> date("Y-m-d H:i:s",$request->limit_date),
+                'limit_date'=> $request->limit_date,
                 'assigned_date'     => $request->assigned_date,
                 'resolution_date'   => $request->resolution_date,    
                 'priority'=> $request->priority,

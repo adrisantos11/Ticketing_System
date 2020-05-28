@@ -49,17 +49,10 @@ const Login = () => {
         isTextArea: false
     });
     
-    const [userData, setUserData] = React.useState({
-        exp: '',
-        password: ''
-    });
 
-    const handleClickButton = (e: React.MouseEvent, id: number) => {
-        const user = {
-            exp: userData.exp,
-            password: userData.password
-        }
-        if(user.exp == '' || user.password == '') {
+
+    const loginFunction = () => {
+        if(inputUser.value == '' || inputPassword.value == '') {
             setInputUser({
                 ...inputUser,
                 color: 'red'
@@ -71,9 +64,20 @@ const Login = () => {
             });
 
         } else {
+            const user = {
+                exp: inputUser.value,
+                password: inputPassword.value
+            }
             login(user).then(result => {
                 if (result) {
-                    history.push('/home/perfil/graphs/summaryIncidencias');
+                    const role = result.data.user_role;
+                    if (role == 'technical' || role == 'supervisor') {
+                        history.push('/home/incidencias/show');
+                    } else if (role == 'admin') {
+                        console.log('Admin')
+                    } else if (role == 'visitor') {
+                        history.push('home/visitor');
+                    }
                 } else {
                     setInputUser({
                         ...inputUser,
@@ -87,7 +91,17 @@ const Login = () => {
                 }
             });
         }
+    }
 
+    const handleClickButton = () => {
+        loginFunction();
+    }
+
+    const keyPressEvent = (event: any) => {
+        if(event.keyCode === 13) {  
+            event.preventDefault();
+            loginFunction();
+        }
     }
 
     const handleChangeInput = (value: string, id: number) => {
@@ -96,21 +110,31 @@ const Login = () => {
                 ...inputUser,
                 value: value
             })
-            setUserData({
-                ...userData,
-                exp: value
-            })
+            // setUserData({
+            //     ...userData,
+            //     exp: value
+            // })
         } else if (id == 2) {
             setInputPassword({
                 ...inputPassword,
                 value: value
             })
-            setUserData({
-                ...userData,
-                password: value
-            })
+            // setUserData({
+            //     ...userData,
+            //     password: value
+            // })
         }
     }
+
+    // React.useEffect(() => {
+    //     document.addEventListener("keydown", keyPressEvent, false);
+    
+    //     return () => {
+    //       document.removeEventListener("keydown", keyPressEvent, false);
+    //     };
+    //   }, []);
+
+
     return(
         <>
         <div className="login-main">

@@ -18259,7 +18259,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".modal .modal-dialog .modal-content .modal-footer .btn-danger {\n  border-radius: 40px;\n  text-align: center;\n  vertical-align: center;\n  cursor: pointer;\n}\n.modal .modal-dialog .modal-content .modal-footer .btn-danger .close-icon {\n  color: #FFFFFF;\n  font-size: 1.2rem;\n}", ""]);
+exports.push([module.i, ".modal .modal-dialog .modal-content .modal-footer .btn-danger {\n  border-radius: 40px;\n  text-align: center;\n  vertical-align: center;\n  cursor: pointer;\n}\n.modal .modal-dialog .modal-content .modal-footer .btn-danger .close-icon {\n  color: #FFFFFF;\n  font-size: 1rem;\n}\n.modal .modal-dialog .modal-content .modal-footer .btn-danger .close-icon i {\n  margin-right: 0.5rem;\n}", ""]);
 
 // exports
 
@@ -18278,7 +18278,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n  z-index: 998;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container .navbar-item {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #f1f1f1;\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n  padding: 0;\n  border-radius: 0;\n  cursor: pointer;\n}\n.navbar-container .options-container .span-container .navbar-item i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #f1f1f1;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container .navbar-item.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container .navbar-item.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container .navbar-item:hover {\n  text-decoration: none;\n  background-color: rgba(241, 241, 241, 0.16);\n}\n.navbar-container .options-container .span-container .navbar-item:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container .navbar-item:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container .navbar-item .option-text {\n  margin-left: 20px;\n}\n.navbar-container .buttonContainer {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  background-color: rgba(241, 241, 241, 0.2);\n  text-align: center;\n  padding: 1rem;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.2rem;\n  font-family: \"Black Han Sans\", sans-serif;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container .navbar-item:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
+exports.push([module.i, ".navbar-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n  width: 270px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: -210px;\n  background-color: #141414;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n  z-index: 998;\n}\n.navbar-container .options-container {\n  display: flex;\n  flex-direction: column;\n}\n.navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n  position: absolute;\n  top: 5px;\n  right: 18px;\n  font-size: 30px;\n  margin-left: 50px;\n  cursor: pointer;\n  color: #FFFFFF;\n}\n.navbar-container .options-container .menu-btn:hover {\n  color: #3685EC;\n}\n.navbar-container .options-container .menu-btn#btn-cerrarMenu {\n  display: none;\n}\n.navbar-container .options-container .span-container {\n  display: flex;\n  flex-direction: column;\n  margin-top: 1rem;\n}\n.navbar-container .options-container .span-container .navbar-item {\n  line-height: 50px;\n  padding-left: 20px;\n  color: #f1f1f1;\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  z-index: 0;\n  margin: 0.5rem 0rem;\n  padding: 0;\n  border-radius: 0;\n  cursor: pointer;\n}\n.navbar-container .options-container .span-container .navbar-item i {\n  line-height: 50px;\n  font-size: 25px;\n  color: #f1f1f1;\n  margin-right: 20px;\n}\n.navbar-container .options-container .span-container .navbar-item.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container .navbar-item.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container .navbar-item:hover {\n  text-decoration: none;\n  background-color: rgba(241, 241, 241, 0.16);\n}\n.navbar-container .options-container .span-container .navbar-item:hover.active {\n  color: #FFFFFF;\n  background-color: #3685ec;\n}\n.navbar-container .options-container .span-container .navbar-item:hover.active i {\n  color: #FFFFFF;\n}\n.navbar-container .options-container .span-container .navbar-item .option-text {\n  margin-left: 20px;\n}\n.navbar-container .nabvar-footer {\n  text-align: center;\n  color: rgba(255, 255, 255, 0.8);\n  font-size: 1.2rem;\n}\n.navbar-container .nabvar-footer .button-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 1rem;\n  margin-bottom: 2rem;\n}\n.navbar-container .nabvar-footer .footertext-container {\n  font-size: 1.5rem;\n  padding: 1rem 0;\n  background-color: #333333;\n}\n.navbar-container #slidevar {\n  transition: margin-left;\n}\n@media screen and (max-width: 768px) {\n  .navbar-container {\n    justify-content: space-between;\n    height: 400px;\n    width: 100%;\n    left: 0;\n    top: -344px;\n    overflow-y: hidden;\n    padding-top: 0;\n  }\n  .navbar-container .options-container {\n    margin-top: 0;\n  }\n  .navbar-container .options-container .menu-btn, .navbar-container .options-container .menu-btn:hover {\n    top: auto;\n    bottom: 5px;\n  }\n  .navbar-container .options-container .span-container {\n    margin-top: 1.25rem;\n    flex-direction: column-reverse;\n  }\n  .navbar-container .options-container .span-container a, .navbar-container .options-container .span-container .navbar-item:hover {\n    padding: 0 10%;\n    margin: 0;\n  }\n  .navbar-container .dropdown {\n    text-align: center;\n  }\n  .navbar-container .nabvar-footer {\n    display: none;\n  }\n  .navbar-container .buttonContainer {\n    margin-left: 0;\n    margin-bottom: 3.5rem;\n    text-align: center;\n    margin-top: 0.5rem;\n  }\n}", ""]);
 
 // exports
 
@@ -18468,7 +18468,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: auto;\n  display: flex;\n  flex-direction: row;\n  background-color: #c4c4c4;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 2rem;\n  text-align: center;\n  color: #3685EC;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n  background-color: #FFFFFF;\n  background-image: url(\"/images/background_paper.jpg\");\n  background-color: rgba(255, 255, 255, 0.3);\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 1rem;\n  color: #141414;\n}\n.login-main .login .centered_container--description .icons-container a {\n  font-size: 2rem;\n  color: #3685EC;\n  margin-right: 1.5rem;\n}\n.login-main .login .centered_container--description .icons-container a:hover {\n  color: #003877;\n  cursor: pointer;\n}\n.login-main .login .centered_container--login {\n  padding: 0;\n  width: 50%;\n  background-color: #262626;\n}\n@media (max-width: 600px) {\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}\n@media screen and (max-width: 768px) {\n  .login-main .login {\n    flex-direction: column-reverse;\n  }\n  .login-main .login .centered_container--description {\n    width: 100%;\n  }\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}", ""]);
+exports.push([module.i, ".login-main {\n  height: 100vh;\n  width: auto;\n  display: flex;\n  flex-direction: row;\n  background-color: #c4c4c4;\n}\n.login-main .login {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n}\n.login-main .login .centered_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0rem 1.5rem;\n}\n.login-main .login .centered_container .login_title {\n  font-family: \"Black Han Sans\", sans-serif;\n  font-size: 2rem;\n  text-align: center;\n  color: #3685EC;\n}\n.login-main .login .centered_container--description {\n  width: 90%;\n  background-image: url(\"/images/background_paper.jpg\");\n  background-color: rgba(255, 255, 255, 0.3);\n}\n.login-main .login .centered_container--description .description_text {\n  text-align: center;\n  font-size: 1rem;\n  color: #141414;\n}\n.login-main .login .centered_container--description .icons-container a {\n  font-size: 2rem;\n  color: #3685EC;\n  margin-right: 1.5rem;\n}\n.login-main .login .centered_container--description .icons-container a:hover {\n  color: #003877;\n  cursor: pointer;\n}\n.login-main .login .centered_container--login {\n  padding: 0;\n  width: 50%;\n  background-color: #262626;\n}\n@media (max-width: 600px) {\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}\n.login-main .login .description_container {\n  width: 100%;\n  height: 100%;\n}\n@media screen and (max-width: 768px) {\n  .login-main .login {\n    flex-direction: column-reverse;\n  }\n  .login-main .login .centered_container--description {\n    width: 100%;\n  }\n  .login-main .login .centered_container--login {\n    width: 100%;\n  }\n}", ""]);
 
 // exports
 
@@ -18551,6 +18551,25 @@ exports.push([module.i, ".settings-container .title-edit {\n  font-size: 2rem;\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss ***!
+  \******************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".adminpage-container {\n  height: 100%;\n  width: 100%;\n  background-color: #f1f1f1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding: 2rem;\n}\n.adminpage-container .title1 {\n  font-size: 2rem;\n  color: #3685EC;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Widgets/ChatBox/ChatBox.scss":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/Widgets/ChatBox/ChatBox.scss ***!
@@ -18582,7 +18601,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .datepicker-input, .formularioIncidencia-container .data-container--row .datepicker-input {\n  font-family: \"Sen\", sans-serif;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .timepicker-input, .formularioIncidencia-container .data-container--row .timepicker-input {\n  font-family: \"Sen\", sans-serif;\n  margin-left: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n}\n@media screen and (max-width: 1682px) {\n  .formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1rem 0;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .category-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .category-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .priority-container {\n  display: flex;\n  align-items: center;\n  flex-direction: row;\n  margin: 1rem 0;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .priority-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .priority-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n  padding: 1rem 1rem;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .title-container {\n    margin-bottom: 1rem;\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container .p-title {\n  font-size: 1.5rem;\n  color: #636b6f;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row .title-container .title-name {\n  width: 100%;\n  height: auto;\n  background-color: #3685EC;\n  padding: 0.5rem 1rem;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.formularioIncidencia-container .data-container--row .title-container .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .dropdowns-container {\n    width: 100%;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .form-group .text_label, .formularioIncidencia-container .data-container--row .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n    flex-direction: column;\n  }\n  .formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n    margin-top: 0.5rem;\n    align-items: center;\n  }\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.2rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: auto;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n    flex-direction: column;\n    align-items: center;\n  }\n  .formularioIncidencia-container .data-container .asignacion-container .assignTo-span, .formularioIncidencia-container .data-container--row .asignacion-container .assignTo-span {\n    display: none;\n  }\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  width: 85px;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n    margin: 1rem 0;\n    width: 100%;\n    align-items: center;\n  }\n  .formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container {\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container .asignacion-container .dropdown-container, .formularioIncidencia-container .data-container--row .asignacion-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container .dropdown-container, .formularioIncidencia-container .data-container--row .asignacion-container .dropdown-container {\n    align-items: center;\n  }\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .buttonContainer {\n    text-align: center;\n  }\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container {\n    padding: 0.5rem;\n  }\n}", ""]);
+exports.push([module.i, ".formularioIncidencia-container {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: center;\n}\n.formularioIncidencia-container .data-container, .formularioIncidencia-container .data-container--row {\n  background-color: #FFFFFF;\n  padding: 1rem 1rem;\n  margin: 1rem 0;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .datepicker-input, .formularioIncidencia-container .data-container--row .datepicker-input {\n  font-family: \"Sen\", sans-serif;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .timepicker-input, .formularioIncidencia-container .data-container--row .timepicker-input {\n  font-family: \"Sen\", sans-serif;\n  margin-left: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n@media screen and (max-width: 1682px) {\n  .formularioIncidencia-container .data-container .dropdowns-container, .formularioIncidencia-container .data-container--row .dropdowns-container {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .category-container, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .category-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1rem 0;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .category-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .category-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .priority-container, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .priority-container {\n  display: flex;\n  align-items: center;\n  flex-direction: row;\n  margin: 1rem 0;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .type-container .priority-container p, .formularioIncidencia-container .data-container--row .dropdowns-container .type-container .priority-container p {\n  margin: 0;\n  font-size: 1.2rem;\n  margin-right: 0.5rem;\n}\n.formularioIncidencia-container .data-container .dropdowns-container .p-title, .formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  border-style: none;\n  background-color: transparent;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row {\n    flex-direction: column;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container {\n  width: 70%;\n  padding: 0;\n  height: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  margin-right: 1rem;\n  padding: 1rem 1rem;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .title-container {\n    margin-bottom: 1rem;\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container--row .title-container .p-title {\n  font-size: 1.5rem;\n  color: #636b6f;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container--row .title-container .title-name {\n  width: 100%;\n  height: auto;\n  background-color: #3685EC;\n  padding: 0.5rem 1rem;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.formularioIncidencia-container .data-container--row .title-container .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container {\n  flex-direction: column;\n  width: 30%;\n  padding: 1rem 1rem;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #e2e2e2;\n  border-radius: 4px;\n  background-color: #FFFFFF;\n  box-shadow: inset 0px 0px 5px -2px rgba(0, 0, 0, 0.75);\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container--row .dropdowns-container {\n    width: 100%;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .category-container {\n    margin: 0.5rem 0;\n  }\n  .formularioIncidencia-container .data-container--row .dropdowns-container .priority-container {\n    margin: 0.5rem 0;\n  }\n}\n.formularioIncidencia-container .data-container--row .dropdowns-container .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .form-group .text_label, .formularioIncidencia-container .data-container--row .form-group .text_label {\n  font-weight: 500;\n}\n.formularioIncidencia-container .data-container .p-title, .formularioIncidencia-container .data-container--row .p-title {\n  font-size: 1.5rem;\n  margin-bottom: 0.5rem;\n}\n.formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .build-container, .formularioIncidencia-container .data-container--row .build-container {\n    flex-direction: column;\n  }\n  .formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n    margin-top: 0.5rem;\n    align-items: center;\n  }\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container, .formularioIncidencia-container .data-container--row .build-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container span, .formularioIncidencia-container .data-container--row .build-container .dropdown-container span {\n  margin-bottom: 0.5rem;\n  font-size: 1.2rem;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown {\n  width: 95%;\n  background-color: #FFFFFF;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .btn, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .btn {\n  width: 100%;\n}\n.formularioIncidencia-container .data-container .build-container .dropdown-container .dropdown .dropdown-menu, .formularioIncidencia-container .data-container--row .build-container .dropdown-container .dropdown .dropdown-menu {\n  width: auto;\n}\n.formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n  display: flex;\n  flex-direction: row;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container, .formularioIncidencia-container .data-container--row .asignacion-container {\n    flex-direction: column;\n    align-items: center;\n  }\n  .formularioIncidencia-container .data-container .asignacion-container .assignTo-span, .formularioIncidencia-container .data-container--row .asignacion-container .assignTo-span {\n    display: none;\n  }\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin: 1.5rem 0;\n  width: 50%;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container span, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container span {\n  width: 85px;\n  margin-right: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn {\n  border: none;\n  box-shadow: none;\n  background-color: #f1f1f1;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle), .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-left-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .btn:last-child {\n  border-bottom-right-radius: 1rem;\n}\n.formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container .btn-group .active, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container .btn-group .active {\n  background-color: #3685EC;\n  color: #FFFFFF;\n  border-bottom-color: #FFFFFF;\n  font-weight: unset;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container .assign-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container {\n    margin: 1rem 0;\n    width: 100%;\n    align-items: center;\n  }\n  .formularioIncidencia-container .data-container .asignacion-container .assign-container .tabs-container, .formularioIncidencia-container .data-container--row .asignacion-container .assign-container .tabs-container {\n    width: 100%;\n  }\n}\n.formularioIncidencia-container .data-container .asignacion-container .dropdown-container, .formularioIncidencia-container .data-container--row .asignacion-container .dropdown-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .data-container .asignacion-container .dropdown-container, .formularioIncidencia-container .data-container--row .asignacion-container .dropdown-container {\n    align-items: center;\n  }\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container .buttonContainer {\n    text-align: center;\n  }\n}\n@media screen and (max-width: 1452px) {\n  .formularioIncidencia-container {\n    padding: 0.5rem;\n  }\n}", ""]);
 
 // exports
 
@@ -75349,7 +75368,8 @@ var Modal = function (props) {
                 React.createElement("div", { className: "modal-footer" },
                     React.createElement("button", { type: "button", className: "btn btn-danger", "data-dismiss": "modal" },
                         React.createElement("span", { className: "close-icon" },
-                            React.createElement("i", { className: "far fa-times-circle" }))),
+                            React.createElement("i", { className: "far fa-times-circle" }),
+                            "Cancelar")),
                     React.createElement(Button_1.default, { buttonInfo: props.modalProps.buttonProps, handleClick: onClickButton })));
         }
         else {
@@ -75425,13 +75445,12 @@ var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_mod
 var Navbar = function (props) {
     var history = react_router_dom_1.useHistory();
     var userRolLogged = localStorage.userRol;
-    var iconProfile;
-    if (userRolLogged == 'technical') {
-        iconProfile = (React.createElement("i", { className: "fas fa-user" }));
-    }
-    else if (userRolLogged == 'supervisor') {
-        iconProfile = (React.createElement("i", { className: "fas fa-user-tie" }));
-    }
+    // let iconProfile: any;
+    // if (userRolLogged == 'technical') {
+    //     iconProfile = (<i className="fas fa-user"></i>);
+    // } else if (userRolLogged == 'supervisor') {
+    //     iconProfile = (<i className="fas fa-user-tie"></i>);
+    // }
     var logoutButton = React.useState({
         id: 1,
         texto: 'Cerrar Sesión',
@@ -75484,16 +75503,48 @@ var Navbar = function (props) {
             document.getElementById('btn-abrirMenu').style.display = 'unset';
         }
     };
-    var handleClickOption = function (e) {
-        var optionSelected = e.target.getAttribute("data-id");
-        props.handleClickOptions(optionSelected);
-    };
     var handleClickNavOption = function (e) {
         if (e.target.id == 'incidencias-option') {
             history.push('/home/incidencias/show');
         }
         else if (e.target.id == 'perfil-option') {
             history.push('/home/perfil/graphs/summaryIncidencias');
+        }
+        handleClickCloseSlidebar();
+    };
+    var opcionesNavbar = function (userRolLogged) {
+        switch (userRolLogged) {
+            case 'supervisor':
+                console.log('Hola');
+                return (React.createElement("div", { className: "btn-group btn-group-toggle span-container", "data-toggle": "buttons" },
+                    React.createElement("label", { className: "btn navbar-item", "data-toogle": "tooltip", "data-placement": "top", title: 'Perfil' },
+                        React.createElement("input", { type: "radio", name: "options", id: "perfil-option", onClick: handleClickNavOption }),
+                        React.createElement("i", { className: "fas fa-user-tie" }),
+                        React.createElement("span", { className: "option-text" }, "Perfil")),
+                    React.createElement("label", { className: "btn navbar-item active", "data-toogle": "tooltip", "data-placement": "top", title: 'Incidencias' },
+                        React.createElement("input", { type: "radio", name: "options", id: "incidencias-option", onClick: handleClickNavOption }),
+                        React.createElement("i", { className: "fas fa-tools" }),
+                        React.createElement("span", { className: "option-text" }, "Incidencias"))));
+                break;
+            case 'technical':
+                return (React.createElement("div", { className: "btn-group btn-group-toggle span-container", "data-toggle": "buttons" },
+                    React.createElement("label", { className: "btn navbar-item", "data-toogle": "tooltip", "data-placement": "top", title: 'Perfil' },
+                        React.createElement("input", { type: "radio", name: "options", id: "perfil-option", onClick: handleClickNavOption }),
+                        React.createElement("i", { className: "fas fa-user" }),
+                        React.createElement("span", { className: "option-text" }, "Perfil")),
+                    React.createElement("label", { className: "btn navbar-item active", "data-toogle": "tooltip", "data-placement": "top", title: 'Incidencias' },
+                        React.createElement("input", { type: "radio", name: "options", id: "incidencias-option", onClick: handleClickNavOption }),
+                        React.createElement("i", { className: "fas fa-tools" }),
+                        React.createElement("span", { className: "option-text" }, "Incidencias"))));
+                break;
+            case 'admin':
+                return ('');
+                break;
+            case 'visitor':
+                return ('');
+                break;
+            default:
+                break;
         }
     };
     return (React.createElement(React.Fragment, null,
@@ -75504,17 +75555,12 @@ var Navbar = function (props) {
                         React.createElement("i", { className: "fas fa-bars" })),
                     React.createElement("span", { className: "menu-btn", id: "btn-cerrarMenu", onClick: handleClickCloseSlidebar },
                         React.createElement("i", { className: "fas fa-times" })),
-                    React.createElement("div", { className: "btn-group btn-group-toggle span-container", "data-toggle": "buttons" },
-                        React.createElement("label", { className: "btn navbar-item active", "data-toogle": "tooltip", "data-placement": "top", title: 'Perfil' },
-                            React.createElement("input", { type: "radio", name: "options", id: "perfil-option", onClick: handleClickNavOption }),
-                            iconProfile,
-                            React.createElement("span", { className: "option-text" }, "Perfil")),
-                        React.createElement("label", { className: "btn navbar-item", "data-toogle": "tooltip", "data-placement": "top", title: 'Incidencias' },
-                            React.createElement("input", { type: "radio", name: "options", id: "incidencias-option", onClick: handleClickNavOption }),
-                            React.createElement("i", { className: "fas fa-tools" }),
-                            React.createElement("span", { className: "option-text" }, "Incidencias")))),
-                React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickLogoutButton }),
-                React.createElement("div", { className: "nabvar-footer" }, "Ticketclass")))));
+                    opcionesNavbar(userRolLogged)),
+                React.createElement("div", { className: "nabvar-footer" },
+                    React.createElement("div", { className: "button-container" },
+                        React.createElement(Button_1.default, { buttonInfo: logoutButton, handleClick: handleClickLogoutButton })),
+                    React.createElement("div", { className: "footertext-container" },
+                        React.createElement("b", null, "Ticketclass")))))));
 };
 exports.default = Navbar;
 
@@ -77770,23 +77816,28 @@ var Login = function () {
         inputSize: '',
         isTextArea: false
     }), inputPassword = _b[0], setInputPassword = _b[1];
-    var _c = React.useState({
-        exp: '',
-        password: ''
-    }), userData = _c[0], setUserData = _c[1];
-    var handleClickButton = function (e, id) {
-        var user = {
-            exp: userData.exp,
-            password: userData.password
-        };
-        if (user.exp == '' || user.password == '') {
+    var loginFunction = function () {
+        if (inputUser.value == '' || inputPassword.value == '') {
             setInputUser(__assign(__assign({}, inputUser), { color: 'red' }));
             setInputPassword(__assign(__assign({}, inputPassword), { error_control_text: 'Alguno de los campos está vacío', color: 'red' }));
         }
         else {
+            var user = {
+                exp: inputUser.value,
+                password: inputPassword.value
+            };
             Authentication_1.login(user).then(function (result) {
                 if (result) {
-                    history.push('/home/perfil/graphs/summaryIncidencias');
+                    var role = result.data.user_role;
+                    if (role == 'technical' || role == 'supervisor') {
+                        history.push('/home/incidencias/show');
+                    }
+                    else if (role == 'admin') {
+                        console.log('Admin');
+                    }
+                    else if (role == 'visitor') {
+                        history.push('home/visitor');
+                    }
                 }
                 else {
                     setInputUser(__assign(__assign({}, inputUser), { color: 'red' }));
@@ -77795,16 +77846,37 @@ var Login = function () {
             });
         }
     };
+    var handleClickButton = function () {
+        loginFunction();
+    };
+    var keyPressEvent = function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            loginFunction();
+        }
+    };
     var handleChangeInput = function (value, id) {
         if (id == 1) {
             setInputUser(__assign(__assign({}, inputUser), { value: value }));
-            setUserData(__assign(__assign({}, userData), { exp: value }));
+            // setUserData({
+            //     ...userData,
+            //     exp: value
+            // })
         }
         else if (id == 2) {
             setInputPassword(__assign(__assign({}, inputPassword), { value: value }));
-            setUserData(__assign(__assign({}, userData), { password: value }));
+            // setUserData({
+            //     ...userData,
+            //     password: value
+            // })
         }
     };
+    // React.useEffect(() => {
+    //     document.addEventListener("keydown", keyPressEvent, false);
+    //     return () => {
+    //       document.removeEventListener("keydown", keyPressEvent, false);
+    //     };
+    //   }, []);
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { className: "login-main" },
             React.createElement("div", { className: "login" },
@@ -77894,6 +77966,7 @@ var PerfilPage_1 = __webpack_require__(/*! ../PerfilPage/PerfilPage */ "./resour
 var IncidenciasPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciasPage */ "./resources/js/Pages/IncidenciasPage/IncidenciasPage.tsx");
 var IncidenciaViewPage_1 = __webpack_require__(/*! ../IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage */ "./resources/js/Pages/IncidenciasPage/IncidenciaViewPage/IncidenciaViewPage.tsx");
 var Toast_1 = __webpack_require__(/*! ../../Components/Toast/Toast */ "./resources/js/Components/Toast/Toast.tsx");
+var VisitorPage_1 = __webpack_require__(/*! ../UserPages/VisitorPage/VisitorPage */ "./resources/js/Pages/UserPages/VisitorPage/VisitorPage.tsx");
 var MainPage = function () {
     var _a = React.useState(false), isLogged = _a[0], setIsLogged = _a[1];
     var _b = React.useState({
@@ -77973,7 +78046,8 @@ var MainPage = function () {
                     React.createElement(react_router_dom_1.Switch, null,
                         React.createElement(react_router_dom_1.Route, { path: "/home/perfil", component: PerfilPage_1.default }),
                         React.createElement(react_router_dom_1.Route, { path: "/home/incidencias", component: IncidenciasPage_1.default }),
-                        React.createElement(react_router_dom_1.Route, { path: "/home/incidencia-view/:idIncidencia", component: IncidenciaViewPage_1.default }))),
+                        React.createElement(react_router_dom_1.Route, { path: "/home/incidencia-view/:idIncidencia", component: IncidenciaViewPage_1.default }),
+                        React.createElement(react_router_dom_1.Route, { path: "/home/visitor", component: VisitorPage_1.default }))),
                 React.createElement("div", { className: "toast-container" },
                     React.createElement(Toast_1.default, { toastProps: toastDeleteIncidencia }),
                     React.createElement(Toast_1.default, { toastProps: toastCreateIncidencia }),
@@ -78695,6 +78769,84 @@ var SettingsPage = function (props) {
         React.createElement(Modal_1.default, { modalProps: modalSaveChanges, onClick: saveChanges }, modalBody)));
 };
 exports.default = SettingsPage;
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss":
+/*!*******************************************************************!*\
+  !*** ./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./VisitorPage.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/UserPages/VisitorPage/VisitorPage.tsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/Pages/UserPages/VisitorPage/VisitorPage.tsx ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+__webpack_require__(/*! ./VisitorPage.scss */ "./resources/js/Pages/UserPages/VisitorPage/VisitorPage.scss");
+var FormularioIncidencia_1 = __webpack_require__(/*! ../../../Widgets/FormularioIncidencia/FormularioIncidencia */ "./resources/js/Widgets/FormularioIncidencia/FormularioIncidencia.tsx");
+var VisitorPage = function () {
+    var _a = React.useState({
+        widgetType: 'create',
+        userRol: localStorage.userRol,
+        urlGeneral: "/home/incidencias",
+        incidenciaData: null
+    }), formularioIncidencia = _a[0], setFormularioIncidencia = _a[1];
+    return (React.createElement("div", { className: "adminpage-container" },
+        React.createElement("p", { className: "title1" },
+            React.createElement("b", null,
+                React.createElement("i", { className: "fas fa-plus" }),
+                "  CREAR INCIDENCIA")),
+        React.createElement("p", { className: "description" }, "Genera una incidencia para que sea resuelta lo m\u00E1s r\u00E1pido posible. Para ello indica:"),
+        React.createElement("ul", null,
+            React.createElement("li", null,
+                React.createElement("b", null, "DONDE"),
+                " se est\u00E1 generando la incidencia."),
+            React.createElement("li", null,
+                "De ",
+                React.createElement("b", null, "QUE"),
+                " tipo de incidencia se puede tratar."),
+            React.createElement("li", null,
+                React.createElement("b", null, "DONDE"),
+                " se produce la icidencia."),
+            React.createElement("li", null,
+                "Para ",
+                React.createElement("b", null, "CUANDO"),
+                " se necesita que la incidencia est\u00E9 resuelta.")),
+        React.createElement(FormularioIncidencia_1.default, { formularioProps: formularioIncidencia })));
+};
+exports.default = VisitorPage;
 
 
 /***/ }),
@@ -79750,23 +79902,14 @@ var FormularioIncidencia = function (props) {
     var urlFileIncidencia = '';
     // Datos que variarán dependiendo de qué tipo de componente se va a pintar.
     var enableInput = true;
-    var title1; // Título del recuadro para poner título y descripción a la incidencia.
-    var title2; // Título del recuadro en el que se va a elegir dónde se produce la incidenciaº.
-    var title3; // Título del recuadro en el que se va a elegir el tipo de incidencia.
-    var title4; // Título del recuadro en el que se va a elegir el cuando es el límite de incidencia.
+    var title1 = React.createElement("p", { className: "p-title" }, "\u00BFCu\u00E1l es la incidencia?"); // Título del recuadro para poner título y descripción a la incidencia.
+    var title2 = React.createElement("p", { className: "p-title" }, "\u00BFD\u00F3nde se produce la incidencia?"); // Título del recuadro en el que se va a elegir dónde se produce la incidenciaº.
+    var title3 = React.createElement("p", { className: "p-title" }, "\u00BFDe qu\u00E9 tipo es la incidencia?"); // Título del recuadro en el que se va a elegir el tipo de incidencia.
+    var title4 = React.createElement("p", { className: "p-title" }, "\u00BFL\u00EDmite de realizaci\u00F3n de la incidencia?"); // Título del recuadro en el que se va a elegir el cuando es el límite de incidencia.
     var titleContainerType = '--row'; // Tipo de container: --row o nada.
     var valueBuildDropdown = '';
     var buttonText = 'Crear incidencia'; // Texto del botón, cambiará dependiendo del tipo de componente que se esté creando: 'create' o 'edit'
-    if (widgetType == 'create') {
-        title1 = React.createElement("p", { className: "p-title" }, "\u00BFCu\u00E1l es la incidencia?");
-        title2 = React.createElement("p", { className: "p-title" }, "\u00BFD\u00F3nde se produce la incidencia?");
-        title3 = React.createElement("p", { className: "p-title" }, "\u00BFDe qu\u00E9 tipo es la incidencia?");
-        title4 = React.createElement("p", { className: "p-title" }, "\u00BFL\u00EDmite de realizaci\u00F3n de la incidencia?");
-    }
-    else if (widgetType == 'edit') {
-        title1 = '';
-        title2 = '';
-        title3 = '';
+    if (widgetType == 'edit') {
         titleContainerType = '';
         titleIncidencia = props.formularioProps.incidenciaData.title;
         descriptionIncidencia = props.formularioProps.incidenciaData.description;
@@ -80043,10 +80186,10 @@ var FormularioIncidencia = function (props) {
             setPriority(String(idItem));
         }
     };
-    var fieldsValidation = function (title, description, category, build, floor, classroom, priority) {
+    var fieldsValidation = function (category, build, floor, classroom, priority) {
         var validation = false;
-        if (title != '') {
-            if (title.length > 70) {
+        if (titleInput.value != '') {
+            if (titleInput.value.length > 70) {
                 setTitleInput(__assign(__assign({}, titleInput), { error_control_text: 'El texto introducido excede los 70 caracteres. Tiene ' + title.length + ' caracteres.', color: 'red' }));
                 validation = false;
             }
@@ -80059,7 +80202,7 @@ var FormularioIncidencia = function (props) {
             setTitleInput(__assign(__assign({}, titleInput), { error_control_text: 'No se ha introducido ningún dato.', color: 'red' }));
             validation = false;
         }
-        if (description == '') {
+        if (descriptionInput.value == '') {
             setDescriptionInput(__assign(__assign({}, descriptionInput), { error_control_text: 'No se ha introducido ningún dato.', color: 'red' }));
             validation = false;
         }
@@ -80110,14 +80253,14 @@ var FormularioIncidencia = function (props) {
         return validation;
     };
     var handleClickCreateIncidencia = function (e) {
-        var validation = fieldsValidation(title, description, category, build, floor, classroom, priority);
+        var validation = fieldsValidation(category, build, floor, classroom, priority);
         if (validation) {
             $('#' + modalCreateIncidencia.id).modal('show');
         }
     };
     var handleClickConfirmIncidencia = function () {
         var supervisorId = parseInt(localStorage.userId);
-        if (userRol == 'technical') {
+        if (userRol == 'technical' || userRol == 'visitor') {
             setUserSelected(null);
             setGroupSelected(null);
             supervisorId = null;
@@ -80181,7 +80324,13 @@ var FormularioIncidencia = function (props) {
             IncidenciasUtilities_1.createIncidencia(incidencia);
             IncidenciaLogsUtilities_1.createStateLog(createIncidenciaLog);
             $('#' + modalCreateIncidencia.id).modal('hide');
-            history.push('/home/incidencias/show');
+            if (userRol != 'visitor') {
+                history.push('/home/incidencias/show');
+            }
+            else {
+                setTitleInput(__assign(__assign({}, titleInput), { value: '' }));
+                setDescriptionInput(__assign(__assign({}, descriptionInput), { value: '' }));
+            }
             $('#toastCreate').show();
             $('#toastCreate').toast('show');
         }
@@ -80205,7 +80354,7 @@ var FormularioIncidencia = function (props) {
                 class: classroom,
                 url_data: '',
                 creation_date: props.formularioProps.incidenciaData.creation_date,
-                limit_date: '1263645342',
+                limit_date: props.formularioProps.incidenciaData.limit_date,
                 assigned_date: assignedDate,
                 resolution_date: props.formularioProps.incidenciaData.resolution_date,
                 priority: priority,

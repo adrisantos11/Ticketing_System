@@ -20,9 +20,10 @@ class UsuariosTableSeeder extends Seeder
             'password'  => Hash::make('123456'),
             'email'     => 'mbmena1966@gmail.com',
             'phone'     => '660200506',
-            'role'      => 'technical',
+            'role'      => 'visitor',
             'image_url' => '/images/default-profile-image.jpg'
         ]);
+
         DB::table('users')->insert([
             'name'      => 'Javier',
             'surname1'  => 'Cai',
@@ -79,6 +80,18 @@ class UsuariosTableSeeder extends Seeder
             'email'     => 'adrian.santos2mena@gmail.com',
             'phone'     => '123456789',
             'role'      => 'technical',
+            'image_url' => '/images/default-profile-image.jpg'
+        ]);
+
+        DB::table('users')->insert([
+            'name'      => 'Usuario',
+            'surname1'  => 'Visitante',
+            'surname2'  => 'Nº 1',
+            'exp'       => '11111111',
+            'password'  => Hash::make('123456'),
+            'email'     => 'ejemplo@gmail.com',
+            'phone'     => '000000000',
+            'role'      => 'visitor',
             'image_url' => '/images/default-profile-image.jpg'
         ]);
     }

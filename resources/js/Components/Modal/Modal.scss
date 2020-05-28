@@ -20,7 +20,10 @@
                     // padding: $default_padding $default_padding*2;
                     .close-icon {
                         color: $white_color;
-                        font-size: $font_size*1.2;
+                        font-size: $font_size;
+                        i {
+                            margin-right: $default_padding;
+                        }
                     }
                 }
                 

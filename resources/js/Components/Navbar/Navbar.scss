@@ -15,8 +15,9 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    
+
     z-index: 998;
+
     .options-container {
         display: flex;
         flex-direction: column;
@@ -57,6 +58,7 @@
                 padding: 0;
                 border-radius: 0;
                 cursor: pointer;
+
                 i {
                     line-height: 50px;
                     font-size: 25px;
@@ -96,17 +98,28 @@
         }
     }
 
-    .buttonContainer {
-        margin-left: 20px;
-    }
+
 
     .nabvar-footer {
-        background-color: rgba($color: $grey_color_184, $alpha: 0.20);
+        // background-color: rgba($color: $grey_color_184, $alpha: 0.20);
         text-align: center;
-        padding: $default_padding*2;
         color: rgba($color: $white_color, $alpha: 0.8);
         font-size: $font_size*1.2;
-        font-family: $title_font_family;
+        // font-family: $title_font_family;
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            margin-bottom: $default_padding*4;
+        }
+
+        .footertext-container {
+            font-size: $font_size*1.5;
+            padding: $default_padding*2 0;
+            background-color: $grey_color_51;
+        }
     }
 
     #slidevar {
@@ -115,7 +128,7 @@
     }
 
     @media screen and (max-width: 768px) {
-        
+
         justify-content: space-between;
         height: 400px;
         width: 100%;
@@ -123,6 +136,7 @@
         top: -344px;
         overflow-y: hidden;
         padding-top: 0;
+
         .options-container {
             margin-top: 0;
 
@@ -134,6 +148,7 @@
             .span-container {
                 margin-top: $default_padding*2.5;
                 flex-direction: column-reverse;
+
                 a {
                     padding: 0 10%;
                     margin: 0;
@@ -145,9 +160,11 @@
         .dropdown {
             text-align: center;
         }
+
         .nabvar-footer {
             display: none;
         }
+
         .buttonContainer {
             margin-left: 0;
             margin-bottom: $default_padding*7;

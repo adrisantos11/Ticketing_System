@@ -15,12 +15,12 @@ interface NavbarIF {
 const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
     const history = useHistory();
     const userRolLogged = localStorage.userRol;
-    let iconProfile;
-    if (userRolLogged == 'technical') {
-        iconProfile = (<i className="fas fa-user"></i>);
-    } else if (userRolLogged == 'supervisor') {
-        iconProfile = (<i className="fas fa-user-tie"></i>);
-    }
+    // let iconProfile: any;
+    // if (userRolLogged == 'technical') {
+    //     iconProfile = (<i className="fas fa-user"></i>);
+    // } else if (userRolLogged == 'supervisor') {
+    //     iconProfile = (<i className="fas fa-user-tie"></i>);
+    // }
 
     const [logoutButton] = React.useState<ButtonModel>({
         id: 1,
@@ -80,18 +80,61 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
         }
     }
 
-    const handleClickOption = (e: any) => {
-        let optionSelected = e.target.getAttribute("data-id");
-        props.handleClickOptions(optionSelected);
-    }
-
     const handleClickNavOption = (e: any) => {
         if (e.target.id == 'incidencias-option') {
             history.push('/home/incidencias/show');
         } else if (e.target.id == 'perfil-option') {
             history.push('/home/perfil/graphs/summaryIncidencias');
         }
+        handleClickCloseSlidebar();
     }
+
+    const opcionesNavbar = (userRolLogged: string) => {
+        switch (userRolLogged) {
+            case 'supervisor':
+                console.log('Hola');
+                return(
+                    <div className="btn-group btn-group-toggle span-container" data-toggle="buttons">
+                        <label className="btn navbar-item" data-toogle="tooltip" data-placement="top" title='Perfil'>
+                            <input type="radio" name="options" id="perfil-option" onClick={handleClickNavOption}/><i className="fas fa-user-tie"></i>
+                            <span className="option-text">Perfil</span>
+                        </label>
+                        <label className="btn navbar-item active" data-toogle="tooltip" data-placement="top" title='Incidencias'>
+                            <input type="radio" name="options" id="incidencias-option" onClick={handleClickNavOption}/><i className="fas fa-tools"></i>
+                            <span className="option-text">Incidencias</span>
+                        </label>
+                    </div>
+
+                )
+                break;
+            case 'technical':
+                return(
+                    <div className="btn-group btn-group-toggle span-container" data-toggle="buttons">
+                        <label className="btn navbar-item" data-toogle="tooltip" data-placement="top" title='Perfil'>
+                            <input type="radio" name="options" id="perfil-option" onClick={handleClickNavOption}/><i className="fas fa-user"></i>
+                            <span className="option-text">Perfil</span>
+                        </label>
+                        <label className="btn navbar-item active" data-toogle="tooltip" data-placement="top" title='Incidencias'>
+                            <input type="radio" name="options" id="incidencias-option" onClick={handleClickNavOption}/><i className="fas fa-tools"></i>
+                            <span className="option-text">Incidencias</span>
+                        </label>
+                    </div>
+                )
+                break;
+
+            case 'admin':
+                return('');
+                break;
+                
+            case 'visitor':
+                return('');
+                break;
+            default:
+                break;
+        }
+
+    }
+
     return(
         <>
             <div className='navbar-container ' id="slidevar">
@@ -99,20 +142,17 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
                     <div className="options-container">
                         <span className="menu-btn" id="btn-abrirMenu" onClick={handleClickOpenSlidebar}><i className="fas fa-bars"></i></span>
                         <span className="menu-btn" id="btn-cerrarMenu" onClick={handleClickCloseSlidebar}><i className="fas fa-times"></i></span>
-                        <div className="btn-group btn-group-toggle span-container" data-toggle="buttons">
-                            <label className="btn navbar-item active" data-toogle="tooltip" data-placement="top" title='Perfil'>
-                                <input type="radio" name="options" id="perfil-option" onClick={handleClickNavOption}/>{iconProfile}
-                                <span className="option-text">Perfil</span>
-                            </label>
-                            <label className="btn navbar-item" data-toogle="tooltip" data-placement="top" title='Incidencias'>
-                                <input type="radio" name="options" id="incidencias-option" onClick={handleClickNavOption}/><i className="fas fa-tools"></i>
-                                <span className="option-text">Incidencias</span>
-                            </label>
-                        </div>
+                        {
+                            opcionesNavbar(userRolLogged)
+                        }
                     </div>
-                    <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>
                     <div className="nabvar-footer">
-                        Ticketclass
+                        <div className="button-container">
+                            <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>
+                        </div>
+                        <div className="footertext-container">
+                            <b>Ticketclass</b>
+                        </div>
                     </div>
                 </HashRouter>
             </div>
