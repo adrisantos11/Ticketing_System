@@ -108,7 +108,6 @@ const MostrarIncidenciasPage = () => {
             if(orderBy == '') {
                 getIncidencias(user_id, userRol, 'priority').then(res => {
                     setIncidenciasSize(res.data.length);
-                    console.log(res.data);
                     setIncidencias(res.data);
                     drawFooter('priority', res.sizes, res.colors);
                 });

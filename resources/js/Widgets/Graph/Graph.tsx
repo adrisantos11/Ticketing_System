@@ -9,29 +9,42 @@ interface Props {
 }
 
 const Graph: React.FunctionComponent<Props> = (props: Props) => {
+    const datasets: { 
+        label: string;
+        fill: boolean;
+        lineTension: number;
+        backgroundColor: any;
+        borderColor: string;
+        borderCapStyle: string;
+        borderDashOffset: number;
+        borderJoinStyle:
+        string;
+        data: any; }[] = [];
+
+    const createDatasets = () => {
+        if (props.graphProps.graphData != null) {
+            for (let index = 0; index < props.graphProps.graphData.length; index++) {
+                datasets.push({
+                    label: props.graphProps.mainLabels[index],
+                    fill: false,
+                    lineTension: 0.5,
+                    backgroundColor: props.graphProps.colorsList[index],
+                    borderColor: 'rgba(75,192,192,1)',
+                    borderCapStyle: 'butt',
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    data: props.graphProps.graphData[index]
+                })
+                
+            }   
+        }
+    }
+    createDatasets();
+
     const graphType = props.graphProps.type;
     let data = {
         labels: props.graphProps.labels,
-        datasets: [{
-            label: props.graphProps.mainLabel,
-            fill: false,
-            lineTension: 0.5,
-            backgroundColor: props.graphProps.colorsList,
-            borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            // pointBorderColor: 'rgba(75,192,192,1)',
-            // pointBackgroundColor: '#fff',
-            // pointBorderWidth: 1,
-            // pointHoverRadius: 5,
-            // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            // pointHoverBorderColor: 'rgba(220,220,220,1)',
-            // pointHoverBorderWidth: 2,
-            // pointRadius: 1,
-            // pointHitRadius: 10,
-            data: props.graphProps.graphData
-        }]
+        datasets: datasets
     };
 
     let options = {
@@ -60,6 +73,10 @@ const Graph: React.FunctionComponent<Props> = (props: Props) => {
     } else if(graphType == 'line') {
         graph = <Line data={data} options={options}/>
     }
+
+    React.useEffect(() => {
+        createDatasets();
+    }, [props.graphProps.graphData])
 
     return(
         <div className="graphs-container">

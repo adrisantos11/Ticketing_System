@@ -19,22 +19,24 @@ const GraphsPage = () => {
     let blockedCount = 0;
     let doneCount = 0;
 
-    const graphData: number[] = [];
+    // Constantes para la creación de las gráficas
+    const graphData: any[] = [];
     const labels: string[] = [];
-    const colorsList: string[] = [];
+    const colorsList: any[] = [];
 
-
+    // Listas para las opciones de gráficas
     const idList = [];
     const valuesList = [];
     const iconList = [];
+
     if (userRol == 'supervisor') {
-        idList.push('estado-actual-incidencias', 'evolucion-incidencias');
-        valuesList.push('Estado actual', 'Evolución incidencias');
+        idList.push('estado-actual-incidencias', 'comparativa-incidencias');
+        valuesList.push('Estado actual', 'Comparativas');
         iconList.push('fas fa-info-circle', 'fas fa-chart-line');
     } else if (userRol == 'technical') {
-        idList.push('resumen-incidencias', 'historial-incidencias');
-        valuesList.push('Resumen incidencias', 'Historial incidencias');
-        iconList.push("fas fa-info-circle", 'fas fa-history');
+        idList.push('resumen-incidencias');
+        valuesList.push('Resumen incidencias');
+        iconList.push("fas fa-info-circle");
     }
 
     const [info, setInfo] = React.useState('');
@@ -52,9 +54,11 @@ const GraphsPage = () => {
         type: 'bar',
         labels: [],
         colorsList: [],
-        mainLabel: 'Mis incidencias',
+        mainLabels: ['Mis incidencias'],
         graphData: null
     });
+
+    const [topSizeGraph, setTopSizeGraph] = React.useState(null);
 
     const getEstadoActualSupervisor = () => {
         todoCount = 0;
@@ -62,7 +66,6 @@ const GraphsPage = () => {
         blockedCount = 0;
         doneCount = 0;
         getIncidencias(userId, userRol, 'priority').then(res => {
-            console.log(res.data.length);
             res.data.map((data: { state: any; }) => {
                 switch (data.state) {
                     case 'todo':
@@ -83,14 +86,14 @@ const GraphsPage = () => {
             })
             const sum = todoCount+doingCount+blockedCount+doneCount;
             
-            graphData.push(todoCount ,doingCount, blockedCount, doneCount);
+            graphData.push([todoCount ,doingCount, blockedCount, doneCount]);
             labels.push('Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas');
-            colorsList.push("#3685EC", "#e78738", "#dc3545", '#07a744');
+            colorsList.push(["#3685EC", "#e78738", "#dc3545", '#07a744']);
 
             getNoAssignedIncidencias().then(res => {
-                graphData.push(res.length);
+                graphData[0].push(res.length);
                 labels.push('Sin asgnar');
-                colorsList.push('#e2e2e2')
+                colorsList[0].push('#e2e2e2')
                 setGraphBar({
                     ...graphBar,
                     title: 'Estado actual (Total: ' + sum + ')',
@@ -100,6 +103,7 @@ const GraphsPage = () => {
                 })
             })
             setInfo('* TOTAL = Pendientes + En proceso + Bloqueadas + Solucionadas');
+            setTopSizeGraph('Hola')
         });
 
 
@@ -107,52 +111,77 @@ const GraphsPage = () => {
     }
 
     const getResumeTechnical = () => {
-        getTotalIncidencias(userId).then(res => {
-            console.log(res);
-            const sum = res[0].total+res[1].total+res[2].total;
-            console.log(sum);
-
-            graphData.push(res[0].total ,res[1].total, res[2].total);
-            labels.push('Pendientes', 'En proceso', 'Bloqueadas');
-            colorsList.push("#3685EC", "#e78738", "#dc3545");
-
+        todoCount = 0;
+        doingCount = 0;
+        blockedCount = 0;
+        doneCount = 0;
+        getIncidencias(userId, userRol, 'priority').then(res => {
+            res.data.map((data: { state: any; }) => {
+                switch (data.state) {
+                    case 'todo':
+                        todoCount++;
+                        break;
+                    case 'doing':
+                        doingCount++;
+                        break;
+                    case 'blocked':
+                        blockedCount++;
+                        break;
+                    case 'done':
+                        doneCount++;
+                        break;
+                    default:
+                        break;
+                }
+            })
+            const sum = todoCount+doingCount+blockedCount+doneCount;
+            graphData.push([todoCount ,doingCount, blockedCount, doneCount]);
+            labels.push('Pendientes', 'En proceso', 'Bloqueadas', 'Soluciondas');
+            colorsList.push(["#3685EC", "#e78738", "#dc3545", '#07a744']);        
             setGraphBar({
                 ...graphBar,
-                title: 'Resumen de incidencias (Total: '+sum+')',
+                title: 'Estado actual (Total: ' + sum + ')',
                 graphData: graphData,
-                colorsList: colorsList,
-                labels: labels
+                labels: labels,
+                colorsList: colorsList
             })
-        })         
+    
+            setInfo('');
+            setTopSizeGraph(null)
+
+        });
     }
 
     React.useEffect(() => {
         if (userRol == 'supervisor') {
-            console.log('Supervisor');
             getEstadoActualSupervisor();
         } else if (userRol == 'technical'){
-            console.log('Técnico');
             getResumeTechnical()
         }
     }, []);
 
     
     const handleClickTab = (id: string) => {
-        if (id=='resumen-incidencias') {
-            history.push('/home/perfil/graphs/summaryIncidencias');
-        } else if (id=='historial-incidencias') {
-            history.push('/home/perfil/graphs/historyIncidencias');
+        if (userRol == 'supervisor') {
+            if (id=='estado-actual-incidencias') {
+                getEstadoActualSupervisor(); 
+            } else if (id=='comparativa-incidencias') {
+                console.log('Comparativa');
+            }
+        } else if (userRol == 'technical'){
+            if (id=='resumen-incidencias') {
+                getResumeTechnical()
+            }
         }
+
     }
 
         return (
            <div className='graphsPage-container'>
                     <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
                 <div className='graphs-container'>
-                    <Switch>
-                        <Route path="/home/perfil/graphs/summaryIncidencias"><Graph graphProps={graphBar}></Graph></Route>
-                        <Route path="/home/perfil/graphs/historyIncidencias">Historial</Route>
-                    </Switch> 
+                    {topSizeGraph}
+                    <Graph graphProps={graphBar}></Graph>
                     <p className='p-info'>{info}</p>
                 </div>
            </div>

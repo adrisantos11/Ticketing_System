@@ -552,7 +552,7 @@ const AdminPage = () => {
                     <li><b>surname1</b>: Primer apellido del usuario.</li>
                     <li><b>surname1</b>:Segundo apellido del usuario.</li>
                     <li><b>exp</b>: Expedinete o ID del usuario.</li>
-                    <li><b>email</b>: Emial del usuario.</li>
+                    <li><b>email</b>: Email del usuario.</li>
                     <li><b>password</b>: Constraseña del usuario.</li>
                     <li><b>phone</b>: Nº de teléfono del usuario.</li>
                     <li><b>rol</b>: Rol del usuario.</li>

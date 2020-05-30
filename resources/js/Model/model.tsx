@@ -147,7 +147,7 @@ export interface GraphModel {
     title: string,
     type: string,
     labels: string[],
-    colorsList: string[],
-    mainLabel: string,
-    graphData: any[]
+    colorsList: any[],  // Lista de listas con los colores de cada una de las gráficas
+    mainLabels: any[],  // Lista de listas con las labels de cada una de las gráficas
+    graphData: any[]    // Lista de listas con los datos de cada una de las gráficas
 }
