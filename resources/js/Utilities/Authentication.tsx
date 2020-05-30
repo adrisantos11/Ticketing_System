@@ -7,13 +7,31 @@ import * as ReactRouterDOM from "react-router-dom";
  * Función que se encarga de realizar el registro del nuevo usuario.
  * @param newUser 
  */
-export const register = (newUser: any) => {
+export const registerUser = (newUser: any) => {
+    console.log(newUser.name)
+    console.log(newUser.surname1)
+    console.log(newUser.surname2)
+    console.log(newUser.exp)
+    console.log(newUser.email)
+    console.log(newUser.password)
+    console.log(newUser.phone)
+    console.log(newUser.role)
+
     return axios
-    .post('api/register', newUser, {
+    .post('api/register', {
+        name: newUser.name,
+        surname1: newUser.surname1,
+        surname2: newUser.surname2,
+        exp: newUser.exp,
+        email: newUser.email,
+        password: newUser.password,
+        phone: newUser.phone,
+        role: newUser.role
+    }, {
         headers: {'Content-Type': 'application/json'}
     })
     .then(res => {
-        console.log(res);
+        return res;
     })
     .catch(err => {
         console.log(err);

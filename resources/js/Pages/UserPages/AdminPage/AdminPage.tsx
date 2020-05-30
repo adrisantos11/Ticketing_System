@@ -5,6 +5,7 @@ import { FormularioIncidenciaModel, InputModel, DropdownModel, ButtonModel } fro
 import { Input } from '../../../Components/Input/Input';
 import Dropdown from '../../../Components/Dropdown/Dropdown';
 import Button from '../../../Components/Button/Button';
+import { register, registerUser } from '../../../Utilities/Authentication';
 
 const AdminPage = () => {
     const [inputName, setInputName] = React.useState<InputModel>({
@@ -70,7 +71,7 @@ const AdminPage = () => {
         labelColor: 'primary',
         placeholder: 'Introducir constraseña...',
         color: 'primary',
-        type: 'text',
+        type: 'password',
         error_control_text: '',
         enabled: true,
         inputSize: '',
@@ -84,7 +85,7 @@ const AdminPage = () => {
         labelColor: 'primary',
         placeholder: 'Confirmar contraseña...',
         color: 'primary',
-        type: 'text',
+        type: 'password',
         error_control_text: '',
         enabled: true,
         inputSize: '',
@@ -139,17 +140,71 @@ const AdminPage = () => {
         extraClass: ''
     });
 
+    const [userRol, setUserRol] = React.useState(null);
     const handleChangeInput = (value: string, id: number) => {
-
+        if (id == 1) {
+            setInputName({
+                ...inputName,
+                value: value
+            })
+        } else if (id == 2) {
+            setInputSurname1({
+                ...inputSurname1,
+                value: value
+            })
+        } else if (id == 3) {
+            setInputSurname2({
+                ...inputSurname2,
+                value: value
+            })
+        } else if (id == 4) {
+            setInputExp({
+                ...inputExp,
+                value: value
+            })
+        } else if (id == 5) {
+            setInputPassword({
+                ...inputPassword,
+                value: value
+            })
+        } else if (id == 6) {
+            setInputConfirmPassword({
+                ...inputConfirmPassword,
+                value: value
+            })
+        } else if (id == 7) {
+            setInputEmail({
+                ...inputEmail,
+                value: value
+            })
+        } else if (id == 8) {
+            setInputTlfn({
+                ...inputTlfn,
+                value: value
+            })
+        }
     }
 
     const handleClickItemDD = (idItem: string, idDropdown: number) => {
-
+        setUserRol(idItem);
     }
 
     const handleClickCreateUser = () => {
-        
+        const user = {
+            name: inputName.value,
+            surname1: inputSurname1.value,
+            surname2: inputSurname2.value,
+            exp: inputExp.value,
+            email: inputEmail.value,
+            password: inputPassword.value,
+            phone: inputTlfn.value,
+            role: userRol
+        }
+        registerUser(user).then(res => {
+            console.log(res);
+        });
     }
+
     return(
         <div className="adminpage-container">
             <p className="title1"><i className="fas fa-user-plus"></i><b>  Crear nuevo usuario</b></p>

@@ -78833,12 +78833,24 @@ if(false) {}
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 __webpack_require__(/*! ./AdminPage.scss */ "./resources/js/Pages/UserPages/AdminPage/AdminPage.scss");
 var Input_1 = __webpack_require__(/*! ../../../Components/Input/Input */ "./resources/js/Components/Input/Input.tsx");
 var Dropdown_1 = __webpack_require__(/*! ../../../Components/Dropdown/Dropdown */ "./resources/js/Components/Dropdown/Dropdown.tsx");
 var Button_1 = __webpack_require__(/*! ../../../Components/Button/Button */ "./resources/js/Components/Button/Button.tsx");
+var Authentication_1 = __webpack_require__(/*! ../../../Utilities/Authentication */ "./resources/js/Utilities/Authentication.tsx");
 var AdminPage = function () {
     var _a = React.useState({
         id: 1,
@@ -78899,7 +78911,7 @@ var AdminPage = function () {
         labelColor: 'primary',
         placeholder: 'Introducir constraseña...',
         color: 'primary',
-        type: 'text',
+        type: 'password',
         error_control_text: '',
         enabled: true,
         inputSize: '',
@@ -78912,7 +78924,7 @@ var AdminPage = function () {
         labelColor: 'primary',
         placeholder: 'Confirmar contraseña...',
         color: 'primary',
-        type: 'text',
+        type: 'password',
         error_control_text: '',
         enabled: true,
         inputSize: '',
@@ -78962,11 +78974,50 @@ var AdminPage = function () {
         target_modal: '',
         extraClass: ''
     })[0];
+    var _k = React.useState(null), userRol = _k[0], setUserRol = _k[1];
     var handleChangeInput = function (value, id) {
+        if (id == 1) {
+            setInputName(__assign(__assign({}, inputName), { value: value }));
+        }
+        else if (id == 2) {
+            setInputSurname1(__assign(__assign({}, inputSurname1), { value: value }));
+        }
+        else if (id == 3) {
+            setInputSurname2(__assign(__assign({}, inputSurname2), { value: value }));
+        }
+        else if (id == 4) {
+            setInputExp(__assign(__assign({}, inputExp), { value: value }));
+        }
+        else if (id == 5) {
+            setInputPassword(__assign(__assign({}, inputPassword), { value: value }));
+        }
+        else if (id == 6) {
+            setInputConfirmPassword(__assign(__assign({}, inputConfirmPassword), { value: value }));
+        }
+        else if (id == 7) {
+            setInputEmail(__assign(__assign({}, inputEmail), { value: value }));
+        }
+        else if (id == 8) {
+            setInputTlfn(__assign(__assign({}, inputTlfn), { value: value }));
+        }
     };
     var handleClickItemDD = function (idItem, idDropdown) {
+        setUserRol(idItem);
     };
     var handleClickCreateUser = function () {
+        var user = {
+            name: inputName.value,
+            surname1: inputSurname1.value,
+            surname2: inputSurname2.value,
+            exp: inputExp.value,
+            email: inputEmail.value,
+            password: inputPassword.value,
+            phone: inputTlfn.value,
+            role: userRol
+        };
+        Authentication_1.registerUser(user).then(function (res) {
+            console.log(res);
+        });
     };
     return (React.createElement("div", { className: "adminpage-container" },
         React.createElement("p", { className: "title1" },
@@ -79086,13 +79137,30 @@ var axios_1 = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
  * Función que se encarga de realizar el registro del nuevo usuario.
  * @param newUser
  */
-exports.register = function (newUser) {
+exports.registerUser = function (newUser) {
+    console.log(newUser.name);
+    console.log(newUser.surname1);
+    console.log(newUser.surname2);
+    console.log(newUser.exp);
+    console.log(newUser.email);
+    console.log(newUser.password);
+    console.log(newUser.phone);
+    console.log(newUser.role);
     return axios_1.default
-        .post('api/register', newUser, {
+        .post('api/register', {
+        name: newUser.name,
+        surname1: newUser.surname1,
+        surname2: newUser.surname2,
+        exp: newUser.exp,
+        email: newUser.email,
+        password: newUser.password,
+        phone: newUser.phone,
+        role: newUser.role
+    }, {
         headers: { 'Content-Type': 'application/json' }
     })
         .then(function (res) {
-        console.log(res);
+        return res;
     })
         .catch(function (err) {
         console.log(err);
