@@ -6,12 +6,12 @@ import './Dropdown.scss'
 
 interface Props {
     dropdownInfo: DropdownModel;
-    onClick: (idItem: string, idDropdown: number) => void;
+    onClick: (idItem: string, nameSelected: string, idDropdown: number) => void;
 }
 const Dropdown: React.FunctionComponent<Props> = (props: Props) => {
   const [dropdownName, setDropdownName] = React.useState(props.dropdownInfo.groupName)
   const onClickItem = (e: any) => {
-    props.onClick(e.target.id, props.dropdownInfo.id);
+    props.onClick(e.target.id, e.target.getAttribute('data-value'), props.dropdownInfo.id);
     setDropdownName(e.target.getAttribute('data-value'));
   }
 

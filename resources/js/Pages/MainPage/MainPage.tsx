@@ -79,6 +79,30 @@ const MainPage = () => {
         delay: 4000
     });
 
+    const [toastCreateUser] = React.useState<ToastModel>({
+        id: 'toastCreateUser',
+        title: '¡Usuario creado!',
+        description: 'El usuario se ha creado y guardado correctamente.',
+        circleColor: '--blue',
+        delay: 4000
+    });
+
+    const [toastImportExcel] = React.useState<ToastModel>({
+        id: 'toastImportExcel',
+        title: '¡Excel importado correctamente!',
+        description: 'Los usuarios se han generado y almacenado correctamente en la Base de Datos.',
+        circleColor: '--blue',
+        delay: 4000
+    });
+
+    const [toastImportError] = React.useState<ToastModel>({
+        id: 'toastImportError',
+        title: '¡ERROR!',
+        description: 'Ha ocurrido un error importando los datos del Excel. Compruebe que la estructura está bien planteada.',
+        circleColor: '--red',
+        delay: 4000
+    });
+    
     React.useEffect(() => {
         getProfile().then(res => {
             try {
@@ -127,7 +151,10 @@ const MainPage = () => {
                     <Toast toastProps={toastEditIncidencia}></Toast>
                     <Toast toastProps={toastCreateTechnicalGroup}></Toast>
                     <Toast toastProps={toastSaveProfileChanges}></Toast>
-
+                    <Toast toastProps={toastCreateUser}></Toast>
+                    <Toast toastProps={toastImportExcel}></Toast>
+                    <Toast toastProps={toastImportError}></Toast>
+                    
                 </div>
             </div>
             </>

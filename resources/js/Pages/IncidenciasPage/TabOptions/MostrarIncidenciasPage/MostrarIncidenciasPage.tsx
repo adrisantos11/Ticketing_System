@@ -163,7 +163,7 @@ const MostrarIncidenciasPage = () => {
     const [divSelectedData, setDivSelectedData] = React.useState([]);
     const [idSelectboxList, setIdSelectboxList] = React.useState([])
 
-    const handleClickItemDD = (idItem: string, idDropdown: number) => {
+    const handleClickItemDD = (idItem: string, nameSelected: string, idDropdown: number) => {
         setOrderBy(idItem);
         setSelectboxList([]);
         getFilters().then(res => {

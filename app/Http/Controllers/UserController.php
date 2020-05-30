@@ -64,9 +64,26 @@ class UserController extends Controller
         
         // Se genera un token específico para el usuario recién registrado.
         $token = auth()->fromUser($user);
-
         // Se devuelve la respuesta HTTP en formato JSON con el 
         return response()->json(compact('user', 'token'), 201);
+    }
+
+    function importExcelData(Request $request) {
+        $data = $request->arrayData;
+        $obj = (object) $data[0];
+        for ($i=0; $i < sizeof($data); $i++) {
+            $obj = (object) $data[$i];
+            DB::table('users')->insert([
+                'name'      => $obj->name,
+                'surname1'  => $obj->surname1,
+                'surname2'  => $obj->surname2,
+                'exp'       => $obj->exp,
+                'password'  => Hash::make($obj->password),
+                'email'     => $obj->email,
+                'phone'     => $obj->phone,
+                'role'      => $obj->role,
+                ]); 
+        }  
     }
     
     /**
@@ -147,5 +164,9 @@ class UserController extends Controller
             ->update([
                 'password' => Hash::make($request->password)
         ]);
+    }
+
+    public function getAllUsers() {
+        return DB::table('users')->select('exp')->get();
     }
 }

@@ -8,15 +8,6 @@ import * as ReactRouterDOM from "react-router-dom";
  * @param newUser 
  */
 export const registerUser = (newUser: any) => {
-    console.log(newUser.name)
-    console.log(newUser.surname1)
-    console.log(newUser.surname2)
-    console.log(newUser.exp)
-    console.log(newUser.email)
-    console.log(newUser.password)
-    console.log(newUser.phone)
-    console.log(newUser.role)
-
     return axios
     .post('api/register', {
         name: newUser.name,
@@ -35,6 +26,24 @@ export const registerUser = (newUser: any) => {
     })
     .catch(err => {
         console.log(err);
+    })
+}
+
+export const importUserExcel = (arrayData: any[]) => {
+    console.log(arrayData);
+    return axios
+    .post('api/importExcel', {
+        arrayData: arrayData
+    }, {
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(() => {
+        $('#toastImportExcel').show();
+        $('#toastImportExcel').toast('show');
+    })
+    .catch(err => {
+        $('#toastImportError').show();
+        $('#toastImportError').toast('show');
     })
 }
 
@@ -163,5 +172,18 @@ export const saveNewPassword = (id: number, password: string) => {
     }).catch(err => {
         if(err)
             console.log(err);
+    })
+}
+
+export const getAllUsers = () => {
+    return axios
+    .get('api/getAllUsers', {
+        headers: { Authorization : `Bearer ${localStorage.usertoken}`}
+    })
+    .then(res => {
+        return res.data;
+    })
+    .catch(err => {
+        console.log(err);
     })
 }

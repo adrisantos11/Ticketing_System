@@ -271,7 +271,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         pisos: [piso0_C, piso1_C, piso2_C, piso3_C]
     }
 
-    const handleClickItemDD = (idItem: string, idDropdown: number) => {
+    const handleClickItemDD = (idItem: string, nameSelected: string, idDropdown: number) => {
         if (idDropdown == 1) {
             // Establece el valor elegido en el dropdown de categoría
             setCategory(idItem);

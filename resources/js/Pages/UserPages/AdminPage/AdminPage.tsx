@@ -1,11 +1,13 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react'
+import * as XLSX from 'xlsx';
 import './AdminPage.scss'
-import { FormularioIncidenciaModel, InputModel, DropdownModel, ButtonModel } from '../../../Model/model';
+import { FormularioIncidenciaModel, InputModel, DropdownModel, ButtonModel, ModalModel } from '../../../Model/model';
 import { Input } from '../../../Components/Input/Input';
 import Dropdown from '../../../Components/Dropdown/Dropdown';
 import Button from '../../../Components/Button/Button';
-import { register, registerUser } from '../../../Utilities/Authentication';
+import { registerUser, getAllUsers, importUserExcel } from '../../../Utilities/Authentication';
+import Modal from '../../../Components/Modal/Modal';
 
 const AdminPage = () => {
     const [inputName, setInputName] = React.useState<InputModel>({
@@ -140,7 +142,210 @@ const AdminPage = () => {
         extraClass: ''
     });
 
+    const [importExcelButton] = React.useState<ButtonModel>({
+        id: 2,
+        texto: 'Importar',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'',  
+        extraClass: ''
+    });
+    
+    const [confirmButton] = React.useState<ButtonModel>({
+        id: 1,
+        texto: 'Confirmar',
+        color: 'primary',
+        type: '',
+        icon: '',
+        target_modal:'confirmationModal',  
+        extraClass: ''
+    });
+
+    const [modalCreateUser] = React.useState<ModalModel>({
+        id: 'confirmationModal',
+        title: '¿Seguro?',
+        buttonProps: confirmButton,
+        enableCloseButton: true,
+        infoModel: false
+    })
     const [userRol, setUserRol] = React.useState(null);
+
+    const handleErrors = (): boolean => {
+        let isValid = true;
+        if (inputName.value == '') {
+            setInputName({
+                ...inputName,
+                value: '',
+                color: 'red',
+                error_control_text: 'El campo se encuentra vacío.'
+            })
+            isValid = false;
+        } else {
+            setInputName({
+                ...inputName,
+                color: 'primary',
+                error_control_text: ''
+            })
+        }
+        
+        if (inputSurname1.value == '') {
+            setInputSurname1({
+                ...inputSurname1,
+                value: '',
+                color: 'red',
+                error_control_text: 'El campo se encuentra vacío.'
+            })
+
+            isValid = false;
+        } else {
+            setInputSurname1({
+                ...inputSurname1,
+                color: 'primary',
+                error_control_text: ''
+            })
+        }
+
+        if (inputSurname2.value == '') {
+            setInputSurname2({
+                ...inputSurname2,
+                value: '',
+                color: 'red',
+                error_control_text: 'El campo se encuentra vacío.'
+            })
+            isValid = false;
+
+        } else {
+            setInputSurname2({
+                ...inputSurname2,
+                color: 'primary',
+                error_control_text: ''
+            })
+        }
+
+        if (inputExp.value == '') {
+            setInputExp({
+                ...inputExp,
+                value: '',
+                color: 'red',
+                error_control_text: 'El campo se encuentra vacío.'
+            })
+            isValid = false;
+
+        } else {
+            setInputExp({
+                ...inputExp,
+                color: 'primary',
+                error_control_text: ''
+            })
+        }
+
+        if (inputPassword.value == '') {
+            setInputPassword({
+                ...inputPassword,
+                value: '',
+                color: 'red',
+                error_control_text: 'El campo se encuentra vacío.'
+            })
+            isValid = false;
+            
+        } else {
+            setInputPassword({
+                ...inputPassword,
+                color: 'primary',
+                error_control_text: ''
+            })
+        }
+
+        if (inputConfirmPassword.value == '') {
+            setInputConfirmPassword({
+                ...inputConfirmPassword,
+                value: '',
+                color: 'red',
+                error_control_text: 'El campo se encuentra vacío.'
+            })
+            isValid = false;
+
+        } else if (inputConfirmPassword.value != inputPassword.value) {
+            setInputPassword({
+                ...inputPassword,
+                value: '',
+                color: 'red',
+                error_control_text: 'Las constraseñas no coinciden.'
+            })
+
+            setInputConfirmPassword({
+                ...inputConfirmPassword,
+                value: '',
+                color: 'red',
+                error_control_text: ''
+            })
+            isValid = false;
+
+        } else {
+            setInputPassword({
+                ...inputPassword,
+                color: 'primary',
+                error_control_text: ''
+            })
+
+            setInputConfirmPassword({
+                ...inputConfirmPassword,
+                color: 'primary',
+                error_control_text: ''
+            })
+        }
+
+        if (inputEmail.value == '') {
+            setInputEmail({
+                ...inputEmail,
+                value: '',
+                color: 'red',
+                error_control_text: 'El campo se encuentra vacío.'
+            })
+            isValid = false;
+
+        } else {
+            setInputEmail({
+                ...inputEmail,
+                color: 'primary',
+                error_control_text: ''
+            }) 
+        }
+
+        if (inputTlfn.value == '') {
+            setInputTlfn({
+                ...inputTlfn,
+                value: '',
+                color: 'red',
+                error_control_text: 'El campo se encuentra vacío.'
+            })
+            isValid = false;
+
+        } else {
+            setInputTlfn({
+                ...inputTlfn,
+                color: 'primary',
+                error_control_text: ''
+            }) 
+        }
+
+        if(userRol == null) {
+            setRolDropdown({
+                ...rolDropdown,
+                color: 'red'
+            })
+            isValid = false;
+
+        } else {
+            setRolDropdown({
+                ...rolDropdown,
+                color: 'primary'
+            })
+        }
+        return isValid;
+    }
+
     const handleChangeInput = (value: string, id: number) => {
         if (id == 1) {
             setInputName({
@@ -185,11 +390,29 @@ const AdminPage = () => {
         }
     }
 
-    const handleClickItemDD = (idItem: string, idDropdown: number) => {
+    const handleClickItemDD = (idItem: string, nameSelected: string) => {
+        setRolDropdown({
+            ...rolDropdown,
+            groupName: nameSelected,
+        })
         setUserRol(idItem);
     }
 
-    const handleClickCreateUser = () => {
+    const handleClickCreateUser = (e: React.MouseEvent , id: number) => {
+        console.log(id);
+        if (id == 1) {
+            const fieldsCorrect = handleErrors();
+            if (fieldsCorrect) {            
+                $('#'+modalCreateUser.id).modal('show'); 
+                
+            }
+            
+        } else if (id == 2) {
+            console.log('Importar datos...')
+        }
+    }
+
+    const handleClickConfirmIncidencia = () => { 
         const user = {
             name: inputName.value,
             surname1: inputSurname1.value,
@@ -202,13 +425,105 @@ const AdminPage = () => {
         }
         registerUser(user).then(res => {
             console.log(res);
-        });
+        });    
+
+        $('#'+modalCreateUser.id).modal('hide'); 
+        $('#toastCreateUser').show();
+        $('#toastCreateUser').toast('show');
+
+        setInputName({
+            ...inputName,
+            value: ''
+        })
+
+        setInputSurname1({
+            ...inputSurname1,
+            value: '',
+        })
+
+        setInputSurname2({
+            ...inputSurname2,
+            value: '',
+        })
+
+        setInputExp({
+            ...inputExp,
+            value: '',
+        })
+
+        setInputPassword({
+            ...inputPassword,
+            value: '',
+        })
+
+        setInputConfirmPassword({
+            ...inputConfirmPassword,
+            value: '',
+        })
+
+        setInputEmail({
+            ...inputEmail,
+            value: '',
+        })
+
+        setInputTlfn({
+            ...inputTlfn,
+            value: '',
+        })
+
     }
+
+    const [newUserList, setNewUserList] = React.useState([]);
+    const onChangeFileInput = (e: any) => {
+        readExcel(e.target.files[0]);
+    }
+    const [userObject, setUserObject] = React.useState(null);
+    function readExcel(file: any) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            let data = e.target.result;
+            let workbook = XLSX.read(data, {
+              type: 'binary'
+            });
+            let sheetName = workbook.SheetNames[0];
+            let xlsx_object = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+            console.log(xlsx_object);
+            // const userObjectExcel = JSON.stringify(XL_row_object);
+            // console.log(e.target.files[0]);
+            const helperList: any[] = [];
+            const helperList2: any[] = [];
+            getAllUsers().then(res => {
+                res.map((exp: { exp: any; }) => {
+                    helperList.push(Number(exp.exp));
+                })
+                xlsx_object.map((newUser: { exp: any; }) => {
+                    const encontrado = helperList.indexOf(newUser.exp);
+                    if (encontrado == -1) {
+                        helperList2.push(newUser)
+                    }
+                })
+                if (helperList2.length != 0) {
+                    importUserExcel(helperList2)
+                } else {
+                    console.log("No hay datos nuevos para guardar.")
+                }
+            })
+
+          };
+      
+          reader.onerror = function(ex) {
+            console.log(ex);
+          };
+      
+          reader.readAsBinaryString(file);
+       
+      }
 
     return(
         <div className="adminpage-container">
             <p className="title1"><i className="fas fa-user-plus"></i><b>  Crear nuevo usuario</b></p>
-            Admin page
+            <p>Siendo rol <b>ADMINISTRADOR</b>, podrá crear tantos usuarios como desee.</p>
+            <p>Para ello es necesario que rellene el siguiente formulario correctamente.</p>
             <div className="formulario-container">
                 <div className="h-container">
                     <Input inputInfo={inputName} handleChangeInput={handleChangeInput}></Input>
@@ -229,6 +544,32 @@ const AdminPage = () => {
                 <Button buttonInfo={createIncidenciaButton} handleClick={handleClickCreateUser}></Button>
 
             </div>
+            <div className="import-container">
+                <p className='import-title'><b>Importar usuarios desde EXCEL</b></p>
+                Para que el excel se importe correctamente es necesario que tenga una cabecera con los siguientes datos como columnas independientes:
+                <ul>
+                    <li><b>name</b>: Nombre del usuario.</li>
+                    <li><b>surname1</b>: Primer apellido del usuario.</li>
+                    <li><b>surname1</b>:Segundo apellido del usuario.</li>
+                    <li><b>exp</b>: Expedinete o ID del usuario.</li>
+                    <li><b>email</b>: Emial del usuario.</li>
+                    <li><b>password</b>: Constraseña del usuario.</li>
+                    <li><b>phone</b>: Nº de teléfono del usuario.</li>
+                    <li><b>rol</b>: Rol del usuario.</li>
+                </ul>
+                <input type="file" onChange={onChangeFileInput} accept=".xlsx"/>
+            </div>
+            <Modal modalProps={modalCreateUser} onClick={handleClickConfirmIncidencia}>
+                <p>Pulse el botón de <b>'Confirmar'</b> si los datos introducidos son correctos.</p>
+                <p>Nombre: <b>{inputName.value}</b></p>
+                <p>Primer apellido: <b>{inputSurname1.value}</b></p>
+                <p>Segundo apellido: <b>{inputSurname2.value}</b></p>
+                <p>Expediente o ID: <b>{inputExp.value}</b></p>
+                <p>E-mail: <b>{inputEmail.value}</b></p>
+                <p>Teléfono: <b>{inputTlfn.value}</b></p>
+                <p>Rol: <b>{rolDropdown.groupName}</b></p>
+            </Modal>
+
         </div>
     )
 }

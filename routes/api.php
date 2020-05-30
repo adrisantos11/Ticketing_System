@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
+Route::post('importExcel', 'UserController@importExcelData');
+Route::get('getAllUsers', 'UserController@getAllUsers');
 Route::get('home', 'UserController@getAuthenticatedUser');
 Route::post('logout', 'UserController@logout');
 Route::post('getUser', 'UserController@getUserLogged');

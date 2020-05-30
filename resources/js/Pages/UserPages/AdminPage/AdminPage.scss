@@ -1,12 +1,13 @@
 @import '../../../../sass/app.scss';
 
 .adminpage-container {
-    height: 100%;
+    min-height: 100%;
+    max-height: auto;
     width: 100%;
     background-color: $grey_color_184;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     padding: $default_padding*4;
 
     .title1 {
@@ -57,6 +58,16 @@
                     width: 100%;
                 }
             }
+        }
+    }
+
+    .import-container {
+        display: flex;
+        flex-direction: column;
+        margin: $default_padding*2 0;
+        .import-title {
+            color: $primary_color;
+            font-size: $font_size*1.2;
         }
     }
 }

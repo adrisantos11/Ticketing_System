@@ -300,7 +300,7 @@ const TechnicalGroupsPage = () => {
         }
     }
 
-    const handleClickItemDD = (idItem: string, idDropdown: number) => { 
+    const handleClickItemDD = (idItem: string, nameSelected: string, idDropdown: number) => { 
         setGroupCategory(idItem);
     }
 
