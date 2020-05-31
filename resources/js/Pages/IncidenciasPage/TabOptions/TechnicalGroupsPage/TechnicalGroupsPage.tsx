@@ -76,7 +76,8 @@ const TechnicalGroupsPage = () => {
         typeInput: 'text',
         enabled: true,
         tableToSearchIn: 'users',
-        matchingWords: ['name', 'surname1', 'surname2']
+        matchingWords: ['name', 'surname1', 'surname2'],
+        searchIn: 'users'
     });
 
     const [addTechnicalButton] = React.useState<ButtonModel>({

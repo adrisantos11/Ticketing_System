@@ -111,6 +111,7 @@ export interface AutocompleteInputModel {
     enabled: boolean;
     tableToSearchIn: string;
     matchingWords: string[];
+    searchIn: string
 }
 
 export interface ModalModel {

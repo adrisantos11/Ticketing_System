@@ -158,7 +158,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         groupItems: [],
         groupIds: [],
         color: 'primary',
-        enabled: true,
+        enabled: false,
         extraClass: '',
     });
 
@@ -168,7 +168,7 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         groupItems: [],
         groupIds: [],
         color: 'primary',
-        enabled: true,
+        enabled: false,
         extraClass: '',
     });
 
@@ -303,7 +303,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             setFloorDropdown({
                 ...floorDropdown,
                 groupIds: arrayPisos,
-                groupItems: arrayPisos
+                groupItems: arrayPisos,
+                enabled: true
             })
         } else if (idDropdown == 3) {
             let arrayAulas: string[] = []
@@ -350,7 +351,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
             setClassDropdown({
                 ...classDropdown,
                 groupIds: arrayAulas,
-                groupItems: arrayAulas
+                groupItems: arrayAulas,
+                enabled: true
             })
         } else if (idDropdown == 4) {
             setClassroom(String(idItem)); 
@@ -647,7 +649,8 @@ const FormularioIncidencia: React.FunctionComponent<Props> = (props: Props) => {
         typeInput: 'text',
         enabled: true,
         tableToSearchIn: 'users',
-        matchingWords: ['name', 'surname1', 'surname2']
+        matchingWords: ['name', 'surname1', 'surname2'],
+        searchIn: 'users'
     })
 
     React.useEffect(() => {

@@ -27,4 +27,15 @@ class AutocompleteController extends Controller
         }
         return json_encode($json_array);
     }
+
+    public function filterTeams(Request $request) {
+        $data = $request->data;
+        $query = DB::table('teams')->where('teams.name', 'LIKE', '%'.$data.'%')->get();
+        $json_array = array();
+        foreach($query as $value) {
+            $object =  array("id"=> $value->id, "name" => $value->name, "category" => $value->category, "id_supervisor" => $value->id_supervisor);
+            array_push($json_array, $object);
+        }
+        return json_encode($json_array);
+    }
 }

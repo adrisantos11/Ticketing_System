@@ -16,7 +16,7 @@ $factory->define(Incidencia::class, function (Faker $faker) {
     $ids_reporter = array(2,3,4,5);
     $id_reporter = array_rand($ids_reporter, 1);
 
-    $ids_assigned = array(4,5, null);
+    $ids_assigned = array(4,5,6, null);
     $id_assigned = array_rand($ids_assigned, 1);
 
     $ids_supervisor = array(2,3, null);

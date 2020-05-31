@@ -31,5 +31,14 @@
             font-size: $font_size*0.8;
             margin: $default_padding 0;
         }
+
+        .topsize-container {
+            display: flex;
+            flex-direction: column;
+            .title-autocomplete {
+                color: $primary_color;
+                font-size: $font_size*1.2;
+            }
+        }
     }
 }
