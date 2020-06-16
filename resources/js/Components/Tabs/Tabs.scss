@@ -10,7 +10,7 @@
             cursor: pointer;
             padding: $default_padding*1.5 $default_padding*2;
 
-            &:first-child:not(:last-child):not(.dropdown-toggle) {
+            &:first-child {
                 @extend .btn;
                 border-top-right-radius: 0;
                 border-top-left-radius: $default_padding*2;

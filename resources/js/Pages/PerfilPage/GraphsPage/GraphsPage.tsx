@@ -129,7 +129,6 @@ const GraphsPage = () => {
                         break;
                 }
             })
-            console.log(userCounter);
 
             graphDataUser.push([todoCount ,doingCount, blockedCount, doneCount]);
             colorsListUser.push([color, color, color, color]);       
@@ -198,7 +197,8 @@ const GraphsPage = () => {
                     title: 'Estado actual (Total: ' + sum + ')',
                     graphData: graphData,
                     labels: labels,
-                    colorsList: colorsList
+                    colorsList: colorsList,
+                    mainLabels: ['Mis incidencias']          
                 })
             })
             setInfo('* TOTAL = Pendientes + En proceso + Bloqueadas + Solucionadas');
@@ -220,8 +220,6 @@ const GraphsPage = () => {
         <div className="topsize-container">
             <span className="title-autocomplete">Añadir usuario</span>
             <AutocompleteInput autocompleteInputInfo={autocompleteInputValues1} handleClick={handleClickAutocomplete}></AutocompleteInput>
-            {/* <span className="title-autocomplete">Añadir equipo</span>
-            <AutocompleteInput autocompleteInputInfo={autocompleteInputValues2} handleClick={handleClickAutocomplete}></AutocompleteInput> */}
         </div>
         </>)
 
@@ -277,37 +275,31 @@ const GraphsPage = () => {
             getResumeTechnical()
         }
     }, []);
-
-    // React.useEffect(() => {
-        
-    // }, [comparationUser1, comparationUser2])
-
     
     const handleClickTab = (id: string) => {
         if (userRol == 'supervisor') {
             if (id=='estado-actual-incidencias') {
                 getEstadoActualSupervisor(); 
-            } else if (id=='comparativa-incidencias') {
+            } else if (id == 'comparativa-incidencias') {
                 compareTechnicalGraphs();
             }
         } else if (userRol == 'technical'){
-            if (id=='resumen-incidencias') {
+            if (id == 'resumen-incidencias') {
                 getResumeTechnical()
             }
         }
-
     }
 
-        return (
-           <div className='graphsPage-container'>
-                    <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
-                <div className='graphs-container'>
-                    {topSizeGraph}
-                    <Graph graphProps={graphBar}></Graph>
-                    <p className='p-info'>{info}</p>
-                </div>
-           </div>
-        )
+    return (
+        <div className='graphsPage-container'>
+                <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
+            <div className='graphs-container'>
+                {topSizeGraph}
+                <Graph graphProps={graphBar}></Graph>
+                <p className='p-info'>{info}</p>
+            </div>
+        </div>
+    )
 }
 
 export default GraphsPage;

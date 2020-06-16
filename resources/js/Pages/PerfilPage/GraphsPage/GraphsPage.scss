@@ -13,7 +13,8 @@
 
         .btn-group {
             .btn {
-                &:first-child:not(:last-child):not(.dropdown-toggle) {
+                &:first-child {
+                    border-top-left-radius: $default_padding*2;
                     border-bottom-left-radius: $default_padding*2;
                 }
 
