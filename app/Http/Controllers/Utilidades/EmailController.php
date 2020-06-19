@@ -14,7 +14,6 @@ class EmailController extends Controller
         \Mail::send('emails.changeState', $data, function ($message) use ($request){
             $message->to($request->user_emails)->subject('Cambio estado I-'.$request->id_incidencia);
         });
-        
         return('OK');
     }
 

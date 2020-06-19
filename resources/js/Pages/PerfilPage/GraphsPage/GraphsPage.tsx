@@ -293,7 +293,7 @@ const GraphsPage = () => {
     return (
         <div className='graphsPage-container'>
                 <Tabs tabsInfo={tabsOptions} handleClick={handleClickTab}></Tabs>
-            <div className='graphs-container'>
+            <div className='graphs1-container'>
                 {topSizeGraph}
                 <Graph graphProps={graphBar}></Graph>
                 <p className='p-info'>{info}</p>

@@ -147,7 +147,7 @@ const Navbar: React.FunctionComponent<NavbarIF> = (props: NavbarIF) => {
                         }
                     </div>
                     <div className="nabvar-footer">
-                        <div className="button-container">
+                        <div className="logout-container">
                             <Button buttonInfo={logoutButton} handleClick={handleClickLogoutButton}></Button>
                         </div>
                         <div className="footertext-container">

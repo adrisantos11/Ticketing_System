@@ -18,22 +18,47 @@
             margin-bottom: $default_padding*2;
             flex-wrap: wrap;
 
-            .dropdown {
-                margin: 0 $default_padding;
-                margin-right: $default_padding*2;
+            @media screen and (max-wight: 769px) {
+                flex-direction: column;
             }
+
+            .ordenarPor-container {
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                align-items: center;
+                .dropdown {
+                    margin: 0 $default_padding;
+                    margin-right: $default_padding*2;
+                }    
+            }
+
 
             .selectboxes-container {
                 display: flex;
                 flex-direction: row;
                 align-content: center;
                 align-items: center;
-
+                flex-wrap: wrap;
+                
                 .btn-group {
                     margin: 0 $default_padding;
                 }
-            }
 
+                @media screen and (max-wight: 769px) {
+                    .selectboxes-container {
+                        color: red;
+                        justify-content: space-between;
+                        margin: $default_padding 0;
+
+                        .selectbox-container {
+                            padding: $default_padding 0;
+                        }
+
+                    }
+                }
+            }
+        
         }
 
         .horizontal-separator {

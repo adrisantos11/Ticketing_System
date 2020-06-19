@@ -107,7 +107,7 @@
         font-size: $font_size*1.2;
         // font-family: $title_font_family;
 
-        .button-container {
+        .logout-container {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,7 +162,9 @@
         }
 
         .nabvar-footer {
-            display: none;
+            .footertext-container {
+                display: none;
+            }
         }
 
         .buttonContainer {

@@ -273,8 +273,10 @@ const MostrarIncidenciasPage = () => {
             <div className="incidenciasList-container">
                 <div className="header-container">
                     <div className="filtrar-container">
-                        Ordenar por:
-                        <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
+                        <div className="ordenarPor-container">
+                            <span>Ordenar por:</span>
+                            <Dropdown dropdownInfo={orderByDropdown} onClick={handleClickItemDD}></Dropdown>
+                        </div>
                         <div className="selectboxes-container">
                             Filtrar por:
                             {
