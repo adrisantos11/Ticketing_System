@@ -7,89 +7,65 @@ interface Props {
     inputInfo: InputModel;
     handleChangeInput: (value: string, id: number) => void;
 }
+
 export const Input: React.FunctionComponent<Props> = (props: Props) => {
-    const inputColorProp = props.inputInfo.color;
-    const labelColorProp = props.inputInfo.labelColor;
-    let inputColor ,mostrar, labelColor = '';
-    let input;
-
-    const handleChange = (event: any) => {
-        if (String(event.target.value).length == 1) {   
-            props.handleChangeInput(String(event.target.value).toUpperCase( ), event.target.id);
-        } else {
-            props.handleChangeInput(String(event.target.value), event.target.id);
-        }
+    const inputColor    = `--${props.inputInfo.color}`;
+    const labelColor    = `--${props.inputInfo.labelColor}`;
+    const mostrar       = props.inputInfo.color === 'red' ? '--mostrar' : '';
+    const labelTitle    = props.inputInfo.label ? <label className={`text_label${labelColor}`}>{props.inputInfo.label}</label> : '';
+    
+    const handleChange = (value: string, id: number) => {
+        String(value).length === 1 ? props.handleChangeInput(String(value).toUpperCase( ), id) : props.handleChangeInput(value, id);
     }
 
-    if (inputColorProp == 'primary') {
-        inputColor = '--primary';
-    } else if (inputColorProp == 'red') {
-        inputColor = '--red';
-        mostrar = '--mostrar'
+    const isNotTextArea = (enabled: boolean) => {
+        const code = !enabled ? <input 
+            id = {`input-${props.inputInfo.id.toString()}`}
+            type={props.inputInfo.type} 
+            className={`form-control input_class${inputColor} text-${inputColor}`} 
+            placeholder={props.inputInfo.placeholder}
+            onChange={(e) => handleChange(e.target.value, Number(e.target.id))}
+            value={props.inputInfo.value}
+            disabled/> 
+            : 
+            <input 
+            id = {props.inputInfo.id.toString()}
+            type={props.inputInfo.type} 
+            className={`form-control input_class${inputColor} text-${inputColor}`} 
+            placeholder={props.inputInfo.placeholder}
+            onChange={(e) => handleChange(e.target.value, Number(e.target.id))}
+            value={props.inputInfo.value}/>
+  
+        return code;
     }
 
-    if (labelColorProp == 'primary') {
-        labelColor = '--primary';
-    } else if (labelColorProp == 'red') {
-        labelColor = '--red';
-    } else if (labelColorProp == 'white') {
-        labelColor = '--white';
-    }
+    const isTextArea = (enabled: boolean) => {
+        const code = !enabled ? <textarea 
+            id = {props.inputInfo.id.toString()}
+            className={`form-control input_class${inputColor} text-${inputColor}`} 
+            placeholder={props.inputInfo.placeholder}
+            onChange={(e) => handleChange(e.target.value, Number(e.target.id))} 
+            value={props.inputInfo.value} 
+            rows={4}
+            disabled/>
+            :
+            <textarea 
+            id = {props.inputInfo.id.toString()}
+            className={`form-control input_class${inputColor} text-${inputColor}`} 
+            placeholder={props.inputInfo.placeholder}
+            onChange={(e) => handleChange(e.target.value, Number(e.target.id))}
+            value={props.inputInfo.value}
+            rows={4}/>;   
 
-    let labelTitle;
-    if (props.inputInfo.label != '' && props.inputInfo.label != null) {
-        labelTitle = <label htmlFor="" className={`text_label${labelColor}`}>{props.inputInfo.label}</label>;
-    } else {
-        labelTitle = '';
+        return code;
     }
-
-    if (!props.inputInfo.isTextArea) {
-        if (!props.inputInfo.enabled) {
-            input = (<input 
-                id = {`input-${props.inputInfo.id.toString()}`}
-                type={props.inputInfo.type} 
-                className={`form-control input_class${inputColor} text-${inputColor}`} 
-                placeholder={props.inputInfo.placeholder}
-                onChange={handleChange}
-                value={props.inputInfo.value}
-                disabled/>)
-        } else {
-            input = (<input 
-                id = {props.inputInfo.id.toString()}
-                type={props.inputInfo.type} 
-                className={`form-control input_class${inputColor} text-${inputColor}`} 
-                placeholder={props.inputInfo.placeholder}
-                onChange={handleChange}
-                value={props.inputInfo.value}/>)
-        }
-    } else {
-        if (!props.inputInfo.enabled) {
-            input = (<textarea 
-                id = {props.inputInfo.id.toString()}
-                className={`form-control input_class${inputColor} text-${inputColor}`} 
-                placeholder={props.inputInfo.placeholder}
-                onChange={handleChange} 
-                value={props.inputInfo.value} 
-                rows={4}
-                disabled/>)
-        } else {
-            input = (<textarea 
-                id = {props.inputInfo.id.toString()}
-                className={`form-control input_class${inputColor} text-${inputColor}`} 
-                placeholder={props.inputInfo.placeholder}
-                onChange={handleChange}
-                value={props.inputInfo.value}
-                rows={4}/>)
-        }
-    }
+    const input = !props.inputInfo.isTextArea ? isNotTextArea(props.inputInfo.enabled) : isTextArea(props.inputInfo.enabled);
 
     return(
-        <>
-            <div className='form-group'>
-                {labelTitle}
-                {input}
-                <small className={`form-text text-danger aviso${mostrar}`}>{props.inputInfo.error_control_text}</small>
-            </div>
-        </>
+        <div className='form-group'>
+            {labelTitle}
+            {input}
+            <small className={`form-text text-danger aviso${mostrar}`}>{props.inputInfo.error_control_text}</small>
+        </div>
     );
 }

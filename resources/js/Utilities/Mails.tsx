@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const sendIncidenciaStateChangedMail = (id_incidencia: number, state: string, color: string, user_emails:string[]) => {
+    console.log(user_emails);
     return axios
     .post('api/incidenciaStateChangedMail',
     {
@@ -17,7 +18,7 @@ export const sendIncidenciaStateChangedMail = (id_incidencia: number, state: str
     })
     .catch(err => {
         if(err.response) {
-            console.log(err.response.data.error);
+            console.log(err.response.data);
             console.log(err.response.status);
         } else if (err.request) {
             console.log(err.request);

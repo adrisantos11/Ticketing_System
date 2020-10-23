@@ -405,7 +405,9 @@ const IncidenciaViewPage = () => {
         } else {
             usersToMail.push(incidenciaSupervisor.email, reporterUser.email);
         }
-        usersToMail.push(assignedUser.email);
+        if (assignedUser.email != null) {
+            usersToMail.push(assignedUser.email);
+        }
         sendIncidenciaStateChangedMail(incidencia.id, stateMail, colorMail, usersToMail)
         $('#'+modalChangeIncidenciaState.id).modal('hide');
         $('#toastIncidenciaStateChanged').show();

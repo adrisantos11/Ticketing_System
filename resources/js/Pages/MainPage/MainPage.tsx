@@ -126,15 +126,11 @@ const MainPage = () => {
         })
     }, []);
 
-    const handleClickOptions = (idOption: string) => {
-        console.log(idOption);
-    }
-
     if(isLogged) {
         return(
             <>
             <div className="mainpage-container">
-                <Navbar handleClickOptions={handleClickOptions}></Navbar>
+                <Navbar></Navbar>
                 <div className="body-container" id="body">
                     <Switch>
                         <Route path="/home/perfil" component={PerfilPage}></Route>

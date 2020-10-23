@@ -10,6 +10,7 @@ interface Props {
 }
 const Dropdown: React.FunctionComponent<Props> = (props: Props) => {
   const [dropdownName, setDropdownName] = React.useState(props.dropdownInfo.groupName)
+
   const onClickItem = (e: any) => {
     props.onClick(e.target.id, e.target.getAttribute('data-value'), props.dropdownInfo.id);
     setDropdownName(e.target.getAttribute('data-value'));
@@ -38,14 +39,12 @@ const Dropdown: React.FunctionComponent<Props> = (props: Props) => {
               {dropdownName}
               </button> 
             : 
-              <button className={`btn btn--${props.dropdownInfo.color} btn-secondary dropdown-toggle`} type="button"
+            <button className={`btn btn--${props.dropdownInfo.color} btn-secondary dropdown-toggle`} type="button"
               id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
               {dropdownName}
               </button>
           }
-          {
-          getItemsDropdown(props.dropdownInfo.groupItems, props.dropdownInfo.groupIds)
-          }
+          {getItemsDropdown(props.dropdownInfo.groupItems, props.dropdownInfo.groupIds)}
       </div>
   )
 }
