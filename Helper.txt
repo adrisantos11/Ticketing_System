@@ -69,10 +69,12 @@ TUTORIALES DE AYUDA:
     5)  Hacer lo mismo con la key de JWTAuth:
         ~ php artisan jwt:secret ~ 
     
-    6)  Crear una migración a la Base de Datos de todas las seeders y tablas que se han creado en el proyecto:
+    6)  Crear BBDD en PhpMyAdmin con el nombre 'tfg_ticketing_system' --> http://localhost/phpmyadmin/
+    
+    7)  Crear una migración a la Base de Datos de todas las seeders y tablas que se han creado en el proyecto:
         ~ php artisan migrate:refresh --seed ~
 
-    7)  Iniciar la aplicación ejecutando los siguientes dos comandos:
+    8)  Iniciar la aplicación ejecutando los siguientes dos comandos:
         ~ php artisan serve ~
         ~ npm run watch ~
 
